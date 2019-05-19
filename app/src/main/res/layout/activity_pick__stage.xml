@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pick_Stage">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Abadon"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Alcemic"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Axe"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Beastmaster"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Brewmaster"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Bristleback"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Centaur"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Chaos"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Clockwerk"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Doom"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/DK"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/EarthSpirit"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/EarthShaker"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/ElderTitan"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Huskar"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Io"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Kunnka"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/LC"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lifestealer"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lycan"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Magnus"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/NS"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Omniknight"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Phoenix"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Pudge"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/SandKing"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Slardar"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/SpiritBreaker"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Sven"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Tidehunter"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Text"
+    android:id="@+id/Pick_Stage"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentRight="true"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban1"/>
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban2"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban3"/>
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban4"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_width="40sp"
+        android:layout_height="20sp"
+        android:id="@+id/ban5"/>
+
+    <ImageView
+        android:layout_width="40sp"
+        android:layout_height="20sp"
+        android:id="@+id/ban6"/>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick1"/>
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick2"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick3"/>
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick4"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban7"/>
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban8"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban9"/>
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban10"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick5"/>
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick6"/>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick7"/>
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick8"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban11"/>
+
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            android:id="@+id/ban12"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick9"/>
+
+        <ImageView
+            android:layout_width="70sp"
+            android:layout_height="40sp"
+            android:id="@+id/pick10"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+</RelativeLayout>
