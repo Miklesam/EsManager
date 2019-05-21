@@ -11,7 +11,12 @@ import android.widget.TextView;
 
 public class YourTeam extends AppCompatActivity {
     public static final String APP_PREFERENCES_NAME = "TeamName";
-
+    public static final String GoldBalance = "50000";
+    public static final String StaticPosition1 = "pos1";
+    public static final String StaticPosition2 = "pos2";
+    public static final String StaticPosition3 = "pos3";
+    public static final String StaticPosition4 = "pos4";
+    public static final String StaticPosition5 = "pos5";
     SharedPreferences mSettings;
 
     @Override
@@ -23,6 +28,7 @@ public class YourTeam extends AppCompatActivity {
         TextView Gold=findViewById(R.id.gold);
         Button toPlayerChoose = findViewById(R.id.toPlayerChoose);
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME , Context.MODE_PRIVATE);
+        mSettings = getSharedPreferences(GoldBalance , Context.MODE_PRIVATE);
 
         String newString;
         if (savedInstanceState == null) {

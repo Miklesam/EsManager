@@ -7,10 +7,227 @@
     android:layout_height="match_parent"
     tools:context=".PlayerChoose">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Самый Жесткий Тип-1000000"/>
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+
+        android:id="@+id/PlayerInfo"
+        android:visibility="invisible">
+        <ImageView
+            android:id="@+id/FlagImage"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/Nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Turtle" />
+        <TextView
+            android:id="@+id/Description"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/Buy_Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy_Yes" />
+        <Button
+            android:id="@+id/Buy_No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy_No" />
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/Pos1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="Позиция 1" />
+            <Button
+                android:id="@+id/Pos2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="Позиция 2" />
+
+            <Button
+                android:id="@+id/Pos3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="Позиция 3" />
+
+            <Button
+                android:id="@+id/Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="Отмена" />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:id="@+id/Core"
+            android:text="Core"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:id="@+id/Support"
+            android:text="support"/>
+
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/CoreList"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+
+     >
+
+    </ListView>
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+    <ListView
+        android:layout_marginTop="50sp"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:id="@+id/SupportList">
+
+    </ListView>
+
+
+
+
+        <LinearLayout
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/Your_Team"
+            android:layout_alignParentRight="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:id="@+id/Goldbalance"
+                android:text="Золото"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:text="Собери состав"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/position1"
+                android:textSize="20sp"
+                android:text="1"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/position2"
+                android:textSize="20sp"
+                android:text="2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/position3"
+                android:textSize="20sp"
+                android:text="3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/position4"
+                android:text="4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/position5"
+                android:text="5"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
 
     <Button
         android:layout_width="wrap_content"
@@ -19,6 +236,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/NextStage"
+        android:visibility="invisible"
         />
+
+
+
 
 </RelativeLayout>

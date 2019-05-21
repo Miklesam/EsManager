@@ -15,12 +15,22 @@
         android:id="@+id/TestName"
         android:layout_centerHorizontal="true"/>
 
+
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gold"
+            android:id="@+id/TestGold"
+            android:layout_centerHorizontal="true"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -32,7 +42,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Настройки"
+            android:id="@+id/Continue"
+            android:text="Продолжить"
             />
 
         <Button
@@ -40,6 +51,12 @@
             android:layout_height="wrap_content"
             android:text="Команды"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Команды"
+            />
+
 
 
     </LinearLayout>

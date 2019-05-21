@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pick_Stage"></activity>
+        <activity android:name=".mainstate"></activity>
+        <activity android:name=".Pick_Stage" />
         <activity android:name=".PlayerChoose" />
         <activity android:name=".YourTeam" />
         <activity android:name=".TeamName" />

@@ -21,7 +21,8 @@ public class Pick_Stage extends AppCompatActivity {
     boolean abadon_ban;
     boolean alcemic_ban;
     final ImageView Pick_stage[]= new ImageView[22];
-    ImageView Heros_icon[] = new ImageView[7];
+    ImageView Heros_icon[] = new ImageView[30];
+    int pick_state;
 
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
@@ -32,9 +33,8 @@ public class Pick_Stage extends AppCompatActivity {
         setContentView(R.layout.activity_pick__stage);
 
         HeroList.addAll(HeroInit.HeroInit());
+        pick_state=0;
 
-        Thread t = new Thread(new Threadstage());
-        t.start();
 
         Pick_Stage=findViewById(R.id.Pick_Stage);
         Heros_icon[0] = findViewById(R.id.Abadon);
@@ -44,34 +44,34 @@ public class Pick_Stage extends AppCompatActivity {
         Heros_icon[4] = findViewById(R.id.Brewmaster);
         Heros_icon[5] = findViewById(R.id.Bristleback);
         Heros_icon[6] = findViewById(R.id.Centaur);
-        ImageView Chaos = findViewById(R.id.Chaos);
-        ImageView Clockwerk = findViewById(R.id.Clockwerk);
-        ImageView Doom = findViewById(R.id.Doom);
+        Heros_icon[7] = findViewById(R.id.Chaos);
+        Heros_icon[8] = findViewById(R.id.Clockwerk);
+        Heros_icon[9] = findViewById(R.id.Doom);
 
 
-        ImageView DK_Icon = findViewById(R.id.DK);
-        ImageView EarthSpirit_Icon = findViewById(R.id.EarthSpirit);
-        ImageView EarthShaker_Icon = findViewById(R.id.EarthShaker);
-        ImageView ElderTitan_Icon = findViewById(R.id.ElderTitan);
-        ImageView Huskar = findViewById(R.id.Huskar);
-        ImageView IO = findViewById(R.id.Io);
-        ImageView Kunnka = findViewById(R.id.Kunnka);
-        ImageView LC = findViewById(R.id.LC);
-        ImageView Lifestealer = findViewById(R.id.Lifestealer);
-        ImageView Lycan = findViewById(R.id.Lycan);
+        Heros_icon[10] = findViewById(R.id.DK);
+        Heros_icon[11] = findViewById(R.id.EarthSpirit);
+        Heros_icon[12] = findViewById(R.id.EarthShaker);
+        Heros_icon[13] = findViewById(R.id.ElderTitan);
+        Heros_icon[14] = findViewById(R.id.Huskar);
+        Heros_icon[15] = findViewById(R.id.Io);
+        Heros_icon[16] = findViewById(R.id.Kunnka);
+        Heros_icon[17] = findViewById(R.id.LC);
+        Heros_icon[18] = findViewById(R.id.Lifestealer);
+        Heros_icon[19] = findViewById(R.id.Lycan);
 
 
 
-        ImageView Magnus = findViewById(R.id.Magnus);
-        ImageView NS = findViewById(R.id.NS);
-        ImageView Omniknight = findViewById(R.id.Omniknight);
-        ImageView Phoenix = findViewById(R.id.Phoenix);
-        ImageView Pudge = findViewById(R.id.Pudge);
-        ImageView SandKing = findViewById(R.id.SandKing);
-        ImageView Slardar = findViewById(R.id.Slardar);
-        ImageView SpiritBreaker = findViewById(R.id.SpiritBreaker);
-        ImageView Sven = findViewById(R.id.Sven);
-        ImageView Tidehunter = findViewById(R.id.Tidehunter);
+        Heros_icon[20] = findViewById(R.id.Magnus);
+        Heros_icon[21] = findViewById(R.id.NS);
+        Heros_icon[22] = findViewById(R.id.Omniknight);
+        Heros_icon[23] = findViewById(R.id.Phoenix);
+        Heros_icon[24] = findViewById(R.id.Pudge);
+        Heros_icon[25] = findViewById(R.id.SandKing);
+        Heros_icon[26] = findViewById(R.id.Slardar);
+        Heros_icon[27] = findViewById(R.id.SpiritBreaker);
+        Heros_icon[28] = findViewById(R.id.Sven);
+        Heros_icon[29] = findViewById(R.id.Tidehunter);
 
 
 
@@ -83,19 +83,19 @@ public class Pick_Stage extends AppCompatActivity {
         Pick_stage[5] = findViewById(R.id.ban6);
         Pick_stage[6] = findViewById(R.id.pick1);
         Pick_stage[7] = findViewById(R.id.pick2);
-        Pick_stage[8] = findViewById(R.id.pick3);
-        Pick_stage[9] = findViewById(R.id.pick4);
-        Pick_stage[10] = findViewById(R.id.ban7);
-        Pick_stage[11] = findViewById(R.id.ban8);
+        Pick_stage[9] = findViewById(R.id.pick3);
+        Pick_stage[8] = findViewById(R.id.pick4);
+        Pick_stage[11] = findViewById(R.id.ban7);
+        Pick_stage[10] = findViewById(R.id.ban8);
 
-        Pick_stage[12]= findViewById(R.id.ban9);
-        Pick_stage[13] = findViewById(R.id.ban10);
-        Pick_stage[14] = findViewById(R.id.pick5);
-        Pick_stage[15] = findViewById(R.id.pick6);
-        Pick_stage[16] = findViewById(R.id.pick7);
-        Pick_stage[17] = findViewById(R.id.pick8);
-        Pick_stage[18] = findViewById(R.id.ban11);
-        Pick_stage[19] = findViewById(R.id.ban12);
+        Pick_stage[13]= findViewById(R.id.ban9);
+        Pick_stage[12] = findViewById(R.id.ban10);
+        Pick_stage[15] = findViewById(R.id.pick5);
+        Pick_stage[14] = findViewById(R.id.pick6);
+        Pick_stage[17] = findViewById(R.id.pick7);
+        Pick_stage[16] = findViewById(R.id.pick8);
+        Pick_stage[19] = findViewById(R.id.ban11);
+        Pick_stage[18] = findViewById(R.id.ban12);
         Pick_stage[20] = findViewById(R.id.pick9);
         Pick_stage[21] = findViewById(R.id.pick10);
 
@@ -106,33 +106,33 @@ public class Pick_Stage extends AppCompatActivity {
         Heros_icon[4].setImageResource(R.drawable.brewmaster_icon);
         Heros_icon[5].setImageResource(R.drawable.bristleback_icon);
         Heros_icon[6].setImageResource(R.drawable.centaur_icon);
-        Chaos.setImageResource(R.drawable.chaos_icon);
-        Clockwerk.setImageResource(R.drawable.clockwerk_icon);
-        Doom.setImageResource(R.drawable.doom_icon);
+        Heros_icon[7].setImageResource(R.drawable.chaos_icon);
+        Heros_icon[8].setImageResource(R.drawable.clockwerk_icon);
+        Heros_icon[9].setImageResource(R.drawable.doom_icon);
 
-        DK_Icon.setImageResource(R.drawable.dk_icon);
-        EarthSpirit_Icon.setImageResource(R.drawable.earth_spirit_icon);
-        EarthShaker_Icon.setImageResource(R.drawable.eartshaker_icon);
-        ElderTitan_Icon.setImageResource(R.drawable.eldertitan_icon);
-        Huskar.setImageResource(R.drawable.huskar_icon);
-        IO.setImageResource(R.drawable.io_icon);
-        Kunnka.setImageResource(R.drawable.kunnka_icon);
-        LC.setImageResource(R.drawable.lc_icon);
-        Lifestealer.setImageResource(R.drawable.lifestealer_icon);
-        Lycan.setImageResource(R.drawable.lycan_icon);
+        Heros_icon[10].setImageResource(R.drawable.dk_icon);
+        Heros_icon[11].setImageResource(R.drawable.earth_spirit_icon);
+        Heros_icon[12].setImageResource(R.drawable.eartshaker_icon);
+        Heros_icon[13].setImageResource(R.drawable.eldertitan_icon);
+        Heros_icon[14].setImageResource(R.drawable.huskar_icon);
+        Heros_icon[15].setImageResource(R.drawable.io_icon);
+        Heros_icon[16].setImageResource(R.drawable.kunnka_icon);
+        Heros_icon[17].setImageResource(R.drawable.lc_icon);
+        Heros_icon[18].setImageResource(R.drawable.lifestealer_icon);
+        Heros_icon[19].setImageResource(R.drawable.lycan_icon);
 
 
 
-        Magnus.setImageResource(R.drawable.magnus_icon);
-        NS.setImageResource(R.drawable.night_stalker_icon);
-        Omniknight.setImageResource(R.drawable.omniknight_icon);
-        Phoenix.setImageResource(R.drawable.phoenix_icon);
-        Pudge.setImageResource(R.drawable.pudge_icon);
-        SandKing.setImageResource(R.drawable.sand_king_icon);
-        Slardar.setImageResource(R.drawable.slardar_icon);
-        SpiritBreaker.setImageResource(R.drawable.spirit_breaker_icon);
-        Sven.setImageResource(R.drawable.sven_icon);
-        Tidehunter.setImageResource(R.drawable.tidehunter_icon);
+        Heros_icon[20].setImageResource(R.drawable.magnus_icon);
+        Heros_icon[21].setImageResource(R.drawable.night_stalker_icon);
+        Heros_icon[22].setImageResource(R.drawable.omniknight_icon);
+        Heros_icon[23].setImageResource(R.drawable.phoenix_icon);
+        Heros_icon[24].setImageResource(R.drawable.pudge_icon);
+        Heros_icon[25].setImageResource(R.drawable.sand_king_icon);
+        Heros_icon[26].setImageResource(R.drawable.slardar_icon);
+        Heros_icon[27].setImageResource(R.drawable.spirit_breaker_icon);
+        Heros_icon[28].setImageResource(R.drawable.sven_icon);
+        Heros_icon[29].setImageResource(R.drawable.tidehunter_icon);
 
         for (int i=0;i<12;i++)
         {
@@ -152,7 +152,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        for (int i=0;i<7;i++)
+        for (int i=0;i<30;i++)
         {
 
             final int finalI = i;
@@ -163,21 +163,21 @@ public class Pick_Stage extends AppCompatActivity {
 
                                                      if (HeroInit.AllHeroes.get(finalI).baned == false) {
 
-                                                         if (Threadstage.cnt < 6) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
-                                                         } else if ((Threadstage.cnt > 5) && (Threadstage.cnt < 10)) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
-                                                         } else if ((Threadstage.cnt > 9) && (Threadstage.cnt < 14)) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
-                                                         } else if ((Threadstage.cnt > 13) && (Threadstage.cnt < 18)) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
-                                                         } else if ((Threadstage.cnt > 17) && (Threadstage.cnt < 20)) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
-                                                         } else if ((Threadstage.cnt > 19) && (Threadstage.cnt < 22)) {
-                                                             Pick_stage[Threadstage.cnt].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                         if (pick_state< 6) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
+                                                         } else if ((pick_state > 5) && (pick_state < 10)) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                         } else if ((pick_state > 9) && (pick_state < 14)) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
+                                                         } else if ((pick_state > 13) && (pick_state < 18)) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                         } else if ((pick_state > 17) && (pick_state < 20)) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
+                                                         } else if ((pick_state > 19) && (pick_state < 22)) {
+                                                             Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
                                                          }
 
-                                                         had_choosen=true;
+                                                         pick_state++;
                                                          HeroInit.AllHeroes.get(finalI).baned=true;
                                                          HeroList.remove(HeroInit.AllHeroes.get(finalI));
                                                          Heros_icon[finalI].setImageResource(HeroInit.AllHeroes.get(finalI).largeban);
@@ -221,16 +221,47 @@ public class Pick_Stage extends AppCompatActivity {
 
             }
 
-            Pick_Stage.setText("Stage"+" "+String.valueOf(Threadstage.cnt+1));
-            if((Threadstage.cnt==1)||(Threadstage.cnt==3)||(Threadstage.cnt==5))
+            Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
+            if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
             {
-                Pick_stage[Threadstage.cnt].setImageResource(HeroList.get(whathero).minban);
+                Pick_stage[pick_state].setImageResource(HeroList.get(whathero).minban);
                 HeroList.get(whathero).baned=true;
                 Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
                 HeroList.remove(whathero);
-                had_choosen=true;
+                pick_state++;
 
             }
+            else if ((pick_state==7))
+            {
+                Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+                HeroList.get(whathero).baned=true;
+                Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                HeroList.remove(whathero);
+                pick_state++;
+                if(HeroList.size()!=0)
+                {
+                    whathero=randomhero.nextInt(HeroList.size());
+
+                }
+                Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+                HeroList.get(whathero).baned=true;
+                Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                HeroList.remove(whathero);
+                pick_state++;
+
+
+
+            }
+
+            else if ((pick_state==14)||(pick_state==16)||(pick_state==21))
+            {
+                Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+                HeroList.get(whathero).baned=true;
+                Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                HeroList.remove(whathero);
+                pick_state++;
+            }
+
 
 
 
