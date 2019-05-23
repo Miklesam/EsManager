@@ -3,6 +3,8 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,20 +20,32 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class MainActivity extends AppCompatActivity {
+    String Gold_to_Continie;
 
     SharedPreferences mSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        TypefaceUtil.overrideFont(getApplicationContext(), "SANS_SERIF", "fonts/16606.ttf");
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/16606.ttf");
+
+
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME, Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
 
         TextView TextName=findViewById(R.id.TestName);
         TextView TestGold = findViewById(R.id.TestGold);
+        TextName.setTypeface(type);
+        TextName.setTypeface(type);
 
         Button NewGame = findViewById(R.id.new_game);
         Button Continue = findViewById(R.id.Continue);
+
+                Continue.setTypeface(type);
+                NewGame.setTypeface(type);
+
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);
 
@@ -71,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(mSettings.contains(GoldBalance)) {
-            TestGold.setText(mSettings.getString(GoldBalance, "50000"));
+
+            Gold_to_Continie =mSettings.getString(GoldBalance, "50000");
+            TestGold.setText(Gold_to_Continie);
         }
 
 
@@ -84,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
                 ToMAinState.putExtra("Position3",Player[2]);
                 ToMAinState.putExtra("Position4",Player[3]);
                 ToMAinState.putExtra("Position5",Player[4]);
+                ToMAinState.putExtra("Gold",Gold_to_Continie);
+
+
 
 
 

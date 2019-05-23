@@ -7,26 +7,163 @@
     android:layout_height="match_parent"
     tools:context=".mainstate">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="mainstate"/>
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Игра"
+                android:id="@+id/Play_game"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Тренировка"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Команда"/>
 
 
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/comp" />
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/comp"/>
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/comp"/>
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/comp"/>
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/comp"/>
+
+
+
+
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentRight="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="Y"/>
+
+
+        <TextView
+            android:layout_marginLeft="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/Year"
+            android:text="0"/>
+        <TextView
+            android:layout_marginLeft="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="M"/>
+
+        <TextView
+            android:layout_marginLeft="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/Month"
+            android:text="0"/>
+        <TextView
+            android:layout_marginLeft="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="D"/>
+
+        <TextView
+            android:layout_marginLeft="2sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/Day"
+            android:text="0"/>
+
+
+
+
+        <ImageView
+            android:layout_marginLeft="10sp"
+            android:layout_width="22sp"
+            android:layout_height="30sp"
+            app:srcCompat="@drawable/people"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/FansNumber"
+            android:text="0"/>
+
+
+        <ImageView
+            android:layout_marginLeft="10sp"
+            android:layout_width="25sp"
+            android:layout_height="30sp"
+            app:srcCompat="@drawable/rubl"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/Goldbalance"
+            android:text="Золото"/>
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/Your_Team"
-        android:layout_alignParentRight="true">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20sp"
-            android:id="@+id/Goldbalance"
-            android:text="Золото"/>
+        android:layout_gravity="right"
+       >
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/teamposition1"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="1"/>
 
 
@@ -47,27 +184,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/teamposition2"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="2"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/teamposition3"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:text="3"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:id="@+id/teamposition4"
             android:text="4"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:id="@+id/teamposition5"
             android:text="5"/>
 
@@ -76,6 +213,10 @@
 
 
     </LinearLayout>
+
+</LinearLayout>
+
+
 
 
 

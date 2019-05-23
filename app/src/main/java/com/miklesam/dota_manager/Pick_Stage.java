@@ -1,8 +1,11 @@
 package com.miklesam.dota_manager;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,9 @@ public class Pick_Stage extends AppCompatActivity {
     final ImageView Pick_stage[]= new ImageView[22];
     ImageView Heros_icon[] = new ImageView[30];
     int pick_state;
+    Button Plan_state;
+    int[] what_hero = new int[5];
+    int k=0;
 
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
@@ -30,10 +36,53 @@ public class Pick_Stage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_pick__stage);
-
+        Plan_state=findViewById(R.id.Plan_state);
         HeroList.addAll(HeroInit.HeroInit());
+
+        final Intent PlaningState = new Intent(this, PlaningState.class);
         pick_state=0;
+
+
+
+
+
+
+
+
+
+        final String Pos1;
+        final String Pos2;
+        final String Pos3;
+        final String Pos4;
+        final String Pos5;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                Pos1= null;
+                Pos2= null;
+                Pos3= null;
+                Pos4= null;
+                Pos5= null;
+
+
+            } else {
+                Pos1= extras.getString("Position1");
+                Pos2= extras.getString("Position2");
+                Pos3= extras.getString("Position3");
+                Pos4= extras.getString("Position4");
+                Pos5= extras.getString("Position5");
+
+            }
+        } else {
+            Pos1= (String) savedInstanceState.getSerializable("Position1");
+            Pos2= (String) savedInstanceState.getSerializable("Position2");
+            Pos3= (String) savedInstanceState.getSerializable("Position3");
+            Pos4= (String) savedInstanceState.getSerializable("Position4");
+            Pos5= (String) savedInstanceState.getSerializable("Position5");
+
+        }
 
 
         Pick_Stage=findViewById(R.id.Pick_Stage);
@@ -83,17 +132,17 @@ public class Pick_Stage extends AppCompatActivity {
         Pick_stage[5] = findViewById(R.id.ban6);
         Pick_stage[6] = findViewById(R.id.pick1);
         Pick_stage[7] = findViewById(R.id.pick2);
-        Pick_stage[9] = findViewById(R.id.pick3);
-        Pick_stage[8] = findViewById(R.id.pick4);
+        Pick_stage[8] = findViewById(R.id.pick3);
+        Pick_stage[9] = findViewById(R.id.pick4);
         Pick_stage[11] = findViewById(R.id.ban7);
         Pick_stage[10] = findViewById(R.id.ban8);
 
         Pick_stage[13]= findViewById(R.id.ban9);
         Pick_stage[12] = findViewById(R.id.ban10);
-        Pick_stage[15] = findViewById(R.id.pick5);
-        Pick_stage[14] = findViewById(R.id.pick6);
-        Pick_stage[17] = findViewById(R.id.pick7);
-        Pick_stage[16] = findViewById(R.id.pick8);
+        Pick_stage[14] = findViewById(R.id.pick5);
+        Pick_stage[15] = findViewById(R.id.pick6);
+        Pick_stage[16] = findViewById(R.id.pick7);
+        Pick_stage[17] = findViewById(R.id.pick8);
         Pick_stage[19] = findViewById(R.id.ban11);
         Pick_stage[18] = findViewById(R.id.ban12);
         Pick_stage[20] = findViewById(R.id.pick9);
@@ -134,16 +183,40 @@ public class Pick_Stage extends AppCompatActivity {
         Heros_icon[28].setImageResource(R.drawable.sven_icon);
         Heros_icon[29].setImageResource(R.drawable.tidehunter_icon);
 
-        for (int i=0;i<12;i++)
-        {
-            Pick_stage[i].setImageResource(R.drawable.ban);
-        }
+        //for (int i=0;i<12;i++)
+        //{
+        //    Pick_stage[i].setImageResource(R.drawable.ban);
+       // }
 
-        for (int i=12;i<22;i++)
-        {
-            Pick_stage[i].setImageResource(R.drawable.pick);
-        }
+        //for (int i=12;i<22;i++)
+        //{
+       //     Pick_stage[i].setImageResource(R.drawable.pick);
+       // }
 
+
+
+
+        Plan_state.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                PlaningState.putExtra("Hero1",what_hero[0]);
+                PlaningState.putExtra("Hero2",what_hero[1]);
+                PlaningState.putExtra("Hero3",what_hero[2]);
+                PlaningState.putExtra("Hero4",what_hero[3]);
+                PlaningState.putExtra("Hero5",what_hero[4]);
+
+                PlaningState.putExtra("Position1",Pos1);
+                PlaningState.putExtra("Position2",Pos2);
+                PlaningState.putExtra("Position3",Pos3);
+                PlaningState.putExtra("Position4",Pos4);
+                PlaningState.putExtra("Position5",Pos5);
+
+
+                startActivity(PlaningState);
+
+            }
+        });
 
 
         Pick_Stage_stam();
@@ -166,15 +239,22 @@ public class Pick_Stage extends AppCompatActivity {
                                                          if (pick_state< 6) {
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
                                                          } else if ((pick_state > 5) && (pick_state < 10)) {
+
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                             what_hero[k]=HeroInit.AllHeroes.get(finalI).seq;
+                                                             k++;
                                                          } else if ((pick_state > 9) && (pick_state < 14)) {
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
                                                          } else if ((pick_state > 13) && (pick_state < 18)) {
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                             what_hero[k]=HeroInit.AllHeroes.get(finalI).seq;
+                                                             k++;
                                                          } else if ((pick_state > 17) && (pick_state < 20)) {
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).minban);
                                                          } else if ((pick_state > 19) && (pick_state < 22)) {
                                                              Pick_stage[pick_state].setImageResource(HeroInit.AllHeroes.get(finalI).picked);
+                                                             what_hero[k]=HeroInit.AllHeroes.get(finalI).seq;
+                                                             k++;
                                                          }
 
                                                          pick_state++;
@@ -266,6 +346,8 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         }
+
+
 
 
 

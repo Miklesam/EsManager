@@ -9,7 +9,233 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="team1"/>
+
+
+        <TextView
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vs"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="team2"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban1"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban3"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban5"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban7"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban9"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban11"
+                app:srcCompat="@drawable/ban"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban2"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban4"
+                app:srcCompat="@drawable/ban"/>
+
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban6"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban8"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban10"
+                app:srcCompat="@drawable/ban"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                android:id="@+id/ban12"
+                app:srcCompat="@drawable/ban"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left">
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick1"
+                app:srcCompat="@drawable/pick"/>
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick4"
+                app:srcCompat="@drawable/pick"/>
+
+
+
+
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick6"
+                app:srcCompat="@drawable/pick"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick8"
+                app:srcCompat="@drawable/pick"/>
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick9"
+                app:srcCompat="@drawable/pick"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick2"
+                app:srcCompat="@drawable/pick"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick3"
+                app:srcCompat="@drawable/pick"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick5"
+                app:srcCompat="@drawable/pick"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick7"
+                app:srcCompat="@drawable/pick"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="35sp"
+                android:id="@+id/pick10"
+                app:srcCompat="@drawable/pick"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -269,241 +495,46 @@
 </LinearLayout>
 
 
-<LinearLayout
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:id="@+id/Plan_state"
+    android:layout_alignParentBottom="true"
     android:layout_alignParentRight="true"
-    >
+    android:text="Стадия"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
 
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban1"/>
 
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban2"/>
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
 
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban3"/>
 
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban4"/>
 
 
-    </LinearLayout>
 
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_gravity="center">
 
-    <ImageView
-        android:layout_width="40sp"
-        android:layout_height="20sp"
-        android:id="@+id/ban5"/>
 
-    <ImageView
-        android:layout_width="40sp"
-        android:layout_height="20sp"
-        android:id="@+id/ban6"/>
 
 
-</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick1"/>
 
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick2"/>
 
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick3"/>
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick4"/>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban7"/>
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban8"/>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban9"/>
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban10"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick5"/>
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick6"/>
-
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick7"/>
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick8"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban11"/>
-
-        <ImageView
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            android:id="@+id/ban12"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick9"/>
-
-        <ImageView
-            android:layout_width="70sp"
-            android:layout_height="40sp"
-            android:id="@+id/pick10"/>
-
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</LinearLayout>
 
 
 
