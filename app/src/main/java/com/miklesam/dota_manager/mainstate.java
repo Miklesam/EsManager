@@ -18,7 +18,7 @@ public class mainstate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_mainstate);
 
         TeamPosition[0]=findViewById(R.id.teamposition1);

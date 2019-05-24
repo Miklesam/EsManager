@@ -36,7 +36,7 @@ public class Pick_Stage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_pick__stage);
         Plan_state=findViewById(R.id.Plan_state);
         HeroList.addAll(HeroInit.HeroInit());

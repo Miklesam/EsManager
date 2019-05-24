@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_main);
         TypefaceUtil.overrideFont(getApplicationContext(), "SANS_SERIF", "fonts/16606.ttf");
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/16606.ttf");

@@ -23,7 +23,7 @@ public class YourTeam extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_your_team);
         final Intent ChoosePlayer = new Intent(this, PlayerChoose.class);
         TextView TeamTag=findViewById(R.id.TeamTag);

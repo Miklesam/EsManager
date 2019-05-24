@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
@@ -21,7 +22,7 @@ public class PlaningState extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
         setContentView(R.layout.activity_planing_state);
 
         GameHero[0]=findViewById(R.id.GameHero1);
@@ -96,11 +97,11 @@ for(int i=0;i<5;i++)
         String[] data = {String.valueOf(Hero[0]), String.valueOf(Hero[1]), String.valueOf(Hero[2]), String.valueOf(Hero[3]), String.valueOf(Hero[4])};
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Gamer);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Gamer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
-        spinner.setPrompt("Title");
+        //spinner.setPrompt("Title");
         spinner.setSelection(2);
 
 
@@ -113,6 +114,8 @@ for(int i=0;i<5;i++)
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
+
+
                 // показываем позиция нажатого элемента
                 Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
             }
