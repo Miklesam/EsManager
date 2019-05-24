@@ -7,135 +7,415 @@
     android:layout_height="match_parent"
     tools:context=".PlaningState">
     
-    
-    <ImageView
+    <RelativeLayout
         android:layout_width="277sp"
         android:layout_height="280sp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/map"
-        />
+        android:background="@drawable/map">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            >
+            <ImageView
+                android:layout_marginTop="45sp"
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            >
+          <ImageView
+              android:layout_width="33sp"
+              android:layout_height="33sp"
+              app:srcCompat="@drawable/abadon_mip_map_clear"/>
+              />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+            <ImageView
+                android:layout_marginRight="50sp"
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+            />
+
+
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+
+            />
+
+         </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:layout_marginTop="60sp"
+                android:layout_marginRight="60sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:layout_marginTop="100sp"
+                android:layout_marginRight="100sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:layout_marginTop="140sp"
+                android:layout_marginRight="140sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+
+            />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:layout_marginTop="180sp"
+                android:layout_marginRight="180sp"
+                app:srcCompat="@drawable/abadon_mip_map_clear"/>
+
+            />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Разберите героев иназначте их по линиям"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="5sp">
-
-            <ImageView
-
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/GameHero1"
-                >
-            </ImageView>
-            <Spinner
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Spiner1">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
 
-            </Spinner>
+                        android:layout_width="60sp"
+                        android:layout_height="35sp"
+                        android:id="@+id/GameHero1"
+                        >
+                    </ImageView>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Spiner1">
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5sp">
+                    </Spinner>
 
-            <ImageView
 
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/GameHero2"
-                >
-            </ImageView>
-            <Spinner
+
+                </LinearLayout>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LineSpiner1">
+
+                </Spinner>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Spiner2">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
 
-            </Spinner>
+                        android:layout_width="60sp"
+                        android:layout_height="35sp"
+                        android:id="@+id/GameHero2"
+                        >
+                    </ImageView>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Spiner2">
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5sp">
+                    </Spinner>
 
-            <ImageView
 
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/GameHero3"
-                >
-            </ImageView>
-            <Spinner
+
+                </LinearLayout>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LineSpiner2">
+
+                </Spinner>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Spiner3">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
 
-            </Spinner>
+                        android:layout_width="60sp"
+                        android:layout_height="35sp"
+                        android:id="@+id/GameHero3"
+                        >
+                    </ImageView>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Spiner3">
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5sp">
+                    </Spinner>
 
-            <ImageView
 
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/GameHero4"
-                >
-            </ImageView>
-            <Spinner
+
+                </LinearLayout>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LineSpiner3">
+
+                </Spinner>
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Spiner4">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
 
-            </Spinner>
+                        android:layout_width="60sp"
+                        android:layout_height="35sp"
+                        android:id="@+id/GameHero4"
+                        >
+                    </ImageView>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Spiner4">
 
-        </LinearLayout>
+
+                    </Spinner>
 
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5sp">
 
-            <ImageView
+                </LinearLayout>
 
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/GameHero5"
-                >
-            </ImageView>
-            <Spinner
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LineSpiner4">
+
+                </Spinner>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Spiner5">
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
 
-            </Spinner>
+                        android:layout_width="60sp"
+                        android:layout_height="35sp"
+                        android:id="@+id/GameHero5"
+                        >
+                    </ImageView>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Spiner5">
+
+
+                    </Spinner>
+
+
+
+                </LinearLayout>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/LineSpiner5">
+
+                </Spinner>
+
+
+
+            </LinearLayout>
+
+
+
+
 
         </LinearLayout>
-
-
-
-
-
 
 
 

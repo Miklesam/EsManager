@@ -80,7 +80,7 @@ public class PlaningState extends AppCompatActivity {
 
 for(int i=0;i<5;i++)
 {
-    GameHero[i].setImageResource(AllHeroes.get(Hero[i]).hero_icon);
+    GameHero[i].setImageResource(AllHeroes.get(Hero[i]).picked);
 }
 
 
@@ -92,17 +92,59 @@ for(int i=0;i<5;i++)
 
 
 
-        final Spinner spinner = (Spinner)findViewById(R.id.Spiner1);
+        final Spinner spinner1 = (Spinner)findViewById(R.id.Spiner1);
+        final Spinner spinner2 = (Spinner)findViewById(R.id.Spiner2);
+        final Spinner spinner3 = (Spinner)findViewById(R.id.Spiner3);
+        final Spinner spinner4 = (Spinner)findViewById(R.id.Spiner4);
+        final Spinner spinner5 = (Spinner)findViewById(R.id.Spiner5);
+
+        final Spinner Lanespinner1 = (Spinner)findViewById(R.id.LineSpiner1);
+        final Spinner Lanespinner2 = (Spinner)findViewById(R.id.LineSpiner2);
+        final Spinner Lanespinner3 = (Spinner)findViewById(R.id.LineSpiner3);
+        final Spinner Lanespinner4 = (Spinner)findViewById(R.id.LineSpiner4);
+        final Spinner Lanespinner5 = (Spinner)findViewById(R.id.LineSpiner5);
 
         String[] data = {String.valueOf(Hero[0]), String.valueOf(Hero[1]), String.valueOf(Hero[2]), String.valueOf(Hero[3]), String.valueOf(Hero[4])};
+        String[] Lane = {"top","mid","bottom"};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Gamer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
+        ArrayAdapter<String> Laneadapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Lane);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinner1.setAdapter(adapter);
         //spinner.setPrompt("Title");
-        spinner.setSelection(2);
+        spinner1.setSelection(0);
+
+        spinner2.setAdapter(adapter);
+        spinner2.setSelection(1);
+
+        spinner3.setAdapter(adapter);
+        spinner3.setSelection(2);
+
+        spinner4.setAdapter(adapter);
+        spinner4.setSelection(3);
+
+        spinner5.setAdapter(adapter);
+        spinner5.setSelection(4);
+
+        Lanespinner1.setAdapter(Laneadapter);
+        Lanespinner1.setSelection(0);
+
+        Lanespinner2.setAdapter(Laneadapter);
+        Lanespinner2.setSelection(0);
+
+        Lanespinner3.setAdapter(Laneadapter);
+        Lanespinner3.setSelection(0);
+
+        Lanespinner4.setAdapter(Laneadapter);
+        Lanespinner4.setSelection(0);
+
+        Lanespinner5.setAdapter(Laneadapter);
+        Lanespinner5.setSelection(0);
 
 
 
@@ -110,7 +152,7 @@ for(int i=0;i<5;i++)
 
 
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {

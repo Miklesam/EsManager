@@ -19,6 +19,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
+import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
@@ -27,56 +31,6 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class PlayerChoose extends AppCompatActivity {
-
-
-    String CoreNAMES[]={"Ramzes","NoOne","9pasha","Daxak","Afoninje","AfterLife",
-            "Crystallize","Magical","Blizzy","Silent","Cooman","nongrata",
-            "dream'","Kodos","Maden","illidan","G","633",
-            "Palantimos","Pikachu","chshrct","Something","Something","Something",
-            "Something","Something","Something"};
-
-    String CorePriceMoney[]={"1000","1000","1000","1000","1000","1000",
-            "1000","1000","1000","1000","1000","1000",
-            "Something","Something","Something","Something","Something","Something",
-            "Something","Something","Something","Something","Something","Something",
-            "Something","Something","Something"};
-
-
-    int[] CoreIMAGES={R.drawable.russia4020,R.drawable.ukraine4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,R.drawable.ukraine4020,
-            R.drawable.ukraine4020,R.drawable.kirgistan4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.kirgistan4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.belarus4020,R.drawable.ukraine4020,R.drawable.belarus4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020};
-
-
-    String SupportNAMES[]={"Solo","Rodjer","Fng","Immersion","SoNNeikO","Zayac",
-            "Lil","NoFear","sayuw","KingR","velheor","Vanskor",
-            "Bignum","BLACKARXANGEL","Something","Something","Something","Something",
-            "Something","Something","Something","Something","Something","Something",
-            "Something","Something","Something"};
-
-    String SupportPriceMoney[]={"1000","1000","1000","1000","1000","1000",
-            "1000","1000","1000","1000","1000","1000",
-            "1000","1000","1000","1000","1000","1000",
-            "Something","Something","Something","Something","Something","Something",
-            "Something","Something","Something"};
-
-
-    int[] SupportIMAGES={R.drawable.russia4020,R.drawable.russia4020,R.drawable.belarus4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.kirgistan4020,R.drawable.ukraine4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.ukraine4020,R.drawable.kazahstan4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,R.drawable.russia4020,
-            R.drawable.russia4020,R.drawable.russia4020};
-
-
-
-
 
 
     ListView CorelistView;
@@ -104,11 +58,21 @@ public class PlayerChoose extends AppCompatActivity {
     String balancegold;
     SharedPreferences mSettings;
 
+    TextView Laining;
+    TextView Fighting;
+    TextView Farming;
+    TextView Supporting;
+
+
+
     boolean team[]=new boolean[5];
 
     boolean CorePick;
     boolean SupportPick;
     boolean sup_pick;
+
+     ArrayList<Players> Cores = new ArrayList<Players>();
+     ArrayList<Players> Supports = new ArrayList<Players>();
 
 
 
@@ -140,6 +104,14 @@ public class PlayerChoose extends AppCompatActivity {
         position4=findViewById(R.id.position4);
         position5=findViewById(R.id.position5);
 
+        Laining=findViewById(R.id.laning);
+        Fighting=findViewById(R.id.fighting);
+        Farming=findViewById(R.id.farming);
+        Supporting=findViewById(R.id.supporting);
+
+
+        Cores=PlayersCoreInit();
+        Supports=PlayersSupportInit();
 
         final Intent Tomainstate = new Intent(this, mainstate.class);
 
@@ -166,9 +138,21 @@ public class PlayerChoose extends AppCompatActivity {
                 CoreChoose.setVisibility(View.INVISIBLE);
                 SupportChoose.setVisibility(View.INVISIBLE);
                 PlayerInformation.setVisibility(View.VISIBLE);
-                PlayerNickName.setText(CoreNAMES[position]);
-                PlayerDiscription.setText(CorePriceMoney[position]);
-                FlagIma.setImageResource(CoreIMAGES[position]);
+                //PlayerNickName.setText(CoreNAMES[position]);
+                //PlayerDiscription.setText(CorePriceMoney[position]);
+                //FlagIma.setImageResource(CoreIMAGES[position]);
+
+                FlagIma.setImageResource(Cores.get(position).Flag);
+                PlayerNickName.setText(Cores.get(position).Name);
+                PlayerDiscription.setText(Cores.get(position).Description);
+
+
+                Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
+                Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
+                Farming.setText("Фарм "+ String.valueOf(Cores.get(position).farming));
+                Supporting.setText("Поддержка "+ String.valueOf(Cores.get(position).supporting));
+
+
 
             }
         });
@@ -182,9 +166,17 @@ public class PlayerChoose extends AppCompatActivity {
                 CoreChoose.setVisibility(View.INVISIBLE);
                 SupportChoose.setVisibility(View.INVISIBLE);
                 PlayerInformation.setVisibility(View.VISIBLE);
-                PlayerNickName.setText(SupportNAMES[position]);
-                PlayerDiscription.setText(SupportPriceMoney[position]);
-                FlagIma.setImageResource(SupportIMAGES[position]);
+
+
+                //PlayerNickName.setText(SupportNAMES[position]);
+                //PlayerDiscription.setText(SupportPriceMoney[position]);
+                //FlagIma.setImageResource(SupportIMAGES[position]);
+
+
+                FlagIma.setImageResource(Supports.get(position).Flag);
+                PlayerNickName.setText(Supports.get(position).Name);
+                PlayerDiscription.setText(Supports.get(position).Description);
+
 
             }
         });
@@ -561,7 +553,7 @@ public class PlayerChoose extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return CoreNAMES.length;
+            return Cores.size();
         }
 
         @Override
@@ -583,9 +575,20 @@ public class PlayerChoose extends AppCompatActivity {
             TextView textView = (TextView)convertView.findViewById(R.id.Titile);
             TextView Price = (TextView)convertView.findViewById(R.id.Price);
 
-            imageView.setImageResource(CoreIMAGES[position]);
-            textView.setText(CoreNAMES[position]);
-            Price.setText(CorePriceMoney[position]);
+            //imageView.setImageResource(CoreIMAGES[position]);
+            //textView.setText(CoreNAMES[position]);
+            //Price.setText(CorePriceMoney[position]);
+
+
+                imageView.setImageResource(Cores.get(position).Flag);
+                textView.setText(Cores.get(position).Name);
+                Price.setText(String.valueOf(Cores.get(position).Cost));
+
+
+
+
+
+
             return convertView;
         }
     }
@@ -601,7 +604,7 @@ public class PlayerChoose extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return SupportNAMES.length;
+            return Supports.size();
         }
 
         @Override
@@ -623,9 +626,9 @@ public class PlayerChoose extends AppCompatActivity {
             TextView textView = (TextView)convertView.findViewById(R.id.Titile);
             TextView Price = (TextView)convertView.findViewById(R.id.Price);
 
-            imageView.setImageResource(SupportIMAGES[position]);
-            textView.setText(SupportNAMES[position]);
-            Price.setText(SupportPriceMoney[position]);
+            imageView.setImageResource(Supports.get(position).Flag);
+            textView.setText(Supports.get(position).Name);
+            Price.setText(String.valueOf(Supports.get(position).Cost));
             return convertView;
         }
     }
