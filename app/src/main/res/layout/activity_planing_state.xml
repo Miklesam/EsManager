@@ -26,26 +26,31 @@
                 android:layout_marginTop="45sp"
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/top1"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/top2"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/top3"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/top4"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/top5"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
 
@@ -70,27 +75,32 @@
           <ImageView
               android:layout_width="33sp"
               android:layout_height="33sp"
+              android:id="@+id/bottom5"
               app:srcCompat="@drawable/abadon_mip_map_clear"/>
               />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/bottom4"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/bottom3"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/bottom2"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
             <ImageView
                 android:layout_marginRight="50sp"
                 android:layout_width="33sp"
                 android:layout_height="33sp"
+                android:id="@+id/bottom1"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
             />
 
@@ -114,6 +124,7 @@
                 android:layout_height="33sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="20sp"
+                android:id="@+id/mid1"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
 
             />
@@ -135,6 +146,7 @@
                 android:layout_height="33sp"
                 android:layout_marginTop="60sp"
                 android:layout_marginRight="60sp"
+                android:id="@+id/mid2"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
 
             />
@@ -153,6 +165,7 @@
                 android:layout_height="33sp"
                 android:layout_marginTop="100sp"
                 android:layout_marginRight="100sp"
+                android:id="@+id/mid3"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
 
             />
@@ -171,6 +184,7 @@
                 android:layout_height="33sp"
                 android:layout_marginTop="140sp"
                 android:layout_marginRight="140sp"
+                android:id="@+id/mid4"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
 
             />
@@ -188,6 +202,7 @@
                 android:layout_height="33sp"
                 android:layout_marginTop="180sp"
                 android:layout_marginRight="180sp"
+                android:id="@+id/mid5"
                 app:srcCompat="@drawable/abadon_mip_map_clear"/>
 
             />

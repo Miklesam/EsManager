@@ -234,173 +234,195 @@
 
 
 
-
+<ScrollView
+    android:layout_width="600sp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:scrollbars="none"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Abadon"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Alcemic"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Axe"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Beastmaster"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Brewmaster"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Bristleback"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Centaur"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Chaos"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Clockwerk"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Doom"
+            />
+
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/DK"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/EarthSpirit"
+            />
+
+
+    </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Abadon"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Alcemic"
-                />
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Axe"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Beastmaster"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Brewmaster"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Bristleback"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Centaur"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Chaos"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Clockwerk"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Doom"
-                />
-
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5sp">
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/DK"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/EarthSpirit"
-                />
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
                 android:id="@+id/EarthShaker"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/ElderTitan"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/Huskar"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/Io"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/Kunnka"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/LC"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
                 android:id="@+id/Lifestealer"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
                 android:layout_width="45sp"
                 android:layout_height="70sp"
-                android:id="@+id/Lycan"
-                />
+                android:layout_marginLeft="5sp" />
 
+            <ImageView
+                android:id="@+id/Lycan"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
+                android:id="@+id/Magnus"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
+                android:id="@+id/Mars"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
+                android:id="@+id/NS"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+            <ImageView
+                android:id="@+id/Omniknight"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
 
 
 
 
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -409,31 +431,12 @@
             android:layout_marginTop="5sp">
 
             <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Magnus"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/NS"
-                />
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
-                android:id="@+id/Omniknight"
-                />
-
-            <ImageView
-                android:layout_marginLeft="5sp"
-                android:layout_width="45sp"
-                android:layout_height="70sp"
                 android:id="@+id/Phoenix"
-                />
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:layout_marginLeft="5sp" />
+
+
 
             <ImageView
                 android:layout_marginLeft="5sp"
@@ -477,11 +480,663 @@
                 android:id="@+id/Tidehunter"
                 />
 
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Timbersaw"
+                />
+
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Tiny"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Treant"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Tusk"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Underlord"
+                />
+
 
 
 
 
         </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5sp">
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Undying"
+            />
+
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/WraithKing"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/AntiMag"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/ArcWarden"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Bloodweeker"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/BountyHunter"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Broodmother"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Clinkz"
+            />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Drow"
+            />
+        <ImageView
+        android:layout_marginLeft="5sp"
+        android:layout_width="45sp"
+        android:layout_height="70sp"
+        android:id="@+id/Ember"
+        />
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/FacelessVoid"
+            />
+
+        <ImageView
+            android:layout_marginLeft="5sp"
+            android:layout_width="45sp"
+            android:layout_height="70sp"
+            android:id="@+id/Gyrocopter"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Juggernaut"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/LoneDruid"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Luna"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Medusa"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Meepo"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Mirana"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/MonkeyKing"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Morpling"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Naga"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Nyx"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Pangolier"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/PhantomAssasin"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/PhantomLancer"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Razor"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Riki"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/ShadowFiend"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Slark"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Sniper"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Spectre"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/TemplarAssasin"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Terroblade"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/TrollWarlord"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Ursa"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/VengefulSpirit"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Venomancer"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Viper"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Wiver"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/AA"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Bane"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Batrider"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Chen"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/CM"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Darkseer"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/DarkWillow"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Dazzle"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/DeathProphet"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Disruptor"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Enchantress"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Enigma"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Grimstroke"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Invoker"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Jakiro"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/KeeperoftheLight"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lechrak"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lich"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lina"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Lion"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/NaturesPhrophet"
+                />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Necrophos"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/OgreMagi"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Oracle"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/OD"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Puck"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Pugna"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Qop"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Rubick"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/ShadowDemon"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/ShadowShaman"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Silencer"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Skymag"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5sp">
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/StormSpirit"
+                />
+
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Techies"
+                />
+
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Tinker"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Visage"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Warlock"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Windranger"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/WW"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/WichDoctor"
+                />
+            <ImageView
+                android:layout_marginLeft="5sp"
+                android:layout_width="45sp"
+                android:layout_height="70sp"
+                android:id="@+id/Zeus"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
 <TextView
     android:layout_width="match_parent"

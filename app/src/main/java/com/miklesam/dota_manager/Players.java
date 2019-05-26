@@ -12,11 +12,15 @@ public class Players {
     public int farming;
     public int supporting;
 
+    public int signature1;
+    public int signature2;
+    public int signature3;
 
 
 
 
-    Players(String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int supporting) {
+
+    Players(String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int supporting,int signature1, int signature2, int signature3) {
         this.Name=Name;
         this.Description=Description;
         this.Cost=Cost;
@@ -26,6 +30,10 @@ public class Players {
         this.fighting=fighting;
         this.farming=farming;
         this.supporting=supporting;
+
+        this.signature1=signature1;
+        this.signature2=signature2;
+        this.signature3=signature3;
 
     }
 

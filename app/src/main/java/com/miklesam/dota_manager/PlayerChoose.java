@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
@@ -42,6 +43,7 @@ public class PlayerChoose extends AppCompatActivity {
     TextView PlayerDiscription;
     ImageView FlagIma;
     TextView GoldbalancePole;
+    int last_position;
 
     TextView position1;
     TextView position2;
@@ -62,7 +64,12 @@ public class PlayerChoose extends AppCompatActivity {
     TextView Fighting;
     TextView Farming;
     TextView Supporting;
+    TextView PlayerCost;
 
+
+    ImageView Signature1;
+    ImageView Signature2;
+    ImageView Signature3;
 
 
     boolean team[]=new boolean[5];
@@ -73,7 +80,7 @@ public class PlayerChoose extends AppCompatActivity {
 
      ArrayList<Players> Cores = new ArrayList<Players>();
      ArrayList<Players> Supports = new ArrayList<Players>();
-
+     ArrayList <Heroes> DirectHero = new ArrayList<Heroes>();
 
 
     @Override
@@ -97,6 +104,7 @@ public class PlayerChoose extends AppCompatActivity {
         GoldbalancePole=findViewById(R.id.Goldbalance);
         balancegold=GoldBalance;
         GoldbalancePole.setText("Золото "+balancegold);
+        PlayerCost=findViewById(R.id.PlayerCost);
 
         position1=findViewById(R.id.position1);
         position2=findViewById(R.id.position2);
@@ -104,11 +112,16 @@ public class PlayerChoose extends AppCompatActivity {
         position4=findViewById(R.id.position4);
         position5=findViewById(R.id.position5);
 
+        Signature1=findViewById(R.id.signature1);
+        Signature2=findViewById(R.id.signature2);
+        Signature3=findViewById(R.id.signature3);
+
         Laining=findViewById(R.id.laning);
         Fighting=findViewById(R.id.fighting);
         Farming=findViewById(R.id.farming);
         Supporting=findViewById(R.id.supporting);
 
+        DirectHero.addAll(HeroInit.HeroInit());
 
         Cores=PlayersCoreInit();
         Supports=PlayersSupportInit();
@@ -120,7 +133,7 @@ public class PlayerChoose extends AppCompatActivity {
 
         SupportlistView.setVisibility(View.INVISIBLE);
 
-        CustomAdapter customAdapter=new CustomAdapter();
+        final CustomAdapter customAdapter=new CustomAdapter();
         SupportAdapter mysupAdapter=new SupportAdapter();
         CorelistView.setAdapter(customAdapter);
         SupportlistView.setAdapter(mysupAdapter);
@@ -145,13 +158,17 @@ public class PlayerChoose extends AppCompatActivity {
                 FlagIma.setImageResource(Cores.get(position).Flag);
                 PlayerNickName.setText(Cores.get(position).Name);
                 PlayerDiscription.setText(Cores.get(position).Description);
+                PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
 
 
                 Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
                 Farming.setText("Фарм "+ String.valueOf(Cores.get(position).farming));
                 Supporting.setText("Поддержка "+ String.valueOf(Cores.get(position).supporting));
-
+                Signature1.setImageResource(AllHeroes.get(Cores.get(position).signature1).picked);
+                Signature2.setImageResource(AllHeroes.get(Cores.get(position).signature2).picked);
+                Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
+                last_position=position;
 
 
             }
@@ -176,6 +193,15 @@ public class PlayerChoose extends AppCompatActivity {
                 FlagIma.setImageResource(Supports.get(position).Flag);
                 PlayerNickName.setText(Supports.get(position).Name);
                 PlayerDiscription.setText(Supports.get(position).Description);
+
+                PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
+
+
+                Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
+                Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
+                Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
+                Supporting.setText("Поддержка "+ String.valueOf(Supports.get(position).supporting));
+                last_position=position;
 
 
             }
@@ -304,8 +330,9 @@ public class PlayerChoose extends AppCompatActivity {
 
                 if (team[0]==false)
                 {
+
                     position1.setText(PlayerNickName.getText());
-                    balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerDiscription.getText()));
+                    balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                     GoldbalancePole.setText("Золото "+balancegold);
                     team[0]=true;
                     CorelistView.setVisibility(View.VISIBLE);
@@ -313,7 +340,8 @@ public class PlayerChoose extends AppCompatActivity {
                     SupportChoose.setVisibility(View.VISIBLE);
                     PlayerInformation.setVisibility(View.INVISIBLE);
                     Back.setVisibility(View.INVISIBLE);
-
+                    Cores.remove(last_position);
+                    CorelistView.setAdapter(customAdapter);
 
                     Pos1.setVisibility(View.INVISIBLE);
                     Pos2.setVisibility(View.INVISIBLE);
@@ -352,7 +380,7 @@ public class PlayerChoose extends AppCompatActivity {
                     {
                         position4.setText(PlayerNickName.getText());
                         team[3]=true;
-                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerDiscription.getText()));
+                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                         GoldbalancePole.setText("Золото "+balancegold);
                         CorelistView.setVisibility(View.VISIBLE);
                         CoreChoose.setVisibility(View.VISIBLE);
@@ -395,7 +423,7 @@ public class PlayerChoose extends AppCompatActivity {
                         SupportChoose.setVisibility(View.VISIBLE);
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Back.setVisibility(View.INVISIBLE);
-                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerDiscription.getText()));
+                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                         GoldbalancePole.setText("Золото "+balancegold);
 
                         Pos1.setVisibility(View.INVISIBLE);
@@ -447,7 +475,7 @@ public class PlayerChoose extends AppCompatActivity {
                         Pos2.setText("Позиция 2");
                         Pos3.setText("Позиция 3");
                         sup_pick=false;
-                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerDiscription.getText()));
+                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                         GoldbalancePole.setText("Золото "+balancegold);
                         Back.setVisibility(View.INVISIBLE);
                         Pos1.setVisibility(View.INVISIBLE);
@@ -483,7 +511,7 @@ public class PlayerChoose extends AppCompatActivity {
                         SupportChoose.setVisibility(View.VISIBLE);
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Back.setVisibility(View.INVISIBLE);
-                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerDiscription.getText()));
+                        balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                         GoldbalancePole.setText("Золото "+balancegold);
 
                         Pos1.setVisibility(View.INVISIBLE);

@@ -15,9 +15,24 @@ import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 
 public class PlaningState extends AppCompatActivity {
 
-    int [] Hero =  new int[5];
-    String [] Gamer =  new String[5];
-    ImageView[] GameHero= new ImageView[5];
+    int[] Hero = new int[5];
+    String[] Gamer = new String[5];
+    ImageView[] GameHero = new ImageView[5];
+
+    ImageView[] Top = new ImageView[5];
+    ImageView[] Mid = new ImageView[5];
+    ImageView[] Bottom = new ImageView[5];
+
+    boolean toplline[]= new boolean[5];
+    boolean midlline[]= new boolean[5];
+    boolean bottomlline[]= new boolean[5];
+
+    int bothero[]=new int[5];
+    int midhero[]=new int[5];
+    int tophero[]=new int[5];
+
+    Spinner LineSpin[]=new Spinner[5];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,63 +40,88 @@ public class PlaningState extends AppCompatActivity {
 
         setContentView(R.layout.activity_planing_state);
 
-        GameHero[0]=findViewById(R.id.GameHero1);
-        GameHero[1]=findViewById(R.id.GameHero2);
-        GameHero[2]=findViewById(R.id.GameHero3);
-        GameHero[3]=findViewById(R.id.GameHero4);
-        GameHero[4]=findViewById(R.id.GameHero5);
+        GameHero[0] = findViewById(R.id.GameHero1);
+        GameHero[1] = findViewById(R.id.GameHero2);
+        GameHero[2] = findViewById(R.id.GameHero3);
+        GameHero[3] = findViewById(R.id.GameHero4);
+        GameHero[4] = findViewById(R.id.GameHero5);
+
+        Bottom[0]=findViewById(R.id.bottom1);
+        Bottom[1]=findViewById(R.id.bottom2);
+        Bottom[2]=findViewById(R.id.bottom3);
+        Bottom[3]=findViewById(R.id.bottom4);
+        Bottom[4]=findViewById(R.id.bottom5);
+
+        Mid[0]=findViewById(R.id.mid1);
+        Mid[1]=findViewById(R.id.mid2);
+        Mid[2]=findViewById(R.id.mid3);
+        Mid[3]=findViewById(R.id.mid4);
+        Mid[4]=findViewById(R.id.mid5);
+
+        Top[0]=findViewById(R.id.top1);
+        Top[1]=findViewById(R.id.top2);
+        Top[2]=findViewById(R.id.top3);
+        Top[3]=findViewById(R.id.top4);
+        Top[4]=findViewById(R.id.top5);
 
 
 
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                Hero[0]= 0;
-                Hero[1]= 0;
-                Hero[2]= 0;
-                Hero[3]= 0;
-                Hero[4]= 0;
-                Gamer[0]=null;
-                Gamer[1]=null;
-                Gamer[2]=null;
-                Gamer[3]=null;
-                Gamer[4]=null;
+            if (extras == null) {
+                Hero[0] = 0;
+                Hero[1] = 0;
+                Hero[2] = 0;
+                Hero[3] = 0;
+                Hero[4] = 0;
+                Gamer[0] = null;
+                Gamer[1] = null;
+                Gamer[2] = null;
+                Gamer[3] = null;
+                Gamer[4] = null;
 
 
             } else {
-                Hero[0]= extras.getInt("Hero1");
-                Hero[1]= extras.getInt("Hero2");
-                Hero[2]= extras.getInt("Hero3");
-                Hero[3]= extras.getInt("Hero4");
-                Hero[4]= extras.getInt("Hero5");
+                Hero[0] = extras.getInt("Hero1");
+                Hero[1] = extras.getInt("Hero2");
+                Hero[2] = extras.getInt("Hero3");
+                Hero[3] = extras.getInt("Hero4");
+                Hero[4] = extras.getInt("Hero5");
 
-                Gamer[0]=extras.getString("Position1");
-                Gamer[1]=extras.getString("Position2");
-                Gamer[2]=extras.getString("Position3");
-                Gamer[3]=extras.getString("Position4");
-                Gamer[4]=extras.getString("Position5");
+                Gamer[0] = extras.getString("Position1");
+                Gamer[1] = extras.getString("Position2");
+                Gamer[2] = extras.getString("Position3");
+                Gamer[3] = extras.getString("Position4");
+                Gamer[4] = extras.getString("Position5");
 
             }
         } else {
-            Hero[0]= (int) savedInstanceState.getSerializable("Hero1");
-            Hero[1]= (int) savedInstanceState.getSerializable("Hero2");
-            Hero[2]= (int) savedInstanceState.getSerializable("Hero3");
-            Hero[3]= (int) savedInstanceState.getSerializable("Hero4");
-            Hero[4]= (int) savedInstanceState.getSerializable("Hero5");
+            Hero[0] = (int) savedInstanceState.getSerializable("Hero1");
+            Hero[1] = (int) savedInstanceState.getSerializable("Hero2");
+            Hero[2] = (int) savedInstanceState.getSerializable("Hero3");
+            Hero[3] = (int) savedInstanceState.getSerializable("Hero4");
+            Hero[4] = (int) savedInstanceState.getSerializable("Hero5");
 
-            Gamer[0]= (String) savedInstanceState.getSerializable("Position1");
-            Gamer[1]= (String) savedInstanceState.getSerializable("Position2");
-            Gamer[2]= (String) savedInstanceState.getSerializable("Position3");
-            Gamer[3]= (String) savedInstanceState.getSerializable("Position4");
-            Gamer[4]= (String) savedInstanceState.getSerializable("Position5");
+            Gamer[0] = (String) savedInstanceState.getSerializable("Position1");
+            Gamer[1] = (String) savedInstanceState.getSerializable("Position2");
+            Gamer[2] = (String) savedInstanceState.getSerializable("Position3");
+            Gamer[3] = (String) savedInstanceState.getSerializable("Position4");
+            Gamer[4] = (String) savedInstanceState.getSerializable("Position5");
 
         }
 
-for(int i=0;i<5;i++)
-{
-    GameHero[i].setImageResource(AllHeroes.get(Hero[i]).picked);
-}
+        for (int i = 0; i < 5; i++) {
+            GameHero[i].setImageResource(AllHeroes.get(Hero[i]).picked);
+        }
+
+
+
+        for (int i = 0; i < 5; i++) {
+            Top[i].setVisibility(View.INVISIBLE);
+            Mid[i].setVisibility(View.INVISIBLE);
+            Bottom[i].setVisibility(View.INVISIBLE);
+        }
 
 
 
@@ -89,23 +129,28 @@ for(int i=0;i<5;i++)
 
 
 
+        final Spinner spinner1 = (Spinner) findViewById(R.id.Spiner1);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.Spiner2);
+        final Spinner spinner3 = (Spinner) findViewById(R.id.Spiner3);
+        final Spinner spinner4 = (Spinner) findViewById(R.id.Spiner4);
+        final Spinner spinner5 = (Spinner) findViewById(R.id.Spiner5);
+
+        final Spinner Lanespinner1 = (Spinner) findViewById(R.id.LineSpiner1);
+        final Spinner Lanespinner2 = (Spinner) findViewById(R.id.LineSpiner2);
+        final Spinner Lanespinner3 = (Spinner) findViewById(R.id.LineSpiner3);
+        final Spinner Lanespinner4 = (Spinner) findViewById(R.id.LineSpiner4);
+        final Spinner Lanespinner5 = (Spinner) findViewById(R.id.LineSpiner5);
+
+        LineSpin[0]=Lanespinner1;
+        LineSpin[1]=Lanespinner2;
+        LineSpin[2]=Lanespinner3;
+        LineSpin[3]=Lanespinner4;
+        LineSpin[4]=Lanespinner5;
 
 
-
-        final Spinner spinner1 = (Spinner)findViewById(R.id.Spiner1);
-        final Spinner spinner2 = (Spinner)findViewById(R.id.Spiner2);
-        final Spinner spinner3 = (Spinner)findViewById(R.id.Spiner3);
-        final Spinner spinner4 = (Spinner)findViewById(R.id.Spiner4);
-        final Spinner spinner5 = (Spinner)findViewById(R.id.Spiner5);
-
-        final Spinner Lanespinner1 = (Spinner)findViewById(R.id.LineSpiner1);
-        final Spinner Lanespinner2 = (Spinner)findViewById(R.id.LineSpiner2);
-        final Spinner Lanespinner3 = (Spinner)findViewById(R.id.LineSpiner3);
-        final Spinner Lanespinner4 = (Spinner)findViewById(R.id.LineSpiner4);
-        final Spinner Lanespinner5 = (Spinner)findViewById(R.id.LineSpiner5);
 
         String[] data = {String.valueOf(Hero[0]), String.valueOf(Hero[1]), String.valueOf(Hero[2]), String.valueOf(Hero[3]), String.valueOf(Hero[4])};
-        String[] Lane = {"top","mid","bottom"};
+        String[] Lane = {"top", "mid", "bottom"};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Gamer);
@@ -135,21 +180,16 @@ for(int i=0;i<5;i++)
         Lanespinner1.setSelection(0);
 
         Lanespinner2.setAdapter(Laneadapter);
-        Lanespinner2.setSelection(0);
+        Lanespinner2.setSelection(1);
 
         Lanespinner3.setAdapter(Laneadapter);
-        Lanespinner3.setSelection(0);
+        Lanespinner3.setSelection(2);
 
         Lanespinner4.setAdapter(Laneadapter);
-        Lanespinner4.setSelection(0);
+        Lanespinner4.setSelection(2);
 
         Lanespinner5.setAdapter(Laneadapter);
-        Lanespinner5.setSelection(0);
-
-
-
-
-
+        Lanespinner5.setSelection(2);
 
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -163,10 +203,221 @@ for(int i=0;i<5;i++)
             }
 
 
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
 
-                @Override
-                public void onNothingSelected(AdapterView<?> arg0) {
+
+for(int k=0;k<5;k++)
+{
+    final int finalK = k;
+    LineSpin[k].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view,
+                                   int position, long id) {
+
+
+            // показываем позиция нажатого элемента
+            Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
+            if (position==0)
+            {
+                //Top[0].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                // Top[0].setVisibility(View.VISIBLE);
+                for(int i=0;i<5;i++)
+                {
+                    if(midhero[i]==Hero[finalK])
+                    {
+                        Mid[i].setVisibility(View.INVISIBLE);
+                        midlline[i]=false;
+                    }
+                    else if(bothero[i]==Hero[finalK])
+                    {
+                        Bottom[i].setVisibility(View.INVISIBLE);
+                        bottomlline[i]=false;
+                    }
+
                 }
-            });
+
+                if(toplline[0]==false)
+                {
+                    Top[0].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Top[0].setVisibility(View.VISIBLE);
+                    toplline[0]=true;
+                    tophero[0]=Hero[finalK];
+                }
+                else if(toplline[1]==false)
+                {
+                    Top[1].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Top[1].setVisibility(View.VISIBLE);
+                    toplline[1]=true;
+                    tophero[1]=Hero[finalK];
+                }
+                else if(toplline[2]==false)
+                {
+                    Top[2].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Top[2].setVisibility(View.VISIBLE);
+                    toplline[2]=true;
+                    tophero[2]=Hero[finalK];
+                }
+                else if(toplline[3]==false)
+                {
+                    Top[3].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Top[3].setVisibility(View.VISIBLE);
+                    toplline[3]=true;
+                    tophero[3]=Hero[finalK];
+                }
+
+                else if(toplline[4]==false)
+                {
+                    Top[4].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Top[4].setVisibility(View.VISIBLE);
+                    toplline[4]=true;
+                    tophero[4]=Hero[finalK];
+                }
+
+
+
+
+
+
+
+
+            }
+            else if (position==1)
+            {
+                for(int i=0;i<5;i++)
+                {
+                    if(bothero[i]==Hero[finalK])
+                    {
+                        Bottom[i].setVisibility(View.INVISIBLE);
+                        bottomlline[i]=false;
+                    }
+                    else if(tophero[i]==Hero[finalK])
+                    {
+                        Top[i].setVisibility(View.INVISIBLE);
+                        toplline[i]=false;
+                    }
+
+                }
+
+                if(midlline[0]==false)
+                {
+                    Mid[0].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Mid[0].setVisibility(View.VISIBLE);
+                    midlline[0]=true;
+                    midhero[0]=Hero[finalK];
+                }
+                else if(midlline[1]==false)
+                {
+                    Mid[1].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Mid[1].setVisibility(View.VISIBLE);
+                    midlline[1]=true;
+                    midhero[1]=Hero[finalK];
+                }
+                else if(midlline[2]==false)
+                {
+                    Mid[2].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Mid[2].setVisibility(View.VISIBLE);
+                    midlline[2]=true;
+                    midhero[2]=Hero[finalK];
+                }
+                else if(midlline[3]==false)
+                {
+                    Mid[3].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Mid[3].setVisibility(View.VISIBLE);
+                    midlline[3]=true;
+                    midhero[3]=Hero[finalK];
+                }
+
+                else if(midlline[4]==false)
+                {
+                    Mid[4].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Mid[4].setVisibility(View.VISIBLE);
+                    midlline[4]=true;
+                    midhero[4]=Hero[finalK];
+                }
+
+
+            }
+            else if (position==2)
+            {
+
+                for(int i=0;i<5;i++)
+                {
+                    if(midhero[i]==Hero[finalK])
+                    {
+                        Mid[i].setVisibility(View.INVISIBLE);
+                        midlline[i]=false;
+                    }
+
+                    else if(tophero[i]==Hero[finalK])
+                    {
+                        Top[i].setVisibility(View.INVISIBLE);
+                        toplline[i]=false;
+                    }
+
+                }
+
+                if(bottomlline[0]==false)
+                {
+                    Bottom[0].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Bottom[0].setVisibility(View.VISIBLE);
+                    bottomlline[0]=true;
+                    bothero[0]=Hero[finalK];
+                }
+                else if(bottomlline[1]==false)
+                {
+                    Bottom[1].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Bottom[1].setVisibility(View.VISIBLE);
+                    bottomlline[1]=true;
+                    bothero[1]=Hero[finalK];
+                }
+                else if(bottomlline[2]==false)
+                {
+                    Bottom[2].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Bottom[2].setVisibility(View.VISIBLE);
+                    bottomlline[2]=true;
+                    bothero[2]=Hero[finalK];
+                }
+                else if(bottomlline[3]==false)
+                {
+                    Bottom[3].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Bottom[3].setVisibility(View.VISIBLE);
+                    bottomlline[3]=true;
+                    bothero[3]=Hero[finalK];
+                }
+
+                else if(bottomlline[4]==false)
+                {
+                    Bottom[4].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
+                    Bottom[4].setVisibility(View.VISIBLE);
+                    bottomlline[4]=true;
+                    bothero[4]=Hero[finalK];
+                }
+            }
+
+
+
         }
+
+
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 }
