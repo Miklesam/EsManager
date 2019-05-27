@@ -2,6 +2,7 @@ package com.miklesam.dota_manager;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,14 +22,14 @@ public class Pick_Stage extends AppCompatActivity {
 
     TextView Pick_Stage;
     public static boolean had_choosen;
-    boolean abadon_ban;
-    boolean alcemic_ban;
+
     final ImageView Pick_stage[]= new ImageView[22];
     ImageView Heros_icon[] = new ImageView[117];
     int pick_state;
     Button Plan_state;
     int[] what_hero = new int[5];
     int k=0;
+    TextView Team2;
 
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
@@ -44,7 +45,7 @@ public class Pick_Stage extends AppCompatActivity {
         final Intent PlaningState = new Intent(this, PlaningState.class);
         pick_state=0;
 
-
+        Team2=findViewById(R.id.Team2);
 
 
 
@@ -429,7 +430,21 @@ public class Pick_Stage extends AppCompatActivity {
         });
 
 
-        Pick_Stage_stam();
+        //Pick_Stage_stam();
+        new CountDownTimer(20000, 1000) {
+
+            //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
+            public void onTick(long millisUntilFinished) {
+                Team2.setText("Осталось: "
+                        + millisUntilFinished / 1000);
+            }
+            //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
+            public void onFinish() {
+                Team2.setText("Бабах!");
+            }
+        }
+                .start();
+
 
 
 
