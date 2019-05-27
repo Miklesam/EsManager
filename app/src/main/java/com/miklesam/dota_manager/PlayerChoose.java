@@ -103,7 +103,7 @@ public class PlayerChoose extends AppCompatActivity {
         Back=findViewById(R.id.Back);
         GoldbalancePole=findViewById(R.id.Goldbalance);
         balancegold=GoldBalance;
-        GoldbalancePole.setText("Золото "+balancegold);
+        GoldbalancePole.setText(balancegold);
         PlayerCost=findViewById(R.id.PlayerCost);
 
         position1=findViewById(R.id.position1);
@@ -134,7 +134,7 @@ public class PlayerChoose extends AppCompatActivity {
         SupportlistView.setVisibility(View.INVISIBLE);
 
         final CustomAdapter customAdapter=new CustomAdapter();
-        SupportAdapter mysupAdapter=new SupportAdapter();
+        final SupportAdapter mysupAdapter=new SupportAdapter();
         CorelistView.setAdapter(customAdapter);
         SupportlistView.setAdapter(mysupAdapter);
 
@@ -333,7 +333,7 @@ public class PlayerChoose extends AppCompatActivity {
 
                     position1.setText(PlayerNickName.getText());
                     balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
-                    GoldbalancePole.setText("Золото "+balancegold);
+                    GoldbalancePole.setText(balancegold);
                     team[0]=true;
                     CorelistView.setVisibility(View.VISIBLE);
                     CoreChoose.setVisibility(View.VISIBLE);
@@ -381,13 +381,15 @@ public class PlayerChoose extends AppCompatActivity {
                         position4.setText(PlayerNickName.getText());
                         team[3]=true;
                         balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
-                        GoldbalancePole.setText("Золото "+balancegold);
+                        GoldbalancePole.setText(balancegold);
                         CorelistView.setVisibility(View.VISIBLE);
                         CoreChoose.setVisibility(View.VISIBLE);
                         SupportChoose.setVisibility(View.VISIBLE);
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Pos2.setText("Позиция 2");
                         Pos3.setText("Позиция 3");
+                        Supports.remove(last_position);
+                        SupportlistView.setAdapter(mysupAdapter);
                         sup_pick=false;
                         Back.setVisibility(View.INVISIBLE);
                         Pos1.setVisibility(View.INVISIBLE);
@@ -424,7 +426,10 @@ public class PlayerChoose extends AppCompatActivity {
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Back.setVisibility(View.INVISIBLE);
                         balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
-                        GoldbalancePole.setText("Золото "+balancegold);
+                        GoldbalancePole.setText(balancegold);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(customAdapter);
+
 
                         Pos1.setVisibility(View.INVISIBLE);
                         Pos2.setVisibility(View.INVISIBLE);
@@ -474,9 +479,11 @@ public class PlayerChoose extends AppCompatActivity {
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Pos2.setText("Позиция 2");
                         Pos3.setText("Позиция 3");
+                        Supports.remove(last_position);
+                        SupportlistView.setAdapter(mysupAdapter);
                         sup_pick=false;
                         balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
-                        GoldbalancePole.setText("Золото "+balancegold);
+                        GoldbalancePole.setText(balancegold);
                         Back.setVisibility(View.INVISIBLE);
                         Pos1.setVisibility(View.INVISIBLE);
                         Pos2.setVisibility(View.INVISIBLE);
@@ -512,7 +519,10 @@ public class PlayerChoose extends AppCompatActivity {
                         PlayerInformation.setVisibility(View.INVISIBLE);
                         Back.setVisibility(View.INVISIBLE);
                         balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
-                        GoldbalancePole.setText("Золото "+balancegold);
+                        GoldbalancePole.setText(balancegold);
+
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(customAdapter);
 
                         Pos1.setVisibility(View.INVISIBLE);
                         Pos2.setVisibility(View.INVISIBLE);

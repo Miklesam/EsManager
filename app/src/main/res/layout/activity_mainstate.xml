@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".mainstate">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/team_name"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,16 +23,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content"
                 android:text="Игра"
                 android:id="@+id/Play_game"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content"
-                android:text="Тренировка"/>
+                android:text="Расписание"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content"
                 android:text="Команда"/>
 

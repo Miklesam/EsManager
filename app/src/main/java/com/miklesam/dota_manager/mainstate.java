@@ -14,6 +14,7 @@ public class mainstate extends AppCompatActivity {
     TextView TeamPosition[]= new TextView[5];
     Button Play_game;
     TextView Goldbalance;
+    TextView TeamName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class mainstate extends AppCompatActivity {
         TeamPosition[3]=findViewById(R.id.teamposition4);
         TeamPosition[4]=findViewById(R.id.teamposition5);
         Play_game=findViewById(R.id.Play_game);
+        TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
         String Gold="1";
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
@@ -70,6 +72,7 @@ public class mainstate extends AppCompatActivity {
         TeamPosition[3].setText(Pos4);
         TeamPosition[4].setText(Pos5);
         Goldbalance.setText(Gold);
+        TeamName.setText("Команда");
 
 
 

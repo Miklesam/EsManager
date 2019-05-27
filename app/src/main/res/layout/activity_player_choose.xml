@@ -179,12 +179,14 @@
                 android:layout_width="100sp"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
+                android:textSize="12sp"
                 android:text="Позиция 1" />
             <Button
                 android:id="@+id/Pos2"
                 android:layout_width="100sp"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
+                android:textSize="12sp"
                 android:text="Позиция 2" />
 
             <Button
@@ -192,6 +194,7 @@
                 android:layout_width="100sp"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
+                android:textSize="12sp"
                 android:text="Позиция 3" />
 
             <Button
@@ -277,13 +280,30 @@
             android:orientation="vertical"
             android:id="@+id/Your_Team"
             android:layout_alignParentRight="true">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="20sp"
-                android:id="@+id/Goldbalance"
-                android:text="Золото"/>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="right">
+               <ImageView
+                   android:layout_marginLeft="10sp"
+                   android:layout_width="25sp"
+                   android:layout_height="30sp"
+                   app:srcCompat="@drawable/rubl"
+                   />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="20sp"
+                   android:id="@+id/Goldbalance"
+                   />
+           </LinearLayout>
+
+
+
+
+
 
             <TextView
                 android:layout_width="wrap_content"

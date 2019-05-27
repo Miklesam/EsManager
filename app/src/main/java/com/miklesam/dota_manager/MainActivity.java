@@ -43,8 +43,13 @@ public class MainActivity extends AppCompatActivity {
         Button NewGame = findViewById(R.id.new_game);
         Button Continue = findViewById(R.id.Continue);
 
+        Button Store = findViewById(R.id.Store);
+        Button Teams = findViewById(R.id.Teams);
+
                 Continue.setTypeface(type);
                 NewGame.setTypeface(type);
+                Store.setTypeface(type);
+                Teams.setTypeface(type);
 
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);
