@@ -31,6 +31,7 @@ public class mainstate extends AppCompatActivity {
         TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
         String Gold="1";
+        String YourTeam="Your Team";
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
 
         final String Pos1;
@@ -47,6 +48,7 @@ public class mainstate extends AppCompatActivity {
                 Pos4= null;
                 Pos5= null;
                 Gold=null;
+                YourTeam=null;
 
             } else {
                 Pos1= extras.getString("Position1");
@@ -55,6 +57,7 @@ public class mainstate extends AppCompatActivity {
                 Pos4= extras.getString("Position4");
                 Pos5= extras.getString("Position5");
                 Gold=extras.getString("Gold");
+                YourTeam=extras.getString("TeamName");
             }
         } else {
             Pos1= (String) savedInstanceState.getSerializable("Position1");
@@ -63,6 +66,7 @@ public class mainstate extends AppCompatActivity {
             Pos4= (String) savedInstanceState.getSerializable("Position4");
             Pos5= (String) savedInstanceState.getSerializable("Position5");
             Gold= (String) savedInstanceState.getSerializable("Gold");
+            YourTeam= (String) savedInstanceState.getSerializable("TeamName");
         }
 
 
@@ -72,7 +76,7 @@ public class mainstate extends AppCompatActivity {
         TeamPosition[3].setText(Pos4);
         TeamPosition[4].setText(Pos5);
         Goldbalance.setText(Gold);
-        TeamName.setText("Команда");
+        TeamName.setText("Команда "+YourTeam);
 
 
 

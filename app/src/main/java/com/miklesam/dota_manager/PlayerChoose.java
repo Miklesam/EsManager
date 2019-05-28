@@ -70,6 +70,7 @@ public class PlayerChoose extends AppCompatActivity {
     ImageView Signature1;
     ImageView Signature2;
     ImageView Signature3;
+    TextView TeamNameids;
 
 
     boolean team[]=new boolean[5];
@@ -105,6 +106,7 @@ public class PlayerChoose extends AppCompatActivity {
         balancegold=GoldBalance;
         GoldbalancePole.setText(balancegold);
         PlayerCost=findViewById(R.id.PlayerCost);
+        TeamNameids=findViewById(R.id.Teamnameid);
 
         position1=findViewById(R.id.position1);
         position2=findViewById(R.id.position2);
@@ -133,6 +135,19 @@ public class PlayerChoose extends AppCompatActivity {
 
         SupportlistView.setVisibility(View.INVISIBLE);
 
+        final String TeamName;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                TeamName= null;
+            } else {
+                TeamName= extras.getString("TeamName");
+            }
+        } else {
+            TeamName= (String) savedInstanceState.getSerializable("TeamName");
+        }
+
+        TeamNameids.setText(TeamName);
         final CustomAdapter customAdapter=new CustomAdapter();
         final SupportAdapter mysupAdapter=new SupportAdapter();
         CorelistView.setAdapter(customAdapter);
@@ -231,6 +246,12 @@ public class PlayerChoose extends AppCompatActivity {
                 Tomainstate.putExtra("Position3",position3.getText());
                 Tomainstate.putExtra("Position4",position4.getText());
                 Tomainstate.putExtra("Position5",position5.getText());
+                Tomainstate.putExtra("Gold",balancegold);
+                Tomainstate.putExtra("TeamName",TeamName);
+                //Gold=extras.getString("Gold");
+                //YourTeam=extras.getString("TeamName");
+
+
            startActivity(Tomainstate);
 
             }

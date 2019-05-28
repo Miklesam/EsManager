@@ -26,13 +26,13 @@ public class YourTeam extends AppCompatActivity {
 
         setContentView(R.layout.activity_your_team);
         final Intent ChoosePlayer = new Intent(this, PlayerChoose.class);
-        TextView TeamTag=findViewById(R.id.TeamTag);
+        final TextView TeamTag=findViewById(R.id.TeamTag);
         TextView Gold=findViewById(R.id.gold);
         Button toPlayerChoose = findViewById(R.id.toPlayerChoose);
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME , Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance , Context.MODE_PRIVATE);
 
-        String newString;
+        final String newString;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -60,6 +60,7 @@ public class YourTeam extends AppCompatActivity {
         toPlayerChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ChoosePlayer.putExtra("TeamName",newString);
                 startActivity(ChoosePlayer);
 
             }

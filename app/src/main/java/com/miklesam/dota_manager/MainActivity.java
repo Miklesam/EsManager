@@ -21,6 +21,7 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class MainActivity extends AppCompatActivity {
     String Gold_to_Continie;
+    String Your_team_name;
 
     SharedPreferences mSettings;
     @Override
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);
+        final Intent ToTeamsShow = new Intent(this, TeamsShow.class);
 
         final String Player[]= new String[5];
 
@@ -66,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(mSettings.contains(StaticPosition1)) {
-            TextName.setText(mSettings.getString(StaticPosition1, "Pos1"));
             Player[0]=mSettings.getString(StaticPosition1, "Pos1");
         }
 
@@ -95,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
             TestGold.setText(Gold_to_Continie);
         }
 
+        if(mSettings.contains(APP_PREFERENCES_NAME)) {
+
+            Your_team_name =mSettings.getString(APP_PREFERENCES_NAME, "Your Team");
+            TextName.setText(Your_team_name);
+        }
+
 
         Continue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,12 +113,24 @@ public class MainActivity extends AppCompatActivity {
                 ToMAinState.putExtra("Position4",Player[3]);
                 ToMAinState.putExtra("Position5",Player[4]);
                 ToMAinState.putExtra("Gold",Gold_to_Continie);
-
+                ToMAinState.putExtra("TeamName",Your_team_name);
 
 
 
 
                 startActivity(ToMAinState);
+
+            }
+        });
+
+
+
+
+        Teams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToTeamsShow);
 
             }
         });
