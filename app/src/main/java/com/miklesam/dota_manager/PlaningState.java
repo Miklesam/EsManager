@@ -1,11 +1,13 @@
 package com.miklesam.dota_manager;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 public class PlaningState extends AppCompatActivity {
 
     int[] Hero = new int[5];
+    int[] CompHero = new int[5];
     String[] Gamer = new String[5];
     ImageView[] GameHero = new ImageView[5];
 
@@ -30,6 +33,8 @@ public class PlaningState extends AppCompatActivity {
     int bothero[]=new int[5];
     int midhero[]=new int[5];
     int tophero[]=new int[5];
+    Button ToFightStage;
+    int lane_id[]= new int[5];
 
     Spinner LineSpin[]=new Spinner[5];
 
@@ -45,6 +50,7 @@ public class PlaningState extends AppCompatActivity {
         GameHero[2] = findViewById(R.id.GameHero3);
         GameHero[3] = findViewById(R.id.GameHero4);
         GameHero[4] = findViewById(R.id.GameHero5);
+        ToFightStage=findViewById(R.id.FightStage);
 
         Bottom[0]=findViewById(R.id.bottom1);
         Bottom[1]=findViewById(R.id.bottom2);
@@ -64,7 +70,7 @@ public class PlaningState extends AppCompatActivity {
         Top[3]=findViewById(R.id.top4);
         Top[4]=findViewById(R.id.top5);
 
-
+        final Intent ToFightStageActivity = new Intent(this, FightState.class);
 
 
         if (savedInstanceState == null) {
@@ -80,6 +86,11 @@ public class PlaningState extends AppCompatActivity {
                 Gamer[2] = null;
                 Gamer[3] = null;
                 Gamer[4] = null;
+                CompHero[0]=0;
+                CompHero[1]=0;
+                CompHero[2]=0;
+                CompHero[3]=0;
+                CompHero[4]=0;
 
 
             } else {
@@ -88,6 +99,13 @@ public class PlaningState extends AppCompatActivity {
                 Hero[2] = extras.getInt("Hero3");
                 Hero[3] = extras.getInt("Hero4");
                 Hero[4] = extras.getInt("Hero5");
+
+
+                CompHero[0] = extras.getInt("CompHero1");
+                CompHero[1] = extras.getInt("CompHero2");
+                CompHero[2] = extras.getInt("CompHero3");
+                CompHero[3] = extras.getInt("CompHero4");
+                CompHero[4] = extras.getInt("CompHero5");
 
                 Gamer[0] = extras.getString("Position1");
                 Gamer[1] = extras.getString("Position2");
@@ -102,6 +120,12 @@ public class PlaningState extends AppCompatActivity {
             Hero[2] = (int) savedInstanceState.getSerializable("Hero3");
             Hero[3] = (int) savedInstanceState.getSerializable("Hero4");
             Hero[4] = (int) savedInstanceState.getSerializable("Hero5");
+
+            CompHero[0] = (int) savedInstanceState.getSerializable("CompHero1");
+            CompHero[1] = (int) savedInstanceState.getSerializable("CompHero2");
+            CompHero[2] = (int) savedInstanceState.getSerializable("CompHero3");
+            CompHero[3] = (int) savedInstanceState.getSerializable("CompHero4");
+            CompHero[4] = (int) savedInstanceState.getSerializable("CompHero5");
 
             Gamer[0] = (String) savedInstanceState.getSerializable("Position1");
             Gamer[1] = (String) savedInstanceState.getSerializable("Position2");
@@ -212,6 +236,7 @@ public class PlaningState extends AppCompatActivity {
 for(int k=0;k<5;k++)
 {
     final int finalK = k;
+
     LineSpin[k].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view,
@@ -222,6 +247,8 @@ for(int k=0;k<5;k++)
             Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
             if (position==0)
             {
+                lane_id[finalK]=1;
+
                 //Top[0].setImageResource(AllHeroes.get(Hero[finalK]).mipmap);
                 // Top[0].setVisibility(View.VISIBLE);
                 for(int i=0;i<5;i++)
@@ -286,6 +313,7 @@ for(int k=0;k<5;k++)
             }
             else if (position==1)
             {
+                lane_id[finalK]=2;
                 for(int i=0;i<5;i++)
                 {
                     if(bothero[i]==Hero[finalK])
@@ -342,7 +370,7 @@ for(int k=0;k<5;k++)
             }
             else if (position==2)
             {
-
+                lane_id[finalK]=3;
                 for(int i=0;i<5;i++)
                 {
                     if(midhero[i]==Hero[finalK])
@@ -411,6 +439,36 @@ for(int k=0;k<5;k++)
 
 
 
+
+        ToFightStage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                ToFightStageActivity.putExtra("Hero1",Hero[0]);
+                ToFightStageActivity.putExtra("Hero2",Hero[1]);
+                ToFightStageActivity.putExtra("Hero3",Hero[2]);
+                ToFightStageActivity.putExtra("Hero4",Hero[3]);
+                ToFightStageActivity.putExtra("Hero5",Hero[4]);
+
+                ToFightStageActivity.putExtra("Lane1",lane_id[0]);
+                ToFightStageActivity.putExtra("Lane2",lane_id[1]);
+                ToFightStageActivity.putExtra("Lane3",lane_id[2]);
+                ToFightStageActivity.putExtra("Lane4",lane_id[3]);
+                ToFightStageActivity.putExtra("Lane5",lane_id[4]);
+
+                ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
+                ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
+                ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
+                ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
+                ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
+
+
+
+              startActivity(ToFightStageActivity);
+
+            }
+        });
 
 
 

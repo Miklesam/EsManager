@@ -28,9 +28,13 @@ public class Pick_Stage extends AppCompatActivity {
     int pick_state;
     Button Plan_state;
     int[] what_hero = new int[5];
+    int[] comp_hero = new int[5];
     int k=0;
     TextView HelpText;
     CountDownTimer Mytimer;
+    String TeamName;
+
+    TextView YourTeamName;
 
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
@@ -42,6 +46,7 @@ public class Pick_Stage extends AppCompatActivity {
         setContentView(R.layout.activity_pick__stage);
         Plan_state=findViewById(R.id.Plan_state);
         HeroList.addAll(HeroInit.HeroInit());
+        YourTeamName=findViewById(R.id.Yourteam);
 
         final Intent PlaningState = new Intent(this, PlaningState.class);
         pick_state=0;
@@ -67,7 +72,7 @@ public class Pick_Stage extends AppCompatActivity {
                 Pos3= null;
                 Pos4= null;
                 Pos5= null;
-
+                TeamName=null;
 
             } else {
                 Pos1= extras.getString("Position1");
@@ -75,6 +80,7 @@ public class Pick_Stage extends AppCompatActivity {
                 Pos3= extras.getString("Position3");
                 Pos4= extras.getString("Position4");
                 Pos5= extras.getString("Position5");
+                TeamName=extras.getString("TeamName");
 
             }
         } else {
@@ -83,10 +89,11 @@ public class Pick_Stage extends AppCompatActivity {
             Pos3= (String) savedInstanceState.getSerializable("Position3");
             Pos4= (String) savedInstanceState.getSerializable("Position4");
             Pos5= (String) savedInstanceState.getSerializable("Position5");
+            TeamName= (String) savedInstanceState.getSerializable("TeamName");
 
         }
 
-
+        YourTeamName.setText(TeamName);
         Pick_Stage=findViewById(R.id.Pick_Stage);
         Heros_icon[0] = findViewById(R.id.Abadon);
         Heros_icon[1] = findViewById(R.id.Alcemic);
@@ -418,6 +425,15 @@ public class Pick_Stage extends AppCompatActivity {
                 PlaningState.putExtra("Hero4",what_hero[3]);
                 PlaningState.putExtra("Hero5",what_hero[4]);
 
+                PlaningState.putExtra("CompHero1",comp_hero[0]);
+                PlaningState.putExtra("CompHero2",comp_hero[1]);
+                PlaningState.putExtra("CompHero3",comp_hero[2]);
+                PlaningState.putExtra("CompHero4",comp_hero[3]);
+                PlaningState.putExtra("CompHero5",comp_hero[4]);
+
+
+
+
                 PlaningState.putExtra("Position1",Pos1);
                 PlaningState.putExtra("Position2",Pos2);
                 PlaningState.putExtra("Position3",Pos3);
@@ -552,6 +568,7 @@ public class Pick_Stage extends AppCompatActivity {
                 Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
                 HeroList.get(whathero).baned=true;
                 Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                comp_hero[0]=HeroList.get(whathero).seq;
                 HeroList.remove(whathero);
                 pick_state++;
                 if(HeroList.size()!=0)
@@ -562,6 +579,7 @@ public class Pick_Stage extends AppCompatActivity {
                 Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
                 HeroList.get(whathero).baned=true;
                 Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                comp_hero[1]=HeroList.get(whathero).seq;
                 HeroList.remove(whathero);
                 pick_state++;
 
@@ -574,6 +592,19 @@ public class Pick_Stage extends AppCompatActivity {
                 Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
                 HeroList.get(whathero).baned=true;
                 Heros_icon[HeroList.get(whathero).seq].setImageResource(HeroList.get(whathero).largeban);
+                if (pick_state==14)
+                {
+                    comp_hero[2]=HeroList.get(whathero).seq;
+                }
+                else if (pick_state==16)
+                {
+                    comp_hero[3]=HeroList.get(whathero).seq;
+                }
+                else if (pick_state==21)
+                {
+                    comp_hero[4]=HeroList.get(whathero).seq;
+                }
+
                 HeroList.remove(whathero);
                 pick_state++;
             }

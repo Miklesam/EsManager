@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FightState">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top"
+                android:id="@+id/topline"/>
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top1st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top2st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top3st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top4st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top5st"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs" />
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top6st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top7st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top8st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top9st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/top10st"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mid"
+                android:id="@+id/midline"/>
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid1st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid2st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid3st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid4st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid5st"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bot"
+                android:id="@+id/bottomline"/>
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom1st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom2st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom3st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom4st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom5st"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

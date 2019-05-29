@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeamsShow"
-        android:screenOrientation="landscape">
-
-        </activity>
+        <activity android:name=".FightState"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".TeamsShow"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".PlaningState"
             android:screenOrientation="landscape" />

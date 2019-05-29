@@ -16,6 +16,8 @@ public class mainstate extends AppCompatActivity {
     TextView Goldbalance;
     TextView TeamName;
 
+    String YourTeam;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class mainstate extends AppCompatActivity {
         TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
         String Gold="1";
-        String YourTeam="Your Team";
+        YourTeam="Your Team";
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
 
         final String Pos1;
@@ -93,7 +95,7 @@ public class mainstate extends AppCompatActivity {
                 ToPickStage.putExtra("Position3",Pos3);
                 ToPickStage.putExtra("Position4",Pos4);
                 ToPickStage.putExtra("Position5",Pos5);
-
+                ToPickStage.putExtra("TeamName",YourTeam);
                 startActivity(ToPickStage);
 
             }
