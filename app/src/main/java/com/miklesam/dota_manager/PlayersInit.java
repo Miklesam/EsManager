@@ -46,8 +46,8 @@ public class PlayersInit {
     static final Players Zayac = new Players("Zayac","Zayac",1500,R.drawable.kirgistan4020,90,85,85,10,0,0,0);
     static final Players Lil = new Players("Lil","Lil",1500,R.drawable.ukraine4020,90,85,85,10,0,0,0);
     static final Players NoFear = new Players("NoFear",NoFearDecription,1500,R.drawable.russia4020,90,85,85,10,0,0,0);
-    static final Players sayuw = new Players("sayuw","sayuw",1500,R.drawable.russia4020,90,85,85,10,0,0,0);
-    static final Players KingR = new Players("KingR","KingR",1500,R.drawable.russia4020,90,85,85,10,0,0,0);
+    static final Players sayuw = new Players("sayuw","sayuw",1500,R.drawable.russia4020,90,85,85,10,9,10,11);
+    static final Players KingR = new Players("KingR","KingR",1500,R.drawable.russia4020,90,85,85,10,15,16,17);
     static final Players velheor = new Players("velheor","velheor",1500,R.drawable.russia4020,90,85,85,10,0,0,0);
     static final Players Vanskor = new Players("Vanskor","Vanskor",1500,R.drawable.russia4020,90,85,85,10,0,0,0);
     static final Players Bignum = new Players("Bignum","Bignum",1500,R.drawable.ukraine4020,90,85,85,10,0,0,0);
