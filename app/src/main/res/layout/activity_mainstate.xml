@@ -43,6 +43,7 @@
            android:layout_width="140sp"
            android:layout_height="match_parent"
            android:id="@+id/TeamCW"
+           android:scrollbars="none"
            android:visibility="invisible">
 
        </ListView>

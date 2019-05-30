@@ -38,9 +38,9 @@ class EmpirePlaner extends Planers
     ArrayList<Integer> Plane(int hero1, int hero2, int hero3, int hero4, int hero5) {
 
         HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
         HeroAndLanes.add(2);
-        HeroAndLanes.add(3);
-        HeroAndLanes.add(3);
         HeroAndLanes.add(3);
 
         return HeroAndLanes;

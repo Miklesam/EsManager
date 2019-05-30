@@ -89,13 +89,17 @@ class EmpirePicker extends Pickers
     @Override
     int Pick(int pickstate, ArrayList<Heroes> heroes) {
         int hero=0;
-        int [] mostbanned = new int[6];
+        int [] mostbanned = new int[10];
         mostbanned[0]=20;
         mostbanned[1]=21;
         mostbanned[2]=22;
         mostbanned[3]=23;
         mostbanned[4]=24;
         mostbanned[5]=25;
+        mostbanned[6]=26;
+        mostbanned[7]=27;
+        mostbanned[8]=28;
+        mostbanned[9]=29;
 
         if ((pickstate==1)||(pickstate==3)||(pickstate==5)||(pickstate==10)||(pickstate==12)||(pickstate==18))
         {

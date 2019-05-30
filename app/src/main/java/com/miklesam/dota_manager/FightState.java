@@ -29,6 +29,8 @@ public class FightState extends AppCompatActivity {
     TextView MidScoreTitle;
     TextView BottomScoreTitle;
 
+    ImageView[] Networthicon= new ImageView[10];
+    TextView[] NetworthText= new TextView[10];
 
 
     static ArrayList<Heroes> HeroesSpot = new ArrayList<Heroes>();
@@ -82,6 +84,30 @@ public class FightState extends AppCompatActivity {
         TopScoreTitle=findViewById(R.id.TopScore);
         MidScoreTitle=findViewById(R.id.MidScore);
         BottomScoreTitle=findViewById(R.id.BottomScore);
+
+        Networthicon[0]=findViewById(R.id.networthicon1);
+        Networthicon[1]=findViewById(R.id.networthicon2);
+        Networthicon[2]=findViewById(R.id.networthicon3);
+        Networthicon[3]=findViewById(R.id.networthicon4);
+        Networthicon[4]=findViewById(R.id.networthicon5);
+        Networthicon[5]=findViewById(R.id.networthicon6);
+        Networthicon[6]=findViewById(R.id.networthicon7);
+        Networthicon[7]=findViewById(R.id.networthicon8);
+        Networthicon[8]=findViewById(R.id.networthicon9);
+        Networthicon[9]=findViewById(R.id.networthicon10);
+
+
+        NetworthText[0]=findViewById(R.id.networthtext1);
+        NetworthText[1]=findViewById(R.id.networthtext2);
+        NetworthText[2]=findViewById(R.id.networthtext3);
+        NetworthText[3]=findViewById(R.id.networthtext4);
+        NetworthText[4]=findViewById(R.id.networthtext5);
+        NetworthText[5]=findViewById(R.id.networthtext6);
+        NetworthText[6]=findViewById(R.id.networthtext7);
+        NetworthText[7]=findViewById(R.id.networthtext8);
+        NetworthText[8]=findViewById(R.id.networthtext9);
+        NetworthText[9]=findViewById(R.id.networthtext10);
+
 
 
         if (savedInstanceState == null) {
@@ -181,7 +207,7 @@ public class FightState extends AppCompatActivity {
         }
 
         HeroesSpot=HeroInit.HeroInit();
-        Toplane.setText(String.valueOf(Hero[0])+","+String.valueOf(Lane[0]));
+        //Toplane.setText(String.valueOf(Hero[0])+","+String.valueOf(Lane[0]));
 
         int totaltopRadiant=0;
         int totaltopDire=0;
@@ -253,6 +279,21 @@ public class FightState extends AppCompatActivity {
         TopScoreTitle.setText(String.valueOf(totaltopRadiant)+"vs"+String.valueOf(totaltopDire));
         MidScoreTitle.setText(String.valueOf(totalmidRadiant)+"vs"+String.valueOf(totalmidDire));
         BottomScoreTitle.setText(String.valueOf(totalbottomRadiant)+"vs"+String.valueOf(totalbottomDire));
+
+        for(int i=0; i<5;i++)
+        {
+            Networthicon[i].setImageResource(HeroesSpot.get(Hero[i]).mipmap);
+            NetworthText[i].setText("1300");
+        }
+
+        for(int i=5; i<10;i++)
+        {
+            Networthicon[i].setImageResource(HeroesSpot.get(CompHero[i-5]).mipmap);
+            NetworthText[i].setText("1300");
+        }
+
+
+
 
 
 
