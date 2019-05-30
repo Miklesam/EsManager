@@ -78,6 +78,10 @@
                 android:layout_height="33sp"
                 android:id="@+id/top10st"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TopScore"/>
 
 
 
@@ -121,6 +125,40 @@
                 android:layout_height="33sp"
                 android:id="@+id/mid5st"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs" />
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid6st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid7st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid8st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid9st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/mid10st"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MidScore"/>
 
 
         </LinearLayout>
@@ -163,6 +201,40 @@
                 android:id="@+id/bottom5st"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs" />
+
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom6st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom7st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom8st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom9st"
+                />
+            <ImageView
+                android:layout_width="33sp"
+                android:layout_height="33sp"
+                android:id="@+id/bottom10st"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/BottomScore"/>
 
 
         </LinearLayout>

@@ -673,7 +673,7 @@ public class Pick_Stage extends AppCompatActivity {
 
         else if ((pick_state==15)||(pick_state==17)||(pick_state==20))
         {
-            Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+            Pick_stage[pick_state].setImageResource(RandomHeroList.get(whathero).picked);
             HeroList.get(RandomHeroList.get(whathero).seq).baned=true;
             Heros_icon[RandomHeroList.get(whathero).seq].setImageResource(RandomHeroList.get(whathero).largeban);
             what_hero[k]=HeroList.get(RandomHeroList.get(whathero).seq).seq;

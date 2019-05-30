@@ -15,12 +15,21 @@ public class FightState extends AppCompatActivity {
     TextView Bottomlane;
     int Hero[]=new int[5];
     int Lane[]=new int[5];
-
+    int CompLane[]=new int[5];
     int CompHero[]=new int[5];
 
-    ImageView TopIcon[] =new ImageView[10];
+    ImageView TopIcon[] =new ImageView[5];
     ImageView MidIcon[] =new ImageView[5];
     ImageView BottomIcon[] =new ImageView[5];
+
+    ImageView EnemyTopIcon[] =new ImageView[5];
+    ImageView EnemyMidIcon[] =new ImageView[5];
+    ImageView EnemyBottomIcon[] =new ImageView[5];
+    TextView TopScoreTitle;
+    TextView MidScoreTitle;
+    TextView BottomScoreTitle;
+
+
 
     static ArrayList<Heroes> HeroesSpot = new ArrayList<Heroes>();
 
@@ -39,11 +48,11 @@ public class FightState extends AppCompatActivity {
         TopIcon[3]=findViewById(R.id.top2st);
         TopIcon[4]=findViewById(R.id.top1st);
 
-        TopIcon[5]=findViewById(R.id.top6st);
-        TopIcon[6]=findViewById(R.id.top7st);
-        TopIcon[7]=findViewById(R.id.top8st);
-        TopIcon[8]=findViewById(R.id.top9st);
-        TopIcon[9]=findViewById(R.id.top10st);
+        EnemyTopIcon[0]=findViewById(R.id.top6st);
+        EnemyTopIcon[1]=findViewById(R.id.top7st);
+        EnemyTopIcon[2]=findViewById(R.id.top8st);
+        EnemyTopIcon[3]=findViewById(R.id.top9st);
+        EnemyTopIcon[4]=findViewById(R.id.top10st);
 
         MidIcon[0]=findViewById(R.id.mid5st);
         MidIcon[1]=findViewById(R.id.mid4st);
@@ -51,12 +60,28 @@ public class FightState extends AppCompatActivity {
         MidIcon[3]=findViewById(R.id.mid2st);
         MidIcon[4]=findViewById(R.id.mid1st);
 
+        EnemyMidIcon[0]=findViewById(R.id.mid6st);
+        EnemyMidIcon[1]=findViewById(R.id.mid7st);
+        EnemyMidIcon[2]=findViewById(R.id.mid8st);
+        EnemyMidIcon[3]=findViewById(R.id.mid9st);
+        EnemyMidIcon[4]=findViewById(R.id.mid10st);
+
 
         BottomIcon[0]=findViewById(R.id.bottom5st);
         BottomIcon[1]=findViewById(R.id.bottom4st);
         BottomIcon[2]=findViewById(R.id.bottom3st);
         BottomIcon[3]=findViewById(R.id.bottom2st);
         BottomIcon[4]=findViewById(R.id.bottom1st);
+
+        EnemyBottomIcon[0]=findViewById(R.id.bottom6st);
+        EnemyBottomIcon[1]=findViewById(R.id.bottom7st);
+        EnemyBottomIcon[2]=findViewById(R.id.bottom8st);
+        EnemyBottomIcon[3]=findViewById(R.id.bottom9st);
+        EnemyBottomIcon[4]=findViewById(R.id.bottom10st);
+
+        TopScoreTitle=findViewById(R.id.TopScore);
+        MidScoreTitle=findViewById(R.id.MidScore);
+        BottomScoreTitle=findViewById(R.id.BottomScore);
 
 
         if (savedInstanceState == null) {
@@ -72,6 +97,14 @@ public class FightState extends AppCompatActivity {
                 Lane[2] = 0;
                 Lane[3] = 0;
                 Lane[4] = 0;
+
+                CompLane[0] = 0;
+                CompLane[1] = 0;
+                CompLane[2] = 0;
+                CompLane[3] = 0;
+                CompLane[4] = 0;
+
+
 
                 CompHero[0] = 0;
                 CompHero[1] = 0;
@@ -104,6 +137,15 @@ public class FightState extends AppCompatActivity {
                 CompHero[3] = extras.getInt("CompHero4");
                 CompHero[4] = extras.getInt("CompHero5");
 
+                CompLane[0] = extras.getInt("CompLane1");
+                CompLane[1] = extras.getInt("CompLane2");
+                CompLane[2] = extras.getInt("CompLane3");
+                CompLane[3] = extras.getInt("CompLane4");
+                CompLane[4] = extras.getInt("CompLane5");
+
+
+
+
 
 
 
@@ -127,14 +169,28 @@ public class FightState extends AppCompatActivity {
             CompHero[3] = (int) savedInstanceState.getSerializable("CompHero4");
             CompHero[4] = (int) savedInstanceState.getSerializable("CompHero5");
 
+            CompLane[0] = (int) savedInstanceState.getSerializable("CompLane1");
+            CompLane[1] = (int) savedInstanceState.getSerializable("CompLane2");
+            CompLane[2] = (int) savedInstanceState.getSerializable("CompLane3");
+            CompLane[3] = (int) savedInstanceState.getSerializable("CompLane4");
+            CompLane[4] = (int) savedInstanceState.getSerializable("CompLane5");
+
+
 
 
         }
 
         HeroesSpot=HeroInit.HeroInit();
-
         Toplane.setText(String.valueOf(Hero[0])+","+String.valueOf(Lane[0]));
 
+        int totaltopRadiant=0;
+        int totaltopDire=0;
+
+        int totalmidRadiant=0;
+        int totalmidDire=0;
+
+        int totalbottomRadiant=0;
+        int totalbottomDire=0;
 
         int tt=0;
         int mm=0;
@@ -146,24 +202,57 @@ public class FightState extends AppCompatActivity {
             {
                 TopIcon[tt].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 tt++;
+                totaltopRadiant=totaltopRadiant+HeroesSpot.get(Hero[z]).laining;
+
+
+
             }
             else if(Lane[z]==2)
             {
                 MidIcon[mm].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 mm++;
+                totalmidRadiant=totalmidRadiant+HeroesSpot.get(Hero[z]).laining;
+
             }
             else if(Lane[z]==3)
             {
                 BottomIcon[bb].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 bb++;
+                totalbottomRadiant=totalbottomRadiant+HeroesSpot.get(Hero[z]).laining;
+
             }
         }
 
-        TopIcon[5].setImageResource(HeroesSpot.get(CompHero[0]).mipmap);
-        TopIcon[6].setImageResource(HeroesSpot.get(CompHero[1]).mipmap);
-        TopIcon[7].setImageResource(HeroesSpot.get(CompHero[2]).mipmap);
-        TopIcon[8].setImageResource(HeroesSpot.get(CompHero[3]).mipmap);
-        TopIcon[9].setImageResource(HeroesSpot.get(CompHero[4]).mipmap);
+
+
+        int ett=0;
+        int emm=0;
+        int ebb=0;
+        for(int z=0;z<5;z++)
+        {
+            if (CompLane[z]==1)
+            {
+                EnemyTopIcon[ett].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                ett++;
+                totaltopDire=totaltopDire+HeroesSpot.get(CompHero[z]).laining;
+            }
+            else if(CompLane[z]==2)
+            {
+                EnemyMidIcon[emm].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                emm++;
+                totalmidDire=totalmidDire+HeroesSpot.get(CompHero[z]).laining;
+            }
+            else if(CompLane[z]==3)
+            {
+                EnemyBottomIcon[ebb].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                ebb++;
+                totalbottomDire=totalbottomDire+HeroesSpot.get(CompHero[z]).laining;
+            }
+        }
+
+        TopScoreTitle.setText(String.valueOf(totaltopRadiant)+"vs"+String.valueOf(totaltopDire));
+        MidScoreTitle.setText(String.valueOf(totalmidRadiant)+"vs"+String.valueOf(totalmidDire));
+        BottomScoreTitle.setText(String.valueOf(totalbottomRadiant)+"vs"+String.valueOf(totalbottomDire));
 
 
 

@@ -13,7 +13,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
+import static com.miklesam.dota_manager.PlanersInit.AllPlanersInit;
 
 public class PlaningState extends AppCompatActivity {
 
@@ -38,6 +41,8 @@ public class PlaningState extends AppCompatActivity {
 
     Spinner LineSpin[]=new Spinner[5];
 
+    ArrayList<Integer> CompHeroesAndLanes = new ArrayList<Integer>();
+    ArrayList<Planers> TeamPlaners = new ArrayList<Planers>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,7 +175,8 @@ public class PlaningState extends AppCompatActivity {
         LineSpin[2]=Lanespinner3;
         LineSpin[3]=Lanespinner4;
         LineSpin[4]=Lanespinner5;
-
+        TeamPlaners=AllPlanersInit();
+        CompHeroesAndLanes=TeamPlaners.get(0).Plane(CompHero[0],CompHero[1],CompHero[2],CompHero[3],CompHero[4]);
 
 
         String[] data = {String.valueOf(Hero[0]), String.valueOf(Hero[1]), String.valueOf(Hero[2]), String.valueOf(Hero[3]), String.valueOf(Hero[4])};
@@ -214,6 +220,8 @@ public class PlaningState extends AppCompatActivity {
 
         Lanespinner5.setAdapter(Laneadapter);
         Lanespinner5.setSelection(2);
+
+
 
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -463,6 +471,12 @@ for(int k=0;k<5;k++)
                 ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
                 ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
 
+
+                ToFightStageActivity.putExtra("CompLane1",CompHeroesAndLanes.get(0));
+                ToFightStageActivity.putExtra("CompLane2",CompHeroesAndLanes.get(1));
+                ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
+                ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
+                ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
 
 
               startActivity(ToFightStageActivity);
