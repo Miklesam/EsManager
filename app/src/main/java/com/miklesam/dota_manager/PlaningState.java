@@ -17,12 +17,15 @@ import java.util.ArrayList;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlanersInit.AllPlanersInit;
+import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
+import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
+import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 
 public class PlaningState extends AppCompatActivity {
 
     int[] Hero = new int[5];
     int[] CompHero = new int[5];
-    String[] Gamer = new String[5];
+    int[] Gamer = new int[5];
     ImageView[] GameHero = new ImageView[5];
 
     ImageView[] Top = new ImageView[5];
@@ -41,8 +44,15 @@ public class PlaningState extends AppCompatActivity {
 
     Spinner LineSpin[]=new Spinner[5];
 
+    int seq_gamer[] = new int[5];
+
+     Spinner Gamerspinner[] = new Spinner[5];
+
     ArrayList<Integer> CompHeroesAndLanes = new ArrayList<Integer>();
     ArrayList<Planers> TeamPlaners = new ArrayList<Planers>();
+    ArrayList<Teams> AllTeamsTeams = new ArrayList<Teams>();
+
+    int TeamEnemy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +84,7 @@ public class PlaningState extends AppCompatActivity {
         Top[2]=findViewById(R.id.top3);
         Top[3]=findViewById(R.id.top4);
         Top[4]=findViewById(R.id.top5);
-
+        AllTeamsTeams=AllTeamsInit();
         final Intent ToFightStageActivity = new Intent(this, FightState.class);
 
 
@@ -86,16 +96,17 @@ public class PlaningState extends AppCompatActivity {
                 Hero[2] = 0;
                 Hero[3] = 0;
                 Hero[4] = 0;
-                Gamer[0] = null;
-                Gamer[1] = null;
-                Gamer[2] = null;
-                Gamer[3] = null;
-                Gamer[4] = null;
+                Gamer[0] = 0;
+                Gamer[1] = 0;
+                Gamer[2] = 0;
+                Gamer[3] = 0;
+                Gamer[4] = 0;
                 CompHero[0]=0;
                 CompHero[1]=0;
                 CompHero[2]=0;
                 CompHero[3]=0;
                 CompHero[4]=0;
+                TeamEnemy=0;
 
 
             } else {
@@ -111,12 +122,14 @@ public class PlaningState extends AppCompatActivity {
                 CompHero[2] = extras.getInt("CompHero3");
                 CompHero[3] = extras.getInt("CompHero4");
                 CompHero[4] = extras.getInt("CompHero5");
+                TeamEnemy = extras.getInt("EnemyTeam");
 
-                Gamer[0] = extras.getString("Position1");
-                Gamer[1] = extras.getString("Position2");
-                Gamer[2] = extras.getString("Position3");
-                Gamer[3] = extras.getString("Position4");
-                Gamer[4] = extras.getString("Position5");
+
+                Gamer[0] = extras.getInt("Position1");
+                Gamer[1] = extras.getInt("Position2");
+                Gamer[2] = extras.getInt("Position3");
+                Gamer[3] = extras.getInt("Position4");
+                Gamer[4] = extras.getInt("Position5");
 
             }
         } else {
@@ -132,11 +145,11 @@ public class PlaningState extends AppCompatActivity {
             CompHero[3] = (int) savedInstanceState.getSerializable("CompHero4");
             CompHero[4] = (int) savedInstanceState.getSerializable("CompHero5");
 
-            Gamer[0] = (String) savedInstanceState.getSerializable("Position1");
-            Gamer[1] = (String) savedInstanceState.getSerializable("Position2");
-            Gamer[2] = (String) savedInstanceState.getSerializable("Position3");
-            Gamer[3] = (String) savedInstanceState.getSerializable("Position4");
-            Gamer[4] = (String) savedInstanceState.getSerializable("Position5");
+            Gamer[0] = (Integer) savedInstanceState.getSerializable("Position1");
+            Gamer[1] = (Integer) savedInstanceState.getSerializable("Position2");
+            Gamer[2] = (Integer) savedInstanceState.getSerializable("Position3");
+            Gamer[3] = (Integer) savedInstanceState.getSerializable("Position4");
+            Gamer[4] = (Integer) savedInstanceState.getSerializable("Position5");
 
         }
 
@@ -158,11 +171,11 @@ public class PlaningState extends AppCompatActivity {
 
 
 
-        final Spinner spinner1 = (Spinner) findViewById(R.id.Spiner1);
-        final Spinner spinner2 = (Spinner) findViewById(R.id.Spiner2);
-        final Spinner spinner3 = (Spinner) findViewById(R.id.Spiner3);
-        final Spinner spinner4 = (Spinner) findViewById(R.id.Spiner4);
-        final Spinner spinner5 = (Spinner) findViewById(R.id.Spiner5);
+        Gamerspinner[0] = (Spinner) findViewById(R.id.Spiner1);
+        Gamerspinner[1] = (Spinner) findViewById(R.id.Spiner2);
+        Gamerspinner[2] = (Spinner) findViewById(R.id.Spiner3);
+        Gamerspinner[3] = (Spinner) findViewById(R.id.Spiner4);
+        Gamerspinner[4] = (Spinner) findViewById(R.id.Spiner5);
 
         final Spinner Lanespinner1 = (Spinner) findViewById(R.id.LineSpiner1);
         final Spinner Lanespinner2 = (Spinner) findViewById(R.id.LineSpiner2);
@@ -176,35 +189,43 @@ public class PlaningState extends AppCompatActivity {
         LineSpin[3]=Lanespinner4;
         LineSpin[4]=Lanespinner5;
         TeamPlaners=AllPlanersInit();
-        CompHeroesAndLanes=TeamPlaners.get(0).Plane(CompHero[0],CompHero[1],CompHero[2],CompHero[3],CompHero[4]);
+        PlayersAllInit();
+
+        CompHeroesAndLanes=TeamPlaners.get(TeamEnemy).Plane(CompHero[0],CompHero[1],CompHero[2],CompHero[3],CompHero[4]);
 
 
-        String[] data = {String.valueOf(Hero[0]), String.valueOf(Hero[1]), String.valueOf(Hero[2]), String.valueOf(Hero[3]), String.valueOf(Hero[4])};
+        String[] data = {AllPlayers.get(Gamer[0]).Name, AllPlayers.get(Gamer[1]).Name, AllPlayers.get(Gamer[2]).Name, AllPlayers.get(Gamer[3]).Name, AllPlayers.get(Gamer[4]).Name};
         String[] Lane = {"top", "mid", "bottom"};
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Gamer);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ArrayAdapter<String> Laneadapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Lane);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        for(int i=0;i<5;i++)
+        {
+            Gamerspinner[i].setAdapter(adapter);
+            Gamerspinner[i].setSelection(i);
 
-        spinner1.setAdapter(adapter);
-        //spinner.setPrompt("Title");
-        spinner1.setSelection(0);
+            final int finalI = i;
+            Gamerspinner[i].setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view,
+                                           int position, long id) {
+                    seq_gamer[finalI]=Gamer[position];
+                }
 
-        spinner2.setAdapter(adapter);
-        spinner2.setSelection(1);
 
-        spinner3.setAdapter(adapter);
-        spinner3.setSelection(2);
+                @Override
+                public void onNothingSelected(AdapterView<?> arg0) {
+                }
+            });
+        }
 
-        spinner4.setAdapter(adapter);
-        spinner4.setSelection(3);
-
-        spinner5.setAdapter(adapter);
-        spinner5.setSelection(4);
 
         Lanespinner1.setAdapter(Laneadapter);
         Lanespinner1.setSelection(0);
@@ -224,21 +245,10 @@ public class PlaningState extends AppCompatActivity {
 
 
 
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
 
 
-                // показываем позиция нажатого элемента
-                Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
-            }
 
 
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
 
 
 for(int k=0;k<5;k++)
@@ -465,6 +475,13 @@ for(int k=0;k<5;k++)
                 ToFightStageActivity.putExtra("Lane4",lane_id[3]);
                 ToFightStageActivity.putExtra("Lane5",lane_id[4]);
 
+                ToFightStageActivity.putExtra("Gamer1",seq_gamer[0]);
+                ToFightStageActivity.putExtra("Gamer2",seq_gamer[1]);
+                ToFightStageActivity.putExtra("Gamer3",seq_gamer[2]);
+                ToFightStageActivity.putExtra("Gamer4",seq_gamer[3]);
+                ToFightStageActivity.putExtra("Gamer5",seq_gamer[4]);
+
+
                 ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
                 ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
                 ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
@@ -477,6 +494,13 @@ for(int k=0;k<5;k++)
                 ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
                 ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
                 ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
+
+
+                ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(0).sequence);
+                ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(1).sequence);
+                ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(2).sequence);
+                ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(3).sequence);
+                ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(4).sequence);
 
 
               startActivity(ToFightStageActivity);

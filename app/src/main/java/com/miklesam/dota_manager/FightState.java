@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
+
 public class FightState extends AppCompatActivity {
 
 
@@ -15,8 +17,10 @@ public class FightState extends AppCompatActivity {
     TextView Bottomlane;
     int Hero[]=new int[5];
     int Lane[]=new int[5];
+    int Gamer[]=new int[5];
     int CompLane[]=new int[5];
     int CompHero[]=new int[5];
+    int CompGamer[]=new int[5];
 
     ImageView TopIcon[] =new ImageView[5];
     ImageView MidIcon[] =new ImageView[5];
@@ -34,6 +38,13 @@ public class FightState extends AppCompatActivity {
 
 
     static ArrayList<Heroes> HeroesSpot = new ArrayList<Heroes>();
+    Player_unit[] Radiant_Unit= new Player_unit[5];
+    Player_unit[] Dire_Unit= new Player_unit[5];
+
+
+    int RadiantNetworh[]=new int[5];
+    int DireNetworh[]=new int[5];
+    TextView radiantnetw;
 
 
     @Override
@@ -108,6 +119,8 @@ public class FightState extends AppCompatActivity {
         NetworthText[8]=findViewById(R.id.networthtext9);
         NetworthText[9]=findViewById(R.id.networthtext10);
 
+        radiantnetw=findViewById(R.id.radiantnet);
+
 
 
         if (savedInstanceState == null) {
@@ -124,6 +137,13 @@ public class FightState extends AppCompatActivity {
                 Lane[3] = 0;
                 Lane[4] = 0;
 
+                Gamer[0] = 0;
+                Gamer[1] = 0;
+                Gamer[2] = 0;
+                Gamer[3] = 0;
+                Gamer[4] = 0;
+
+
                 CompLane[0] = 0;
                 CompLane[1] = 0;
                 CompLane[2] = 0;
@@ -138,6 +158,12 @@ public class FightState extends AppCompatActivity {
                 CompHero[3] = 0;
                 CompHero[4] = 0;
 
+
+                CompGamer[0] = 0;
+                CompGamer[1] = 0;
+                CompGamer[2] = 0;
+                CompGamer[3] = 0;
+                CompGamer[4] = 0;
 
 
 
@@ -157,6 +183,15 @@ public class FightState extends AppCompatActivity {
                 Lane[3] = extras.getInt("Lane4");
                 Lane[4] = extras.getInt("Lane5");
 
+                Gamer[0] = extras.getInt("Gamer1");
+                Gamer[1] = extras.getInt("Gamer2");
+                Gamer[2] = extras.getInt("Gamer3");
+                Gamer[3] = extras.getInt("Gamer4");
+                Gamer[4] = extras.getInt("Gamer5");
+
+
+
+
                 CompHero[0] = extras.getInt("CompHero1");
                 CompHero[1] = extras.getInt("CompHero2");
                 CompHero[2] = extras.getInt("CompHero3");
@@ -170,6 +205,12 @@ public class FightState extends AppCompatActivity {
                 CompLane[4] = extras.getInt("CompLane5");
 
 
+
+                CompGamer[0] = extras.getInt("CompGamer1");
+                CompGamer[1] = extras.getInt("CompGamer2");
+                CompGamer[2] = extras.getInt("CompGamer3");
+                CompGamer[3] = extras.getInt("CompGamer4");
+                CompGamer[4] = extras.getInt("CompGamer5");
 
 
 
@@ -189,6 +230,12 @@ public class FightState extends AppCompatActivity {
             Lane[3] = (int) savedInstanceState.getSerializable("Lane4");
             Lane[4] = (int) savedInstanceState.getSerializable("Lane5");
 
+            Gamer[0] = (int) savedInstanceState.getSerializable("Gamer1");
+            Gamer[1] = (int) savedInstanceState.getSerializable("Gamer2");
+            Gamer[2] = (int) savedInstanceState.getSerializable("Gamer3");
+            Gamer[3] = (int) savedInstanceState.getSerializable("Gamer4");
+            Gamer[4] = (int) savedInstanceState.getSerializable("Gamer5");
+
             CompHero[0] = (int) savedInstanceState.getSerializable("CompHero1");
             CompHero[1] = (int) savedInstanceState.getSerializable("CompHero2");
             CompHero[2] = (int) savedInstanceState.getSerializable("CompHero3");
@@ -200,6 +247,13 @@ public class FightState extends AppCompatActivity {
             CompLane[2] = (int) savedInstanceState.getSerializable("CompLane3");
             CompLane[3] = (int) savedInstanceState.getSerializable("CompLane4");
             CompLane[4] = (int) savedInstanceState.getSerializable("CompLane5");
+
+            CompGamer[0] = (int) savedInstanceState.getSerializable("CompGamer1");
+            CompGamer[1] = (int) savedInstanceState.getSerializable("CompGamer2");
+            CompGamer[2] = (int) savedInstanceState.getSerializable("CompGamer3");
+            CompGamer[3] = (int) savedInstanceState.getSerializable("CompGamer4");
+            CompGamer[4] = (int) savedInstanceState.getSerializable("CompGamer5");
+
 
 
 
@@ -222,19 +276,73 @@ public class FightState extends AppCompatActivity {
         int mm=0;
         int bb=0;
 
+        int topradiantheroes=0;
+        int midradiantheroes=0;
+        int bottomradiantheroes=0;
+        for (int i=0;i<5;i++)
+        {
+            if (Lane[i]==1)
+            {
+                topradiantheroes++;
+            }
+            if (Lane[i]==2)
+            {
+                midradiantheroes++;
+            }
+            if (Lane[i]==3)
+            {
+                bottomradiantheroes++;
+            }
+
+
+        }
+
+
+        int comptopradiantheroes=0;
+        int compmidradiantheroes=0;
+        int compbottomradiantheroes=0;
+        for (int i=0;i<5;i++)
+        {
+            if (CompLane[i]==1)
+            {
+                comptopradiantheroes++;
+            }
+            if (CompLane[i]==2)
+            {
+                compmidradiantheroes++;
+            }
+            if (CompLane[i]==3)
+            {
+                compbottomradiantheroes++;
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
         for(int z=0;z<5;z++)
         {
             if (Lane[z]==1)
             {
+                Networthicon[tt].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
+                Radiant_Unit[tt]= new Player_unit(AllPlayers.get(Gamer[z]),HeroesSpot.get(Hero[z]));
                 TopIcon[tt].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 tt++;
                 totaltopRadiant=totaltopRadiant+HeroesSpot.get(Hero[z]).laining;
 
-
-
             }
             else if(Lane[z]==2)
             {
+                Networthicon[topradiantheroes+mm].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
+                Radiant_Unit[topradiantheroes+mm]= new Player_unit(AllPlayers.get(Gamer[z]),HeroesSpot.get(Hero[z]));
                 MidIcon[mm].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 mm++;
                 totalmidRadiant=totalmidRadiant+HeroesSpot.get(Hero[z]).laining;
@@ -242,11 +350,16 @@ public class FightState extends AppCompatActivity {
             }
             else if(Lane[z]==3)
             {
+                Networthicon[midradiantheroes+topradiantheroes+bb].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
+                Radiant_Unit[midradiantheroes+topradiantheroes+bb]= new Player_unit(AllPlayers.get(Gamer[z]),HeroesSpot.get(Hero[z]));
                 BottomIcon[bb].setImageResource(HeroesSpot.get(Hero[z]).mipmap);
                 bb++;
                 totalbottomRadiant=totalbottomRadiant+HeroesSpot.get(Hero[z]).laining;
 
             }
+
+
+
         }
 
 
@@ -258,40 +371,113 @@ public class FightState extends AppCompatActivity {
         {
             if (CompLane[z]==1)
             {
+                Networthicon[5+ett].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                Dire_Unit[ett]= new Player_unit(AllPlayers.get(CompGamer[z]),HeroesSpot.get(CompHero[z]));
                 EnemyTopIcon[ett].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
                 ett++;
                 totaltopDire=totaltopDire+HeroesSpot.get(CompHero[z]).laining;
             }
             else if(CompLane[z]==2)
             {
+                Networthicon[5+comptopradiantheroes+emm].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                Dire_Unit[comptopradiantheroes+emm]= new Player_unit(AllPlayers.get(CompGamer[z]),HeroesSpot.get(CompHero[z]));
                 EnemyMidIcon[emm].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
                 emm++;
                 totalmidDire=totalmidDire+HeroesSpot.get(CompHero[z]).laining;
             }
             else if(CompLane[z]==3)
             {
+                Networthicon[5+compmidradiantheroes+comptopradiantheroes+ebb].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
+                Dire_Unit[compmidradiantheroes+comptopradiantheroes+ebb]= new Player_unit(AllPlayers.get(CompGamer[z]),HeroesSpot.get(CompHero[z]));
                 EnemyBottomIcon[ebb].setImageResource(HeroesSpot.get(CompHero[z]).mipmap);
                 ebb++;
                 totalbottomDire=totalbottomDire+HeroesSpot.get(CompHero[z]).laining;
             }
+
+
+
         }
 
         TopScoreTitle.setText(String.valueOf(totaltopRadiant)+"vs"+String.valueOf(totaltopDire));
         MidScoreTitle.setText(String.valueOf(totalmidRadiant)+"vs"+String.valueOf(totalmidDire));
         BottomScoreTitle.setText(String.valueOf(totalbottomRadiant)+"vs"+String.valueOf(totalbottomDire));
 
-        for(int i=0; i<5;i++)
+       for(int i=0; i<5;i++)
+       {
+        //NetworthText[i].setText("1300");
+       }
+
+        float kefmid = (float) (totalmidRadiant+totalmidDire)/2;
+        float keftop = (float) (totaltopRadiant+totaltopDire)/2;
+        float kefbottom = (float) (totalbottomRadiant+totalbottomDire)/2;
+
+
+
+        for(int i=0; i<topradiantheroes;i++)
         {
-            Networthicon[i].setImageResource(HeroesSpot.get(Hero[i]).mipmap);
-            NetworthText[i].setText("1300");
+            RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/100)*(float)(totaltopRadiant/keftop*5000));
+            NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
         }
 
-        for(int i=5; i<10;i++)
+        for(int i=0; i<midradiantheroes;i++)
         {
-            Networthicon[i].setImageResource(HeroesSpot.get(CompHero[i-5]).mipmap);
-            NetworthText[i].setText("1300");
+
+            RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/100)*(float)(totalmidRadiant/kefmid*5000));
+            NetworthText[i+topradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes]));
         }
 
+        for(int i=0; i<bottomradiantheroes;i++)
+        {
+
+            RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomRadiant/kefbottom*5000));
+            NetworthText[i+topradiantheroes+midradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes+midradiantheroes]));
+        }
+
+
+
+        for(int i=0; i<comptopradiantheroes;i++)
+        {
+            DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/100)*(float)(totaltopDire/keftop*5000));
+            NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
+        }
+
+        for(int i=0; i<compmidradiantheroes;i++)
+        {
+
+            DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/100)*(float)(totalmidDire/kefmid*5000));
+            NetworthText[5+i+comptopradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes]));
+        }
+
+        for(int i=0; i<compbottomradiantheroes;i++)
+        {
+
+            DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomDire/kefbottom*5000));
+            NetworthText[5+i+comptopradiantheroes+compmidradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes+compmidradiantheroes]));
+        }
+
+
+
+                radiantnetw.setText(String.valueOf(RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])+"vs"+
+                String.valueOf(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]));
+
+
+
+
+
+
+
+
+       //for(int i=5; i<10;i++)
+      // {
+       // Networthicon[i].setImageResource(HeroesSpot.get(CompHero[i-5]).mipmap);
+      //  NetworthText[i].setText("1300");
+      // }
+
+
+
+
+
+        BottomScoreTitle.setText(String.valueOf(keftop));
 
 
 
@@ -299,4 +485,9 @@ public class FightState extends AppCompatActivity {
 
 
     }
+
+
+
+
+
 }

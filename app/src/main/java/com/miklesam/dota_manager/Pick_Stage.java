@@ -39,6 +39,7 @@ public class Pick_Stage extends AppCompatActivity {
     TextView YourTeamName;
     TextView EnemyteamNamet;
     int frompicker;
+    int TeamEnemy;
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
     ArrayList <Heroes> RandomHeroList= new ArrayList <Heroes>();
@@ -65,40 +66,43 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        final String Pos1;
-        final String Pos2;
-        final String Pos3;
-        final String Pos4;
-        final String Pos5;
+        final int Pos1;
+        final int Pos2;
+        final int Pos3;
+        final int Pos4;
+        final int Pos5;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                Pos1= null;
-                Pos2= null;
-                Pos3= null;
-                Pos4= null;
-                Pos5= null;
+                Pos1= 0;
+                Pos2= 0;
+                Pos3= 0;
+                Pos4= 0;
+                Pos5= 0;
+                TeamEnemy=0;
                 TeamName=null;
                 EnemyName=null;
 
             } else {
-                Pos1= extras.getString("Position1");
-                Pos2= extras.getString("Position2");
-                Pos3= extras.getString("Position3");
-                Pos4= extras.getString("Position4");
-                Pos5= extras.getString("Position5");
+                Pos1= extras.getInt("Position1");
+                Pos2= extras.getInt("Position2");
+                Pos3= extras.getInt("Position3");
+                Pos4= extras.getInt("Position4");
+                Pos5= extras.getInt("Position5");
+                TeamEnemy= extras.getInt("EnemyTeam");
                 TeamName=extras.getString("TeamName");
                 EnemyName=extras.getString("TeamEnemy");
 
             }
         } else {
-            Pos1= (String) savedInstanceState.getSerializable("Position1");
-            Pos2= (String) savedInstanceState.getSerializable("Position2");
-            Pos3= (String) savedInstanceState.getSerializable("Position3");
-            Pos4= (String) savedInstanceState.getSerializable("Position4");
-            Pos5= (String) savedInstanceState.getSerializable("Position5");
+            Pos1= (Integer) savedInstanceState.getSerializable("Position1");
+            Pos2= (Integer) savedInstanceState.getSerializable("Position2");
+            Pos3= (Integer) savedInstanceState.getSerializable("Position3");
+            Pos4= (Integer) savedInstanceState.getSerializable("Position4");
+            Pos5= (Integer) savedInstanceState.getSerializable("Position5");
             TeamName= (String) savedInstanceState.getSerializable("TeamName");
             EnemyName= (String) savedInstanceState.getSerializable("TeamEnemy");
+            TeamEnemy= (Integer) savedInstanceState.getSerializable("EnemyTeam");
 
         }
         PickerList.addAll(AllPickersInit());
@@ -441,7 +445,7 @@ public class Pick_Stage extends AppCompatActivity {
                 PlaningState.putExtra("CompHero4",comp_hero[3]);
                 PlaningState.putExtra("CompHero5",comp_hero[4]);
 
-
+                PlaningState.putExtra("EnemyTeam",TeamEnemy);
 
 
                 PlaningState.putExtra("Position1",Pos1);
@@ -565,7 +569,7 @@ public class Pick_Stage extends AppCompatActivity {
             Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
             if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
             {
-                frompicker=PickerList.get(0).Pick(pick_state,HeroList);
+                frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
                 RandomHeroList.remove(frompicker);
 
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).minban);
@@ -579,7 +583,7 @@ public class Pick_Stage extends AppCompatActivity {
             else if ((pick_state==7))
             {
 
-                frompicker=PickerList.get(0).Pick(pick_state,HeroList);
+                frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
                 RandomHeroList.remove(frompicker);
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
                 HeroList.get(frompicker).baned=true;
@@ -589,7 +593,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-                frompicker=PickerList.get(0).Pick(pick_state,HeroList);
+                frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
                 RandomHeroList.remove(frompicker);
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
                 HeroList.get(frompicker).baned=true;
@@ -605,7 +609,7 @@ public class Pick_Stage extends AppCompatActivity {
             else if ((pick_state==14)||(pick_state==16)||(pick_state==21))
             {
 
-                frompicker=PickerList.get(0).Pick(pick_state,HeroList);
+                frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
                 HeroList.get(frompicker).baned=true;
                 Heros_icon[HeroList.get(frompicker).seq].setImageResource(HeroList.get(frompicker).largeban);

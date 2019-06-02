@@ -49,3 +49,91 @@ class EmpirePlaner extends Planers
 
 
 }
+
+class VPPlaner extends Planers
+{
+
+    ArrayList<Integer> HeroAndLanes=new ArrayList<Integer>();
+    VPPlaner(String Planername, int seq, ArrayList<Players> TeamRooster) {
+        super(Planername, seq, TeamRooster);
+
+
+
+    }
+
+
+
+    @Override
+    ArrayList<Integer> Plane(int hero1, int hero2, int hero3, int hero4, int hero5) {
+
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+
+        return HeroAndLanes;
+    }
+
+
+
+}
+
+class NaviPlaner extends Planers
+{
+
+    ArrayList<Integer> HeroAndLanes=new ArrayList<Integer>();
+    NaviPlaner(String Planername, int seq, ArrayList<Players> TeamRooster) {
+        super(Planername, seq, TeamRooster);
+
+
+
+    }
+
+
+
+    @Override
+    ArrayList<Integer> Plane(int hero1, int hero2, int hero3, int hero4, int hero5) {
+
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+
+        return HeroAndLanes;
+    }
+
+
+
+}
+
+
+class GambitPlaner extends Planers
+{
+
+    ArrayList<Integer> HeroAndLanes=new ArrayList<Integer>();
+    GambitPlaner(String Planername, int seq, ArrayList<Players> TeamRooster) {
+        super(Planername, seq, TeamRooster);
+
+
+
+    }
+
+
+
+    @Override
+    ArrayList<Integer> Plane(int hero1, int hero2, int hero3, int hero4, int hero5) {
+
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+
+        return HeroAndLanes;
+    }
+
+
+
+}

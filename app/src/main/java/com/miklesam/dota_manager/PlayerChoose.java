@@ -74,6 +74,8 @@ public class PlayerChoose extends AppCompatActivity {
 
 
     boolean team[]=new boolean[5];
+    int playerseq[]=new int[5];
+    int last_position_player;
 
     boolean CorePick;
     boolean SupportPick;
@@ -184,7 +186,7 @@ public class PlayerChoose extends AppCompatActivity {
                 Signature2.setImageResource(AllHeroes.get(Cores.get(position).signature2).picked);
                 Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
                 last_position=position;
-
+                last_position_player=Cores.get(position).sequence;
 
             }
         });
@@ -217,7 +219,7 @@ public class PlayerChoose extends AppCompatActivity {
                 Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
                 Supporting.setText("Поддержка "+ String.valueOf(Supports.get(position).supporting));
                 last_position=position;
-
+                last_position_player=Supports.get(position).sequence;
 
             }
         });
@@ -233,19 +235,20 @@ public class PlayerChoose extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences.Editor editor = mSettings.edit();
                 editor.putString(GoldBalance, balancegold);
-                editor.putString(StaticPosition1, (String) position1.getText());
-                editor.putString(StaticPosition2, (String) position2.getText());
-                editor.putString(StaticPosition3, (String) position3.getText());
-                editor.putString(StaticPosition4, (String) position4.getText());
-                editor.putString(StaticPosition5, (String) position5.getText());
+
+                editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
+                editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
+                editor.putString(StaticPosition3,String.valueOf(playerseq[2]));
+                editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
+                editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
 
                 editor.apply();
 
-         Tomainstate.putExtra("Position1",position1.getText());
-                Tomainstate.putExtra("Position2",position2.getText());
-                Tomainstate.putExtra("Position3",position3.getText());
-                Tomainstate.putExtra("Position4",position4.getText());
-                Tomainstate.putExtra("Position5",position5.getText());
+         Tomainstate.putExtra("Position1",playerseq[0]);
+                Tomainstate.putExtra("Position2",playerseq[1]);
+                Tomainstate.putExtra("Position3",playerseq[2]);
+                Tomainstate.putExtra("Position4",playerseq[3]);
+                Tomainstate.putExtra("Position5",playerseq[4]);
                 Tomainstate.putExtra("Gold",balancegold);
                 Tomainstate.putExtra("TeamName",TeamName);
                 //Gold=extras.getString("Gold");
@@ -356,6 +359,7 @@ public class PlayerChoose extends AppCompatActivity {
                     balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                     GoldbalancePole.setText(balancegold);
                     team[0]=true;
+                    playerseq[0]=last_position_player;
                     CorelistView.setVisibility(View.VISIBLE);
                     CoreChoose.setVisibility(View.VISIBLE);
                     SupportChoose.setVisibility(View.VISIBLE);
@@ -401,6 +405,7 @@ public class PlayerChoose extends AppCompatActivity {
                     {
                         position4.setText(PlayerNickName.getText());
                         team[3]=true;
+                        playerseq[3]=last_position_player;
                         balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                         GoldbalancePole.setText(balancegold);
                         CorelistView.setVisibility(View.VISIBLE);
@@ -441,6 +446,7 @@ public class PlayerChoose extends AppCompatActivity {
                     {
                         position2.setText(PlayerNickName.getText());
                         team[1]=true;
+                        playerseq[1]=last_position_player;
                         CorelistView.setVisibility(View.VISIBLE);
                         CoreChoose.setVisibility(View.VISIBLE);
                         SupportChoose.setVisibility(View.VISIBLE);
@@ -494,6 +500,7 @@ public class PlayerChoose extends AppCompatActivity {
                     {
                         position5.setText(PlayerNickName.getText());
                         team[4]=true;
+                        playerseq[4]=last_position_player;
                         CorelistView.setVisibility(View.VISIBLE);
                         CoreChoose.setVisibility(View.VISIBLE);
                         SupportChoose.setVisibility(View.VISIBLE);
@@ -534,6 +541,7 @@ public class PlayerChoose extends AppCompatActivity {
                     {
                         position3.setText(PlayerNickName.getText());
                         team[2]=true;
+                        playerseq[2]=last_position_player;
                         CorelistView.setVisibility(View.VISIBLE);
                         CoreChoose.setVisibility(View.VISIBLE);
                         SupportChoose.setVisibility(View.VISIBLE);

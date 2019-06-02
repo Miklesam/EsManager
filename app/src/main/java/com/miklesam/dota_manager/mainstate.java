@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
+import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 
 public class mainstate extends AppCompatActivity {
@@ -28,6 +30,8 @@ public class mainstate extends AppCompatActivity {
     ArrayList<Teams> TeamsCW;
     String YourTeam;
     boolean cw;
+
+    ArrayList<Players> TheAllPlayers;
 
 
     @Override
@@ -56,47 +60,49 @@ public class mainstate extends AppCompatActivity {
         CWList.setAdapter(CWteamsAdapter);
 
 
-        final String Pos1;
-        final String Pos2;
-        final String Pos3;
-        final String Pos4;
-        final String Pos5;
+        final int Pos1;
+        final int Pos2;
+        final int Pos3;
+        final int Pos4;
+        final int Pos5;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                Pos1= null;
-                Pos2= null;
-                Pos3= null;
-                Pos4= null;
-                Pos5= null;
+                Pos1= 0;
+                Pos2= 0;
+                Pos3= 0;
+                Pos4= 0;
+                Pos5= 0;
                 Gold=null;
                 YourTeam=null;
 
             } else {
-                Pos1= extras.getString("Position1");
-                Pos2= extras.getString("Position2");
-                Pos3= extras.getString("Position3");
-                Pos4= extras.getString("Position4");
-                Pos5= extras.getString("Position5");
+                Pos1= extras.getInt("Position1");
+                Pos2= extras.getInt("Position2");
+                Pos3= extras.getInt("Position3");
+                Pos4= extras.getInt("Position4");
+                Pos5= extras.getInt("Position5");
                 Gold=extras.getString("Gold");
                 YourTeam=extras.getString("TeamName");
             }
         } else {
-            Pos1= (String) savedInstanceState.getSerializable("Position1");
-            Pos2= (String) savedInstanceState.getSerializable("Position2");
-            Pos3= (String) savedInstanceState.getSerializable("Position3");
-            Pos4= (String) savedInstanceState.getSerializable("Position4");
-            Pos5= (String) savedInstanceState.getSerializable("Position5");
+            Pos1= (Integer) savedInstanceState.getSerializable("Position1");
+            Pos2= (Integer) savedInstanceState.getSerializable("Position2");
+            Pos3= (Integer) savedInstanceState.getSerializable("Position3");
+            Pos4= (Integer) savedInstanceState.getSerializable("Position4");
+            Pos5= (Integer) savedInstanceState.getSerializable("Position5");
             Gold= (String) savedInstanceState.getSerializable("Gold");
             YourTeam= (String) savedInstanceState.getSerializable("TeamName");
         }
 
+        TheAllPlayers=PlayersAllInit();
 
-        TeamPosition[0].setText(Pos1);
-        TeamPosition[1].setText(Pos2);
-        TeamPosition[2].setText(Pos3);
-        TeamPosition[3].setText(Pos4);
-        TeamPosition[4].setText(Pos5);
+
+        TeamPosition[0].setText(TheAllPlayers.get(Pos1).Name);
+        TeamPosition[1].setText(TheAllPlayers.get(Pos2).Name);
+        TeamPosition[2].setText(TheAllPlayers.get(Pos3).Name);
+        TeamPosition[3].setText(TheAllPlayers.get(Pos4).Name);
+        TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
         Goldbalance.setText(Gold);
         TeamName.setText("Команда "+YourTeam);
 
@@ -149,6 +155,11 @@ public class mainstate extends AppCompatActivity {
                 ToPickStage.putExtra("Position3",Pos3);
                 ToPickStage.putExtra("Position4",Pos4);
                 ToPickStage.putExtra("Position5",Pos5);
+
+                ToPickStage.putExtra("EnemyTeam",AllTeams.get(position).seq);
+
+
+
                 ToPickStage.putExtra("TeamName",YourTeam);
                 ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
 

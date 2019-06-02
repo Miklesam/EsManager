@@ -68,23 +68,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(mSettings.contains(StaticPosition1)) {
-            Player[0]=mSettings.getString(StaticPosition1, "Pos1");
+            Player[0]=mSettings.getString(StaticPosition1, "Position1");
         }
 
         if(mSettings.contains(StaticPosition2)) {
-            Player[1]=mSettings.getString(StaticPosition2, "Pos2");
+            Player[1]=mSettings.getString(StaticPosition2, "Position2");
         }
 
         if(mSettings.contains(StaticPosition3)) {
-            Player[2]=mSettings.getString(StaticPosition3, "Pos3");
+            Player[2]=mSettings.getString(StaticPosition3, "Position3");
         }
 
         if(mSettings.contains(StaticPosition4)) {
-            Player[3]=mSettings.getString(StaticPosition4, "Pos4");
+            Player[3]=mSettings.getString(StaticPosition4, "Position4");
         }
 
         if(mSettings.contains(StaticPosition5)) {
-            Player[4]=mSettings.getString(StaticPosition5, "Pos5");
+            Player[4]=mSettings.getString(StaticPosition5, "Position5");
         }
 
 
@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ToMAinState.putExtra("Position1",Player[0]);
-                ToMAinState.putExtra("Position2",Player[1]);
-                ToMAinState.putExtra("Position3",Player[2]);
-                ToMAinState.putExtra("Position4",Player[3]);
-                ToMAinState.putExtra("Position5",Player[4]);
+                ToMAinState.putExtra("Position1",Integer.parseInt(Player[0]));
+                ToMAinState.putExtra("Position2",Integer.parseInt(Player[1]));
+                ToMAinState.putExtra("Position3",Integer.parseInt(Player[2]));
+                ToMAinState.putExtra("Position4",Integer.parseInt(Player[3]));
+                ToMAinState.putExtra("Position5",Integer.parseInt(Player[4]));
                 ToMAinState.putExtra("Gold",Gold_to_Continie);
                 ToMAinState.putExtra("TeamName",Your_team_name);
 
