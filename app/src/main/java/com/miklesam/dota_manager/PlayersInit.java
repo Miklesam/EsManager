@@ -39,6 +39,7 @@ public class PlayersInit {
 
 
 
+
     static final Players Solo = new Players("Solo","322",1500,R.drawable.russia4020,90,85,5,10,0,0,0,21);
     static final Players Rodjer = new Players("Rodjer","Rodjer",1500,R.drawable.russia4020,90,80,25,10,0,0,0,22);
     static final Players Fng = new Players("Fng","Fng",1500,R.drawable.belarus4020,90,85,15,10,0,0,0,23);
@@ -55,11 +56,41 @@ public class PlayersInit {
     static final Players BLACKARXANGEL = new Players("BLACKARXANGEL","BLACKARXANGEL",1500,R.drawable.kazahstan4020,90,10,85,10,0,0,0,34);
 
 
+//Cis Rejects
+    static final Players Iceberg = new Players("Iceberg","Iceberg",500,R.drawable.ukraine4020,90,85,65,100,77,95,80,35);
+    static final Players ALWAYSWANNAFLY = new Players("ALWAYSWANNAFLY","ALWAYSWANNAFLY",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,36);
+    static final Players Goblak = new Players("Goblak","Goblak",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,37);
 
+//Fantastic Five
 
+    static final Players Sedoy = new Players("Sedoy","Sedoy",1500,R.drawable.russia4020,90,10,85,10,0,0,0,38);
+    static final Players Ghostik = new Players("Ghostik","Ghostik",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,39);
+    static final Players yol = new Players("yol","yol",1500,R.drawable.russia4020,90,10,85,10,0,0,0,40);
+    static final Players ArsZeeqq = new Players("ArsZeeqq","ArsZeeqq",1500,R.drawable.russia4020,90,10,85,10,0,0,0,41);
 
+    //F.R.I.E.N.D.S.
 
+    static final Players ALOHADANCE = new Players("ALOHADANCE","ALOHADANCE",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,42);
+    static final Players yoky = new Players("yoky","yoky",1500,R.drawable.russia4020,90,10,85,10,0,0,0,43);
 
+    //iCCup
+    static final Players Jackal = new Players("Jackal","Jackal",1500,R.drawable.belarus4020,90,10,85,10,0,0,0,44);
+    static final Players wejustzik = new Players("wejustzik","wejustzik",1500,R.drawable.belarus4020,90,10,85,10,0,0,0,45);
+    static final Players Mag = new Players("Mag","Mag",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,46);
+    static final Players Resolut1on = new Players("Resolut1on","Resolut1on",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,47);
+
+    //MoscowFive
+    static final Players NS = new Players("NS","NS",1500,R.drawable.russia4020,90,10,85,10,0,0,0,48);
+    static final Players Dread = new Players("Dread","Dread",1500,R.drawable.russia4020,90,10,85,10,0,0,0,49);
+    static final Players ArsArt = new Players("ArsArt","ArsArt",1500,R.drawable.russia4020,90,10,85,10,0,0,0,50);
+    static final Players Santa = new Players("Santa","Santa",1500,R.drawable.russia4020,90,10,85,10,0,0,0,51);
+
+    //Rebels
+    static final Players tmw = new Players("tmw","tmw",1500,R.drawable.russia4020,90,10,85,10,0,0,0,52);
+    static final Players Shachlo = new Players("Shachlo","Shachlo",1500,R.drawable.russia4020,90,10,85,10,0,0,0,53);
+    static final Players MeTTpuM = new Players("MeTTpuM","MeTTpuM",1500,R.drawable.russia4020,90,10,85,10,0,0,0,54);
+
+    //RoxKis
 
     public static ArrayList PlayersCoreInit(){
         CorePlayers.add(Ramzes);
