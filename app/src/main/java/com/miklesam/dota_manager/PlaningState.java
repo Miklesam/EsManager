@@ -497,10 +497,10 @@ for(int k=0;k<5;k++)
 
 
                 ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(0).sequence);
-                ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(1).sequence);
-                ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(2).sequence);
-                ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(3).sequence);
-                ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(4).sequence);
+                ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(3).sequence);
+                ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(4).sequence);
+                ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(1).sequence);
+                ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(2).sequence);
 
 
               startActivity(ToFightStageActivity);

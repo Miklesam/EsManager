@@ -413,45 +413,152 @@ public class FightState extends AppCompatActivity {
 
 
 
+
+
+        int mylanefarmigtop=0;
+        int mylanefarmigmid=0;
+        int mylanefarmigbottom=0;
+
+
+        for (int i=0;i<topradiantheroes;i++)
+        {
+            mylanefarmigtop=mylanefarmigtop+Dire_Unit[i].GamerPlayer.farming;
+        }
+
+        for (int i=0;i<midradiantheroes;i++)
+        {
+            mylanefarmigmid=mylanefarmigmid+Dire_Unit[i+topradiantheroes].GamerPlayer.farming;
+        }
+
+        for (int i=0;i<bottomradiantheroes;i++)
+        {
+            mylanefarmigbottom=mylanefarmigbottom+Dire_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming;
+        }
+
+
+
+
+
+
+
+
+
         for(int i=0; i<topradiantheroes;i++)
         {
-            RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/100)*(float)(totaltopRadiant/keftop*5000));
+
+            if(mylanefarmigtop<100)
+            {
+                RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/100)*(float)(totaltopRadiant/keftop*5000));
+            }
+            else
+            {
+                RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/mylanefarmigtop)*(float)(totaltopRadiant/keftop*5000));
+            }
+
             NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
         }
 
         for(int i=0; i<midradiantheroes;i++)
         {
+            if(mylanefarmigmid<100)
+            {
+                RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/100)*(float)(totalmidRadiant/kefmid*5000));
+            }
+            else
+            {
+                RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/mylanefarmigmid)*(float)(totalmidRadiant/kefmid*5000));
+            }
 
-            RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/100)*(float)(totalmidRadiant/kefmid*5000));
+
             NetworthText[i+topradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes]));
         }
 
         for(int i=0; i<bottomradiantheroes;i++)
         {
 
-            RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomRadiant/kefbottom*5000));
+            if(mylanefarmigbottom<100)
+            {
+                RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomRadiant/kefbottom*5000));
+            }
+            else
+            {
+                RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/mylanefarmigbottom)*(float)(totalbottomRadiant/kefbottom*5000));
+            }
+
             NetworthText[i+topradiantheroes+midradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes+midradiantheroes]));
         }
 
 
 
+
+        int lanefarmigtop=0;
+        int lanefarmigmid=0;
+        int lanefarmigbottom=0;
+
+
+        for (int i=0;i<comptopradiantheroes;i++)
+        {
+            lanefarmigtop=lanefarmigtop+Dire_Unit[i].GamerPlayer.farming;
+        }
+
+        for (int i=0;i<compmidradiantheroes;i++)
+        {
+            lanefarmigmid=lanefarmigmid+Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming;
+        }
+
+        for (int i=0;i<compbottomradiantheroes;i++)
+        {
+            lanefarmigbottom=lanefarmigbottom+Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming;
+        }
+
+
+
+
+
+
+
         for(int i=0; i<comptopradiantheroes;i++)
         {
-            DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/100)*(float)(totaltopDire/keftop*5000));
+
+            if (lanefarmigtop<100)
+            {
+                DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/100)*(float)(totaltopDire/keftop*5000));
+            }
+            else
+            {
+                DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/lanefarmigtop)*(float)(totaltopDire/keftop*5000));
+            }
+
+
             NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
         }
 
         for(int i=0; i<compmidradiantheroes;i++)
         {
+            if (lanefarmigmid<100)
+            {
+                DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/100)*(float)(totalmidDire/kefmid*5000));
+            }
+            else
+            {
+                DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/lanefarmigmid)*(float)(totalmidDire/kefmid*5000));
+            }
 
-            DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/100)*(float)(totalmidDire/kefmid*5000));
             NetworthText[5+i+comptopradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes]));
         }
 
         for(int i=0; i<compbottomradiantheroes;i++)
         {
 
-            DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomDire/kefbottom*5000));
+            if (lanefarmigbottom<100)
+            {
+                DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomDire/kefbottom*5000));
+            }
+            else
+            {
+                DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/lanefarmigbottom)*(float)(totalbottomDire/kefbottom*5000));
+            }
+
             NetworthText[5+i+comptopradiantheroes+compmidradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes+compmidradiantheroes]));
         }
 
