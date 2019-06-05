@@ -116,13 +116,13 @@ public class TeamsInit {
 
 
 
-    static final Teams VirtusPro = new Teams("Virtus Pro",VPTeam,0);
-    static final Teams Navi = new Teams("NAVI",NaviTeam,1);
-    static final Teams Gambit = new Teams("Gambit",GambitTeam,2);
-    static final Teams TeamSpirit = new Teams("Team Spirit",TeamSpiritTeam,3);
-    static final Teams Empire = new Teams("Empire",EmpireTeam,4);
-    static final Teams Winstrike = new Teams("Winstrike",WinstrikeTeam,5);
-    static final Teams BlackHornetsGaming = new Teams(" Black Hornets Gaming",BlackHornetsGamingTeam,6);
+    static final Teams VirtusPro = new Teams("Virtus Pro",VPTeam,0,R.drawable.vp_min_logo);
+    static final Teams Navi = new Teams("NAVI",NaviTeam,1,R.drawable.navi_min_logo);
+    static final Teams Gambit = new Teams("Gambit",GambitTeam,2,R.drawable.vp_min_logo);
+    static final Teams TeamSpirit = new Teams("Team Spirit",TeamSpiritTeam,3,R.drawable.vp_min_logo);
+    static final Teams Empire = new Teams("Empire",EmpireTeam,4,R.drawable.vp_min_logo);
+    static final Teams Winstrike = new Teams("Winstrike",WinstrikeTeam,5,R.drawable.vp_min_logo);
+    static final Teams BlackHornetsGaming = new Teams(" Black Hornets Gaming",BlackHornetsGamingTeam,6,R.drawable.vp_min_logo);
 
 
 

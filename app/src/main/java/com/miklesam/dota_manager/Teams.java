@@ -7,12 +7,14 @@ public class Teams {
     public String teamname;
     public ArrayList<Players> Players;
     public int seq;
+    public int logo;
 
 
-    Teams(String teamname, ArrayList<Players> Players,int seq) {
+    Teams(String teamname, ArrayList<Players> Players,int seq,int logo) {
         this.teamname=teamname;
         this.Players=Players;
         this.seq=seq;
+        this.logo=logo;
 
     }
 }

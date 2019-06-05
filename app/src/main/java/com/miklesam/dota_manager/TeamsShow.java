@@ -55,7 +55,7 @@ public class TeamsShow extends AppCompatActivity {
 
             ImageView imageView=(ImageView)convertView.findViewById(R.id.image);
             TextView textView = (TextView)convertView.findViewById(R.id.Titile);
-            TextView Price = (TextView)convertView.findViewById(R.id.Price);
+
 
             //imageView.setImageResource(CoreIMAGES[position]);
             //textView.setText(CoreNAMES[position]);
@@ -64,6 +64,7 @@ public class TeamsShow extends AppCompatActivity {
 
             //imageView.setImageResource(ThisTeams.get(position).Flag);
             textView.setText(ThisTeams.get(position).teamname);
+            imageView.setImageResource(ThisTeams.get(position).logo);
             //Price.setText(String.valueOf(Cores.get(position).Cost));
 
 
