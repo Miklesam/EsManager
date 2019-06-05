@@ -91,6 +91,30 @@ public class PlayersInit {
     static final Players MeTTpuM = new Players("MeTTpuM","MeTTpuM",1500,R.drawable.russia4020,90,10,85,10,0,0,0,54);
 
     //RoxKis
+    static final Players SoloYoung = new Players("SoloYoung","SoloYoung",1500,R.drawable.russia4020,90,10,85,10,0,0,0,55);
+
+    //TheRetry
+    static final Players PGG = new Players("PGG","PGG",1500,R.drawable.russia4020,90,10,85,10,0,0,0,56);
+    static final Players BloodAngel = new Players("BloodAngel","BloodAngel",1500,R.drawable.russia4020,90,10,85,10,0,0,0,57);
+    static final Players blowyourbrain = new Players("blowyourbrain","blowyourbrain",1500,R.drawable.russia4020,90,10,85,10,0,0,0,58);
+
+    //DTS
+    static final Players Artstyle = new Players("Artstyle","Artstyle",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,59);
+    static final Players Dendi = new Players("Dendi","Dendi",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,60);
+    static final Players LighTofHeaveN = new Players("LighTofHeaveN","LighTofHeaveN",1500,R.drawable.russia4020,90,10,85,10,0,0,0,61);
+
+    //DuzaGaming
+    static final Players sQreen = new Players("sQreen","sQreen",1500,R.drawable.russia4020,90,10,85,10,0,0,0,62);
+    static final Players GeneRaL = new Players("GeneRaL","GeneRaL",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,63);
+    static final Players Vigoss = new Players("Vigoss","Vigoss",1500,R.drawable.russia4020,90,10,85,10,0,0,0,64);
+
+    //NoPango
+    static final Players Naive = new Players("Naive","Naive",1500,R.drawable.kazahstan4020,90,10,85,10,0,0,0,65);
+    static final Players Ceyler = new Players("Ceyler","Ceyler",1500,R.drawable.russia4020,90,10,85,10,0,0,0,66);
+    static final Players XSvamp1Re = new Players("XSvamp1Re","XSvamp1Re",1500,R.drawable.kazahstan4020,90,10,85,10,0,0,0,67);
+    static final Players CemaTheSlayer = new Players("CemaTheSlayer","CemaTheSlayer",1500,R.drawable.ukraine4020,90,10,85,10,0,0,0,68);
+
+
 
     public static ArrayList PlayersCoreInit(){
         CorePlayers.add(Ramzes);
