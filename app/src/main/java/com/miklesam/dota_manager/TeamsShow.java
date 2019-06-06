@@ -29,6 +29,16 @@ public class TeamsShow extends AppCompatActivity {
     ImageView signature3;
     ArrayList<Heroes> Heroeses= new ArrayList<Heroes>();
     int teampos;
+    TextView PlayerNickname;
+
+
+    TextView laning;
+    TextView fighting;
+    TextView farming;
+    TextView supporting;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +50,20 @@ public class TeamsShow extends AppCompatActivity {
         final TeamsAdapter teamsAdapter=new TeamsAdapter();
         Backinfo=findViewById(R.id.Backs);
         FlagImage=findViewById(R.id.FlagImage);
+        PlayerNickname=findViewById(R.id.Nickname);
 
         signature1=findViewById(R.id.signature1);
         signature2=findViewById(R.id.signature2);
         signature3=findViewById(R.id.signature3);
+
+
+        laning=findViewById(R.id.laning);
+        fighting=findViewById(R.id.fighting);
+        farming=findViewById(R.id.farming);
+        supporting=findViewById(R.id.supporting);
+
+
+
 
         TeamslistView.setAdapter(teamsAdapter);
 
@@ -86,10 +106,15 @@ public class TeamsShow extends AppCompatActivity {
 
 
                 FlagImage.setImageResource(AllTeams.get(teampos).Players.get(position).Flag);
-
+                PlayerNickname.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Name));
                 signature1.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(position).signature1).picked);
                 signature2.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(position).signature2).picked);
                 signature3.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(position).signature3).picked);
+
+                laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).laining));
+                fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fighting));
+                farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
+                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).supporting));
 
 
             }
