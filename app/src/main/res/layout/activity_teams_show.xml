@@ -7,14 +7,165 @@
     android:layout_height="match_parent"
     tools:context=".TeamsShow">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Backs"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="Back"
+        />
+
 
     <ListView
-        android:layout_marginTop="50sp"
-        android:layout_width="400sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:id="@+id/TeamList">
 
     </ListView>
+
+    <LinearLayout
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <ListView
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/teamroost">
+
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/TeamInfo"
+        android:visibility="invisible">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/FlagImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/Nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turtle" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="100sp"
+            android:gravity="right">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/laning"
+                android:text="Лайнинг"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fighting"
+                android:text="Файтинг"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/farming"
+                android:text="Фарм"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/supporting"
+                android:text="Поддержка"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signature"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="60sp"
+            android:layout_height="35sp"
+            android:id="@+id/signature1"
+            app:srcCompat="@drawable/pick"
+
+            />
+        <ImageView
+            android:layout_width="60sp"
+            android:layout_height="35sp"
+            android:id="@+id/signature2"
+            app:srcCompat="@drawable/pick"
+
+            />
+        <ImageView
+            android:layout_width="60sp"
+            android:layout_height="35sp"
+            android:id="@+id/signature3"
+            app:srcCompat="@drawable/pick"
+
+            />
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="400sp"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/PlayerCost"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        />
+
+
+</LinearLayout>
+
 
 </RelativeLayout>
