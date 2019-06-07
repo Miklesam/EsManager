@@ -1,5 +1,6 @@
 package com.miklesam.dota_manager;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -45,6 +46,7 @@ public class FightState extends AppCompatActivity {
     int RadiantNetworh[]=new int[5];
     int DireNetworh[]=new int[5];
     TextView radiantnetw;
+    TextView GoldKeff;
 
 
     @Override
@@ -120,7 +122,7 @@ public class FightState extends AppCompatActivity {
         NetworthText[9]=findViewById(R.id.networthtext10);
 
         radiantnetw=findViewById(R.id.radiantnet);
-
+        GoldKeff=findViewById(R.id.goldkeff);
 
 
         if (savedInstanceState == null) {
@@ -570,7 +572,17 @@ public class FightState extends AppCompatActivity {
 
 
 
+for (int i=0;i<5;i++)
+{
+    NetworthText[i].setBackgroundColor(Color.parseColor("#00ff00"));
+    Networthicon[i].setBackgroundColor(Color.parseColor("#00ff00"));
+}
 
+        for (int i=5;i<10;i++)
+        {
+            NetworthText[i].setBackgroundColor(Color.parseColor("#ff0000"));
+            Networthicon[i].setBackgroundColor(Color.parseColor("#ff0000"));
+        }
 
 
 
@@ -583,8 +595,14 @@ public class FightState extends AppCompatActivity {
 
 
 
+        int Rad=RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4];
+        int Dire=DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4];
+        int goldkef=(Rad+Dire)/2;
+
 
         BottomScoreTitle.setText(String.valueOf(keftop));
+        GoldKeff.setText(String.valueOf(goldkef));
+
 
 
 

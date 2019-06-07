@@ -30,6 +30,7 @@ public class TeamsShow extends AppCompatActivity {
     ArrayList<Heroes> Heroeses= new ArrayList<Heroes>();
     int teampos;
     TextView PlayerNickname;
+    TextView Descriptionplayer;
 
 
     TextView laning;
@@ -56,7 +57,7 @@ public class TeamsShow extends AppCompatActivity {
         signature2=findViewById(R.id.signature2);
         signature3=findViewById(R.id.signature3);
 
-
+        Descriptionplayer=findViewById(R.id.Description);
         laning=findViewById(R.id.laning);
         fighting=findViewById(R.id.fighting);
         farming=findViewById(R.id.farming);
@@ -94,6 +95,22 @@ public class TeamsShow extends AppCompatActivity {
 
 
 
+                FlagImage.setImageResource(AllTeams.get(teampos).Players.get(0).Flag);
+                PlayerNickname.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Name));
+                signature1.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(0).signature1).picked);
+                signature2.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(0).signature2).picked);
+                signature3.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(0).signature3).picked);
+
+                laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).laining));
+                fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).fighting));
+                farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).farming));
+                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).supporting));
+
+                Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Description));
+
+
+
+
 
             }
         });
@@ -115,6 +132,7 @@ public class TeamsShow extends AppCompatActivity {
                 fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fighting));
                 farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
                 supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).supporting));
+                Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Description));
 
 
             }
