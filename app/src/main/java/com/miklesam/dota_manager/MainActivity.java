@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         TextView TestGold = findViewById(R.id.TestGold);
         TextName.setTypeface(type);
         TextName.setTypeface(type);
-
+        TestGold.setTypeface(type);
         Button NewGame = findViewById(R.id.new_game);
         Button Continue = findViewById(R.id.Continue);
 
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);
         final Intent ToTeamsShow = new Intent(this, TeamsShow.class);
+        final Intent ToShop = new Intent(this, Shop.class);
 
         final String Player[]= new String[5];
 
@@ -98,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(mSettings.contains(APP_PREFERENCES_NAME)) {
 
+
+            Continue.setVisibility(View.VISIBLE);
             Your_team_name =mSettings.getString(APP_PREFERENCES_NAME, "Your Team");
             TextName.setText(Your_team_name);
         }
@@ -116,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
                 ToMAinState.putExtra("TeamName",Your_team_name);
 
 
-
-
                 startActivity(ToMAinState);
 
             }
@@ -131,6 +132,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(ToTeamsShow);
+
+            }
+        });
+
+        Store.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToShop);
 
             }
         });

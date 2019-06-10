@@ -45,6 +45,11 @@ public class Pick_Stage extends AppCompatActivity {
     ArrayList <Heroes> RandomHeroList= new ArrayList <Heroes>();
     ArrayList <Pickers> PickerList= new ArrayList <Pickers>();
 
+
+    @Override
+    public void onBackPressed() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

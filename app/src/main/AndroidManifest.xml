@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".FightState"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".Rewarded"></activity>
+        <activity android:name=".Shop" />
+        <activity
+            android:name=".FightState"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".TeamsShow"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".PlaningState"
             android:screenOrientation="landscape" />
@@ -31,20 +34,24 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TeamName"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+
     </application>
 
 </manifest>

@@ -1,8 +1,11 @@
 package com.miklesam.dota_manager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,13 +50,24 @@ public class FightState extends AppCompatActivity {
     int DireNetworh[]=new int[5];
     TextView radiantnetw;
     TextView GoldKeff;
+    TextView latekeff;
+    TextView LoseOrWin;
+    Button tomainstance;
 
+
+    @Override
+    public void onBackPressed() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight_state);
 
+        tomainstance=findViewById(R.id.tomainstance);
+
+        LoseOrWin=findViewById(R.id.LoseOrWin);
+        latekeff=findViewById(R.id.latekeff);
         Toplane=findViewById(R.id.topline);
         Midlane=findViewById(R.id.midline);
         Bottomlane=findViewById(R.id.bottomline);
@@ -123,7 +137,7 @@ public class FightState extends AppCompatActivity {
 
         radiantnetw=findViewById(R.id.radiantnet);
         GoldKeff=findViewById(R.id.goldkeff);
-
+        final Intent Tomainstance = new Intent(this, mainstate.class);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -264,6 +278,22 @@ public class FightState extends AppCompatActivity {
 
         HeroesSpot=HeroInit.HeroInit();
         //Toplane.setText(String.valueOf(Hero[0])+","+String.valueOf(Lane[0]));
+
+
+        tomainstance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Tomainstance.putExtra("Position1",Gamer[0]);
+                Tomainstance.putExtra("Position2",Gamer[1]);
+                Tomainstance.putExtra("Position3",Gamer[2]);
+                Tomainstance.putExtra("Position4",Gamer[3]);
+                Tomainstance.putExtra("Position5",Gamer[4]);
+
+                startActivity(Tomainstance);
+
+            }
+        });
 
         int totaltopRadiant=0;
         int totaltopDire=0;
@@ -601,11 +631,52 @@ for (int i=0;i<5;i++)
 
 
         BottomScoreTitle.setText(String.valueOf(keftop));
-        GoldKeff.setText(String.valueOf(goldkef));
+
+
+        for(int i =0;i<5;i++)
+        {
+            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.fighting*5000/100));
+            DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.fighting*5000/100));
+            NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
+            NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
+        }
 
 
 
+        //GoldKeff.setText(String.valueOf(goldkef));
 
+        GoldKeff.setText(String.valueOf(RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])+"vs"+
+        String.valueOf(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]));
+
+
+        Rad=RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4];
+        Dire=DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4];
+        goldkef=(Rad+Dire)/2;
+
+        for(int i =0;i<5;i++)
+        {
+            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.supporting*5000/100));
+            DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.supporting*5000/100));
+            NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
+            NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
+        }
+
+        latekeff.setText(String.valueOf(RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])+"vs"+
+        String.valueOf(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]));
+
+
+        if ((RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])>(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]))
+        {
+          LoseOrWin.setText("You Win!");
+        }
+        else
+        {
+            LoseOrWin.setText("You Lose!");
+        }
+
+
+
+        tomainstance.setVisibility(View.VISIBLE);
 
 
 

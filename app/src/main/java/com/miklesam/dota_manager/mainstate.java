@@ -1,6 +1,8 @@
 package com.miklesam.dota_manager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,13 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
+import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class mainstate extends AppCompatActivity {
 
@@ -31,15 +40,21 @@ public class mainstate extends AppCompatActivity {
     String YourTeam;
     boolean cw;
 
+    int Pos1=0;
+    int Pos2=0;
+    int Pos3=0;
+    int Pos4=0;
+    int Pos5=0;
     ArrayList<Players> TheAllPlayers;
 
-
+    SharedPreferences mSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_mainstate);
-
+       // mSettings = getSharedPreferences(APP_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
         TeamPosition[0]=findViewById(R.id.teamposition1);
         TeamPosition[1]=findViewById(R.id.teamposition2);
         TeamPosition[2]=findViewById(R.id.teamposition3);
@@ -60,40 +75,47 @@ public class mainstate extends AppCompatActivity {
         CWList.setAdapter(CWteamsAdapter);
 
 
-        final int Pos1;
-        final int Pos2;
-        final int Pos3;
-        final int Pos4;
-        final int Pos5;
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                Pos1= 0;
-                Pos2= 0;
-                Pos3= 0;
-                Pos4= 0;
-                Pos5= 0;
-                Gold=null;
-                YourTeam=null;
 
-            } else {
-                Pos1= extras.getInt("Position1");
-                Pos2= extras.getInt("Position2");
-                Pos3= extras.getInt("Position3");
-                Pos4= extras.getInt("Position4");
-                Pos5= extras.getInt("Position5");
-                Gold=extras.getString("Gold");
-                YourTeam=extras.getString("TeamName");
-            }
-        } else {
-            Pos1= (Integer) savedInstanceState.getSerializable("Position1");
-            Pos2= (Integer) savedInstanceState.getSerializable("Position2");
-            Pos3= (Integer) savedInstanceState.getSerializable("Position3");
-            Pos4= (Integer) savedInstanceState.getSerializable("Position4");
-            Pos5= (Integer) savedInstanceState.getSerializable("Position5");
-            Gold= (String) savedInstanceState.getSerializable("Gold");
-            YourTeam= (String) savedInstanceState.getSerializable("TeamName");
+
+
+
+
+
+
+
+        if(mSettings.contains(StaticPosition1)) {
+            Pos1=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
         }
+
+        if(mSettings.contains(StaticPosition2)) {
+            Pos2=Integer.parseInt(mSettings.getString(StaticPosition2, "Position2"));
+        }
+
+        if(mSettings.contains(StaticPosition3)) {
+            Pos3=Integer.parseInt(mSettings.getString(StaticPosition3, "Position3"));
+        }
+
+        if(mSettings.contains(StaticPosition4)) {
+            Pos4=Integer.parseInt(mSettings.getString(StaticPosition4, "Position4"));
+        }
+
+        if(mSettings.contains(StaticPosition5)) {
+            Pos5=Integer.parseInt(mSettings.getString(StaticPosition5, "Position5"));
+        }
+
+        if(mSettings.contains(GoldBalance)) {
+
+            Gold =mSettings.getString(GoldBalance, "50000");
+
+        }
+
+        if(mSettings.contains(APP_PREFERENCES_NAME)) {
+
+            YourTeam =mSettings.getString(APP_PREFERENCES_NAME, "Your Team");
+
+        }
+
+
 
         TheAllPlayers=PlayersAllInit();
 

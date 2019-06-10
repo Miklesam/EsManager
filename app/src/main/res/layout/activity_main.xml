@@ -8,14 +8,20 @@
     tools:context=".MainActivity"
     >
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Name"
         android:id="@+id/TestName"
         android:layout_centerHorizontal="true"/>
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TestGold"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"/>
 
 
     <LinearLayout
@@ -25,17 +31,13 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gold"
-            android:id="@+id/TestGold"
-            android:layout_centerHorizontal="true"/>
+
 
         <Button
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/Continue"
+            android:visibility="invisible"
             android:text="Продолжить"
             />
 

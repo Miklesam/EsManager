@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".FightState">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lobby"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tomainstance"
+        android:visibility="invisible"
+        />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -455,6 +465,20 @@
             android:layout_height="wrap_content"
             android:text="GoldKeff"
             android:id="@+id/goldkeff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LatetKeff"
+            android:id="@+id/latekeff"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LoseOrWin"
+            android:id="@+id/LoseOrWin"/>
+
 
 
     </LinearLayout>

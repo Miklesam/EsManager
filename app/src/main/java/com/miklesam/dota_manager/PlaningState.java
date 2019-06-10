@@ -55,6 +55,10 @@ public class PlaningState extends AppCompatActivity {
     int TeamEnemy;
 
     @Override
+    public void onBackPressed() {
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -262,7 +266,7 @@ for(int k=0;k<5;k++)
 
 
             // показываем позиция нажатого элемента
-            Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
             if (position==0)
             {
                 lane_id[finalK]=1;

@@ -1,5 +1,6 @@
 package com.miklesam.dota_manager;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,12 @@ public class TeamsShow extends AppCompatActivity {
     TextView farming;
     TextView supporting;
 
+    boolean backteams;
+
+
+    @Override
+    public void onBackPressed() {
+    }
 
 
     @Override
@@ -64,7 +71,7 @@ public class TeamsShow extends AppCompatActivity {
         supporting=findViewById(R.id.supporting);
 
 
-
+        final Intent ToMain = new Intent(this, MainActivity.class);
 
         TeamslistView.setAdapter(teamsAdapter);
 
@@ -73,10 +80,20 @@ public class TeamsShow extends AppCompatActivity {
         Backinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                teamroosts.setVisibility(View.INVISIBLE);
-                TeamInfos.setVisibility(View.INVISIBLE);
-                TeamslistView.setVisibility(View.VISIBLE);
-                Backinfo.setVisibility(View.INVISIBLE);
+
+                if (backteams==true)
+                {
+                    teamroosts.setVisibility(View.INVISIBLE);
+                    TeamInfos.setVisibility(View.INVISIBLE);
+                    TeamslistView.setVisibility(View.VISIBLE);
+                     backteams=false;
+                }
+                else
+                {
+                    startActivity(ToMain);
+
+                }
+
 
             }
             });
@@ -91,7 +108,7 @@ public class TeamsShow extends AppCompatActivity {
                 final TeamsInfodapter teamsener=new TeamsInfodapter();
                 teamroosts.setAdapter(teamsener);
                 teamroosts.setVisibility(View.VISIBLE);
-                Backinfo.setVisibility(View.VISIBLE);
+                backteams=true;
 
 
 
