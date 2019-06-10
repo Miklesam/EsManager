@@ -218,6 +218,10 @@ public class PlayerChoose extends AppCompatActivity {
                 Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
                 Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
                 Supporting.setText("Поддержка "+ String.valueOf(Supports.get(position).supporting));
+                Signature1.setImageResource(AllHeroes.get(Supports.get(position).signature1).picked);
+                Signature2.setImageResource(AllHeroes.get(Supports.get(position).signature2).picked);
+                Signature3.setImageResource(AllHeroes.get(Supports.get(position).signature3).picked);
+
                 last_position=position;
                 last_position_player=Supports.get(position).sequence;
 
