@@ -298,6 +298,9 @@ public class TeamsInit {
 
 
 
+
+
+
     public static ArrayList AllTeamsInit(){
         VpInit();
         NaviInit();
@@ -318,8 +321,6 @@ public class TeamsInit {
         DTSInit();
         DuzaGamingInit();
         NoPangoInit();
-
-
 
         AllTeams.add(VirtusPro);
         AllTeams.add(Navi);
@@ -343,6 +344,8 @@ public class TeamsInit {
 
         return AllTeams;
     }
+
+
 
 
 

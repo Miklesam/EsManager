@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
@@ -185,6 +186,8 @@ public class mainstate extends AppCompatActivity {
                 ToPickStage.putExtra("TeamName",YourTeam);
                 ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
 
+
+                TeamsCW.clear();
                 startActivity(ToPickStage);
 
 

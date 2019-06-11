@@ -17,8 +17,11 @@ import java.util.concurrent.TimeUnit;
 
 import static com.miklesam.dota_manager.HeroInit.Abadon;
 import static com.miklesam.dota_manager.HeroInit.Alchemic;
+import static com.miklesam.dota_manager.HeroInit.AllHeroes;
+import static com.miklesam.dota_manager.PickersInit.AllPickers;
 import static com.miklesam.dota_manager.PickersInit.AllPickersInit;
 import static com.miklesam.dota_manager.PickersInit.EmpirePickerMan;
+import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
 public class Pick_Stage extends AppCompatActivity {
 
@@ -42,7 +45,6 @@ public class Pick_Stage extends AppCompatActivity {
     int TeamEnemy;
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
-    ArrayList <Heroes> RandomHeroList= new ArrayList <Heroes>();
     ArrayList <Pickers> PickerList= new ArrayList <Pickers>();
 
 
@@ -57,7 +59,7 @@ public class Pick_Stage extends AppCompatActivity {
         setContentView(R.layout.activity_pick__stage);
         Plan_state=findViewById(R.id.Plan_state);
         HeroList.addAll(HeroInit.HeroInit());
-        RandomHeroList.addAll(HeroInit.HeroInit());
+        //RandomHeroList= (ArrayList<Heroes>) HeroList.clone();
         YourTeamName=findViewById(R.id.Yourteam);
         EnemyteamNamet=findViewById(R.id.EnemyteamName);
         final Intent PlaningState = new Intent(this, PlaningState.class);
@@ -460,7 +462,14 @@ public class Pick_Stage extends AppCompatActivity {
                 PlaningState.putExtra("Position5",Pos5);
 
 
+               // AllHeroes.clear();
+                HeroList.clear();
+                AllHeroes.clear();
+                PickerList.clear();
+
+
                 startActivity(PlaningState);
+                finish();
 
             }
         });
@@ -526,7 +535,7 @@ public class Pick_Stage extends AppCompatActivity {
 
                                                          pick_state++;
                                                          HeroList.get(finalI).baned=true;
-                                                         RandomHeroList.remove(finalI);
+                                                         AllHeroes.remove(finalI);
                                                          Heros_icon[finalI].setImageResource(HeroList.get(finalI).largeban);
                                                          Pick_Stage_stam();
 
@@ -534,7 +543,7 @@ public class Pick_Stage extends AppCompatActivity {
 
                                                      else {
                                                          Toast toast = Toast.makeText(getApplicationContext(),
-                                                                 "Забанен", Toast.LENGTH_SHORT);
+                                                                 "Забанен1", Toast.LENGTH_SHORT);
                                                          toast.show();
 
                                                      }
@@ -575,7 +584,7 @@ public class Pick_Stage extends AppCompatActivity {
             if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
             {
                 frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
-                RandomHeroList.remove(frompicker);
+                AllHeroes.remove(frompicker);
 
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).minban);
                 HeroList.get(frompicker).baned=true;
@@ -589,7 +598,7 @@ public class Pick_Stage extends AppCompatActivity {
             {
 
                 frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
-                RandomHeroList.remove(frompicker);
+                AllHeroes.remove(frompicker);
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
                 HeroList.get(frompicker).baned=true;
                 Heros_icon[HeroList.get(frompicker).seq].setImageResource(HeroList.get(frompicker).largeban);
@@ -599,7 +608,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
                 frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
-                RandomHeroList.remove(frompicker);
+                AllHeroes.remove(frompicker);
                 Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
                 HeroList.get(frompicker).baned=true;
                 Heros_icon[HeroList.get(frompicker).seq].setImageResource(HeroList.get(frompicker).largeban);
@@ -648,31 +657,31 @@ public class Pick_Stage extends AppCompatActivity {
     {
         Random randomhero = new Random();
         int whathero=0;
-        if(RandomHeroList.size()!=0)
+        if(AllHeroes.size()!=0)
         {
-            whathero=randomhero.nextInt(RandomHeroList.size());
+            whathero=randomhero.nextInt(AllHeroes.size());
 
         }
 
         Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
         if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
         {
-            Pick_stage[pick_state].setImageResource(RandomHeroList.get(whathero).minban);
-            HeroList.get(RandomHeroList.get(whathero).seq).baned=true;
-            Heros_icon[RandomHeroList.get(whathero).seq].setImageResource(RandomHeroList.get(whathero).largeban);
-            RandomHeroList.remove(whathero);
+            Pick_stage[pick_state].setImageResource(AllHeroes.get(whathero).minban);
+            HeroList.get(AllHeroes.get(whathero).seq).baned=true;
+            Heros_icon[AllHeroes.get(whathero).seq].setImageResource(AllHeroes.get(whathero).largeban);
+            AllHeroes.remove(whathero);
             pick_state++;
 
 
         }
         else if ((pick_state==6)||(pick_state==9))
         {
-            Pick_stage[pick_state].setImageResource(RandomHeroList.get(whathero).picked);
-            HeroList.get(RandomHeroList.get(whathero).seq).baned=true;
-            Heros_icon[RandomHeroList.get(whathero).seq].setImageResource(RandomHeroList.get(whathero).largeban);
-            what_hero[k]=HeroList.get(RandomHeroList.get(whathero).seq).seq;
+            Pick_stage[pick_state].setImageResource(AllHeroes.get(whathero).picked);
+            HeroList.get(AllHeroes.get(whathero).seq).baned=true;
+            Heros_icon[AllHeroes.get(whathero).seq].setImageResource(AllHeroes.get(whathero).largeban);
+            what_hero[k]=HeroList.get(AllHeroes.get(whathero).seq).seq;
             k++;
-            RandomHeroList.remove(whathero);
+            AllHeroes.remove(whathero);
             pick_state++;
 
 
@@ -682,12 +691,12 @@ public class Pick_Stage extends AppCompatActivity {
 
         else if ((pick_state==15)||(pick_state==17)||(pick_state==20))
         {
-            Pick_stage[pick_state].setImageResource(RandomHeroList.get(whathero).picked);
-            HeroList.get(RandomHeroList.get(whathero).seq).baned=true;
-            Heros_icon[RandomHeroList.get(whathero).seq].setImageResource(RandomHeroList.get(whathero).largeban);
-            what_hero[k]=HeroList.get(RandomHeroList.get(whathero).seq).seq;
+            Pick_stage[pick_state].setImageResource(AllHeroes.get(whathero).picked);
+            HeroList.get(AllHeroes.get(whathero).seq).baned=true;
+            Heros_icon[AllHeroes.get(whathero).seq].setImageResource(AllHeroes.get(whathero).largeban);
+            what_hero[k]=HeroList.get(AllHeroes.get(whathero).seq).seq;
             k++;
-            RandomHeroList.remove(whathero);
+            AllHeroes.remove(whathero);
             pick_state++;
 
 

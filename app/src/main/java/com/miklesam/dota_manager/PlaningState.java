@@ -19,6 +19,7 @@ import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlanersInit.AllPlanersInit;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
+import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 
 public class PlaningState extends AppCompatActivity {
@@ -63,13 +64,14 @@ public class PlaningState extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_planing_state);
-
+        AllTeams.clear();
         GameHero[0] = findViewById(R.id.GameHero1);
         GameHero[1] = findViewById(R.id.GameHero2);
         GameHero[2] = findViewById(R.id.GameHero3);
         GameHero[3] = findViewById(R.id.GameHero4);
         GameHero[4] = findViewById(R.id.GameHero5);
         ToFightStage=findViewById(R.id.FightStage);
+        HeroInit.HeroInit();
 
         Bottom[0]=findViewById(R.id.bottom1);
         Bottom[1]=findViewById(R.id.bottom2);
@@ -91,6 +93,11 @@ public class PlaningState extends AppCompatActivity {
         AllTeamsTeams=AllTeamsInit();
         final Intent ToFightStageActivity = new Intent(this, FightState.class);
 
+
+        for (int i=0;i<AllHeroes.size();i++)
+        {
+            AllHeroes.get(i).baned=false;
+        }
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -506,7 +513,7 @@ for(int k=0;k<5;k++)
                 ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(1).sequence);
                 ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(2).sequence);
 
-
+                AllHeroes.clear();
               startActivity(ToFightStageActivity);
 
             }

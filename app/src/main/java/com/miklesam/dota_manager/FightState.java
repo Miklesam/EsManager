@@ -11,7 +11,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
+import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
 public class FightState extends AppCompatActivity {
 
@@ -63,7 +65,7 @@ public class FightState extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight_state);
-
+        AllTeams.clear();
         tomainstance=findViewById(R.id.tomainstance);
 
         LoseOrWin=findViewById(R.id.LoseOrWin);
@@ -289,6 +291,8 @@ public class FightState extends AppCompatActivity {
                 Tomainstance.putExtra("Position3",Gamer[2]);
                 Tomainstance.putExtra("Position4",Gamer[3]);
                 Tomainstance.putExtra("Position5",Gamer[4]);
+                HeroesSpot.clear();
+                AllHeroes.clear();
 
                 startActivity(Tomainstance);
 
