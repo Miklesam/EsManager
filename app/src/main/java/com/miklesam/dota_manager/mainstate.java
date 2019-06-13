@@ -17,18 +17,28 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam4;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam5;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam6;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam7;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
+import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class mainstate extends AppCompatActivity {
 
@@ -39,13 +49,19 @@ public class mainstate extends AppCompatActivity {
     ListView CWList;
     ArrayList<Teams> TeamsCW;
     String YourTeam;
+    TextView XPShow;
+    int XPint;
     boolean cw;
+    TextView DayText;
+    int gamemode=0;
 
     int Pos1=0;
     int Pos2=0;
     int Pos3=0;
     int Pos4=0;
     int Pos5=0;
+    int Dayint;
+    int openqual[]= new int[7];
     ArrayList<Players> TheAllPlayers;
 
     SharedPreferences mSettings;
@@ -64,18 +80,77 @@ public class mainstate extends AppCompatActivity {
         Play_game=findViewById(R.id.Play_game);
         TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
+        XPShow=findViewById(R.id.XP);
+        DayText=findViewById(R.id.Day);
         String Gold="1";
         YourTeam="Your Team";
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
+        final Intent ToOpenQuali = new Intent(this, OpenQuali.class);
         CWList = (ListView)findViewById(R.id.TeamCW);
         TeamsCW=AllTeamsInit();
 
         final CWAdapter CWteamsAdapter=new CWAdapter();
-
-
         CWList.setAdapter(CWteamsAdapter);
 
+        final int won;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                won= 0;
+            } else {
+                won= extras.getInt("win");
+            }
+        } else {
+            won= (int) savedInstanceState.getSerializable("win");
+        }
 
+        XPint=0;
+        if(mSettings.contains(XPstatic)) {
+            XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
+        }
+
+
+        if(mSettings.contains(Day)) {
+            Dayint=Integer.parseInt(mSettings.getString(Day, "0"));
+        }
+
+
+        XPShow.setText(String.valueOf(XPint));
+        SharedPreferences.Editor editor = mSettings.edit();
+
+        if(won==1)
+        {
+            XPint=XPint+50;
+            Dayint=Dayint+1;
+            editor.putString(XPstatic, String.valueOf(XPint));
+            editor.putString(Day, String.valueOf(Dayint));
+            editor.apply();
+
+        }
+        else if (won==2)
+        {
+            XPint=XPint+10;
+            Dayint=Dayint+1;
+            editor.putString(XPstatic, String.valueOf(XPint));
+            editor.putString(Day, String.valueOf(Dayint));
+            editor.apply();
+
+        }
+
+        XPShow.setText(String.valueOf(XPint));
+        DayText.setText(String.valueOf(Dayint));
+
+        if (Dayint%2==0)
+        {
+            Play_game.setText("Quali");
+            gamemode=1;
+
+        }
+        else
+        {
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
 
 
 
@@ -136,19 +211,47 @@ public class mainstate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
          // YourTeamIntent.putExtra("Name",TeamTag);
-                if (cw==false)
+                if(gamemode==2)
                 {
-                    Play_game.setText("Отмена");
-                    CWList.setVisibility(View.VISIBLE);
-                    cw=true;
+                    if (cw==false)
+                    {
+                        Play_game.setText("Отмена");
+                        CWList.setVisibility(View.VISIBLE);
+                        cw=true;
 
+                    }
+                    else
+                    {
+                        Play_game.setText("Игра");
+                        CWList.setVisibility(View.INVISIBLE);
+                        cw=false;
+                    }
+                } else if (gamemode==1) {
+
+
+                    Random randomteam = new Random();
+                    int whatteam=0;
+
+                    for (int i=0;i<7;i++)
+                    {
+                        whatteam=randomteam.nextInt(TeamsCW.size());
+                        openqual[i]=TeamsCW.get(whatteam).seq;
+                        TeamsCW.remove(whatteam);
+
+                    }
+
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    editor.putString(OpenTeam1,String.valueOf(openqual[0]));
+                    editor.putString(OpenTeam2,String.valueOf(openqual[1]));
+                    editor.putString(OpenTeam3,String.valueOf(openqual[2]));
+                    editor.putString(OpenTeam4,String.valueOf(openqual[3]));
+                    editor.putString(OpenTeam5,String.valueOf(openqual[4]));
+                    editor.putString(OpenTeam6,String.valueOf(openqual[5]));
+                    editor.putString(OpenTeam7,String.valueOf(openqual[6]));
+                    editor.apply();
+                    startActivity(ToOpenQuali);
                 }
-                else
-                {
-                    Play_game.setText("Игра");
-                    CWList.setVisibility(View.INVISIBLE);
-                    cw=false;
-                }
+
 
 
 
@@ -180,9 +283,6 @@ public class mainstate extends AppCompatActivity {
                 ToPickStage.putExtra("Position5",Pos5);
 
                 ToPickStage.putExtra("EnemyTeam",AllTeams.get(position).seq);
-
-
-
                 ToPickStage.putExtra("TeamName",YourTeam);
                 ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
 

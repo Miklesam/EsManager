@@ -18,6 +18,18 @@ public class YourTeam extends AppCompatActivity {
     public static final String StaticPosition3 = "pos3";
     public static final String StaticPosition4 = "pos4";
     public static final String StaticPosition5 = "pos5";
+    public static final String XPstatic= "xpstatic";
+    public static final String Day= "daystatic";
+    public static final String Mode= "modestatic";
+
+    public static final String OpenTeam1= "open1";
+    public static final String OpenTeam2= "open2";
+    public static final String OpenTeam3= "open3";
+    public static final String OpenTeam4= "open4";
+    public static final String OpenTeam5= "open5";
+    public static final String OpenTeam6= "open6";
+    public static final String OpenTeam7= "open7";
+
     SharedPreferences mSettings;
 
     @Override
@@ -31,6 +43,8 @@ public class YourTeam extends AppCompatActivity {
         Button toPlayerChoose = findViewById(R.id.toPlayerChoose);
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME , Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance , Context.MODE_PRIVATE);
+
+
 
         final String newString;
         if (savedInstanceState == null) {

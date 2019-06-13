@@ -21,6 +21,21 @@ public class PlanersInit {
         AllPlaners.add(NaviPlanerMan);
         AllPlaners.add(GambitPlanerMan);
         AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
 
         return AllPlaners;
     }

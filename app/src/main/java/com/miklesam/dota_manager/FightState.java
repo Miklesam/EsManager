@@ -1,6 +1,8 @@
 package com.miklesam.dota_manager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +16,9 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 
 public class FightState extends AppCompatActivity {
 
@@ -55,7 +60,9 @@ public class FightState extends AppCompatActivity {
     TextView latekeff;
     TextView LoseOrWin;
     Button tomainstance;
-
+    int winloose;
+    SharedPreferences mSettings;
+    int TournMode;
 
     @Override
     public void onBackPressed() {
@@ -68,6 +75,7 @@ public class FightState extends AppCompatActivity {
         AllTeams.clear();
         tomainstance=findViewById(R.id.tomainstance);
 
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
         LoseOrWin=findViewById(R.id.LoseOrWin);
         latekeff=findViewById(R.id.latekeff);
         Toplane=findViewById(R.id.topline);
@@ -139,7 +147,15 @@ public class FightState extends AppCompatActivity {
 
         radiantnetw=findViewById(R.id.radiantnet);
         GoldKeff=findViewById(R.id.goldkeff);
+
+        if(mSettings.contains(Mode)) {
+            TournMode=Integer.parseInt(mSettings.getString(Mode, "0"));
+        }
+
+
+
         final Intent Tomainstance = new Intent(this, mainstate.class);
+        final Intent Tobackopen = new Intent(this, OpenQuali.class);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -286,15 +302,22 @@ public class FightState extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Tomainstance.putExtra("Position1",Gamer[0]);
-                Tomainstance.putExtra("Position2",Gamer[1]);
-                Tomainstance.putExtra("Position3",Gamer[2]);
-                Tomainstance.putExtra("Position4",Gamer[3]);
-                Tomainstance.putExtra("Position5",Gamer[4]);
-                HeroesSpot.clear();
-                AllHeroes.clear();
 
-                startActivity(Tomainstance);
+                if (TournMode==1)
+                {
+                    HeroesSpot.clear();
+                    AllHeroes.clear();
+                    startActivity(Tobackopen);
+                }
+
+                else
+                {
+                    Tomainstance.putExtra("win",winloose);
+                    HeroesSpot.clear();
+                    AllHeroes.clear();
+                    startActivity(Tomainstance);
+                }
+
 
             }
         });
@@ -672,10 +695,12 @@ for (int i=0;i<5;i++)
         if ((RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])>(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]))
         {
           LoseOrWin.setText("You Win!");
+            winloose=1;
         }
         else
         {
             LoseOrWin.setText("You Lose!");
+            winloose=2;
         }
 
 

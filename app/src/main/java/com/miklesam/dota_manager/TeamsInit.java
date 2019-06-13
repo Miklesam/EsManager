@@ -125,7 +125,7 @@ public class TeamsInit {
         return GambitTeam;
     }
 
-    public static ArrayList TeamSpiritInit(){
+    public static ArrayList OldButGoldInit(){
         TeamSpiritTeam.add(illidan);
         TeamSpiritTeam.add(G);
         TeamSpiritTeam.add(bzz);
@@ -279,7 +279,7 @@ public class TeamsInit {
     static final Teams VirtusPro = new Teams("Virtus Pro",VPTeam,0,R.drawable.vp_min_logo);
     static final Teams Navi = new Teams("NAVI",NaviTeam,1,R.drawable.navi_min_logo);
     static final Teams Gambit = new Teams("Gambit",GambitTeam,2,R.drawable.gambit_esports_min_logo);
-    static final Teams TeamSpirit = new Teams("Team Spirit",TeamSpiritTeam,3,R.drawable.old_but_gold_logo);
+    static final Teams OldButGold = new Teams("OldButGold",TeamSpiritTeam,3,R.drawable.old_but_gold_logo);
     static final Teams Empire = new Teams("Empire",EmpireTeam,4,R.drawable.team_empire_min_logo);
     static final Teams Winstrike = new Teams("Winstrike",WinstrikeTeam,5,R.drawable.winstrike_team_min_logo);
     static final Teams BlackHornetsGaming = new Teams(" Black Hornets Gaming",BlackHornetsGamingTeam,6,R.drawable.black_hornets_gaming_logo);
@@ -305,7 +305,7 @@ public class TeamsInit {
         VpInit();
         NaviInit();
         GambitInit();
-        TeamSpiritInit();
+        OldButGoldInit();
         EmpireInit();
         WinstrikeInit();
         BlackHornetsGamingInit();
@@ -325,7 +325,7 @@ public class TeamsInit {
         AllTeams.add(VirtusPro);
         AllTeams.add(Navi);
         AllTeams.add(Gambit);
-        AllTeams.add(TeamSpirit);
+        AllTeams.add(OldButGold);
         AllTeams.add(Empire);
         AllTeams.add(Winstrike);
         AllTeams.add(BlackHornetsGaming);

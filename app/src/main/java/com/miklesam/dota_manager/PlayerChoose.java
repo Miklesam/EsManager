@@ -24,12 +24,15 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
+import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
+import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class PlayerChoose extends AppCompatActivity {
 
@@ -239,6 +242,9 @@ public class PlayerChoose extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences.Editor editor = mSettings.edit();
                 editor.putString(GoldBalance, balancegold);
+                editor.putString(XPstatic, "0");
+                editor.putString(Day, "0");
+                editor.putString(Mode, "0");
 
                 editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
                 editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
