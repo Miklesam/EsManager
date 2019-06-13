@@ -16,8 +16,14 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.OpenFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
+import static com.miklesam.dota_manager.YourTeam.QuaterWin;
+import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 
 public class FightState extends AppCompatActivity {
@@ -63,6 +69,8 @@ public class FightState extends AppCompatActivity {
     int winloose;
     SharedPreferences mSettings;
     int TournMode;
+    int openquater;
+    int opensemi;
 
     @Override
     public void onBackPressed() {
@@ -150,6 +158,14 @@ public class FightState extends AppCompatActivity {
 
         if(mSettings.contains(Mode)) {
             TournMode=Integer.parseInt(mSettings.getString(Mode, "0"));
+        }
+
+        if(mSettings.contains(OpenQuaterFinals)) {
+            openquater=Integer.parseInt(mSettings.getString(OpenQuaterFinals, "0"));
+        }
+
+        if(mSettings.contains(OpenSemiFinals)) {
+            opensemi=Integer.parseInt(mSettings.getString(OpenSemiFinals, "0"));
         }
 
 
@@ -307,12 +323,34 @@ public class FightState extends AppCompatActivity {
                 {
                     HeroesSpot.clear();
                     AllHeroes.clear();
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    if (opensemi==1)
+                    {
+                        editor.putString(OpenFinals, "1");
+                        editor.putString(FinalsWin, "1");
+                    }
+
+                    else if (openquater==1)
+                    {
+                        editor.putString(OpenSemiFinals, "1");
+                        editor.putString(SemiWin, "1");
+                    }
+                    else
+                    {
+                        editor.putString(OpenQuaterFinals, "1");
+                        editor.putString(QuaterWin, "1");
+
+                    }
+
+
+                    editor.apply();
+
                     startActivity(Tobackopen);
                 }
 
                 else
                 {
-                    Tomainstance.putExtra("win",winloose);
+
                     HeroesSpot.clear();
                     AllHeroes.clear();
                     startActivity(Tomainstance);

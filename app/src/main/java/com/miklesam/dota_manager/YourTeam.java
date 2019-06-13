@@ -30,6 +30,30 @@ public class YourTeam extends AppCompatActivity {
     public static final String OpenTeam6= "open6";
     public static final String OpenTeam7= "open7";
 
+    public static final String OpenScore1= "openscore1";
+    public static final String OpenScore2= "openscore2";
+    public static final String OpenScore3= "openscore3";
+    public static final String OpenScore4= "openscore4";
+
+    public static final String OpenScore5= "openscore5";
+    public static final String OpenScore6= "openscore6";
+    public static final String OpenScore7= "openscore7";
+    public static final String OpenScore8= "openscore8";
+
+    public static final String OpenQuaterFinals= "openquater";
+    public static final String OpenSemiFinals= "opensemi";
+    public static final String OpenFinals= "openfinals";
+
+    public static final String QuaterWin= "QuaterWin";
+    public static final String SemiWin= "SemiWin";
+    public static final String FinalsWin= "FinalsWin";
+
+    public static final String OpenScore9= "openscore9";
+    public static final String OpenScore10= "openscore10";
+    public static final String OpenScore11= "openscore11";
+    public static final String OpenScore12= "openscore12";
+
+
     SharedPreferences mSettings;
 
     @Override

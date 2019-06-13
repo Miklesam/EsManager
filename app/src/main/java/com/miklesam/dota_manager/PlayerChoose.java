@@ -25,8 +25,26 @@ import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.YourTeam.Day;
+import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.OpenFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenScore1;
+import static com.miklesam.dota_manager.YourTeam.OpenScore10;
+import static com.miklesam.dota_manager.YourTeam.OpenScore11;
+import static com.miklesam.dota_manager.YourTeam.OpenScore12;
+import static com.miklesam.dota_manager.YourTeam.OpenScore2;
+import static com.miklesam.dota_manager.YourTeam.OpenScore3;
+import static com.miklesam.dota_manager.YourTeam.OpenScore4;
+import static com.miklesam.dota_manager.YourTeam.OpenScore5;
+import static com.miklesam.dota_manager.YourTeam.OpenScore6;
+import static com.miklesam.dota_manager.YourTeam.OpenScore7;
+import static com.miklesam.dota_manager.YourTeam.OpenScore8;
+import static com.miklesam.dota_manager.YourTeam.OpenScore9;
+import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
+import static com.miklesam.dota_manager.YourTeam.QuaterWin;
+import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -245,6 +263,32 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(XPstatic, "0");
                 editor.putString(Day, "0");
                 editor.putString(Mode, "0");
+
+                editor.putString(OpenQuaterFinals, "0");
+                editor.putString(OpenSemiFinals, "0");
+                editor.putString(OpenFinals, "0");
+
+                editor.putString(OpenScore1, "0");
+                editor.putString(OpenScore2, "0");
+                editor.putString(OpenScore3, "0");
+                editor.putString(OpenScore4, "0");
+
+                editor.putString(OpenScore5, "0");
+                editor.putString(OpenScore6, "0");
+                editor.putString(OpenScore7, "0");
+                editor.putString(OpenScore8, "0");
+
+                editor.putString(OpenScore9, "0");
+                editor.putString(OpenScore10, "0");
+                editor.putString(OpenScore11, "0");
+                editor.putString(OpenScore12, "0");
+
+
+                editor.putString(QuaterWin, "0");
+                editor.putString(SemiWin, "0");
+                editor.putString(FinalsWin, "0");
+
+
 
                 editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
                 editor.putString(StaticPosition2,String.valueOf(playerseq[1]));

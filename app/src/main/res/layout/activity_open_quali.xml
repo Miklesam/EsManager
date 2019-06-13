@@ -281,6 +281,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/Teamname9"
                 />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score9"
+                android:textColor="#000000"
+                />
+
 
         </LinearLayout>
 
@@ -297,6 +305,13 @@
                 android:layout_width="150sp"
                 android:layout_height="wrap_content"
                 android:id="@+id/Teamname10"
+                />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score10"
+                android:textColor="#000000"
                 />
 
         </LinearLayout>
@@ -318,6 +333,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/Teamname11"
                 />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score11"
+                android:textColor="#000000"
+                />
 
         </LinearLayout>
 
@@ -334,6 +356,14 @@
                 android:layout_width="150sp"
                 android:layout_height="wrap_content"
                 android:id="@+id/Teamname12"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score12"
+                android:textColor="#000000"
                 />
 
         </LinearLayout>
@@ -365,6 +395,14 @@
             android:id="@+id/Teamname13"
             />
 
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score13"
+                android:textColor="#000000"
+                />
+
     </LinearLayout>
 
         <LinearLayout
@@ -381,6 +419,14 @@
                 android:layout_width="150sp"
                 android:layout_height="wrap_content"
                 android:id="@+id/Teamname14"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Score14"
+                android:textColor="#000000"
                 />
 
         </LinearLayout>
