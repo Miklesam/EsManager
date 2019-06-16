@@ -24,11 +24,29 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
+import static com.miklesam.dota_manager.YourTeam.CloseLose1;
+import static com.miklesam.dota_manager.YourTeam.CloseLose2;
+import static com.miklesam.dota_manager.YourTeam.CloseLose3;
+import static com.miklesam.dota_manager.YourTeam.CloseLose4;
+import static com.miklesam.dota_manager.YourTeam.CloseLose5;
+import static com.miklesam.dota_manager.YourTeam.CloseLose6;
+import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.CloseWin1;
+import static com.miklesam.dota_manager.YourTeam.CloseWin2;
+import static com.miklesam.dota_manager.YourTeam.CloseWin3;
+import static com.miklesam.dota_manager.YourTeam.CloseWin4;
+import static com.miklesam.dota_manager.YourTeam.CloseWin5;
+import static com.miklesam.dota_manager.YourTeam.CloseWin6;
+import static com.miklesam.dota_manager.YourTeam.CloseWin7;
+import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
+import static com.miklesam.dota_manager.YourTeam.Closedlose;
+import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenScore1;
 import static com.miklesam.dota_manager.YourTeam.OpenScore10;
@@ -287,6 +305,36 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(QuaterWin, "0");
                 editor.putString(SemiWin, "0");
                 editor.putString(FinalsWin, "0");
+                editor.putString(OpenQualiWinner, "0");
+                editor.putString(ClosedSeries, "0");
+
+                editor.putString(Closedwin, "0");
+                editor.putString(Closedlose, "0");
+
+                editor.putString(CloseWin7, "0");
+                editor.putString(CloseWin6, "0");
+                editor.putString(CloseWin5, "0");
+                editor.putString(CloseWin4, "0");
+                editor.putString(CloseWin3, "0");
+                editor.putString(CloseWin2, "0");
+                editor.putString(CloseWin1, "0");
+
+
+
+
+                editor.putString(CloseLose7, "0");
+                editor.putString(CloseLose6, "0");
+                editor.putString(CloseLose5, "0");
+                editor.putString(CloseLose4, "0");
+                editor.putString(CloseLose3, "0");
+                editor.putString(CloseLose2, "0");
+                editor.putString(CloseLose1, "0");
+
+
+
+
+
+
 
 
 

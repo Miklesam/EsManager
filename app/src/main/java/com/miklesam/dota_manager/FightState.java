@@ -16,6 +16,24 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+import static com.miklesam.dota_manager.YourTeam.CloseLose1;
+import static com.miklesam.dota_manager.YourTeam.CloseLose2;
+import static com.miklesam.dota_manager.YourTeam.CloseLose3;
+import static com.miklesam.dota_manager.YourTeam.CloseLose4;
+import static com.miklesam.dota_manager.YourTeam.CloseLose5;
+import static com.miklesam.dota_manager.YourTeam.CloseLose6;
+import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.CloseWin1;
+import static com.miklesam.dota_manager.YourTeam.CloseWin2;
+import static com.miklesam.dota_manager.YourTeam.CloseWin3;
+import static com.miklesam.dota_manager.YourTeam.CloseWin4;
+import static com.miklesam.dota_manager.YourTeam.CloseWin5;
+import static com.miklesam.dota_manager.YourTeam.CloseWin6;
+import static com.miklesam.dota_manager.YourTeam.CloseWin7;
+import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
+import static com.miklesam.dota_manager.YourTeam.Closedlose;
+import static com.miklesam.dota_manager.YourTeam.Closedwin;
+import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -71,6 +89,30 @@ public class FightState extends AppCompatActivity {
     int TournMode;
     int openquater;
     int opensemi;
+    int day;
+    int Seriescnt;
+    int Closedwinint;
+    int Closedloseint;
+
+    int CloseWin7int;
+    int CloseLose7int;
+    int CloseWin6int=0;
+    int CloseLose6int=0;
+
+    int CloseWin5int=0;
+    int CloseLose5int=0;
+
+    int CloseWin4int=0;
+    int CloseLose4int=0;
+
+    int CloseWin3int=0;
+    int CloseLose3int=0;
+
+    int CloseWin2int=0;
+    int CloseLose2int=0;
+
+    int CloseWin1int=0;
+    int CloseLose1int=0;
 
     @Override
     public void onBackPressed() {
@@ -167,11 +209,85 @@ public class FightState extends AppCompatActivity {
         if(mSettings.contains(OpenSemiFinals)) {
             opensemi=Integer.parseInt(mSettings.getString(OpenSemiFinals, "0"));
         }
+        if (mSettings.contains(Day)) {
+            day = Integer.parseInt(mSettings.getString(Day, "Day"));
+        }
+
+        if(mSettings.contains(ClosedSeries)) {
+            Seriescnt=Integer.parseInt(mSettings.getString(ClosedSeries, "ClosedSeries"));
+        }
+
+        if(mSettings.contains(Closedwin)) {
+            Closedwinint=Integer.parseInt(mSettings.getString(Closedwin, "Closedwin"));
+        }
+
+        if(mSettings.contains(Closedlose)) {
+            Closedloseint=Integer.parseInt(mSettings.getString(Closedlose, "Closedlose"));
+        }
+
+
+
+        if(mSettings.contains(CloseWin7)) {
+            CloseWin7int=Integer.parseInt(mSettings.getString(CloseWin7, "CloseWin7"));
+        }
+
+        if(mSettings.contains(CloseLose7)) {
+            CloseLose7int=Integer.parseInt(mSettings.getString(CloseLose7, "CloseLose7"));
+        }
+
+        if(mSettings.contains(CloseWin6)) {
+            CloseWin6int=Integer.parseInt(mSettings.getString(CloseWin6, "CloseWin6"));
+        }
+
+        if(mSettings.contains(CloseLose6)) {
+            CloseLose6int=Integer.parseInt(mSettings.getString(CloseLose6, "CloseLose6"));
+        }
+
+        if(mSettings.contains(CloseWin5)) {
+            CloseWin5int=Integer.parseInt(mSettings.getString(CloseWin5, "CloseWin5"));
+        }
+
+        if(mSettings.contains(CloseLose5)) {
+            CloseLose5int=Integer.parseInt(mSettings.getString(CloseLose5, "CloseLose5"));
+        }
+        if(mSettings.contains(CloseWin4)) {
+            CloseWin4int=Integer.parseInt(mSettings.getString(CloseWin4, "CloseWin4"));
+        }
+
+        if(mSettings.contains(CloseLose4)) {
+            CloseLose4int=Integer.parseInt(mSettings.getString(CloseLose4, "CloseLose4"));
+        }
+
+        if(mSettings.contains(CloseWin3)) {
+            CloseWin3int=Integer.parseInt(mSettings.getString(CloseWin3, "CloseWin3"));
+        }
+
+        if(mSettings.contains(CloseLose3)) {
+            CloseLose3int=Integer.parseInt(mSettings.getString(CloseLose3, "CloseLose3"));
+        }
+
+        if(mSettings.contains(CloseWin2)) {
+            CloseWin2int=Integer.parseInt(mSettings.getString(CloseWin2, "CloseWin2"));
+        }
+
+        if(mSettings.contains(CloseLose2)) {
+            CloseLose2int=Integer.parseInt(mSettings.getString(CloseLose2, "CloseLose2"));
+        }
+
+        if(mSettings.contains(CloseWin1)) {
+            CloseWin1int=Integer.parseInt(mSettings.getString(CloseWin1, "CloseWin1"));
+        }
+
+        if(mSettings.contains(CloseLose1)) {
+            CloseLose1int=Integer.parseInt(mSettings.getString(CloseLose1, "CloseWin1"));
+        }
+
 
 
 
         final Intent Tomainstance = new Intent(this, mainstate.class);
         final Intent Tobackopen = new Intent(this, OpenQuali.class);
+        final Intent Tobackclose = new Intent(this, ClosedQuali.class);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -318,12 +434,12 @@ public class FightState extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                SharedPreferences.Editor editor = mSettings.edit();
                 if (TournMode==1)
                 {
                     HeroesSpot.clear();
                     AllHeroes.clear();
-                    SharedPreferences.Editor editor = mSettings.edit();
+
                     if (opensemi==1)
                     {
                         editor.putString(OpenFinals, "1");
@@ -342,15 +458,240 @@ public class FightState extends AppCompatActivity {
 
                     }
 
-
                     editor.apply();
-
                     startActivity(Tobackopen);
                 }
 
-                else
+                else if(TournMode==2)
                 {
 
+
+
+                    if (Seriescnt==0)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose7int=CloseLose7int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin7int=CloseWin7int+1;
+                        }
+
+                        //1-2
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose2int=CloseLose2int+1;
+                        //3-4
+                        CloseWin3int=CloseWin3int+1;
+                        CloseLose4int=CloseLose4int+1;
+                        //5-6
+                        CloseWin5int=CloseWin5int+1;
+                        CloseLose6int=CloseLose6int+1;
+
+
+
+
+
+
+                    }
+                    else if (Seriescnt==1)
+                    {
+                        if (winloose==1)
+                        {
+                           editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose6int=CloseLose6int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin6int=CloseWin6int+1;
+                        }
+
+                        //1-3
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose3int=CloseLose3int+1;
+                        //2-4
+                        CloseWin2int=CloseWin2int+1;
+                        CloseLose4int=CloseLose4int+1;
+                        //5-7
+                        CloseWin5int=CloseWin5int+1;
+                        CloseLose7int=CloseLose7int+1;
+
+
+
+
+                    }
+                    else if (Seriescnt==2)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose5int=CloseLose5int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin5int=CloseWin5int+1;
+                        }
+
+
+
+                        //1-4
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose4int=CloseLose4int+1;
+                        //2-3
+                        CloseWin2int=CloseWin2int+1;
+                        CloseLose3int=CloseLose3int+1;
+                        //6-7
+                        CloseWin6int=CloseWin6int+1;
+                        CloseLose7int=CloseLose7int+1;
+
+
+
+
+                    }
+
+                    else if (Seriescnt==3)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose4int=CloseLose4int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin4int=CloseWin4int+1;
+                        }
+
+                        //1-5
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose5int=CloseLose5int+1;
+                        //2-6
+                        CloseWin2int=CloseWin2int+1;
+                        CloseLose6int=CloseLose6int+1;
+                        //3-7
+                        CloseWin3int=CloseWin3int+1;
+                        CloseLose7int=CloseLose7int+1;
+
+
+                    }
+
+                    else if (Seriescnt==4)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose3int=CloseLose3int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin3int=CloseWin3int+1;
+                        }
+
+                        //1-6
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose6int=CloseLose6int+1;
+                        //2-5
+                        CloseWin2int=CloseWin2int+1;
+                        CloseLose5int=CloseLose5int+1;
+                        //4-7
+                        CloseWin4int=CloseWin4int+1;
+                        CloseLose7int=CloseLose7int+1;
+
+
+
+                    }
+
+                    else if (Seriescnt==5)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose2int=CloseLose2int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin2int=CloseWin2int+1;
+                        }
+
+                        //1-7
+                        CloseWin1int=CloseWin1int+1;
+                        CloseLose7int=CloseLose7int+1;
+                        //3-6
+                        CloseWin3int=CloseWin3int+1;
+                        CloseLose6int=CloseLose6int+1;
+                        //4-5
+                        CloseWin4int=CloseWin4int+1;
+                        CloseLose5int=CloseLose5int+1;
+                    }
+
+                    else if (Seriescnt==6)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose2int=CloseLose2int+1;
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin1int=CloseWin1int+1;
+                        }
+
+
+                        //2-7
+                        CloseWin2int=CloseWin2int+1;
+                        CloseLose7int=CloseLose7int+1;
+                        //3-5
+                        CloseWin3int=CloseWin3int+1;
+                        CloseLose5int=CloseLose5int+1;
+                        //4-6
+                        CloseWin4int=CloseWin4int+1;
+                        CloseLose6int=CloseLose6int+1;
+
+                    }
+
+
+                    editor.putString(CloseWin1, String.valueOf(CloseWin1int));
+                    editor.putString(CloseWin2, String.valueOf(CloseWin2int));
+                    editor.putString(CloseWin3, String.valueOf(CloseWin3int));
+                    editor.putString(CloseWin4, String.valueOf(CloseWin4int));
+                    editor.putString(CloseWin5, String.valueOf(CloseWin5int));
+                    editor.putString(CloseWin6, String.valueOf(CloseWin6int));
+                    editor.putString(CloseWin7, String.valueOf(CloseWin7int));
+
+                    editor.putString(CloseLose1,String.valueOf(CloseLose1int));
+                    editor.putString(CloseLose2,String.valueOf(CloseLose2int));
+                    editor.putString(CloseLose3,String.valueOf(CloseLose3int));
+                    editor.putString(CloseLose4,String.valueOf(CloseLose4int));
+                    editor.putString(CloseLose5,String.valueOf(CloseLose5int));
+                    editor.putString(CloseLose6,String.valueOf(CloseLose6int));
+                    editor.putString(CloseLose7,String.valueOf(CloseLose7int));
+
+
+
+
+
+                    editor.putString(ClosedSeries, String.valueOf(Seriescnt+1));
+                    editor.apply();
+                    startActivity(Tobackclose);
+                }
+                else
+                {
+                    editor.putString(Day, String.valueOf(day+1));
+                    editor.apply();
                     HeroesSpot.clear();
                     AllHeroes.clear();
                     startActivity(Tomainstance);

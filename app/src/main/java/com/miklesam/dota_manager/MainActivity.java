@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -22,6 +23,7 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 public class MainActivity extends AppCompatActivity {
     String Gold_to_Continie;
     String Your_team_name;
+    int TournMode;
 
     SharedPreferences mSettings;
     @Override
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);
+        final Intent ToOpenQuali = new Intent(this, OpenQuali.class);
         final Intent ToTeamsShow = new Intent(this, TeamsShow.class);
         final Intent ToShop = new Intent(this, Shop.class);
 
@@ -89,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+        if(mSettings.contains(Mode)) {
+            TournMode=Integer.parseInt(mSettings.getString(Mode, "0"));
+        }
+
+
 
 
         if(mSettings.contains(GoldBalance)) {
@@ -110,16 +118,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ToMAinState.putExtra("Position1",Integer.parseInt(Player[0]));
-                ToMAinState.putExtra("Position2",Integer.parseInt(Player[1]));
-                ToMAinState.putExtra("Position3",Integer.parseInt(Player[2]));
-                ToMAinState.putExtra("Position4",Integer.parseInt(Player[3]));
-                ToMAinState.putExtra("Position5",Integer.parseInt(Player[4]));
-                ToMAinState.putExtra("Gold",Gold_to_Continie);
-                ToMAinState.putExtra("TeamName",Your_team_name);
+                if(TournMode==1)
+                {
+                    startActivity(ToOpenQuali);
+
+                }
+                else
+                {
+                    ToMAinState.putExtra("Position1",Integer.parseInt(Player[0]));
+                    ToMAinState.putExtra("Position2",Integer.parseInt(Player[1]));
+                    ToMAinState.putExtra("Position3",Integer.parseInt(Player[2]));
+                    ToMAinState.putExtra("Position4",Integer.parseInt(Player[3]));
+                    ToMAinState.putExtra("Position5",Integer.parseInt(Player[4]));
+                    ToMAinState.putExtra("Gold",Gold_to_Continie);
+                    ToMAinState.putExtra("TeamName",Your_team_name);
+                    startActivity(ToMAinState);
+                }
 
 
-                startActivity(ToMAinState);
 
             }
         });

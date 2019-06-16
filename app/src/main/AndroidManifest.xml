@@ -9,12 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".OpenQuali"
+        <activity android:name=".ClosedQuali"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".Rewarded"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".Shop"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".OpenQuali"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Rewarded"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Shop"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".FightState"
             android:screenOrientation="landscape" />

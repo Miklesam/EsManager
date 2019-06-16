@@ -26,6 +26,7 @@ import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
@@ -50,6 +51,7 @@ public class mainstate extends AppCompatActivity {
     ArrayList<Teams> TeamsCW;
     String YourTeam;
     TextView XPShow;
+    TextView InfoBlock;
     int XPint;
     boolean cw;
     TextView DayText;
@@ -61,6 +63,7 @@ public class mainstate extends AppCompatActivity {
     int Pos4=0;
     int Pos5=0;
     int Dayint;
+    int QualiWinner;
     int openqual[]= new int[7];
     ArrayList<Players> TheAllPlayers;
 
@@ -86,9 +89,12 @@ public class mainstate extends AppCompatActivity {
         YourTeam="Your Team";
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
         final Intent ToOpenQuali = new Intent(this, OpenQuali.class);
-        CWList = (ListView)findViewById(R.id.TeamCW);
-        TeamsCW=AllTeamsInit();
+        final Intent ToClosedQuali = new Intent(this, ClosedQuali.class);
 
+        CWList = (ListView)findViewById(R.id.TeamCW);
+        AllTeams.clear();
+        TeamsCW=AllTeamsInit();
+        InfoBlock=findViewById(R.id.InfoBlock);
         final CWAdapter CWteamsAdapter=new CWAdapter();
         CWList.setAdapter(CWteamsAdapter);
 
@@ -114,43 +120,51 @@ public class mainstate extends AppCompatActivity {
             Dayint=Integer.parseInt(mSettings.getString(Day, "0"));
         }
 
+        if(mSettings.contains(OpenQualiWinner)) {
+
+            QualiWinner =Integer.parseInt(mSettings.getString(OpenQualiWinner, "OpenQualiWinner"));
+
+        }
+
 
         XPShow.setText(String.valueOf(XPint));
         SharedPreferences.Editor editor = mSettings.edit();
 
-        if(won==1)
-        {
-            XPint=XPint+50;
-            Dayint=Dayint+1;
-            editor.putString(XPstatic, String.valueOf(XPint));
-            editor.putString(Day, String.valueOf(Dayint));
-            editor.apply();
 
-        }
-        else if (won==2)
-        {
-            XPint=XPint+10;
-            Dayint=Dayint+1;
-            editor.putString(XPstatic, String.valueOf(XPint));
-            editor.putString(Day, String.valueOf(Dayint));
-            editor.apply();
 
-        }
 
-        XPShow.setText(String.valueOf(XPint));
         DayText.setText(String.valueOf(Dayint));
 
-        if (Dayint%2==0)
+        if (QualiWinner==1)
         {
-            Play_game.setText("Quali");
-            gamemode=1;
+            if (Dayint%3==0)
+            {
+                Play_game.setText("Close");
+                gamemode=3;
 
+            }
+            else
+            {
+                Play_game.setText("Practice");
+                gamemode=2;
+            }
         }
         else
         {
-            Play_game.setText("Practice");
-            gamemode=2;
+            if (Dayint%3==0)
+            {
+                Play_game.setText("Open");
+                gamemode=1;
+
+            }
+            else
+            {
+                Play_game.setText("Practice");
+                gamemode=2;
+            }
         }
+
+
 
 
 
@@ -193,6 +207,8 @@ public class mainstate extends AppCompatActivity {
 
 
 
+
+
         TheAllPlayers=PlayersAllInit();
 
 
@@ -203,6 +219,30 @@ public class mainstate extends AppCompatActivity {
         TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
         Goldbalance.setText(Gold);
         TeamName.setText("Команда "+YourTeam);
+
+        if(QualiWinner==1)
+        {
+            if(Dayint%3==0)
+            {
+                InfoBlock.setText("CloseQuali сегодня");
+            }
+            else
+            {
+                InfoBlock.setText("CloseQuali через "+ String.valueOf(3-Dayint%3) );
+            }
+        }
+        else
+        {
+            if(Dayint%3==0)
+            {
+                InfoBlock.setText("OpenQuali сегодня");
+            }
+            else
+            {
+                InfoBlock.setText("OpenQuali через "+ String.valueOf(3-Dayint%3) );
+            }
+
+        }
 
 
 
@@ -250,6 +290,10 @@ public class mainstate extends AppCompatActivity {
                     editor.putString(OpenTeam7,String.valueOf(openqual[6]));
                     editor.apply();
                     startActivity(ToOpenQuali);
+                }
+                else if (gamemode==3)
+                {
+                    startActivity(ToClosedQuali);
                 }
 
 

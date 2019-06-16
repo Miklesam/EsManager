@@ -53,6 +53,31 @@ public class YourTeam extends AppCompatActivity {
     public static final String OpenScore11= "openscore11";
     public static final String OpenScore12= "openscore12";
 
+    public static final String OpenQualiWinner= "OpenQualiWinner";
+
+
+    public static final String ClosedSeries= "ClosedSeries";
+
+    public static final String Closedwin= "Closedwin";
+    public static final String Closedlose= "Closedlose";
+
+    public static final String CloseWin7= "CloseWin7";
+    public static final String CloseWin6= "CloseWin6";
+    public static final String CloseWin5= "CloseWin5";
+    public static final String CloseWin4= "CloseWin4";
+    public static final String CloseWin3= "CloseWin3";
+    public static final String CloseWin2= "CloseWin2";
+    public static final String CloseWin1= "CloseWin1";
+
+
+    public static final String CloseLose7= "CloseLose7";
+    public static final String CloseLose6= "CloseLose6";
+    public static final String CloseLose5= "CloseLose5";
+    public static final String CloseLose4= "CloseLose4";
+    public static final String CloseLose3= "CloseLose3";
+    public static final String CloseLose2= "CloseLose2";
+    public static final String CloseLose1= "CloseLose1";
+
 
     SharedPreferences mSettings;
 
