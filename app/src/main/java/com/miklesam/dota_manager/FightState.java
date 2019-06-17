@@ -641,7 +641,7 @@ public class FightState extends AppCompatActivity {
                         if (winloose==1)
                         {
                             editor.putString(Closedwin, String.valueOf(Closedwinint+1));
-                            CloseLose2int=CloseLose2int+1;
+                            CloseLose1int=CloseLose1int+1;
 
                         }
                         else if(winloose==2)
