@@ -220,7 +220,7 @@ public class PlayerChoose extends AppCompatActivity {
                 Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
                 Farming.setText("Фарм "+ String.valueOf(Cores.get(position).farming));
-                Supporting.setText("Поддержка "+ String.valueOf(Cores.get(position).supporting));
+                Supporting.setText("LateGame "+ String.valueOf(Cores.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Cores.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Cores.get(position).signature2).picked);
                 Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
@@ -256,7 +256,7 @@ public class PlayerChoose extends AppCompatActivity {
                 Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
                 Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
-                Supporting.setText("Поддержка "+ String.valueOf(Supports.get(position).supporting));
+                Supporting.setText("Lategame "+ String.valueOf(Supports.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Supports.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Supports.get(position).signature2).picked);
                 Signature3.setImageResource(AllHeroes.get(Supports.get(position).signature3).picked);

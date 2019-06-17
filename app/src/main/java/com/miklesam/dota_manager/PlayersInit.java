@@ -79,27 +79,27 @@ public class PlayersInit {
     static ArrayList<Players> CorePlayers = new ArrayList<Players>();
     static ArrayList<Players> SupportPlayers = new ArrayList<Players>();
     static ArrayList<Players> AllPlayers = new ArrayList<Players>();
-    static final Players Ramzes = new Players("Ramzes",RamzesDescription,500,R.drawable.russia4020,90,85,85,10,18,70,48,0);
-    static final Players NoOne = new Players("NoOne",NoOneDescription,500,R.drawable.ukraine4020,90,85,75,100,10,100,67,1);
-    static final Players p9asha = new Players("9pasha",p9ashaDescription,500,R.drawable.russia4020,90,85,65,100,80,20,6,2);
-    static final Players Daxak = new Players("Daxak",DaxakDescription,500,R.drawable.russia4020,90,85,85,100,74,67,38,3);
-    static final Players Afoninje = new Players("Afoninje",AfoninjeDescription,500,R.drawable.russia4020,90,85,75,100,63,100,83,4);
-    static final Players AfterLife = new Players("AfterLife",AfterLifeDescription,500,R.drawable.russia4020,90,85,65,100,80,17,77,5);
-    static final Players Crystallize = new Players("Crystallize",CrystallizeDescription,500,R.drawable.ukraine4020,90,85,85,100,46,29,18,6);
-    static final Players Magical = new Players("Magical",MagicalDescription,500,R.drawable.ukraine4020,90,85,75,100,67,110,88,7);
-    static final Players Blizzy = new Players("Blizzy",BlizzyDescription,500,R.drawable.kirgistan4020,90,85,65,100,86,20,2,8);
-    static final Players Silent = new Players("Silent",SilentDescription,500,R.drawable.russia4020,90,85,85,100,47,50,19,9);
-    static final Players Cooman = new Players("Cooman",CoomanDescription,500,R.drawable.russia4020,90,85,75,100,69,48,68,10);
-    static final Players nongrata = new Players("nongrata",nongrataDescription,500,R.drawable.russia4020,90,65,85,100,77,100,8,11);
-    static final Players dream = new Players("dream'",dreamDescription,500,R.drawable.kirgistan4020,90,85,85,100,0,0,0,12);
-    static final Players Kodos = new Players("Kodos",KodosDescription,500,R.drawable.russia4020,90,85,75,100,1,88,93,13);
-    static final Players Maden = new Players("Maden",MadenDescription,500,R.drawable.russia4020,90,85,65,100,9,95,114,14);
-    static final Players illidan = new Players("illidan",illidanDescription,500,R.drawable.russia4020,90,85,85,100,64,51,7,15);
-    static final Players G = new Players("G",GDescription,500,R.drawable.russia4020,90,85,75,100,102,63,99,16);
-    static final Players bzz = new Players("633",bzzDescription,500,R.drawable.russia4020,90,85,65,100,101,91,80,17);
-    static final Players Palantimos = new Players("Palantimos",PalantimosDescription,500,R.drawable.belarus4020,90,85,85,100,0,0,0,18);
-    static final Players Pikachu = new Players("Pikachu",PikachuDescription,500,R.drawable.ukraine4020,90,85,75,100,88,63,1,19);
-    static final Players chshrct = new Players("chshrct",chshrctDescription,500,R.drawable.belarus4020,90,85,65,100,77,95,80,20);
+    static final Players Ramzes = new Players("Ramzes",RamzesDescription,500,R.drawable.russia4020,90,85,85,90,18,70,48,0);
+    static final Players NoOne = new Players("NoOne",NoOneDescription,500,R.drawable.ukraine4020,90,85,80,90,10,100,67,1);
+    static final Players p9asha = new Players("9pasha",p9ashaDescription,500,R.drawable.russia4020,90,85,75,80,80,20,6,2);
+    static final Players Daxak = new Players("Daxak",DaxakDescription,500,R.drawable.russia4020,85,80,85,85,74,67,38,3);
+    static final Players Afoninje = new Players("Afoninje",AfoninjeDescription,500,R.drawable.russia4020,85,80,80,85,63,100,83,4);
+    static final Players AfterLife = new Players("AfterLife",AfterLifeDescription,500,R.drawable.russia4020,85,75,75,70,80,17,77,5);
+    static final Players Crystallize = new Players("Crystallize",CrystallizeDescription,500,R.drawable.ukraine4020,80,75,80,70,46,29,18,6);
+    static final Players Magical = new Players("Magical",MagicalDescription,500,R.drawable.ukraine4020,85,80,80,75,67,110,88,7);
+    static final Players Blizzy = new Players("Blizzy",BlizzyDescription,500,R.drawable.kirgistan4020,85,80,75,65,86,20,2,8);
+    static final Players Silent = new Players("Silent",SilentDescription,500,R.drawable.russia4020,80,80,80,80,47,50,19,9);
+    static final Players Cooman = new Players("Cooman",CoomanDescription,500,R.drawable.russia4020,95,85,85,90,69,48,68,10);
+    static final Players nongrata = new Players("nongrata",nongrataDescription,500,R.drawable.russia4020,80,75,75,75,77,100,8,11);
+    static final Players dream = new Players("dream'",dreamDescription,500,R.drawable.kirgistan4020,85,80,85,80,0,0,0,12);
+    static final Players Kodos = new Players("Kodos",KodosDescription,500,R.drawable.russia4020,90,80,80,80,1,88,93,13);
+    static final Players Maden = new Players("Maden",MadenDescription,500,R.drawable.russia4020,85,75,75,75,9,95,114,14);
+    static final Players illidan = new Players("illidan",illidanDescription,500,R.drawable.russia4020,85,85,75,80,64,51,7,15);
+    static final Players G = new Players("G",GDescription,500,R.drawable.russia4020,75,85,85,85,102,63,99,16);
+    static final Players bzz = new Players("633",bzzDescription,500,R.drawable.russia4020,85,85,85,85,101,91,80,17);
+    static final Players Palantimos = new Players("Palantimos",PalantimosDescription,500,R.drawable.belarus4020,70,70,70,70,0,0,0,18);
+    static final Players Pikachu = new Players("Pikachu",PikachuDescription,500,R.drawable.ukraine4020,70,70,65,70,88,63,1,19);
+    static final Players chshrct = new Players("chshrct",chshrctDescription,500,R.drawable.belarus4020,75,70,60,70,77,95,80,20);
 
 
 
@@ -107,79 +107,79 @@ public class PlayersInit {
 
 
 
-    static final Players Solo = new Players("Solo",SoloDescription,1500,R.drawable.russia4020,90,85,5,10,84,76,104,21);
-    static final Players Rodjer = new Players("Rodjer",RodjerDescription,1500,R.drawable.russia4020,90,80,25,10,78,26,11,22);
-    static final Players Fng = new Players("Fng",FngDescription,1500,R.drawable.belarus4020,90,85,15,10,72,76,33,23);
-    static final Players Immersion = new Players("Immersion",ImmersionDescription,1500,R.drawable.russia4020,90,85,30,10,11,34,41,24);
-    static final Players SoNNeikO = new Players("SoNNeikO",SoNNeikODescription,1500,R.drawable.russia4020,90,85,10,10,15,12,114,25);
-    static final Players Zayac = new Players("Zayac",ZayacDescription,1500,R.drawable.kirgistan4020,90,85,20,10,84,15,94,26);
-    static final Players Lil = new Players("Lil",LilDescription,1500,R.drawable.ukraine4020,90,85,25,10,111,107,103,27);
-    static final Players NoFear = new Players("NoFear",NoFearDecription,1500,R.drawable.russia4020,90,85,15,10,12,82,78,28);
-    static final Players sayuw = new Players("sayuw",sayuwDescription,1500,R.drawable.russia4020,90,85,20,10,34,113,11,29);
-    static final Players KingR = new Players("KingR",KingRDescription,1500,R.drawable.russia4020,90,85,10,10,103,84,72,30);
-    static final Players velheor = new Players("velheor",velheorDescription,1500,R.drawable.russia4020,90,85,20,10,34,103,13,31);
-    static final Players Vanskor = new Players("Vanskor",VanskorDescription,1500,R.drawable.russia4020,90,85,5,10,103,15,9,32);
-    static final Players Bignum = new Players("Bignum",BignumDescription,1500,R.drawable.ukraine4020,90,85,20,10,12,104,77,33);
-    static final Players BLACKARXANGEL = new Players("BLACKARXANGEL",BLACKARXANGELDescription,1500,R.drawable.kazahstan4020,90,10,85,10,92,76,115,34);
+    static final Players Solo = new Players("Solo",SoloDescription,1500,R.drawable.russia4020,85,85,15,85,84,76,104,21);
+    static final Players Rodjer = new Players("Rodjer",RodjerDescription,1500,R.drawable.russia4020,85,85,55,85,78,26,11,22);
+    static final Players Fng = new Players("Fng",FngDescription,1500,R.drawable.belarus4020,80,85,15,80,72,76,33,23);
+    static final Players Immersion = new Players("Immersion",ImmersionDescription,1500,R.drawable.russia4020,95,90,50,75,11,34,41,24);
+    static final Players SoNNeikO = new Players("SoNNeikO",SoNNeikODescription,1500,R.drawable.russia4020,75,75,15,75,15,12,114,25);
+    static final Players Zayac = new Players("Zayac",ZayacDescription,1500,R.drawable.kirgistan4020,80,80,55,75,84,15,94,26);
+    static final Players Lil = new Players("Lil",LilDescription,1500,R.drawable.ukraine4020,75,75,55,70,111,107,103,27);
+    static final Players NoFear = new Players("NoFear",NoFearDecription,1500,R.drawable.russia4020,70,70,15,70,12,82,78,28);
+    static final Players sayuw = new Players("sayuw",sayuwDescription,1500,R.drawable.russia4020,65,65,55,65,34,113,11,29);
+    static final Players KingR = new Players("KingR",KingRDescription,1500,R.drawable.russia4020,75,80,15,80,103,84,72,30);
+    static final Players velheor = new Players("velheor",velheorDescription,1500,R.drawable.russia4020,70,70,50,65,34,103,13,31);
+    static final Players Vanskor = new Players("Vanskor",VanskorDescription,1500,R.drawable.russia4020,65,70,10,65,103,15,9,32);
+    static final Players Bignum = new Players("Bignum",BignumDescription,1500,R.drawable.ukraine4020,65,65,55,60,12,104,77,33);
+    static final Players BLACKARXANGEL = new Players("BLACKARXANGEL",BLACKARXANGELDescription,1500,R.drawable.kazahstan4020,70,65,15,60,92,76,115,34);
 
 
 //Cis Rejects
-    static final Players Iceberg = new Players("Iceberg",IcebergDescription,500,R.drawable.ukraine4020,90,85,65,100,88,116,32,35);
-    static final Players ALWAYSWANNAFLY = new Players("ALWAYSWANNAFLY",ALWAYSWANNAFLYDescription,1500,R.drawable.ukraine4020,90,10,85,10,75,76,82,36);
-    static final Players Goblak = new Players("Goblak",GoblakDescription,1500,R.drawable.ukraine4020,90,10,85,10,0,33,76,37);
+    static final Players Iceberg = new Players("Iceberg",IcebergDescription,500,R.drawable.ukraine4020,75,70,85,60,88,116,32,35);
+    static final Players ALWAYSWANNAFLY = new Players("ALWAYSWANNAFLY",ALWAYSWANNAFLYDescription,1500,R.drawable.ukraine4020,60,80,10,80,75,76,82,36);
+    static final Players Goblak = new Players("Goblak",GoblakDescription,1500,R.drawable.ukraine4020,65,75,15,90,0,33,76,37);
 
 //Fantastic Five
 
-    static final Players Sedoy = new Players("Sedoy",SedoyDescription,1500,R.drawable.russia4020,90,10,85,10,48,74,29,38);
-    static final Players Ghostik = new Players("Ghostik",GhostikDescription,1500,R.drawable.ukraine4020,90,10,85,10,42,17,77,39);
-    static final Players yol = new Players("yol",yolDescription,1500,R.drawable.russia4020,90,10,85,10,82,76,104,40);
-    static final Players ArsZeeqq = new Players("ArsZeeqq",ArsZeeqqDescription,1500,R.drawable.russia4020,90,10,85,10,72,107,98,41);
+    static final Players Sedoy = new Players("Sedoy",SedoyDescription,1500,R.drawable.russia4020,80,70,80,70,48,74,29,38);
+    static final Players Ghostik = new Players("Ghostik",GhostikDescription,1500,R.drawable.ukraine4020,85,80,70,80,42,17,77,39);
+    static final Players yol = new Players("yol",yolDescription,1500,R.drawable.russia4020,70,75,55,70,82,76,104,40);
+    static final Players ArsZeeqq = new Players("ArsZeeqq",ArsZeeqqDescription,1500,R.drawable.russia4020,65,80,15,80,72,107,98,41);
 
     //F.R.I.E.N.D.S.
 
-    static final Players ALOHADANCE = new Players("ALOHADANCE",ALOHADANCEDescription,1500,R.drawable.ukraine4020,90,10,85,10,64,29,48 ,42);
-    static final Players yoky = new Players("yoky",yokyDescription,1500,R.drawable.russia4020,90,10,85,10,103,34,22,43);
+    static final Players ALOHADANCE = new Players("ALOHADANCE",ALOHADANCEDescription,1500,R.drawable.ukraine4020,80,75,85,60,64,29,48 ,42);
+    static final Players yoky = new Players("yoky",yokyDescription,1500,R.drawable.russia4020,80,75,65,65,103,34,22,43);
 
     //iCCup
-    static final Players Jackal = new Players("Jackal",JackalDescription,1500,R.drawable.belarus4020,90,10,85,10,38,37,48,44);
-    static final Players wejustzik = new Players("wejustzik",wejustzikDescription,1500,R.drawable.belarus4020,90,10,85,10,111,76,78,45);
-    static final Players Mag = new Players("Mag",MagDescription,1500,R.drawable.ukraine4020,90,10,85,10,8,42,6,46);
-    static final Players Resolut1on = new Players("Resolut1on",Resolut1onDescription,1500,R.drawable.ukraine4020,90,10,85,10,47,50,46,47);
+    static final Players Jackal = new Players("Jackal",JackalDescription,1500,R.drawable.belarus4020,70,70,70,70,38,37,48,44);
+    static final Players wejustzik = new Players("wejustzik",wejustzikDescription,1500,R.drawable.belarus4020,65,65,5,55,111,76,78,45);
+    static final Players Mag = new Players("Mag",MagDescription,1500,R.drawable.ukraine4020,75,75,65,60,8,42,6,46);
+    static final Players Resolut1on = new Players("Resolut1on",Resolut1onDescription,1500,R.drawable.ukraine4020,80,60,85,85,47,50,46,47);
 
     //MoscowFive
-    static final Players NS = new Players("NS",NSDescription,1500,R.drawable.russia4020,90,10,85,10,84,104,76,48);
-    static final Players Dread = new Players("Dread",DreadDescription,1500,R.drawable.russia4020,90,10,85,10,74,77,85,49);
-    static final Players ArsArt = new Players("ArsArt",ArsArtDescription,1500,R.drawable.russia4020,90,10,85,10,91,76,105,50);
-    static final Players Santa = new Players("Santa",SantaDescription,1500,R.drawable.russia4020,90,10,85,10,80,86,113,51);
+    static final Players NS = new Players("NS",NSDescription,1500,R.drawable.russia4020,55,65,5,80,84,104,76,48);
+    static final Players Dread = new Players("Dread",DreadDescription,1500,R.drawable.russia4020,80,70,60,60,74,77,85,49);
+    static final Players ArsArt = new Players("ArsArt",ArsArtDescription,1500,R.drawable.russia4020,75,75,50,75,91,76,105,50);
+    static final Players Santa = new Players("Santa",SantaDescription,1500,R.drawable.russia4020,80,80,80,80,80,86,113,51);
 
     //Rebels
-    static final Players tmw = new Players("tmw",tmwDescription,1500,R.drawable.russia4020,90,10,85,10,100,102,88,52);
-    static final Players Shachlo = new Players("Shachlo",ShachloDescription,1500,R.drawable.russia4020,90,10,85,10,49,8,95,53);
-    static final Players MeTTpuM = new Players("MeTTpuM",MeTTpuMDescription,1500,R.drawable.russia4020,90,10,85,10,94,115,82,54);
+    static final Players tmw = new Players("tmw",tmwDescription,1500,R.drawable.russia4020,85,80,85,70,100,102,88,52);
+    static final Players Shachlo = new Players("Shachlo",ShachloDescription,1500,R.drawable.russia4020,75,75,70,55,49,8,95,53);
+    static final Players MeTTpuM = new Players("MeTTpuM",MeTTpuMDescription,1500,R.drawable.russia4020,75,75,15,70,94,115,82,54);
 
     //RoxKis
-    static final Players SoloYoung = new Players("SoloYoung",SoloYoungDescription,1500,R.drawable.russia4020,90,10,85,10,102,88,108,55);
+    static final Players SoloYoung = new Players("SoloYoung",SoloYoungDescription,1500,R.drawable.russia4020,90,95,85,85,102,88,108,55);
 
     //TheRetry
-    static final Players PGG = new Players("PGG",PGGDescription,1500,R.drawable.russia4020,90,10,85,10,86,72,34,56);
-    static final Players BloodAngel = new Players("BloodAngel",BloodAngelDescription,1500,R.drawable.russia4020,90,10,85,10,100,102,88,57);
-    static final Players blowyourbrain = new Players("blowyourbrain",blowyourbrainDescription,1500,R.drawable.russia4020,90,10,85,10,36,7,48,58);
+    static final Players PGG = new Players("PGG",PGGDescription,1500,R.drawable.russia4020,95,90,55,90,86,72,34,56);
+    static final Players BloodAngel = new Players("BloodAngel",BloodAngelDescription,1500,R.drawable.russia4020,75,75,75,75,100,102,88,57);
+    static final Players blowyourbrain = new Players("blowyourbrain",blowyourbrainDescription,1500,R.drawable.russia4020,75,80,75,70,36,7,48,58);
 
     //DTS
-    static final Players Artstyle = new Players("Artstyle",ArtstyleDescription,1500,R.drawable.ukraine4020,90,10,85,10,27,7,22,59);
-    static final Players Dendi = new Players("Dendi",DendiDescription,1500,R.drawable.ukraine4020,90,10,85,10,25,20,88,60);
-    static final Players LighTofHeaveN = new Players("LighTofHeaveN",LighTofHeaveNDescription,1500,R.drawable.russia4020,90,10,85,10,86,42,113,61);
+    static final Players Artstyle = new Players("Artstyle",ArtstyleDescription,1500,R.drawable.ukraine4020,90,90,90,80,27,7,22,59);
+    static final Players Dendi = new Players("Dendi",DendiDescription,1500,R.drawable.ukraine4020,100,85,85,70,25,20,88,60);
+    static final Players LighTofHeaveN = new Players("LighTofHeaveN",LighTofHeaveNDescription,1500,R.drawable.russia4020,70,85,65,90,86,42,113,61);
 
     //DuzaGaming
-    static final Players sQreen = new Players("sQreen",sQreenDescription,1500,R.drawable.russia4020,90,10,85,10,34,22,28,62);
-    static final Players GeneRaL = new Players("GeneRaL",GeneRaLDescription,1500,R.drawable.ukraine4020,90,10,85,10,95,3,77,63);
-    static final Players Vigoss = new Players("Vigoss",VigossDescription,1500,R.drawable.russia4020,90,10,85,10,102,53,100,64);
+    static final Players sQreen = new Players("sQreen",sQreenDescription,1500,R.drawable.russia4020,95,90,65,90,34,22,28,62);
+    static final Players GeneRaL = new Players("GeneRaL",GeneRaLDescription,1500,R.drawable.ukraine4020,75,70,60,65,95,3,77,63);
+    static final Players Vigoss = new Players("Vigoss",VigossDescription,1500,R.drawable.russia4020,70,70,70,70,102,53,100,64);
 
     //NoPango
-    static final Players Naive = new Players("Naive",NaiveDescription,1500,R.drawable.kazahstan4020,90,10,85,10,48,68,59,65);
-    static final Players Ceyler = new Players("Ceyler",CeylerDescription,1500,R.drawable.russia4020,90,10,85,10,49,111,73,66);
-    static final Players XSvamp1Re = new Players("XSvamp1Re",XSvamp1ReDescription,1500,R.drawable.kazahstan4020,90,10,85,10,11,26,12,67);
-    static final Players CemaTheSlayer = new Players("CemaTheSlayer",CemaTheSlayerDescription,1500,R.drawable.ukraine4020,90,10,85,10,84,82,115,68);
+    static final Players Naive = new Players("Naive",NaiveDescription,1500,R.drawable.kazahstan4020,90,80,90,85,48,68,59,65);
+    static final Players Ceyler = new Players("Ceyler",CeylerDescription,1500,R.drawable.russia4020,65,85,70,85,49,111,73,66);
+    static final Players XSvamp1Re = new Players("XSvamp1Re",XSvamp1ReDescription,1500,R.drawable.kazahstan4020,70,70,55,75,11,26,12,67);
+    static final Players CemaTheSlayer = new Players("CemaTheSlayer",CemaTheSlayerDescription,1500,R.drawable.ukraine4020,90,95,20,85,84,82,115,68);
 
 
 

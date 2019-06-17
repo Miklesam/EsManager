@@ -1061,8 +1061,8 @@ for (int i=0;i<5;i++)
 
         for(int i =0;i<5;i++)
         {
-            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.supporting*5000/100));
-            DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.supporting*5000/100));
+            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.late*5000/100));
+            DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.late*5000/100));
             NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
             NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
         }

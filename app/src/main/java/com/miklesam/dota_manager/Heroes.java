@@ -11,9 +11,12 @@ public class Heroes {
     public int seq;
     public int mipmap;
     public int laining;
+    public int farm;
+    public int fighting;
+    public int late;
 
 
-    Heroes(int largeban, int minban, int picked,int hero_icon, int seq,int mipmap,int laining,boolean baned) {
+    Heroes(int largeban, int minban, int picked,int hero_icon, int seq,int mipmap,int laining,int farm,int fighting,int late,boolean baned) {
       this.largeban=largeban;
       this.minban=minban;
       this.picked=picked;
@@ -21,6 +24,9 @@ public class Heroes {
       this.seq=seq;
       this.mipmap=mipmap;
       this.laining=laining;
+      this.farm=farm;
+      this.fighting=fighting;
+      this.late=late;
       this.baned=baned;
 
 

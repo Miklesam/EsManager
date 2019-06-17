@@ -10,7 +10,7 @@ public class Players {
     public int laining;
     public int fighting;
     public int farming;
-    public int supporting;
+    public int late;
 
     public int signature1;
     public int signature2;
@@ -20,7 +20,7 @@ public class Players {
 
 
 
-    Players(String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int supporting,int signature1, int signature2, int signature3, int sequence) {
+    Players(String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence) {
         this.Name=Name;
         this.Description=Description;
         this.Cost=Cost;
@@ -29,7 +29,7 @@ public class Players {
         this.laining=laining;
         this.fighting=fighting;
         this.farming=farming;
-        this.supporting=supporting;
+        this.late=late;
 
         this.signature1=signature1;
         this.signature2=signature2;

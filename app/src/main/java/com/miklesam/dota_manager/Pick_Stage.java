@@ -37,6 +37,7 @@ public class Pick_Stage extends AppCompatActivity {
     int k=0;
     TextView HelpText;
     CountDownTimer Mytimer;
+    CountDownTimer Enemytimer;
     String TeamName;
     String EnemyName;
 
@@ -44,6 +45,7 @@ public class Pick_Stage extends AppCompatActivity {
     TextView EnemyteamNamet;
     int frompicker;
     int TeamEnemy;
+    boolean youlocked;
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
     ArrayList <Pickers> PickerList= new ArrayList <Pickers>();
@@ -58,6 +60,7 @@ public class Pick_Stage extends AppCompatActivity {
 
         setContentView(R.layout.activity_pick__stage);
         Plan_state=findViewById(R.id.Plan_state);
+        Plan_state.setVisibility(View.INVISIBLE);
         AllHeroes.clear();
         HeroList.addAll(HeroInit.HeroInit());
         YourTeamName=findViewById(R.id.Yourteam);
@@ -480,18 +483,64 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        //Pick_Stage_stam();
-         Mytimer=  new CountDownTimer(5000, 1000) {
+        Enemytimer=  new CountDownTimer(2000, 1000) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
-                HelpText.setText("Осталось: "
-                        + millisUntilFinished / 1000);
+                if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
+                {
+                    HelpText.setText("Бан "+EnemyName+" Осталось: "
+                            +2+ millisUntilFinished / 1000);
+                }
+                else
+                {
+                    HelpText.setText("Пик "+EnemyName+" Осталось: "
+                            +2+ millisUntilFinished / 1000);
+                }
+
+
             }
             //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
             public void onFinish() {
-                HelpText.setText("Бабах!");
+               Pick_Stage_stam();
+
+            }
+
+        };
+                //.start();
+
+
+        //Pick_Stage_stam();
+         Mytimer=  new CountDownTimer(2000, 1000) {
+            //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
+            public void onTick(long millisUntilFinished) {
+
+                if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
+                {
+                    HelpText.setText("Бан "+TeamName+" Осталось: "
+                            + millisUntilFinished / 1000);
+                }
+                else
+                {
+                    HelpText.setText("Пик "+TeamName+" Осталось: "
+                            + millisUntilFinished / 1000);
+                }
+
+            }
+            //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
+            public void onFinish() {
                 Pick_Stage_Random();
-                Pick_Stage_stam();
+                if (pick_state!=20)
+             {
+                    Enemytimer.start();
+                    youlocked=true;
+             }
+             else
+             {
+                 Mytimer.cancel();
+                 Mytimer.start();
+             }
+
+                //Pick_Stage_stam();
 
             }
 
@@ -510,7 +559,8 @@ public class Pick_Stage extends AppCompatActivity {
             Heros_icon[i].setOnClickListener(new View.OnClickListener() {
                                                  @Override
                                                  public void onClick(View v) {
-
+                if (youlocked==false)
+                {
 
                                                      if (HeroList.get(finalI).baned == false) {
 
@@ -540,7 +590,17 @@ public class Pick_Stage extends AppCompatActivity {
                                                          pick_state++;
                                                          HeroList.get(finalI).baned=true;
                                                          Heros_icon[finalI].setImageResource(HeroList.get(finalI).largeban);
-                                                         Pick_Stage_stam();
+                                                         if (pick_state!=20)
+                                                         {
+                                                             Enemytimer.start();
+                                                             youlocked=true;
+                                                         }
+                                                         else
+                                                         {
+                                                             Mytimer.cancel();
+                                                             Mytimer.start();
+                                                         }
+                                                         //Pick_Stage_stam();
 
                                                      }
 
@@ -553,7 +613,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
                                                  }
-
+                                                 }
                                              });
         }
 
@@ -574,14 +634,8 @@ public class Pick_Stage extends AppCompatActivity {
     protected void Pick_Stage_stam()
     {
 
-        Mytimer.start();
-        Random randomhero = new Random();
-        int whathero=0;
-        if(HeroList.size()!=0)
-        {
-            whathero=randomhero.nextInt(HeroList.size());
+        Enemytimer.cancel();
 
-        }
 
         Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
         if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
@@ -643,7 +697,16 @@ public class Pick_Stage extends AppCompatActivity {
             pick_state++;
         }
 
-
+        youlocked=false;
+        if(pick_state!=22)
+        {
+            Mytimer.start();
+        }
+        else
+        {
+            HelpText.setText("Перейдите к стадии планирования");
+            Plan_state.setVisibility(View.VISIBLE);
+        }
 
 
     }

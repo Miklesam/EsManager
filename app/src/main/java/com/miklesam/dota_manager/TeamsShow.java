@@ -121,7 +121,7 @@ public class TeamsShow extends AppCompatActivity {
                 laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).laining));
                 fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).fighting));
                 farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).farming));
-                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).supporting));
+                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).late));
 
                 Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Description));
 
@@ -148,7 +148,7 @@ public class TeamsShow extends AppCompatActivity {
                 laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).laining));
                 fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fighting));
                 farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
-                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).supporting));
+                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).late));
                 Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Description));
 
 
