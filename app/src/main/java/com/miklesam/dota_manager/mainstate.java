@@ -45,6 +45,9 @@ public class mainstate extends AppCompatActivity {
 
     TextView TeamPosition[]= new TextView[5];
     Button Play_game;
+
+    Button Market;
+    Button Teamimprove;
     TextView Goldbalance;
     TextView TeamName;
     ListView CWList;
@@ -87,9 +90,13 @@ public class mainstate extends AppCompatActivity {
         DayText=findViewById(R.id.Day);
         String Gold="1";
         YourTeam="Your Team";
+        Market=findViewById(R.id.Market);
+        Teamimprove=findViewById(R.id.Teamimprove);
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
         final Intent ToOpenQuali = new Intent(this, OpenQuali.class);
         final Intent ToClosedQuali = new Intent(this, ClosedQuali.class);
+        final Intent ToMarket = new Intent(this, market.class);
+        final Intent ToImprove = new Intent(this, Improve.class);
 
         CWList = (ListView)findViewById(R.id.TeamCW);
         AllTeams.clear();
@@ -307,18 +314,7 @@ public class mainstate extends AppCompatActivity {
         CWList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               //FlagIma.setImageResource(Supports.get(position).Flag);
-                //PlayerNickName.setText(Supports.get(position).Name);
-                //PlayerDiscription.setText(Supports.get(position).Description);
 
-                //PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
-
-
-                //Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
-                //Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
-                //Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
-                //Supporting.setText("Поддержка "+ String.valueOf(Supports.get(position).supporting));
-                //last_position=position;
 
                 ToPickStage.putExtra("Position1",Pos1);
                 ToPickStage.putExtra("Position2",Pos2);
@@ -341,10 +337,28 @@ public class mainstate extends AppCompatActivity {
 
 
 
+        Market.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    startActivity(ToMarket);
 
 
 
+            }
+        });
 
+
+        Teamimprove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToImprove);
+
+
+
+            }
+        });
 
 
 

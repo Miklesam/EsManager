@@ -144,8 +144,8 @@ public class PlayerChoose extends AppCompatActivity {
         Pos3=findViewById(R.id.Pos3);
         Back=findViewById(R.id.Back);
         GoldbalancePole=findViewById(R.id.Goldbalance);
-        balancegold=GoldBalance;
-        GoldbalancePole.setText(balancegold);
+
+
         PlayerCost=findViewById(R.id.PlayerCost);
         TeamNameids=findViewById(R.id.Teamnameid);
 
@@ -195,7 +195,12 @@ public class PlayerChoose extends AppCompatActivity {
         SupportlistView.setAdapter(mysupAdapter);
 
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+        if(mSettings.contains(GoldBalance)) {
 
+            balancegold =mSettings.getString(GoldBalance, "50000");
+
+        }
+        GoldbalancePole.setText(balancegold);
 
 
         CorelistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

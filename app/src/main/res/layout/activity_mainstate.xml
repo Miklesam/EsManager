@@ -38,16 +38,18 @@
             <Button
                 android:layout_width="140sp"
                 android:layout_height="wrap_content"
-                android:text="Игра"
+                android:text="Тренировка"
                 android:id="@+id/Play_game"/>
             <Button
                 android:layout_width="140sp"
                 android:layout_height="wrap_content"
+                android:id="@+id/Market"
                 android:text="Рынок"/>
             <Button
                 android:layout_width="140sp"
                 android:layout_height="wrap_content"
-                android:text="Команда"/>
+                android:text="Команда"
+                android:id="@+id/Teamimprove"/>
 
 
         </LinearLayout>

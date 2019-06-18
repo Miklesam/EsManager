@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".ClosedQuali"
+        <activity android:name=".market"
             android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Improve"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ClosedQuali"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".OpenQuali"
             android:screenOrientation="landscape" />

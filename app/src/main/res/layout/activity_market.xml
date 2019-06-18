@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".market">
+
+
+    <ScrollView
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+
+
+        <LinearLayout
+            android:layout_width="400sp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/PlayerInfo"
+            android:visibility="invisible">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/FlagImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:id="@+id/Nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turtle" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="100sp"
+                    android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/laning"
+                        android:text="Лайнинг"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fighting"
+                        android:text="Файтинг"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/farming"
+                        android:text="Фарм"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/supporting"
+                        android:text="Поддержка"/>
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signature"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="60sp"
+                    android:layout_height="35sp"
+                    android:id="@+id/signature1"
+                    app:srcCompat="@drawable/pick"
+
+                    />
+                <ImageView
+                    android:layout_width="60sp"
+                    android:layout_height="35sp"
+                    android:id="@+id/signature2"
+                    app:srcCompat="@drawable/pick"
+
+                    />
+                <ImageView
+                    android:layout_width="60sp"
+                    android:layout_height="35sp"
+                    android:id="@+id/signature3"
+                    app:srcCompat="@drawable/pick"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/Description"
+                android:layout_width="400sp"
+                android:layout_gravity="left"
+                android:layout_height="wrap_content"
+                />
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/PlayerCost"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                />
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/Buy_Yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy_Yes" />
+                <Button
+                    android:id="@+id/Buy_No"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy_No" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left">
+
+                <Button
+                    android:id="@+id/Pos1"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:textSize="12sp"
+                    android:text="Позиция 1" />
+                <Button
+                    android:id="@+id/Pos2"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:textSize="12sp"
+                    android:text="Позиция 2" />
+
+                <Button
+                    android:id="@+id/Pos3"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:textSize="12sp"
+                    android:text="Позиция 3" />
+
+                <Button
+                    android:id="@+id/Back"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="Отмена" />
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:id="@+id/Core"
+                android:text="Core"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:id="@+id/Support"
+                android:text="support"/>
+
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/CoreList"
+            android:layout_width="400sp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+
+            >
+
+        </ListView>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_marginTop="50sp"
+        android:layout_width="400sp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:id="@+id/SupportList">
+
+    </ListView>
+
+
+
+
+    <LinearLayout
+
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Your_Team"
+        android:layout_alignParentRight="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <ImageView
+                android:layout_marginLeft="10sp"
+                android:layout_width="25sp"
+                android:layout_height="30sp"
+                app:srcCompat="@drawable/rubl"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/Goldbalance"
+                />
+        </LinearLayout>
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/Teamnameid"
+            android:text="Состав"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/position1"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:text="1"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/position2"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:text="2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/position3"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:id="@+id/position4"
+            android:text="4"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/position5"
+            android:layout_gravity="center"
+            android:text="5"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/Backtomain"
+
+        />
+
+
+</RelativeLayout>
