@@ -22,8 +22,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
+import static com.miklesam.dota_manager.PlayersInit.CorePlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
+import static com.miklesam.dota_manager.PlayersInit.SupportPlayers;
 import static com.miklesam.dota_manager.YourTeam.CloseLose1;
 import static com.miklesam.dota_manager.YourTeam.CloseLose2;
 import static com.miklesam.dota_manager.YourTeam.CloseLose3;
@@ -164,8 +166,13 @@ public class PlayerChoose extends AppCompatActivity {
         Farming=findViewById(R.id.farming);
         Supporting=findViewById(R.id.supporting);
 
-        DirectHero.addAll(HeroInit.HeroInit());
 
+        AllHeroes.clear();
+        CorePlayers.clear();
+        SupportPlayers.clear();
+
+
+        DirectHero.addAll(HeroInit.HeroInit());
         Cores=PlayersCoreInit();
         Supports=PlayersSupportInit();
 
