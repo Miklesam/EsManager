@@ -15,10 +15,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
@@ -70,6 +72,8 @@ public class mainstate extends AppCompatActivity {
     int openqual[]= new int[7];
     ArrayList<Players> TheAllPlayers;
 
+    boolean team[]=new boolean[5];
+    boolean rosterok;
     SharedPreferences mSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +108,7 @@ public class mainstate extends AppCompatActivity {
         InfoBlock=findViewById(R.id.InfoBlock);
         final CWAdapter CWteamsAdapter=new CWAdapter();
         CWList.setAdapter(CWteamsAdapter);
+
 
         final int won;
         if (savedInstanceState == null) {
@@ -200,6 +205,29 @@ public class mainstate extends AppCompatActivity {
             Pos5=Integer.parseInt(mSettings.getString(StaticPosition5, "Position5"));
         }
 
+
+        if (Pos1!=77)
+        {
+            team[0]=true;
+        }
+        if (Pos2!=77)
+        {
+            team[1]=true;
+        }
+        if (Pos3!=77)
+        {
+            team[2]=true;
+        }
+        if (Pos4!=77)
+        {
+            team[3]=true;
+        }
+        if (Pos5!=77)
+        {
+            team[4]=true;
+        }
+
+        rosterok=team[0]&&team[1]&&team[2]&team[3]&&team[4];
         if(mSettings.contains(GoldBalance)) {
 
             Gold =mSettings.getString(GoldBalance, "50000");
@@ -213,14 +241,30 @@ public class mainstate extends AppCompatActivity {
         }
 
 
-
-
-
+        AllPlayers.clear();
         TheAllPlayers=PlayersAllInit();
 
+        if(team[0]==true)
+        {
+            TeamPosition[0].setText(TheAllPlayers.get(Pos1).Name);
+        }
+        else
+        {
+            TeamPosition[0].setText("1");
+        }
 
-        TeamPosition[0].setText(TheAllPlayers.get(Pos1).Name);
-        TeamPosition[1].setText(TheAllPlayers.get(Pos2).Name);
+        if(team[1]==true)
+        {
+            TeamPosition[1].setText(TheAllPlayers.get(Pos2).Name);
+        }
+        else
+        {
+            TeamPosition[1].setText("2");
+        }
+
+
+
+
         TeamPosition[2].setText(TheAllPlayers.get(Pos3).Name);
         TeamPosition[3].setText(TheAllPlayers.get(Pos4).Name);
         TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
@@ -258,6 +302,11 @@ public class mainstate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
          // YourTeamIntent.putExtra("Name",TeamTag);
+                if(rosterok==true)
+                {
+
+
+
                 if(gamemode==2)
                 {
                     if (cw==false)
@@ -304,7 +353,14 @@ public class mainstate extends AppCompatActivity {
                 }
 
 
+                }
+                else
+                {
 
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Укомплектуйте состав", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
 
             }
         });

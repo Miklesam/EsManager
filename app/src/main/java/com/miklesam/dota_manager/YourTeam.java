@@ -114,6 +114,7 @@ public class YourTeam extends AppCompatActivity {
 
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString(APP_PREFERENCES_NAME, newString);
+        editor.putString(GoldBalance, "50000");
         editor.apply();
 
 
