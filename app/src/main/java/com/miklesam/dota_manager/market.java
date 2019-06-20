@@ -82,6 +82,8 @@ public class market extends AppCompatActivity {
     boolean sup_pick;
     String Gold;
 
+    boolean sellgoes;
+
     boolean team[]=new boolean[5];
     int playerseq[]=new int[5];
     int sellposition;
@@ -299,7 +301,8 @@ public class market extends AppCompatActivity {
                 PlayerNickName.setText(Cores.get(position).Name);
                 PlayerDiscription.setText(Cores.get(position).Description);
                 PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
-
+                Buy_Yes.setVisibility(View.VISIBLE);
+                Buy_No.setVisibility(View.VISIBLE);
 
                 Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
@@ -341,33 +344,48 @@ public class market extends AppCompatActivity {
                 //balancegold=String.valueOf(Integer.parseInt(balancegold)-1000);
                 //GoldbalancePole.setText("Золото "+balancegold);
 
-                if(CorePick==true)
+                if ( sellgoes==true)
                 {
-                    Posi1.setVisibility(View.VISIBLE);
-                    Posi2.setVisibility(View.VISIBLE);
-                    Posi3.setVisibility(View.VISIBLE);
-                    Back.setVisibility(View.VISIBLE);
+                    sellgoes=false;
+                    Buy_Yes.setText("Buy_Yes");
 
-                    Buy_Yes.setVisibility(View.INVISIBLE);
-                    Buy_No.setVisibility(View.INVISIBLE);
+
+                    CorelistView.setVisibility(View.VISIBLE);
+                    CoreChoose.setVisibility(View.VISIBLE);
+                    SupportChoose.setVisibility(View.VISIBLE);
+                    PlayerInformation.setVisibility(View.INVISIBLE);
+                    Sell.setVisibility(View.INVISIBLE);
+
+
+
 
                 }
-                else if (SupportPick==true)
-                {
-                    sup_pick=true;
-                    Posi2.setText("Позиция 4");
-                    Posi2.setVisibility(View.VISIBLE);
+                else {
 
-                    Posi3.setText("Позиция 5");
-                    Posi3.setVisibility(View.VISIBLE);
-                    Back.setVisibility(View.VISIBLE);
+                    if (CorePick == true) {
+                        Posi1.setVisibility(View.VISIBLE);
+                        Posi2.setVisibility(View.VISIBLE);
+                        Posi3.setVisibility(View.VISIBLE);
+                        Back.setVisibility(View.VISIBLE);
 
-                    Buy_Yes.setVisibility(View.INVISIBLE);
-                    Buy_No.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.INVISIBLE);
+                        Buy_No.setVisibility(View.INVISIBLE);
+
+                    } else if (SupportPick == true) {
+                        sup_pick = true;
+                        Posi2.setText("Позиция 4");
+                        Posi2.setVisibility(View.VISIBLE);
+
+                        Posi3.setText("Позиция 5");
+                        Posi3.setVisibility(View.VISIBLE);
+                        Back.setVisibility(View.VISIBLE);
+
+                        Buy_Yes.setVisibility(View.INVISIBLE);
+                        Buy_No.setVisibility(View.INVISIBLE);
+
+                    }
 
                 }
-
-
 
             }
         });
@@ -413,6 +431,7 @@ public class market extends AppCompatActivity {
                 if(team[0]==true) {
                     CorePick = true;
                     CorelistView.setVisibility(View.INVISIBLE);
+                    SupportlistView.setVisibility(View.INVISIBLE);
                     CoreChoose.setVisibility(View.INVISIBLE);
                     SupportChoose.setVisibility(View.INVISIBLE);
                     PlayerInformation.setVisibility(View.VISIBLE);
@@ -421,8 +440,10 @@ public class market extends AppCompatActivity {
                     Posi3.setVisibility(View.INVISIBLE);
                     Back.setVisibility(View.INVISIBLE);
 
+                    sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
-                    Buy_Yes.setVisibility(View.INVISIBLE);
+                    Buy_Yes.setVisibility(View.VISIBLE);
+                    Buy_Yes.setText("Отмена");
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos1).Flag);
@@ -459,8 +480,10 @@ public class market extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(team[1]==true) {
+
                     CorePick = true;
                     CorelistView.setVisibility(View.INVISIBLE);
+                    SupportlistView.setVisibility(View.INVISIBLE);
                     CoreChoose.setVisibility(View.INVISIBLE);
                     SupportChoose.setVisibility(View.INVISIBLE);
                     PlayerInformation.setVisibility(View.VISIBLE);
@@ -468,9 +491,10 @@ public class market extends AppCompatActivity {
                     Posi2.setVisibility(View.INVISIBLE);
                     Posi3.setVisibility(View.INVISIBLE);
                     Back.setVisibility(View.INVISIBLE);
-
+                    sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
-                    Buy_Yes.setVisibility(View.INVISIBLE);
+                    Buy_Yes.setVisibility(View.VISIBLE);
+                    Buy_Yes.setText("Отмена");
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos2).Flag);
@@ -505,6 +529,19 @@ public class market extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         Sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -515,7 +552,8 @@ public class market extends AppCompatActivity {
 
                     Gold= String.valueOf(Integer.parseInt(Gold)+ Integer.parseInt((String) PlayerCost.getText()));
                     Goldbalance.setText(Gold);
-
+                sellgoes=false;
+                Buy_Yes.setText("Buy_Yes");
                 if (sellposition==0)
                 {
                     Team[0].setText("1.");

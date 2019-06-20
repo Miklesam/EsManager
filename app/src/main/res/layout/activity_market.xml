@@ -185,14 +185,14 @@
                     android:layout_width="100sp"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:text="Позиция 1" />
                 <Button
                     android:id="@+id/Pos2"
                     android:layout_width="100sp"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:text="Позиция 2" />
 
                 <Button
@@ -200,7 +200,7 @@
                     android:layout_width="100sp"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:textSize="12sp"
+                    android:textSize="10sp"
                     android:text="Позиция 3" />
 
                 <Button
@@ -208,6 +208,7 @@
                     android:layout_width="100sp"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
+                    android:textSize="10sp"
                     android:text="Отмена" />
 
 
