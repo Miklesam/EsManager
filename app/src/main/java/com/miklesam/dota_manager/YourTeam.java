@@ -78,6 +78,11 @@ public class YourTeam extends AppCompatActivity {
     public static final String CloseLose2= "CloseLose2";
     public static final String CloseLose1= "CloseLose1";
 
+    public static final String ExtraLaining= "ExtraLaining";
+    public static final String ExtraFarming= "ExtraFarming";
+    public static final String ExtraFighting= "ExtraFighting";
+    public static final String ExtraLate= "ExtraLate";
+
 
     SharedPreferences mSettings;
 

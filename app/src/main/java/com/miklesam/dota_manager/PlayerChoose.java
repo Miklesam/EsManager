@@ -44,6 +44,10 @@ import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
+import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
+import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
+import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
+import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -341,6 +345,13 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(CloseLose3, "0");
                 editor.putString(CloseLose2, "0");
                 editor.putString(CloseLose1, "0");
+
+                editor.putString(ExtraLaining, "0");
+                editor.putString(ExtraFarming, "0");
+                editor.putString(ExtraFighting, "0");
+                editor.putString(ExtraLate, "0");
+
+
 
 
 
