@@ -21,6 +21,110 @@
             android:layout_height="wrap_content"
             android:id="@+id/InfoBlock"/>
 
+<LinearLayout
+    android:layout_marginTop="10sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+
+        android:layout_width="180sp"
+        android:layout_height="wrap_content"
+        android:text="Laining"
+        android:id="@+id/LainingView"/>
+
+    <TextView
+        android:layout_marginLeft="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LainingPoints"/>
+    <TextView
+        android:layout_marginLeft="5sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Points"/>
+
+</LinearLayout>
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="180sp"
+            android:layout_height="wrap_content"
+            android:text="Farming"
+            android:id="@+id/FarmingView"/>
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/FarmingPoints"/>
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="180sp"
+                android:layout_height="wrap_content"
+                android:text="Fighting"
+                android:id="@+id/FightingView"/>
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/FightingPoints"/>
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="180sp"
+                android:layout_height="wrap_content"
+                android:text="LateGame"
+                android:id="@+id/LateGameView"/>
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/LateGamePoints"/>
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points"/>
+
+        </LinearLayout>
+        
+
+
+
+
+
+
+
+
+
     </LinearLayout>
 
 

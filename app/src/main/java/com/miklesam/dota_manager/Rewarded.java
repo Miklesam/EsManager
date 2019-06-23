@@ -41,7 +41,7 @@ public class Rewarded extends AppCompatActivity implements RewardedVideoAdListen
         //reward_text.setText(String.valueOf(Points.point)+" points");
         if(mSettings.contains(GoldBalance)) {
 
-            GoldBalancesq =mSettings.getString(GoldBalance, "1000");
+            GoldBalancesq =mSettings.getString(GoldBalance, "0");
         }
 
         backsbut.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +73,7 @@ public class Rewarded extends AppCompatActivity implements RewardedVideoAdListen
     @Override
     public void onRewarded(RewardItem reward) {
        // Points.point=Points.point+10;
-        GoldBalancesq=String.valueOf(Integer.parseInt(GoldBalancesq)+101);
+        GoldBalancesq=String.valueOf(Integer.parseInt(GoldBalancesq)+1500);
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putString(GoldBalance, GoldBalancesq);
         editor.apply();

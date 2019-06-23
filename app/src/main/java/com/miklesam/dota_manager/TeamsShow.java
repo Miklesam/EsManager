@@ -54,6 +54,8 @@ public class TeamsShow extends AppCompatActivity {
         TeamInfos=findViewById(R.id.TeamInfo);
         TeamslistView = (ListView)findViewById(R.id.TeamList);
         teamroosts= (ListView)findViewById(R.id.teamroost);
+
+        AllTeams.clear();
         ThisTeams=AllTeamsInit();
         final TeamsAdapter teamsAdapter=new TeamsAdapter();
         Backinfo=findViewById(R.id.Backs);

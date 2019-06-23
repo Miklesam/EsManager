@@ -244,9 +244,34 @@ public class market extends AppCompatActivity {
         {
             Team[1].setText("2");
         }
-        Team[2].setText(TheAllPlayers.get(Pos3).Name);
-        Team[3].setText(TheAllPlayers.get(Pos4).Name);
-        Team[4].setText(TheAllPlayers.get(Pos5).Name);
+
+        if(team[2]==true)
+        {
+            Team[2].setText(TheAllPlayers.get(Pos3).Name);
+        }
+        else
+        {
+            Team[2].setText("3");
+        }
+
+
+        if(team[3]==true)
+        {
+            Team[3].setText(TheAllPlayers.get(Pos4).Name);
+        }
+        else
+        {
+            Team[3].setText("4");
+        }
+
+        if(team[4]==true)
+        {
+            Team[4].setText(TheAllPlayers.get(Pos5).Name);
+        }
+        else
+        {
+            Team[4].setText("5");
+        }
         Goldbalance.setText(Gold);
 
 
@@ -316,6 +341,42 @@ public class market extends AppCompatActivity {
 
             }
         });
+
+
+
+
+        SupportlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                SupportPick=true;
+                SupportlistView.setVisibility(View.INVISIBLE);
+                CoreChoose.setVisibility(View.INVISIBLE);
+                SupportChoose.setVisibility(View.INVISIBLE);
+                PlayerInformation.setVisibility(View.VISIBLE);
+
+
+                FlagIma.setImageResource(Supports.get(position).Flag);
+                PlayerNickName.setText(Supports.get(position).Name);
+                PlayerDiscription.setText(Supports.get(position).Description);
+
+                PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
+
+
+                Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
+                Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
+                Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
+                Supporting.setText("Lategame "+ String.valueOf(Supports.get(position).late));
+                Signature1.setImageResource(AllHeroes.get(Supports.get(position).signature1).picked);
+                Signature2.setImageResource(AllHeroes.get(Supports.get(position).signature2).picked);
+                Signature3.setImageResource(AllHeroes.get(Supports.get(position).signature3).picked);
+
+                last_position=position;
+                last_position_player=Supports.get(position).sequence;
+
+            }
+        });
+
+
 
 
 
@@ -528,7 +589,161 @@ public class market extends AppCompatActivity {
 
 
 
+        Team[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                if(team[2]==true) {
+
+                    CorePick = true;
+                    CorelistView.setVisibility(View.INVISIBLE);
+                    SupportlistView.setVisibility(View.INVISIBLE);
+                    CoreChoose.setVisibility(View.INVISIBLE);
+                    SupportChoose.setVisibility(View.INVISIBLE);
+                    PlayerInformation.setVisibility(View.VISIBLE);
+                    Posi1.setVisibility(View.INVISIBLE);
+                    Posi2.setVisibility(View.INVISIBLE);
+                    Posi3.setVisibility(View.INVISIBLE);
+                    Back.setVisibility(View.INVISIBLE);
+                    sellgoes=true;
+                    Sell.setVisibility(View.VISIBLE);
+                    Buy_Yes.setVisibility(View.VISIBLE);
+                    Buy_Yes.setText("Отмена");
+                    Buy_No.setVisibility(View.INVISIBLE);
+
+                    FlagIma.setImageResource(AllPlayers.get(Pos3).Flag);
+                    PlayerNickName.setText(AllPlayers.get(Pos3).Name);
+                    PlayerDiscription.setText(AllPlayers.get(Pos3).Description);
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos3).Cost));
+
+
+                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos3).laining));
+                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos3).fighting));
+                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos3).farming));
+                    Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos3).late));
+                    Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos3).signature1).picked);
+                    Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos3).signature2).picked);
+                    Signature3.setImageResource(AllHeroes.get(AllPlayers.get(Pos3).signature3).picked);
+
+                    //last_position_player=Cores.get(position).sequence;
+                    sellposition=2;
+
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Позиция Свободна", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+        Team[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(team[3]==true) {
+
+                    CorePick = false;
+                    CorelistView.setVisibility(View.INVISIBLE);
+                    SupportlistView.setVisibility(View.INVISIBLE);
+                    CoreChoose.setVisibility(View.INVISIBLE);
+                    SupportChoose.setVisibility(View.INVISIBLE);
+                    PlayerInformation.setVisibility(View.VISIBLE);
+                    Posi1.setVisibility(View.INVISIBLE);
+                    Posi2.setVisibility(View.INVISIBLE);
+                    Posi3.setVisibility(View.INVISIBLE);
+                    Back.setVisibility(View.INVISIBLE);
+                    sellgoes=true;
+                    Sell.setVisibility(View.VISIBLE);
+                    Buy_Yes.setVisibility(View.VISIBLE);
+                    Buy_Yes.setText("Отмена");
+                    Buy_No.setVisibility(View.INVISIBLE);
+
+                    FlagIma.setImageResource(AllPlayers.get(Pos4).Flag);
+                    PlayerNickName.setText(AllPlayers.get(Pos4).Name);
+                    PlayerDiscription.setText(AllPlayers.get(Pos4).Description);
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos4).Cost));
+
+
+                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos4).laining));
+                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos4).fighting));
+                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos4).farming));
+                    Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos4).late));
+                    Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos4).signature1).picked);
+                    Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos4).signature2).picked);
+                    Signature3.setImageResource(AllHeroes.get(AllPlayers.get(Pos4).signature3).picked);
+
+                    //last_position_player=Cores.get(position).sequence;
+                    sellposition=3;
+
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Позиция Свободна", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
+
+
+        Team[4].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(team[4]==true) {
+
+                    CorePick = false;
+                    CorelistView.setVisibility(View.INVISIBLE);
+                    SupportlistView.setVisibility(View.INVISIBLE);
+                    CoreChoose.setVisibility(View.INVISIBLE);
+                    SupportChoose.setVisibility(View.INVISIBLE);
+                    PlayerInformation.setVisibility(View.VISIBLE);
+                    Posi1.setVisibility(View.INVISIBLE);
+                    Posi2.setVisibility(View.INVISIBLE);
+                    Posi3.setVisibility(View.INVISIBLE);
+                    Back.setVisibility(View.INVISIBLE);
+                    sellgoes=true;
+                    Sell.setVisibility(View.VISIBLE);
+                    Buy_Yes.setVisibility(View.VISIBLE);
+                    Buy_Yes.setText("Отмена");
+                    Buy_No.setVisibility(View.INVISIBLE);
+
+                    FlagIma.setImageResource(AllPlayers.get(Pos5).Flag);
+                    PlayerNickName.setText(AllPlayers.get(Pos5).Name);
+                    PlayerDiscription.setText(AllPlayers.get(Pos5).Description);
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos5).Cost));
+
+
+                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos5).laining));
+                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos5).fighting));
+                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos5).farming));
+                    Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos5).late));
+                    Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos5).signature1).picked);
+                    Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos5).signature2).picked);
+                    Signature3.setImageResource(AllHeroes.get(AllPlayers.get(Pos5).signature3).picked);
+
+                    //last_position_player=Cores.get(position).sequence;
+                    sellposition=4;
+
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Позиция Свободна", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        });
 
 
 
@@ -566,6 +781,25 @@ public class market extends AppCompatActivity {
                     editor.putString(StaticPosition2,String.valueOf(77));
                     Cores.add(AllPlayers.get(Pos2));
                 }
+                else if(sellposition==2)
+                {
+                    Team[2].setText("3.");
+                    editor.putString(StaticPosition3,String.valueOf(77));
+                    Cores.add(AllPlayers.get(Pos3));
+                }
+
+                else if(sellposition==3)
+                {
+                    Team[3].setText("4.");
+                    editor.putString(StaticPosition4,String.valueOf(77));
+                    Supports.add(AllPlayers.get(Pos4));
+                }
+                else if(sellposition==4)
+                {
+                    Team[4].setText("5.");
+                    editor.putString(StaticPosition5,String.valueOf(77));
+                    Supports.add(AllPlayers.get(Pos5));
+                }
 
                 editor.putString(GoldBalance,String.valueOf(Gold));
                 editor.apply();
@@ -579,6 +813,7 @@ public class market extends AppCompatActivity {
                     Back.setVisibility(View.INVISIBLE);
 
                     CorelistView.setAdapter(coreAdapter);
+                    SupportlistView.setAdapter(cupppAdapter);
 
                     Posi1.setVisibility(View.INVISIBLE);
                     Posi2.setVisibility(View.INVISIBLE);
@@ -665,55 +900,216 @@ public class market extends AppCompatActivity {
         Posi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (team[1]==false)
+                if (CorePick==true)
                 {
+                    if (team[1]==false)
+                    {
 
-                    Team[1].setText(PlayerNickName.getText());
-                    Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
-                    Goldbalance.setText(Gold);
+                        Team[1].setText(PlayerNickName.getText());
+                        Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
+                        Goldbalance.setText(Gold);
 
 
-                    Pos2=last_position_player;
-                    team[1]=true;
-                    playerseq[1]=last_position_player;
-                    editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
-                    editor.putString(GoldBalance,String.valueOf(Gold));
-                    editor.apply();
+                        Pos2=last_position_player;
+                        team[1]=true;
+                        playerseq[1]=last_position_player;
+                        editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
+                        editor.putString(GoldBalance,String.valueOf(Gold));
+                        editor.apply();
 
-                    CorelistView.setVisibility(View.VISIBLE);
-                    CoreChoose.setVisibility(View.VISIBLE);
-                    SupportChoose.setVisibility(View.VISIBLE);
-                    PlayerInformation.setVisibility(View.INVISIBLE);
-                    Back.setVisibility(View.INVISIBLE);
-                    Cores.remove(last_position);
-                    CorelistView.setAdapter(coreAdapter);
+                        CorelistView.setVisibility(View.VISIBLE);
+                        CoreChoose.setVisibility(View.VISIBLE);
+                        SupportChoose.setVisibility(View.VISIBLE);
+                        PlayerInformation.setVisibility(View.INVISIBLE);
+                        Back.setVisibility(View.INVISIBLE);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(coreAdapter);
 
-                    Posi1.setVisibility(View.INVISIBLE);
-                    Posi2.setVisibility(View.INVISIBLE);
-                    Posi3.setVisibility(View.INVISIBLE);
-                    Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_No.setVisibility(View.VISIBLE);
-                    SupportPick=false;
-                    CorePick=false;
+                        Posi1.setVisibility(View.INVISIBLE);
+                        Posi2.setVisibility(View.INVISIBLE);
+                        Posi3.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.VISIBLE);
+                        Buy_No.setVisibility(View.VISIBLE);
+                        SupportPick=false;
+                        CorePick=false;
 
-                    //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                    //{
-                    //     NextStage.setVisibility(View.VISIBLE);
-                    // }
+                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
+                        //{
+                        //     NextStage.setVisibility(View.VISIBLE);
+                        // }
+                    }
+
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция Занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
-
                 else
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Позиция Занята", Toast.LENGTH_SHORT);
-                    toast.show();
+                    if (team[3]==false)
+                    {
+
+                        Team[3].setText(PlayerNickName.getText());
+                        Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
+                        Goldbalance.setText(Gold);
+
+
+                        Pos4=last_position_player;
+                        team[3]=true;
+                        playerseq[3]=last_position_player;
+                        editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
+                        editor.putString(GoldBalance,String.valueOf(Gold));
+                        editor.apply();
+
+                        CorelistView.setVisibility(View.VISIBLE);
+                        CoreChoose.setVisibility(View.VISIBLE);
+                        SupportChoose.setVisibility(View.VISIBLE);
+                        PlayerInformation.setVisibility(View.INVISIBLE);
+                        Back.setVisibility(View.INVISIBLE);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(coreAdapter);
+
+                        Posi1.setVisibility(View.INVISIBLE);
+                        Posi2.setVisibility(View.INVISIBLE);
+                        Posi3.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.VISIBLE);
+                        Buy_No.setVisibility(View.VISIBLE);
+                        SupportPick=false;
+                        CorePick=false;
+
+                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
+                        //{
+                        //     NextStage.setVisibility(View.VISIBLE);
+                        // }
+
+                        Posi2.setText("Позиция 2");
+                        Posi3.setText("Позиция 3");
+                    }
+
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция Занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
+
+
 
 
 
             }
         });
+
+
+
+
+
+
+
+        Posi3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (CorePick==true) {
+
+
+                    if (team[2] == false) {
+
+                        Team[2].setText(PlayerNickName.getText());
+                        Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
+                        Goldbalance.setText(Gold);
+
+
+                        Pos3 = last_position_player;
+                        team[2] = true;
+                        playerseq[2] = last_position_player;
+                        editor.putString(StaticPosition3, String.valueOf(playerseq[2]));
+                        editor.putString(GoldBalance, String.valueOf(Gold));
+                        editor.apply();
+
+                        CorelistView.setVisibility(View.VISIBLE);
+                        CoreChoose.setVisibility(View.VISIBLE);
+                        SupportChoose.setVisibility(View.VISIBLE);
+                        PlayerInformation.setVisibility(View.INVISIBLE);
+                        Back.setVisibility(View.INVISIBLE);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(coreAdapter);
+
+                        Posi1.setVisibility(View.INVISIBLE);
+                        Posi2.setVisibility(View.INVISIBLE);
+                        Posi3.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.VISIBLE);
+                        Buy_No.setVisibility(View.VISIBLE);
+                        SupportPick = false;
+                        CorePick = false;
+
+
+
+                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
+                        //{
+                        //     NextStage.setVisibility(View.VISIBLE);
+                        // }
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция Занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                }
+                else
+                {
+                    if (team[4] == false) {
+
+                        Team[4].setText(PlayerNickName.getText());
+                        Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
+                        Goldbalance.setText(Gold);
+
+
+                        Pos5 = last_position_player;
+                        team[4] = true;
+                        playerseq[4] = last_position_player;
+                        editor.putString(StaticPosition5, String.valueOf(playerseq[4]));
+                        editor.putString(GoldBalance, String.valueOf(Gold));
+                        editor.apply();
+
+                        CorelistView.setVisibility(View.VISIBLE);
+                        CoreChoose.setVisibility(View.VISIBLE);
+                        SupportChoose.setVisibility(View.VISIBLE);
+                        PlayerInformation.setVisibility(View.INVISIBLE);
+                        Back.setVisibility(View.INVISIBLE);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(coreAdapter);
+
+                        Posi1.setVisibility(View.INVISIBLE);
+                        Posi2.setVisibility(View.INVISIBLE);
+                        Posi3.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.VISIBLE);
+                        Buy_No.setVisibility(View.VISIBLE);
+                        SupportPick = false;
+                        CorePick = false;
+
+                        Posi2.setText("Позиция 2");
+                        Posi3.setText("Позиция 3");
+
+                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
+                        //{
+                        //     NextStage.setVisibility(View.VISIBLE);
+                        // }
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция Занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                }
+
+            }
+        });
+
+
 
 
 

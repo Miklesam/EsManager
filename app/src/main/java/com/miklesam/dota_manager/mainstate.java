@@ -27,6 +27,10 @@ import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.Day;
+import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
+import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
+import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
+import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
@@ -72,6 +76,18 @@ public class mainstate extends AppCompatActivity {
     int openqual[]= new int[7];
     ArrayList<Players> TheAllPlayers;
 
+
+    TextView LainingPoints;
+    TextView FarmingPoints;
+    TextView FightingPoints;
+    TextView LateGamePoints;
+
+    int ExLainingint;
+    int ExFarmingint;
+    int ExFightingint;
+    int ExLateint;
+
+
     boolean team[]=new boolean[5];
     boolean rosterok;
     SharedPreferences mSettings;
@@ -87,6 +103,14 @@ public class mainstate extends AppCompatActivity {
         TeamPosition[2]=findViewById(R.id.teamposition3);
         TeamPosition[3]=findViewById(R.id.teamposition4);
         TeamPosition[4]=findViewById(R.id.teamposition5);
+
+
+        LainingPoints=findViewById(R.id.LainingPoints);
+        FarmingPoints=findViewById(R.id.FarmingPoints);
+        FightingPoints=findViewById(R.id.FightingPoints);
+        LateGamePoints=findViewById(R.id.LateGamePoints);
+
+
         Play_game=findViewById(R.id.Play_game);
         TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
@@ -122,7 +146,7 @@ public class mainstate extends AppCompatActivity {
             won= (int) savedInstanceState.getSerializable("win");
         }
 
-        XPint=0;
+
         if(mSettings.contains(XPstatic)) {
             XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
         }
@@ -137,6 +161,26 @@ public class mainstate extends AppCompatActivity {
             QualiWinner =Integer.parseInt(mSettings.getString(OpenQualiWinner, "OpenQualiWinner"));
 
         }
+
+
+        if(mSettings.contains(ExtraLaining)) {
+            ExLainingint=Integer.parseInt(mSettings.getString(ExtraLaining, "0"));
+        }
+        if(mSettings.contains(ExtraFarming)) {
+            ExFarmingint=Integer.parseInt(mSettings.getString(ExtraFarming, "0"));
+        }
+        if(mSettings.contains(ExtraFighting)) {
+            ExFightingint=Integer.parseInt(mSettings.getString(ExtraFighting, "0"));
+        }
+        if(mSettings.contains(ExtraLate)) {
+            ExLateint=Integer.parseInt(mSettings.getString(ExtraLate, "0"));
+        }
+
+
+        LainingPoints.setText(String.valueOf(ExLainingint));
+        FarmingPoints.setText(String.valueOf(ExFarmingint));
+        FightingPoints.setText(String.valueOf(ExFightingint));
+        LateGamePoints.setText(String.valueOf(ExLateint));
 
 
         XPShow.setText(String.valueOf(XPint));
@@ -262,12 +306,35 @@ public class mainstate extends AppCompatActivity {
             TeamPosition[1].setText("2");
         }
 
+        if(team[2]==true)
+        {
+            TeamPosition[2].setText(TheAllPlayers.get(Pos3).Name);
+        }
+        else
+        {
+            TeamPosition[2].setText("3");
+        }
+
+        if(team[3]==true)
+        {
+            TeamPosition[3].setText(TheAllPlayers.get(Pos4).Name);
+        }
+        else
+        {
+            TeamPosition[3].setText("4");
+        }
+
+        if(team[4]==true)
+        {
+            TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
+        }
+        else
+        {
+            TeamPosition[4].setText("5");
+        }
 
 
 
-        TeamPosition[2].setText(TheAllPlayers.get(Pos3).Name);
-        TeamPosition[3].setText(TheAllPlayers.get(Pos4).Name);
-        TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
         Goldbalance.setText(Gold);
         TeamName.setText("Команда "+YourTeam);
 

@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="100gold"
+                android:text="10000gold"
                 android:gravity="right"/>
 
 
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="101gold"
+                android:text="1500gold"
                 android:gravity="right"/>
 
 

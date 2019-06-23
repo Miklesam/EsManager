@@ -43,6 +43,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
 import static com.miklesam.dota_manager.YourTeam.QuaterWin;
 import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
+import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class FightState extends AppCompatActivity {
 
@@ -113,6 +114,7 @@ public class FightState extends AppCompatActivity {
 
     int CloseWin1int=0;
     int CloseLose1int=0;
+    int XPint;
 
     @Override
     public void onBackPressed() {
@@ -197,6 +199,11 @@ public class FightState extends AppCompatActivity {
 
         radiantnetw=findViewById(R.id.radiantnet);
         GoldKeff=findViewById(R.id.goldkeff);
+
+        if(mSettings.contains(XPstatic)) {
+            XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
+        }
+
 
         if(mSettings.contains(Mode)) {
             TournMode=Integer.parseInt(mSettings.getString(Mode, "0"));
@@ -444,17 +451,20 @@ public class FightState extends AppCompatActivity {
                     {
                         editor.putString(OpenFinals, "1");
                         editor.putString(FinalsWin, "1");
+                        editor.putString(XPstatic, String.valueOf(XPint+3));
                     }
 
                     else if (openquater==1)
                     {
                         editor.putString(OpenSemiFinals, "1");
                         editor.putString(SemiWin, "1");
+                        editor.putString(XPstatic, String.valueOf(XPint+2));
                     }
                     else
                     {
                         editor.putString(OpenQuaterFinals, "1");
                         editor.putString(QuaterWin, "1");
+                        editor.putString(XPstatic, String.valueOf(XPint+1));
 
                     }
 
@@ -691,6 +701,8 @@ public class FightState extends AppCompatActivity {
                 else
                 {
                     editor.putString(Day, String.valueOf(day+1));
+                    editor.putString(XPstatic, String.valueOf(XPint+1));
+
                     editor.apply();
                     HeroesSpot.clear();
                     AllHeroes.clear();

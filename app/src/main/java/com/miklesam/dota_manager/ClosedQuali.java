@@ -358,22 +358,27 @@ public class ClosedQuali extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ToPickStage.putExtra("Position1",Pos1);
-                ToPickStage.putExtra("Position2",Pos2);
-                ToPickStage.putExtra("Position3",Pos3);
-                ToPickStage.putExtra("Position4",Pos4);
-                ToPickStage.putExtra("Position5",Pos5);
-                ToPickStage.putExtra("TeamName",YourTeam);
 
 
 
-                    ToPickStage.putExtra("EnemyTeam",ClosedTeamstour.get(6-Seriescnt).seq);
-                    ToPickStage.putExtra("TeamEnemy",ClosedTeamstour.get(6-Seriescnt).teamname);
+                    if(Seriescnt<7)
+                    {
+                        ToPickStage.putExtra("Position1",Pos1);
+                        ToPickStage.putExtra("Position2",Pos2);
+                        ToPickStage.putExtra("Position3",Pos3);
+                        ToPickStage.putExtra("Position4",Pos4);
+                        ToPickStage.putExtra("Position5",Pos5);
+                        ToPickStage.putExtra("TeamName",YourTeam);
+
+                        ToPickStage.putExtra("TeamEnemy",ClosedTeamstour.get(6-Seriescnt).teamname);
+                        ToPickStage.putExtra("EnemyTeam",ClosedTeamstour.get(6-Seriescnt).seq);
+                        startActivity(ToPickStage);
+
+                    }
 
 
 
 
-                startActivity(ToPickStage);
 
             }
         });

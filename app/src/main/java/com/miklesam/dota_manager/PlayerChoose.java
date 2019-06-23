@@ -44,6 +44,10 @@ import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
+import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
+import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
+import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
+import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -342,6 +346,13 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(CloseLose2, "0");
                 editor.putString(CloseLose1, "0");
 
+                editor.putString(ExtraLaining, "0");
+                editor.putString(ExtraFarming, "0");
+                editor.putString(ExtraFighting, "0");
+                editor.putString(ExtraLate, "0");
+
+
+
 
 
 
@@ -468,7 +479,8 @@ public class PlayerChoose extends AppCompatActivity {
 
                 if (team[0]==false)
                 {
-
+                if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                {
                     position1.setText(PlayerNickName.getText());
                     balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                     GoldbalancePole.setText(balancegold);
@@ -492,8 +504,16 @@ public class PlayerChoose extends AppCompatActivity {
 
                     if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                     {
-                       NextStage.setVisibility(View.VISIBLE);
+                        NextStage.setVisibility(View.VISIBLE);
                     }
+                }
+                else
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Недостаточно денег", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
                 }
 
                 else
