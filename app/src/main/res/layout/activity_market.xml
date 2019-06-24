@@ -8,9 +8,63 @@
     tools:context=".market">
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:id="@+id/notmoneyhelp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/toreward">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/torewardbtn"
+                android:text="Посмотреть\nРекламу"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1500"
+                    android:textSize="17sp"/>
+                <ImageView
+                    android:layout_marginLeft="10sp"
+                    android:layout_width="25sp"
+                    android:layout_height="30sp"
+                    app:srcCompat="@drawable/rubl"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tostore"
+            android:text="Перейти в\nмагазин"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toback"
+            android:text="Отмена"/>
+
+
+    </LinearLayout>
+
+
     <ScrollView
         android:layout_width="400sp"
         android:layout_height="wrap_content"
+        android:id="@+id/scrollscroll"
         android:scrollbars="none">
 
 
@@ -317,7 +371,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="20sp"
-            android:id="@+id/Teamnameid"
+            android:id="@+id/SellText"
             android:text="Продать"/>
 
         <TextView

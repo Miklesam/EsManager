@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,6 +83,13 @@ public class mainstate extends AppCompatActivity {
     TextView FightingPoints;
     TextView LateGamePoints;
 
+    LinearLayout Laining;
+    LinearLayout Farming;
+    LinearLayout Fighting;
+    LinearLayout LateGame;
+
+
+
     int ExLainingint;
     int ExFarmingint;
     int ExFightingint;
@@ -109,6 +117,12 @@ public class mainstate extends AppCompatActivity {
         FarmingPoints=findViewById(R.id.FarmingPoints);
         FightingPoints=findViewById(R.id.FightingPoints);
         LateGamePoints=findViewById(R.id.LateGamePoints);
+
+
+        Laining=findViewById(R.id.lainingfeature);
+        Farming=findViewById(R.id.farmingfeature);
+        Fighting=findViewById(R.id.fightingfeature);
+        LateGame=findViewById(R.id.lategamefeature);
 
 
         Play_game=findViewById(R.id.Play_game);
@@ -477,11 +491,40 @@ public class mainstate extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(ToImprove);
-
-
-
             }
         });
+
+        Laining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToImprove);
+            }
+        });
+        Farming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToImprove);
+            }
+        });
+        Fighting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToImprove);
+            }
+        });
+        LateGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToImprove);
+            }
+        });
+
+
+
 
 
 

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +40,13 @@ public class market extends AppCompatActivity {
     ListView SupportlistView;
     Button CoreChoose;
     Button SupportChoose;
+
+    ScrollView scrollscroll;
     ArrayList<Players> Cores = new ArrayList<Players>();
     ArrayList<Players> Supports = new ArrayList<Players>();
+    LinearLayout Your_Team;
+    LinearLayout notmoneyhelp;
+    LinearLayout toreward;
     int Pos1=0;
     int Pos2=0;
     int Pos3=0;
@@ -87,6 +93,9 @@ public class market extends AppCompatActivity {
     boolean team[]=new boolean[5];
     int playerseq[]=new int[5];
     int sellposition;
+    Button tostore;
+    Button toback;
+    Button torewardbtn;
 
 
     SharedPreferences mSettings;
@@ -96,6 +105,13 @@ public class market extends AppCompatActivity {
         setContentView(R.layout.activity_market);
 
 
+        torewardbtn=findViewById(R.id.torewardbtn);
+        scrollscroll=findViewById(R.id.scrollscroll);
+        toback=findViewById(R.id.toback);
+        tostore=findViewById(R.id.tostore);
+        toreward=findViewById(R.id.toreward);
+        notmoneyhelp=findViewById(R.id.notmoneyhelp);
+        Your_Team=findViewById(R.id.Your_Team);
         Sell=findViewById(R.id.Sell);
         Sell.setVisibility(View.INVISIBLE);
         Goldbalance=findViewById(R.id.Goldbalance);
@@ -103,6 +119,10 @@ public class market extends AppCompatActivity {
         CorelistView = (ListView)findViewById(R.id.CoreList);
         SupportlistView=(ListView)findViewById(R.id.SupportList);
         final Intent Tomainstate = new Intent(this, mainstate.class);
+
+        final Intent ToShop = new Intent(this, Shop.class);
+        final Intent ToReward = new Intent(this, Rewarded.class);
+
         Backtomain=findViewById(R.id.Backtomain);
         CoreChoose =findViewById(R.id.Core);
         SupportChoose =findViewById(R.id.Support);
@@ -849,38 +869,51 @@ public class market extends AppCompatActivity {
                 if (team[0]==false)
                 {
 
-                    Team[0].setText(PlayerNickName.getText());
-                    Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
-                    Goldbalance.setText(Gold);
+                    if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                    {
+                        Team[0].setText(PlayerNickName.getText());
+                        Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
+                        Goldbalance.setText(Gold);
 
 
-                    Pos1=last_position_player;
-                    team[0]=true;
-                    playerseq[0]=last_position_player;
-                    editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
-                    editor.putString(GoldBalance,String.valueOf(Gold));
-                    editor.apply();
+                        Pos1=last_position_player;
+                        team[0]=true;
+                        playerseq[0]=last_position_player;
+                        editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
+                        editor.putString(GoldBalance,String.valueOf(Gold));
+                        editor.apply();
 
-                    CorelistView.setVisibility(View.VISIBLE);
-                    CoreChoose.setVisibility(View.VISIBLE);
-                    SupportChoose.setVisibility(View.VISIBLE);
-                    PlayerInformation.setVisibility(View.INVISIBLE);
-                    Back.setVisibility(View.INVISIBLE);
-                    Cores.remove(last_position);
-                    CorelistView.setAdapter(coreAdapter);
+                        CorelistView.setVisibility(View.VISIBLE);
+                        CoreChoose.setVisibility(View.VISIBLE);
+                        SupportChoose.setVisibility(View.VISIBLE);
+                        PlayerInformation.setVisibility(View.INVISIBLE);
+                        Back.setVisibility(View.INVISIBLE);
+                        Cores.remove(last_position);
+                        CorelistView.setAdapter(coreAdapter);
 
-                    Posi1.setVisibility(View.INVISIBLE);
-                    Posi2.setVisibility(View.INVISIBLE);
-                    Posi3.setVisibility(View.INVISIBLE);
-                    Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_No.setVisibility(View.VISIBLE);
-                    SupportPick=false;
-                    CorePick=false;
+                        Posi1.setVisibility(View.INVISIBLE);
+                        Posi2.setVisibility(View.INVISIBLE);
+                        Posi3.setVisibility(View.INVISIBLE);
+                        Buy_Yes.setVisibility(View.VISIBLE);
+                        Buy_No.setVisibility(View.VISIBLE);
+                        SupportPick=false;
+                        CorePick=false;
 
-                    //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                    //{
-                   //     NextStage.setVisibility(View.VISIBLE);
-                   // }
+                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
+                        //{
+                        //     NextStage.setVisibility(View.VISIBLE);
+                        // }
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Недостаточно денег", Toast.LENGTH_SHORT);
+                        toast.show();
+                        HideAll();
+                    }
+
+
+
                 }
 
                 else
@@ -1112,6 +1145,36 @@ public class market extends AppCompatActivity {
 
 
 
+        toback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShowAll();
+            }
+        });
+
+        tostore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(ToShop);
+
+            }
+        });
+
+        toreward.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToReward);
+            }
+        });
+        torewardbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToReward);
+            }
+        });
+
 
 
 
@@ -1120,6 +1183,27 @@ public class market extends AppCompatActivity {
 
 
     }
+
+    protected void HideAll()
+    {
+        PlayerInformation.setVisibility(View.INVISIBLE);
+        Your_Team.setVisibility(View.INVISIBLE);
+        Backtomain.setVisibility(View.INVISIBLE);
+        scrollscroll.setVisibility(View.INVISIBLE);
+        notmoneyhelp.setVisibility(View.VISIBLE);
+
+    }
+
+    protected void ShowAll()
+    {
+        scrollscroll.setVisibility(View.VISIBLE);
+        PlayerInformation.setVisibility(View.VISIBLE);
+        Your_Team.setVisibility(View.VISIBLE);
+        Backtomain.setVisibility(View.VISIBLE);
+        notmoneyhelp.setVisibility(View.INVISIBLE);
+
+    }
+
 
 
     class CoreAdapter extends BaseAdapter {
