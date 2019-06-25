@@ -120,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(TournMode==1)
                 {
-                    startActivity(ToOpenQuali);
+                    //startActivity(ToOpenQuali);
+                    startActivity(ToMAinState);
 
                 }
                 else

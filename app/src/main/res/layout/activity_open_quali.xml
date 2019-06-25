@@ -16,428 +16,407 @@
         android:layout_alignParentRight="true"/>
 
 
-
-
-
-
-
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Open Qualifiers"/>
-
-<LinearLayout
-    android:layout_marginTop="10sp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <ImageView
-        android:id="@+id/Team1"
-        android:layout_width="40sp"
-        android:layout_height="20sp"
-        />
-    <TextView
-        android:layout_width="150sp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Teamname1"
-        />
-    <TextView
-        android:layout_marginLeft="5sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Score1"
-        android:textColor="#000000"
-        android:text="0"
-        />
-
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team2"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname2"
-                />
-            <TextView
-                android:layout_marginLeft="5sp"
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Score2"
-                android:textColor="#000000"
-                android:text="0"
-                />
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Open Qualifiers" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team1"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname1"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team2"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname2"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team3"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname3"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team4"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname4"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team5"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname5"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team6"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname6"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team7"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname7"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team8"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname8"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:text="0"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team9"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname9"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team10"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname10"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team11"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname11"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team12"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname12"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team13"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname13"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/Team14"
+                        android:layout_width="40sp"
+                        android:layout_height="20sp" />
+
+                    <TextView
+                        android:id="@+id/Teamname14"
+                        android:layout_width="150sp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/Score14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5sp"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginTop="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team3"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname3"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score3"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team4"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname4"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score4"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_marginTop="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team5"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname5"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score5"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team6"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname6"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score6"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_marginTop="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team7"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname7"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score7"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team8"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname8"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score8"
-                android:textColor="#000000"
-                android:text="0"
-                />
-
-        </LinearLayout>
-
-
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_marginTop="60sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team9"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname9"
-                />
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score9"
-                android:textColor="#000000"
-                />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team10"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname10"
-                />
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score10"
-                android:textColor="#000000"
-                />
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_marginTop="50sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team11"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname11"
-                />
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score11"
-                android:textColor="#000000"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team12"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname12"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score12"
-                android:textColor="#000000"
-                />
-
-        </LinearLayout>
-
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <LinearLayout
-        android:layout_marginTop="100sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/Team13"
-            android:layout_width="40sp"
-            android:layout_height="20sp"
-            />
-        <TextView
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:id="@+id/Teamname13"
-            />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score13"
-                android:textColor="#000000"
-                />
-
-    </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/Team14"
-                android:layout_width="40sp"
-                android:layout_height="20sp"
-                />
-            <TextView
-                android:layout_width="150sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/Teamname14"
-                />
-
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Score14"
-                android:textColor="#000000"
-                />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
-
-</ScrollView>
+    </ScrollView>
 
 
 </RelativeLayout>

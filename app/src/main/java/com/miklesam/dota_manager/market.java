@@ -358,6 +358,8 @@ public class market extends AppCompatActivity {
                 Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
                 last_position=position;
                 last_position_player=Cores.get(position).sequence;
+                Posi2.setText("Позиция 2");
+                Posi3.setText("Позиция 3");
 
             }
         });
@@ -392,6 +394,8 @@ public class market extends AppCompatActivity {
 
                 last_position=position;
                 last_position_player=Supports.get(position).sequence;
+                Posi2.setText("Позиция 4");
+                Posi3.setText("Позиция 5");
 
             }
         });
@@ -418,12 +422,6 @@ public class market extends AppCompatActivity {
         Buy_Yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //CorelistView.setVisibility(View.VISIBLE);
-                //CoreChoose.setVisibility(View.VISIBLE);
-                //SupportChoose.setVisibility(View.VISIBLE);
-                //PlayerInformation.setVisibility(View.INVISIBLE);
-                //balancegold=String.valueOf(Integer.parseInt(balancegold)-1000);
-                //GoldbalancePole.setText("Золото "+balancegold);
 
                 if ( sellgoes==true)
                 {
@@ -844,10 +842,6 @@ public class market extends AppCompatActivity {
                     SupportPick=false;
                     CorePick=false;
 
-                    //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                    //{
-                    //     NextStage.setVisibility(View.VISIBLE);
-                    // }
 
 
 
@@ -899,10 +893,7 @@ public class market extends AppCompatActivity {
                         SupportPick=false;
                         CorePick=false;
 
-                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                        //{
-                        //     NextStage.setVisibility(View.VISIBLE);
-                        // }
+
                     }
                     else
                     {
@@ -937,39 +928,47 @@ public class market extends AppCompatActivity {
                 {
                     if (team[1]==false)
                     {
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        {
+                            Team[1].setText(PlayerNickName.getText());
+                            Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
+                            Goldbalance.setText(Gold);
 
-                        Team[1].setText(PlayerNickName.getText());
-                        Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
-                        Goldbalance.setText(Gold);
+
+                            Pos2=last_position_player;
+                            team[1]=true;
+                            playerseq[1]=last_position_player;
+                            editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
+                            editor.putString(GoldBalance,String.valueOf(Gold));
+                            editor.apply();
+
+                            CorelistView.setVisibility(View.VISIBLE);
+                            CoreChoose.setVisibility(View.VISIBLE);
+                            SupportChoose.setVisibility(View.VISIBLE);
+                            PlayerInformation.setVisibility(View.INVISIBLE);
+                            Back.setVisibility(View.INVISIBLE);
+                            Cores.remove(last_position);
+                            CorelistView.setAdapter(coreAdapter);
+
+                            Posi1.setVisibility(View.INVISIBLE);
+                            Posi2.setVisibility(View.INVISIBLE);
+                            Posi3.setVisibility(View.INVISIBLE);
+                            Buy_Yes.setVisibility(View.VISIBLE);
+                            Buy_No.setVisibility(View.VISIBLE);
+                            SupportPick=false;
+                            CorePick=false;
+
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Недостаточно денег", Toast.LENGTH_SHORT);
+                            toast.show();
+                            HideAll();
+                        }
 
 
-                        Pos2=last_position_player;
-                        team[1]=true;
-                        playerseq[1]=last_position_player;
-                        editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
-                        editor.putString(GoldBalance,String.valueOf(Gold));
-                        editor.apply();
 
-                        CorelistView.setVisibility(View.VISIBLE);
-                        CoreChoose.setVisibility(View.VISIBLE);
-                        SupportChoose.setVisibility(View.VISIBLE);
-                        PlayerInformation.setVisibility(View.INVISIBLE);
-                        Back.setVisibility(View.INVISIBLE);
-                        Cores.remove(last_position);
-                        CorelistView.setAdapter(coreAdapter);
-
-                        Posi1.setVisibility(View.INVISIBLE);
-                        Posi2.setVisibility(View.INVISIBLE);
-                        Posi3.setVisibility(View.INVISIBLE);
-                        Buy_Yes.setVisibility(View.VISIBLE);
-                        Buy_No.setVisibility(View.VISIBLE);
-                        SupportPick=false;
-                        CorePick=false;
-
-                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                        //{
-                        //     NextStage.setVisibility(View.VISIBLE);
-                        // }
                     }
 
                     else
@@ -983,42 +982,47 @@ public class market extends AppCompatActivity {
                 {
                     if (team[3]==false)
                     {
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        {
+                            Team[3].setText(PlayerNickName.getText());
+                            Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
+                            Goldbalance.setText(Gold);
 
-                        Team[3].setText(PlayerNickName.getText());
-                        Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
-                        Goldbalance.setText(Gold);
+
+                            Pos4=last_position_player;
+                            team[3]=true;
+                            playerseq[3]=last_position_player;
+                            editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
+                            editor.putString(GoldBalance,String.valueOf(Gold));
+                            editor.apply();
+
+                            CorelistView.setVisibility(View.VISIBLE);
+                            CoreChoose.setVisibility(View.VISIBLE);
+                            SupportChoose.setVisibility(View.VISIBLE);
+                            PlayerInformation.setVisibility(View.INVISIBLE);
+                            Back.setVisibility(View.INVISIBLE);
+                            Supports.remove(last_position);
+                            SupportlistView.setAdapter(cupppAdapter);
 
 
-                        Pos4=last_position_player;
-                        team[3]=true;
-                        playerseq[3]=last_position_player;
-                        editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
-                        editor.putString(GoldBalance,String.valueOf(Gold));
-                        editor.apply();
+                            Posi1.setVisibility(View.INVISIBLE);
+                            Posi2.setVisibility(View.INVISIBLE);
+                            Posi3.setVisibility(View.INVISIBLE);
+                            Buy_Yes.setVisibility(View.VISIBLE);
+                            Buy_No.setVisibility(View.VISIBLE);
+                            SupportPick=false;
+                            CorePick=false;
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Недостаточно денег", Toast.LENGTH_SHORT);
+                            toast.show();
+                            HideAll();
+                        }
 
-                        CorelistView.setVisibility(View.VISIBLE);
-                        CoreChoose.setVisibility(View.VISIBLE);
-                        SupportChoose.setVisibility(View.VISIBLE);
-                        PlayerInformation.setVisibility(View.INVISIBLE);
-                        Back.setVisibility(View.INVISIBLE);
-                        Cores.remove(last_position);
-                        CorelistView.setAdapter(coreAdapter);
 
-                        Posi1.setVisibility(View.INVISIBLE);
-                        Posi2.setVisibility(View.INVISIBLE);
-                        Posi3.setVisibility(View.INVISIBLE);
-                        Buy_Yes.setVisibility(View.VISIBLE);
-                        Buy_No.setVisibility(View.VISIBLE);
-                        SupportPick=false;
-                        CorePick=false;
 
-                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                        //{
-                        //     NextStage.setVisibility(View.VISIBLE);
-                        // }
-
-                        Posi2.setText("Позиция 2");
-                        Posi3.setText("Позиция 3");
                     }
 
                     else
@@ -1050,41 +1054,48 @@ public class market extends AppCompatActivity {
 
 
                     if (team[2] == false) {
-
-                        Team[2].setText(PlayerNickName.getText());
-                        Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
-                        Goldbalance.setText(Gold);
-
-
-                        Pos3 = last_position_player;
-                        team[2] = true;
-                        playerseq[2] = last_position_player;
-                        editor.putString(StaticPosition3, String.valueOf(playerseq[2]));
-                        editor.putString(GoldBalance, String.valueOf(Gold));
-                        editor.apply();
-
-                        CorelistView.setVisibility(View.VISIBLE);
-                        CoreChoose.setVisibility(View.VISIBLE);
-                        SupportChoose.setVisibility(View.VISIBLE);
-                        PlayerInformation.setVisibility(View.INVISIBLE);
-                        Back.setVisibility(View.INVISIBLE);
-                        Cores.remove(last_position);
-                        CorelistView.setAdapter(coreAdapter);
-
-                        Posi1.setVisibility(View.INVISIBLE);
-                        Posi2.setVisibility(View.INVISIBLE);
-                        Posi3.setVisibility(View.INVISIBLE);
-                        Buy_Yes.setVisibility(View.VISIBLE);
-                        Buy_No.setVisibility(View.VISIBLE);
-                        SupportPick = false;
-                        CorePick = false;
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        {
+                            Team[2].setText(PlayerNickName.getText());
+                            Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
+                            Goldbalance.setText(Gold);
 
 
+                            Pos3 = last_position_player;
+                            team[2] = true;
+                            playerseq[2] = last_position_player;
+                            editor.putString(StaticPosition3, String.valueOf(playerseq[2]));
+                            editor.putString(GoldBalance, String.valueOf(Gold));
+                            editor.apply();
 
-                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                        //{
-                        //     NextStage.setVisibility(View.VISIBLE);
-                        // }
+                            CorelistView.setVisibility(View.VISIBLE);
+                            CoreChoose.setVisibility(View.VISIBLE);
+                            SupportChoose.setVisibility(View.VISIBLE);
+                            PlayerInformation.setVisibility(View.INVISIBLE);
+                            Back.setVisibility(View.INVISIBLE);
+                            Cores.remove(last_position);
+                            CorelistView.setAdapter(coreAdapter);
+
+                            Posi1.setVisibility(View.INVISIBLE);
+                            Posi2.setVisibility(View.INVISIBLE);
+                            Posi3.setVisibility(View.INVISIBLE);
+                            Buy_Yes.setVisibility(View.VISIBLE);
+                            Buy_No.setVisibility(View.VISIBLE);
+                            SupportPick = false;
+                            CorePick = false;
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Недостаточно денег", Toast.LENGTH_SHORT);
+                            toast.show();
+                            HideAll();
+                        }
+
+
+
+
+
                     } else {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Позиция Занята", Toast.LENGTH_SHORT);
@@ -1096,41 +1107,49 @@ public class market extends AppCompatActivity {
                 {
                     if (team[4] == false) {
 
-                        Team[4].setText(PlayerNickName.getText());
-                        Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
-                        Goldbalance.setText(Gold);
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        {
+                            Team[4].setText(PlayerNickName.getText());
+                            Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
+                            Goldbalance.setText(Gold);
 
 
-                        Pos5 = last_position_player;
-                        team[4] = true;
-                        playerseq[4] = last_position_player;
-                        editor.putString(StaticPosition5, String.valueOf(playerseq[4]));
-                        editor.putString(GoldBalance, String.valueOf(Gold));
-                        editor.apply();
+                            Pos5 = last_position_player;
+                            team[4] = true;
+                            playerseq[4] = last_position_player;
+                            editor.putString(StaticPosition5, String.valueOf(playerseq[4]));
+                            editor.putString(GoldBalance, String.valueOf(Gold));
+                            editor.apply();
 
-                        CorelistView.setVisibility(View.VISIBLE);
-                        CoreChoose.setVisibility(View.VISIBLE);
-                        SupportChoose.setVisibility(View.VISIBLE);
-                        PlayerInformation.setVisibility(View.INVISIBLE);
-                        Back.setVisibility(View.INVISIBLE);
-                        Cores.remove(last_position);
-                        CorelistView.setAdapter(coreAdapter);
+                            CorelistView.setVisibility(View.VISIBLE);
+                            CoreChoose.setVisibility(View.VISIBLE);
+                            SupportChoose.setVisibility(View.VISIBLE);
+                            PlayerInformation.setVisibility(View.INVISIBLE);
+                            Back.setVisibility(View.INVISIBLE);
+                            Supports.remove(last_position);
+                            SupportlistView.setAdapter(cupppAdapter);
 
-                        Posi1.setVisibility(View.INVISIBLE);
-                        Posi2.setVisibility(View.INVISIBLE);
-                        Posi3.setVisibility(View.INVISIBLE);
-                        Buy_Yes.setVisibility(View.VISIBLE);
-                        Buy_No.setVisibility(View.VISIBLE);
-                        SupportPick = false;
-                        CorePick = false;
+                            Posi1.setVisibility(View.INVISIBLE);
+                            Posi2.setVisibility(View.INVISIBLE);
+                            Posi3.setVisibility(View.INVISIBLE);
+                            Buy_Yes.setVisibility(View.VISIBLE);
+                            Buy_No.setVisibility(View.VISIBLE);
+                            SupportPick = false;
+                            CorePick = false;
 
-                        Posi2.setText("Позиция 2");
-                        Posi3.setText("Позиция 3");
 
-                        //if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
-                        //{
-                        //     NextStage.setVisibility(View.VISIBLE);
-                        // }
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Недостаточно денег", Toast.LENGTH_SHORT);
+                            toast.show();
+                            HideAll();
+                        }
+
+
+
+
                     } else {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Позиция Занята", Toast.LENGTH_SHORT);

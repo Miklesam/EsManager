@@ -79,6 +79,7 @@ public class OpenQuali extends AppCompatActivity {
     int semiwon;
     int finalwon;
     int day;
+    boolean losequal;
 
 
     @Override
@@ -271,6 +272,8 @@ public class OpenQuali extends AppCompatActivity {
             }
             else
             {
+                losequal=true;
+                openplaybtn.setText("Покинуть квалификацию");
                 OpenSemi[0]=OpenTeamQual[0];
                 scoreboardint[0]=0;
                 editor.putString(OpenScore1, "0");
@@ -314,6 +317,8 @@ public class OpenQuali extends AppCompatActivity {
             }
             else
             {
+                losequal=true;
+                openplaybtn.setText("Покинуть квалификацию");
                 //OpenSemi[0]=OpenTeamQual[0];
                 //scoreboardint[0]=0;
                 //editor.putString(OpenScore1, "0");
@@ -337,6 +342,8 @@ public class OpenQuali extends AppCompatActivity {
            }
            else
            {
+               losequal=true;
+               openplaybtn.setText("Покинуть квалификацию");
                Scoreboard[12].setText("0");
                Scoreboard[13].setText("1");
            }
@@ -381,9 +388,7 @@ public class OpenQuali extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
-               if (oqf==1)
+               if(losequal==true)
                {
                    editor.putString(Day, String.valueOf(day+1));
                    editor.putString(OpenScore1, "0");
@@ -414,53 +419,97 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(FinalsWin, "0");
                    editor.putString(Mode, "0");
 
-                   editor.putString(OpenQualiWinner, "1");
+                   editor.putString(OpenQualiWinner, "0");
 
 
 
 
                    editor.apply();
                    startActivity(Tomainstate);
-
                }
-
-               else if (osf==1)
+               else
                {
-                   ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenFinalsteam[1]).seq);
-                   ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenFinalsteam[1]).teamname);
-                   ToPickStage.putExtra("Position1",Pos1);
-                   ToPickStage.putExtra("Position2",Pos2);
-                   ToPickStage.putExtra("Position3",Pos3);
-                   ToPickStage.putExtra("Position4",Pos4);
-                   ToPickStage.putExtra("Position5",Pos5);
-                   ToPickStage.putExtra("TeamName",YourTeam);
-                   startActivity(ToPickStage);
-               }
-                else if (oqs==1)
-                {
-                    ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenSemi[1]).seq);
-                    ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenSemi[1]).teamname);
-                    ToPickStage.putExtra("Position1",Pos1);
-                    ToPickStage.putExtra("Position2",Pos2);
-                    ToPickStage.putExtra("Position3",Pos3);
-                    ToPickStage.putExtra("Position4",Pos4);
-                    ToPickStage.putExtra("Position5",Pos5);
-                    ToPickStage.putExtra("TeamName",YourTeam);
-                    startActivity(ToPickStage);
-                }
+                   if (oqf==1)
+                   {
+                       editor.putString(Day, String.valueOf(day+1));
+                       editor.putString(OpenScore1, "0");
+                       editor.putString(OpenScore2, "0");
+                       editor.putString(OpenScore3, "0");
+                       editor.putString(OpenScore4, "0");
 
-                else
-                {
-                    ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenTeamQual[0]).seq);
-                    ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenTeamQual[0]).teamname);
-                    ToPickStage.putExtra("Position1",Pos1);
-                    ToPickStage.putExtra("Position2",Pos2);
-                    ToPickStage.putExtra("Position3",Pos3);
-                    ToPickStage.putExtra("Position4",Pos4);
-                    ToPickStage.putExtra("Position5",Pos5);
-                    ToPickStage.putExtra("TeamName",YourTeam);
-                    startActivity(ToPickStage);
-                }
+                       editor.putString(OpenScore5, "0");
+                       editor.putString(OpenScore6, "0");
+                       editor.putString(OpenScore7, "0");
+                       editor.putString(OpenScore8, "0");
+
+                       editor.putString(OpenTeam1, "0");
+                       editor.putString(OpenTeam2, "0");
+                       editor.putString(OpenTeam3, "0");
+                       editor.putString(OpenTeam4, "0");
+                       editor.putString(OpenTeam5, "0");
+                       editor.putString(OpenTeam6, "0");
+                       editor.putString(OpenTeam7, "0");
+
+
+                       editor.putString(OpenQuaterFinals, "0");
+                       editor.putString(OpenSemiFinals, "0");
+                       editor.putString(OpenFinals, "0");
+
+                       editor.putString(QuaterWin, "0");
+                       editor.putString(SemiWin, "0");
+                       editor.putString(FinalsWin, "0");
+                       editor.putString(Mode, "0");
+
+                       editor.putString(OpenQualiWinner, "1");
+
+
+
+
+                       editor.apply();
+                       startActivity(Tomainstate);
+
+                   }
+
+                   else if (osf==1)
+                   {
+                       ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenFinalsteam[1]).seq);
+                       ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenFinalsteam[1]).teamname);
+                       ToPickStage.putExtra("Position1",Pos1);
+                       ToPickStage.putExtra("Position2",Pos2);
+                       ToPickStage.putExtra("Position3",Pos3);
+                       ToPickStage.putExtra("Position4",Pos4);
+                       ToPickStage.putExtra("Position5",Pos5);
+                       ToPickStage.putExtra("TeamName",YourTeam);
+                       startActivity(ToPickStage);
+                   }
+                   else if (oqs==1)
+                   {
+                       ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenSemi[1]).seq);
+                       ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenSemi[1]).teamname);
+                       ToPickStage.putExtra("Position1",Pos1);
+                       ToPickStage.putExtra("Position2",Pos2);
+                       ToPickStage.putExtra("Position3",Pos3);
+                       ToPickStage.putExtra("Position4",Pos4);
+                       ToPickStage.putExtra("Position5",Pos5);
+                       ToPickStage.putExtra("TeamName",YourTeam);
+                       startActivity(ToPickStage);
+                   }
+
+                   else
+                   {
+                       ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenTeamQual[0]).seq);
+                       ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenTeamQual[0]).teamname);
+                       ToPickStage.putExtra("Position1",Pos1);
+                       ToPickStage.putExtra("Position2",Pos2);
+                       ToPickStage.putExtra("Position3",Pos3);
+                       ToPickStage.putExtra("Position4",Pos4);
+                       ToPickStage.putExtra("Position5",Pos5);
+                       ToPickStage.putExtra("TeamName",YourTeam);
+                       startActivity(ToPickStage);
+                   }
+               }
+
+
 
 
 

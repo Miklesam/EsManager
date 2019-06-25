@@ -34,6 +34,10 @@ import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
+import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
+import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
+import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
+import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -115,6 +119,10 @@ public class FightState extends AppCompatActivity {
     int CloseWin1int=0;
     int CloseLose1int=0;
     int XPint;
+    int ExLainingint;
+    int ExFarmingint;
+    int ExFightingint;
+    int ExLateint;
 
     @Override
     public void onBackPressed() {
@@ -289,6 +297,19 @@ public class FightState extends AppCompatActivity {
             CloseLose1int=Integer.parseInt(mSettings.getString(CloseLose1, "CloseWin1"));
         }
 
+        if(mSettings.contains(ExtraLaining)) {
+            ExLainingint=Integer.parseInt(mSettings.getString(ExtraLaining, "0"));
+        }
+        if(mSettings.contains(ExtraFarming)) {
+            ExFarmingint=Integer.parseInt(mSettings.getString(ExtraFarming, "0"));
+        }
+        if(mSettings.contains(ExtraFighting)) {
+            ExFightingint=Integer.parseInt(mSettings.getString(ExtraFighting, "0"));
+        }
+        if(mSettings.contains(ExtraLate)) {
+            ExLateint=Integer.parseInt(mSettings.getString(ExtraLate, "0"));
+        }
+
 
 
 
@@ -447,23 +468,50 @@ public class FightState extends AppCompatActivity {
                     HeroesSpot.clear();
                     AllHeroes.clear();
 
-                    if (opensemi==1)
+                    if (opensemi==1)//OpenQuaterFinal
                     {
+
+                        if (winloose==1)
+                        {
+                            editor.putString(FinalsWin, "1");
+                        }
+                        else if (winloose==2)
+                        {
+                            editor.putString(FinalsWin, "2");
+                        }
                         editor.putString(OpenFinals, "1");
-                        editor.putString(FinalsWin, "1");
+
                         editor.putString(XPstatic, String.valueOf(XPint+3));
                     }
 
-                    else if (openquater==1)
+                    else if (openquater==1)//OpenSemiFinal
                     {
+                        if (winloose==1)
+                        {
+                            editor.putString(SemiWin, "1");
+                        }
+
+                        else if (winloose==2)
+                        {
+                            editor.putString(SemiWin, "2");
+                        }
                         editor.putString(OpenSemiFinals, "1");
-                        editor.putString(SemiWin, "1");
+
                         editor.putString(XPstatic, String.valueOf(XPint+2));
                     }
-                    else
+                    else//OpenQuaterFinal
                     {
+                        if (winloose==1)
+                        {
+                            editor.putString(QuaterWin, "1");
+                        }
+                        else if (winloose==2)
+                        {
+                            editor.putString(QuaterWin, "2");
+                        }
+
                         editor.putString(OpenQuaterFinals, "1");
-                        editor.putString(QuaterWin, "1");
+
                         editor.putString(XPstatic, String.valueOf(XPint+1));
 
                     }
@@ -811,6 +859,9 @@ public class FightState extends AppCompatActivity {
 
 
         }
+        totaltopRadiant=totaltopRadiant+ExLainingint;
+        totalmidRadiant=totalmidRadiant+ExLainingint;
+        totalbottomRadiant=totalbottomRadiant+ExLainingint;
 
 
 
@@ -887,9 +938,9 @@ public class FightState extends AppCompatActivity {
 
 
 
-
-
-
+        mylanefarmigtop=mylanefarmigtop+ExFarmingint;
+        mylanefarmigmid=mylanefarmigmid+ExFarmingint;
+        mylanefarmigbottom=mylanefarmigbottom+ExFarmingint;
 
 
 
@@ -1053,7 +1104,7 @@ for (int i=0;i<5;i++)
 
         for(int i =0;i<5;i++)
         {
-            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.fighting*5000/100));
+            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*(Radiant_Unit[i].GamerPlayer.fighting+ExFightingint)*5000/100));
             DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.fighting*5000/100));
             NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
             NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
@@ -1073,7 +1124,7 @@ for (int i=0;i<5;i++)
 
         for(int i =0;i<5;i++)
         {
-            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*Radiant_Unit[i].GamerPlayer.late*5000/100));
+            RadiantNetworh[i]=(int) (RadiantNetworh[i]+ ((float)goldkef/Rad*(Radiant_Unit[i].GamerPlayer.late+ExLateint)*5000/100));
             DireNetworh[i]=(int) (DireNetworh[i]+ ((float)goldkef/Dire*Dire_Unit[i].GamerPlayer.late*5000/100));
             NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
             NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));

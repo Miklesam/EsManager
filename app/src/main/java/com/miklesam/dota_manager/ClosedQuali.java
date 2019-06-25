@@ -36,6 +36,7 @@ import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -91,6 +92,8 @@ public class ClosedQuali extends AppCompatActivity {
 
     int CloseWin1int=0;
     int CloseLose1int=0;
+    TextView AfterGroupStage;
+    int groupstateposition;
 
     ArrayList<ModelTeam> teamstable = new ArrayList<>();
 
@@ -100,9 +103,11 @@ public class ClosedQuali extends AppCompatActivity {
         setContentView(R.layout.activity_closed_quali);
 
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
+        final Intent ToMainstate = new Intent(this, mainstate.class);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
         ClosedTeams.clear();
         ClosedTeamstour=CloseTeamsInit();
+        AfterGroupStage=findViewById(R.id.AfterGroupStage);
         Teams[0]=findViewById(R.id.Team1);
         Teams[1]=findViewById(R.id.Team2);
         Teams[2]=findViewById(R.id.Team3);
@@ -320,33 +325,20 @@ public class ClosedQuali extends AppCompatActivity {
         }
 
 
+    if(Seriescnt==7)
+    {
+        for(int i=0;i<teamstable.size();i++)
+        {
+            if(teamstable.get(i).TeamName.equals(YourTeam))
+            {
+                groupstateposition=i+1;
+                break;
+            }
 
-       // Teams[7].setText(YourTeam);
-        //TeamsLogo[7].setImageResource(R.drawable.teamlogo);
+        }
 
-       // TeamWin[7].setText(String.valueOf(Closedwinint));
-       // TeamLose[7].setText(String.valueOf(Closedloseint));
-
-      //  TeamWin[6].setText(String.valueOf(CloseWin7int));
-      //  TeamLose[6].setText(String.valueOf(CloseLose7int));
-
-        //TeamWin[5].setText(String.valueOf(CloseWin6int));
-       // TeamLose[5].setText(String.valueOf(CloseLose6int));
-
-      //  TeamWin[4].setText(String.valueOf(CloseWin5int));
-      //  TeamLose[4].setText(String.valueOf(CloseLose5int));
-
-      //  TeamWin[3].setText(String.valueOf(CloseWin4int));
-       // TeamLose[3].setText(String.valueOf(CloseLose4int));
-
-     //   TeamWin[2].setText(String.valueOf(CloseWin3int));
-     //   TeamLose[2].setText(String.valueOf(CloseLose3int));
-
-      //  TeamWin[1].setText(String.valueOf(CloseWin2int));
-      //  TeamLose[1].setText(String.valueOf(CloseLose2int));
-
-     //   TeamWin[0].setText(String.valueOf(CloseWin1int));
-     //   TeamLose[0].setText(String.valueOf(CloseLose1int));
+        AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место");
+    }
 
 
 
@@ -375,6 +367,42 @@ public class ClosedQuali extends AppCompatActivity {
                         startActivity(ToPickStage);
 
                     }
+                    else
+                    {
+                        editor.putString(ClosedSeries, "0");
+
+                        editor.putString(Closedwin, "0");
+                        editor.putString(Closedlose, "0");
+
+                        editor.putString(CloseWin7, "0");
+                        editor.putString(CloseWin6, "0");
+                        editor.putString(CloseWin5, "0");
+                        editor.putString(CloseWin4, "0");
+                        editor.putString(CloseWin3, "0");
+                        editor.putString(CloseWin2, "0");
+                        editor.putString(CloseWin1, "0");
+
+
+
+
+                        editor.putString(CloseLose7, "0");
+                        editor.putString(CloseLose6, "0");
+                        editor.putString(CloseLose5, "0");
+                        editor.putString(CloseLose4, "0");
+                        editor.putString(CloseLose3, "0");
+                        editor.putString(CloseLose2, "0");
+                        editor.putString(CloseLose1, "0");
+                        editor.putString(OpenQualiWinner, "0");
+                        editor.apply();
+
+                        startActivity(ToMainstate);
+                    }
+
+
+
+
+
+
 
 
 
