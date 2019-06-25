@@ -26,6 +26,8 @@ import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
+import static com.miklesam.dota_manager.TeamsInit.OpenTeams;
+import static com.miklesam.dota_manager.TeamsInit.OpenTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
@@ -58,6 +60,7 @@ public class mainstate extends AppCompatActivity {
     TextView Goldbalance;
     TextView TeamName;
     ListView CWList;
+    ArrayList<Teams> TeamsOpenQuals;
     ArrayList<Teams> TeamsCW;
     String YourTeam;
     TextView XPShow;
@@ -142,7 +145,9 @@ public class mainstate extends AppCompatActivity {
 
         CWList = (ListView)findViewById(R.id.TeamCW);
         AllTeams.clear();
+        OpenTeams.clear();
         TeamsCW=AllTeamsInit();
+        TeamsOpenQuals=OpenTeamsInit();
         InfoBlock=findViewById(R.id.InfoBlock);
         final CWAdapter CWteamsAdapter=new CWAdapter();
         CWList.setAdapter(CWteamsAdapter);
@@ -411,9 +416,9 @@ public class mainstate extends AppCompatActivity {
 
                     for (int i=0;i<7;i++)
                     {
-                        whatteam=randomteam.nextInt(TeamsCW.size());
-                        openqual[i]=TeamsCW.get(whatteam).seq;
-                        TeamsCW.remove(whatteam);
+                        whatteam=randomteam.nextInt(TeamsOpenQuals.size());
+                        openqual[i]=TeamsOpenQuals.get(whatteam).seq;
+                        TeamsOpenQuals.remove(whatteam);
 
                     }
 

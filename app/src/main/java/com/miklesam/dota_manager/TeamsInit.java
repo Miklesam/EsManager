@@ -74,6 +74,7 @@ import static com.miklesam.dota_manager.PlayersInit.yol;
 
 public class TeamsInit {
     static ArrayList<Teams> AllTeams = new ArrayList<Teams>();
+    static ArrayList<Teams> OpenTeams = new ArrayList<Teams>();
     static ArrayList<Teams> ClosedTeams = new ArrayList<Teams>();
     static ArrayList<Players> VPTeam=new ArrayList<Players>();
     static ArrayList<Players> GambitTeam=new ArrayList<Players>();
@@ -345,6 +346,37 @@ public class TeamsInit {
 
         return AllTeams;
     }
+
+
+    public static ArrayList OpenTeamsInit(){
+
+
+        BlackHornetsGamingInit();
+        FantasticFiveInit();
+        CISRejectsInit();
+        FRIENDSInit();
+        iCCupInit();
+        MoscowFiveInit();
+        RebelsInit();
+        TheRetryInit();
+        DTSInit();
+        DuzaGamingInit();
+
+        OpenTeams.add(BlackHornetsGaming);
+        OpenTeams.add(FantasticFive);
+        OpenTeams.add(CISRejects);
+        OpenTeams.add(FRIENDS);
+        OpenTeams.add(iCCup);
+        OpenTeams.add(MoscowFive);
+        OpenTeams.add(Rebels);
+        OpenTeams.add(TheRetry);
+        OpenTeams.add(DTS);
+        OpenTeams.add(DuzaGaming);
+
+        return OpenTeams;
+    }
+
+
 
 
 
