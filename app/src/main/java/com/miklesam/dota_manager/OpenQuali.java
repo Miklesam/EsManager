@@ -34,6 +34,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenScore7;
 import static com.miklesam.dota_manager.YourTeam.OpenScore8;
 import static com.miklesam.dota_manager.YourTeam.OpenScore9;
 import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
@@ -408,7 +409,7 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(OpenTeam5, "0");
                    editor.putString(OpenTeam6, "0");
                    editor.putString(OpenTeam7, "0");
-
+                   editor.putString(OpenShaffle,"0");
 
                    editor.putString(OpenQuaterFinals, "0");
                    editor.putString(OpenSemiFinals, "0");
@@ -449,7 +450,7 @@ public class OpenQuali extends AppCompatActivity {
                        editor.putString(OpenTeam5, "0");
                        editor.putString(OpenTeam6, "0");
                        editor.putString(OpenTeam7, "0");
-
+                       editor.putString(OpenShaffle,"0");
 
                        editor.putString(OpenQuaterFinals, "0");
                        editor.putString(OpenSemiFinals, "0");

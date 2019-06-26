@@ -26,9 +26,19 @@ import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
+import static com.miklesam.dota_manager.TeamsInit.CloseTeamsInit;
+import static com.miklesam.dota_manager.TeamsInit.ClosedTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam3;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
 import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
@@ -36,6 +46,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
+import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
@@ -60,6 +71,7 @@ public class mainstate extends AppCompatActivity {
     TextView Goldbalance;
     TextView TeamName;
     ListView CWList;
+    ArrayList<Teams> TeamsCloseQuals;
     ArrayList<Teams> TeamsOpenQuals;
     ArrayList<Teams> TeamsCW;
     String YourTeam;
@@ -97,6 +109,9 @@ public class mainstate extends AppCompatActivity {
     int ExFarmingint;
     int ExFightingint;
     int ExLateint;
+
+    int OpenShaffleint;
+    int CloseShaffleint;
 
 
     boolean team[]=new boolean[5];
@@ -146,6 +161,8 @@ public class mainstate extends AppCompatActivity {
         CWList = (ListView)findViewById(R.id.TeamCW);
         AllTeams.clear();
         OpenTeams.clear();
+        ClosedTeams.clear();
+        TeamsCloseQuals=CloseTeamsInit();
         TeamsCW=AllTeamsInit();
         TeamsOpenQuals=OpenTeamsInit();
         InfoBlock=findViewById(R.id.InfoBlock);
@@ -195,6 +212,15 @@ public class mainstate extends AppCompatActivity {
             ExLateint=Integer.parseInt(mSettings.getString(ExtraLate, "0"));
         }
 
+        if(mSettings.contains(OpenShaffle)) {
+            OpenShaffleint=Integer.parseInt(mSettings.getString(OpenShaffle, "0"));
+        }
+        if(mSettings.contains(CloseShaffle)) {
+            CloseShaffleint=Integer.parseInt(mSettings.getString(CloseShaffle, "0"));
+        }
+
+
+
 
         LainingPoints.setText(String.valueOf(ExLainingint));
         FarmingPoints.setText(String.valueOf(ExFarmingint));
@@ -212,7 +238,7 @@ public class mainstate extends AppCompatActivity {
 
         if (QualiWinner==1)
         {
-            if (Dayint%3==0)
+            if (Dayint==15)
             {
                 Play_game.setText("Close");
                 gamemode=3;
@@ -226,7 +252,7 @@ public class mainstate extends AppCompatActivity {
         }
         else
         {
-            if (Dayint%3==0)
+            if (Dayint==10)
             {
                 Play_game.setText("Open");
                 gamemode=1;
@@ -359,24 +385,24 @@ public class mainstate extends AppCompatActivity {
 
         if(QualiWinner==1)
         {
-            if(Dayint%3==0)
+            if(Dayint==15)
             {
                 InfoBlock.setText("CloseQuali сегодня");
             }
             else
             {
-                InfoBlock.setText("CloseQuali через "+ String.valueOf(3-Dayint%3) );
+                InfoBlock.setText("CloseQuali через "+ String.valueOf(15-Dayint) );
             }
         }
         else
         {
-            if(Dayint%3==0)
+            if(Dayint==10)
             {
                 InfoBlock.setText("OpenQuali сегодня");
             }
             else
             {
-                InfoBlock.setText("OpenQuali через "+ String.valueOf(3-Dayint%3) );
+                InfoBlock.setText("OpenQuali через "+ String.valueOf(10-Dayint) );
             }
 
         }
@@ -411,30 +437,62 @@ public class mainstate extends AppCompatActivity {
                 } else if (gamemode==1) {
 
 
-                    Random randomteam = new Random();
-                    int whatteam=0;
-
-                    for (int i=0;i<7;i++)
+                    if(OpenShaffleint==0)
                     {
-                        whatteam=randomteam.nextInt(TeamsOpenQuals.size());
-                        openqual[i]=TeamsOpenQuals.get(whatteam).seq;
-                        TeamsOpenQuals.remove(whatteam);
+                        Random randomteam = new Random();
+                        int whatteam=0;
 
+                        for (int i=0;i<7;i++)
+                        {
+                            whatteam=randomteam.nextInt(TeamsOpenQuals.size());
+                            openqual[i]=TeamsOpenQuals.get(whatteam).seq;
+                            TeamsOpenQuals.remove(whatteam);
+
+                        }
+
+                        SharedPreferences.Editor editor = mSettings.edit();
+                        editor.putString(OpenTeam1,String.valueOf(openqual[0]));
+                        editor.putString(OpenTeam2,String.valueOf(openqual[1]));
+                        editor.putString(OpenTeam3,String.valueOf(openqual[2]));
+                        editor.putString(OpenTeam4,String.valueOf(openqual[3]));
+                        editor.putString(OpenTeam5,String.valueOf(openqual[4]));
+                        editor.putString(OpenTeam6,String.valueOf(openqual[5]));
+                        editor.putString(OpenTeam7,String.valueOf(openqual[6]));
+                        editor.putString(OpenShaffle,"1");
+                        editor.apply();
                     }
 
-                    SharedPreferences.Editor editor = mSettings.edit();
-                    editor.putString(OpenTeam1,String.valueOf(openqual[0]));
-                    editor.putString(OpenTeam2,String.valueOf(openqual[1]));
-                    editor.putString(OpenTeam3,String.valueOf(openqual[2]));
-                    editor.putString(OpenTeam4,String.valueOf(openqual[3]));
-                    editor.putString(OpenTeam5,String.valueOf(openqual[4]));
-                    editor.putString(OpenTeam6,String.valueOf(openqual[5]));
-                    editor.putString(OpenTeam7,String.valueOf(openqual[6]));
-                    editor.apply();
                     startActivity(ToOpenQuali);
                 }
                 else if (gamemode==3)
                 {
+                    if(CloseShaffleint==0)
+                    {
+                        Random randomteam = new Random();
+                        int whatteam=0;
+
+                        for (int i=0;i<7;i++)
+                        {
+                            whatteam=randomteam.nextInt(TeamsCloseQuals.size());
+                            openqual[i]=TeamsCloseQuals.get(whatteam).seq;
+                            TeamsCloseQuals.remove(whatteam);
+
+                        }
+
+                        SharedPreferences.Editor editor = mSettings.edit();
+                        editor.putString(CloseTeam1,String.valueOf(openqual[0]));
+                        editor.putString(CloseTeam2,String.valueOf(openqual[1]));
+                        editor.putString(CloseTeam3,String.valueOf(openqual[2]));
+                        editor.putString(CloseTeam4,String.valueOf(openqual[3]));
+                        editor.putString(CloseTeam5,String.valueOf(openqual[4]));
+                        editor.putString(CloseTeam6,String.valueOf(openqual[5]));
+                        editor.putString(CloseTeam7,String.valueOf(openqual[6]));
+                        editor.putString(CloseShaffle,"1");
+                        editor.apply();
+
+                    }
+
+
                     startActivity(ToClosedQuali);
                 }
 

@@ -82,6 +82,17 @@ public class YourTeam extends AppCompatActivity {
     public static final String ExtraFarming= "ExtraFarming";
     public static final String ExtraFighting= "ExtraFighting";
     public static final String ExtraLate= "ExtraLate";
+    public static final String OpenShaffle= "OpenShaffle";
+    public static final String CloseShaffle= "CloseShaffle";
+
+
+    public static final String CloseTeam1= "close1";
+    public static final String CloseTeam2= "close2";
+    public static final String CloseTeam3= "close3";
+    public static final String CloseTeam4= "close4";
+    public static final String CloseTeam5= "close5";
+    public static final String CloseTeam6= "close6";
+    public static final String CloseTeam7= "close7";
 
 
     SharedPreferences mSettings;

@@ -362,6 +362,7 @@ public class TeamsInit {
         DTSInit();
         DuzaGamingInit();
 
+
         OpenTeams.add(BlackHornetsGaming);
         OpenTeams.add(FantasticFive);
         OpenTeams.add(CISRejects);
@@ -389,7 +390,8 @@ public class TeamsInit {
         EmpireInit();
         WinstrikeInit();
         RoxKisInit();
-        DTSInit();
+        ferzeeInit();
+        NoPangoInit();
 
 
         ClosedTeams.add(VirtusPro);
@@ -399,7 +401,8 @@ public class TeamsInit {
         ClosedTeams.add(Empire);
         ClosedTeams.add(Winstrike);
         ClosedTeams.add(RoxKis);
-        ClosedTeams.add(DTS);
+        ClosedTeams.add(ferzee);
+        ClosedTeams.add(NoPango);
 
 
         return ClosedTeams;

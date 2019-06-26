@@ -33,6 +33,14 @@ import static com.miklesam.dota_manager.YourTeam.CloseLose4;
 import static com.miklesam.dota_manager.YourTeam.CloseLose5;
 import static com.miklesam.dota_manager.YourTeam.CloseLose6;
 import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam3;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
 import static com.miklesam.dota_manager.YourTeam.CloseWin1;
 import static com.miklesam.dota_manager.YourTeam.CloseWin2;
 import static com.miklesam.dota_manager.YourTeam.CloseWin3;
@@ -67,6 +75,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenScore7;
 import static com.miklesam.dota_manager.YourTeam.OpenScore8;
 import static com.miklesam.dota_manager.YourTeam.OpenScore9;
 import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
+import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
 import static com.miklesam.dota_manager.YourTeam.QuaterWin;
 import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
@@ -349,6 +358,26 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(ExtraLaining, "0");
                 editor.putString(ExtraFarming, "0");
                 editor.putString(ExtraFighting, "0");
+                editor.putString(OpenShaffle, "0");
+                editor.putString(CloseShaffle, "0");
+
+
+                editor.putString(CloseTeam1, "0");
+                editor.putString(CloseTeam2, "0");
+                editor.putString(CloseTeam3, "0");
+                editor.putString(CloseTeam4, "0");
+                editor.putString(CloseTeam5, "0");
+                editor.putString(CloseTeam6, "0");
+                editor.putString(CloseTeam7, "0");
+
+
+
+
+
+
+
+
+
                 editor.putString(ExtraLate, "0");
 
 

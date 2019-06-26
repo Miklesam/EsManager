@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.TeamsInit.CloseTeamsInit;
 import static com.miklesam.dota_manager.TeamsInit.ClosedTeams;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
@@ -24,6 +25,14 @@ import static com.miklesam.dota_manager.YourTeam.CloseLose4;
 import static com.miklesam.dota_manager.YourTeam.CloseLose5;
 import static com.miklesam.dota_manager.YourTeam.CloseLose6;
 import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam3;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
+import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
 import static com.miklesam.dota_manager.YourTeam.CloseWin1;
 import static com.miklesam.dota_manager.YourTeam.CloseWin2;
 import static com.miklesam.dota_manager.YourTeam.CloseWin3;
@@ -95,6 +104,8 @@ public class ClosedQuali extends AppCompatActivity {
     TextView AfterGroupStage;
     int groupstateposition;
 
+    int CloseTeam[]= new int[7];
+
     ArrayList<ModelTeam> teamstable = new ArrayList<>();
 
     @Override
@@ -105,8 +116,10 @@ public class ClosedQuali extends AppCompatActivity {
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
         final Intent ToMainstate = new Intent(this, mainstate.class);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
-        ClosedTeams.clear();
-        ClosedTeamstour=CloseTeamsInit();
+        AllTeams.clear();
+
+
+        ClosedTeamstour=AllTeamsInit();
         AfterGroupStage=findViewById(R.id.AfterGroupStage);
         Teams[0]=findViewById(R.id.Team1);
         Teams[1]=findViewById(R.id.Team2);
@@ -278,6 +291,35 @@ public class ClosedQuali extends AppCompatActivity {
             CloseLose1int=Integer.parseInt(mSettings.getString(CloseLose1, "CloseWin1"));
         }
 
+
+        if(mSettings.contains(CloseTeam1)) {
+            CloseTeam[0]=Integer.parseInt(mSettings.getString(CloseTeam1, "CloseTeam1"));
+        }
+
+        if(mSettings.contains(CloseTeam2)) {
+            CloseTeam[1]=Integer.parseInt(mSettings.getString(CloseTeam2, "CloseTeam2"));
+        }
+
+        if(mSettings.contains(CloseTeam3)) {
+            CloseTeam[2]=Integer.parseInt(mSettings.getString(CloseTeam3, "CloseTeam3"));
+        }
+
+        if(mSettings.contains(CloseTeam4)) {
+            CloseTeam[3]=Integer.parseInt(mSettings.getString(CloseTeam4, "CloseTeam4"));
+        }
+
+        if(mSettings.contains(CloseTeam5)) {
+            CloseTeam[4]=Integer.parseInt(mSettings.getString(CloseTeam5, "CloseTeam5"));
+        }
+
+        if(mSettings.contains(CloseTeam6)) {
+            CloseTeam[5]=Integer.parseInt(mSettings.getString(CloseTeam6, "CloseTeam6"));
+        }
+
+        if(mSettings.contains(CloseTeam7)) {
+            CloseTeam[6]=Integer.parseInt(mSettings.getString(CloseTeam7, "CloseTeam7"));
+        }
+
         final SharedPreferences.Editor editor = mSettings.edit();
 
 
@@ -295,13 +337,13 @@ public class ClosedQuali extends AppCompatActivity {
 
 
 
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(0).teamname,ClosedTeamstour.get(0).logo,CloseWin1int,CloseLose1int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(1).teamname,ClosedTeamstour.get(1).logo,CloseWin2int,CloseLose2int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(2).teamname,ClosedTeamstour.get(2).logo,CloseWin3int,CloseLose3int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(3).teamname,ClosedTeamstour.get(3).logo,CloseWin4int,CloseLose4int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(4).teamname,ClosedTeamstour.get(4).logo,CloseWin5int,CloseLose5int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(5).teamname,ClosedTeamstour.get(5).logo,CloseWin6int,CloseLose6int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(6).teamname,ClosedTeamstour.get(6).logo,CloseWin7int,CloseLose7int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[0]).teamname,ClosedTeamstour.get(CloseTeam[0]).logo,CloseWin1int,CloseLose1int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[1]).teamname,ClosedTeamstour.get(CloseTeam[1]).logo,CloseWin2int,CloseLose2int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[2]).teamname,ClosedTeamstour.get(CloseTeam[2]).logo,CloseWin3int,CloseLose3int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[3]).teamname,ClosedTeamstour.get(CloseTeam[3]).logo,CloseWin4int,CloseLose4int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[4]).teamname,ClosedTeamstour.get(CloseTeam[4]).logo,CloseWin5int,CloseLose5int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[5]).teamname,ClosedTeamstour.get(CloseTeam[5]).logo,CloseWin6int,CloseLose6int));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[6]).teamname,ClosedTeamstour.get(CloseTeam[6]).logo,CloseWin7int,CloseLose7int));
         teamstable.add( new ModelTeam(YourTeam ,R.drawable.teamlogo,Closedwinint,Closedloseint));
         Collections.sort(teamstable, ModelTeam.COMPARE_BY_Winning);
 
@@ -317,8 +359,8 @@ public class ClosedQuali extends AppCompatActivity {
 
         for (int i=0;i<7;i++)
         {
-            Seriesnteam[i].setText(ClosedTeamstour.get(i).teamname);
-            Seriesnteamlogo[i].setImageResource(ClosedTeamstour.get(i).logo);
+            Seriesnteam[i].setText(ClosedTeamstour.get(CloseTeam[i]).teamname);
+            Seriesnteamlogo[i].setImageResource(ClosedTeamstour.get(CloseTeam[i]).logo);
             Seriesnyouteam[i].setText(YourTeam);
             Seriesnyourteamlogo[i].setImageResource(R.drawable.teamlogo);
 
@@ -362,8 +404,8 @@ public class ClosedQuali extends AppCompatActivity {
                         ToPickStage.putExtra("Position5",Pos5);
                         ToPickStage.putExtra("TeamName",YourTeam);
 
-                        ToPickStage.putExtra("TeamEnemy",ClosedTeamstour.get(6-Seriescnt).teamname);
-                        ToPickStage.putExtra("EnemyTeam",ClosedTeamstour.get(6-Seriescnt).seq);
+                        ToPickStage.putExtra("TeamEnemy",ClosedTeamstour.get(CloseTeam[6-Seriescnt]).teamname);
+                        ToPickStage.putExtra("EnemyTeam",ClosedTeamstour.get(CloseTeam[6-Seriescnt]).seq);
                         startActivity(ToPickStage);
 
                     }
@@ -393,6 +435,19 @@ public class ClosedQuali extends AppCompatActivity {
                         editor.putString(CloseLose2, "0");
                         editor.putString(CloseLose1, "0");
                         editor.putString(OpenQualiWinner, "0");
+
+                        editor.putString(CloseShaffle, "0");
+
+
+                        editor.putString(CloseTeam1, "0");
+                        editor.putString(CloseTeam2, "0");
+                        editor.putString(CloseTeam3, "0");
+                        editor.putString(CloseTeam4, "0");
+                        editor.putString(CloseTeam5, "0");
+                        editor.putString(CloseTeam6, "0");
+                        editor.putString(CloseTeam7, "0");
+
+
                         editor.apply();
 
                         startActivity(ToMainstate);
