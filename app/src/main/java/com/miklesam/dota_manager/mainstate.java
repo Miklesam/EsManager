@@ -238,7 +238,7 @@ public class mainstate extends AppCompatActivity {
 
         if (QualiWinner==1)
         {
-            if (Dayint==15)
+            if (Dayint==4)
             {
                 Play_game.setText("Close");
                 gamemode=3;
@@ -252,7 +252,7 @@ public class mainstate extends AppCompatActivity {
         }
         else
         {
-            if (Dayint==10)
+            if (Dayint==2)
             {
                 Play_game.setText("Open");
                 gamemode=1;
@@ -385,24 +385,24 @@ public class mainstate extends AppCompatActivity {
 
         if(QualiWinner==1)
         {
-            if(Dayint==15)
+            if(Dayint==4)
             {
                 InfoBlock.setText("CloseQuali сегодня");
             }
             else
             {
-                InfoBlock.setText("CloseQuali через "+ String.valueOf(15-Dayint) );
+                InfoBlock.setText("CloseQuali через "+ String.valueOf(4-Dayint) );
             }
         }
         else
         {
-            if(Dayint==10)
+            if(Dayint==2)
             {
                 InfoBlock.setText("OpenQuali сегодня");
             }
             else
             {
-                InfoBlock.setText("OpenQuali через "+ String.valueOf(10-Dayint) );
+                InfoBlock.setText("OpenQuali через "+ String.valueOf(2-Dayint) );
             }
 
         }

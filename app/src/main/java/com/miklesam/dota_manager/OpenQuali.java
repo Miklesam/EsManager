@@ -55,7 +55,7 @@ public class OpenQuali extends AppCompatActivity {
     ImageView QuatersFinals[]=new ImageView[14];
     TextView QuatersFinalsText[]=new TextView[14];
 
-    ArrayList<Teams> OpenTeams= new ArrayList<Teams>();
+
     ArrayList<Teams> AllOpenTeams= new ArrayList<Teams>();
     private static final String TAG = "MyApp";
     String YourTeam;

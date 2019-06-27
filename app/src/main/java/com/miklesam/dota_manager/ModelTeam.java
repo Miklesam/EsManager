@@ -9,12 +9,14 @@ public class ModelTeam implements Serializable
     int logo;
     int w;
     int l;
+    int seq;
 
-    ModelTeam(String TeamName, int logo,int w, int l ){
+    ModelTeam(String TeamName, int logo,int w, int l,int seq ){
         this.TeamName=TeamName;
         this.logo=logo;
         this.w=w;
         this.l=l;
+        this.seq=seq;
     }
 
     public int getw(){

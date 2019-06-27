@@ -94,6 +94,11 @@ public class YourTeam extends AppCompatActivity {
     public static final String CloseTeam6= "close6";
     public static final String CloseTeam7= "close7";
 
+    public static final String TeamPlayoff1= "TeamPlayoff1";
+    public static final String TeamPlayoff2= "TeamPlayoff2";
+    public static final String TeamPlayoff3= "TeamPlayoff3";
+    public static final String TeamPlayoff4= "TeamPlayoff4";
+
 
     SharedPreferences mSettings;
 

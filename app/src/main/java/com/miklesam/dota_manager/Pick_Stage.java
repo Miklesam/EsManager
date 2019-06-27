@@ -739,7 +739,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         }
-        else if ((pick_state==6)||(pick_state==9))
+        else if ((pick_state==6)||(pick_state==9)||(pick_state==15)||(pick_state==17)||(pick_state==20))
         {
             Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
             HeroList.get(whathero).baned=true;
@@ -753,19 +753,19 @@ public class Pick_Stage extends AppCompatActivity {
 
         }
 
-        else if ((pick_state==15)||(pick_state==17)||(pick_state==20))
-        {
-            Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
-            HeroList.get(whathero).baned=true;
-            Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
-            what_hero[k]=whathero;
-            k++;
-            pick_state++;
+        //else if ((pick_state==15)||(pick_state==17)||(pick_state==20))
+        //{
+         //   Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+         //   HeroList.get(whathero).baned=true;
+         //   Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
+         //   what_hero[k]=whathero;
+        //    k++;
+        //    pick_state++;
 
 
 
 
-        }
+       // }
 
 
 

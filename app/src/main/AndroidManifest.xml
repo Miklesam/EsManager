@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".market"
+        <activity android:name=".ClosedPlayoff"
             android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".market"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Improve"
             android:screenOrientation="landscape" />

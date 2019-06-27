@@ -43,6 +43,7 @@ import static com.miklesam.dota_manager.YourTeam.CloseWin7;
 import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
+import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
@@ -51,6 +52,10 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
 
 public class ClosedQuali extends AppCompatActivity {
 
@@ -103,6 +108,7 @@ public class ClosedQuali extends AppCompatActivity {
     int CloseLose1int=0;
     TextView AfterGroupStage;
     int groupstateposition;
+    boolean playoff;
 
     int CloseTeam[]= new int[7];
 
@@ -115,6 +121,7 @@ public class ClosedQuali extends AppCompatActivity {
 
         final Intent ToPickStage = new Intent(this, Pick_Stage.class);
         final Intent ToMainstate = new Intent(this, mainstate.class);
+        final Intent ToClosedPlayoff = new Intent(this, ClosedPlayoff.class);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
         AllTeams.clear();
 
@@ -337,14 +344,14 @@ public class ClosedQuali extends AppCompatActivity {
 
 
 
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[0]).teamname,ClosedTeamstour.get(CloseTeam[0]).logo,CloseWin1int,CloseLose1int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[1]).teamname,ClosedTeamstour.get(CloseTeam[1]).logo,CloseWin2int,CloseLose2int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[2]).teamname,ClosedTeamstour.get(CloseTeam[2]).logo,CloseWin3int,CloseLose3int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[3]).teamname,ClosedTeamstour.get(CloseTeam[3]).logo,CloseWin4int,CloseLose4int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[4]).teamname,ClosedTeamstour.get(CloseTeam[4]).logo,CloseWin5int,CloseLose5int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[5]).teamname,ClosedTeamstour.get(CloseTeam[5]).logo,CloseWin6int,CloseLose6int));
-        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[6]).teamname,ClosedTeamstour.get(CloseTeam[6]).logo,CloseWin7int,CloseLose7int));
-        teamstable.add( new ModelTeam(YourTeam ,R.drawable.teamlogo,Closedwinint,Closedloseint));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[0]).teamname,ClosedTeamstour.get(CloseTeam[0]).logo,CloseWin1int,CloseLose1int,ClosedTeamstour.get(CloseTeam[0]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[1]).teamname,ClosedTeamstour.get(CloseTeam[1]).logo,CloseWin2int,CloseLose2int,ClosedTeamstour.get(CloseTeam[1]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[2]).teamname,ClosedTeamstour.get(CloseTeam[2]).logo,CloseWin3int,CloseLose3int,ClosedTeamstour.get(CloseTeam[2]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[3]).teamname,ClosedTeamstour.get(CloseTeam[3]).logo,CloseWin4int,CloseLose4int,ClosedTeamstour.get(CloseTeam[3]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[4]).teamname,ClosedTeamstour.get(CloseTeam[4]).logo,CloseWin5int,CloseLose5int,ClosedTeamstour.get(CloseTeam[4]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[5]).teamname,ClosedTeamstour.get(CloseTeam[5]).logo,CloseWin6int,CloseLose6int,ClosedTeamstour.get(CloseTeam[5]).seq));
+        teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[6]).teamname,ClosedTeamstour.get(CloseTeam[6]).logo,CloseWin7int,CloseLose7int,ClosedTeamstour.get(CloseTeam[6]).seq));
+        teamstable.add( new ModelTeam(YourTeam ,R.drawable.teamlogo,Closedwinint,Closedloseint,77));
         Collections.sort(teamstable, ModelTeam.COMPARE_BY_Winning);
 
 
@@ -379,7 +386,22 @@ public class ClosedQuali extends AppCompatActivity {
 
         }
 
-        AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место");
+        if (groupstateposition==1)
+        {
+            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли на прямую");
+        }
+        else if ((groupstateposition>1)&&(groupstateposition<6))
+        {
+            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли в плей-офф");
+            playoff=true;
+            Play_btn.setText("Playoff");
+        }
+        else
+        {
+            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И вылетели");
+        }
+
+
     }
 
 
@@ -392,9 +414,44 @@ public class ClosedQuali extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(playoff==true)
+                {
 
+                    if (groupstateposition==2)
+                    {
 
+                        editor.putString(TeamPlayoff2, String.valueOf(teamstable.get(4).seq));
+                        editor.putString(TeamPlayoff3, String.valueOf(teamstable.get(2).seq));
+                        editor.putString(TeamPlayoff4,String.valueOf(teamstable.get(3).seq));
+                    }
+                    else if (groupstateposition==3)
+                    {
 
+                        editor.putString(TeamPlayoff2, String.valueOf(teamstable.get(3).seq));
+                        editor.putString(TeamPlayoff3, String.valueOf(teamstable.get(1).seq));
+                        editor.putString(TeamPlayoff4, String.valueOf(teamstable.get(4).seq));
+                    }
+                    else if (groupstateposition==4)
+                    {
+
+                        editor.putString(TeamPlayoff2, String.valueOf(teamstable.get(2).seq));
+                        editor.putString(TeamPlayoff3, String.valueOf(teamstable.get(1).seq));
+                        editor.putString(TeamPlayoff4, String.valueOf(teamstable.get(4).seq));
+                    }
+                    else if (groupstateposition==5)
+                    {
+
+                        editor.putString(TeamPlayoff2, String.valueOf(teamstable.get(1).seq));
+                        editor.putString(TeamPlayoff3, String.valueOf(teamstable.get(2).seq));
+                        editor.putString(TeamPlayoff4, String.valueOf(teamstable.get(3).seq));
+                    }
+
+                    editor.apply();
+                    startActivity(ToClosedPlayoff);
+                }
+
+                    else
+                {
                     if(Seriescnt<7)
                     {
                         ToPickStage.putExtra("Position1",Pos1);
@@ -446,12 +503,16 @@ public class ClosedQuali extends AppCompatActivity {
                         editor.putString(CloseTeam5, "0");
                         editor.putString(CloseTeam6, "0");
                         editor.putString(CloseTeam7, "0");
-
+                        editor.putString(Day, "0");
+                        editor.putString(Mode, "0");
 
                         editor.apply();
 
                         startActivity(ToMainstate);
                     }
+                }
+
+
 
 
 

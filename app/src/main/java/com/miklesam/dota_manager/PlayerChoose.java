@@ -83,6 +83,10 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
+import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class PlayerChoose extends AppCompatActivity {
@@ -370,7 +374,10 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(CloseTeam6, "0");
                 editor.putString(CloseTeam7, "0");
 
-
+                editor.putString(TeamPlayoff1, "0");
+                editor.putString(TeamPlayoff2, "0");
+                editor.putString(TeamPlayoff3, "0");
+                editor.putString(TeamPlayoff4, "0");
 
 
 
