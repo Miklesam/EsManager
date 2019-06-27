@@ -17,10 +17,12 @@ public class Players {
     public int signature3;
 
     public int sequence;
+    public int fans;
 
 
 
-    Players(String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence) {
+    Players(int fans,String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence) {
+        this.fans=fans;
         this.Name=Name;
         this.Description=Description;
         this.Cost=Cost;

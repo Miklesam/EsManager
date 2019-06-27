@@ -99,6 +99,9 @@ public class YourTeam extends AppCompatActivity {
     public static final String TeamPlayoff3= "TeamPlayoff3";
     public static final String TeamPlayoff4= "TeamPlayoff4";
 
+    public static final String Winner1My= "Winner1My";
+    public static final String Winner1Enemy= "Winner1Enemy";
+
 
     SharedPreferences mSettings;
 

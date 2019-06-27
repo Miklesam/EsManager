@@ -47,6 +47,8 @@ import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
 import static com.miklesam.dota_manager.YourTeam.QuaterWin;
 import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
+import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner1My;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class FightState extends AppCompatActivity {
@@ -123,6 +125,13 @@ public class FightState extends AppCompatActivity {
     int ExFarmingint;
     int ExFightingint;
     int ExLateint;
+
+    int Winner1Myint;
+    int Winner1Enemyint;
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -309,6 +318,13 @@ public class FightState extends AppCompatActivity {
         if(mSettings.contains(ExtraLate)) {
             ExLateint=Integer.parseInt(mSettings.getString(ExtraLate, "0"));
         }
+        if(mSettings.contains(Winner1My)) {
+            Winner1Myint=Integer.parseInt(mSettings.getString(Winner1My, "0"));
+        }
+        if(mSettings.contains(Winner1Enemy)) {
+            Winner1Enemyint=Integer.parseInt(mSettings.getString(Winner1Enemy, "0"));
+        }
+
 
 
 
@@ -316,6 +332,7 @@ public class FightState extends AppCompatActivity {
         final Intent Tomainstance = new Intent(this, mainstate.class);
         final Intent Tobackopen = new Intent(this, OpenQuali.class);
         final Intent Tobackclose = new Intent(this, ClosedQuali.class);
+        final Intent Tobackplayoff = new Intent(this, ClosedPlayoff.class);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -529,14 +546,11 @@ public class FightState extends AppCompatActivity {
                     {
                         if (winloose==1)
                         {
-                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
-                            CloseLose7int=CloseLose7int+1;
-
+                            editor.putString(Winner1My, String.valueOf(Winner1Myint+1));
                         }
                         else if(winloose==2)
                         {
-                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
-                            CloseWin7int=CloseWin7int+1;
+                            editor.putString(Winner1Enemy, String.valueOf(Winner1Enemyint+1));
                         }
 
                         //1-2
@@ -745,6 +759,21 @@ public class FightState extends AppCompatActivity {
                     editor.putString(ClosedSeries, String.valueOf(Seriescnt+1));
                     editor.apply();
                     startActivity(Tobackclose);
+                }
+                else if(TournMode==3)
+                {
+                    if (winloose==1)
+                    {
+                        editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                        CloseLose1int=CloseLose1int+1;
+
+                    }
+                    else if(winloose==2)
+                    {
+                        editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                        CloseWin1int=CloseWin1int+1;
+                    }
+                    startActivity(Tobackplayoff);
                 }
                 else
                 {

@@ -87,6 +87,8 @@ import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
+import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner1My;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class PlayerChoose extends AppCompatActivity {
@@ -387,8 +389,8 @@ public class PlayerChoose extends AppCompatActivity {
 
                 editor.putString(ExtraLate, "0");
 
-
-
+                editor.putString(Winner1My, "0");
+                editor.putString(Winner1Enemy, "0");
 
 
 
