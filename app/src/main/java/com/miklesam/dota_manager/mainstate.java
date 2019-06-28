@@ -44,6 +44,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
 import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
 import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
+import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
@@ -81,6 +82,7 @@ public class mainstate extends AppCompatActivity {
     boolean cw;
     TextView DayText;
     int gamemode=0;
+    String fansbalansed;
 
     int Pos1=0;
     int Pos2=0;
@@ -102,7 +104,7 @@ public class mainstate extends AppCompatActivity {
     LinearLayout Farming;
     LinearLayout Fighting;
     LinearLayout LateGame;
-
+    TextView FansNumber;
 
 
     int ExLainingint;
@@ -142,7 +144,7 @@ public class mainstate extends AppCompatActivity {
         Fighting=findViewById(R.id.fightingfeature);
         LateGame=findViewById(R.id.lategamefeature);
 
-
+        FansNumber=findViewById(R.id.FansNumber);
         Play_game=findViewById(R.id.Play_game);
         TeamName=findViewById(R.id.team_name);
         Goldbalance=findViewById(R.id.Goldbalance);
@@ -323,6 +325,12 @@ public class mainstate extends AppCompatActivity {
 
         }
 
+        if(mSettings.contains(Fans)) {
+
+            fansbalansed =mSettings.getString(Fans, "0");
+
+        }
+        FansNumber.setText(fansbalansed);
         if(mSettings.contains(APP_PREFERENCES_NAME)) {
 
             YourTeam =mSettings.getString(APP_PREFERENCES_NAME, "Your Team");

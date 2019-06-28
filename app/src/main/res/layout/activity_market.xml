@@ -336,7 +336,7 @@
 
     <LinearLayout
 
-        android:layout_width="200sp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/Your_Team"
@@ -346,6 +346,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="right">
+            <ImageView
+                android:layout_marginLeft="10sp"
+                android:layout_width="22sp"
+                android:layout_height="30sp"
+                app:srcCompat="@drawable/people"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/Fansbalance"
+                />
             <ImageView
                 android:layout_marginLeft="10sp"
                 android:layout_width="25sp"

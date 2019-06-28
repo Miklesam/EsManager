@@ -48,6 +48,7 @@ import static com.miklesam.dota_manager.YourTeam.CloseWin4;
 import static com.miklesam.dota_manager.YourTeam.CloseWin5;
 import static com.miklesam.dota_manager.YourTeam.CloseWin6;
 import static com.miklesam.dota_manager.YourTeam.CloseWin7;
+import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
 import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
@@ -56,6 +57,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
 import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
 import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
+import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -89,6 +91,10 @@ import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
 import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
 import static com.miklesam.dota_manager.YourTeam.Winner1My;
+import static com.miklesam.dota_manager.YourTeam.Winner2Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner2My;
+import static com.miklesam.dota_manager.YourTeam.Winner3Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner3My;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class PlayerChoose extends AppCompatActivity {
@@ -103,6 +109,7 @@ public class PlayerChoose extends AppCompatActivity {
     TextView PlayerDiscription;
     ImageView FlagIma;
     TextView GoldbalancePole;
+    TextView Fansbalance;
     int last_position;
 
     TextView position1;
@@ -125,12 +132,14 @@ public class PlayerChoose extends AppCompatActivity {
     TextView Farming;
     TextView Supporting;
     TextView PlayerCost;
+    TextView PlayerFans;
 
 
     ImageView Signature1;
     ImageView Signature2;
     ImageView Signature3;
     TextView TeamNameids;
+    String fansbalansed;
 
 
     boolean team[]=new boolean[5];
@@ -165,8 +174,9 @@ public class PlayerChoose extends AppCompatActivity {
         Pos3=findViewById(R.id.Pos3);
         Back=findViewById(R.id.Back);
         GoldbalancePole=findViewById(R.id.Goldbalance);
+        PlayerFans=findViewById(R.id.PlayerFans);
 
-
+        Fansbalance=findViewById(R.id.Fansbalance);
         PlayerCost=findViewById(R.id.PlayerCost);
         TeamNameids=findViewById(R.id.Teamnameid);
 
@@ -226,8 +236,14 @@ public class PlayerChoose extends AppCompatActivity {
             balancegold =mSettings.getString(GoldBalance, "50000");
 
         }
-        GoldbalancePole.setText(balancegold);
+        if(mSettings.contains(Fans)) {
 
+            fansbalansed =mSettings.getString(Fans, "0");
+
+        }
+
+        GoldbalancePole.setText(balancegold);
+        Fansbalance.setText(fansbalansed);
 
         CorelistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -246,7 +262,7 @@ public class PlayerChoose extends AppCompatActivity {
                 PlayerNickName.setText(Cores.get(position).Name);
                 PlayerDiscription.setText(Cores.get(position).Description);
                 PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
-
+                PlayerFans.setText(String.valueOf(Cores.get(position).fans));
 
                 Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
@@ -282,7 +298,7 @@ public class PlayerChoose extends AppCompatActivity {
                 PlayerDiscription.setText(Supports.get(position).Description);
 
                 PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
-
+                PlayerFans.setText(String.valueOf(Supports.get(position).fans));
 
                 Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
@@ -309,6 +325,7 @@ public class PlayerChoose extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences.Editor editor = mSettings.edit();
                 editor.putString(GoldBalance, balancegold);
+                editor.putString(Fans, fansbalansed);
                 editor.putString(XPstatic, "0");
                 editor.putString(Day, "0");
                 editor.putString(Mode, "0");
@@ -380,10 +397,7 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(TeamPlayoff2, "0");
                 editor.putString(TeamPlayoff3, "0");
                 editor.putString(TeamPlayoff4, "0");
-
-
-
-
+                editor.putString(ClosedPlayofStage, "0");
 
 
 
@@ -392,7 +406,11 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(Winner1My, "0");
                 editor.putString(Winner1Enemy, "0");
 
+                editor.putString(Winner2My, "0");
+                editor.putString(Winner2Enemy, "0");
 
+                editor.putString(Winner3My, "0");
+                editor.putString(Winner3Enemy, "0");
 
 
 
@@ -407,13 +425,9 @@ public class PlayerChoose extends AppCompatActivity {
 
                 editor.apply();
 
-         Tomainstate.putExtra("Position1",playerseq[0]);
-                Tomainstate.putExtra("Position2",playerseq[1]);
-                Tomainstate.putExtra("Position3",playerseq[2]);
-                Tomainstate.putExtra("Position4",playerseq[3]);
-                Tomainstate.putExtra("Position5",playerseq[4]);
-                Tomainstate.putExtra("Gold",balancegold);
-                Tomainstate.putExtra("TeamName",TeamName);
+
+
+
                 //Gold=extras.getString("Gold");
                 //YourTeam=extras.getString("TeamName");
 
@@ -522,6 +536,9 @@ public class PlayerChoose extends AppCompatActivity {
                     position1.setText(PlayerNickName.getText());
                     balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                     GoldbalancePole.setText(balancegold);
+
+                    fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                    Fansbalance.setText(fansbalansed);
                     team[0]=true;
                     playerseq[0]=last_position_player;
                     CorelistView.setVisibility(View.VISIBLE);
@@ -582,6 +599,10 @@ public class PlayerChoose extends AppCompatActivity {
                             playerseq[3]=last_position_player;
                             balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                             GoldbalancePole.setText(balancegold);
+
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
+
                             CorelistView.setVisibility(View.VISIBLE);
                             CoreChoose.setVisibility(View.VISIBLE);
                             SupportChoose.setVisibility(View.VISIBLE);
@@ -638,6 +659,10 @@ public class PlayerChoose extends AppCompatActivity {
                             Back.setVisibility(View.INVISIBLE);
                             balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                             GoldbalancePole.setText(balancegold);
+
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
+
                             Cores.remove(last_position);
                             CorelistView.setAdapter(customAdapter);
 
@@ -707,6 +732,10 @@ public class PlayerChoose extends AppCompatActivity {
                             sup_pick=false;
                             balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                             GoldbalancePole.setText(balancegold);
+
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
+
                             Back.setVisibility(View.INVISIBLE);
                             Pos1.setVisibility(View.INVISIBLE);
                             Pos2.setVisibility(View.INVISIBLE);
@@ -754,6 +783,9 @@ public class PlayerChoose extends AppCompatActivity {
                             Back.setVisibility(View.INVISIBLE);
                             balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
                             GoldbalancePole.setText(balancegold);
+
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
 
                             Cores.remove(last_position);
                             CorelistView.setAdapter(customAdapter);

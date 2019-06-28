@@ -26,6 +26,7 @@ import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.PlayersInit.SupportPlayers;
+import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
@@ -96,6 +97,8 @@ public class market extends AppCompatActivity {
     Button tostore;
     Button toback;
     Button torewardbtn;
+    TextView Fansbalance;
+    String fansbalansed;
 
 
     SharedPreferences mSettings;
@@ -104,7 +107,7 @@ public class market extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
 
-
+        Fansbalance=findViewById(R.id.Fansbalance);
         torewardbtn=findViewById(R.id.torewardbtn);
         scrollscroll=findViewById(R.id.scrollscroll);
         toback=findViewById(R.id.toback);
@@ -193,6 +196,14 @@ public class market extends AppCompatActivity {
             Gold =mSettings.getString(GoldBalance, "50000");
 
         }
+        if(mSettings.contains(Fans)) {
+
+            fansbalansed =mSettings.getString(Fans, "0");
+
+        }
+
+
+        Fansbalance.setText(fansbalansed);
 
 
             if (Pos1!=77)

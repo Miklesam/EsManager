@@ -30,6 +30,7 @@ import static com.miklesam.dota_manager.YourTeam.CloseWin4;
 import static com.miklesam.dota_manager.YourTeam.CloseWin5;
 import static com.miklesam.dota_manager.YourTeam.CloseWin6;
 import static com.miklesam.dota_manager.YourTeam.CloseWin7;
+import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
 import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
 import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
@@ -49,6 +50,10 @@ import static com.miklesam.dota_manager.YourTeam.SemiWin;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
 import static com.miklesam.dota_manager.YourTeam.Winner1My;
+import static com.miklesam.dota_manager.YourTeam.Winner2Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner2My;
+import static com.miklesam.dota_manager.YourTeam.Winner3Enemy;
+import static com.miklesam.dota_manager.YourTeam.Winner3My;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class FightState extends AppCompatActivity {
@@ -129,9 +134,13 @@ public class FightState extends AppCompatActivity {
     int Winner1Myint;
     int Winner1Enemyint;
 
+    int Winner2Myint;
+    int Winner2Enemyint;
 
+    int Winner3Myint;
+    int Winner3Enemyint;
 
-
+    int ClosedPlayofStageint;
 
     @Override
     public void onBackPressed() {
@@ -323,6 +332,23 @@ public class FightState extends AppCompatActivity {
         }
         if(mSettings.contains(Winner1Enemy)) {
             Winner1Enemyint=Integer.parseInt(mSettings.getString(Winner1Enemy, "0"));
+        }
+        if(mSettings.contains(ClosedPlayofStage)) {
+            ClosedPlayofStageint=Integer.parseInt(mSettings.getString(ClosedPlayofStage, "0"));
+        }
+
+        if(mSettings.contains(Winner2My)) {
+            Winner2Myint=Integer.parseInt(mSettings.getString(Winner2My, "0"));
+        }
+        if(mSettings.contains(Winner2Enemy)) {
+            Winner2Enemyint=Integer.parseInt(mSettings.getString(Winner2Enemy, "0"));
+        }
+
+        if(mSettings.contains(Winner3My)) {
+            Winner3Myint=Integer.parseInt(mSettings.getString(Winner3My, "0"));
+        }
+        if(mSettings.contains(Winner3Enemy)) {
+            Winner3Enemyint=Integer.parseInt(mSettings.getString(Winner3Enemy, "0"));
         }
 
 
@@ -762,17 +788,49 @@ public class FightState extends AppCompatActivity {
                 }
                 else if(TournMode==3)
                 {
-                    if (winloose==1)
-                    {
-                        editor.putString(Closedwin, String.valueOf(Closedwinint+1));
-                        CloseLose1int=CloseLose1int+1;
 
-                    }
-                    else if(winloose==2)
+                    if(ClosedPlayofStageint==0)
                     {
-                        editor.putString(Closedlose, String.valueOf(Closedloseint+1));
-                        CloseWin1int=CloseWin1int+1;
+                        if (winloose==1)
+                        {
+                            editor.putString(Winner1My, String.valueOf(Winner1Myint+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Winner1Enemy, String.valueOf(Winner1Enemyint+1));
+                        }
                     }
+
+                    else if(ClosedPlayofStageint==2)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Winner2My, String.valueOf(Winner2Myint+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Winner2Enemy, String.valueOf(Winner2Enemyint+1));
+                        }
+                    }
+                    else if(ClosedPlayofStageint==3)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(Winner3My, String.valueOf(Winner3Myint+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(Winner3Enemy, String.valueOf(Winner3Enemyint+1));
+                        }
+                    }
+
+                    editor.apply();
                     startActivity(Tobackplayoff);
                 }
                 else
