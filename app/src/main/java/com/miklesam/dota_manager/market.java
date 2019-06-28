@@ -100,6 +100,8 @@ public class market extends AppCompatActivity {
     TextView Fansbalance;
     String fansbalansed;
 
+    TextView PlayerFans;
+
 
     SharedPreferences mSettings;
     @Override
@@ -125,6 +127,8 @@ public class market extends AppCompatActivity {
 
         final Intent ToShop = new Intent(this, Shop.class);
         final Intent ToReward = new Intent(this, Rewarded.class);
+
+        PlayerFans=findViewById(R.id.PlayerFans);
 
         Backtomain=findViewById(R.id.Backtomain);
         CoreChoose =findViewById(R.id.Core);
@@ -357,6 +361,7 @@ public class market extends AppCompatActivity {
                 PlayerNickName.setText(Cores.get(position).Name);
                 PlayerDiscription.setText(Cores.get(position).Description);
                 PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
+                PlayerFans.setText(String.valueOf(Cores.get(position).fans));
                 Buy_Yes.setVisibility(View.VISIBLE);
                 Buy_No.setVisibility(View.VISIBLE);
 
@@ -393,7 +398,7 @@ public class market extends AppCompatActivity {
                 PlayerDiscription.setText(Supports.get(position).Description);
 
                 PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
-
+                PlayerFans.setText(String.valueOf(Supports.get(position).fans));
 
                 Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
                 Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));

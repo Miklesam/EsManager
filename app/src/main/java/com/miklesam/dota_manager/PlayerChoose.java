@@ -33,6 +33,30 @@ import static com.miklesam.dota_manager.YourTeam.CloseLose4;
 import static com.miklesam.dota_manager.YourTeam.CloseLose5;
 import static com.miklesam.dota_manager.YourTeam.CloseLose6;
 import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff12;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff4;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff7;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff8;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
+import static com.miklesam.dota_manager.YourTeam.CloseScore1;
+import static com.miklesam.dota_manager.YourTeam.CloseScore10;
+import static com.miklesam.dota_manager.YourTeam.CloseScore11;
+import static com.miklesam.dota_manager.YourTeam.CloseScore12;
+import static com.miklesam.dota_manager.YourTeam.CloseScore2;
+import static com.miklesam.dota_manager.YourTeam.CloseScore3;
+import static com.miklesam.dota_manager.YourTeam.CloseScore4;
+import static com.miklesam.dota_manager.YourTeam.CloseScore5;
+import static com.miklesam.dota_manager.YourTeam.CloseScore6;
+import static com.miklesam.dota_manager.YourTeam.CloseScore7;
+import static com.miklesam.dota_manager.YourTeam.CloseScore8;
+import static com.miklesam.dota_manager.YourTeam.CloseScore9;
 import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
@@ -397,6 +421,7 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(TeamPlayoff2, "0");
                 editor.putString(TeamPlayoff3, "0");
                 editor.putString(TeamPlayoff4, "0");
+
                 editor.putString(ClosedPlayofStage, "0");
 
 
@@ -411,6 +436,41 @@ public class PlayerChoose extends AppCompatActivity {
 
                 editor.putString(Winner3My, "0");
                 editor.putString(Winner3Enemy, "0");
+
+
+                editor.putString(ClosePlayoff1, "0");
+                editor.putString(ClosePlayoff2, "0");
+                editor.putString(ClosePlayoff3, "0");
+                editor.putString(ClosePlayoff4, "0");
+                editor.putString(ClosePlayoff5, "0");
+                editor.putString(ClosePlayoff6, "0");
+                editor.putString(ClosePlayoff7, "0");
+                editor.putString(ClosePlayoff8, "0");
+                editor.putString(ClosePlayoff9, "0");
+                editor.putString(ClosePlayoff10, "0");
+                editor.putString(ClosePlayoff11, "0");
+                editor.putString(ClosePlayoff12, "0");
+
+
+
+                editor.putString(CloseScore1, "0");
+                editor.putString(CloseScore2, "0");
+                editor.putString(CloseScore3, "0");
+                editor.putString(CloseScore4, "0");
+                editor.putString(CloseScore5, "0");
+                editor.putString(CloseScore6, "0");
+                editor.putString(CloseScore7, "0");
+                editor.putString(CloseScore8, "0");
+                editor.putString(CloseScore9, "0");
+                editor.putString(CloseScore10, "0");
+                editor.putString(CloseScore11, "0");
+                editor.putString(CloseScore12, "0");
+
+
+
+
+
+
 
 
 

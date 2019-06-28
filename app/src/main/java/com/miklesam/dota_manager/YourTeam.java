@@ -108,6 +108,36 @@ public class YourTeam extends AppCompatActivity {
     public static final String ClosedPlayofStage= "ClosedPlayofStage";
     public static final String Fans= "Fans";
 
+    public static final String ClosePlayoff1= "ClosePlayoff1";
+    public static final String ClosePlayoff2= "ClosePlayoff2";
+    public static final String ClosePlayoff3= "ClosePlayoff3";
+    public static final String ClosePlayoff4= "ClosePlayoff4";
+
+    public static final String ClosePlayoff5= "ClosePlayoff5";
+    public static final String ClosePlayoff6= "ClosePlayoff6";
+    public static final String ClosePlayoff7= "ClosePlayoff7";
+    public static final String ClosePlayoff8= "ClosePlayoff8";
+
+    public static final String ClosePlayoff9= "ClosePlayoff9";
+    public static final String ClosePlayoff10= "ClosePlayoff10";
+    public static final String ClosePlayoff11= "ClosePlayoff11";
+    public static final String ClosePlayoff12= "ClosePlayoff12";
+
+    public static final String CloseScore1= "CloseScore1";
+    public static final String CloseScore2= "CloseScore2";
+    public static final String CloseScore3= "CloseScore3";
+    public static final String CloseScore4= "CloseScore4";
+
+    public static final String CloseScore5= "CloseScore5";
+    public static final String CloseScore6= "CloseScore6";
+    public static final String CloseScore7= "CloseScore7";
+    public static final String CloseScore8= "CloseScore8";
+
+    public static final String CloseScore9= "CloseScore9";
+    public static final String CloseScore10= "CloseScore10";
+    public static final String CloseScore11= "CloseScore11";
+    public static final String CloseScore12= "CloseScore12";
+
     SharedPreferences mSettings;
 
     @Override
