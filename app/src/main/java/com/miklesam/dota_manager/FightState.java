@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
@@ -54,6 +55,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
 import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
 import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
+import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -76,6 +78,8 @@ public class FightState extends AppCompatActivity {
     int CompLane[]=new int[5];
     int CompHero[]=new int[5];
     int CompGamer[]=new int[5];
+
+    ArrayList<NetworthUnit> nettable = new ArrayList<>();
 
     ImageView TopIcon[] =new ImageView[5];
     ImageView MidIcon[] =new ImageView[5];
@@ -146,6 +150,10 @@ public class FightState extends AppCompatActivity {
 
     int stage4top;
     int stage6top;
+
+    int goldbalance;
+    int fancebalance;
+
     @Override
     public void onBackPressed() {
     }
@@ -233,6 +241,17 @@ public class FightState extends AppCompatActivity {
         if(mSettings.contains(XPstatic)) {
             XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
         }
+
+
+        if(mSettings.contains(GoldBalance)) {
+            goldbalance=Integer.parseInt(mSettings.getString(GoldBalance, "0"));
+        }
+        if(mSettings.contains(Fans)) {
+            fancebalance=Integer.parseInt(mSettings.getString(Fans, "0"));
+        }
+
+
+
 
 
         if(mSettings.contains(Mode)) {
@@ -946,6 +965,7 @@ public class FightState extends AppCompatActivity {
                         editor.putString(Day, String.valueOf(day+5));
                     }
                     editor.putString(XPstatic, String.valueOf(XPint+1));
+                    editor.putString(GoldBalance, String.valueOf(goldbalance+(fancebalance/100)));
 
                     editor.apply();
                     HeroesSpot.clear();
@@ -1328,6 +1348,38 @@ for (int i=0;i<5;i++)
 
         latekeff.setText(String.valueOf(RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])+"vs"+
         String.valueOf(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]));
+
+
+        nettable.clear();
+        nettable.add( new NetworthUnit(1,RadiantNetworh[0],Radiant_Unit[0].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(1,RadiantNetworh[1],Radiant_Unit[1].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(1,RadiantNetworh[2],Radiant_Unit[2].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(1,RadiantNetworh[3],Radiant_Unit[3].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(1,RadiantNetworh[4],Radiant_Unit[4].GamerHeroes.seq));
+
+        nettable.add( new NetworthUnit(2,DireNetworh[0],Dire_Unit[0].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(2,DireNetworh[1],Dire_Unit[1].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(2,DireNetworh[2],Dire_Unit[2].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(2,DireNetworh[3],Dire_Unit[3].GamerHeroes.seq));
+        nettable.add( new NetworthUnit(2,DireNetworh[4],Dire_Unit[4].GamerHeroes.seq));
+        Collections.sort(nettable, NetworthUnit.COMPARE_BY_Networth);
+
+        for(int i=0;i<10;i++)
+        {
+            NetworthText[i].setText(String.valueOf(nettable.get(i).networth));
+            Networthicon[i].setImageResource(AllHeroes.get(nettable.get(i).hero).mipmap);
+            if(nettable.get(i).color==1)
+            {
+                NetworthText[i].setBackgroundColor(Color.parseColor("#00ff00"));
+                Networthicon[i].setBackgroundColor(Color.parseColor("#00ff00"));
+            }
+            else
+            {
+                NetworthText[i].setBackgroundColor(Color.parseColor("#ff0000"));
+                Networthicon[i].setBackgroundColor(Color.parseColor("#ff0000"));
+            }
+        }
+
 
 
         if ((RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])>(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]))

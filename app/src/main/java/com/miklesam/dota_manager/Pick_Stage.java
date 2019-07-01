@@ -483,7 +483,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        Enemytimer=  new CountDownTimer(200, 100) {
+        Enemytimer=  new CountDownTimer(3000, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
                 if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
@@ -510,7 +510,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         //Pick_Stage_stam();
-         Mytimer=  new CountDownTimer(200, 100) {
+         Mytimer=  new CountDownTimer(30000, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
 
@@ -649,17 +649,19 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         }
-        else if ((pick_state==7))
-        {
+        else if ((pick_state==7)) {
 
-            frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
+            frompicker = PickerList.get(TeamEnemy).Pick(pick_state, HeroList);
             Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
-            HeroList.get(frompicker).baned=true;
+            HeroList.get(frompicker).baned = true;
             Heros_icon[HeroList.get(frompicker).seq].setImageResource(HeroList.get(frompicker).largeban);
-            comp_hero[0]=HeroList.get(frompicker).seq;
+            comp_hero[0] = HeroList.get(frompicker).seq;
             pick_state++;
 
-
+            Enemytimer.start();
+        }
+            else if ((pick_state==8))
+        {
 
             frompicker=PickerList.get(TeamEnemy).Pick(pick_state,HeroList);
             Pick_stage[pick_state].setImageResource(HeroList.get(frompicker).picked);
@@ -697,11 +699,16 @@ public class Pick_Stage extends AppCompatActivity {
             pick_state++;
         }
 
-        youlocked=false;
+
         if(pick_state!=22)
         {
-            Mytimer.start();
-            youlocked=true;
+
+            if(pick_state!=8)
+            {
+                Mytimer.start();
+                youlocked=false;
+            }
+
         }
         else
         {

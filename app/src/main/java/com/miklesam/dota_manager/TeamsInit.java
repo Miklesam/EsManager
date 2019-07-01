@@ -284,7 +284,7 @@ public class TeamsInit {
     static final Teams OldButGold = new Teams("OldButGold",TeamSpiritTeam,3,R.drawable.old_but_gold_logo);
     static final Teams Empire = new Teams("Empire",EmpireTeam,4,R.drawable.team_empire_min_logo);
     static final Teams Winstrike = new Teams("Winstrike",WinstrikeTeam,5,R.drawable.winstrike_team_min_logo);
-    static final Teams BlackHornetsGaming = new Teams(" Black Hornets Gaming",BlackHornetsGamingTeam,6,R.drawable.black_hornets_gaming_logo);
+    static final Teams BlackHornetsGaming = new Teams("BlackHornetsGaming",BlackHornetsGamingTeam,6,R.drawable.black_hornets_gaming_logo);
     static final Teams FantasticFive = new Teams("FantasticFive",FantasticFiveTeam,7,R.drawable.fantasticfive);
     static final Teams CISRejects = new Teams("CISRejects",CISRejectsTeam,8,R.drawable.cisrejects);
     static final Teams FRIENDS = new Teams("F.R.I.E.N.D.S.",FRIENDSTeam,9,R.drawable.friends_dota);
