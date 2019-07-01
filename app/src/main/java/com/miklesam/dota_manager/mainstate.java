@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
@@ -238,13 +239,29 @@ public class mainstate extends AppCompatActivity {
 
         DayText.setText(String.valueOf(Dayint));
 
-        if (QualiWinner==1)
+
+
+        if (Dayint<10)
         {
-            if (Dayint==4)
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
+        else if (Dayint==10)
+        {
+            Play_game.setText("Open");
+            gamemode=1;
+        }
+        else if((Dayint>10)&&(Dayint<15))
+        {
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
+        else if(Dayint==15)
+        {
+            if (QualiWinner==1)
             {
                 Play_game.setText("Close");
                 gamemode=3;
-
             }
             else
             {
@@ -252,13 +269,27 @@ public class mainstate extends AppCompatActivity {
                 gamemode=2;
             }
         }
-        else
+        else if((Dayint>15)&&(Dayint<20))
         {
-            if (Dayint==2)
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
+        else if (Dayint==20)
+        {
+            Play_game.setText("Open");
+            gamemode=1;
+        }
+        else if((Dayint>20)&&(Dayint<25))
+        {
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
+        else if(Dayint==25)
+        {
+            if (QualiWinner==1)
             {
-                Play_game.setText("Open");
-                gamemode=1;
-
+                Play_game.setText("Close");
+                gamemode=3;
             }
             else
             {
@@ -266,8 +297,11 @@ public class mainstate extends AppCompatActivity {
                 gamemode=2;
             }
         }
-
-
+        else if((Dayint>25))
+        {
+            Play_game.setText("Practice");
+            gamemode=2;
+        }
 
 
 
@@ -415,6 +449,79 @@ public class mainstate extends AppCompatActivity {
 
         }
 
+        if (Dayint<10)
+        {
+            InfoBlock.setText("Open Major Qual через "+ String.valueOf(10-Dayint) );
+        }
+        else if (Dayint==10)
+        {
+            InfoBlock.setText("Open Major Qual сегодня");
+        }
+        else if((Dayint>10)&&(Dayint<15))
+        {
+            if (QualiWinner==1)
+            {
+                InfoBlock.setText("Closed Major Qual через "+ String.valueOf(15-Dayint) );
+            }
+            else
+            {
+                InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+            }
+        }
+        else if(Dayint==15)
+        {
+            if (QualiWinner==1)
+            {
+                InfoBlock.setText("Closed Major Qual сегодня");
+            }
+            else
+            {
+                InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+            }
+        }
+        else if((Dayint>15)&&(Dayint<20))
+        {
+            //if not win major quals
+            InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+        }
+        else if (Dayint==20)
+        {
+         InfoBlock.setText("Open Minor Qual сегодня");
+        }
+        else if((Dayint>20)&&(Dayint<25))
+        {
+            if (QualiWinner==1)
+            {
+                InfoBlock.setText("Closed Minor Qual через "+ String.valueOf(25-Dayint) );
+            }
+            else
+            {
+                InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+            }
+        }
+        else if(Dayint==25)
+        {
+            if (QualiWinner==1)
+            {
+                InfoBlock.setText("Closed Minor Qual сегодня");
+            }
+            else
+            {
+                InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+            }
+        }
+        else if((Dayint>25))
+        {
+            InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+        }
+
+
+
+
+
+
+
+
 
 
 
@@ -486,6 +593,7 @@ public class mainstate extends AppCompatActivity {
                             TeamsCloseQuals.remove(whatteam);
 
                         }
+                        Arrays.sort(openqual);
 
                         SharedPreferences.Editor editor = mSettings.edit();
                         editor.putString(CloseTeam1,String.valueOf(openqual[0]));

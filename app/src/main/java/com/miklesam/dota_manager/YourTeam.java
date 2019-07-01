@@ -99,12 +99,7 @@ public class YourTeam extends AppCompatActivity {
     public static final String TeamPlayoff3= "TeamPlayoff3";
     public static final String TeamPlayoff4= "TeamPlayoff4";
 
-    public static final String Winner1My= "Winner1My";
-    public static final String Winner1Enemy= "Winner1Enemy";
-    public static final String Winner2My= "Winner2My";
-    public static final String Winner2Enemy= "Winner2Enemy";
-    public static final String Winner3My= "Winner3My";
-    public static final String Winner3Enemy= "Winner3Enemy";
+
     public static final String ClosedPlayofStage= "ClosedPlayofStage";
     public static final String Fans= "Fans";
 
@@ -137,6 +132,8 @@ public class YourTeam extends AppCompatActivity {
     public static final String CloseScore10= "CloseScore10";
     public static final String CloseScore11= "CloseScore11";
     public static final String CloseScore12= "CloseScore12";
+
+
 
     SharedPreferences mSettings;
 

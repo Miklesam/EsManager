@@ -545,6 +545,7 @@ public class market extends AppCompatActivity {
                     PlayerNickName.setText(AllPlayers.get(Pos1).Name);
                     PlayerDiscription.setText(AllPlayers.get(Pos1).Description);
                     PlayerCost.setText(String.valueOf(AllPlayers.get(Pos1).Cost));
+                    PlayerFans.setText(String.valueOf(AllPlayers.get(Pos1).fans));
 
 
                     Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos1).laining));
@@ -596,6 +597,7 @@ public class market extends AppCompatActivity {
                     PlayerNickName.setText(AllPlayers.get(Pos2).Name);
                     PlayerDiscription.setText(AllPlayers.get(Pos2).Description);
                     PlayerCost.setText(String.valueOf(AllPlayers.get(Pos2).Cost));
+                    PlayerFans.setText(String.valueOf(AllPlayers.get(Pos2).fans));
 
 
                     Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos2).laining));
@@ -649,6 +651,7 @@ public class market extends AppCompatActivity {
                     PlayerNickName.setText(AllPlayers.get(Pos3).Name);
                     PlayerDiscription.setText(AllPlayers.get(Pos3).Description);
                     PlayerCost.setText(String.valueOf(AllPlayers.get(Pos3).Cost));
+                    PlayerFans.setText(String.valueOf(AllPlayers.get(Pos3).fans));
 
 
                     Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos3).laining));
@@ -706,6 +709,7 @@ public class market extends AppCompatActivity {
                     PlayerNickName.setText(AllPlayers.get(Pos4).Name);
                     PlayerDiscription.setText(AllPlayers.get(Pos4).Description);
                     PlayerCost.setText(String.valueOf(AllPlayers.get(Pos4).Cost));
+                    PlayerFans.setText(String.valueOf(AllPlayers.get(Pos4).fans));
 
 
                     Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos4).laining));
@@ -756,6 +760,7 @@ public class market extends AppCompatActivity {
                     PlayerNickName.setText(AllPlayers.get(Pos5).Name);
                     PlayerDiscription.setText(AllPlayers.get(Pos5).Description);
                     PlayerCost.setText(String.valueOf(AllPlayers.get(Pos5).Cost));
+                    PlayerFans.setText(String.valueOf(AllPlayers.get(Pos5).fans));
 
 
                     Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos5).laining));
@@ -799,8 +804,13 @@ public class market extends AppCompatActivity {
 
 
 
-                    Gold= String.valueOf(Integer.parseInt(Gold)+ Integer.parseInt((String) PlayerCost.getText()));
-                    Goldbalance.setText(Gold);
+                 Gold= String.valueOf(Integer.parseInt(Gold)+ Integer.parseInt((String) PlayerCost.getText()));
+
+
+                Goldbalance.setText(Gold);
+                fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)- Integer.parseInt((String) PlayerFans.getText()));
+                Fansbalance.setText(fansbalansed);
+
                 sellgoes=false;
                 Buy_Yes.setText("Buy_Yes");
                 if (sellposition==0)
@@ -885,6 +895,9 @@ public class market extends AppCompatActivity {
                         Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
                         Goldbalance.setText(Gold);
 
+                        fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                        Fansbalance.setText(fansbalansed);
+
 
                         Pos1=last_position_player;
                         team[0]=true;
@@ -950,6 +963,8 @@ public class market extends AppCompatActivity {
                             Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
                             Goldbalance.setText(Gold);
 
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
 
                             Pos2=last_position_player;
                             team[1]=true;
@@ -1004,6 +1019,8 @@ public class market extends AppCompatActivity {
                             Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
                             Goldbalance.setText(Gold);
 
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
 
                             Pos4=last_position_player;
                             team[3]=true;
@@ -1076,6 +1093,8 @@ public class market extends AppCompatActivity {
                             Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
                             Goldbalance.setText(Gold);
 
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
 
                             Pos3 = last_position_player;
                             team[2] = true;
@@ -1129,6 +1148,8 @@ public class market extends AppCompatActivity {
                             Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
                             Goldbalance.setText(Gold);
 
+                            fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
+                            Fansbalance.setText(fansbalansed);
 
                             Pos5 = last_position_player;
                             team[4] = true;

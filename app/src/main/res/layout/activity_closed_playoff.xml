@@ -46,7 +46,7 @@
 
         <TextView
             android:id="@+id/Teamname1"
-            android:layout_width="150sp"
+            android:layout_width="140sp"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -71,7 +71,7 @@
 
         <TextView
             android:id="@+id/Teamname2"
-            android:layout_width="150sp"
+            android:layout_width="140sp"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -97,7 +97,7 @@
 
         <TextView
             android:id="@+id/Teamname3"
-            android:layout_width="150sp"
+            android:layout_width="140sp"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -123,7 +123,7 @@
 
         <TextView
             android:id="@+id/Teamname4"
-            android:layout_width="150sp"
+            android:layout_width="140sp"
             android:layout_height="wrap_content" />
 
         <TextView
@@ -157,7 +157,7 @@
 
             <TextView
                 android:id="@+id/Teamname5"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -183,7 +183,7 @@
 
             <TextView
                 android:id="@+id/Teamname6"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -216,7 +216,7 @@
 
             <TextView
                 android:id="@+id/Teamname7"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -241,7 +241,7 @@
 
             <TextView
                 android:id="@+id/Teamname8"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -273,7 +273,7 @@
 
             <TextView
                 android:id="@+id/Teamname9"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -298,7 +298,7 @@
 
             <TextView
                 android:id="@+id/Teamname10"
-                android:layout_width="150sp"
+                android:layout_width="140sp"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -334,7 +334,7 @@
 
                 <TextView
                     android:id="@+id/Teamname11"
-                    android:layout_width="150sp"
+                    android:layout_width="135sp"
                     android:layout_height="wrap_content" />
 
                 <TextView
@@ -359,7 +359,7 @@
 
                 <TextView
                     android:id="@+id/Teamname12"
-                    android:layout_width="150sp"
+                    android:layout_width="135sp"
                     android:layout_height="wrap_content" />
 
                 <TextView

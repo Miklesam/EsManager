@@ -113,12 +113,7 @@ import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
-import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner1My;
-import static com.miklesam.dota_manager.YourTeam.Winner2Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner2My;
-import static com.miklesam.dota_manager.YourTeam.Winner3Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner3My;
+
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class PlayerChoose extends AppCompatActivity {
@@ -422,20 +417,12 @@ public class PlayerChoose extends AppCompatActivity {
                 editor.putString(TeamPlayoff3, "0");
                 editor.putString(TeamPlayoff4, "0");
 
-                editor.putString(ClosedPlayofStage, "0");
+                editor.putString(ClosedPlayofStage, "1");
 
 
 
                 editor.putString(ExtraLate, "0");
 
-                editor.putString(Winner1My, "0");
-                editor.putString(Winner1Enemy, "0");
-
-                editor.putString(Winner2My, "0");
-                editor.putString(Winner2Enemy, "0");
-
-                editor.putString(Winner3My, "0");
-                editor.putString(Winner3Enemy, "0");
 
 
                 editor.putString(ClosePlayoff1, "0");

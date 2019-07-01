@@ -23,6 +23,21 @@ import static com.miklesam.dota_manager.YourTeam.CloseLose4;
 import static com.miklesam.dota_manager.YourTeam.CloseLose5;
 import static com.miklesam.dota_manager.YourTeam.CloseLose6;
 import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
+import static com.miklesam.dota_manager.YourTeam.CloseScore1;
+import static com.miklesam.dota_manager.YourTeam.CloseScore10;
+import static com.miklesam.dota_manager.YourTeam.CloseScore11;
+import static com.miklesam.dota_manager.YourTeam.CloseScore12;
+import static com.miklesam.dota_manager.YourTeam.CloseScore2;
+import static com.miklesam.dota_manager.YourTeam.CloseScore3;
+import static com.miklesam.dota_manager.YourTeam.CloseScore4;
+import static com.miklesam.dota_manager.YourTeam.CloseScore5;
+import static com.miklesam.dota_manager.YourTeam.CloseScore6;
+import static com.miklesam.dota_manager.YourTeam.CloseScore7;
+import static com.miklesam.dota_manager.YourTeam.CloseScore8;
+import static com.miklesam.dota_manager.YourTeam.CloseScore9;
 import static com.miklesam.dota_manager.YourTeam.CloseWin1;
 import static com.miklesam.dota_manager.YourTeam.CloseWin2;
 import static com.miklesam.dota_manager.YourTeam.CloseWin3;
@@ -47,13 +62,6 @@ import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
 import static com.miklesam.dota_manager.YourTeam.QuaterWin;
 import static com.miklesam.dota_manager.YourTeam.SemiWin;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
-import static com.miklesam.dota_manager.YourTeam.Winner1Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner1My;
-import static com.miklesam.dota_manager.YourTeam.Winner2Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner2My;
-import static com.miklesam.dota_manager.YourTeam.Winner3Enemy;
-import static com.miklesam.dota_manager.YourTeam.Winner3My;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class FightState extends AppCompatActivity {
@@ -131,17 +139,13 @@ public class FightState extends AppCompatActivity {
     int ExFightingint;
     int ExLateint;
 
-    int Winner1Myint;
-    int Winner1Enemyint;
 
-    int Winner2Myint;
-    int Winner2Enemyint;
-
-    int Winner3Myint;
-    int Winner3Enemyint;
 
     int ClosedPlayofStageint;
+    int Score[] = new int[12];
 
+    int stage4top;
+    int stage6top;
     @Override
     public void onBackPressed() {
     }
@@ -327,29 +331,60 @@ public class FightState extends AppCompatActivity {
         if(mSettings.contains(ExtraLate)) {
             ExLateint=Integer.parseInt(mSettings.getString(ExtraLate, "0"));
         }
-        if(mSettings.contains(Winner1My)) {
-            Winner1Myint=Integer.parseInt(mSettings.getString(Winner1My, "0"));
-        }
-        if(mSettings.contains(Winner1Enemy)) {
-            Winner1Enemyint=Integer.parseInt(mSettings.getString(Winner1Enemy, "0"));
-        }
+
+
         if(mSettings.contains(ClosedPlayofStage)) {
             ClosedPlayofStageint=Integer.parseInt(mSettings.getString(ClosedPlayofStage, "0"));
         }
 
-        if(mSettings.contains(Winner2My)) {
-            Winner2Myint=Integer.parseInt(mSettings.getString(Winner2My, "0"));
+
+        if(mSettings.contains(CloseScore1)) {
+            Score[0]=Integer.parseInt(mSettings.getString(CloseScore1, "0"));
         }
-        if(mSettings.contains(Winner2Enemy)) {
-            Winner2Enemyint=Integer.parseInt(mSettings.getString(Winner2Enemy, "0"));
+        if(mSettings.contains(CloseScore2)) {
+            Score[1]=Integer.parseInt(mSettings.getString(CloseScore2, "0"));
+        }
+        if(mSettings.contains(CloseScore3)) {
+            Score[2]=Integer.parseInt(mSettings.getString(CloseScore3, "0"));
+        }
+        if(mSettings.contains(CloseScore4)) {
+            Score[3]=Integer.parseInt(mSettings.getString(CloseScore4, "0"));
+        }
+        if(mSettings.contains(CloseScore5)) {
+            Score[4]=Integer.parseInt(mSettings.getString(CloseScore5, "0"));
+        }
+        if(mSettings.contains(CloseScore6)) {
+            Score[5]=Integer.parseInt(mSettings.getString(CloseScore6, "0"));
+        }
+        if(mSettings.contains(CloseScore7)) {
+            Score[6]=Integer.parseInt(mSettings.getString(CloseScore7, "0"));
+        }
+        if(mSettings.contains(CloseScore8)) {
+            Score[7]=Integer.parseInt(mSettings.getString(CloseScore8, "0"));
+        }
+        if(mSettings.contains(CloseScore9)) {
+            Score[8]=Integer.parseInt(mSettings.getString(CloseScore9, "0"));
+        }
+        if(mSettings.contains(CloseScore10)) {
+            Score[9]=Integer.parseInt(mSettings.getString(CloseScore10, "0"));
+        }
+        if(mSettings.contains(CloseScore11)) {
+            Score[10]=Integer.parseInt(mSettings.getString(CloseScore11, "0"));
+        }
+        if(mSettings.contains(CloseScore12)) {
+            Score[11]=Integer.parseInt(mSettings.getString(CloseScore12, "0"));
         }
 
-        if(mSettings.contains(Winner3My)) {
-            Winner3Myint=Integer.parseInt(mSettings.getString(Winner3My, "0"));
+
+        if(mSettings.contains(ClosePlayoff9)) {
+           stage4top=Integer.parseInt(mSettings.getString(ClosePlayoff9, "0"));
         }
-        if(mSettings.contains(Winner3Enemy)) {
-            Winner3Enemyint=Integer.parseInt(mSettings.getString(Winner3Enemy, "0"));
+        if(mSettings.contains(ClosePlayoff11)) {
+            stage6top=Integer.parseInt(mSettings.getString(ClosePlayoff11, "0"));
         }
+
+
+
 
 
 
@@ -566,17 +601,15 @@ public class FightState extends AppCompatActivity {
                 else if(TournMode==2)
                 {
 
-
-
                     if (Seriescnt==0)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(Winner1My, String.valueOf(Winner1Myint+1));
+                            editor.putString(Closedwin, String.valueOf(Closedwinint+1));
                         }
                         else if(winloose==2)
                         {
-                            editor.putString(Winner1Enemy, String.valueOf(Winner1Enemyint+1));
+                            editor.putString(Closedlose, String.valueOf(Closedloseint+1));
                         }
 
                         //1-2
@@ -789,17 +822,17 @@ public class FightState extends AppCompatActivity {
                 else if(TournMode==3)
                 {
 
-                    if(ClosedPlayofStageint==0)
+                    if(ClosedPlayofStageint==1)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(Winner1My, String.valueOf(Winner1Myint+1));
+                            editor.putString(CloseScore1, String.valueOf(Score[0]+1));
 
 
                         }
                         else if(winloose==2)
                         {
-                            editor.putString(Winner1Enemy, String.valueOf(Winner1Enemyint+1));
+                            editor.putString(CloseScore2, String.valueOf(Score[1]+1));
                         }
                     }
 
@@ -807,35 +840,111 @@ public class FightState extends AppCompatActivity {
                     {
                         if (winloose==1)
                         {
-                            editor.putString(Winner2My, String.valueOf(Winner2Myint+1));
+                            editor.putString(CloseScore5, String.valueOf(Score[4]+1));
 
 
                         }
                         else if(winloose==2)
                         {
-                            editor.putString(Winner2Enemy, String.valueOf(Winner2Enemyint+1));
+                            editor.putString(CloseScore6, String.valueOf(Score[5]+1));
                         }
                     }
                     else if(ClosedPlayofStageint==3)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(Winner3My, String.valueOf(Winner3Myint+1));
+                            editor.putString(CloseScore7, String.valueOf(Score[6]+1));
 
 
                         }
                         else if(winloose==2)
                         {
-                            editor.putString(Winner3Enemy, String.valueOf(Winner3Enemyint+1));
+                            editor.putString(CloseScore8, String.valueOf(Score[7]+1));
                         }
                     }
+
+
+                    else if(ClosedPlayofStageint==4)
+                    {
+
+                        if (stage4top==0)
+                        {
+                            if (winloose==1)
+                            {
+                                editor.putString(CloseScore9, String.valueOf(Score[8]+1));
+
+
+                            }
+                            else if(winloose==2)
+                            {
+                                editor.putString(CloseScore10, String.valueOf(Score[9]+1));
+                            }
+                        }
+                        else
+                        {
+                            if (winloose==1)
+                            {
+                                editor.putString(CloseScore10, String.valueOf(Score[9]+1));
+
+
+                            }
+                            else if(winloose==2)
+                            {
+                                editor.putString(CloseScore9, String.valueOf(Score[8]+1));
+                            }
+                        }
+
+                    }
+
+                    else if(ClosedPlayofStageint==6)
+                    {
+
+                        if (stage6top==0)
+                        {
+                            if (winloose==1)
+                            {
+                                editor.putString(CloseScore11, String.valueOf(Score[10]+1));
+
+
+                            }
+                            else if(winloose==2)
+                            {
+                                editor.putString(CloseScore12, String.valueOf(Score[11]+1));
+                            }
+                        }
+                        else
+                        {
+                            if (winloose==1)
+                            {
+                                editor.putString(CloseScore12, String.valueOf(Score[11]+1));
+
+
+                            }
+                            else if(winloose==2)
+                            {
+                                editor.putString(CloseScore11, String.valueOf(Score[10]+1));
+                            }
+                        }
+
+                    }
+
+
+
+
 
                     editor.apply();
                     startActivity(Tobackplayoff);
                 }
                 else
                 {
-                    editor.putString(Day, String.valueOf(day+1));
+                    if(day==30)
+                    {
+                        editor.putString(Day, "0");
+                    }
+                    else
+                    {
+                        editor.putString(Day, String.valueOf(day+5));
+                    }
                     editor.putString(XPstatic, String.valueOf(XPint+1));
 
                     editor.apply();

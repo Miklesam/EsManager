@@ -483,7 +483,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        Enemytimer=  new CountDownTimer(2000, 1000) {
+        Enemytimer=  new CountDownTimer(200, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
                 if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
@@ -510,7 +510,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         //Pick_Stage_stam();
-         Mytimer=  new CountDownTimer(2000, 1000) {
+         Mytimer=  new CountDownTimer(200, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
 
@@ -528,7 +528,7 @@ public class Pick_Stage extends AppCompatActivity {
             }
             //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
             public void onFinish() {
-                Pick_Stage_Random();
+
                 if (pick_state!=20)
              {
                     Enemytimer.start();
@@ -539,7 +539,7 @@ public class Pick_Stage extends AppCompatActivity {
                  Mytimer.cancel();
                  Mytimer.start();
              }
-
+                Pick_Stage_Random();
                 //Pick_Stage_stam();
 
             }
@@ -701,10 +701,12 @@ public class Pick_Stage extends AppCompatActivity {
         if(pick_state!=22)
         {
             Mytimer.start();
+            youlocked=true;
         }
         else
         {
             HelpText.setText("Перейдите к стадии планирования");
+            youlocked=true;
             Plan_state.setVisibility(View.VISIBLE);
         }
 
@@ -725,47 +727,36 @@ public class Pick_Stage extends AppCompatActivity {
             {
                 Pick_Stage_Random();
             }
+            else
+            {
+                Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
+                if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
+                {
+                    Pick_stage[pick_state].setImageResource(HeroList.get(whathero).minban);
+                    HeroList.get(whathero).baned=true;
+                    Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
+                    pick_state++;
+
+
+
+                }
+                else if ((pick_state==6)||(pick_state==9)||(pick_state==15)||(pick_state==17)||(pick_state==20))
+                {
+                    Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
+                    HeroList.get(whathero).baned=true;
+                    Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
+                    what_hero[k]=whathero;
+                    k++;
+                    pick_state++;
+
+
+
+
+                }
+            }
 
         }
 
-        Pick_Stage.setText("Stage"+" "+String.valueOf(pick_state+1));
-        if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
-        {
-            Pick_stage[pick_state].setImageResource(HeroList.get(whathero).minban);
-            HeroList.get(whathero).baned=true;
-            Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
-            pick_state++;
-
-
-
-        }
-        else if ((pick_state==6)||(pick_state==9)||(pick_state==15)||(pick_state==17)||(pick_state==20))
-        {
-            Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
-            HeroList.get(whathero).baned=true;
-            Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
-            what_hero[k]=whathero;
-            k++;
-            pick_state++;
-
-
-
-
-        }
-
-        //else if ((pick_state==15)||(pick_state==17)||(pick_state==20))
-        //{
-         //   Pick_stage[pick_state].setImageResource(HeroList.get(whathero).picked);
-         //   HeroList.get(whathero).baned=true;
-         //   Heros_icon[whathero].setImageResource(HeroList.get(whathero).largeban);
-         //   what_hero[k]=whathero;
-        //    k++;
-        //    pick_state++;
-
-
-
-
-       // }
 
 
 

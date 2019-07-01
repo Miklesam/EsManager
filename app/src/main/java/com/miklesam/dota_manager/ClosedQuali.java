@@ -343,7 +343,7 @@ public class ClosedQuali extends AppCompatActivity {
         editor.apply();
 
 
-
+        teamstable.clear();
         teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[0]).teamname,ClosedTeamstour.get(CloseTeam[0]).logo,CloseWin1int,CloseLose1int,ClosedTeamstour.get(CloseTeam[0]).seq));
         teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[1]).teamname,ClosedTeamstour.get(CloseTeam[1]).logo,CloseWin2int,CloseLose2int,ClosedTeamstour.get(CloseTeam[1]).seq));
         teamstable.add( new ModelTeam( ClosedTeamstour.get(CloseTeam[2]).teamname,ClosedTeamstour.get(CloseTeam[2]).logo,CloseWin3int,CloseLose3int,ClosedTeamstour.get(CloseTeam[2]).seq));
