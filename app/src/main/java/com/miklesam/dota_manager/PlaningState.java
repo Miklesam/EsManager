@@ -259,10 +259,25 @@ public class PlaningState extends AppCompatActivity {
 
 
        top.add(Hero[0]);
+       lane_id[0]=1;
        mid.add(Hero[1]);
+       lane_id[1]=2;
        bot.add(Hero[2]);
+       lane_id[2]=3;
        bot.add(Hero[3]);
+       lane_id[3]=4;
        bot.add(Hero[4]);
+       lane_id[4]=5;
+
+        for (int i=0;i<top.size();i++){
+            Top[i].setImageResource(AllHeroes.get((Integer) top.get(i)).mipmap);
+        }
+        for (int i=0;i<mid.size();i++){
+            Mid[i].setImageResource(AllHeroes.get((Integer) mid.get(i)).mipmap);
+        }
+        for (int i=0;i<bot.size();i++){
+            Bottom[i].setImageResource(AllHeroes.get((Integer) bot.get(i)).mipmap);
+        }
 
         for (int i = 0; i < top.size(); i++) {
             Top[i].setVisibility(View.VISIBLE);
@@ -289,39 +304,54 @@ for(int k=0;k<5;k++)
         public void onItemSelected(AdapterView<?> parent, View view,
                                    int position, long id) {
 
-            for(int i=0;i<top.size();i++)
-            {
-                if((Integer) top.get(i)==Hero[finalK])
-                {
+            for(int i=0;i<top.size();i++) {
+                if (((Integer) top.get(i)) == Hero[finalK]) {
                     top.remove(i);
                 }
-                if((Integer) mid.get(i)==Hero[finalK])
-                {
+            }
+
+            for(int i=0;i<mid.size();i++) {
+                if (((Integer) mid.get(i)) == Hero[finalK]) {
                     mid.remove(i);
                 }
-                if((Integer) bot.get(i)==Hero[finalK])
-                {
+            }
+
+            for(int i=0;i<bot.size();i++) {
+                if (((Integer) bot.get(i)) == Hero[finalK]) {
                     bot.remove(i);
                 }
             }
 
 
+
+
             if (position==0)
             {
                 top.add(Hero[finalK]);
+                lane_id[finalK]=1;
             }
             else if (position==1)
             {
                 mid.add(Hero[finalK]);
+                lane_id[finalK]=2;
             }
             else if (position==2)
             {
                 bot.add(Hero[finalK]);
+                lane_id[finalK]=3;
             }
 
 
 
 
+            for(int i=0;i<5;i++)
+            {
+                Top[i].setVisibility(View.INVISIBLE);
+
+                Mid[i].setVisibility(View.INVISIBLE);
+
+                Bottom[i].setVisibility(View.INVISIBLE);
+            }
 
             for (int i=0;i<top.size();i++){
                 Top[i].setImageResource(AllHeroes.get((Integer) top.get(i)).mipmap);
@@ -329,7 +359,7 @@ for(int k=0;k<5;k++)
             for (int i=0;i<mid.size();i++){
                 Mid[i].setImageResource(AllHeroes.get((Integer) mid.get(i)).mipmap);
             }
-            for (int i=0;i<top.size();i++){
+            for (int i=0;i<bot.size();i++){
                 Bottom[i].setImageResource(AllHeroes.get((Integer) bot.get(i)).mipmap);
             }
 

@@ -483,7 +483,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
 
-        Enemytimer=  new CountDownTimer(3000, 100) {
+        Enemytimer=  new CountDownTimer(200, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
                 if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
@@ -510,7 +510,7 @@ public class Pick_Stage extends AppCompatActivity {
 
 
         //Pick_Stage_stam();
-         Mytimer=  new CountDownTimer(30000, 100) {
+         Mytimer=  new CountDownTimer(200, 100) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
 
