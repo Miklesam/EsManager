@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
@@ -43,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
         TextName.setTypeface(type);
         TextName.setTypeface(type);
         TestGold.setTypeface(type);
-        Button NewGame = findViewById(R.id.new_game);
-        Button Continue = findViewById(R.id.Continue);
+        ImageView NewGame = findViewById(R.id.new_game);
+        ImageView Continue = findViewById(R.id.Continue);
 
-        Button Store = findViewById(R.id.Store);
-        Button Teams = findViewById(R.id.Teams);
+        ImageView Store = findViewById(R.id.shop);
+        ImageView Teams = findViewById(R.id.Teams);
 
-                Continue.setTypeface(type);
-                NewGame.setTypeface(type);
-                Store.setTypeface(type);
-                Teams.setTypeface(type);
+                //Continue.setTypeface(type);
+                //NewGame.setTypeface(type);
+                //Store.setTypeface(type);
+                //Teams.setTypeface(type);
 
         final Intent NewGameIntent = new Intent(this, TeamName.class);
         final Intent ToMAinState = new Intent(this, mainstate.class);

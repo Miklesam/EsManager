@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="#FFBF00"
     >
 
 
@@ -33,34 +34,38 @@
 
 
 
-        <Button
+        <ImageView
             android:layout_width="150sp"
-            android:layout_height="wrap_content"
+            android:layout_height="40sp"
             android:id="@+id/Continue"
             android:visibility="invisible"
-            android:text="Продолжить"
+            app:srcCompat="@drawable/continue_bttn"
+            android:layout_gravity="center"
             />
 
-        <Button
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:text="Новая Игра"
+        <ImageView
+            android:layout_width="140sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/newgame"
             android:id="@+id/new_game"
+            android:layout_gravity="center"
             />
 
 
 
-        <Button
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:text="Магазин"
-            android:id="@+id/Store"
+        <ImageView
+            android:layout_width="140sp"
+            android:layout_height="40sp"
+            android:id="@+id/shop"
+            app:srcCompat="@drawable/shop"
+            android:layout_gravity="center"
             />
-        <Button
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:text="Команды"
+        <ImageView
+            android:layout_width="140sp"
+            android:layout_height="40sp"
             android:id="@+id/Teams"
+            app:srcCompat="@drawable/teams"
+            android:layout_gravity="center"
             />
 
 

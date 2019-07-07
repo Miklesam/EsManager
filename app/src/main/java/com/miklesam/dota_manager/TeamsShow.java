@@ -33,6 +33,9 @@ public class TeamsShow extends AppCompatActivity {
     TextView PlayerNickname;
     TextView Descriptionplayer;
 
+   TextView PlayerCost;
+   TextView PlayerFans;
+
 
     TextView laning;
     TextView fighting;
@@ -54,6 +57,9 @@ public class TeamsShow extends AppCompatActivity {
         TeamInfos=findViewById(R.id.TeamInfo);
         TeamslistView = (ListView)findViewById(R.id.TeamList);
         teamroosts= (ListView)findViewById(R.id.teamroost);
+
+        PlayerCost=findViewById(R.id.PlayerCost);
+        PlayerFans=findViewById(R.id.PlayerFans);
 
         AllTeams.clear();
         ThisTeams=AllTeamsInit();
@@ -127,7 +133,8 @@ public class TeamsShow extends AppCompatActivity {
 
                 Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Description));
 
-
+                PlayerCost.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Cost));
+                PlayerFans.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).fans));
 
 
 
@@ -152,6 +159,9 @@ public class TeamsShow extends AppCompatActivity {
                 farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
                 supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).late));
                 Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Description));
+
+                PlayerCost.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Cost));
+                PlayerFans.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fans));
 
 
             }

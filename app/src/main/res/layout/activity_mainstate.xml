@@ -5,18 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFBF00"
     tools:context=".mainstate">
+
+    <ImageView
+        android:layout_width="140sp"
+        android:layout_height="40sp"
+        android:id="@+id/backtomenu"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/menu_bttn"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <TextView
+            android:layout_marginTop="5sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/team_name"/>
 
         <TextView
+            android:layout_marginTop="5sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/InfoBlock"/>
@@ -28,22 +40,19 @@
     android:id="@+id/lainingfeature"
     android:orientation="horizontal">
     <TextView
-
+        android:textColor="#000000"
         android:layout_width="180sp"
         android:layout_height="wrap_content"
         android:text="Laining"
         android:id="@+id/LainingView"/>
 
     <TextView
+        android:textColor="#000000"
         android:layout_marginLeft="5sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LainingPoints"/>
-    <TextView
-        android:layout_marginLeft="5sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Points"/>
+
 
 </LinearLayout>
 
@@ -53,6 +62,7 @@
         android:id="@+id/farmingfeature"
         android:orientation="horizontal">
         <TextView
+            android:textColor="#000000"
             android:layout_width="180sp"
             android:layout_height="wrap_content"
             android:text="Farming"
@@ -60,15 +70,12 @@
 
         <TextView
             android:layout_marginLeft="5sp"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/FarmingPoints"/>
 
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Points"/>
+
 
     </LinearLayout>
 
@@ -79,20 +86,18 @@
             android:orientation="horizontal">
             <TextView
                 android:layout_width="180sp"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="Fighting"
                 android:id="@+id/FightingView"/>
 
             <TextView
+                android:textColor="#000000"
                 android:layout_marginLeft="5sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/FightingPoints"/>
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Points"/>
+
 
         </LinearLayout>
 
@@ -102,21 +107,19 @@
             android:id="@+id/lategamefeature"
             android:orientation="horizontal">
             <TextView
+                android:textColor="#000000"
                 android:layout_width="180sp"
                 android:layout_height="wrap_content"
                 android:text="LateGame"
                 android:id="@+id/LateGameView"/>
 
             <TextView
+                android:textColor="#000000"
                 android:layout_marginLeft="5sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/LateGamePoints"/>
-            <TextView
-                android:layout_marginLeft="5sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Points"/>
+
 
         </LinearLayout>
         
@@ -143,20 +146,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <Button
+
+            <ImageView
                 android:layout_width="140sp"
-                android:layout_height="wrap_content"
-                android:text="Тренировка"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/media_bttn"
+                android:id="@+id/Media"/>
+            <ImageView
+                android:layout_width="140sp"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/practice_rttn"
                 android:id="@+id/Play_game"/>
-            <Button
+            <ImageView
                 android:layout_width="140sp"
-                android:layout_height="wrap_content"
+                android:layout_height="40sp"
                 android:id="@+id/Market"
-                android:text="Рынок"/>
-            <Button
+                app:srcCompat="@drawable/market_bttn_bttn"/>
+            <ImageView
                 android:layout_width="140sp"
-                android:layout_height="wrap_content"
-                android:text="Команда"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/team_bttn"
                 android:id="@+id/Teamimprove"/>
 
 

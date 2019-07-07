@@ -66,10 +66,10 @@ import static com.miklesam.dota_manager.YourTeam.XPstatic;
 public class mainstate extends AppCompatActivity {
 
     TextView TeamPosition[]= new TextView[5];
-    Button Play_game;
+    ImageView Play_game;
 
-    Button Market;
-    Button Teamimprove;
+    ImageView Market;
+    ImageView Teamimprove;
     TextView Goldbalance;
     TextView TeamName;
     ListView CWList;
@@ -106,6 +106,7 @@ public class mainstate extends AppCompatActivity {
     LinearLayout Fighting;
     LinearLayout LateGame;
     TextView FansNumber;
+    ImageView backtomenu;
 
 
     int ExLainingint;
@@ -115,6 +116,7 @@ public class mainstate extends AppCompatActivity {
 
     int OpenShaffleint;
     int CloseShaffleint;
+    ImageView Media;
 
 
     boolean team[]=new boolean[5];
@@ -138,8 +140,9 @@ public class mainstate extends AppCompatActivity {
         FarmingPoints=findViewById(R.id.FarmingPoints);
         FightingPoints=findViewById(R.id.FightingPoints);
         LateGamePoints=findViewById(R.id.LateGamePoints);
+        Media=findViewById(R.id.Media);
 
-
+        backtomenu=findViewById(R.id.backtomenu);
         Laining=findViewById(R.id.lainingfeature);
         Farming=findViewById(R.id.farmingfeature);
         Fighting=findViewById(R.id.fightingfeature);
@@ -160,6 +163,9 @@ public class mainstate extends AppCompatActivity {
         final Intent ToClosedQuali = new Intent(this, ClosedQuali.class);
         final Intent ToMarket = new Intent(this, market.class);
         final Intent ToImprove = new Intent(this, Improve.class);
+        final Intent ToMainActivity = new Intent(this, MainActivity.class);
+        final Intent ToMedia = new Intent(this, media.class);
+
 
         CWList = (ListView)findViewById(R.id.TeamCW);
         AllTeams.clear();
@@ -243,63 +249,63 @@ public class mainstate extends AppCompatActivity {
 
         if (Dayint<10)
         {
-            Play_game.setText("Practice");
+            //Play_game.setText("Practice");
             gamemode=2;
         }
         else if (Dayint==10)
         {
-            Play_game.setText("Open");
+            //Play_game.setText("Open");
             gamemode=1;
         }
         else if((Dayint>10)&&(Dayint<15))
         {
-            Play_game.setText("Practice");
+            //Play_game.setText("Practice");
             gamemode=2;
         }
         else if(Dayint==15)
         {
             if (QualiWinner==1)
             {
-                Play_game.setText("Close");
+                //Play_game.setText("Close");
                 gamemode=3;
             }
             else
             {
-                Play_game.setText("Practice");
+                //Play_game.setText("Practice");
                 gamemode=2;
             }
         }
         else if((Dayint>15)&&(Dayint<20))
         {
-            Play_game.setText("Practice");
+            //Play_game.setText("Practice");
             gamemode=2;
         }
         else if (Dayint==20)
         {
-            Play_game.setText("Open");
+           // Play_game.setText("Open");
             gamemode=1;
         }
         else if((Dayint>20)&&(Dayint<25))
         {
-            Play_game.setText("Practice");
+            //Play_game.setText("Practice");
             gamemode=2;
         }
         else if(Dayint==25)
         {
             if (QualiWinner==1)
             {
-                Play_game.setText("Close");
+                //Play_game.setText("Close");
                 gamemode=3;
             }
             else
             {
-                Play_game.setText("Practice");
+                //Play_game.setText("Practice");
                 gamemode=2;
             }
         }
         else if((Dayint>25))
         {
-            Play_game.setText("Practice");
+           // Play_game.setText("Practice");
             gamemode=2;
         }
 
@@ -538,14 +544,14 @@ public class mainstate extends AppCompatActivity {
                 {
                     if (cw==false)
                     {
-                        Play_game.setText("Отмена");
+                        //Play_game.setText("Отмена");
                         CWList.setVisibility(View.VISIBLE);
                         cw=true;
 
                     }
                     else
                     {
-                        Play_game.setText("Игра");
+                        //Play_game.setText("Practice");
                         CWList.setVisibility(View.INVISIBLE);
                         cw=false;
                     }
@@ -653,6 +659,8 @@ public class mainstate extends AppCompatActivity {
 
 
 
+
+
         Market.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -663,6 +671,29 @@ public class mainstate extends AppCompatActivity {
 
             }
         });
+
+        backtomenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToMainActivity);
+
+
+
+            }
+        });
+
+        Media.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToMedia);
+
+
+
+            }
+        });
+
 
 
         Teamimprove.setOnClickListener(new View.OnClickListener() {
@@ -748,6 +779,7 @@ public class mainstate extends AppCompatActivity {
 
             //imageView.setImageResource(ThisTeams.get(position).Flag);
             textView.setText(TeamsCW.get(position).teamname);
+            imageView.setImageResource(TeamsCW.get(position).logo);
 
             //Price.setText(String.valueOf(Cores.get(position).Cost));
 
