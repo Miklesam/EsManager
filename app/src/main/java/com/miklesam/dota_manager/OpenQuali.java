@@ -276,7 +276,10 @@ public class OpenQuali extends AppCompatActivity {
                 losequal=true;
                 openplaybtn.setText("Покинуть квалификацию");
                 OpenSemi[0]=OpenTeamQual[0];
+                QuatersFinalsText[8].setText(AllOpenTeams.get(OpenTeamQual[0]).teamname);
+                QuatersFinals[8].setImageResource(AllOpenTeams.get(OpenTeamQual[0]).logo);
                 scoreboardint[0]=0;
+                scoreboardint[1]=1;
                 editor.putString(OpenScore1, "0");
             }
 
