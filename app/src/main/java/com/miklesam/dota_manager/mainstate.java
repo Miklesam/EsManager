@@ -140,7 +140,7 @@ public class mainstate extends AppCompatActivity {
         FarmingPoints=findViewById(R.id.FarmingPoints);
         FightingPoints=findViewById(R.id.FightingPoints);
         LateGamePoints=findViewById(R.id.LateGamePoints);
-        Media=findViewById(R.id.Media);
+
 
         backtomenu=findViewById(R.id.backtomenu);
         Laining=findViewById(R.id.lainingfeature);
@@ -164,10 +164,10 @@ public class mainstate extends AppCompatActivity {
         final Intent ToMarket = new Intent(this, market.class);
         final Intent ToImprove = new Intent(this, Improve.class);
         final Intent ToMainActivity = new Intent(this, MainActivity.class);
-        final Intent ToMedia = new Intent(this, media.class);
+        final Intent ToPractice = new Intent(this, practiceactivity.class);
 
 
-        CWList = (ListView)findViewById(R.id.TeamCW);
+
         AllTeams.clear();
         OpenTeams.clear();
         ClosedTeams.clear();
@@ -175,8 +175,7 @@ public class mainstate extends AppCompatActivity {
         TeamsCW=AllTeamsInit();
         TeamsOpenQuals=OpenTeamsInit();
         InfoBlock=findViewById(R.id.InfoBlock);
-        final CWAdapter CWteamsAdapter=new CWAdapter();
-        CWList.setAdapter(CWteamsAdapter);
+
 
 
         final int won;
@@ -542,20 +541,10 @@ public class mainstate extends AppCompatActivity {
 
                 if(gamemode==2)
                 {
-                    if (cw==false)
-                    {
-                        //Play_game.setText("Отмена");
-                        CWList.setVisibility(View.VISIBLE);
-                        cw=true;
+                    startActivity(ToPractice);
 
-                    }
-                    else
-                    {
-                        //Play_game.setText("Practice");
-                        CWList.setVisibility(View.INVISIBLE);
-                        cw=false;
-                    }
-                } else if (gamemode==1) {
+                } else if (gamemode==1)
+                {
 
 
                     if(OpenShaffleint==0)
@@ -633,28 +622,7 @@ public class mainstate extends AppCompatActivity {
 
 
 
-        CWList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-                ToPickStage.putExtra("Position1",Pos1);
-                ToPickStage.putExtra("Position2",Pos2);
-                ToPickStage.putExtra("Position3",Pos3);
-                ToPickStage.putExtra("Position4",Pos4);
-                ToPickStage.putExtra("Position5",Pos5);
-
-                ToPickStage.putExtra("EnemyTeam",AllTeams.get(position).seq);
-                ToPickStage.putExtra("TeamName",YourTeam);
-                ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
-
-
-                TeamsCW.clear();
-                startActivity(ToPickStage);
-
-
-            }
-        });
 
 
 
@@ -683,16 +651,7 @@ public class mainstate extends AppCompatActivity {
             }
         });
 
-        Media.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                startActivity(ToMedia);
-
-
-
-            }
-        });
 
 
 
@@ -746,51 +705,7 @@ public class mainstate extends AppCompatActivity {
 
 
 
-    class CWAdapter extends BaseAdapter {
 
-        @Override
-        public int getCount() {
-            return TeamsCW.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-
-            convertView = getLayoutInflater().inflate(R.layout.cw_layout,null);
-
-            ImageView imageView=(ImageView)convertView.findViewById(R.id.image);
-            TextView textView = (TextView)convertView.findViewById(R.id.Titile);
-
-
-            //imageView.setImageResource(CoreIMAGES[position]);
-            //textView.setText(CoreNAMES[position]);
-            //Price.setText(CorePriceMoney[position]);
-
-
-            //imageView.setImageResource(ThisTeams.get(position).Flag);
-            textView.setText(TeamsCW.get(position).teamname);
-            imageView.setImageResource(TeamsCW.get(position).logo);
-
-            //Price.setText(String.valueOf(Cores.get(position).Cost));
-
-
-
-
-
-
-            return convertView;
-        }
-    }
 
 
 }

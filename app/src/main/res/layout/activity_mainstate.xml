@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8FE3FF"
+    android:background="@drawable/fivebig"
+
     tools:context=".mainstate">
 
     <ImageView
@@ -145,13 +146,10 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="140sp"
-                android:layout_height="40sp"
-                app:srcCompat="@drawable/media_bttn"
-                android:id="@+id/Media"/>
+
             <ImageView
                 android:layout_width="140sp"
                 android:layout_height="40sp"
@@ -171,14 +169,9 @@
 
         </LinearLayout>
 
-       <ListView
-           android:layout_width="300sp"
-           android:layout_height="match_parent"
-           android:id="@+id/TeamCW"
-           android:scrollbars="none"
-           android:visibility="invisible">
 
-       </ListView>
+
+
 
 
     </LinearLayout>
