@@ -96,10 +96,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Laining"/>
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        app:srcCompat="@drawable/map_icon"
+                        />
+                    <TextView
+                        android:layout_marginLeft="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laining"/>
+
+                </LinearLayout>
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,16 +128,16 @@
                     android:layout_alignParentRight="true"
                     android:orientation="horizontal"
                     >
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="-"
+                        app:srcCompat="@drawable/minus_bttn"
                         android:id="@+id/lainingminus"/>
 
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="+"
+                        app:srcCompat="@drawable/plus_bttn"
                         android:id="@+id/lainingplus"/>
 
 
@@ -155,10 +168,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Farming"/>
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        app:srcCompat="@drawable/coin_04d"
+                        />
+                    <TextView
+                        android:layout_marginLeft="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Farm"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,16 +199,16 @@
                     android:layout_alignParentRight="true"
                     android:orientation="horizontal"
                     >
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="-"
+                        app:srcCompat="@drawable/minus_bttn"
                         android:id="@+id/farmingminus"/>
 
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="+"
+                        app:srcCompat="@drawable/plus_bttn"
                         android:id="@+id/farmingplus"/>
 
 
@@ -212,10 +237,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fighting"/>
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        app:srcCompat="@drawable/sword"
+                        />
+                    <TextView
+                        android:layout_marginLeft="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fight"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -231,16 +268,16 @@
                     android:layout_alignParentRight="true"
                     android:orientation="horizontal"
                     >
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="-"
+                        app:srcCompat="@drawable/minus_bttn"
                         android:id="@+id/fightingminus"/>
 
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="+"
+                        app:srcCompat="@drawable/plus_bttn"
                         android:id="@+id/fightingplus"/>
 
 
@@ -269,10 +306,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LateGame"/>
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="32sp"
+                        android:layout_height="32sp"
+                        app:srcCompat="@drawable/book_04b"
+                        />
+                    <TextView
+                        android:layout_marginLeft="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LateGame"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -288,16 +337,16 @@
                     android:layout_alignParentRight="true"
                     android:orientation="horizontal"
                     >
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="-"
+                        app:srcCompat="@drawable/minus_bttn"
                         android:id="@+id/lategameminus"/>
 
-                    <Button
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="90sp"
                         android:layout_height="40sp"
-                        android:text="+"
+                        app:srcCompat="@drawable/plus_bttn"
                         android:id="@+id/lategameplus"/>
 
 

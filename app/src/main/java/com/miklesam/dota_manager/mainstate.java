@@ -65,7 +65,7 @@ import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class mainstate extends AppCompatActivity {
 
-    TextView TeamPosition[]= new TextView[5];
+
     ImageView Play_game;
 
     ImageView Market;
@@ -129,11 +129,7 @@ public class mainstate extends AppCompatActivity {
         setContentView(R.layout.activity_mainstate);
        // mSettings = getSharedPreferences(APP_PREFERENCES_NAME, Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
-        TeamPosition[0]=findViewById(R.id.teamposition1);
-        TeamPosition[1]=findViewById(R.id.teamposition2);
-        TeamPosition[2]=findViewById(R.id.teamposition3);
-        TeamPosition[3]=findViewById(R.id.teamposition4);
-        TeamPosition[4]=findViewById(R.id.teamposition5);
+
 
 
         LainingPoints=findViewById(R.id.LainingPoints);
@@ -144,9 +140,7 @@ public class mainstate extends AppCompatActivity {
 
         backtomenu=findViewById(R.id.backtomenu);
         Laining=findViewById(R.id.lainingfeature);
-        Farming=findViewById(R.id.farmingfeature);
-        Fighting=findViewById(R.id.fightingfeature);
-        LateGame=findViewById(R.id.lategamefeature);
+
 
         FansNumber=findViewById(R.id.FansNumber);
         Play_game=findViewById(R.id.Play_game);
@@ -380,50 +374,7 @@ public class mainstate extends AppCompatActivity {
         AllPlayers.clear();
         TheAllPlayers=PlayersAllInit();
 
-        if(team[0]==true)
-        {
-            TeamPosition[0].setText(TheAllPlayers.get(Pos1).Name);
-        }
-        else
-        {
-            TeamPosition[0].setText("1");
-        }
 
-        if(team[1]==true)
-        {
-            TeamPosition[1].setText(TheAllPlayers.get(Pos2).Name);
-        }
-        else
-        {
-            TeamPosition[1].setText("2");
-        }
-
-        if(team[2]==true)
-        {
-            TeamPosition[2].setText(TheAllPlayers.get(Pos3).Name);
-        }
-        else
-        {
-            TeamPosition[2].setText("3");
-        }
-
-        if(team[3]==true)
-        {
-            TeamPosition[3].setText(TheAllPlayers.get(Pos4).Name);
-        }
-        else
-        {
-            TeamPosition[3].setText("4");
-        }
-
-        if(team[4]==true)
-        {
-            TeamPosition[4].setText(TheAllPlayers.get(Pos5).Name);
-        }
-        else
-        {
-            TeamPosition[4].setText("5");
-        }
 
 
 
@@ -664,27 +615,6 @@ public class mainstate extends AppCompatActivity {
         });
 
         Laining.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(ToImprove);
-            }
-        });
-        Farming.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(ToImprove);
-            }
-        });
-        Fighting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(ToImprove);
-            }
-        });
-        LateGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

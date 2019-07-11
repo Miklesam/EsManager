@@ -59,6 +59,11 @@
             android:visibility="invisible">
 
         </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -71,38 +76,161 @@
         android:layout_height="wrap_content"
         android:text="Solo Training"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
 
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="90sp"
-        android:layout_height="20sp"
-        android:text="Player1"/>
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:text="Player1"/>
 
-    <ImageView
-        android:layout_width="90sp"
-        android:layout_height="150sp"
-        app:srcCompat="@drawable/profile"/>
-
-
-</LinearLayout>
-
-
+        <ImageView
+            android:layout_width="60sp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/profile"/>
 
     </LinearLayout>
 
+    <Spinner
+        android:layout_width="150sp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+    </Spinner>
+
 </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Player2"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/profile"/>
+
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Player3"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/profile"/>
+
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Player4"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/profile"/>
+
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Player5"/>
+
+            <ImageView
+                android:layout_width="60sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/profile"/>
+
+        </LinearLayout>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+
+
+        </ScrollView>
 
 
     </LinearLayout>

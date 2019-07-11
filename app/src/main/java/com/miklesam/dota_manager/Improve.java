@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
@@ -24,15 +25,15 @@ public class Improve extends AppCompatActivity {
     TextView ExFighting;
     TextView ExLateGame;
 
-    Button LainingPlus;
-    Button FarmingPlus;
-    Button FightingPlus;
-    Button LateGamePlus;
+    ImageView LainingPlus;
+    ImageView FarmingPlus;
+    ImageView FightingPlus;
+    ImageView LateGamePlus;
 
-    Button LainingMinus;
-    Button FarmingMinus;
-    Button FightingMinus;
-    Button LateGameMinus;
+    ImageView LainingMinus;
+    ImageView FarmingMinus;
+    ImageView FightingMinus;
+    ImageView LateGameMinus;
 
 
     int XPint;
