@@ -3,9 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainfon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fullscreenroom"
+
 
     tools:context=".mainstate">
 
@@ -25,7 +26,7 @@
         <TextView
             android:layout_marginTop="5sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20sp"
             android:id="@+id/team_name"/>
 
         <TextView
@@ -40,11 +41,11 @@
     android:layout_height="wrap_content"
     android:id="@+id/lainingfeature"
     android:orientation="horizontal">
+
     <ImageView
         android:layout_width="32sp"
         android:layout_height="32sp"
-        app:srcCompat="@drawable/map_icon"
-        />
+        app:srcCompat="@drawable/map_icon" />
 
     <TextView
         android:textColor="#000000"
@@ -122,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -156,6 +157,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_alignParentRight="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -261,7 +269,32 @@
 
     </LinearLayout>
 
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="right"
+         android:orientation="horizontal">
 
+         <ImageView
+             android:layout_width="32sp"
+             android:layout_height="32sp"
+             app:srcCompat="@drawable/facebook"/>
+
+         <ImageView
+             android:layout_width="32sp"
+             android:layout_height="32sp"
+             app:srcCompat="@drawable/youtube"/>
+
+         <ImageView
+             android:layout_width="32sp"
+             android:layout_height="32sp"
+             app:srcCompat="@drawable/twitter"/>
+
+     </LinearLayout>
+
+
+
+    </LinearLayout>
 
 </LinearLayout>
 

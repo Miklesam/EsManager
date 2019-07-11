@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".practiceactivity"
+        <activity android:name=".MainActivity"
             android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".practiceactivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ClosedPlayoff"
             android:screenOrientation="landscape" />
@@ -57,7 +60,7 @@
             android:name=".TeamName"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">

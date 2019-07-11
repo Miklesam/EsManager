@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,8 +72,8 @@ public class mainstate extends AppCompatActivity {
     ImageView Market;
     ImageView Teamimprove;
     TextView Goldbalance;
-    TextView TeamName;
-    ListView CWList;
+
+
     ArrayList<Teams> TeamsCloseQuals;
     ArrayList<Teams> TeamsOpenQuals;
     ArrayList<Teams> TeamsCW;
@@ -92,6 +93,7 @@ public class mainstate extends AppCompatActivity {
     int Pos5=0;
     int Dayint;
     int QualiWinner;
+    int Playercnt=0;
     int openqual[]= new int[7];
     ArrayList<Players> TheAllPlayers;
 
@@ -102,9 +104,7 @@ public class mainstate extends AppCompatActivity {
     TextView LateGamePoints;
 
     LinearLayout Laining;
-    LinearLayout Farming;
-    LinearLayout Fighting;
-    LinearLayout LateGame;
+
     TextView FansNumber;
     ImageView backtomenu;
 
@@ -126,8 +126,16 @@ public class mainstate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
+
         setContentView(R.layout.activity_mainstate);
        // mSettings = getSharedPreferences(APP_PREFERENCES_NAME, Context.MODE_PRIVATE);
+
+        RelativeLayout view= (RelativeLayout)findViewById(R.id.mainfon);
+
+
+
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
 
 
@@ -144,7 +152,7 @@ public class mainstate extends AppCompatActivity {
 
         FansNumber=findViewById(R.id.FansNumber);
         Play_game=findViewById(R.id.Play_game);
-        TeamName=findViewById(R.id.team_name);
+
         Goldbalance=findViewById(R.id.Goldbalance);
         XPShow=findViewById(R.id.XP);
         DayText=findViewById(R.id.Day);
@@ -248,6 +256,7 @@ public class mainstate extends AppCompatActivity {
         else if (Dayint==10)
         {
             //Play_game.setText("Open");
+            Play_game.setImageResource(R.drawable.openquali);
             gamemode=1;
         }
         else if((Dayint>10)&&(Dayint<15))
@@ -260,6 +269,7 @@ public class mainstate extends AppCompatActivity {
             if (QualiWinner==1)
             {
                 //Play_game.setText("Close");
+                Play_game.setImageResource(R.drawable.closequali);
                 gamemode=3;
             }
             else
@@ -276,6 +286,7 @@ public class mainstate extends AppCompatActivity {
         else if (Dayint==20)
         {
            // Play_game.setText("Open");
+            Play_game.setImageResource(R.drawable.openquali);
             gamemode=1;
         }
         else if((Dayint>20)&&(Dayint<25))
@@ -288,6 +299,7 @@ public class mainstate extends AppCompatActivity {
             if (QualiWinner==1)
             {
                 //Play_game.setText("Close");
+                Play_game.setImageResource(R.drawable.closequali);
                 gamemode=3;
             }
             else
@@ -351,6 +363,40 @@ public class mainstate extends AppCompatActivity {
             team[4]=true;
         }
 
+        for(int i=0; i<5;i++)
+        {
+         if(team[i]==true)
+         {
+             Playercnt=Playercnt+1;
+         }
+        }
+        if(Playercnt==0)
+        {
+            view.setBackgroundResource(R.drawable.zero_players);
+        }
+        else if(Playercnt==1)
+        {
+            view.setBackgroundResource(R.drawable.one_players);
+        }
+        else if(Playercnt==2)
+        {
+            view.setBackgroundResource(R.drawable.two_players);
+        }
+        else if(Playercnt==3)
+        {
+            view.setBackgroundResource(R.drawable.three_players);
+        }
+        else if(Playercnt==4)
+        {
+            view.setBackgroundResource(R.drawable.four_players);
+        }
+        else if(Playercnt==5)
+        {
+            view.setBackgroundResource(R.drawable.five_players);
+        }
+
+
+
         rosterok=team[0]&&team[1]&&team[2]&team[3]&&team[4];
         if(mSettings.contains(GoldBalance)) {
 
@@ -379,7 +425,7 @@ public class mainstate extends AppCompatActivity {
 
 
         Goldbalance.setText(Gold);
-        TeamName.setText("Команда "+YourTeam);
+
 
         if(QualiWinner==1)
         {
