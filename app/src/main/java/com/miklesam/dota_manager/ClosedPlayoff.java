@@ -357,7 +357,7 @@ public class ClosedPlayoff extends AppCompatActivity {
             {
                 Teamsplayoff[9].setText(YourTeam);
                 Teamsplayofflogo[9].setImageResource(R.drawable.teamlogo);
-                editor.putString(ClosedPlayofStage, "4");
+                editor.putString(ClosedPlayofStage, "5");
                 editor.putString(ClosePlayoff9, "0");
 
                 editor.putString(ClosePlayoff11, "1");
@@ -481,6 +481,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
             editor.apply();
         }
+
 
         else if(ClosedPlayofStageint==6)
         {
@@ -637,11 +638,8 @@ public class ClosedPlayoff extends AppCompatActivity {
 
 
 
-
-
-
-
         }
+
 
 
         if(ClosedPlayofStageint>5)
@@ -721,6 +719,26 @@ public class ClosedPlayoff extends AppCompatActivity {
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
+                    else if (ClosedPlayofStageint==5)
+                    {
+
+                        Teamsplayoff[11].setText(AllPlayoffTeams.get(enemyteam[1]).teamname);
+                        Teamsplayofflogo[11].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
+                        editor.putString(ClosedPlayofStage, "6");
+                        editor.putString(ClosePlayoff12, "1");
+
+                        editor.putString(CloseScore9, "2");
+                        editor.putString(CloseScore10, "1");
+
+                        Scoreplayoff[8].setText("2");
+                        Scoreplayoff[9].setText("1");
+                        Scoreplayoff[10].setText("0");
+                        Scoreplayoff[11].setText("0");
+                        //editor.apply();
+                        //ClosedPlayofStageint=6;
+
+                    }
+
                     else if (ClosedPlayofStageint==4)
                     {
 
@@ -744,6 +762,8 @@ public class ClosedPlayoff extends AppCompatActivity {
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
+
+
 
                     else if (ClosedPlayofStageint==6)
                     {

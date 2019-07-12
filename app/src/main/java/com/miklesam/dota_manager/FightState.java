@@ -883,7 +883,7 @@ public class FightState extends AppCompatActivity {
                     }
 
 
-                    else if(ClosedPlayofStageint==4)
+                    else if(ClosedPlayofStageint==5)
                     {
 
                         if (stage4top==0)
