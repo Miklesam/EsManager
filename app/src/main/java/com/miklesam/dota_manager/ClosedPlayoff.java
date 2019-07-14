@@ -99,7 +99,7 @@ public class ClosedPlayoff extends AppCompatActivity {
     int Score[] = new int[12];
     int Teamsplayoffs[]=new int [12];
     int Dayint;
-
+    boolean   to_final=false;
     int ClosedPlayofStageint;
 
     @Override
@@ -357,7 +357,7 @@ public class ClosedPlayoff extends AppCompatActivity {
             {
                 Teamsplayoff[9].setText(YourTeam);
                 Teamsplayofflogo[9].setImageResource(R.drawable.teamlogo);
-                editor.putString(ClosedPlayofStage, "5");
+                editor.putString(ClosedPlayofStage, "4");
                 editor.putString(ClosePlayoff9, "0");
 
                 editor.putString(ClosePlayoff11, "1");
@@ -398,16 +398,16 @@ public class ClosedPlayoff extends AppCompatActivity {
                 Teamsplayofflogo[8].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
                 editor.putString(ClosedPlayofStage, "5");
                 editor.putString(ClosePlayoff9, "2");
+                editor.putString(ClosePlayoff10, "1");
                 editor.putString(ClosePlayoff11, "0");
-
-
                 editor.putString(CloseScore5, "2");
                 editor.putString(CloseScore6, "1");
-                editor.putString(ClosePlayoff10, "1");
+
 
 
                 Score[5]=2;
                 Score[6]=1;
+
 
 
             }
@@ -429,6 +429,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                 Score[5]=2;
                 Score[6]=1;
+
             }
             editor.apply();
         }
@@ -469,9 +470,6 @@ public class ClosedPlayoff extends AppCompatActivity {
                 }
                 else if (Score[9]==2)
                 {
-
-
-
                     Teamsplayoff[11].setText(YourTeam);
                     Teamsplayofflogo[11].setImageResource(R.drawable.teamlogo);
                     editor.putString(ClosedPlayofStage, "6");
@@ -681,6 +679,78 @@ public class ClosedPlayoff extends AppCompatActivity {
                 if(ClosedPlayofStageint==9)
                 {
                     playoffplay.setText("Вылет");
+                    editor.putString(CloseScore1, "0");
+                    editor.putString(CloseScore2, "0");
+                    editor.putString(CloseScore3, "0");
+                    editor.putString(CloseScore4, "0");
+                    editor.putString(CloseScore5, "0");
+                    editor.putString(CloseScore6, "0");
+                    editor.putString(CloseScore7, "0");
+                    editor.putString(CloseScore8, "0");
+                    editor.putString(CloseScore9, "0");
+                    editor.putString(CloseScore10, "0");
+                    editor.putString(CloseScore11, "0");
+                    editor.putString(CloseScore12, "0");
+
+                    editor.putString(ClosePlayoff1, "0");
+                    editor.putString(ClosePlayoff2, "0");
+                    editor.putString(ClosePlayoff3, "0");
+                    editor.putString(ClosePlayoff4, "0");
+                    editor.putString(ClosePlayoff5, "0");
+                    editor.putString(ClosePlayoff6, "0");
+                    editor.putString(ClosePlayoff7, "0");
+                    editor.putString(ClosePlayoff8, "0");
+                    editor.putString(ClosePlayoff9, "0");
+                    editor.putString(ClosePlayoff10, "0");
+                    editor.putString(ClosePlayoff11, "0");
+                    editor.putString(ClosePlayoff12, "0");
+
+                    editor.putString(ClosedSeries, "0");
+                    editor.putString(ClosedPlayofStage, "1");
+                    editor.putString(Day, String.valueOf(Dayint+5));
+
+
+                    editor.putString(Closedwin, "0");
+                    editor.putString(Closedlose, "0");
+
+                    editor.putString(CloseWin7, "0");
+                    editor.putString(CloseWin6, "0");
+                    editor.putString(CloseWin5, "0");
+                    editor.putString(CloseWin4, "0");
+                    editor.putString(CloseWin3, "0");
+                    editor.putString(CloseWin2, "0");
+                    editor.putString(CloseWin1, "0");
+
+
+
+
+                    editor.putString(CloseLose7, "0");
+                    editor.putString(CloseLose6, "0");
+                    editor.putString(CloseLose5, "0");
+                    editor.putString(CloseLose4, "0");
+                    editor.putString(CloseLose3, "0");
+                    editor.putString(CloseLose2, "0");
+                    editor.putString(CloseLose1, "0");
+                    editor.putString(OpenQualiWinner, "0");
+
+                    editor.putString(CloseShaffle, "0");
+
+
+                    editor.putString(CloseTeam1, "0");
+                    editor.putString(CloseTeam2, "0");
+                    editor.putString(CloseTeam3, "0");
+                    editor.putString(CloseTeam4, "0");
+                    editor.putString(CloseTeam5, "0");
+                    editor.putString(CloseTeam6, "0");
+                    editor.putString(CloseTeam7, "0");
+                    editor.putString(Mode, "0");
+
+
+
+
+                    editor.apply();
+                    startActivity(Tomainstate);
+
                 }
                 else{
                     if(ClosedPlayofStageint==1)
@@ -726,7 +796,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         Teamsplayofflogo[11].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
                         editor.putString(ClosedPlayofStage, "6");
                         editor.putString(ClosePlayoff12, "1");
-
+                        //ClosePlayoff12
                         editor.putString(CloseScore9, "2");
                         editor.putString(CloseScore10, "1");
 
@@ -734,9 +804,27 @@ public class ClosedPlayoff extends AppCompatActivity {
                         Scoreplayoff[9].setText("1");
                         Scoreplayoff[10].setText("0");
                         Scoreplayoff[11].setText("0");
-                        //editor.apply();
+                        editor.putString(ClosePlayoff12, "2");
                         //ClosedPlayofStageint=6;
 
+                        if(to_final==true)
+                        {
+
+                           ToPickStage.putExtra("EnemyTeam",AllPlayoffTeams.get(enemyteam[2-1]).seq);
+                           ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[2-1]).teamname);
+
+                           ToPickStage.putExtra("Position1",Pos1);
+                           ToPickStage.putExtra("Position2",Pos2);
+                           ToPickStage.putExtra("Position3",Pos3);
+                           ToPickStage.putExtra("Position4",Pos4);
+                           ToPickStage.putExtra("Position5",Pos5);
+                           editor.putString(ClosedPlayofStage, "6");
+                           ToPickStage.putExtra("TeamName",YourTeam);
+                           startActivity(ToPickStage);
+
+                        }
+                        to_final=true;
+                        editor.apply();
                     }
 
                     else if (ClosedPlayofStageint==4)

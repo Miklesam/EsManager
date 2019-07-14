@@ -23,7 +23,7 @@ public class TeamsShow extends AppCompatActivity {
     ArrayList<Teams> ThisTeams;
     LinearLayout TeamInfos;
     ListView teamroosts;
-    Button Backinfo;
+    ImageView Backinfo;
     ImageView FlagImage;
     ImageView signature1;
     ImageView signature2;

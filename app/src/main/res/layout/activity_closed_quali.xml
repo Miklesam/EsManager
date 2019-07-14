@@ -15,10 +15,10 @@
         android:layout_alignParentBottom="true"
         android:text="Вы Заняли"/>
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
+        app:srcCompat="@drawable/next_bttn_canv_2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/Play_btn"/>
@@ -38,6 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#45283c"
                 android:text="Group Stage"
                 />
 
@@ -56,8 +57,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team1"
                     />
                 <TextView
@@ -103,8 +105,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team2"
                     />
                 <TextView
@@ -150,8 +153,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team3"
                     />
                 <TextView
@@ -197,8 +201,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team4"
                     />
                 <TextView
@@ -243,8 +248,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team5"
                     />
                 <TextView
@@ -290,8 +296,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team6"
                     />
                 <TextView
@@ -337,8 +344,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team7"
                     />
                 <TextView
@@ -384,8 +392,9 @@
                     />
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Team8"
                     />
                 <TextView
@@ -438,6 +447,7 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#45283c"
             android:text="Series 1"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -449,6 +459,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series1team1"
                     />
 
@@ -491,11 +502,11 @@
                     />
 
                 <TextView
-                    android:layout_width="150sp"
-                    android:layout_height="wrap_content"
-                    android:text="Team1"
                     android:id="@+id/Series1team2"
-                    />
+                    android:layout_width="150sp"
+                    android:layout_height="20sp"
+                    android:textColor="#45283c"
+                    android:text="Team1" />
 
 
 
@@ -505,6 +516,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#45283c"
                 android:text="Series 2"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -516,6 +528,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series2team1"
                     />
 
@@ -559,8 +572,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series2team2"
                     />
 
@@ -571,7 +585,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Series 3"/>
+                android:text="Series 3"
+                android:textColor="#45283c" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -582,6 +597,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series3team1"
                     />
 
@@ -625,8 +641,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series3team2"
                     />
 
@@ -640,6 +657,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#45283c"
                 android:text="Series 4"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -651,6 +669,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series4team1"
                     />
 
@@ -694,8 +713,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series4team2"
                     />
 
@@ -708,6 +728,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#45283c"
                 android:text="Series 5"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -719,6 +740,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series5team1"
                     />
 
@@ -762,8 +784,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series5team2"
                     />
 
@@ -775,7 +798,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Series 6"/>
+                android:text="Series 6"
+                android:textColor="#45283c" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -786,6 +810,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series6team1"
                     />
 
@@ -829,8 +854,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series6team2"
                     />
 
@@ -843,6 +869,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#45283c"
                 android:text="Series 7"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -854,6 +881,7 @@
                     android:layout_width="150sp"
                     android:layout_height="wrap_content"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series7team1"
                     />
 
@@ -897,8 +925,9 @@
 
                 <TextView
                     android:layout_width="150sp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20sp"
                     android:text="Team1"
+                    android:textColor="#45283c"
                     android:id="@+id/Series7team2"
                     />
 

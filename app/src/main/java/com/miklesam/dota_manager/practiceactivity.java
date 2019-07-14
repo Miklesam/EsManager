@@ -38,14 +38,14 @@ import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class practiceactivity extends AppCompatActivity {
 
-    Button backmainstate;
+    ImageView backmainstate;
     ListView CWList;
     ArrayList<Teams> TeamsCW;
     SharedPreferences mSettings;
     String YourTeam;
     LinearLayout solotrainigLinear;
-    TextView Teams;
-    TextView Solo;
+    ImageView Teams;
+    ImageView Solo;
 
     TextView PlayerName[]=new TextView[5];
     Spinner spin[]=new Spinner[5];
@@ -54,7 +54,7 @@ public class practiceactivity extends AppCompatActivity {
     int Pos3=0;
     int Pos4=0;
     int Pos5=0;
-    Button nextday;
+    ImageView nextday;
     ArrayList<Players> TheAllPlayers;
     ScrollView scrollsolo;
     CountDownTimer Mytimer;
@@ -232,7 +232,16 @@ public class practiceactivity extends AppCompatActivity {
                         Mytimer.cancel();
                         SharedPreferences.Editor editor = mSettings.edit();
                         editor.putString(Fans,fansbalansed);
-                        editor.putString(Day,String.valueOf(Dayint+5));
+
+                        if(Dayint==30)
+                        {
+                            editor.putString(Day, "0");
+                        }
+                        else
+                        {
+                            editor.putString(Day,String.valueOf(Dayint+5));
+                        }
+
                         editor.apply();
                         startActivity(Tomainstate);
                     }

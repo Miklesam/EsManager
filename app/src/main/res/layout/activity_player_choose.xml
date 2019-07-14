@@ -43,6 +43,7 @@
             android:id="@+id/Nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#45283c"
             android:text="Turtle" />
 
 
@@ -58,24 +59,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/laning"
+            android:textColor="#45283c"
             android:text="Лайнинг"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fighting"
+            android:textColor="#45283c"
             android:text="Файтинг"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/farming"
+            android:textColor="#45283c"
             android:text="Фарм"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/supporting"
+            android:textColor="#45283c"
             android:text="Поддержка"/>
 
 
@@ -88,6 +93,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#45283c"
             android:text="Signature"/>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -125,6 +131,7 @@
         android:id="@+id/Description"
         android:layout_width="400sp"
         android:layout_gravity="left"
+        android:textColor="#45283c"
         android:layout_height="wrap_content"
         />
 
@@ -148,6 +155,7 @@
         android:id="@+id/PlayerCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#45283c"
         />
 
     <ImageView
@@ -161,6 +169,7 @@
         android:id="@+id/PlayerFans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#45283c"
         />
 
 </LinearLayout>
@@ -179,15 +188,17 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <Button
+        <ImageView
             android:id="@+id/Buy_Yes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/buy_bttn"
             android:text="Buy_Yes" />
-        <Button
+        <ImageView
             android:id="@+id/Buy_No"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/cancel_bttn"
             android:text="Buy_No" />
 
 
@@ -201,35 +212,33 @@
             android:orientation="horizontal"
             android:layout_gravity="left">
 
-            <Button
+            <ImageView
                 android:id="@+id/Pos1"
                 android:layout_width="100sp"
-                android:layout_height="wrap_content"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/position_1"
                 android:visibility="invisible"
-                android:textSize="12sp"
-                android:text="Позиция 1" />
-            <Button
+                />
+            <ImageView
                 android:id="@+id/Pos2"
                 android:layout_width="100sp"
-                android:layout_height="wrap_content"
+                android:layout_height="40sp"
                 android:visibility="invisible"
-                android:textSize="12sp"
-                android:text="Позиция 2" />
+                app:srcCompat="@drawable/position_2" />
 
-            <Button
+            <ImageView
                 android:id="@+id/Pos3"
                 android:layout_width="100sp"
-                android:layout_height="wrap_content"
+                android:layout_height="40sp"
                 android:visibility="invisible"
-                android:textSize="12sp"
-                android:text="Позиция 3" />
+                app:srcCompat="@drawable/position_3" />
 
-            <Button
+            <ImageView
                 android:id="@+id/Back"
                 android:layout_width="100sp"
-                android:layout_height="wrap_content"
+                android:layout_height="40sp"
                 android:visibility="invisible"
-                android:text="Отмена" />
+                app:srcCompat="@drawable/cancel_100_5" />
 
 
 
@@ -253,16 +262,18 @@
         android:layout_height="50sp"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50sp"
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
             android:id="@+id/Core"
+            app:srcCompat="@drawable/core"
             android:text="Core"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50sp"
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
             android:id="@+id/Support"
+            app:srcCompat="@drawable/support"
             android:text="support"/>
 
 
@@ -323,6 +334,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textSize="20sp"
+                   android:textColor="#45283c"
                    android:id="@+id/Fansbalance"
                    />
 
@@ -337,6 +349,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textSize="20sp"
+                   android:textColor="#45283c"
                    android:id="@+id/Goldbalance"
                    />
            </LinearLayout>
@@ -345,55 +358,68 @@
 
 
 
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="150sp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="20sp"
-                android:id="@+id/Teamnameid"
-                android:text="Собери состав"/>
+                android:orientation="vertical"
+                android:layout_gravity="right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25sp"
+                    android:layout_gravity="center"
+                    android:textSize="20sp"
+                    android:id="@+id/Teamnameid"
+                    android:textColor="#45283c"
+                    android:text="Собери состав"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/position1"
-                android:textSize="15sp"
-                android:layout_gravity="center"
-                android:text="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20sp"
+                    android:id="@+id/position1"
+                    android:textSize="15sp"
+                    android:layout_gravity="left"
+                    android:textColor="#45283c"
+                    android:text="1"/>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/position2"
-                android:textSize="15sp"
-                android:layout_gravity="center"
-                android:text="2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20sp"
+                    android:id="@+id/position2"
+                    android:textSize="15sp"
+                    android:textColor="#45283c"
+                    android:layout_gravity="left"
+                    android:text="2"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/position3"
-                android:layout_gravity="center"
-                android:textSize="15sp"
-                android:text="3"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20sp"
+                    android:id="@+id/position3"
+                    android:textColor="#45283c"
+                    android:layout_gravity="left"
+                    android:textSize="15sp"
+                    android:text="3"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:layout_gravity="center"
-                android:id="@+id/position4"
-                android:text="4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20sp"
+                    android:textSize="15sp"
+                    android:textColor="#45283c"
+                    android:layout_gravity="left"
+                    android:id="@+id/position4"
+                    android:text="4"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:id="@+id/position5"
-                android:layout_gravity="center"
-                android:text="5"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20sp"
+                    android:textSize="15sp"
+                    android:id="@+id/position5"
+                    android:textColor="#45283c"
+                    android:layout_gravity="left"
+                    android:text="5"/>
+
+            </LinearLayout>
+
 
 
 
@@ -408,10 +434,10 @@
 
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next_Stage"
+    <ImageView
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        app:srcCompat="@drawable/next_bttn_canv_2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:id="@+id/NextStage"

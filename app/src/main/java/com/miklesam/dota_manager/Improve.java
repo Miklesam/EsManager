@@ -19,7 +19,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class Improve extends AppCompatActivity {
-    Button backtomain;
+    ImageView backtomain;
     TextView ExLaining;
     TextView ExFarming;
     TextView ExFighting;
@@ -47,7 +47,7 @@ public class Improve extends AppCompatActivity {
     int cnt_plus_fighting;
     int cnt_plus_lategame;
     boolean changexp;
-    Button saveimprovements;
+    ImageView saveimprovements;
 
     TextView XPcnt;
 
@@ -126,7 +126,7 @@ public class Improve extends AppCompatActivity {
                 }
                 else
                 {
-                    backtomain.setText("Back");
+                    backtomain.setImageResource(R.drawable.back_bttn);
                     changexp=false;
                     cnt_plus_laining=0;
                     cnt_plus_farming=0;
@@ -172,7 +172,7 @@ public class Improve extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    backtomain.setText("Back");
+                    backtomain.setImageResource(R.drawable.back_bttn);
                     changexp=false;
                     cnt_plus_laining=0;
                     cnt_plus_farming=0;
@@ -215,7 +215,7 @@ public class Improve extends AppCompatActivity {
                     XPcnt.setText(String.valueOf(XPint));
                     ExLainingint=ExLainingint+1;
                     ExLaining.setText(String.valueOf(ExLainingint));
-                    backtomain.setText("Отмена");
+                    backtomain.setImageResource(R.drawable.cancel_bttn);
                     changexp=true;
                 }
 
@@ -252,7 +252,7 @@ public class Improve extends AppCompatActivity {
                     XPcnt.setText(String.valueOf(XPint));
                     ExFarmingint=ExFarmingint+1;
                     ExFarming.setText(String.valueOf(ExFarmingint));
-                    backtomain.setText("Отмена");
+                    backtomain.setImageResource(R.drawable.cancel_bttn);
                     changexp=true;
                 }
 
@@ -290,7 +290,7 @@ public class Improve extends AppCompatActivity {
                     XPcnt.setText(String.valueOf(XPint));
                     ExFightingint=ExFightingint+1;
                     ExFighting.setText(String.valueOf(ExFightingint));
-                    backtomain.setText("Отмена");
+                    backtomain.setImageResource(R.drawable.cancel_bttn);
                     changexp=true;
                 }
 
@@ -329,7 +329,7 @@ public class Improve extends AppCompatActivity {
                     XPcnt.setText(String.valueOf(XPint));
                     ExLateint=ExLateint+1;
                     ExLateGame.setText(String.valueOf(ExLateint));
-                    backtomain.setText("Отмена");
+                    backtomain.setImageResource(R.drawable.cancel_bttn);
                     changexp=true;
                 }
 

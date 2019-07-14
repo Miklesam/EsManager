@@ -8,13 +8,13 @@
     android:background="#cbe1e9"
     tools:context=".FightState">
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lobby"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:id="@+id/tomainstance"
+        app:srcCompat="@drawable/next_bttn_canv_2"
         android:visibility="invisible"
         />
 

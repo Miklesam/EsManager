@@ -8,21 +8,23 @@
     android:background="#cbe1e9"
     tools:context=".TeamsShow">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="150sp"
+        android:layout_height="40sp"
         android:id="@+id/Backs"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="Back"
+        app:srcCompat="@drawable/back_bttn"
         />
 
 
     <ListView
-        android:layout_width="match_parent"
+        android:id="@+id/TeamList"
+        android:layout_width="400sp"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:id="@+id/TeamList">
+        android:dividerHeight="0dp"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none">
 
     </ListView>
 

@@ -75,7 +75,7 @@ public class ClosedQuali extends AppCompatActivity {
 
     SharedPreferences mSettings;
     String YourTeam;
-    Button Play_btn;
+    ImageView Play_btn;
     int Pos1=0;
     int Pos2=0;
     int Pos3=0;
@@ -394,7 +394,8 @@ public class ClosedQuali extends AppCompatActivity {
         {
             AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли в плей-офф");
             playoff=true;
-            Play_btn.setText("Playoff");
+            //Play_btn.setText("Playoff");
+            Play_btn.setImageResource(R.drawable.shop);
         }
         else
         {

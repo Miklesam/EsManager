@@ -31,11 +31,12 @@ public class Pick_Stage extends AppCompatActivity {
     final ImageView Pick_stage[]= new ImageView[22];
     ImageView Heros_icon[] = new ImageView[117];
     int pick_state;
-    Button Plan_state;
+    ImageView Plan_state;
     int[] what_hero = new int[5];
     int[] comp_hero = new int[5];
     int k=0;
     TextView HelpText;
+    TextView timeleft;
     CountDownTimer Mytimer;
     CountDownTimer Enemytimer;
     String TeamName;
@@ -61,6 +62,7 @@ public class Pick_Stage extends AppCompatActivity {
         setContentView(R.layout.activity_pick__stage);
         Plan_state=findViewById(R.id.Plan_state);
         Plan_state.setVisibility(View.INVISIBLE);
+        timeleft=findViewById(R.id.timeleft);
         AllHeroes.clear();
         HeroList.addAll(HeroInit.HeroInit());
         YourTeamName=findViewById(R.id.Yourteam);
@@ -488,12 +490,14 @@ public class Pick_Stage extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
                 {
-                    HelpText.setText("Бан "+EnemyName+" Осталось: "
+                    HelpText.setText("Бан "+EnemyName);
+                    timeleft.setText(""
                             +2+ millisUntilFinished / 1000);
                 }
                 else
                 {
-                    HelpText.setText("Пик "+EnemyName+" Осталось: "
+                    HelpText.setText("Пик "+EnemyName);
+                    timeleft.setText(""
                             +2+ millisUntilFinished / 1000);
                 }
 
@@ -516,12 +520,15 @@ public class Pick_Stage extends AppCompatActivity {
 
                 if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
                 {
-                    HelpText.setText("Бан "+TeamName+" Осталось: "
+                    HelpText.setText("Бан "+TeamName);
+                    timeleft.setText(""
                             + millisUntilFinished / 1000);
                 }
                 else
                 {
                     HelpText.setText("Пик "+TeamName+" Осталось: "
+                            + millisUntilFinished / 1000);
+                    timeleft.setText(""
                             + millisUntilFinished / 1000);
                 }
 
@@ -559,7 +566,7 @@ public class Pick_Stage extends AppCompatActivity {
             Heros_icon[i].setOnClickListener(new View.OnClickListener() {
                                                  @Override
                                                  public void onClick(View v) {
-                if (youlocked==false)
+                if ((youlocked==false)&&(k<5))
                 {
 
                                                      if (HeroList.get(finalI).baned == false) {

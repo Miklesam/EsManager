@@ -25,6 +25,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenScore1;
+import static com.miklesam.dota_manager.YourTeam.OpenScore10;
 import static com.miklesam.dota_manager.YourTeam.OpenScore2;
 import static com.miklesam.dota_manager.YourTeam.OpenScore3;
 import static com.miklesam.dota_manager.YourTeam.OpenScore4;
@@ -60,7 +61,7 @@ public class OpenQuali extends AppCompatActivity {
     private static final String TAG = "MyApp";
     String YourTeam;
     SharedPreferences mSettings;
-    Button openplaybtn;
+    ImageView openplaybtn;
     int Pos1=0;
     int Pos2=0;
     int Pos3=0;
@@ -274,7 +275,8 @@ public class OpenQuali extends AppCompatActivity {
             else
             {
                 losequal=true;
-                openplaybtn.setText("Покинуть квалификацию");
+                openplaybtn.setImageResource(R.drawable.leave_bttn);
+                //openplaybtn.setText("Покинуть квалификацию");
                 OpenSemi[0]=OpenTeamQual[0];
                 QuatersFinalsText[8].setText(AllOpenTeams.get(OpenTeamQual[0]).teamname);
                 QuatersFinals[8].setImageResource(AllOpenTeams.get(OpenTeamQual[0]).logo);
@@ -315,22 +317,39 @@ public class OpenQuali extends AppCompatActivity {
             if (semiwon==1)
             {
                 editor.putString(OpenScore9, "1");
+                editor.putString(OpenScore10, "0");
                 QuatersFinalsText[12].setText(YourTeam);
                 Scoreboard[8].setText("1");
+                Scoreboard[9].setText("0");
                 QuatersFinals[12].setImageResource(R.drawable.teamlogo);
             }
             else
             {
                 losequal=true;
-                openplaybtn.setText("Покинуть квалификацию");
+                openplaybtn.setImageResource(R.drawable.leave_bttn);
+                //openplaybtn.setText("Покинуть квалификацию");
                 //OpenSemi[0]=OpenTeamQual[0];
                 //scoreboardint[0]=0;
                 //editor.putString(OpenScore1, "0");
                 OpenFinalsteam[0]=OpenSemi[1];
+                editor.putString(OpenScore9, "0");
+                editor.putString(OpenScore10, "1");
+                OpenSemi[0]=OpenTeamQual[0];
+                QuatersFinalsText[12].setText(AllOpenTeams.get(OpenSemi[1]).teamname);
+                QuatersFinals[12].setImageResource(AllOpenTeams.get(OpenSemi[1]).logo);
+
+                Scoreboard[8].setText("0");
+                Scoreboard[9].setText("1");
+
+
+
+
+
             }
 
             OpenFinalsteam[1]=OpenSemi[2];
             Scoreboard[10].setText("1");
+            Scoreboard[11].setText("0");
             QuatersFinals[13].setImageResource(AllOpenTeams.get(OpenFinalsteam[1]).logo);
             QuatersFinalsText[13].setText(AllOpenTeams.get(OpenFinalsteam[1]).teamname);
 
@@ -347,7 +366,8 @@ public class OpenQuali extends AppCompatActivity {
            else
            {
                losequal=true;
-               openplaybtn.setText("Покинуть квалификацию");
+               openplaybtn.setImageResource(R.drawable.leave_bttn);
+               //openplaybtn.setText("Покинуть квалификацию");
                Scoreboard[12].setText("0");
                Scoreboard[13].setText("1");
            }

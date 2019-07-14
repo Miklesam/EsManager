@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -121,8 +122,8 @@ public class PlayerChoose extends AppCompatActivity {
 
     ListView CorelistView;
     ListView SupportlistView;
-    Button CoreChoose;
-    Button SupportChoose;
+    ImageView CoreChoose;
+    ImageView SupportChoose;
     LinearLayout PlayerInformation;
     TextView PlayerNickName;
     TextView PlayerDiscription;
@@ -137,12 +138,12 @@ public class PlayerChoose extends AppCompatActivity {
     TextView position4;
     TextView position5;
 
-    Button Buy_Yes;
-    Button Buy_No;
-    Button Pos1;
-    Button Pos2;
-    Button Pos3;
-    Button Back;
+    ImageView Buy_Yes;
+    ImageView Buy_No;
+    ImageView Pos1;
+    ImageView Pos2;
+    ImageView Pos3;
+    ImageView Back;
     String balancegold;
     SharedPreferences mSettings;
 
@@ -179,7 +180,7 @@ public class PlayerChoose extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_player_choose);
-        final Button NextStage = findViewById(R.id.NextStage);
+        final ImageView NextStage = findViewById(R.id.NextStage);
         CoreChoose =findViewById(R.id.Core);
         SupportChoose =findViewById(R.id.Support);
         PlayerInformation=findViewById(R.id.PlayerInfo);
@@ -519,8 +520,10 @@ public class PlayerChoose extends AppCompatActivity {
                 if (sup_pick==true)
                 {
                     sup_pick=false;
-                    Pos2.setText("Позиция 2");
-                    Pos3.setText("Позиция 3");
+                    //Pos2.setText("Позиция 2");
+                    Pos2.setImageResource(R.drawable.position_2);
+                    Pos3.setImageResource(R.drawable.position_3);
+                    //Pos3.setText("Позиция 3");
                 }
 
 
@@ -554,10 +557,12 @@ public class PlayerChoose extends AppCompatActivity {
                 else if (SupportPick==true)
                 {
                     sup_pick=true;
-                    Pos2.setText("Позиция 4");
+                    //Pos2.setText("Позиция 4");
+                    Pos2.setImageResource(R.drawable.position_4);
                     Pos2.setVisibility(View.VISIBLE);
 
-                    Pos3.setText("Позиция 5");
+                    //Pos3.setText("Позиция 5");
+                    Pos3.setImageResource(R.drawable.position_5);
                     Pos3.setVisibility(View.VISIBLE);
                     Back.setVisibility(View.VISIBLE);
 
@@ -654,8 +659,10 @@ public class PlayerChoose extends AppCompatActivity {
                             CoreChoose.setVisibility(View.VISIBLE);
                             SupportChoose.setVisibility(View.VISIBLE);
                             PlayerInformation.setVisibility(View.INVISIBLE);
-                            Pos2.setText("Позиция 2");
-                            Pos3.setText("Позиция 3");
+                            Pos2.setImageResource(R.drawable.position_2);
+                            Pos3.setImageResource(R.drawable.position_3);
+                            //Pos2.setText("Позиция 2");
+                            //Pos3.setText("Позиция 3");
                             Supports.remove(last_position);
                             SupportlistView.setAdapter(mysupAdapter);
                             sup_pick=false;
@@ -772,8 +779,11 @@ public class PlayerChoose extends AppCompatActivity {
                             CoreChoose.setVisibility(View.VISIBLE);
                             SupportChoose.setVisibility(View.VISIBLE);
                             PlayerInformation.setVisibility(View.INVISIBLE);
-                            Pos2.setText("Позиция 2");
-                            Pos3.setText("Позиция 3");
+                            //Pos2.setText("Позиция 2");
+                            //Pos3.setText("Позиция 3");
+
+                            Pos2.setImageResource(R.drawable.position_2);
+                            Pos3.setImageResource(R.drawable.position_3);
                             Supports.remove(last_position);
                             SupportlistView.setAdapter(mysupAdapter);
                             sup_pick=false;

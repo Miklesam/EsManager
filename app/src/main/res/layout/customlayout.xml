@@ -20,8 +20,9 @@
         android:id="@+id/Titile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:paddingLeft="10sp"
+        android:textColor="#45283c"
         android:text="TextView" />
 </LinearLayout>
 
@@ -32,7 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:paddingLeft="10sp"
+        android:textColor="#45283c"
         android:text="TextView"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
 </RelativeLayout>

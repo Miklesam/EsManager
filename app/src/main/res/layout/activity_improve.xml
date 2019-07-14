@@ -16,16 +16,16 @@
         android:layout_alignParentBottom="true">
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/save_bttn"
             android:id="@+id/saveimprovements"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/back_bttn"
             android:id="@+id/backtomain"/>
 
 
@@ -47,10 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Improve"/>
+
 
 
                 <LinearLayout
@@ -63,6 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="XP"
+                        android:textColor="#45283c"
                         android:id="@+id/xpword"
                         />
 
@@ -70,6 +68,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/xpcnt"
+                        android:textColor="#45283c"
                         android:layout_alignRight="@+id/xpword"
                         />
 
@@ -110,7 +109,8 @@
                         android:layout_marginLeft="5sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Laining"/>
+                        android:text="Laining"
+                        android:textColor="#45283c"/>
 
                 </LinearLayout>
 
@@ -120,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/ExtraLaining"
+                    android:textColor="#45283c"
                     android:text="0"/>
 
 
@@ -182,6 +183,7 @@
                         android:layout_marginLeft="5sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#45283c"
                         android:text="Farm"/>
 
                 </LinearLayout>
@@ -191,6 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="0"
+                    android:textColor="#45283c"
                     android:id="@+id/ExtraFarming"/>
 
 
@@ -251,6 +254,7 @@
                         android:layout_marginLeft="5sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#45283c"
                         android:text="Fight"/>
 
                 </LinearLayout>
@@ -260,6 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="0"
+                    android:textColor="#45283c"
                     android:id="@+id/ExtraFighting"/>
 
 
@@ -320,6 +325,7 @@
                         android:layout_marginLeft="5sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#45283c"
                         android:text="LateGame"/>
 
                 </LinearLayout>
@@ -329,6 +335,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="0"
+                    android:textColor="#45283c"
                     android:id="@+id/ExtraLateGame"/>
 
 

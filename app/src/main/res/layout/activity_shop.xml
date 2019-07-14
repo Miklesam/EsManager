@@ -8,11 +8,11 @@
     android:background="#cbe1e9"
     tools:context=".Shop">
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
         android:id="@+id/back_from_shop"
+        app:srcCompat="@drawable/back_bttn"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         />
@@ -22,44 +22,115 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inapp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="10000gold"
-                android:gravity="right"/>
-
-
-        </LinearLayout>
 
 
 
         <LinearLayout
+            android:layout_marginTop="50sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50sp"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_marginLeft="55sp"
+                android:layout_width="150sp"
+                android:layout_height="40sp"
                 android:text="Rewarded"
+                app:srcCompat="@drawable/ad_bttn"
                 android:id="@+id/rewarded"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1500gold"
+                android:textColor="#45283c"
+                android:text="+1500gold"
+                android:textSize="20sp"
+                android:gravity="right"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="55sp"
+                android:layout_height="45sp"
+                app:srcCompat="@drawable/epic"
+                />
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/epic_bttn"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5000gold"
+                android:textSize="20sp"
+                android:textColor="#45283c"
+                android:gravity="right"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="55sp"
+                android:layout_height="48sp"
+                app:srcCompat="@drawable/rare"
+                />
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/rare_bttn"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15000gold"
+                android:textSize="20sp"
+                android:textColor="#45283c"
+                android:gravity="right"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="55sp"
+                android:layout_height="48sp"
+                app:srcCompat="@drawable/legendary"
+                />
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="40sp"
+                app:srcCompat="@drawable/legendaryjpg"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30000gold"
+                android:textSize="20sp"
+                android:textColor="#45283c"
                 android:gravity="right"/>
 
 

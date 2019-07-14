@@ -107,7 +107,7 @@ public class FightState extends AppCompatActivity {
     TextView GoldKeff;
     TextView latekeff;
     TextView LoseOrWin;
-    Button tomainstance;
+    ImageView tomainstance;
     int winloose;
     SharedPreferences mSettings;
     int TournMode;
@@ -625,10 +625,12 @@ public class FightState extends AppCompatActivity {
                         if (winloose==1)
                         {
                             editor.putString(Closedwin, String.valueOf(Closedwinint+1));
+                            CloseLose7int=CloseLose7int+1;
                         }
                         else if(winloose==2)
                         {
                             editor.putString(Closedlose, String.valueOf(Closedloseint+1));
+                            CloseWin7int=CloseWin7int+1;
                         }
 
                         //1-2
@@ -883,7 +885,7 @@ public class FightState extends AppCompatActivity {
                     }
 
 
-                    else if(ClosedPlayofStageint==5)
+                    else if(ClosedPlayofStageint==4)
                     {
 
                         if (stage4top==0)

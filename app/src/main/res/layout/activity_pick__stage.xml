@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     android:background="#cbe1e9"
     tools:context=".Pick_Stage">
+
+    <TextView
+        android:layout_marginTop="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="#45283c"
+        android:id="@+id/timeleft"/>
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -19,8 +28,10 @@
         android:gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100sp"
+            android:gravity="right"
+            android:textColor="#45283c"
+            android:layout_height="20sp"
             android:id="@+id/Yourteam"
             android:text="team1"/>
 
@@ -30,6 +41,7 @@
             android:layout_marginRight="10sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#45283c"
             android:text="vs"/>
 
 
@@ -37,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="team2"
+            android:textColor="#45283c"
             android:id="@+id/EnemyteamName"/>
 
 
@@ -44,8 +57,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20sp"
         android:gravity="center"
+        android:textColor="#45283c"
         android:id="@+id/Help"/>
 
 
@@ -94,6 +108,8 @@
                 app:srcCompat="@drawable/ban"/>
 
         </LinearLayout>
+
+
 
 
         <LinearLayout
@@ -1172,13 +1188,13 @@
 
 
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<ImageView
+    android:layout_width="150sp"
+    android:layout_height="40sp"
     android:id="@+id/Plan_state"
     android:layout_alignParentBottom="true"
     android:layout_alignParentRight="true"
-    android:text="Стадия"/>
+    app:srcCompat="@drawable/next_bttn_canv_2"/>
 
 
 

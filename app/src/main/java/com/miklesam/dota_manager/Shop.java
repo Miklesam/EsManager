@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Shop extends AppCompatActivity {
 
-    Button back_from_shopbut;
-    Button rewardedBut;
+    ImageView back_from_shopbut;
+    ImageView rewardedBut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

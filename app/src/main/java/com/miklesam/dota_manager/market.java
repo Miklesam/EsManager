@@ -36,11 +36,11 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class market extends AppCompatActivity {
-    Button Backtomain;
+    ImageView Backtomain;
     ListView CorelistView;
     ListView SupportlistView;
-    Button CoreChoose;
-    Button SupportChoose;
+    ImageView CoreChoose;
+    ImageView SupportChoose;
 
     ScrollView scrollscroll;
     ArrayList<Players> Cores = new ArrayList<Players>();
@@ -76,14 +76,14 @@ public class market extends AppCompatActivity {
 
     int last_position_player;
     int last_position;
-    Button Back;
+    ImageView Back;
 
-    Button Posi1;
-    Button Posi2;
-    Button Posi3;
-    Button Buy_Yes;
-    Button Buy_No;
-    Button Sell;
+    ImageView Posi1;
+    ImageView Posi2;
+    ImageView Posi3;
+    ImageView Buy_Yes;
+    ImageView Buy_No;
+    ImageView Sell;
 
     boolean SupportPick;
     boolean sup_pick;
@@ -94,9 +94,9 @@ public class market extends AppCompatActivity {
     boolean team[]=new boolean[5];
     int playerseq[]=new int[5];
     int sellposition;
-    Button tostore;
-    Button toback;
-    Button torewardbtn;
+    ImageView tostore;
+    ImageView toback;
+    ImageView torewardbtn;
     TextView Fansbalance;
     String fansbalansed;
 
@@ -374,8 +374,10 @@ public class market extends AppCompatActivity {
                 Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
                 last_position=position;
                 last_position_player=Cores.get(position).sequence;
-                Posi2.setText("Позиция 2");
-                Posi3.setText("Позиция 3");
+                //Posi2.setText("Позиция 2");
+                //Posi3.setText("Позиция 3");
+                Posi2.setImageResource(R.drawable.position_2);
+                Posi3.setImageResource(R.drawable.position_3);
 
             }
         });
@@ -410,8 +412,10 @@ public class market extends AppCompatActivity {
 
                 last_position=position;
                 last_position_player=Supports.get(position).sequence;
-                Posi2.setText("Позиция 4");
-                Posi3.setText("Позиция 5");
+                //Posi2.setText("Позиция 4");
+                //Posi3.setText("Позиция 5");
+                Posi2.setImageResource(R.drawable.position_4);
+                Posi3.setImageResource(R.drawable.position_5);
 
             }
         });
@@ -442,7 +446,7 @@ public class market extends AppCompatActivity {
                 if ( sellgoes==true)
                 {
                     sellgoes=false;
-                    Buy_Yes.setText("Buy_Yes");
+                    Buy_Yes.setImageResource(R.drawable.buy_bttn);
 
 
                     CorelistView.setVisibility(View.VISIBLE);
@@ -468,10 +472,15 @@ public class market extends AppCompatActivity {
 
                     } else if (SupportPick == true) {
                         sup_pick = true;
-                        Posi2.setText("Позиция 4");
+                        //Posi2.setText("Позиция 4");
+                        Posi2.setImageResource(R.drawable.position_4);
                         Posi2.setVisibility(View.VISIBLE);
 
-                        Posi3.setText("Позиция 5");
+
+
+
+                        //Posi3.setText("Позиция 5");
+                        Posi3.setImageResource(R.drawable.position_5);
                         Posi3.setVisibility(View.VISIBLE);
                         Back.setVisibility(View.VISIBLE);
 
@@ -505,8 +514,10 @@ public class market extends AppCompatActivity {
                 if (sup_pick==true)
                 {
                     sup_pick=false;
-                    Posi2.setText("Позиция 2");
-                    Posi3.setText("Позиция 3");
+                    //Posi2.setText("Позиция 2");
+                    //Posi3.setText("Позиция 3");
+                    Posi2.setImageResource(R.drawable.position_2);
+                    Posi3.setImageResource(R.drawable.position_3);
                 }
 
 
@@ -538,7 +549,7 @@ public class market extends AppCompatActivity {
                     sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
                     Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_Yes.setText("Отмена");
+                    Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos1).Flag);
@@ -590,7 +601,7 @@ public class market extends AppCompatActivity {
                     sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
                     Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_Yes.setText("Отмена");
+                    Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos2).Flag);
@@ -644,7 +655,7 @@ public class market extends AppCompatActivity {
                     sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
                     Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_Yes.setText("Отмена");
+                    Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos3).Flag);
@@ -702,7 +713,7 @@ public class market extends AppCompatActivity {
                     sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
                     Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_Yes.setText("Отмена");
+                    Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos4).Flag);
@@ -753,7 +764,7 @@ public class market extends AppCompatActivity {
                     sellgoes=true;
                     Sell.setVisibility(View.VISIBLE);
                     Buy_Yes.setVisibility(View.VISIBLE);
-                    Buy_Yes.setText("Отмена");
+                    Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
                     FlagIma.setImageResource(AllPlayers.get(Pos5).Flag);
@@ -812,7 +823,7 @@ public class market extends AppCompatActivity {
                 Fansbalance.setText(fansbalansed);
 
                 sellgoes=false;
-                Buy_Yes.setText("Buy_Yes");
+                Buy_Yes.setImageResource(R.drawable.buy_bttn);
                 if (sellposition==0)
                 {
                     Team[0].setText("1.");

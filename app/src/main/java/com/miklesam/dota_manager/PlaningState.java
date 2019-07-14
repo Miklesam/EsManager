@@ -38,7 +38,7 @@ public class PlaningState extends AppCompatActivity {
     boolean bottomlline[]= new boolean[5];
 
 
-    Button ToFightStage;
+    ImageView ToFightStage;
     int lane_id[]= new int[5];
 
     Spinner LineSpin[]=new Spinner[5];

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class YourTeam extends AppCompatActivity {
@@ -145,7 +146,7 @@ public class YourTeam extends AppCompatActivity {
         final Intent ChoosePlayer = new Intent(this, PlayerChoose.class);
         final TextView TeamTag=findViewById(R.id.TeamTag);
         TextView Gold=findViewById(R.id.gold);
-        Button toPlayerChoose = findViewById(R.id.toPlayerChoose);
+        ImageView toPlayerChoose = findViewById(R.id.toPlayerChoose);
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME , Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance , Context.MODE_PRIVATE);
 

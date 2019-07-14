@@ -11,7 +11,7 @@
     tools:context=".mainstate">
 
     <ImageView
-        android:layout_width="140sp"
+        android:layout_width="150sp"
         android:layout_height="40sp"
         android:id="@+id/backtomenu"
         android:layout_alignParentBottom="true"
@@ -33,6 +33,7 @@
             android:layout_marginTop="5sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#45283c"
             android:id="@+id/InfoBlock"/>
 
 <LinearLayout
@@ -127,17 +128,17 @@
 
 
             <ImageView
-                android:layout_width="140sp"
+                android:id="@+id/Play_game"
+                android:layout_width="150sp"
                 android:layout_height="40sp"
-                app:srcCompat="@drawable/practice_rttn"
-                android:id="@+id/Play_game"/>
+                app:srcCompat="@drawable/practice_bttn" />
             <ImageView
-                android:layout_width="140sp"
+                android:layout_width="150sp"
                 android:layout_height="40sp"
                 android:id="@+id/Market"
-                app:srcCompat="@drawable/market_bttn_bttn"/>
+                app:srcCompat="@drawable/market_bttn"/>
             <ImageView
-                android:layout_width="140sp"
+                android:layout_width="150sp"
                 android:layout_height="40sp"
                 app:srcCompat="@drawable/team_bttn"
                 android:id="@+id/Teamimprove"/>
@@ -183,6 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textColor="#45283c"
             android:id="@+id/XP"
             android:text="0"/>
 
@@ -202,6 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textColor="#45283c"
             android:id="@+id/Year"
             android:text="0"/>
         <TextView
@@ -218,6 +221,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:id="@+id/Month"
+            android:textColor="#45283c"
             android:text="0"/>
         <TextView
             android:layout_marginLeft="2sp"
@@ -233,6 +237,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:id="@+id/Day"
+            android:textColor="#45283c"
             android:text="0"/>
 
 
@@ -248,6 +253,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textColor="#45283c"
             android:id="@+id/FansNumber"
             />
 
@@ -263,6 +269,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textColor="#45283c"
             android:id="@+id/Goldbalance"
             android:text="Золото"/>
 

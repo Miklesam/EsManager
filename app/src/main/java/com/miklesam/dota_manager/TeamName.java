@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class TeamName extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class TeamName extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_team_name);
-        Button Next = findViewById(R.id.next);
+        ImageView Next = findViewById(R.id.next);
         final EditText TeamName = findViewById(R.id.TeamName);
 
 
