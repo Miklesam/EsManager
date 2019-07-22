@@ -8,38 +8,107 @@
     android:background="@drawable/fonnn"
     tools:context=".YourTeam">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+
+
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:scrollbars="none">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/TeamTag"
-            android:text="Welcome"
-            android:textSize="20sp"/>
-        <TextView
-            android:layout_marginTop="30sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/gold"
-            android:text="Gold"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TeamTag"
+                android:text="Welcome"
+                android:textColor="#45283c"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_marginTop="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#45283c"
+                android:id="@+id/gold"
+                android:text="Gold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#45283c"
+                android:id="@+id/infoText"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#45283c"
+                    android:id="@+id/fans"/>
+
+                <ImageView
+                    android:layout_width="22sp"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="10sp"
+                    app:srcCompat="@drawable/people" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#45283c"
+                    android:id="@+id/money"/>
+
+                <ImageView
+                    android:layout_marginLeft="10sp"
+                    android:layout_width="25sp"
+                    android:layout_height="30sp"
+                    app:srcCompat="@drawable/rubl"
+                    />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#45283c"
+                android:id="@+id/cont"/>
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="40sp"
+               android:layout_gravity="center"
+                app:srcCompat="@drawable/next"
+                android:id="@+id/toPlayerChoose"
+                android:text="Next"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="150sp"
-        android:layout_height="40sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/next"
-        android:id="@+id/toPlayerChoose"
-        android:text="Next"/>
 
 
 

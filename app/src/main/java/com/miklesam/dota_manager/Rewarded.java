@@ -3,10 +3,11 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +25,18 @@ public class Rewarded extends AppCompatActivity implements RewardedVideoAdListen
     private int get_revard;
     SharedPreferences mSettings;
     String GoldBalancesq;
-    Button backsbut;
+    ImageView backsbut;
+
+
+
+    @Override
+    public void onBackPressed() {
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rewarded);
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this, getResources().getString(R.string.app_id));
         backsbut=findViewById(R.id.backs);
         TextView reward_text=findViewById(R.id.reward_text);
         final Intent ToMain = new Intent(this, MainActivity.class);
@@ -43,7 +50,7 @@ public class Rewarded extends AppCompatActivity implements RewardedVideoAdListen
 
             GoldBalancesq =mSettings.getString(GoldBalance, "0");
         }
-
+        reward_text.setText("Wait for the advertisement to load");
         backsbut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +72,7 @@ public class Rewarded extends AppCompatActivity implements RewardedVideoAdListen
     }
 
     private void loadRewardedVideoAd() {
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917",
+        mRewardedVideoAd.loadAd(getResources().getString(R.string.banner_id),
                 new AdRequest.Builder().build());
     }
 

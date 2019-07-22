@@ -8,6 +8,45 @@
     android:background="#cbe1e9"
     tools:context=".Shop">
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right">
+        <ImageView
+            android:layout_marginLeft="10sp"
+            android:layout_width="22sp"
+            android:layout_height="30sp"
+            app:srcCompat="@drawable/people"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#45283c"
+            android:id="@+id/Fansbalance"
+            />
+        <ImageView
+            android:layout_marginLeft="10sp"
+            android:layout_width="25sp"
+            android:layout_height="30sp"
+            app:srcCompat="@drawable/rubl"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#45283c"
+            android:id="@+id/Goldbalance"
+            />
+    </LinearLayout>
+
+
+
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#45283c"
-                android:text="+1500gold"
+                android:text="+1500 rubles"
                 android:textSize="20sp"
                 android:gravity="right"/>
 
@@ -66,13 +105,14 @@
             <ImageView
                 android:layout_width="150sp"
                 android:layout_height="40sp"
+                android:id="@+id/epic_bttn"
                 app:srcCompat="@drawable/epic_bttn"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="5000gold"
+                android:text="+5000 rubles"
                 android:textSize="20sp"
                 android:textColor="#45283c"
                 android:gravity="right"/>
@@ -94,13 +134,14 @@
             <ImageView
                 android:layout_width="150sp"
                 android:layout_height="40sp"
+                android:id="@+id/rare_bttn"
                 app:srcCompat="@drawable/rare_bttn"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="15000gold"
+                android:text="+15000 rubles"
                 android:textSize="20sp"
                 android:textColor="#45283c"
                 android:gravity="right"/>
@@ -122,13 +163,14 @@
             <ImageView
                 android:layout_width="150sp"
                 android:layout_height="40sp"
+                android:id="@+id/legendary_bttn"
                 app:srcCompat="@drawable/legendaryjpg"
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="30000gold"
+                android:text="+30000 rubles"
                 android:textSize="20sp"
                 android:textColor="#45283c"
                 android:gravity="right"/>

@@ -11,20 +11,17 @@
     >
 
 
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="60sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10sp"
+        android:layout_marginBottom="10sp"
+        app:srcCompat="@drawable/russia"
+        android:id="@+id/language"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TestName"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TestGold"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"/>
-
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -52,18 +49,28 @@
 
 
 
-        <ImageView
-            android:layout_width="150sp"
-            android:layout_height="40sp"
-            android:id="@+id/shop"
-            app:srcCompat="@drawable/shop"
-            android:layout_gravity="center"
-            />
+
         <ImageView
             android:layout_width="150sp"
             android:layout_height="40sp"
             android:id="@+id/Teams"
             app:srcCompat="@drawable/teams"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            android:id="@+id/Privacy"
+            app:srcCompat="@drawable/about_project"
+            android:layout_gravity="center"
+            />
+        <ImageView
+            android:layout_width="150sp"
+            android:layout_height="40sp"
+            android:id="@+id/shop"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/shop"
             android:layout_gravity="center"
             />
 

@@ -3,13 +3,12 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,7 +27,7 @@ import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.PlayersInit.SupportPlayers;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
-import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
+import static com.miklesam.dota_manager.YourTeam.Language;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -41,6 +40,7 @@ public class market extends AppCompatActivity {
     ListView SupportlistView;
     ImageView CoreChoose;
     ImageView SupportChoose;
+    TextView Teamnameid;
 
     ScrollView scrollscroll;
     ArrayList<Players> Cores = new ArrayList<Players>();
@@ -101,9 +101,34 @@ public class market extends AppCompatActivity {
     String fansbalansed;
 
     TextView PlayerFans;
-
+    ImageView FaceImage;
 
     SharedPreferences mSettings;
+    boolean lock;
+    int languageshare;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,7 +154,7 @@ public class market extends AppCompatActivity {
         final Intent ToReward = new Intent(this, Rewarded.class);
 
         PlayerFans=findViewById(R.id.PlayerFans);
-
+        FaceImage=findViewById(R.id.FaceImage);
         Backtomain=findViewById(R.id.Backtomain);
         CoreChoose =findViewById(R.id.Core);
         SupportChoose =findViewById(R.id.Support);
@@ -160,6 +185,8 @@ public class market extends AppCompatActivity {
         Team[2]=findViewById(R.id.position3);
         Team[3]=findViewById(R.id.position4);
         Team[4]=findViewById(R.id.position5);
+
+        Teamnameid=findViewById(R.id.Teamnameid);
 
         AllHeroes.clear();
         CorePlayers.clear();
@@ -204,6 +231,17 @@ public class market extends AppCompatActivity {
 
             fansbalansed =mSettings.getString(Fans, "0");
 
+        }
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
+        if(languageshare==2)
+        {
+            Teamnameid.setText("Sell");
+        }
+        else
+        {
+            Teamnameid.setText("Продать");
         }
 
 
@@ -356,22 +394,31 @@ public class market extends AppCompatActivity {
                 //PlayerNickName.setText(CoreNAMES[position]);
                 //PlayerDiscription.setText(CorePriceMoney[position]);
                 //FlagIma.setImageResource(CoreIMAGES[position]);
-
+                FaceImage.setImageResource(Cores.get(position).face);
                 FlagIma.setImageResource(Cores.get(position).Flag);
                 PlayerNickName.setText(Cores.get(position).Name);
-                PlayerDiscription.setText(Cores.get(position).Description);
+                if(languageshare==2)
+                {
+                    PlayerDiscription.setText(Cores.get(position).EngDescription);
+                }
+                else
+                {
+                    PlayerDiscription.setText(Cores.get(position).Description);
+                }
+
                 PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
                 PlayerFans.setText(String.valueOf(Cores.get(position).fans));
                 Buy_Yes.setVisibility(View.VISIBLE);
                 Buy_No.setVisibility(View.VISIBLE);
 
-                Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
-                Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
-                Farming.setText("Фарм "+ String.valueOf(Cores.get(position).farming));
+                Laining.setText("Laining "+ String.valueOf(Cores.get(position).laining));
+                Fighting.setText("Fight "+ String.valueOf(Cores.get(position).fighting));
+                Farming.setText("Farm "+ String.valueOf(Cores.get(position).farming));
                 Supporting.setText("LateGame "+ String.valueOf(Cores.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Cores.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Cores.get(position).signature2).picked);
                 Signature3.setImageResource(AllHeroes.get(Cores.get(position).signature3).picked);
+
                 last_position=position;
                 last_position_player=Cores.get(position).sequence;
                 //Posi2.setText("Позиция 2");
@@ -394,17 +441,25 @@ public class market extends AppCompatActivity {
                 SupportChoose.setVisibility(View.INVISIBLE);
                 PlayerInformation.setVisibility(View.VISIBLE);
 
-
+                FaceImage.setImageResource(Supports.get(position).face);
                 FlagIma.setImageResource(Supports.get(position).Flag);
                 PlayerNickName.setText(Supports.get(position).Name);
-                PlayerDiscription.setText(Supports.get(position).Description);
+                if(languageshare==2)
+                {
+                    PlayerDiscription.setText(Supports.get(position).EngDescription);
+                }
+                else
+                {
+                    PlayerDiscription.setText(Supports.get(position).Description);
+                }
+
 
                 PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
                 PlayerFans.setText(String.valueOf(Supports.get(position).fans));
 
-                Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
-                Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
-                Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
+                Laining.setText("Laning "+ String.valueOf(Supports.get(position).laining));
+                Fighting.setText("Fight "+ String.valueOf(Supports.get(position).fighting));
+                Farming.setText("Farm "+ String.valueOf(Supports.get(position).farming));
                 Supporting.setText("Lategame "+ String.valueOf(Supports.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Supports.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Supports.get(position).signature2).picked);
@@ -552,16 +607,25 @@ public class market extends AppCompatActivity {
                     Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
+                    FaceImage.setImageResource(AllPlayers.get(Pos1).face);
                     FlagIma.setImageResource(AllPlayers.get(Pos1).Flag);
                     PlayerNickName.setText(AllPlayers.get(Pos1).Name);
-                    PlayerDiscription.setText(AllPlayers.get(Pos1).Description);
-                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos1).Cost));
+                    if(languageshare==2)
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos1).EngDescription);
+                    }
+                    else
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos1).Description);
+                    }
+
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos1).Cost/2));
                     PlayerFans.setText(String.valueOf(AllPlayers.get(Pos1).fans));
 
 
-                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos1).laining));
-                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos1).fighting));
-                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos1).farming));
+                    Laining.setText("Laning " + String.valueOf(AllPlayers.get(Pos1).laining));
+                    Fighting.setText("Fight " + String.valueOf(AllPlayers.get(Pos1).fighting));
+                    Farming.setText("Farm " + String.valueOf(AllPlayers.get(Pos1).farming));
                     Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos1).late));
                     Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos1).signature1).picked);
                     Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos1).signature2).picked);
@@ -604,16 +668,24 @@ public class market extends AppCompatActivity {
                     Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
+                    FaceImage.setImageResource(AllPlayers.get(Pos2).face);
                     FlagIma.setImageResource(AllPlayers.get(Pos2).Flag);
                     PlayerNickName.setText(AllPlayers.get(Pos2).Name);
-                    PlayerDiscription.setText(AllPlayers.get(Pos2).Description);
-                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos2).Cost));
+                    if(languageshare==2)
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos2).EngDescription);
+                    }
+                    else
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos2).Description);
+                    }
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos2).Cost/2));
                     PlayerFans.setText(String.valueOf(AllPlayers.get(Pos2).fans));
 
 
-                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos2).laining));
-                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos2).fighting));
-                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos2).farming));
+                    Laining.setText("Laining " + String.valueOf(AllPlayers.get(Pos2).laining));
+                    Fighting.setText("Fight " + String.valueOf(AllPlayers.get(Pos2).fighting));
+                    Farming.setText("Farm " + String.valueOf(AllPlayers.get(Pos2).farming));
                     Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos2).late));
                     Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos2).signature1).picked);
                     Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos2).signature2).picked);
@@ -658,16 +730,24 @@ public class market extends AppCompatActivity {
                     Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
+                    FaceImage.setImageResource(AllPlayers.get(Pos3).face);
                     FlagIma.setImageResource(AllPlayers.get(Pos3).Flag);
                     PlayerNickName.setText(AllPlayers.get(Pos3).Name);
-                    PlayerDiscription.setText(AllPlayers.get(Pos3).Description);
-                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos3).Cost));
+                    if(languageshare==2)
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos3).EngDescription);
+                    }
+                    else
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos3).Description);
+                    }
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos3).Cost/2));
                     PlayerFans.setText(String.valueOf(AllPlayers.get(Pos3).fans));
 
 
-                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos3).laining));
-                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos3).fighting));
-                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos3).farming));
+                    Laining.setText("Laning " + String.valueOf(AllPlayers.get(Pos3).laining));
+                    Fighting.setText("Fight " + String.valueOf(AllPlayers.get(Pos3).fighting));
+                    Farming.setText("Farm " + String.valueOf(AllPlayers.get(Pos3).farming));
                     Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos3).late));
                     Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos3).signature1).picked);
                     Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos3).signature2).picked);
@@ -716,16 +796,24 @@ public class market extends AppCompatActivity {
                     Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
+                    FaceImage.setImageResource(AllPlayers.get(Pos4).face);
                     FlagIma.setImageResource(AllPlayers.get(Pos4).Flag);
                     PlayerNickName.setText(AllPlayers.get(Pos4).Name);
-                    PlayerDiscription.setText(AllPlayers.get(Pos4).Description);
-                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos4).Cost));
+                    if(languageshare==2)
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos4).EngDescription);
+                    }
+                    else
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos4).Description);
+                    }
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos4).Cost/2));
                     PlayerFans.setText(String.valueOf(AllPlayers.get(Pos4).fans));
 
 
-                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos4).laining));
-                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos4).fighting));
-                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos4).farming));
+                    Laining.setText("Laining " + String.valueOf(AllPlayers.get(Pos4).laining));
+                    Fighting.setText("Fight " + String.valueOf(AllPlayers.get(Pos4).fighting));
+                    Farming.setText("Farm " + String.valueOf(AllPlayers.get(Pos4).farming));
                     Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos4).late));
                     Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos4).signature1).picked);
                     Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos4).signature2).picked);
@@ -767,16 +855,24 @@ public class market extends AppCompatActivity {
                     Buy_Yes.setImageResource(R.drawable.cancel_bttn);
                     Buy_No.setVisibility(View.INVISIBLE);
 
+                    FaceImage.setImageResource(AllPlayers.get(Pos5).face);
                     FlagIma.setImageResource(AllPlayers.get(Pos5).Flag);
                     PlayerNickName.setText(AllPlayers.get(Pos5).Name);
-                    PlayerDiscription.setText(AllPlayers.get(Pos5).Description);
-                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos5).Cost));
+                    if(languageshare==2)
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos5).EngDescription);
+                    }
+                    else
+                    {
+                        PlayerDiscription.setText(AllPlayers.get(Pos5).Description);
+                    }
+                    PlayerCost.setText(String.valueOf(AllPlayers.get(Pos5).Cost/2));
                     PlayerFans.setText(String.valueOf(AllPlayers.get(Pos5).fans));
 
 
-                    Laining.setText("Лайнинг " + String.valueOf(AllPlayers.get(Pos5).laining));
-                    Fighting.setText("Файтинг " + String.valueOf(AllPlayers.get(Pos5).fighting));
-                    Farming.setText("Фарм " + String.valueOf(AllPlayers.get(Pos5).farming));
+                    Laining.setText("Laining " + String.valueOf(AllPlayers.get(Pos5).laining));
+                    Fighting.setText("Fight " + String.valueOf(AllPlayers.get(Pos5).fighting));
+                    Farming.setText("Farm " + String.valueOf(AllPlayers.get(Pos5).farming));
                     Supporting.setText("LateGame " + String.valueOf(AllPlayers.get(Pos5).late));
                     Signature1.setImageResource(AllHeroes.get(AllPlayers.get(Pos5).signature1).picked);
                     Signature2.setImageResource(AllHeroes.get(AllPlayers.get(Pos5).signature2).picked);
@@ -815,7 +911,7 @@ public class market extends AppCompatActivity {
 
 
 
-                 Gold= String.valueOf(Integer.parseInt(Gold)+ Integer.parseInt((String) PlayerCost.getText()));
+                 Gold= String.valueOf(Integer.parseInt(Gold)+ (Integer.parseInt((String) PlayerCost.getText())/2));
 
 
                 Goldbalance.setText(Gold);
@@ -900,7 +996,7 @@ public class market extends AppCompatActivity {
                 if (team[0]==false)
                 {
 
-                    if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                    if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                     {
                         Team[0].setText(PlayerNickName.getText());
                         Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
@@ -937,21 +1033,41 @@ public class market extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Недостаточно денег", Toast.LENGTH_SHORT);
-                        toast.show();
-                        HideAll();
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Not enough money", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Недостаточно денег", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
+
                     }
-
-
 
                 }
 
                 else
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Позиция Занята", Toast.LENGTH_SHORT);
-                    toast.show();
+
+
+                    if(languageshare==2)
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "position already taken", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
                 }
 
 
@@ -968,7 +1084,7 @@ public class market extends AppCompatActivity {
                 {
                     if (team[1]==false)
                     {
-                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             Team[1].setText(PlayerNickName.getText());
                             Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
@@ -1003,28 +1119,48 @@ public class market extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
-                            HideAll();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
-
-
 
                     }
 
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
                 }
                 else
                 {
                     if (team[3]==false)
                     {
-                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             Team[3].setText(PlayerNickName.getText());
                             Gold= String.valueOf(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText()));
@@ -1059,21 +1195,41 @@ public class market extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
-                            HideAll();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
-
-
 
                     }
 
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
                 }
 
@@ -1098,7 +1254,7 @@ public class market extends AppCompatActivity {
 
 
                     if (team[2] == false) {
-                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             Team[2].setText(PlayerNickName.getText());
                             Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
@@ -1132,20 +1288,41 @@ public class market extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
-                            HideAll();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
 
+                    }
+
+                    else
+                    {
 
 
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
 
-
-                    } else {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
                     }
 
                 }
@@ -1153,7 +1330,7 @@ public class market extends AppCompatActivity {
                 {
                     if (team[4] == false) {
 
-                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(Gold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             Team[4].setText(PlayerNickName.getText());
                             Gold = String.valueOf(Integer.parseInt(Gold) - Integer.parseInt((String) PlayerCost.getText()));
@@ -1189,19 +1366,41 @@ public class market extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
-                            HideAll();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
 
+                    }
+
+                    else
+                    {
 
 
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
 
-                    } else {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
                     }
 
                 }

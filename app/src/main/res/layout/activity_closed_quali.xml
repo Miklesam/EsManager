@@ -12,6 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/AfterGroupStage"
+        android:visibility="invisible"
+        android:textColor="#45283c"
         android:layout_alignParentBottom="true"
         android:text="Вы Заняли"/>
 

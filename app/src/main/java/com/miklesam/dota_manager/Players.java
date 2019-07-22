@@ -18,10 +18,13 @@ public class Players {
 
     public int sequence;
     public int fans;
+    public int face;
+
+    public String EngDescription;
 
 
 
-    Players(int fans,String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence) {
+    Players(int fans,String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence,int face,String EngDescription) {
         this.fans=fans;
         this.Name=Name;
         this.Description=Description;
@@ -37,6 +40,8 @@ public class Players {
         this.signature2=signature2;
         this.signature3=signature3;
         this.sequence=sequence;
+        this.face=face;
+        this.EngDescription=EngDescription;
 
     }
 

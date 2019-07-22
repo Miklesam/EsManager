@@ -229,12 +229,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Top"
-                android:id="@+id/topline"/>
+                android:id="@+id/TopScore"/>
+
 
             <ImageView
                 android:layout_width="33sp"
@@ -292,11 +294,14 @@
                 android:layout_height="33sp"
                 android:id="@+id/top10st"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/TopScore"/>
-
+                android:text="Top"
+                android:gravity="right"
+                android:textColor="#45283c"
+                android:id="@+id/topline"/>
 
 
         </LinearLayout>
@@ -307,12 +312,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mid"
-                android:id="@+id/midline"/>
+                android:id="@+id/MidScore"/>
 
             <ImageView
                 android:layout_width="33sp"
@@ -372,7 +378,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/MidScore"/>
+                android:text="Mid"
+                android:textColor="#45283c"
+                android:id="@+id/midline"/>
+
 
 
         </LinearLayout>
@@ -382,12 +391,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bot"
-                android:id="@+id/bottomline"/>
+                android:id="@+id/BottomScore"/>
 
             <ImageView
                 android:layout_width="33sp"
@@ -445,40 +455,122 @@
                 android:layout_height="33sp"
                 android:id="@+id/bottom10st"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/BottomScore"/>
+                android:text="Bot"
+                android:textColor="#45283c"
+                android:id="@+id/bottomline"/>
 
 
         </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#45283c"
+        android:layout_marginRight="10sp"
+        android:text="Laining"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadNet"
-            android:id="@+id/radiantnet"/>
+    <ImageView
+        android:layout_width="49sp"
+        android:layout_height="53sp"
+        android:layout_marginLeft="60sp"
+        android:layout_marginRight="10sp"
+        android:id="@+id/monst"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30sp"
+        android:id="@+id/radiantnet"/>
+
+</LinearLayout>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GoldKeff"
-            android:id="@+id/goldkeff"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LatetKeff"
-            android:id="@+id/latekeff"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#45283c"
+        android:layout_marginRight="10sp"
+        android:text="Middlegame"/>
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="48sp"
+        android:layout_marginRight="10sp"
+        android:id="@+id/fight"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GoldKeff"
+        android:visibility="invisible"
+        android:id="@+id/goldkeff"/>
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#45283c"
+        android:layout_marginRight="10sp"
+        android:text="Lategame"/>
+
+    <ImageView
+
+        android:layout_marginLeft="45sp"
+        android:layout_width="49sp"
+        android:layout_height="53sp"
+        android:layout_marginRight="10sp"
+        android:id="@+id/monstlate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LatetKeff"
+        android:layout_marginLeft="20sp"
+        android:layout_gravity="right"
+        android:visibility="invisible"
+        android:id="@+id/latekeff"/>
+
+
+
+</LinearLayout>
+
+
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LoseOrWin"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:visibility="invisible"
             android:id="@+id/LoseOrWin"/>
+
+
+
+
 
 
 

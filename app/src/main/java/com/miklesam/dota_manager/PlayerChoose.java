@@ -3,17 +3,13 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.media.Image;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -27,6 +23,7 @@ import static com.miklesam.dota_manager.PlayersInit.CorePlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.PlayersInit.SupportPlayers;
+import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.CloseLose1;
 import static com.miklesam.dota_manager.YourTeam.CloseLose2;
 import static com.miklesam.dota_manager.YourTeam.CloseLose3;
@@ -85,7 +82,9 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.FinalsWin;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
 import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.Month;
 import static com.miklesam.dota_manager.YourTeam.OpenFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
@@ -105,6 +104,13 @@ import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
 import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
 import static com.miklesam.dota_manager.YourTeam.QuaterWin;
 import static com.miklesam.dota_manager.YourTeam.SemiWin;
+import static com.miklesam.dota_manager.YourTeam.Series1Win;
+import static com.miklesam.dota_manager.YourTeam.Series2Win;
+import static com.miklesam.dota_manager.YourTeam.Series3Win;
+import static com.miklesam.dota_manager.YourTeam.Series4Win;
+import static com.miklesam.dota_manager.YourTeam.Series5Win;
+import static com.miklesam.dota_manager.YourTeam.Series6Win;
+import static com.miklesam.dota_manager.YourTeam.Series7Win;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -116,6 +122,7 @@ import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
 
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
+import static com.miklesam.dota_manager.YourTeam.Year;
 
 public class PlayerChoose extends AppCompatActivity {
 
@@ -175,6 +182,31 @@ public class PlayerChoose extends AppCompatActivity {
      ArrayList <Heroes> DirectHero = new ArrayList<Heroes>();
 
 
+    ImageView FacesImage;
+    int languageshare;
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -195,7 +227,7 @@ public class PlayerChoose extends AppCompatActivity {
         Back=findViewById(R.id.Back);
         GoldbalancePole=findViewById(R.id.Goldbalance);
         PlayerFans=findViewById(R.id.PlayerFans);
-
+        FacesImage=findViewById(R.id.FacesImage);
         Fansbalance=findViewById(R.id.Fansbalance);
         PlayerCost=findViewById(R.id.PlayerCost);
         TeamNameids=findViewById(R.id.Teamnameid);
@@ -259,7 +291,9 @@ public class PlayerChoose extends AppCompatActivity {
         if(mSettings.contains(Fans)) {
 
             fansbalansed =mSettings.getString(Fans, "0");
-
+        }
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
         }
 
         GoldbalancePole.setText(balancegold);
@@ -274,19 +308,26 @@ public class PlayerChoose extends AppCompatActivity {
                 CoreChoose.setVisibility(View.INVISIBLE);
                 SupportChoose.setVisibility(View.INVISIBLE);
                 PlayerInformation.setVisibility(View.VISIBLE);
-                //PlayerNickName.setText(CoreNAMES[position]);
-                //PlayerDiscription.setText(CorePriceMoney[position]);
-                //FlagIma.setImageResource(CoreIMAGES[position]);
 
+                FacesImage.setImageResource(Cores.get(position).face);
                 FlagIma.setImageResource(Cores.get(position).Flag);
                 PlayerNickName.setText(Cores.get(position).Name);
-                PlayerDiscription.setText(Cores.get(position).Description);
+                if(languageshare==2)
+                {
+                    PlayerDiscription.setText(Cores.get(position).EngDescription);
+                }
+                else
+                {
+                    PlayerDiscription.setText(Cores.get(position).Description);
+                }
+
+
                 PlayerCost.setText(String.valueOf(Cores.get(position).Cost));
                 PlayerFans.setText(String.valueOf(Cores.get(position).fans));
 
-                Laining.setText("Лайнинг "+ String.valueOf(Cores.get(position).laining));
-                Fighting.setText("Файтинг "+ String.valueOf(Cores.get(position).fighting));
-                Farming.setText("Фарм "+ String.valueOf(Cores.get(position).farming));
+                Laining.setText("Laning "+ String.valueOf(Cores.get(position).laining));
+                Fighting.setText("Fight "+ String.valueOf(Cores.get(position).fighting));
+                Farming.setText("Farm "+ String.valueOf(Cores.get(position).farming));
                 Supporting.setText("LateGame "+ String.valueOf(Cores.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Cores.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Cores.get(position).signature2).picked);
@@ -308,21 +349,25 @@ public class PlayerChoose extends AppCompatActivity {
                 PlayerInformation.setVisibility(View.VISIBLE);
 
 
-                //PlayerNickName.setText(SupportNAMES[position]);
-                //PlayerDiscription.setText(SupportPriceMoney[position]);
-                //FlagIma.setImageResource(SupportIMAGES[position]);
 
-
+                FacesImage.setImageResource(Supports.get(position).face);
                 FlagIma.setImageResource(Supports.get(position).Flag);
                 PlayerNickName.setText(Supports.get(position).Name);
-                PlayerDiscription.setText(Supports.get(position).Description);
+                if(languageshare==2)
+                {
+                    PlayerDiscription.setText(Supports.get(position).EngDescription);
+                }
+                else
+                {
+                    PlayerDiscription.setText(Supports.get(position).Description);
+                }
 
                 PlayerCost.setText(String.valueOf(Supports.get(position).Cost));
                 PlayerFans.setText(String.valueOf(Supports.get(position).fans));
 
-                Laining.setText("Лайнинг "+ String.valueOf(Supports.get(position).laining));
-                Fighting.setText("Файтинг "+ String.valueOf(Supports.get(position).fighting));
-                Farming.setText("Фарм "+ String.valueOf(Supports.get(position).farming));
+                Laining.setText("Laining "+ String.valueOf(Supports.get(position).laining));
+                Fighting.setText("Fight "+ String.valueOf(Supports.get(position).fighting));
+                Farming.setText("Farm "+ String.valueOf(Supports.get(position).farming));
                 Supporting.setText("Lategame "+ String.valueOf(Supports.get(position).late));
                 Signature1.setImageResource(AllHeroes.get(Supports.get(position).signature1).picked);
                 Signature2.setImageResource(AllHeroes.get(Supports.get(position).signature2).picked);
@@ -344,119 +389,128 @@ public class PlayerChoose extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = mSettings.edit();
-                editor.putString(GoldBalance, balancegold);
-                editor.putString(Fans, fansbalansed);
-                editor.putString(XPstatic, "0");
-                editor.putString(Day, "0");
-                editor.putString(Mode, "0");
-
-                editor.putString(OpenQuaterFinals, "0");
-                editor.putString(OpenSemiFinals, "0");
-                editor.putString(OpenFinals, "0");
-
-                editor.putString(OpenScore1, "0");
-                editor.putString(OpenScore2, "0");
-                editor.putString(OpenScore3, "0");
-                editor.putString(OpenScore4, "0");
-
-                editor.putString(OpenScore5, "0");
-                editor.putString(OpenScore6, "0");
-                editor.putString(OpenScore7, "0");
-                editor.putString(OpenScore8, "0");
-
-                editor.putString(OpenScore9, "0");
-                editor.putString(OpenScore10, "0");
-                editor.putString(OpenScore11, "0");
-                editor.putString(OpenScore12, "0");
 
 
-                editor.putString(QuaterWin, "0");
-                editor.putString(SemiWin, "0");
-                editor.putString(FinalsWin, "0");
-                editor.putString(OpenQualiWinner, "0");
-                editor.putString(ClosedSeries, "0");
+                    editor.putString(GoldBalance, balancegold);
+                    editor.putString(Fans, fansbalansed);
+                    editor.putString(XPstatic, "0");
+                    editor.putString(Day, "1");
+                    editor.putString(Month, "0");
+                    editor.putString(Year, "0");
 
-                editor.putString(Closedwin, "0");
-                editor.putString(Closedlose, "0");
+                    editor.putString(Mode, "0");
+                    editor.putString(APP_PREFERENCES_NAME, TeamName);
+                    editor.putString(OpenQuaterFinals, "0");
+                    editor.putString(OpenSemiFinals, "0");
+                    editor.putString(OpenFinals, "0");
 
-                editor.putString(CloseWin7, "0");
-                editor.putString(CloseWin6, "0");
-                editor.putString(CloseWin5, "0");
-                editor.putString(CloseWin4, "0");
-                editor.putString(CloseWin3, "0");
-                editor.putString(CloseWin2, "0");
-                editor.putString(CloseWin1, "0");
+                    editor.putString(OpenScore1, "0");
+                    editor.putString(OpenScore2, "0");
+                    editor.putString(OpenScore3, "0");
+                    editor.putString(OpenScore4, "0");
 
+                    editor.putString(OpenScore5, "0");
+                    editor.putString(OpenScore6, "0");
+                    editor.putString(OpenScore7, "0");
+                    editor.putString(OpenScore8, "0");
 
-
-
-                editor.putString(CloseLose7, "0");
-                editor.putString(CloseLose6, "0");
-                editor.putString(CloseLose5, "0");
-                editor.putString(CloseLose4, "0");
-                editor.putString(CloseLose3, "0");
-                editor.putString(CloseLose2, "0");
-                editor.putString(CloseLose1, "0");
-
-                editor.putString(ExtraLaining, "0");
-                editor.putString(ExtraFarming, "0");
-                editor.putString(ExtraFighting, "0");
-                editor.putString(OpenShaffle, "0");
-                editor.putString(CloseShaffle, "0");
+                    editor.putString(OpenScore9, "0");
+                    editor.putString(OpenScore10, "0");
+                    editor.putString(OpenScore11, "0");
+                    editor.putString(OpenScore12, "0");
 
 
-                editor.putString(CloseTeam1, "0");
-                editor.putString(CloseTeam2, "0");
-                editor.putString(CloseTeam3, "0");
-                editor.putString(CloseTeam4, "0");
-                editor.putString(CloseTeam5, "0");
-                editor.putString(CloseTeam6, "0");
-                editor.putString(CloseTeam7, "0");
+                    editor.putString(QuaterWin, "0");
+                    editor.putString(SemiWin, "0");
+                    editor.putString(FinalsWin, "0");
+                    editor.putString(OpenQualiWinner, "0");
+                    editor.putString(ClosedSeries, "0");
 
-                editor.putString(TeamPlayoff1, "0");
-                editor.putString(TeamPlayoff2, "0");
-                editor.putString(TeamPlayoff3, "0");
-                editor.putString(TeamPlayoff4, "0");
+                    editor.putString(Closedwin, "0");
+                    editor.putString(Closedlose, "0");
 
-                editor.putString(ClosedPlayofStage, "1");
-
-
-
-                editor.putString(ExtraLate, "0");
-
-
-
-                editor.putString(ClosePlayoff1, "0");
-                editor.putString(ClosePlayoff2, "0");
-                editor.putString(ClosePlayoff3, "0");
-                editor.putString(ClosePlayoff4, "0");
-                editor.putString(ClosePlayoff5, "0");
-                editor.putString(ClosePlayoff6, "0");
-                editor.putString(ClosePlayoff7, "0");
-                editor.putString(ClosePlayoff8, "0");
-                editor.putString(ClosePlayoff9, "0");
-                editor.putString(ClosePlayoff10, "0");
-                editor.putString(ClosePlayoff11, "0");
-                editor.putString(ClosePlayoff12, "0");
-
-
-
-                editor.putString(CloseScore1, "0");
-                editor.putString(CloseScore2, "0");
-                editor.putString(CloseScore3, "0");
-                editor.putString(CloseScore4, "0");
-                editor.putString(CloseScore5, "0");
-                editor.putString(CloseScore6, "0");
-                editor.putString(CloseScore7, "0");
-                editor.putString(CloseScore8, "0");
-                editor.putString(CloseScore9, "0");
-                editor.putString(CloseScore10, "0");
-                editor.putString(CloseScore11, "0");
-                editor.putString(CloseScore12, "0");
+                    editor.putString(CloseWin7, "0");
+                    editor.putString(CloseWin6, "0");
+                    editor.putString(CloseWin5, "0");
+                    editor.putString(CloseWin4, "0");
+                    editor.putString(CloseWin3, "0");
+                    editor.putString(CloseWin2, "0");
+                    editor.putString(CloseWin1, "0");
 
 
 
 
+                    editor.putString(CloseLose7, "0");
+                    editor.putString(CloseLose6, "0");
+                    editor.putString(CloseLose5, "0");
+                    editor.putString(CloseLose4, "0");
+                    editor.putString(CloseLose3, "0");
+                    editor.putString(CloseLose2, "0");
+                    editor.putString(CloseLose1, "0");
+
+                    editor.putString(ExtraLaining, "0");
+                    editor.putString(ExtraFarming, "0");
+                    editor.putString(ExtraFighting, "0");
+                    editor.putString(OpenShaffle, "0");
+                    editor.putString(CloseShaffle, "0");
+
+
+                    editor.putString(CloseTeam1, "0");
+                    editor.putString(CloseTeam2, "0");
+                    editor.putString(CloseTeam3, "0");
+                    editor.putString(CloseTeam4, "0");
+                    editor.putString(CloseTeam5, "0");
+                    editor.putString(CloseTeam6, "0");
+                    editor.putString(CloseTeam7, "0");
+
+                    editor.putString(TeamPlayoff1, "0");
+                    editor.putString(TeamPlayoff2, "0");
+                    editor.putString(TeamPlayoff3, "0");
+                    editor.putString(TeamPlayoff4, "0");
+
+                    editor.putString(ClosedPlayofStage, "1");
+
+
+
+                    editor.putString(ExtraLate, "0");
+
+
+
+                    editor.putString(ClosePlayoff1, "0");
+                    editor.putString(ClosePlayoff2, "0");
+                    editor.putString(ClosePlayoff3, "0");
+                    editor.putString(ClosePlayoff4, "0");
+                    editor.putString(ClosePlayoff5, "0");
+                    editor.putString(ClosePlayoff6, "0");
+                    editor.putString(ClosePlayoff7, "0");
+                    editor.putString(ClosePlayoff8, "0");
+                    editor.putString(ClosePlayoff9, "0");
+                    editor.putString(ClosePlayoff10, "0");
+                    editor.putString(ClosePlayoff11, "0");
+                    editor.putString(ClosePlayoff12, "0");
+
+
+
+                    editor.putString(CloseScore1, "0");
+                    editor.putString(CloseScore2, "0");
+                    editor.putString(CloseScore3, "0");
+                    editor.putString(CloseScore4, "0");
+                    editor.putString(CloseScore5, "0");
+                    editor.putString(CloseScore6, "0");
+                    editor.putString(CloseScore7, "0");
+                    editor.putString(CloseScore8, "0");
+                    editor.putString(CloseScore9, "0");
+                    editor.putString(CloseScore10, "0");
+                    editor.putString(CloseScore11, "0");
+                    editor.putString(CloseScore12, "0");
+
+                    editor.putString(Series1Win, "0");
+                    editor.putString(Series2Win, "0");
+                    editor.putString(Series3Win, "0");
+                    editor.putString(Series4Win, "0");
+                    editor.putString(Series5Win, "0");
+                    editor.putString(Series6Win, "0");
+                    editor.putString(Series7Win, "0");
 
 
 
@@ -465,22 +519,28 @@ public class PlayerChoose extends AppCompatActivity {
 
 
 
-                editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
-                editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
-                editor.putString(StaticPosition3,String.valueOf(playerseq[2]));
-                editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
-                editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
 
-                editor.apply();
+                    editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
+                    editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
+                    editor.putString(StaticPosition3,String.valueOf(playerseq[2]));
+                    editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
+                    editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
 
-
-
-
-                //Gold=extras.getString("Gold");
-                //YourTeam=extras.getString("TeamName");
+                    editor.apply();
 
 
-           startActivity(Tomainstate);
+
+
+                    //Gold=extras.getString("Gold");
+                    //YourTeam=extras.getString("TeamName");
+
+
+                    startActivity(Tomainstate);
+
+
+
+
+
 
             }
         });
@@ -489,12 +549,21 @@ public class PlayerChoose extends AppCompatActivity {
         Buy_No.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CorelistView.setVisibility(View.VISIBLE);
+
                 CoreChoose.setVisibility(View.VISIBLE);
                 SupportChoose.setVisibility(View.VISIBLE);
                 PlayerInformation.setVisibility(View.INVISIBLE);
+                if(SupportPick==true)
+                {
+                    SupportlistView.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    CorelistView.setVisibility(View.VISIBLE);
+                }
                 SupportPick=false;
                 CorePick=false;
+
 
 
             }
@@ -504,10 +573,18 @@ public class PlayerChoose extends AppCompatActivity {
         Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CorelistView.setVisibility(View.VISIBLE);
+
                 CoreChoose.setVisibility(View.VISIBLE);
                 SupportChoose.setVisibility(View.VISIBLE);
                 PlayerInformation.setVisibility(View.INVISIBLE);
+                if(SupportPick==true)
+                {
+                    SupportlistView.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    CorelistView.setVisibility(View.VISIBLE);
+                }
                 SupportPick=false;
                 CorePick=false;
                 Pos1.setVisibility(View.INVISIBLE);
@@ -519,12 +596,14 @@ public class PlayerChoose extends AppCompatActivity {
 
                 if (sup_pick==true)
                 {
+
                     sup_pick=false;
                     //Pos2.setText("Позиция 2");
                     Pos2.setImageResource(R.drawable.position_2);
                     Pos3.setImageResource(R.drawable.position_3);
                     //Pos3.setText("Позиция 3");
                 }
+
 
 
 
@@ -583,7 +662,7 @@ public class PlayerChoose extends AppCompatActivity {
 
                 if (team[0]==false)
                 {
-                if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                 {
                     position1.setText(PlayerNickName.getText());
                     balancegold= String.valueOf(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText()));
@@ -609,6 +688,7 @@ public class PlayerChoose extends AppCompatActivity {
                     SupportPick=false;
                     CorePick=false;
 
+
                     if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                     {
                         NextStage.setVisibility(View.VISIBLE);
@@ -616,18 +696,41 @@ public class PlayerChoose extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Недостаточно денег", Toast.LENGTH_SHORT);
-                    toast.show();
+                    if(languageshare==2)
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Not enough money", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Недостаточно денег", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+
                 }
 
                 }
 
                 else
                 {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Позиция Занята", Toast.LENGTH_SHORT);
-                    toast.show();
+
+
+                    if(languageshare==2)
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "position already taken", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Позиция занята", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
                 }
 
 
@@ -644,7 +747,7 @@ public class PlayerChoose extends AppCompatActivity {
 
                     if(team[3]==false)
                     {
-                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             position4.setText(PlayerNickName.getText());
                             team[3]=true;
@@ -655,7 +758,7 @@ public class PlayerChoose extends AppCompatActivity {
                             fansbalansed= String.valueOf(Integer.parseInt(fansbalansed)+ Integer.parseInt((String) PlayerFans.getText()));
                             Fansbalance.setText(fansbalansed);
 
-                            CorelistView.setVisibility(View.VISIBLE);
+                            SupportlistView.setVisibility(View.VISIBLE);
                             CoreChoose.setVisibility(View.VISIBLE);
                             SupportChoose.setVisibility(View.VISIBLE);
                             PlayerInformation.setVisibility(View.INVISIBLE);
@@ -674,6 +777,7 @@ public class PlayerChoose extends AppCompatActivity {
                             Buy_No.setVisibility(View.VISIBLE);
                             SupportPick=false;
                             CorePick=false;
+
                             if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                             {
                                 NextStage.setVisibility(View.VISIBLE);
@@ -681,17 +785,41 @@ public class PlayerChoose extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
 
                     }
+
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
 
                 }
@@ -701,7 +829,7 @@ public class PlayerChoose extends AppCompatActivity {
 
                     if (team[1]==false)
                     {
-                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             position2.setText(PlayerNickName.getText());
                             team[1]=true;
@@ -728,6 +856,7 @@ public class PlayerChoose extends AppCompatActivity {
                             Buy_No.setVisibility(View.VISIBLE);
                             SupportPick=false;
                             CorePick=false;
+
                             if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                             {
                                 NextStage.setVisibility(View.VISIBLE);
@@ -735,19 +864,41 @@ public class PlayerChoose extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
 
+
+                        }
 
                     }
 
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
 
 
@@ -770,12 +921,12 @@ public class PlayerChoose extends AppCompatActivity {
 
                     if(team[4]==false)
                     {
-                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             position5.setText(PlayerNickName.getText());
                             team[4]=true;
                             playerseq[4]=last_position_player;
-                            CorelistView.setVisibility(View.VISIBLE);
+                            SupportlistView.setVisibility(View.VISIBLE);
                             CoreChoose.setVisibility(View.VISIBLE);
                             SupportChoose.setVisibility(View.VISIBLE);
                             PlayerInformation.setVisibility(View.INVISIBLE);
@@ -801,6 +952,7 @@ public class PlayerChoose extends AppCompatActivity {
                             Buy_No.setVisibility(View.VISIBLE);
                             SupportPick=false;
                             CorePick=false;
+
                             if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                             {
                                 NextStage.setVisibility(View.VISIBLE);
@@ -808,17 +960,41 @@ public class PlayerChoose extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
 
                     }
+
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
 
                 }
@@ -828,7 +1004,7 @@ public class PlayerChoose extends AppCompatActivity {
 
                     if (team[2]==false)
                     {
-                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>0)
+                        if(Integer.parseInt(balancegold)- Integer.parseInt((String) PlayerCost.getText())>=0)
                         {
                             position3.setText(PlayerNickName.getText());
                             team[2]=true;
@@ -854,6 +1030,7 @@ public class PlayerChoose extends AppCompatActivity {
                             Buy_No.setVisibility(View.VISIBLE);
                             SupportPick=false;
                             CorePick=false;
+
                             if((team[0]&team[1]&team[2]&team[3]&team[4])==true)
                             {
                                 NextStage.setVisibility(View.VISIBLE);
@@ -861,18 +1038,41 @@ public class PlayerChoose extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    "Недостаточно денег", Toast.LENGTH_SHORT);
-                            toast.show();
+                            if(languageshare==2)
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Not enough money", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            else
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        "Недостаточно денег", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+
+
                         }
 
                     }
 
                     else
                     {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "Позиция Занята", Toast.LENGTH_SHORT);
-                        toast.show();
+
+
+                        if(languageshare==2)
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "position already taken", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        else
+                        {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Позиция занята", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
 
 

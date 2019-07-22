@@ -3,10 +3,9 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,6 +69,13 @@ import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
+import static com.miklesam.dota_manager.YourTeam.Series1Win;
+import static com.miklesam.dota_manager.YourTeam.Series2Win;
+import static com.miklesam.dota_manager.YourTeam.Series3Win;
+import static com.miklesam.dota_manager.YourTeam.Series4Win;
+import static com.miklesam.dota_manager.YourTeam.Series5Win;
+import static com.miklesam.dota_manager.YourTeam.Series6Win;
+import static com.miklesam.dota_manager.YourTeam.Series7Win;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -89,7 +95,7 @@ public class ClosedPlayoff extends AppCompatActivity {
     ImageView Teamsplayofflogo[]= new ImageView[12];
 
     TextView Scoreplayoff[]= new TextView[12];
-    Button playoffplay;
+    ImageView playoffplay;
     int Pos1=0;
     int Pos2=0;
     int Pos3=0;
@@ -101,6 +107,30 @@ public class ClosedPlayoff extends AppCompatActivity {
     int Dayint;
     boolean   to_final=false;
     int ClosedPlayofStageint;
+
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+    @Override
+    public void onBackPressed() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -405,8 +435,8 @@ public class ClosedPlayoff extends AppCompatActivity {
 
 
 
-                Score[5]=2;
-                Score[6]=1;
+                Score[4]=2;
+                Score[5]=1;
 
 
 
@@ -427,8 +457,8 @@ public class ClosedPlayoff extends AppCompatActivity {
                 editor.putString(ClosePlayoff10, "1");
 
 
-                Score[5]=2;
-                Score[6]=1;
+                Score[4]=2;
+                Score[5]=1;
 
             }
             editor.apply();
@@ -488,12 +518,14 @@ public class ClosedPlayoff extends AppCompatActivity {
             {
                 if(Score[10]==3)
                 {
-                    playoffplay.setText("YouWinQuali");
+                    //playoffplay.setText("YouWinQuali");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                     editor.putString(ClosedPlayofStage, "7");
                 }
                 else if (Score[11]==3)
                 {
-                    playoffplay.setText("YouLoseQuali");
+                    //playoffplay.setText("YouLoseQuali");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                     editor.putString(ClosedPlayofStage, "8");
                 }
             }
@@ -501,12 +533,14 @@ public class ClosedPlayoff extends AppCompatActivity {
             {
                 if(Score[10]==3)
                 {
-                    playoffplay.setText("YouLoseQuali");
+                    //playoffplay.setText("YouLoseQuali");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                     editor.putString(ClosedPlayofStage, "8");
                 }
                 else if (Score[11]==3)
                 {
-                    playoffplay.setText("YouWinQuali");
+                    //playoffplay.setText("YouWinQuali");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                     editor.putString(ClosedPlayofStage, "7");
                 }
             }
@@ -678,7 +712,8 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                 if(ClosedPlayofStageint==9)
                 {
-                    playoffplay.setText("Вылет");
+                    //playoffplay.setText("Вылет");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                     editor.putString(CloseScore1, "0");
                     editor.putString(CloseScore2, "0");
                     editor.putString(CloseScore3, "0");
@@ -707,7 +742,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                     editor.putString(ClosedSeries, "0");
                     editor.putString(ClosedPlayofStage, "1");
-                    editor.putString(Day, String.valueOf(Dayint+5));
+                    editor.putString(Day, String.valueOf(Dayint+2));
 
 
                     editor.putString(Closedwin, "0");
@@ -745,6 +780,13 @@ public class ClosedPlayoff extends AppCompatActivity {
                     editor.putString(CloseTeam7, "0");
                     editor.putString(Mode, "0");
 
+                    editor.putString(Series1Win, "0");
+                    editor.putString(Series2Win, "0");
+                    editor.putString(Series3Win, "0");
+                    editor.putString(Series4Win, "0");
+                    editor.putString(Series5Win, "0");
+                    editor.putString(Series6Win, "0");
+                    editor.putString(Series7Win, "0");
 
 
 
@@ -905,7 +947,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                         editor.putString(ClosedSeries, "0");
                         editor.putString(ClosedPlayofStage, "1");
-                        editor.putString(Day, String.valueOf(Dayint+5));
+                        editor.putString(Day, String.valueOf(Dayint+2));
 
 
                         editor.putString(Closedwin, "0");
@@ -944,6 +986,13 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Mode, "0");
 
 
+                        editor.putString(Series1Win, "0");
+                        editor.putString(Series2Win, "0");
+                        editor.putString(Series3Win, "0");
+                        editor.putString(Series4Win, "0");
+                        editor.putString(Series5Win, "0");
+                        editor.putString(Series6Win, "0");
+                        editor.putString(Series7Win, "0");
 
 
                         editor.apply();
@@ -981,7 +1030,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(ClosedSeries, "0");
 
                         editor.putString(ClosedPlayofStage, "1");
-                        editor.putString(Day, String.valueOf(Dayint+5));
+                        editor.putString(Day, String.valueOf(Dayint+2));
 
                         editor.putString(Closedwin, "0");
                         editor.putString(Closedlose, "0");
@@ -1017,6 +1066,14 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(CloseTeam6, "0");
                         editor.putString(CloseTeam7, "0");
                         editor.putString(Mode, "0");
+
+                        editor.putString(Series1Win, "0");
+                        editor.putString(Series2Win, "0");
+                        editor.putString(Series3Win, "0");
+                        editor.putString(Series4Win, "0");
+                        editor.putString(Series5Win, "0");
+                        editor.putString(Series6Win, "0");
+                        editor.putString(Series7Win, "0");
 
                         editor.apply();
                         startActivity(Tomainstate);

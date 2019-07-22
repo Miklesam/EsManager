@@ -33,58 +33,82 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/FlagImage"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/FacesImage"
+                android:layout_width="60sp"
+                android:layout_height="100sp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10sp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/laning"
+                    android:textColor="#45283c"
+                    android:text="Лайнинг"/>
 
-        <TextView
-            android:id="@+id/Nickname"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fighting"
+                    android:textColor="#45283c"
+                    android:text="Файтинг"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/farming"
+                    android:textColor="#45283c"
+                    android:text="Фарм"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/supporting"
+                    android:textColor="#45283c"
+                    android:text="Поддержка"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#45283c"
-            android:text="Turtle" />
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/FlagImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/Nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#45283c"
+                android:text="Turtle" />
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="100sp"
-        android:gravity="right">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/laning"
-            android:textColor="#45283c"
-            android:text="Лайнинг"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/fighting"
-            android:textColor="#45283c"
-            android:text="Файтинг"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/farming"
-            android:textColor="#45283c"
-            android:text="Фарм"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/supporting"
-            android:textColor="#45283c"
-            android:text="Поддержка"/>
-
-
-    </LinearLayout>
 
 
 
@@ -365,9 +389,9 @@
                 android:layout_gravity="right">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="25sp"
+                    android:layout_height="20sp"
                     android:layout_gravity="center"
-                    android:textSize="20sp"
+                    android:textSize="12sp"
                     android:id="@+id/Teamnameid"
                     android:textColor="#45283c"
                     android:text="Собери состав"/>

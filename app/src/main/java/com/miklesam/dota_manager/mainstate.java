@@ -3,18 +3,12 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +42,8 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.Month;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
@@ -63,6 +59,7 @@ import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
+import static com.miklesam.dota_manager.YourTeam.Year;
 
 public class mainstate extends AppCompatActivity {
 
@@ -83,6 +80,8 @@ public class mainstate extends AppCompatActivity {
     int XPint;
     boolean cw;
     TextView DayText;
+    TextView MonthText;
+    TextView YearText;
     int gamemode=0;
     String fansbalansed;
 
@@ -118,14 +117,41 @@ public class mainstate extends AppCompatActivity {
     int CloseShaffleint;
     ImageView Media;
 
+    int Monthint;
+    int Yearint;
+    Intent ToMainActivity;
 
     boolean team[]=new boolean[5];
     boolean rosterok;
     SharedPreferences mSettings;
+    boolean lock;
+    int languageshare;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
 
 
@@ -145,7 +171,8 @@ public class mainstate extends AppCompatActivity {
         FightingPoints=findViewById(R.id.FightingPoints);
         LateGamePoints=findViewById(R.id.LateGamePoints);
 
-
+        MonthText=findViewById(R.id.Month);
+        YearText=findViewById(R.id.Year);
         backtomenu=findViewById(R.id.backtomenu);
         Laining=findViewById(R.id.lainingfeature);
 
@@ -160,13 +187,13 @@ public class mainstate extends AppCompatActivity {
         YourTeam="Your Team";
         Market=findViewById(R.id.Market);
         Teamimprove=findViewById(R.id.Teamimprove);
-        final Intent ToPickStage = new Intent(this, Pick_Stage.class);
         final Intent ToOpenQuali = new Intent(this, OpenQuali.class);
         final Intent ToClosedQuali = new Intent(this, ClosedQuali.class);
         final Intent ToMarket = new Intent(this, market.class);
         final Intent ToImprove = new Intent(this, Improve.class);
-        final Intent ToMainActivity = new Intent(this, MainActivity.class);
+        ToMainActivity = new Intent(this, MainActivity.class);
         final Intent ToPractice = new Intent(this, practiceactivity.class);
+        final Intent ToMinor = new Intent(this, Minor.class);
 
 
 
@@ -201,6 +228,12 @@ public class mainstate extends AppCompatActivity {
         if(mSettings.contains(Day)) {
             Dayint=Integer.parseInt(mSettings.getString(Day, "0"));
         }
+        if(mSettings.contains(Month)) {
+            Monthint=Integer.parseInt(mSettings.getString(Month, "0"));
+        }
+        if(mSettings.contains(Year)) {
+            Yearint=Integer.parseInt(mSettings.getString(Year, "0"));
+        }
 
         if(mSettings.contains(OpenQualiWinner)) {
 
@@ -228,7 +261,9 @@ public class mainstate extends AppCompatActivity {
         if(mSettings.contains(CloseShaffle)) {
             CloseShaffleint=Integer.parseInt(mSettings.getString(CloseShaffle, "0"));
         }
-
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
 
 
 
@@ -245,6 +280,9 @@ public class mainstate extends AppCompatActivity {
 
 
         DayText.setText(String.valueOf(Dayint));
+        MonthText.setText(String.valueOf(Monthint));
+        YearText.setText(String.valueOf(Yearint));
+
 
 
 
@@ -431,90 +469,90 @@ public class mainstate extends AppCompatActivity {
         {
             if(Dayint==4)
             {
-                InfoBlock.setText("CloseQuali сегодня");
+                InfoBlock.setText("CloseQuali today");
             }
             else
             {
-                InfoBlock.setText("CloseQuali через "+ String.valueOf(4-Dayint) );
+                InfoBlock.setText("CloseQuali after "+ String.valueOf(4-Dayint) );
             }
         }
         else
         {
             if(Dayint==2)
             {
-                InfoBlock.setText("OpenQuali сегодня");
+                InfoBlock.setText("OpenQuali today");
             }
             else
             {
-                InfoBlock.setText("OpenQuali через "+ String.valueOf(2-Dayint) );
+                InfoBlock.setText("OpenQuali after "+ String.valueOf(2-Dayint) );
             }
 
         }
 
         if (Dayint<10)
         {
-            InfoBlock.setText("Open Major Qual через "+ String.valueOf(10-Dayint) );
+            InfoBlock.setText("Open Major Qual after "+ String.valueOf(10-Dayint) );
         }
         else if (Dayint==10)
         {
-            InfoBlock.setText("Open Major Qual сегодня");
+            InfoBlock.setText("Open Major Qual today");
         }
         else if((Dayint>10)&&(Dayint<15))
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Major Qual через "+ String.valueOf(15-Dayint) );
+                InfoBlock.setText("Closed Major Qual after "+ String.valueOf(15-Dayint) );
             }
             else
             {
-                InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+                InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
             }
         }
         else if(Dayint==15)
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Major Qual сегодня");
+                InfoBlock.setText("Closed Major Qual today");
             }
             else
             {
-                InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+                InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
             }
         }
         else if((Dayint>15)&&(Dayint<20))
         {
             //if not win major quals
-            InfoBlock.setText("Open Minor Qual через "+ String.valueOf(20-Dayint) );
+            InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
         }
         else if (Dayint==20)
         {
-         InfoBlock.setText("Open Minor Qual сегодня");
+         InfoBlock.setText("Open Minor Qual today");
         }
         else if((Dayint>20)&&(Dayint<25))
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Minor Qual через "+ String.valueOf(25-Dayint) );
+                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(25-Dayint) );
             }
             else
             {
-                InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+                InfoBlock.setText("Open Major Qual after "+ String.valueOf(35-Dayint) );
             }
         }
         else if(Dayint==25)
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Minor Qual сегодня");
+                InfoBlock.setText("Closed Minor Qual today");
             }
             else
             {
-                InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+                InfoBlock.setText("Open Major Qual after "+ String.valueOf(40-Dayint) );
             }
         }
         else if((Dayint>25))
         {
-            InfoBlock.setText("Open Major Qual через "+ String.valueOf(35-Dayint) );
+            InfoBlock.setText("Open Major Qual after "+ String.valueOf(40-Dayint) );
         }
 
 
@@ -608,10 +646,19 @@ public class mainstate extends AppCompatActivity {
                 }
                 else
                 {
+                    if(languageshare==2)
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Roster must be complete", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    else
+                    {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Укомплектуйте состав", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
 
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Укомплектуйте состав", Toast.LENGTH_SHORT);
-                    toast.show();
                 }
 
             }
@@ -641,7 +688,9 @@ public class mainstate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(ToMainActivity);
+
+                startActivity(ToMinor);
+                //startActivity(ToMainActivity);
 
 
 

@@ -41,6 +41,12 @@ class EmpirePlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(2);
 
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+
         return HeroAndLanes;
     }
 
@@ -69,6 +75,12 @@ class VPPlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(1);
         HeroAndLanes.add(2);
+
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(1);
 
         return HeroAndLanes;
     }
@@ -99,6 +111,12 @@ class NaviPlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(2);
 
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(1);
+
         return HeroAndLanes;
     }
 
@@ -128,6 +146,14 @@ class GambitPlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(3);
         HeroAndLanes.add(2);
+
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+
+
 
         return HeroAndLanes;
     }
@@ -162,6 +188,13 @@ class OldButGoldPlaner extends Planers
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
 
+
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
+
         return HeroAndLanes;
     }
 
@@ -192,6 +225,12 @@ class WinstrikePlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(2);
 
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+
         return HeroAndLanes;
     }
 
@@ -220,6 +259,12 @@ class BHGPlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(1);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -250,6 +295,12 @@ class F5Planer extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -282,6 +333,12 @@ class CISPlaner extends Planers
         HeroAndLanes.add(2);
         HeroAndLanes.add(3);
 
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+
         return HeroAndLanes;
     }
 
@@ -310,6 +367,12 @@ class friendsPlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -342,6 +405,12 @@ class ferzeePlaner extends Planers
         HeroAndLanes.add(2);
         HeroAndLanes.add(3);
 
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+
         return HeroAndLanes;
     }
 
@@ -370,6 +439,12 @@ class iccupPlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -400,6 +475,12 @@ class M5Planer extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(3);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -432,6 +513,12 @@ class rebelsPlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(1);
 
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(0);
+
         return HeroAndLanes;
     }
 
@@ -461,6 +548,12 @@ class roxkisPlaner extends Planers
         HeroAndLanes.add(1);
         HeroAndLanes.add(1);
         HeroAndLanes.add(3);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(0);
+        HeroAndLanes.add(2);
 
         return HeroAndLanes;
     }
@@ -492,6 +585,12 @@ class theretryPlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
+
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
 
         return HeroAndLanes;
     }
@@ -525,6 +624,12 @@ class DTSPlaner extends Planers
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
 
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
+
         return HeroAndLanes;
     }
 
@@ -554,6 +659,12 @@ class DuzaGamingPlaner extends Planers
         HeroAndLanes.add(2);
         HeroAndLanes.add(1);
 
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(1);
+        HeroAndLanes.add(0);
+
         return HeroAndLanes;
     }
 
@@ -582,6 +693,12 @@ class NoPangoPlaner extends Planers
         HeroAndLanes.add(3);
         HeroAndLanes.add(1);
         HeroAndLanes.add(2);
+        HeroAndLanes.add(1);
+
+        HeroAndLanes.add(2);
+        HeroAndLanes.add(3);
+        HeroAndLanes.add(4);
+        HeroAndLanes.add(0);
         HeroAndLanes.add(1);
 
         return HeroAndLanes;

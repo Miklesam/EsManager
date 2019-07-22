@@ -3,10 +3,9 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,8 +14,6 @@ import java.util.Collections;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
-import static com.miklesam.dota_manager.TeamsInit.CloseTeamsInit;
-import static com.miklesam.dota_manager.TeamsInit.ClosedTeams;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.CloseLose1;
 import static com.miklesam.dota_manager.YourTeam.CloseLose2;
@@ -47,12 +44,18 @@ import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
+import static com.miklesam.dota_manager.YourTeam.Series1Win;
+import static com.miklesam.dota_manager.YourTeam.Series2Win;
+import static com.miklesam.dota_manager.YourTeam.Series3Win;
+import static com.miklesam.dota_manager.YourTeam.Series4Win;
+import static com.miklesam.dota_manager.YourTeam.Series5Win;
+import static com.miklesam.dota_manager.YourTeam.Series6Win;
+import static com.miklesam.dota_manager.YourTeam.Series7Win;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
 import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
@@ -66,6 +69,11 @@ public class ClosedQuali extends AppCompatActivity {
     TextView Seriesnyouteam[]= new TextView[7];
     ImageView Seriesnteamlogo[]=new ImageView[7];
     ImageView Seriesnyourteamlogo[]=new ImageView[7];
+
+
+
+    TextView SeriesScore[]=new TextView[7];
+    TextView SeriesScoreyou[]=new TextView[7];
     ImageView TeamsLogo[] = new ImageView[8];
 
 
@@ -82,6 +90,7 @@ public class ClosedQuali extends AppCompatActivity {
     int Pos4=0;
     int Pos5=0;
     int Seriescnt=0;
+    int Dayint;
 
     int Closedwinint=0;
     int Closedloseint=0;
@@ -112,7 +121,34 @@ public class ClosedQuali extends AppCompatActivity {
 
     int CloseTeam[]= new int[7];
 
+
+
     ArrayList<ModelTeam> teamstable = new ArrayList<>();
+
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,7 +219,7 @@ public class ClosedQuali extends AppCompatActivity {
 
         Play_btn=findViewById(R.id.Play_btn);
 
-
+        int Serieswin[]=new int[7];
         TeamWin[0]=findViewById(R.id.ScoreWin1);
         TeamWin[1]=findViewById(R.id.ScoreWin2);
         TeamWin[2]=findViewById(R.id.ScoreWin3);
@@ -202,6 +238,23 @@ public class ClosedQuali extends AppCompatActivity {
         TeamLose[5]=findViewById(R.id.ScoreLose6);
         TeamLose[6]=findViewById(R.id.ScoreLose7);
         TeamLose[7]=findViewById(R.id.ScoreLose8);
+
+        SeriesScore[0]=findViewById(R.id.Series1scoreteam1);
+        SeriesScore[1]=findViewById(R.id.Series2scoreteam1);
+        SeriesScore[2]=findViewById(R.id.Series3scoreteam1);
+        SeriesScore[3]=findViewById(R.id.Series4scoreteam1);
+        SeriesScore[4]=findViewById(R.id.Series5scoreteam1);
+        SeriesScore[5]=findViewById(R.id.Series6scoreteam1);
+        SeriesScore[6]=findViewById(R.id.Series7scoreteam1);
+
+        SeriesScoreyou[0]=findViewById(R.id.Series1scoreteam2);
+        SeriesScoreyou[1]=findViewById(R.id.Series2scoreteam2);
+        SeriesScoreyou[2]=findViewById(R.id.Series3scoreteam2);
+        SeriesScoreyou[3]=findViewById(R.id.Series4scoreteam2);
+        SeriesScoreyou[4]=findViewById(R.id.Series5scoreteam2);
+        SeriesScoreyou[5]=findViewById(R.id.Series6scoreteam2);
+        SeriesScoreyou[6]=findViewById(R.id.Series7scoreteam2);
+
 
 
         if (mSettings.contains(APP_PREFERENCES_NAME)) {
@@ -327,6 +380,55 @@ public class ClosedQuali extends AppCompatActivity {
             CloseTeam[6]=Integer.parseInt(mSettings.getString(CloseTeam7, "CloseTeam7"));
         }
 
+        if(mSettings.contains(Day)) {
+            Dayint=Integer.parseInt(mSettings.getString(Day, "Day"));
+        }
+
+
+
+        if(mSettings.contains(Series1Win)) {
+            Serieswin[0]=Integer.parseInt(mSettings.getString(Series1Win, "0"));
+        }
+        if(mSettings.contains(Series2Win)) {
+            Serieswin[1]=Integer.parseInt(mSettings.getString(Series2Win, "0"));
+        }
+        if(mSettings.contains(Series3Win)) {
+            Serieswin[2]=Integer.parseInt(mSettings.getString(Series3Win, "0"));
+        }
+        if(mSettings.contains(Series4Win)) {
+            Serieswin[3]=Integer.parseInt(mSettings.getString(Series4Win, "0"));
+        }
+        if(mSettings.contains(Series5Win)) {
+            Serieswin[4]=Integer.parseInt(mSettings.getString(Series5Win, "0"));
+        }
+        if(mSettings.contains(Series6Win)) {
+            Serieswin[5]=Integer.parseInt(mSettings.getString(Series6Win, "0"));
+        }
+        if(mSettings.contains(Series7Win)) {
+            Serieswin[6]=Integer.parseInt(mSettings.getString(Series7Win, "0"));
+        }
+
+        for(int i=0;i<7;i++)
+        {
+            if(Serieswin[i]==1)
+            {
+                SeriesScore[i].setText("0");
+                SeriesScoreyou[i].setText("1");
+            }
+            else if (Serieswin[i]==2)
+            {
+                SeriesScore[i].setText("1");
+                SeriesScoreyou[i].setText("0");
+            }
+        }
+
+
+
+
+
+
+
+
         final SharedPreferences.Editor editor = mSettings.edit();
 
 
@@ -366,8 +468,8 @@ public class ClosedQuali extends AppCompatActivity {
 
         for (int i=0;i<7;i++)
         {
-            Seriesnteam[i].setText(ClosedTeamstour.get(CloseTeam[i]).teamname);
-            Seriesnteamlogo[i].setImageResource(ClosedTeamstour.get(CloseTeam[i]).logo);
+            Seriesnteam[i].setText(ClosedTeamstour.get(CloseTeam[7-(i+1)]).teamname);
+            Seriesnteamlogo[i].setImageResource(ClosedTeamstour.get(CloseTeam[7-(i+1)]).logo);
             Seriesnyouteam[i].setText(YourTeam);
             Seriesnyourteamlogo[i].setImageResource(R.drawable.teamlogo);
 
@@ -389,17 +491,19 @@ public class ClosedQuali extends AppCompatActivity {
         if (groupstateposition==1)
         {
             AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли на прямую");
+            AfterGroupStage.setVisibility(View.VISIBLE);
         }
         else if ((groupstateposition>1)&&(groupstateposition<6))
         {
             AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли в плей-офф");
             playoff=true;
-            //Play_btn.setText("Playoff");
-            Play_btn.setImageResource(R.drawable.shop);
+            Play_btn.setImageResource(R.drawable.next_bttn_canv_2);
+            AfterGroupStage.setVisibility(View.VISIBLE);
         }
         else
         {
             AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И вылетели");
+            AfterGroupStage.setVisibility(View.VISIBLE);
         }
 
 
@@ -470,10 +574,8 @@ public class ClosedQuali extends AppCompatActivity {
                     else
                     {
                         editor.putString(ClosedSeries, "0");
-
                         editor.putString(Closedwin, "0");
                         editor.putString(Closedlose, "0");
-
                         editor.putString(CloseWin7, "0");
                         editor.putString(CloseWin6, "0");
                         editor.putString(CloseWin5, "0");
@@ -504,8 +606,18 @@ public class ClosedQuali extends AppCompatActivity {
                         editor.putString(CloseTeam5, "0");
                         editor.putString(CloseTeam6, "0");
                         editor.putString(CloseTeam7, "0");
-                        editor.putString(Day, "0");
+                        editor.putString(Day, String.valueOf(Dayint+2));
                         editor.putString(Mode, "0");
+
+
+
+                        editor.putString(Series1Win, "0");
+                        editor.putString(Series2Win, "0");
+                        editor.putString(Series3Win, "0");
+                        editor.putString(Series4Win, "0");
+                        editor.putString(Series5Win, "0");
+                        editor.putString(Series6Win, "0");
+                        editor.putString(Series7Win, "0");
 
                         editor.apply();
 

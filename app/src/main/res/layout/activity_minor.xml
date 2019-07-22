@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cbe1e9"
+    tools:context=".Minor">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minor"/>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20sp"
+    android:orientation="horizontal">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#45283c"
+        android:text="Group Stage"
+        />
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DDF4DD">
+        <ImageView
+            android:id="@+id/Teamlogo1"
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            />
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:text="Team1"
+            android:textColor="#45283c"
+            android:id="@+id/Team1"
+            />
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreWin1"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="-"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreLose1"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E5F4C6">
+        <ImageView
+            android:id="@+id/Teamlogo2"
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            />
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:text="Team1"
+            android:textColor="#45283c"
+            android:id="@+id/Team2"
+            />
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreWin2"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="-"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreLose2"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E5F4C6">
+        <ImageView
+            android:id="@+id/Teamlogo3"
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            />
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:text="Team1"
+            android:textColor="#45283c"
+            android:id="@+id/Team3"
+            />
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreWin3"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="-"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreLose3"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#E5F4C6">
+        <ImageView
+            android:id="@+id/Teamlogo4"
+            android:layout_width="40sp"
+            android:layout_height="20sp"
+            />
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:text="Team1"
+            android:textColor="#45283c"
+            android:id="@+id/Team4"
+            />
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreWin4"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="-"
+            />
+
+        <TextView
+            android:layout_marginLeft="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScoreLose4"
+            android:textColor="#000000"
+            android:text="0"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#45283c"
+            android:text="Group Stage"
+            />
+
+
+
+        <LinearLayout
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#DDF4DD">
+            <ImageView
+                android:id="@+id/Teamlogo5"
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                />
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Team1"
+                android:textColor="#45283c"
+                android:id="@+id/Team5"
+                />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreWin5"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="-"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreLose5"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E5F4C6">
+            <ImageView
+                android:id="@+id/Teamlogo6"
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                />
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Team1"
+                android:textColor="#45283c"
+                android:id="@+id/Team6"
+                />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreWin6"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="-"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreLose6"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E5F4C6">
+            <ImageView
+                android:id="@+id/Teamlogo7"
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                />
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Team1"
+                android:textColor="#45283c"
+                android:id="@+id/Team7"
+                />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreWin7"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="-"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreLose7"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E5F4C6">
+            <ImageView
+                android:id="@+id/Teamlogo8"
+                android:layout_width="40sp"
+                android:layout_height="20sp"
+                />
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="20sp"
+                android:text="Team1"
+                android:textColor="#45283c"
+                android:id="@+id/Team8"
+                />
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreWin8"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="-"
+                />
+
+            <TextView
+                android:layout_marginLeft="5sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ScoreLose8"
+                android:textColor="#000000"
+                android:text="0"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</RelativeLayout>

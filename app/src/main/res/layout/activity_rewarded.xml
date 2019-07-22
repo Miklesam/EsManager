@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#cbe1e9"
     tools:context=".Rewarded">
 
     <TextView
@@ -13,10 +14,10 @@
         android:text="Hello there! "
         android:id="@+id/reward_text"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
+    <ImageView
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        app:srcCompat="@drawable/back_bttn"
         android:id="@+id/backs"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>

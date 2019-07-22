@@ -3,10 +3,9 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +14,6 @@ import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
 import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
-import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.XPstatic;
 
 public class Improve extends AppCompatActivity {
@@ -52,6 +50,29 @@ public class Improve extends AppCompatActivity {
     TextView XPcnt;
 
     SharedPreferences mSettings;
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+    @Override
+    public void onBackPressed() {
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

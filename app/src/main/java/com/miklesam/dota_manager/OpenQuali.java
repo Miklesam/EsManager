@@ -3,16 +3,13 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
@@ -82,6 +79,31 @@ public class OpenQuali extends AppCompatActivity {
     int finalwon;
     int day;
     boolean losequal;
+
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
 
 
     @Override
@@ -414,7 +436,7 @@ public class OpenQuali extends AppCompatActivity {
 
                if(losequal==true)
                {
-                   //editor.putString(Day, String.valueOf(day+1));
+                   editor.putString(Day, String.valueOf(day+2));
                    editor.putString(OpenScore1, "0");
                    editor.putString(OpenScore2, "0");
                    editor.putString(OpenScore3, "0");
@@ -446,7 +468,7 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(OpenQualiWinner, "0");
 
 
-                   editor.putString(Day, "0");
+                   editor.putString(Day, String.valueOf(day+5));
 
                    editor.apply();
                    startActivity(Tomainstate);
@@ -455,7 +477,7 @@ public class OpenQuali extends AppCompatActivity {
                {
                    if (oqf==1)
                    {
-                       editor.putString(Day, String.valueOf(day+5));
+                       editor.putString(Day, String.valueOf(day+2));
                        editor.putString(OpenScore1, "0");
                        editor.putString(OpenScore2, "0");
                        editor.putString(OpenScore3, "0");

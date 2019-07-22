@@ -238,7 +238,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="#45283c"
-            android:text="Разберите героев иназначте их по линиям"/>
+            android:id="@+id/helpinfo"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -263,6 +263,7 @@
                     <Spinner
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:popupBackground="#cbe1e9"
                         android:id="@+id/Spiner1">
 
 
@@ -275,6 +276,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:popupBackground="#cbe1e9"
                     android:id="@+id/LineSpiner1">
 
                 </Spinner>
@@ -302,6 +304,7 @@
                     <Spinner
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:popupBackground="#cbe1e9"
                         android:id="@+id/Spiner2">
 
 
@@ -314,6 +317,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:popupBackground="#cbe1e9"
                     android:id="@+id/LineSpiner2">
 
                 </Spinner>
@@ -340,6 +344,7 @@
                     <Spinner
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:popupBackground="#cbe1e9"
                         android:id="@+id/Spiner3">
 
 
@@ -352,6 +357,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:popupBackground="#cbe1e9"
                     android:id="@+id/LineSpiner3">
 
                 </Spinner>
@@ -380,6 +386,7 @@
                     <Spinner
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:popupBackground="#cbe1e9"
                         android:id="@+id/Spiner4">
 
 
@@ -392,6 +399,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:popupBackground="#cbe1e9"
                     android:id="@+id/LineSpiner4">
 
                 </Spinner>
@@ -418,6 +426,7 @@
                     </ImageView>
                     <Spinner
                         android:layout_width="wrap_content"
+                        android:popupBackground="#cbe1e9"
                         android:layout_height="wrap_content"
                         android:id="@+id/Spiner5">
 
@@ -431,6 +440,7 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:popupBackground="#cbe1e9"
                     android:id="@+id/LineSpiner5">
 
                 </Spinner>

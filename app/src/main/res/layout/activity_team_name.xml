@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Введите название команды"
+            android:id="@+id/yourName"
             android:textColor="#45283c"/>
 
         <EditText

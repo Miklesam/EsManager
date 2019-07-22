@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.miklesam.dota_manager">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".Minor"
+            android:screenOrientation="landscape"
+            ></activity>
+        <activity
+            android:name=".infos"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".about"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".practiceactivity"
             android:screenOrientation="landscape" />

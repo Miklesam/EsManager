@@ -1,27 +1,24 @@
 package com.miklesam.dota_manager;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
-import static com.miklesam.dota_manager.HeroInit.Abadon;
-import static com.miklesam.dota_manager.HeroInit.Alchemic;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PickersInit.AllPickers;
 import static com.miklesam.dota_manager.PickersInit.AllPickersInit;
-import static com.miklesam.dota_manager.PickersInit.EmpirePickerMan;
-import static com.miklesam.dota_manager.TeamsInit.AllTeams;
+import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
 
 public class Pick_Stage extends AppCompatActivity {
 
@@ -51,6 +48,28 @@ public class Pick_Stage extends AppCompatActivity {
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
     ArrayList <Pickers> PickerList= new ArrayList <Pickers>();
 
+    boolean lock;
+    int languageshare;
+    SharedPreferences mSettings;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
     @Override
     public void onBackPressed() {
     }
@@ -71,7 +90,7 @@ public class Pick_Stage extends AppCompatActivity {
         pick_state=0;
 
         HelpText=findViewById(R.id.Help);
-
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
 
 
 
@@ -442,6 +461,9 @@ public class Pick_Stage extends AppCompatActivity {
        //     Pick_stage[i].setImageResource(R.drawable.pick);
        // }
 
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
 
 
 
@@ -490,15 +512,30 @@ public class Pick_Stage extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 if((pick_state==1)||(pick_state==3)||(pick_state==5)||(pick_state==10)||(pick_state==12)||(pick_state==18))
                 {
-                    HelpText.setText("Бан "+EnemyName);
+                    if(languageshare==2)
+                    {
+                        HelpText.setText("Ban "+EnemyName);
+                    }
+                    else
+                    {
+                        HelpText.setText("Бан "+EnemyName);
+                    }
+
                     timeleft.setText(""
-                            +2+ millisUntilFinished / 1000);
+                            +3+ millisUntilFinished / 1000);
                 }
                 else
                 {
-                    HelpText.setText("Пик "+EnemyName);
+                    if(languageshare==2)
+                    {
+                        HelpText.setText("Pick "+EnemyName);
+                    }
+                    else
+                    {
+                        HelpText.setText("Пик "+EnemyName);
+                    }
                     timeleft.setText(""
-                            +2+ millisUntilFinished / 1000);
+                            +3+ millisUntilFinished / 1000);
                 }
 
 
@@ -520,14 +557,29 @@ public class Pick_Stage extends AppCompatActivity {
 
                 if((pick_state==0)||(pick_state==2)||(pick_state==4)||(pick_state==11)||(pick_state==13)||(pick_state==19))
                 {
-                    HelpText.setText("Бан "+TeamName);
+                    if(languageshare==2)
+                    {
+                        HelpText.setText("Ban "+TeamName);
+                    }
+                    else
+                    {
+                        HelpText.setText("Бан "+TeamName);
+                    }
+
+
                     timeleft.setText(""
                             + millisUntilFinished / 1000);
                 }
                 else
                 {
-                    HelpText.setText("Пик "+TeamName+" Осталось: "
-                            + millisUntilFinished / 1000);
+                    if(languageshare==2)
+                    {
+                        HelpText.setText("Pick "+TeamName);
+                    }
+                    else
+                    {
+                        HelpText.setText("Пик "+TeamName);
+                    }
                     timeleft.setText(""
                             + millisUntilFinished / 1000);
                 }
@@ -612,9 +664,21 @@ public class Pick_Stage extends AppCompatActivity {
                                                      }
 
                                                      else {
-                                                         Toast toast = Toast.makeText(getApplicationContext(),
-                                                                 "Забанен1", Toast.LENGTH_SHORT);
-                                                         toast.show();
+
+                                                         if(languageshare==2)
+                                                         {
+                                                             Toast toast = Toast.makeText(getApplicationContext(),
+                                                                     "Banned", Toast.LENGTH_SHORT);
+                                                             toast.show();
+                                                         }
+                                                         else
+                                                         {
+                                                             Toast toast = Toast.makeText(getApplicationContext(),
+                                                                     "Забанен", Toast.LENGTH_SHORT);
+                                                             toast.show();
+                                                         }
+
+
 
                                                      }
 

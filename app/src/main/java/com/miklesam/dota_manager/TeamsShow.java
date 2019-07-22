@@ -1,13 +1,15 @@
 package com.miklesam.dota_manager;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
+import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
 
 public class TeamsShow extends AppCompatActivity {
     ListView TeamslistView;
@@ -41,9 +45,31 @@ public class TeamsShow extends AppCompatActivity {
     TextView fighting;
     TextView farming;
     TextView supporting;
+    int languageshare;
+
+    ImageView faceima;
 
     boolean backteams;
+    boolean lock;
+    SharedPreferences mSettings;
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
 
     @Override
     public void onBackPressed() {
@@ -60,7 +86,7 @@ public class TeamsShow extends AppCompatActivity {
 
         PlayerCost=findViewById(R.id.PlayerCost);
         PlayerFans=findViewById(R.id.PlayerFans);
-
+        faceima=findViewById(R.id.faceima);
         AllTeams.clear();
         ThisTeams=AllTeamsInit();
         final TeamsAdapter teamsAdapter=new TeamsAdapter();
@@ -82,6 +108,10 @@ public class TeamsShow extends AppCompatActivity {
         final Intent ToMain = new Intent(this, MainActivity.class);
 
         TeamslistView.setAdapter(teamsAdapter);
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
 
         Heroeses=HeroInit.HeroInit();
 
@@ -126,16 +156,23 @@ public class TeamsShow extends AppCompatActivity {
                 signature2.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(0).signature2).picked);
                 signature3.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(0).signature3).picked);
 
-                laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).laining));
-                fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).fighting));
-                farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).farming));
-                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).late));
+                laning.setText("laning"+ String.valueOf(AllTeams.get(teampos).Players.get(0).laining));
+                fighting.setText("fight"+String.valueOf(AllTeams.get(teampos).Players.get(0).fighting));
+                farming.setText("farm"+String.valueOf(AllTeams.get(teampos).Players.get(0).farming));
+                supporting.setText("late"+String.valueOf(AllTeams.get(teampos).Players.get(0).late));
+                if(languageshare==2)
+                {
+                    Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).EngDescription));
+                }
+                else
+                {
+                    Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Description));
+                }
 
-                Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Description));
 
                 PlayerCost.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).Cost));
                 PlayerFans.setText(String.valueOf(AllTeams.get(teampos).Players.get(0).fans));
-
+                faceima.setImageResource(AllTeams.get(teampos).Players.get(0).face);
 
 
             }
@@ -154,15 +191,23 @@ public class TeamsShow extends AppCompatActivity {
                 signature2.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(position).signature2).picked);
                 signature3.setImageResource(Heroeses.get(AllTeams.get(teampos).Players.get(position).signature3).picked);
 
-                laning.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).laining));
-                fighting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fighting));
-                farming.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
-                supporting.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).late));
-                Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Description));
+                laning.setText("laning"+String.valueOf(AllTeams.get(teampos).Players.get(position).laining));
+                fighting.setText("fight"+String.valueOf(AllTeams.get(teampos).Players.get(position).fighting));
+                farming.setText("farm"+String.valueOf(AllTeams.get(teampos).Players.get(position).farming));
+                supporting.setText("late"+String.valueOf(AllTeams.get(teampos).Players.get(position).late));
+                if(languageshare==2)
+                {
+                    Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).EngDescription));
+                }
+                else
+                {
+                    Descriptionplayer.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Description));
+                }
+              
 
                 PlayerCost.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).Cost));
                 PlayerFans.setText(String.valueOf(AllTeams.get(teampos).Players.get(position).fans));
-
+                faceima.setImageResource(AllTeams.get(teampos).Players.get(position).face);
 
             }
         });

@@ -1,13 +1,15 @@
 package com.miklesam.dota_manager;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,6 +23,8 @@ import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersAllInit;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
+import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
 
 public class PlaningState extends AppCompatActivity {
 
@@ -37,7 +41,7 @@ public class PlaningState extends AppCompatActivity {
     boolean midlline[]= new boolean[5];
     boolean bottomlline[]= new boolean[5];
 
-
+    SharedPreferences mSettings;
     ImageView ToFightStage;
     int lane_id[]= new int[5];
 
@@ -56,6 +60,33 @@ public class PlaningState extends AppCompatActivity {
     ArrayList bot = new ArrayList<>();
 
     int TeamEnemy;
+
+    boolean lock0;
+    boolean lock1;
+    boolean lock2;
+    boolean lock3;
+    TextView helpinfo;
+    boolean lock;
+    int languageshare;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
 
     @Override
     public void onBackPressed() {
@@ -94,6 +125,20 @@ public class PlaningState extends AppCompatActivity {
         Top[4]=findViewById(R.id.top5);
         AllTeamsTeams=AllTeamsInit();
         final Intent ToFightStageActivity = new Intent(this, FightState.class);
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+        helpinfo=findViewById(R.id.helpinfo);
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
+
+        if(languageshare==2)
+        {
+            helpinfo.setText("Take the heroes and assign them along the lines");
+        }
+        else
+        {
+            helpinfo.setText("Разберите героев иназначте их по линиям");
+        }
 
 
         for (int i=0;i<AllHeroes.size();i++)
@@ -238,6 +283,8 @@ public class PlaningState extends AppCompatActivity {
                 }
             });
         }
+
+
 
 
         Lanespinner1.setAdapter(Laneadapter);
@@ -398,49 +445,104 @@ for(int k=0;k<5;k++)
             @Override
             public void onClick(View v) {
 
+                for (int i=1;i<5;i++)
+                {
+                    lock0=false;
+                    if(seq_gamer[0]==seq_gamer[i])
+                    {
+                        lock0=true;
+                        break;
+                    }
+                }
+                for (int i=2;i<5;i++)
+                {
+                    lock1=false;
+                    if(seq_gamer[1]==seq_gamer[i])
+                    {
+                        lock1=true;
+                        break;
+                    }
 
-                ToFightStageActivity.putExtra("Hero1",Hero[0]);
-                ToFightStageActivity.putExtra("Hero2",Hero[1]);
-                ToFightStageActivity.putExtra("Hero3",Hero[2]);
-                ToFightStageActivity.putExtra("Hero4",Hero[3]);
-                ToFightStageActivity.putExtra("Hero5",Hero[4]);
+                }
+                for (int i=3;i<5;i++)
+                {
+                    lock2=false;
+                    if(seq_gamer[2]==seq_gamer[i])
+                    {
+                        lock2=true;
+                        break;
+                    }
 
-                ToFightStageActivity.putExtra("Lane1",lane_id[0]);
-                ToFightStageActivity.putExtra("Lane2",lane_id[1]);
-                ToFightStageActivity.putExtra("Lane3",lane_id[2]);
-                ToFightStageActivity.putExtra("Lane4",lane_id[3]);
-                ToFightStageActivity.putExtra("Lane5",lane_id[4]);
+                }
+                for (int i=4;i<5;i++)
+                {
+                    lock3=false;
+                    if(seq_gamer[3]==seq_gamer[i])
+                    {
+                        lock3=true;
+                        break;
+                    }
 
-                ToFightStageActivity.putExtra("Gamer1",seq_gamer[0]);
-                ToFightStageActivity.putExtra("Gamer2",seq_gamer[1]);
-                ToFightStageActivity.putExtra("Gamer3",seq_gamer[2]);
-                ToFightStageActivity.putExtra("Gamer4",seq_gamer[3]);
-                ToFightStageActivity.putExtra("Gamer5",seq_gamer[4]);
+                }
+
+                if((lock0==false)&&(lock1==false)&&(lock2==false)&&(lock3==false))
+                {
+                    ToFightStageActivity.putExtra("Hero1",Hero[0]);
+                    ToFightStageActivity.putExtra("Hero2",Hero[1]);
+                    ToFightStageActivity.putExtra("Hero3",Hero[2]);
+                    ToFightStageActivity.putExtra("Hero4",Hero[3]);
+                    ToFightStageActivity.putExtra("Hero5",Hero[4]);
+
+                    ToFightStageActivity.putExtra("Lane1",lane_id[0]);
+                    ToFightStageActivity.putExtra("Lane2",lane_id[1]);
+                    ToFightStageActivity.putExtra("Lane3",lane_id[2]);
+                    ToFightStageActivity.putExtra("Lane4",lane_id[3]);
+                    ToFightStageActivity.putExtra("Lane5",lane_id[4]);
+
+                    ToFightStageActivity.putExtra("Gamer1",seq_gamer[0]);
+                    ToFightStageActivity.putExtra("Gamer2",seq_gamer[1]);
+                    ToFightStageActivity.putExtra("Gamer3",seq_gamer[2]);
+                    ToFightStageActivity.putExtra("Gamer4",seq_gamer[3]);
+                    ToFightStageActivity.putExtra("Gamer5",seq_gamer[4]);
 
 
-                ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
-                ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
-                ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
-                ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
-                ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
+                    ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
+                    ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
+                    ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
+                    ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
+                    ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
 
 
-                ToFightStageActivity.putExtra("CompLane1",CompHeroesAndLanes.get(0));
-                ToFightStageActivity.putExtra("CompLane2",CompHeroesAndLanes.get(1));
-                ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
-                ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
-                ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
+                    ToFightStageActivity.putExtra("CompLane1",CompHeroesAndLanes.get(0));
+                    ToFightStageActivity.putExtra("CompLane2",CompHeroesAndLanes.get(1));
+                    ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
+                    ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
+                    ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
 
 
-                ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(0).sequence);
-                ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(3).sequence);
-                ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(4).sequence);
-                ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(1).sequence);
-                ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(2).sequence);
+                    ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(5)).sequence);
+                    ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(6)).sequence);
+                    ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(7)).sequence);
+                    ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(8)).sequence);
+                    ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(9)).sequence);
 
-                AllHeroes.clear();
-              startActivity(ToFightStageActivity);
+                    AllHeroes.clear();
+                    startActivity(ToFightStageActivity);
+                }
+                else
+                {
+                    if(languageshare==2)
+                    {
+                        Toast.makeText(PlaningState.this, "Assign players", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(PlaningState.this, "Назначьте игроков", Toast.LENGTH_SHORT).show();
+                    }
 
+
+
+                }
             }
         });
 

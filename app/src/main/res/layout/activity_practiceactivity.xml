@@ -190,11 +190,6 @@
                 android:orientation="vertical"
                 android:id="@+id/solotrainigLinear"
                 android:visibility="invisible">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Solo Training"/>
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -205,16 +200,32 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150sp"
-                            android:layout_height="20sp"
-                            android:text="Player1"
-                            android:id="@+id/textplayer1"/>
 
                         <ImageView
                             android:layout_width="60sp"
                             android:layout_height="100sp"
-                            app:srcCompat="@drawable/aaaaa"/>
+                            android:id="@+id/face_1"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flag_player1"/>
+
+                            <TextView
+                                android:layout_width="150sp"
+                                android:layout_height="20sp"
+                                android:textColor="#45283c"
+                                android:id="@+id/textplayer1"/>
+
+                        </LinearLayout>
+
+
+
+
 
                     </LinearLayout>
 
@@ -222,6 +233,8 @@
                         android:layout_width="200sp"
                         android:layout_gravity="center"
                         android:layout_height="wrap_content"
+                        android:popupBackground="#cbe1e9"
+                        android:textColor="#B3610B"
                         android:id="@+id/prspinner1">
                     </Spinner>
 
@@ -237,22 +250,43 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150sp"
-                            android:layout_height="20sp"
-                            android:text="Player2"
-                            android:id="@+id/textplayer2"/>
+
 
                         <ImageView
                             android:layout_width="60sp"
                             android:layout_height="100sp"
-                            app:srcCompat="@drawable/profile"/>
+                            android:id="@+id/face_2"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flag_player2"/>
+
+                            <TextView
+                                android:layout_width="150sp"
+                                android:layout_height="20sp"
+                                android:textColor="#45283c"
+                                android:id="@+id/textplayer2"/>
+
+                        </LinearLayout>
+
+
+
+
+
 
                     </LinearLayout>
 
                     <Spinner
                         android:layout_width="200sp"
                         android:layout_gravity="center"
+                        android:popupBackground="#cbe1e9"
                         android:layout_height="wrap_content"
                         android:id="@+id/prspinner2">
                     </Spinner>
@@ -268,22 +302,34 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150sp"
-                            android:layout_height="20sp"
-                            android:text="Player3"
-                            android:id="@+id/textplayer3"/>
-
                         <ImageView
                             android:layout_width="60sp"
                             android:layout_height="100sp"
-                            app:srcCompat="@drawable/profile"/>
+                            android:id="@+id/face_3"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flag_player3"/>
+
+                            <TextView
+                                android:layout_width="150sp"
+                                android:layout_height="20sp"
+                                android:textColor="#45283c"
+                                android:id="@+id/textplayer3"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <Spinner
                         android:layout_width="200sp"
                         android:layout_gravity="center"
+                        android:popupBackground="#cbe1e9"
                         android:layout_height="wrap_content"
                         android:id="@+id/prspinner3">
                     </Spinner>
@@ -299,22 +345,35 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150sp"
-                            android:layout_height="20sp"
-                            android:text="Player4"
-                            android:id="@+id/textplayer4"/>
 
                         <ImageView
                             android:layout_width="60sp"
                             android:layout_height="100sp"
-                            app:srcCompat="@drawable/profile"/>
+                            android:id="@+id/face_4"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flag_player4"/>
+
+                            <TextView
+                                android:layout_width="150sp"
+                                android:layout_height="20sp"
+                                android:textColor="#45283c"
+                                android:id="@+id/textplayer4"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <Spinner
                         android:layout_width="200sp"
                         android:layout_gravity="center"
+                        android:popupBackground="#cbe1e9"
                         android:layout_height="wrap_content"
                         android:id="@+id/prspinner4">
                     </Spinner>
@@ -330,22 +389,34 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="150sp"
-                            android:layout_height="20sp"
-                            android:text="Player5"
-                            android:id="@+id/textplayer5"/>
-
                         <ImageView
                             android:layout_width="60sp"
                             android:layout_height="100sp"
-                            app:srcCompat="@drawable/profile"/>
+                            android:id="@+id/face_5"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/flag_player5"/>
+
+                            <TextView
+                                android:layout_width="150sp"
+                                android:layout_height="20sp"
+                                android:textColor="#45283c"
+                                android:id="@+id/textplayer5"/>
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                     <Spinner
                         android:layout_width="200sp"
                         android:layout_gravity="center"
+                        android:popupBackground="#cbe1e9"
                         android:layout_height="wrap_content"
                         android:id="@+id/prspinner5">
                     </Spinner>

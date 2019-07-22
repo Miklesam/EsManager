@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "899010467064",
+    "firebase_url": "https://esmanagercis.firebaseio.com",
+    "project_id": "esmanagercis",
+    "storage_bucket": "esmanagercis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899010467064:android:0f605f12e45e40e5",
+        "android_client_info": {
+          "package_name": "com.miklesam.dota_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899010467064-voej0egbaf6jg3k9em6b07dqd3o94k0b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.miklesam.dota_manager",
+            "certificate_hash": "b86b1727a53294c241371681c7ff43de889651cb"
+          }
+        },
+        {
+          "client_id": "899010467064-lgdjc2pdv3idgsn4cdrroqcjgbpk5g56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCut7FwZudXYuYGMz8DKGbKBpMb3bht3Dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899010467064-lgdjc2pdv3idgsn4cdrroqcjgbpk5g56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7663357542046905~6796950904"
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,11 +3,10 @@ package com.miklesam.dota_manager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +20,8 @@ public class YourTeam extends AppCompatActivity {
     public static final String StaticPosition5 = "pos5";
     public static final String XPstatic= "xpstatic";
     public static final String Day= "daystatic";
+    public static final String Month= "monthstatic";
+    public static final String Year= "yearstatic";
     public static final String Mode= "modestatic";
 
     public static final String OpenTeam1= "open1";
@@ -135,8 +136,47 @@ public class YourTeam extends AppCompatActivity {
     public static final String CloseScore12= "CloseScore12";
 
 
+    public static final String Series1Win= "Series1Win";
+    public static final String Series2Win= "Series2Win";
+    public static final String Series3Win= "Series3Win";
+    public static final String Series4Win= "Series4Win";
+    public static final String Series5Win= "Series5Win";
+    public static final String Series6Win= "Series6Win";
+    public static final String Series7Win= "Series7Win";
+    public static final String Language= "russian";
+
+
+
+
+
+    TextView money;
+    TextView fans;
+    TextView cont;
+    TextView infoText;
 
     SharedPreferences mSettings;
+    int languageshare;
+    boolean lock;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +190,10 @@ public class YourTeam extends AppCompatActivity {
         mSettings = getSharedPreferences(APP_PREFERENCES_NAME , Context.MODE_PRIVATE);
         mSettings = getSharedPreferences(GoldBalance , Context.MODE_PRIVATE);
 
-
+        infoText=findViewById(R.id.infoText);
+        money=findViewById(R.id.money);
+        fans=findViewById(R.id.fans);
+        cont=findViewById(R.id.cont);
 
         final String newString;
         if (savedInstanceState == null) {
@@ -164,14 +207,86 @@ public class YourTeam extends AppCompatActivity {
             newString= (String) savedInstanceState.getSerializable("Name");
         }
 
-        TeamTag.setText("Welcome\nTeam: "+newString);
-        Gold.setText("У Вас 50000 рублей\n"+
-        "Наберите игроков и управляйте командой");
+
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
+        if(languageshare==2)
+        {
+            TeamTag.setText("Welcome\n: "+newString);
+            Gold.setText("You have only 50,000 rubles\n"+
+                    "Recruit players and manage the team\n"+
+                    "position 1-3 : Core\n"+
+                    "position 4-5: Support");
+            infoText.setText("The game has 2 main characteristics");
+            money.setText("2.Money");
+            fans.setText("1.Fans");
+            cont.setText("Every gaming day you are charged an additional amount equal to (number of fans)/100."+"\n"+
+                    "Money can be spent on the purchase of players."+"\n"+
+                    "You can sell players for half the price."+"\n"+
+                    "Every day, apart from competitive ones, you can train, \n" +
+                    "they can be both command and individual." +
+                    "To train and participate in competitions you must be in full roster. If a player " +
+                    "during individual pursuits is streaming, there is an increase in fans, in other cases there is an increase XP, as with team training." +
+                    "Earned XP can be spent on improving team performance:"+"\n"+
+                    "1.Laining"+"\n"+
+                    "2.Farm"+"\n"+
+                    "3.Fighting"+"\n"+
+                    "4.LateGame"+"\n"+
+                    "These characteristics affect the calculation of the battlefield."+"\n"+
+                    "The battle calculation is divided into 3 stages:"+"\n"+
+                    "1.Laining Stage"+"\n"+
+                    "2.Middlegame"+"\n"+
+                    "3.Lategame"+"\n"+
+                    "Then the winner is displayed."+"\n"+
+                    "The tournament variety is not great, and includes only open and closed qualifications in minor and major."+"\n"+
+                    "Wishes, suggestions and complaints, please write to my mail:"+"\n"+
+                    "mikle.samarkin@gmail.com"
+            );
+
+
+        }
+        else
+        {
+            TeamTag.setText("Добро пожаловать\n: "+newString);
+            Gold.setText("У Вас есть 50,000 рублей\n"+
+                    "Наймите игроков и управляйте командой\n"+
+                    "Позиция 1-3 : Core\n"+
+                    "Позиция 4-5: Support");
+            infoText.setText("В игре есть имеются 2 основные характеристики:");
+            money.setText("2.Деньги");
+            fans.setText("1.Фанаты");
+            cont.setText("Каждый игровой день Вам начисляется дополнительная сумма, равная (количество фанатов)/100."+"\n"+
+                    "Деньги можно тратить на покупку игроков."+"\n"+
+                    "Продавать игроков можно за пол цены."+"\n"+
+                    "Каждый день кроме соревновательных можно проводить тренировки, они могут быть как командные, так и индивидуальные." +
+                    "Тренироваться и учавствовать в соревнованиях можно только в полном составе. Если игрок " +
+                    "во время тндивидуальных занятий стримит, идет прирост фанатов, в других случаях идет прирост XP, так же как и при командных тренировках." +
+                    "Заработанную XP можно тратить на улучшение характеристик команды:"+"\n"+
+                    "1.Laining"+"\n"+
+                    "2.Farm"+"\n"+
+                    "3.Fighting"+"\n"+
+                    "4.LateGame"+"\n"+
+                    "Эти характеристики влияют на расчет боя."+"\n"+
+                    "Расчет сражения делится на 3 этапа:"+"\n"+
+                    "1.Стадия лайнинга"+"\n"+
+                    "2.Миддлегейм"+"\n"+
+                    "3.Лейтгейм"+"\n"+
+                    "После чего выводится победитель."+"\n"+
+                    "Турнирное разнообразие не велико, и включает в себя только открытые и закрытые квалификации на минор и на мажор."+"\n"+
+                    "Пожелания, предложения а также жалобы, пожалуйста, пишите на мою почту"+"\n"+
+                    "mikle.samarkin@gmail.com");
+
+
+        }
+
+
+
 
 
         SharedPreferences.Editor editor = mSettings.edit();
-        editor.putString(APP_PREFERENCES_NAME, newString);
         editor.putString(GoldBalance, "50000");
+        editor.putString(APP_PREFERENCES_NAME, null);
         editor.putString(Fans, "0");
         editor.apply();
 
