@@ -259,6 +259,58 @@ public class PlayersInit {
     static final Players XSvamp1Re = new Players(500,"XSvamp1Re",XSvamp1ReDescription,8500,R.drawable.kazahstan4020,70,70,55,65,11,26,12,67,R.drawable.xsvamp1re_p,EngXSvamp1ReDescription);
     static final Players CemaTheSlayer = new Players(2000,"CemaTheSlayer",CemaTheSlayerDescription,12500,R.drawable.ukraine4020,80,90,20,75,84,82,115,68,R.drawable.sematheslayer_p,EngCemaTheSlayerDescription);
 
+    //Complexity
+     static final Players Sweya = new Players(1000,"Sweya","позиция 1",12500,R.drawable.chech,80,90,20,75,84,82,115,69,R.drawable.sematheslayer_p,"position1");
+    static final Players Laka = new Players(1000,"Laka","позиция 2",12500,R.drawable.sweden,80,90,20,75,84,82,115,70,R.drawable.sematheslayer_p,"position2");
+    static final Players Sthollel = new Players(1000,"Sthollel","позиция 3",12500,R.drawable.usa,80,90,20,75,84,82,115,71,R.drawable.sematheslayer_p,"position3");
+    static final Players Elylllosarw = new Players(1000,"Elylllosarw","позиция 4",12500,R.drawable.kanada,80,90,20,75,84,82,115,72,R.drawable.sematheslayer_p,"position4");
+    static final Players Zorlar = new Players(1000,"Zorlar","позиция 5",12500,R.drawable.usa,80,90,20,75,84,82,115,73,R.drawable.sematheslayer_p,"position5");
+
+    //ROONS
+    static final Players Bro = new Players(1000,"Bro","позиция 1",12500,R.drawable.usa,80,90,20,75,84,82,115,74,R.drawable.sematheslayer_p,"position1");
+    static final Players Inorilontee = new Players(1000,"Inorilontee","позиция 2",12500,R.drawable.kanada,80,90,20,75,84,82,115,75,R.drawable.sematheslayer_p,"position2");
+    static final Players mralyla_focenka = new Players(1000,"mralyla-focenka","позиция 3",12500,R.drawable.usa,80,90,20,75,84,82,115,76,R.drawable.sematheslayer_p,"position3");
+    static final Players Brecr = new Players(1000,"Brecr","позиция 4",12500,R.drawable.kanada,80,90,20,75,84,82,115,77,R.drawable.sematheslayer_p,"position4");
+    static final Players Jakit = new Players(1000,"Jakit","позиция 5",12500,R.drawable.kanada,80,90,20,75,84,82,115,78,R.drawable.sematheslayer_p,"position5");
+
+
+    //Infamous
+    static final Players Tyilin = new Players(1000,"Tyilin","позиция 1",12500,R.drawable.peru,80,90,20,75,84,82,115,79,R.drawable.sematheslayer_p,"position1");
+    static final Players Phlare = new Players(1000,"Phlare","позиция 2",12500,R.drawable.argentina,80,90,20,75,84,82,115,80,R.drawable.sematheslayer_p,"position2");
+    static final Players Weruvi = new Players(1000,"Weruvi","позиция 3",12500,R.drawable.bolivia,80,90,20,75,84,82,115,81,R.drawable.sematheslayer_p,"position3");
+    static final Players Saindiad = new Players(1000,"Saindiad","позиция 4",12500,R.drawable.peru,80,90,20,75,84,82,115,82,R.drawable.sematheslayer_p,"position4");
+    static final Players Mora = new Players(1000,"Mora","позиция 5",12500,R.drawable.peru,80,90,20,75,84,82,115,83,R.drawable.sematheslayer_p,"position5");
+
+    //TFT
+    static final Players Fenes = new Players(1000,"Fenes","позиция 1",12500,R.drawable.sweden,80,90,20,75,84,82,115,84,R.drawable.sematheslayer_p,"position1");
+    static final Players Conthrn = new Players(1000,"Conthrn","позиция 2",12500,R.drawable.sweden,80,90,20,75,84,82,115,85,R.drawable.sematheslayer_p,"position2");
+    static final Players Jenahanelsor = new Players(1000,"Jenahanelsor","позиция 3",12500,R.drawable.sweden,80,90,20,75,84,82,115,86,R.drawable.sematheslayer_p,"position3");
+    static final Players Hachiglo = new Players(1000,"Hachiglo","позиция 4",12500,R.drawable.sweden,80,90,20,75,84,82,115,87,R.drawable.sematheslayer_p,"position4");
+    static final Players Ele = new Players(1000,"Ele","позиция 5",12500,R.drawable.sweden,80,90,20,75,84,82,115,88,R.drawable.sematheslayer_p,"position5");
+
+    //Vega
+    static final Players Mokesa = new Players(1000,"Mokesa","позиция 1",12500,R.drawable.greece,80,90,20,75,84,82,115,89,R.drawable.sematheslayer_p,"position1");
+    static final Players Kyanf = new Players(1000,"Kyanf","позиция 3",12500,R.drawable.germany,80,90,20,75,84,82,115,90,R.drawable.sematheslayer_p,"position3");
+    static final Players Maninninesiel = new Players(1000,"Maninninesiel","позиция 4",12500,R.drawable.greece,80,90,20,75,84,82,91,91,R.drawable.sematheslayer_p,"position4");
+    static final Players Onasu = new Players(1000,"Onasu","позиция 5",12500,R.drawable.greece,80,90,20,75,84,82,115,92,R.drawable.sematheslayer_p,"position5");
+
+    //Royal
+    static final Players Mahar = new Players(1000,"Mahar","позиция 1",12500,R.drawable.china,80,90,20,75,84,82,115,93,R.drawable.sematheslayer_p,"position1");
+    static final Players Xoc = new Players(1000,"Xoc","позиция 2",12500,R.drawable.china,80,90,20,75,84,82,115,94,R.drawable.sematheslayer_p,"position2");
+    static final Players Sht = new Players(1000,"Sht","позиция 3",12500,R.drawable.china,80,90,20,75,84,82,115,95,R.drawable.sematheslayer_p,"position3");
+    static final Players Anty = new Players(1000,"An ty","позиция 4",12500,R.drawable.malaysia,80,90,20,75,84,82,115,96,R.drawable.sematheslayer_p,"position4");
+    static final Players Eia = new Players(1000,"Eia","позиция 5",12500,R.drawable.malaysia,80,90,20,75,84,82,115,97,R.drawable.sematheslayer_p,"position5");
+
+
+
+    //Tigers
+    static final Players Andrr = new Players(1000,"Andrr","позиция 1",12500,R.drawable.malaysia,80,90,20,75,84,82,115,98,R.drawable.sematheslayer_p,"position1");
+    static final Players Ilanalefey = new Players(1000,"Ilanalefey","позиция 2",12500,R.drawable.indonesia,80,90,20,75,84,82,115,99,R.drawable.sematheslayer_p,"position2");
+    static final Players Mekattanta = new Players(1000,"Mekattanta","позиция 3",12500,R.drawable.kanada,80,90,20,75,84,82,115,100,R.drawable.sematheslayer_p,"position3");
+    static final Players Xarina = new Players(1000,"Xarina","позиция 4",12500,R.drawable.indonesia,80,90,20,75,84,82,115,101,R.drawable.sematheslayer_p,"position4");
+    static final Players Ilia = new Players(1000,"Ilia","позиция 5",12500,R.drawable.kanada,80,90,20,75,84,82,115,102,R.drawable.sematheslayer_p,"position5");
+
+
 
 
     public static ArrayList PlayersCoreInit(){
@@ -311,6 +363,35 @@ public class PlayersInit {
 
 
 
+        CorePlayers.add(Sweya);
+        CorePlayers.add(Laka);
+        CorePlayers.add(Sthollel);
+
+        CorePlayers.add(Bro);
+        CorePlayers.add(Inorilontee);
+        CorePlayers.add(mralyla_focenka);
+
+        CorePlayers.add(Tyilin);
+        CorePlayers.add(Phlare);
+        CorePlayers.add(Weruvi);
+
+        CorePlayers.add(Fenes);
+        CorePlayers.add(Conthrn);
+        CorePlayers.add(Jenahanelsor);
+
+        CorePlayers.add(Mokesa);
+        CorePlayers.add(Kyanf);
+
+        CorePlayers.add(Mahar);
+        CorePlayers.add(Xoc);
+        CorePlayers.add(Sht);
+
+        CorePlayers.add(Andrr);
+        CorePlayers.add(Ilanalefey);
+        CorePlayers.add(Mekattanta);
+
+
+
 
         return CorePlayers;
     }
@@ -345,6 +426,28 @@ public class PlayersInit {
         SupportPlayers.add(sQreen);
         SupportPlayers.add(XSvamp1Re);
         SupportPlayers.add(CemaTheSlayer);
+
+
+        SupportPlayers.add(Elylllosarw);
+        SupportPlayers.add(Zorlar);
+
+        SupportPlayers.add(Brecr);
+        SupportPlayers.add(Jakit);
+
+        SupportPlayers.add(Saindiad);
+        SupportPlayers.add(Mora);
+
+        SupportPlayers.add(Hachiglo);
+        SupportPlayers.add(Ele);
+
+        SupportPlayers.add(Maninninesiel);
+        SupportPlayers.add(Onasu);
+
+        SupportPlayers.add(Anty);
+        SupportPlayers.add(Eia);
+
+        SupportPlayers.add(Xarina);
+        SupportPlayers.add(Ilia);
 
 
         return SupportPlayers;
@@ -434,6 +537,54 @@ public class PlayersInit {
         AllPlayers.add(Ceyler);
         AllPlayers.add(XSvamp1Re);
         AllPlayers.add(CemaTheSlayer);
+
+
+        AllPlayers.add(Sweya);
+        AllPlayers.add(Laka);
+        AllPlayers.add(Sthollel);
+        AllPlayers.add(Elylllosarw);
+        AllPlayers.add(Zorlar);
+
+
+
+        AllPlayers.add(Bro);
+        AllPlayers.add(Inorilontee);
+        AllPlayers.add(mralyla_focenka);
+        AllPlayers.add(Brecr);
+        AllPlayers.add(Jakit);
+
+
+        AllPlayers.add(Tyilin);
+        AllPlayers.add(Phlare);
+        AllPlayers.add(Weruvi);
+        AllPlayers.add(Saindiad);
+        AllPlayers.add(Mora);
+
+
+        AllPlayers.add(Fenes);
+        AllPlayers.add(Conthrn);
+        AllPlayers.add(Jenahanelsor);
+        AllPlayers.add(Hachiglo);
+        AllPlayers.add(Ele);
+
+
+        AllPlayers.add(Mokesa);
+        AllPlayers.add(Kyanf);
+        AllPlayers.add(Maninninesiel);
+        AllPlayers.add(Onasu);
+
+        AllPlayers.add(Mahar);
+        AllPlayers.add(Xoc);
+        AllPlayers.add(Sht);
+        AllPlayers.add(Anty);
+        AllPlayers.add(Eia);
+
+        AllPlayers.add(Andrr);
+        AllPlayers.add(Ilanalefey);
+        AllPlayers.add(Mekattanta);
+        AllPlayers.add(Xarina);
+        AllPlayers.add(Ilia);
+
 
 
         return AllPlayers;

@@ -20,6 +20,9 @@ public class Minor extends AppCompatActivity {
 
     TextView Teams[]= new TextView[8];
     ImageView TeamsLogo[] = new ImageView[8];
+    TextView SeriesTeam[]=new TextView[2];
+    ImageView SeriesLogo[] = new ImageView[2];
+
     static ArrayList<Teams> MinorTeams = new ArrayList<Teams>();
     SharedPreferences mSettings;
     String YourTeam;
@@ -49,6 +52,13 @@ public class Minor extends AppCompatActivity {
         TeamsLogo[6]=findViewById(R.id.Teamlogo7);
         TeamsLogo[7]=findViewById(R.id.Teamlogo8);
 
+
+        SeriesTeam[0]=findViewById(R.id.Series1team1);
+        SeriesTeam[1]=findViewById(R.id.Series1team2);
+
+        SeriesLogo[0]=findViewById(R.id.Series1teamlogo1);
+        SeriesLogo[1]=findViewById(R.id.Series1teamlogo2);
+
         DreamLeagueTeams.clear();
         MinorTeams=DreamLeagueInit();
 
@@ -65,6 +75,13 @@ public class Minor extends AppCompatActivity {
         }
         Teams[0].setText(YourTeam);
         TeamsLogo[0].setImageResource(R.drawable.teamlogo);
+
+
+        SeriesTeam[0].setText(MinorTeams.get(0).teamname);
+        SeriesLogo[0].setImageResource(MinorTeams.get(0).logo);
+        SeriesTeam[1].setText(YourTeam);
+        SeriesLogo[1].setImageResource(R.drawable.teamlogo);
+
 
 
     }

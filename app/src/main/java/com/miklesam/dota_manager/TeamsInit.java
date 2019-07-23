@@ -2,75 +2,7 @@ package com.miklesam.dota_manager;
 
 import java.util.ArrayList;
 
-import static com.miklesam.dota_manager.PlayersInit.ALOHADANCE;
-import static com.miklesam.dota_manager.PlayersInit.ALWAYSWANNAFLY;
-import static com.miklesam.dota_manager.PlayersInit.Afoninje;
-import static com.miklesam.dota_manager.PlayersInit.AfterLife;
-import static com.miklesam.dota_manager.PlayersInit.ArsArt;
-import static com.miklesam.dota_manager.PlayersInit.ArsZeeqq;
-import static com.miklesam.dota_manager.PlayersInit.Artstyle;
-import static com.miklesam.dota_manager.PlayersInit.BLACKARXANGEL;
-import static com.miklesam.dota_manager.PlayersInit.Bignum;
-import static com.miklesam.dota_manager.PlayersInit.Blizzy;
-import static com.miklesam.dota_manager.PlayersInit.BloodAngel;
-import static com.miklesam.dota_manager.PlayersInit.CemaTheSlayer;
-import static com.miklesam.dota_manager.PlayersInit.Ceyler;
-import static com.miklesam.dota_manager.PlayersInit.Cooman;
-import static com.miklesam.dota_manager.PlayersInit.Crystallize;
-import static com.miklesam.dota_manager.PlayersInit.Daxak;
-import static com.miklesam.dota_manager.PlayersInit.Dendi;
-import static com.miklesam.dota_manager.PlayersInit.Dread;
-import static com.miklesam.dota_manager.PlayersInit.Fng;
-import static com.miklesam.dota_manager.PlayersInit.G;
-import static com.miklesam.dota_manager.PlayersInit.GeneRaL;
-import static com.miklesam.dota_manager.PlayersInit.Ghostik;
-import static com.miklesam.dota_manager.PlayersInit.Goblak;
-import static com.miklesam.dota_manager.PlayersInit.Iceberg;
-import static com.miklesam.dota_manager.PlayersInit.Immersion;
-import static com.miklesam.dota_manager.PlayersInit.Jackal;
-import static com.miklesam.dota_manager.PlayersInit.KingR;
-import static com.miklesam.dota_manager.PlayersInit.Kodos;
-import static com.miklesam.dota_manager.PlayersInit.LighTofHeaveN;
-import static com.miklesam.dota_manager.PlayersInit.Lil;
-import static com.miklesam.dota_manager.PlayersInit.Maden;
-import static com.miklesam.dota_manager.PlayersInit.Mag;
-import static com.miklesam.dota_manager.PlayersInit.Magical;
-import static com.miklesam.dota_manager.PlayersInit.MeTTpuM;
-import static com.miklesam.dota_manager.PlayersInit.NS;
-import static com.miklesam.dota_manager.PlayersInit.Naive;
-import static com.miklesam.dota_manager.PlayersInit.NoFear;
-import static com.miklesam.dota_manager.PlayersInit.NoOne;
-import static com.miklesam.dota_manager.PlayersInit.PGG;
-import static com.miklesam.dota_manager.PlayersInit.Palantimos;
-import static com.miklesam.dota_manager.PlayersInit.Pikachu;
-import static com.miklesam.dota_manager.PlayersInit.Ramzes;
-import static com.miklesam.dota_manager.PlayersInit.Resolut1on;
-import static com.miklesam.dota_manager.PlayersInit.Rodjer;
-import static com.miklesam.dota_manager.PlayersInit.Santa;
-import static com.miklesam.dota_manager.PlayersInit.Sedoy;
-import static com.miklesam.dota_manager.PlayersInit.Shachlo;
-import static com.miklesam.dota_manager.PlayersInit.Silent;
-import static com.miklesam.dota_manager.PlayersInit.SoNNeikO;
-import static com.miklesam.dota_manager.PlayersInit.Solo;
-import static com.miklesam.dota_manager.PlayersInit.SoloYoung;
-import static com.miklesam.dota_manager.PlayersInit.Vanskor;
-import static com.miklesam.dota_manager.PlayersInit.Vigoss;
-import static com.miklesam.dota_manager.PlayersInit.XSvamp1Re;
-import static com.miklesam.dota_manager.PlayersInit.Zayac;
-import static com.miklesam.dota_manager.PlayersInit.blowyourbrain;
-import static com.miklesam.dota_manager.PlayersInit.bzz;
-import static com.miklesam.dota_manager.PlayersInit.chshrct;
-import static com.miklesam.dota_manager.PlayersInit.dream;
-import static com.miklesam.dota_manager.PlayersInit.illidan;
-import static com.miklesam.dota_manager.PlayersInit.nongrata;
-import static com.miklesam.dota_manager.PlayersInit.p9asha;
-import static com.miklesam.dota_manager.PlayersInit.sQreen;
-import static com.miklesam.dota_manager.PlayersInit.sayuw;
-import static com.miklesam.dota_manager.PlayersInit.tmw;
-import static com.miklesam.dota_manager.PlayersInit.velheor;
-import static com.miklesam.dota_manager.PlayersInit.wejustzik;
-import static com.miklesam.dota_manager.PlayersInit.yoky;
-import static com.miklesam.dota_manager.PlayersInit.yol;
+import static com.miklesam.dota_manager.PlayersInit.*;
 
 public class TeamsInit {
     static ArrayList<Teams> AllTeams = new ArrayList<Teams>();
@@ -96,9 +28,13 @@ public class TeamsInit {
     static ArrayList<Players> DTSTeam=new ArrayList<Players>();
     static ArrayList<Players> DuzaGamingTeam=new ArrayList<Players>();
     static ArrayList<Players> NoPangoTeam=new ArrayList<Players>();
-
-
-
+    static ArrayList<Players> ComplexTeam=new ArrayList<Players>();
+    static ArrayList<Players> RoomsTeam=new ArrayList<Players>();
+    static ArrayList<Players> GreatestTeam=new ArrayList<Players>();
+    static ArrayList<Players> TFLTeam=new ArrayList<Players>();
+    static ArrayList<Players> SharksTeam=new ArrayList<Players>();
+    static ArrayList<Players> KingsTeam=new ArrayList<Players>();
+    static ArrayList<Players> TigersTeam=new ArrayList<Players>();
 
 
     public static ArrayList VpInit(){
@@ -109,7 +45,6 @@ public class TeamsInit {
         VPTeam.add(Solo);
         return VPTeam;
     }
-
     public static ArrayList NaviInit(){
         NaviTeam.add(Crystallize);
         NaviTeam.add(Magical);
@@ -118,7 +53,6 @@ public class TeamsInit {
         NaviTeam.add(SoNNeikO);
         return NaviTeam;
     }
-
     public static ArrayList GambitInit(){
         GambitTeam.add(Daxak);
         GambitTeam.add(Afoninje);
@@ -127,7 +61,6 @@ public class TeamsInit {
         GambitTeam.add(Fng);
         return GambitTeam;
     }
-
     public static ArrayList OldButGoldInit(){
         TeamSpiritTeam.add(illidan);
         TeamSpiritTeam.add(G);
@@ -136,7 +69,6 @@ public class TeamsInit {
         TeamSpiritTeam.add(Vanskor);
         return TeamSpiritTeam;
     }
-
     public static ArrayList EmpireInit(){
         EmpireTeam.add(dream);
         EmpireTeam.add(Kodos);
@@ -145,7 +77,6 @@ public class TeamsInit {
         EmpireTeam.add(KingR);
         return EmpireTeam;
     }
-
     public static ArrayList WinstrikeInit(){
         WinstrikeTeam.add(Silent);
         WinstrikeTeam.add(Cooman);
@@ -154,7 +85,6 @@ public class TeamsInit {
         WinstrikeTeam.add(NoFear);
         return WinstrikeTeam;
     }
-
     public static ArrayList BlackHornetsGamingInit(){
         BlackHornetsGamingTeam.add(Palantimos);
         BlackHornetsGamingTeam.add(Pikachu);
@@ -163,7 +93,6 @@ public class TeamsInit {
         BlackHornetsGamingTeam.add(BLACKARXANGEL);
         return BlackHornetsGamingTeam;
     }
-
     public static ArrayList FantasticFiveInit(){
         FantasticFiveTeam.add(bzz);
         FantasticFiveTeam.add(Sedoy);
@@ -172,7 +101,6 @@ public class TeamsInit {
         FantasticFiveTeam.add(ArsZeeqq);
         return FantasticFiveTeam;
     }
-
     public static ArrayList CISRejectsInit(){
         CISRejectsTeam.add(Ramzes);
         CISRejectsTeam.add(Iceberg);
@@ -181,7 +109,6 @@ public class TeamsInit {
         CISRejectsTeam.add(Goblak);
         return CISRejectsTeam;
     }
-
     public static ArrayList FRIENDSInit(){
         FRIENDSTeam.add(ALOHADANCE);
         FRIENDSTeam.add(G);
@@ -190,7 +117,6 @@ public class TeamsInit {
         FRIENDSTeam.add(ALWAYSWANNAFLY);
         return FRIENDSTeam;
     }
-
     public static ArrayList ferzeeInit(){
         ferzeeTeam.add(Daxak);
         ferzeeTeam.add(Afoninje);
@@ -199,7 +125,6 @@ public class TeamsInit {
         ferzeeTeam.add(Vanskor);
         return ferzeeTeam;
     }
-
     public static ArrayList iCCupInit(){
         iCCupTeam.add(Jackal);
         iCCupTeam.add(Resolut1on);
@@ -208,7 +133,6 @@ public class TeamsInit {
         iCCupTeam.add(wejustzik);
         return iCCupTeam;
     }
-
     public static ArrayList MoscowFiveInit(){
         MoscowFiveTeam.add(Santa);
         MoscowFiveTeam.add(G);
@@ -217,7 +141,6 @@ public class TeamsInit {
         MoscowFiveTeam.add(NS);
         return MoscowFiveTeam;
     }
-
     public static ArrayList RebelsInit(){
         RebelsTeam.add(Sedoy);
         RebelsTeam.add(tmw);
@@ -226,7 +149,6 @@ public class TeamsInit {
         RebelsTeam.add(MeTTpuM);
         return RebelsTeam;
     }
-
     public static ArrayList RoxKisInit(){
         RoxKisTeam.add(bzz);
         RoxKisTeam.add(SoloYoung);
@@ -235,7 +157,6 @@ public class TeamsInit {
         RoxKisTeam.add(Goblak);
         return RoxKisTeam;
     }
-
     public static ArrayList TheRetryInit(){
         TheRetryTeam.add(PGG);
         TheRetryTeam.add(BloodAngel);
@@ -244,8 +165,6 @@ public class TeamsInit {
         TheRetryTeam.add(Goblak);
         return TheRetryTeam;
     }
-
-
     public static ArrayList DTSInit(){
         DTSTeam.add(Artstyle);
         DTSTeam.add(Dendi);
@@ -254,8 +173,6 @@ public class TeamsInit {
         DTSTeam.add(NS);
         return DTSTeam;
     }
-
-
     public static ArrayList DuzaGamingInit(){
         DuzaGamingTeam.add(bzz);
         DuzaGamingTeam.add(Vigoss);
@@ -264,8 +181,6 @@ public class TeamsInit {
         DuzaGamingTeam.add(ArsArt);
         return DuzaGamingTeam;
     }
-
-
     public static ArrayList NoPangoInit(){
         NoPangoTeam.add(Naive);
         NoPangoTeam.add(Ceyler);
@@ -274,7 +189,64 @@ public class TeamsInit {
         NoPangoTeam.add(CemaTheSlayer);
         return NoPangoTeam;
     }
+    public static ArrayList ComplexInit(){
+        ComplexTeam.add(Sweya);
+        ComplexTeam.add(Laka);
+        ComplexTeam.add(Sthollel);
+        ComplexTeam.add(Elylllosarw);
+        ComplexTeam.add(Zorlar);
+        return ComplexTeam;
+    }
+    public static ArrayList RoomsInit(){
+        RoomsTeam.add(Bro);
+        RoomsTeam.add(Inorilontee);
+        RoomsTeam.add(mralyla_focenka);
+        RoomsTeam.add(Brecr);
+        RoomsTeam.add(Jakit);
+        return RoomsTeam;
+    }
+    public static ArrayList GreatestInit(){
+        GreatestTeam.add(Tyilin);
+        GreatestTeam.add(Phlare);
+        GreatestTeam.add(Weruvi);
+        GreatestTeam.add(Saindiad);
+        GreatestTeam.add(Mora);
+        return GreatestTeam;
+    }
+    public static ArrayList TFLInit(){
+        TFLTeam.add(Fenes);
+        TFLTeam.add(Conthrn);
+        TFLTeam.add(Jenahanelsor);
+        TFLTeam.add(Hachiglo);
+        TFLTeam.add(Ele);
+        return TFLTeam;
+    }
+    public static ArrayList SharksInit(){
+        SharksTeam.add(Mokesa);
+        SharksTeam.add(Dendi);
+        SharksTeam.add(Kyanf);
+        SharksTeam.add(Maninninesiel);
+        SharksTeam.add(Onasu);
+        return SharksTeam;
+    }
 
+
+    public static ArrayList KingsInit(){
+        KingsTeam.add(Mahar);
+        KingsTeam.add(Xoc);
+        KingsTeam.add(Sht);
+        KingsTeam.add(Anty);
+        KingsTeam.add(Eia);
+        return KingsTeam;
+    }
+    public static ArrayList TigersInit(){
+        TigersTeam.add(Andrr);
+        TigersTeam.add(Ilanalefey);
+        TigersTeam.add(Mekattanta);
+        TigersTeam.add(Xarina);
+        TigersTeam.add(Ilia);
+        return TigersTeam;
+    }
 
 
 
@@ -299,8 +271,14 @@ public class TeamsInit {
     static final Teams DuzaGaming = new Teams("DuzaGaming",DuzaGamingTeam,17,R.drawable.duzalogo);
     static final Teams NoPango = new Teams("NoPango",NoPangoTeam,18,R.drawable.nopangolier);
 
-
-
+    //DreamLeagueTeams
+    static final Teams Complex = new Teams("Complex",ComplexTeam,19,R.drawable.complex);
+    static final Teams Rooms = new Teams("Rooms",RoomsTeam,20,R.drawable.rooms);
+    static final Teams Greatest = new Teams("Greatest",GreatestTeam,21,R.drawable.greatest);
+    static final Teams TFL = new Teams("TFL",TFLTeam,22,R.drawable.tfl);
+    static final Teams Sharks = new Teams("Sharks",SharksTeam,23,R.drawable.sharks);
+    static final Teams Kings = new Teams("Kings",KingsTeam,24,R.drawable.kings);
+    static final Teams Tigers = new Teams("Tigers",TigersTeam,25,R.drawable.tigers);
 
 
 
@@ -324,6 +302,13 @@ public class TeamsInit {
         DTSInit();
         DuzaGamingInit();
         NoPangoInit();
+        ComplexInit();
+        RoomsInit();
+        GreatestInit();
+        TFLInit();
+        SharksInit();
+        KingsInit();
+        TigersInit();
 
         AllTeams.add(VirtusPro);
         AllTeams.add(Navi);
@@ -344,6 +329,14 @@ public class TeamsInit {
         AllTeams.add(DTS);
         AllTeams.add(DuzaGaming);
         AllTeams.add(NoPango);
+        AllTeams.add(Complex);
+        AllTeams.add(Rooms);
+        AllTeams.add(Greatest);
+        AllTeams.add(TFL);
+        AllTeams.add(Sharks);
+        AllTeams.add(Kings);
+        AllTeams.add(Tigers);
+
 
         return AllTeams;
     }
@@ -411,23 +404,25 @@ public class TeamsInit {
 
 
     public static ArrayList DreamLeagueInit(){
-        VpInit();
-        NaviInit();
-        GambitInit();
-        OldButGoldInit();
-        EmpireInit();
-        WinstrikeInit();
-        RoxKisInit();
+        ComplexInit();
+        GreatestInit();
+        SharksInit();
+
+        RoomsInit();
+        TFLInit();
+        KingsInit();
+        TigersInit();
 
 
+        DreamLeagueTeams.add(Complex);
+        DreamLeagueTeams.add(Sharks);
+        DreamLeagueTeams.add(Greatest);
+        DreamLeagueTeams.add(TFL);
+        DreamLeagueTeams.add(Rooms);
+        DreamLeagueTeams.add(Kings);
+        DreamLeagueTeams.add(Tigers);
 
-        DreamLeagueTeams.add(VirtusPro);
-        DreamLeagueTeams.add(Navi);
-        DreamLeagueTeams.add(Gambit);
-        DreamLeagueTeams.add(OldButGold);
-        DreamLeagueTeams.add(Empire);
-        DreamLeagueTeams.add(Winstrike);
-        DreamLeagueTeams.add(RoxKis);
+
 
 
         return DreamLeagueTeams;
