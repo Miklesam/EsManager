@@ -76,6 +76,7 @@ public class TeamsInit {
     static ArrayList<Teams> AllTeams = new ArrayList<Teams>();
     static ArrayList<Teams> OpenTeams = new ArrayList<Teams>();
     static ArrayList<Teams> ClosedTeams = new ArrayList<Teams>();
+    static ArrayList<Teams> DreamLeagueTeams = new ArrayList<Teams>();
     static ArrayList<Players> VPTeam=new ArrayList<Players>();
     static ArrayList<Players> GambitTeam=new ArrayList<Players>();
     static ArrayList<Players> NaviTeam=new ArrayList<Players>();
@@ -406,6 +407,30 @@ public class TeamsInit {
 
 
         return ClosedTeams;
+    }
+
+
+    public static ArrayList DreamLeagueInit(){
+        VpInit();
+        NaviInit();
+        GambitInit();
+        OldButGoldInit();
+        EmpireInit();
+        WinstrikeInit();
+        RoxKisInit();
+
+
+
+        DreamLeagueTeams.add(VirtusPro);
+        DreamLeagueTeams.add(Navi);
+        DreamLeagueTeams.add(Gambit);
+        DreamLeagueTeams.add(OldButGold);
+        DreamLeagueTeams.add(Empire);
+        DreamLeagueTeams.add(Winstrike);
+        DreamLeagueTeams.add(RoxKis);
+
+
+        return DreamLeagueTeams;
     }
 
 
