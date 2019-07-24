@@ -82,6 +82,10 @@ public class PickersInit {
         AllPickers.add(DzgmngPicker);
         AllPickers.add(NPangoPicker);
 
+
+
+        AllPickers.add(NPangoPicker);
+
         return AllPickers;
     }
 

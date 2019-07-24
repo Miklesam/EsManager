@@ -52,6 +52,10 @@ public class PlanersInit {
         AllPlaners.add(DuzaPlanerMan);
         AllPlaners.add(NoPangoPlanerMan);
 
+
+
+        AllPlaners.add(NoPangoPlanerMan);
+
         return AllPlaners;
     }
 

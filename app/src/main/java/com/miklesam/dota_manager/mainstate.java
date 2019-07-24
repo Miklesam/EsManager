@@ -43,6 +43,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.Month;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
@@ -274,7 +275,7 @@ public class mainstate extends AppCompatActivity {
 
 
         XPShow.setText(String.valueOf(XPint));
-        SharedPreferences.Editor editor = mSettings.edit();
+        final SharedPreferences.Editor editor = mSettings.edit();
 
 
 
@@ -689,6 +690,9 @@ public class mainstate extends AppCompatActivity {
             public void onClick(View v) {
 
 
+
+                editor.putString(Mode,"4");
+                editor.apply();
                 startActivity(ToMinor);
                 //startActivity(ToMainActivity);
 

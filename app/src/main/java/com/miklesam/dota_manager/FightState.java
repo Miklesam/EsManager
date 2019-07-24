@@ -1009,6 +1009,21 @@ public class FightState extends AppCompatActivity {
                     editor.apply();
                     startActivity(Tobackplayoff);
                 }
+                else if(TournMode==4)
+                {
+                    if (winloose==1)
+                    {
+                        editor.putString(CloseScore2, String.valueOf(Score[1]+1));
+
+
+                    }
+                    else if(winloose==2)
+                    {
+                        editor.putString(CloseScore1, String.valueOf(Score[0]+1));
+                    }
+                    editor.apply();
+                    startActivity(Tomainstance);
+                }
                 else
                 {
                     if(day==30)
