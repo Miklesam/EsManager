@@ -27,6 +27,14 @@ import static com.miklesam.dota_manager.TeamsInit.ClosedTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff4;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
+import static com.miklesam.dota_manager.YourTeam.CloseScore1;
+import static com.miklesam.dota_manager.YourTeam.CloseScore2;
 import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
@@ -35,6 +43,7 @@ import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
+import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
 import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
@@ -692,6 +701,18 @@ public class mainstate extends AppCompatActivity {
 
 
                 editor.putString(Mode,"4");
+                /*
+                editor.putString(ClosedPlayofStage,"1");
+                editor.putString(CloseScore1,"0");
+                editor.putString(CloseScore2,"0");
+                editor.putString(ClosePlayoff4,"0");
+                editor.putString(ClosePlayoff2,"0");
+                editor.putString(ClosePlayoff1,"0");
+                editor.putString(ClosePlayoff3, "0");
+                editor.putString(ClosePlayoff5,"0");
+                editor.putString(ClosePlayoff6, "0");
+                */
+
                 editor.apply();
                 startActivity(ToMinor);
                 //startActivity(ToMainActivity);
