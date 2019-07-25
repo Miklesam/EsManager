@@ -9,6 +9,9 @@ public class TeamsInit {
     static ArrayList<Teams> OpenTeams = new ArrayList<Teams>();
     static ArrayList<Teams> ClosedTeams = new ArrayList<Teams>();
     static ArrayList<Teams> DreamLeagueTeams = new ArrayList<Teams>();
+    static ArrayList<Teams> BucharestTeams = new ArrayList<Teams>();
+
+
     static ArrayList<Players> VPTeam=new ArrayList<Players>();
     static ArrayList<Players> GambitTeam=new ArrayList<Players>();
     static ArrayList<Players> NaviTeam=new ArrayList<Players>();
@@ -35,6 +38,8 @@ public class TeamsInit {
     static ArrayList<Players> SharksTeam=new ArrayList<Players>();
     static ArrayList<Players> KingsTeam=new ArrayList<Players>();
     static ArrayList<Players> TigersTeam=new ArrayList<Players>();
+    static ArrayList<Players> OGENIETeam=new ArrayList<Players>();
+    static ArrayList<Players> NinjasTeam=new ArrayList<Players>();
 
 
     public static ArrayList VpInit(){
@@ -229,8 +234,6 @@ public class TeamsInit {
         SharksTeam.add(Onasu);
         return SharksTeam;
     }
-
-
     public static ArrayList KingsInit(){
         KingsTeam.add(Mahar);
         KingsTeam.add(Xoc);
@@ -246,6 +249,23 @@ public class TeamsInit {
         TigersTeam.add(Xarina);
         TigersTeam.add(Ilia);
         return TigersTeam;
+    }
+    public static ArrayList OGENIEInit(){
+        OGENIETeam.add(Ant);
+        OGENIETeam.add(Ttarma);
+        OGENIETeam.add(Froronde);
+        OGENIETeam.add(Jaimi);
+        OGENIETeam.add(Noelle);
+        return OGENIETeam;
+    }
+
+    public static ArrayList NinjasInit(){
+        NinjasTeam.add(Ars);
+        NinjasTeam.add(Fari);
+        NinjasTeam.add(Tonelly);
+        NinjasTeam.add(Shana);
+        NinjasTeam.add(Pad);
+        return NinjasTeam;
     }
 
 
@@ -279,6 +299,9 @@ public class TeamsInit {
     static final Teams Sharks = new Teams("Sharks",SharksTeam,23,R.drawable.sharks);
     static final Teams Kings = new Teams("Kings",KingsTeam,24,R.drawable.kings);
     static final Teams Tigers = new Teams("Tigers",TigersTeam,25,R.drawable.tigers);
+    //BucharestTeams
+    static final Teams OGENIE = new Teams("O!GENIE",OGENIETeam,26,R.drawable.complex);
+    static final Teams Ninjas = new Teams("Ninjas",NinjasTeam,27,R.drawable.complex);
 
 
 
@@ -309,6 +332,9 @@ public class TeamsInit {
         SharksInit();
         KingsInit();
         TigersInit();
+        OGENIEInit();
+        NinjasInit();
+
 
         AllTeams.add(VirtusPro);
         AllTeams.add(Navi);
@@ -336,6 +362,11 @@ public class TeamsInit {
         AllTeams.add(Sharks);
         AllTeams.add(Kings);
         AllTeams.add(Tigers);
+
+
+
+        AllTeams.add(OGENIE);
+        AllTeams.add(Ninjas);
 
 
         return AllTeams;
@@ -370,12 +401,6 @@ public class TeamsInit {
 
         return OpenTeams;
     }
-
-
-
-
-
-
     public static ArrayList CloseTeamsInit(){
         VpInit();
         NaviInit();
@@ -401,8 +426,6 @@ public class TeamsInit {
 
         return ClosedTeams;
     }
-
-
     public static ArrayList DreamLeagueInit(){
         ComplexInit();
         GreatestInit();
@@ -426,6 +449,16 @@ public class TeamsInit {
 
 
         return DreamLeagueTeams;
+    }
+
+    public static ArrayList BucharestInit(){
+        OGENIEInit();
+        NinjasInit();
+
+        BucharestTeams.add(OGENIE);
+        BucharestTeams.add(Ninjas);
+
+        return BucharestTeams;
     }
 
 

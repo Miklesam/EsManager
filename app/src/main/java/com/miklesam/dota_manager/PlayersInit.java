@@ -311,6 +311,21 @@ public class PlayersInit {
     static final Players Ilia = new Players(1000,"Ilia","позиция 5",12500,R.drawable.kanada,80,90,20,75,84,82,115,102,R.drawable.sematheslayer_p,"position5");
 
 
+    //O! GENIE
+    static final Players Ant = new Players(1000,"Ant","позиция 1",12500,R.drawable.malaysia,80,90,20,75,84,82,115,103,R.drawable.sematheslayer_p,"position1");
+    static final Players Ttarma = new Players(1000,"Ttarma","позиция 2",12500,R.drawable.finland,80,90,20,75,84,82,115,104,R.drawable.sematheslayer_p,"position2");
+    static final Players Froronde = new Players(1000,"Froronde","позиция 3",12500,R.drawable.kanada,80,90,20,75,84,82,115,105,R.drawable.sematheslayer_p,"position3");
+    static final Players Jaimi = new Players(1000,"Jaimi","позиция 4",12500,R.drawable.finland,80,90,20,75,84,82,115,106,R.drawable.sematheslayer_p,"position4");
+    static final Players Noelle = new Players(1000,"Noelle","позиция 5",12500,R.drawable.kanada,80,90,20,75,84,82,115,107,R.drawable.sematheslayer_p,"position5");
+
+
+    //Ninjas
+    static final Players Ars = new Players(1000,"Ars","позиция 1",12500,R.drawable.malaysia,80,90,20,75,84,82,115,108,R.drawable.sematheslayer_p,"position1");
+    static final Players Fari = new Players(1000,"Fari","позиция 2",12500,R.drawable.germany,80,90,20,75,84,82,115,109,R.drawable.sematheslayer_p,"position2");
+    static final Players Tonelly = new Players(1000,"Tonelly","позиция 3",12500,R.drawable.kanada,80,90,20,75,84,82,115,110,R.drawable.sematheslayer_p,"position3");
+    static final Players Shana = new Players(1000,"Shana","позиция 4",12500,R.drawable.finland,80,90,20,75,84,82,115,111,R.drawable.sematheslayer_p,"position4");
+    static final Players Pad = new Players(1000,"Pad","позиция 5",12500,R.drawable.usa,80,90,20,75,84,82,115,112,R.drawable.sematheslayer_p,"position5");
+
 
 
     public static ArrayList PlayersCoreInit(){
@@ -390,6 +405,16 @@ public class PlayersInit {
         CorePlayers.add(Ilanalefey);
         CorePlayers.add(Mekattanta);
 
+        CorePlayers.add(Ant);
+        CorePlayers.add(Ttarma);
+        CorePlayers.add(Froronde);
+
+        CorePlayers.add(Ars);
+        CorePlayers.add(Fari);
+        CorePlayers.add(Tonelly);
+
+
+
 
 
 
@@ -448,6 +473,14 @@ public class PlayersInit {
 
         SupportPlayers.add(Xarina);
         SupportPlayers.add(Ilia);
+
+        SupportPlayers.add(Jaimi);
+        SupportPlayers.add(Noelle);
+
+        SupportPlayers.add(Shana);
+        SupportPlayers.add(Pad);
+
+
 
 
         return SupportPlayers;
@@ -584,6 +617,19 @@ public class PlayersInit {
         AllPlayers.add(Mekattanta);
         AllPlayers.add(Xarina);
         AllPlayers.add(Ilia);
+
+        AllPlayers.add(Ant);
+        AllPlayers.add(Ttarma);
+        AllPlayers.add(Froronde);
+        AllPlayers.add(Jaimi);
+        AllPlayers.add(Noelle);
+
+        AllPlayers.add(Ars);
+        AllPlayers.add(Fari);
+        AllPlayers.add(Tonelly);
+        AllPlayers.add(Shana);
+        AllPlayers.add(Pad);
+
 
 
 

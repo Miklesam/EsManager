@@ -42,6 +42,7 @@ import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.Language;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.Series1Win;
@@ -120,7 +121,7 @@ public class ClosedQuali extends AppCompatActivity {
     boolean playoff;
 
     int CloseTeam[]= new int[7];
-
+    int languageshare;
 
 
     ArrayList<ModelTeam> teamstable = new ArrayList<>();
@@ -408,6 +409,10 @@ public class ClosedQuali extends AppCompatActivity {
             Serieswin[6]=Integer.parseInt(mSettings.getString(Series7Win, "0"));
         }
 
+        if(mSettings.contains(Language)) {
+            languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
+        }
+
         for(int i=0;i<7;i++)
         {
             if(Serieswin[i]==1)
@@ -490,19 +495,41 @@ public class ClosedQuali extends AppCompatActivity {
 
         if (groupstateposition==1)
         {
-            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли на прямую");
+            if(languageshare==2)
+            {
+                AfterGroupStage.setText("You take first place and go to the main event");
+            }
+            else{
+                AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и прошли на прямую");
+            }
+
             AfterGroupStage.setVisibility(View.VISIBLE);
         }
         else if ((groupstateposition>1)&&(groupstateposition<6))
         {
-            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И прошли в плей-офф");
+            if(languageshare==2)
+            {
+                AfterGroupStage.setText("You take " + groupstateposition + " place"+" and go to the playoff");
+            }
+            else{
+                AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и прошли в плей-офф");
+            }
+
             playoff=true;
             Play_btn.setImageResource(R.drawable.next_bttn_canv_2);
             AfterGroupStage.setVisibility(View.VISIBLE);
         }
         else
         {
-            AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+"И вылетели");
+            if(languageshare==2)
+            {
+                AfterGroupStage.setText("You take " + groupstateposition + " place"+" and leave qual");
+            }
+            else
+            {
+                AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и вылетели");
+            }
+
             AfterGroupStage.setVisibility(View.VISIBLE);
         }
 

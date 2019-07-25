@@ -214,7 +214,7 @@ public class Improve extends AppCompatActivity {
                     ExFarming.setText(String.valueOf(ExFarmingint));
                     ExFighting.setText(String.valueOf(ExFightingint));
                     ExLateGame.setText(String.valueOf(ExLateint));
-
+                    startActivity(Tomainstate);
 
 
 
