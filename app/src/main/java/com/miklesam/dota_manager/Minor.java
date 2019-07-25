@@ -16,6 +16,18 @@ import java.util.ArrayList;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueInit;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueTeams;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff12;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff4;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff7;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff8;
+import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
 import static com.miklesam.dota_manager.YourTeam.CloseScore1;
 import static com.miklesam.dota_manager.YourTeam.CloseScore2;
 import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
@@ -36,7 +48,7 @@ public class Minor extends AppCompatActivity {
     ImageView SeriesLogo[] = new ImageView[20];
     ImageView nextminorbttn;
 
-    TextView ScoreText[]= new TextView[2];
+    TextView ScoreText[]= new TextView[20];
 
     int Pos1=0;
     int Pos2=0;
@@ -46,6 +58,7 @@ public class Minor extends AppCompatActivity {
 
     int Score[]= new int[2];
     int ClosedPlayofStageint;
+    int Teamsplayoffs[]= new int[12];
 
     static ArrayList<Teams> MinorTeams = new ArrayList<Teams>();
     SharedPreferences mSettings;
@@ -130,6 +143,21 @@ public class Minor extends AppCompatActivity {
         SeriesLogo[18]=findViewById(R.id.Series10teamlogo1);
         SeriesLogo[19]=findViewById(R.id.Series10teamlogo2);
 
+        TextView SeriesTeamA[]= new TextView[12];
+
+        SeriesTeamA[0]=SeriesTeam[4];
+        SeriesTeamA[1]=SeriesTeam[5];
+        SeriesTeamA[2]=SeriesTeam[6];
+        SeriesTeamA[3]=SeriesTeam[7];
+        SeriesTeamA[4]=SeriesTeam[8];
+        SeriesTeamA[5]=SeriesTeam[9];
+
+        SeriesTeamA[6]=SeriesTeam[14];
+        SeriesTeamA[7]=SeriesTeam[15];
+        SeriesTeamA[8]=SeriesTeam[16];
+        SeriesTeamA[9]=SeriesTeam[17];
+        SeriesTeamA[10]=SeriesTeam[18];
+        SeriesTeamA[11]=SeriesTeam[19];
 
 
 
@@ -137,6 +165,24 @@ public class Minor extends AppCompatActivity {
 
         ScoreText[0]=findViewById(R.id.Series1scoreteam1);
         ScoreText[1]=findViewById(R.id.Series1scoreteam2);
+        ScoreText[2]=findViewById(R.id.Series2scoreteam1);
+        ScoreText[3]=findViewById(R.id.Series2scoreteam2);
+        ScoreText[4]=findViewById(R.id.Series3scoreteam1);
+        ScoreText[5]=findViewById(R.id.Series3scoreteam2);
+        ScoreText[6]=findViewById(R.id.Series4scoreteam1);
+        ScoreText[7]=findViewById(R.id.Series4scoreteam2);
+        ScoreText[8]=findViewById(R.id.Series5scoreteam1);
+        ScoreText[9]=findViewById(R.id.Series5scoreteam2);
+        ScoreText[10]=findViewById(R.id.Series6scoreteam1);
+        ScoreText[11]=findViewById(R.id.Series6scoreteam2);
+        ScoreText[12]=findViewById(R.id.Series7scoreteam1);
+        ScoreText[13]=findViewById(R.id.Series7scoreteam2);
+        ScoreText[14]=findViewById(R.id.Series8scoreteam1);
+        ScoreText[15]=findViewById(R.id.Series8scoreteam2);
+        ScoreText[16]=findViewById(R.id.Series9scoreteam1);
+        ScoreText[17]=findViewById(R.id.Series9scoreteam2);
+        ScoreText[18]=findViewById(R.id.Series10scoreteam1);
+        ScoreText[19]=findViewById(R.id.Series10scoreteam2);
 
         DreamLeagueTeams.clear();
         MinorTeams=DreamLeagueInit();
@@ -178,6 +224,47 @@ public class Minor extends AppCompatActivity {
         }
 
 
+        if(mSettings.contains(ClosePlayoff1)) {
+            Teamsplayoffs[0]=Integer.parseInt(mSettings.getString(ClosePlayoff1, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff2)) {
+            Teamsplayoffs[1]=Integer.parseInt(mSettings.getString(ClosePlayoff2, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff3)) {
+            Teamsplayoffs[2]=Integer.parseInt(mSettings.getString(ClosePlayoff3, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff4)) {
+            Teamsplayoffs[3]=Integer.parseInt(mSettings.getString(ClosePlayoff4, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff5)) {
+            Teamsplayoffs[4]=Integer.parseInt(mSettings.getString(ClosePlayoff5, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff6)) {
+            Teamsplayoffs[5]=Integer.parseInt(mSettings.getString(ClosePlayoff6, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff7)) {
+            Teamsplayoffs[6]=Integer.parseInt(mSettings.getString(ClosePlayoff7, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff8)) {
+            Teamsplayoffs[7]=Integer.parseInt(mSettings.getString(ClosePlayoff8, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff9)) {
+            Teamsplayoffs[8]=Integer.parseInt(mSettings.getString(ClosePlayoff9, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff10)) {
+            Teamsplayoffs[9]=Integer.parseInt(mSettings.getString(ClosePlayoff10, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff11)) {
+            Teamsplayoffs[10]=Integer.parseInt(mSettings.getString(ClosePlayoff11, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff12)) {
+            Teamsplayoffs[11]=Integer.parseInt(mSettings.getString(ClosePlayoff12, "0"));
+        }
+
+
+
+
+
         if(mSettings.contains(CloseScore1)) {
             Score[0]=Integer.parseInt(mSettings.getString(CloseScore1, "0"));
         }
@@ -212,8 +299,17 @@ public class Minor extends AppCompatActivity {
         SeriesTeam[1].setText(YourTeam);
         SeriesLogo[1].setImageResource(R.drawable.teamlogo);
         ScoreText[0].setText(String.valueOf(Score[0]));
-       // ScoreText[1].setText(String.valueOf(Score[1]));
-        ScoreText[1].setText(String.valueOf(ClosedPlayofStageint));
+        ScoreText[1].setText(String.valueOf(Score[1]));
+       // ScoreText[1].setText(String.valueOf(ClosedPlayofStageint));
+
+        for(int i=0;i<12;i++)
+        {
+            if(Teamsplayoffs[i]>0)
+            {
+                SeriesTeamA[i].setText(MinorTeams.get(i-1).teamname);
+            }
+
+        }
 
 
 
@@ -224,15 +320,32 @@ public class Minor extends AppCompatActivity {
             if(Score[0]==2)
             {
                 editor.putString(ClosedPlayofStage,"3");
+                SeriesLogo[5].setImageResource(R.drawable.teamlogo);
+                SeriesTeam[5].setText(YourTeam);
+
+
 
             }
             else if(Score[1]==2)
             {
                 editor.putString(ClosedPlayofStage,"2");
+                SeriesLogo[7].setImageResource(R.drawable.teamlogo);
+                SeriesTeam[7].setText(YourTeam);
+
             }
             editor.apply();
 
         }
+
+        if(mSettings.contains(ClosedPlayofStage)) {
+            ClosedPlayofStageint=Integer.parseInt(mSettings.getString(ClosedPlayofStage, "0"));
+        }
+        if(ClosedPlayofStageint>1)
+        {
+            ScoreText[4].setText("1");
+            ScoreText[5].setText("2");
+        }
+
 
 
 
