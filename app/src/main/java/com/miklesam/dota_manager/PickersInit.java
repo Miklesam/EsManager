@@ -85,6 +85,12 @@ public class PickersInit {
 
 
         AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
+        AllPickers.add(NPangoPicker);
 
         return AllPickers;
     }

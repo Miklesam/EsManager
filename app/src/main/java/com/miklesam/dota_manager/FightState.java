@@ -1011,16 +1011,37 @@ public class FightState extends AppCompatActivity {
                 }
                 else if(TournMode==4)
                 {
-                    if (winloose==1)
+                    if(ClosedPlayofStageint==1)
                     {
-                        editor.putString(CloseScore2, String.valueOf(Score[1]+1));
+                        if (winloose==1)
+                        {
+                            editor.putString(CloseScore2, String.valueOf(Score[1]+1));
 
 
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore1, String.valueOf(Score[0]+1));
+                        }
                     }
-                    else if(winloose==2)
+                    else if(ClosedPlayofStageint==2)
                     {
-                        editor.putString(CloseScore1, String.valueOf(Score[0]+1));
+
                     }
+                    else if(ClosedPlayofStageint==3)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(CloseScore6, String.valueOf(Score[5]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore5, String.valueOf(Score[4]+1));
+                        }
+                    }
+
                     editor.apply();
                     startActivity(Tomainstance);
                 }

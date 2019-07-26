@@ -55,6 +55,12 @@ public class PlanersInit {
 
 
         AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(NoPangoPlanerMan);
 
         return AllPlaners;
     }

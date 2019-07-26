@@ -27,6 +27,10 @@ import static com.miklesam.dota_manager.TeamsInit.ClosedTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeams;
 import static com.miklesam.dota_manager.TeamsInit.OpenTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
+import static com.miklesam.dota_manager.YourTeam.CloseLose1;
+import static com.miklesam.dota_manager.YourTeam.CloseLose2;
+import static com.miklesam.dota_manager.YourTeam.CloseLose3;
+import static com.miklesam.dota_manager.YourTeam.CloseLose4;
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
@@ -35,6 +39,12 @@ import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
 import static com.miklesam.dota_manager.YourTeam.CloseScore1;
 import static com.miklesam.dota_manager.YourTeam.CloseScore2;
+import static com.miklesam.dota_manager.YourTeam.CloseScore3;
+import static com.miklesam.dota_manager.YourTeam.CloseScore4;
+import static com.miklesam.dota_manager.YourTeam.CloseScore5;
+import static com.miklesam.dota_manager.YourTeam.CloseScore6;
+import static com.miklesam.dota_manager.YourTeam.CloseScore7;
+import static com.miklesam.dota_manager.YourTeam.CloseScore8;
 import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
@@ -43,6 +53,10 @@ import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
 import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
+import static com.miklesam.dota_manager.YourTeam.CloseWin1;
+import static com.miklesam.dota_manager.YourTeam.CloseWin2;
+import static com.miklesam.dota_manager.YourTeam.CloseWin3;
+import static com.miklesam.dota_manager.YourTeam.CloseWin4;
 import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
@@ -701,17 +715,38 @@ public class mainstate extends AppCompatActivity {
 
 
                 editor.putString(Mode,"4");
-                /*
+/*
                 editor.putString(ClosedPlayofStage,"1");
                 editor.putString(CloseScore1,"0");
                 editor.putString(CloseScore2,"0");
+                editor.putString(CloseScore3,"0");
+                editor.putString(CloseScore4,"0");
+                editor.putString(CloseScore5,"0");
+                editor.putString(CloseScore6,"0");
+                editor.putString(CloseScore7,"0");
+                editor.putString(CloseScore8,"0");
+
+
                 editor.putString(ClosePlayoff4,"0");
                 editor.putString(ClosePlayoff2,"0");
                 editor.putString(ClosePlayoff1,"0");
                 editor.putString(ClosePlayoff3, "0");
                 editor.putString(ClosePlayoff5,"0");
                 editor.putString(ClosePlayoff6, "0");
-                */
+
+
+                editor.putString(CloseWin4, "0");
+                editor.putString(CloseLose4, "0");
+
+                editor.putString(CloseWin1, "0");
+                editor.putString(CloseLose1, "0");
+
+                editor.putString(CloseWin2, "0");
+                editor.putString(CloseLose2, "0");
+
+                editor.putString(CloseWin3, "0");
+                editor.putString(CloseLose3, "0");
+*/
 
                 editor.apply();
                 startActivity(ToMinor);
