@@ -63,6 +63,7 @@ public class YourTeam extends AppCompatActivity {
     public static final String Closedwin= "Closedwin";
     public static final String Closedlose= "Closedlose";
 
+    public static final String CloseWin8= "CloseWin8";
     public static final String CloseWin7= "CloseWin7";
     public static final String CloseWin6= "CloseWin6";
     public static final String CloseWin5= "CloseWin5";
@@ -71,7 +72,7 @@ public class YourTeam extends AppCompatActivity {
     public static final String CloseWin2= "CloseWin2";
     public static final String CloseWin1= "CloseWin1";
 
-
+    public static final String CloseLose8= "CloseLose8";
     public static final String CloseLose7= "CloseLose7";
     public static final String CloseLose6= "CloseLose6";
     public static final String CloseLose5= "CloseLose5";

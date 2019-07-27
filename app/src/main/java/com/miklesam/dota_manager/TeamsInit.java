@@ -40,6 +40,11 @@ public class TeamsInit {
     static ArrayList<Players> TigersTeam=new ArrayList<Players>();
     static ArrayList<Players> OGENIETeam=new ArrayList<Players>();
     static ArrayList<Players> NinjasTeam=new ArrayList<Players>();
+    static ArrayList<Players> TheTeamsTeam=new ArrayList<Players>();
+    static ArrayList<Players> GameTeam=new ArrayList<Players>();
+    static ArrayList<Players> BombTeam=new ArrayList<Players>();
+    static ArrayList<Players> PowerGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> CyberHomeTeam=new ArrayList<Players>();
 
 
     public static ArrayList VpInit(){
@@ -258,7 +263,6 @@ public class TeamsInit {
         OGENIETeam.add(Noelle);
         return OGENIETeam;
     }
-
     public static ArrayList NinjasInit(){
         NinjasTeam.add(Ars);
         NinjasTeam.add(Fari);
@@ -267,7 +271,47 @@ public class TeamsInit {
         NinjasTeam.add(Pad);
         return NinjasTeam;
     }
+    public static ArrayList TheTeamInit(){
+        TheTeamsTeam.add(Stevanne);
+        TheTeamsTeam.add(Ridal);
+        TheTeamsTeam.add(Bair);
+        TheTeamsTeam.add(Nalanet);
+        TheTeamsTeam.add(ixmaaaaa);
+        return TheTeamsTeam;
+    }
+    public static ArrayList GamersInit(){
+        GameTeam.add(Koti);
+        GameTeam.add(Farem);
+        GameTeam.add(Scent);
+        GameTeam.add(Sardena);
+        GameTeam.add(Aniem);
+        return GameTeam;
+    }
+    public static ArrayList BombTeamInit(){
+        BombTeam.add(Dreamer);
+        BombTeam.add(Mikope);
+        BombTeam.add(Fabez);
+        BombTeam.add(jhoman);
+        BombTeam.add(Khezecute);
+        return BombTeam;
+    }
+    public static ArrayList PowerGamingInit(){
+        PowerGamingTeam.add(oldgamer);
+        PowerGamingTeam.add(fwgd);
+        PowerGamingTeam.add(e11);
+        PowerGamingTeam.add(Kanak);
+        PowerGamingTeam.add(dartes);
+        return PowerGamingTeam;
+    }
 
+    public static ArrayList CyberHomeInit(){
+        CyberHomeTeam.add(elim);
+        CyberHomeTeam.add(Arasilv);
+        CyberHomeTeam.add(Ffaellann);
+        CyberHomeTeam.add(Beryanneas);
+        CyberHomeTeam.add(Ytendayse);
+        return CyberHomeTeam;
+    }
 
 
 
@@ -302,7 +346,11 @@ public class TeamsInit {
     //BucharestTeams
     static final Teams OGENIE = new Teams("O!GENIE",OGENIETeam,26,R.drawable.complex);
     static final Teams Ninjas = new Teams("Ninjas",NinjasTeam,27,R.drawable.complex);
-
+    static final Teams TheTeams = new Teams("TheTeams",TheTeamsTeam,28,R.drawable.complex);
+    static final Teams Gamers = new Teams("Gamers",GameTeam,29,R.drawable.complex);
+    static final Teams BombTeams = new Teams("BombTeam",BombTeam,30,R.drawable.complex);
+    static final Teams PowerGaming = new Teams("PowerGaming",PowerGamingTeam,31,R.drawable.complex);
+    static final Teams CyberHome = new Teams("CyberHome",CyberHomeTeam,32,R.drawable.complex);
 
 
     public static ArrayList AllTeamsInit(){
@@ -334,6 +382,11 @@ public class TeamsInit {
         TigersInit();
         OGENIEInit();
         NinjasInit();
+        TheTeamInit();
+        GamersInit();
+        BombTeamInit();
+        PowerGamingInit();
+        CyberHomeInit();
 
 
         AllTeams.add(VirtusPro);
@@ -365,8 +418,14 @@ public class TeamsInit {
 
 
 
+
         AllTeams.add(OGENIE);
         AllTeams.add(Ninjas);
+        AllTeams.add(TheTeams);
+        AllTeams.add(Gamers);
+        AllTeams.add(BombTeams);
+        AllTeams.add(PowerGaming);
+        AllTeams.add(CyberHome);
 
 
         return AllTeams;
@@ -454,10 +513,19 @@ public class TeamsInit {
     public static ArrayList BucharestInit(){
         OGENIEInit();
         NinjasInit();
+        TheTeamInit();
+        GamersInit();
+        BombTeamInit();
+        PowerGamingInit();
+        CyberHomeInit();
 
         BucharestTeams.add(OGENIE);
         BucharestTeams.add(Ninjas);
-
+        BucharestTeams.add(TheTeams);
+        BucharestTeams.add(Gamers);
+        BucharestTeams.add(BombTeams);
+        BucharestTeams.add(PowerGaming);
+        BucharestTeams.add(CyberHome);
         return BucharestTeams;
     }
 

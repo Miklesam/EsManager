@@ -23,106 +23,7 @@ import static com.miklesam.dota_manager.PlayersInit.CorePlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
 import static com.miklesam.dota_manager.PlayersInit.SupportPlayers;
-import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
-import static com.miklesam.dota_manager.YourTeam.CloseLose1;
-import static com.miklesam.dota_manager.YourTeam.CloseLose2;
-import static com.miklesam.dota_manager.YourTeam.CloseLose3;
-import static com.miklesam.dota_manager.YourTeam.CloseLose4;
-import static com.miklesam.dota_manager.YourTeam.CloseLose5;
-import static com.miklesam.dota_manager.YourTeam.CloseLose6;
-import static com.miklesam.dota_manager.YourTeam.CloseLose7;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff12;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff4;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff7;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff8;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
-import static com.miklesam.dota_manager.YourTeam.CloseScore1;
-import static com.miklesam.dota_manager.YourTeam.CloseScore10;
-import static com.miklesam.dota_manager.YourTeam.CloseScore11;
-import static com.miklesam.dota_manager.YourTeam.CloseScore12;
-import static com.miklesam.dota_manager.YourTeam.CloseScore2;
-import static com.miklesam.dota_manager.YourTeam.CloseScore3;
-import static com.miklesam.dota_manager.YourTeam.CloseScore4;
-import static com.miklesam.dota_manager.YourTeam.CloseScore5;
-import static com.miklesam.dota_manager.YourTeam.CloseScore6;
-import static com.miklesam.dota_manager.YourTeam.CloseScore7;
-import static com.miklesam.dota_manager.YourTeam.CloseScore8;
-import static com.miklesam.dota_manager.YourTeam.CloseScore9;
-import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam3;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
-import static com.miklesam.dota_manager.YourTeam.CloseWin1;
-import static com.miklesam.dota_manager.YourTeam.CloseWin2;
-import static com.miklesam.dota_manager.YourTeam.CloseWin3;
-import static com.miklesam.dota_manager.YourTeam.CloseWin4;
-import static com.miklesam.dota_manager.YourTeam.CloseWin5;
-import static com.miklesam.dota_manager.YourTeam.CloseWin6;
-import static com.miklesam.dota_manager.YourTeam.CloseWin7;
-import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
-import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
-import static com.miklesam.dota_manager.YourTeam.Closedlose;
-import static com.miklesam.dota_manager.YourTeam.Closedwin;
-import static com.miklesam.dota_manager.YourTeam.Day;
-import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
-import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
-import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
-import static com.miklesam.dota_manager.YourTeam.ExtraLate;
-import static com.miklesam.dota_manager.YourTeam.Fans;
-import static com.miklesam.dota_manager.YourTeam.FinalsWin;
-import static com.miklesam.dota_manager.YourTeam.GoldBalance;
-import static com.miklesam.dota_manager.YourTeam.Language;
-import static com.miklesam.dota_manager.YourTeam.Mode;
-import static com.miklesam.dota_manager.YourTeam.Month;
-import static com.miklesam.dota_manager.YourTeam.OpenFinals;
-import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
-import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
-import static com.miklesam.dota_manager.YourTeam.OpenScore1;
-import static com.miklesam.dota_manager.YourTeam.OpenScore10;
-import static com.miklesam.dota_manager.YourTeam.OpenScore11;
-import static com.miklesam.dota_manager.YourTeam.OpenScore12;
-import static com.miklesam.dota_manager.YourTeam.OpenScore2;
-import static com.miklesam.dota_manager.YourTeam.OpenScore3;
-import static com.miklesam.dota_manager.YourTeam.OpenScore4;
-import static com.miklesam.dota_manager.YourTeam.OpenScore5;
-import static com.miklesam.dota_manager.YourTeam.OpenScore6;
-import static com.miklesam.dota_manager.YourTeam.OpenScore7;
-import static com.miklesam.dota_manager.YourTeam.OpenScore8;
-import static com.miklesam.dota_manager.YourTeam.OpenScore9;
-import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
-import static com.miklesam.dota_manager.YourTeam.OpenShaffle;
-import static com.miklesam.dota_manager.YourTeam.QuaterWin;
-import static com.miklesam.dota_manager.YourTeam.SemiWin;
-import static com.miklesam.dota_manager.YourTeam.Series1Win;
-import static com.miklesam.dota_manager.YourTeam.Series2Win;
-import static com.miklesam.dota_manager.YourTeam.Series3Win;
-import static com.miklesam.dota_manager.YourTeam.Series4Win;
-import static com.miklesam.dota_manager.YourTeam.Series5Win;
-import static com.miklesam.dota_manager.YourTeam.Series6Win;
-import static com.miklesam.dota_manager.YourTeam.Series7Win;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff1;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
-
-import static com.miklesam.dota_manager.YourTeam.XPstatic;
-import static com.miklesam.dota_manager.YourTeam.Year;
+import static com.miklesam.dota_manager.YourTeam.*;
 
 public class PlayerChoose extends AppCompatActivity {
 
@@ -429,6 +330,8 @@ public class PlayerChoose extends AppCompatActivity {
                     editor.putString(Closedwin, "0");
                     editor.putString(Closedlose, "0");
 
+
+                    editor.putString(CloseWin8, "0");
                     editor.putString(CloseWin7, "0");
                     editor.putString(CloseWin6, "0");
                     editor.putString(CloseWin5, "0");
@@ -439,7 +342,7 @@ public class PlayerChoose extends AppCompatActivity {
 
 
 
-
+                    editor.putString(CloseLose8, "0");
                     editor.putString(CloseLose7, "0");
                     editor.putString(CloseLose6, "0");
                     editor.putString(CloseLose5, "0");

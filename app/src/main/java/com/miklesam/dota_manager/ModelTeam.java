@@ -20,7 +20,7 @@ public class ModelTeam implements Serializable
     }
 
     public int getw(){
-        return w;
+        return w-l;
     }
 
 

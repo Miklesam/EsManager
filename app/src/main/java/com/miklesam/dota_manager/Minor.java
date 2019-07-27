@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.MissingFormatArgumentException;
 
+import static com.miklesam.dota_manager.TeamsInit.BucharestInit;
+import static com.miklesam.dota_manager.TeamsInit.BucharestTeams;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueInit;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueTeams;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
@@ -22,6 +24,10 @@ import static com.miklesam.dota_manager.YourTeam.CloseLose1;
 import static com.miklesam.dota_manager.YourTeam.CloseLose2;
 import static com.miklesam.dota_manager.YourTeam.CloseLose3;
 import static com.miklesam.dota_manager.YourTeam.CloseLose4;
+import static com.miklesam.dota_manager.YourTeam.CloseLose5;
+import static com.miklesam.dota_manager.YourTeam.CloseLose6;
+import static com.miklesam.dota_manager.YourTeam.CloseLose7;
+import static com.miklesam.dota_manager.YourTeam.CloseLose8;
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
 
 import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
@@ -43,7 +49,12 @@ import static com.miklesam.dota_manager.YourTeam.CloseWin1;
 import static com.miklesam.dota_manager.YourTeam.CloseWin2;
 import static com.miklesam.dota_manager.YourTeam.CloseWin3;
 import static com.miklesam.dota_manager.YourTeam.CloseWin4;
+import static com.miklesam.dota_manager.YourTeam.CloseWin5;
+import static com.miklesam.dota_manager.YourTeam.CloseWin6;
+import static com.miklesam.dota_manager.YourTeam.CloseWin7;
+import static com.miklesam.dota_manager.YourTeam.CloseWin8;
 import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
+import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
@@ -75,8 +86,8 @@ public class Minor extends AppCompatActivity {
     int ClosedPlayofStageint;
     int Teamsplayoffs[]= new int[6];
 
-    TextView ScoreWin[]= new TextView[4];
-    TextView ScoreLose[]= new TextView[4];
+    TextView ScoreWin[]= new TextView[8];
+    TextView ScoreLose[]= new TextView[8];
 
 
 
@@ -93,25 +104,31 @@ public class Minor extends AppCompatActivity {
     int CloseWin4int;
     int CloseLose4int;
 
-    ArrayList<ModelTeam> teamstable = new ArrayList<>();
+    int CloseWin5int;
+    int CloseLose5int;
 
+    int CloseWin6int;
+    int CloseLose6int;
+
+    int CloseWin7int;
+    int CloseLose7int;
+
+    int CloseWin8int;
+    int CloseLose8int;
+    ImageView EventImage;
+
+    ArrayList<ModelTeam> groupa = new ArrayList<>();
+    ArrayList<ModelTeam> groupb = new ArrayList<>();
 
     static ArrayList<Teams> MinorTeams = new ArrayList<Teams>();
     SharedPreferences mSettings;
     String YourTeam;
     boolean five;
+    int Dayint;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_minor);
-        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
-        final Intent ToMAinState = new Intent(this, mainstate.class);
-        final Intent ToPickStage = new Intent(this, Pick_Stage.class);
-        final Intent ToClosedPlayoff = new Intent(this, ClosedPlayoff.class);
-
-
-
+    protected void InitView()
+    {
+        EventImage=findViewById(R.id.EventImage);
         Teams[0]=findViewById(R.id.Team1);
         Teams[1]=findViewById(R.id.Team2);
         Teams[2]=findViewById(R.id.Team3);
@@ -120,7 +137,6 @@ public class Minor extends AppCompatActivity {
         Teams[5]=findViewById(R.id.Team6);
         Teams[6]=findViewById(R.id.Team7);
         Teams[7]=findViewById(R.id.Team8);
-
         nextminorbttn=findViewById(R.id.nextminorbttn);
 
         TeamsLogo[0]=findViewById(R.id.Teamlogo1);
@@ -189,33 +205,19 @@ public class Minor extends AppCompatActivity {
         ScoreWin[1]=findViewById(R.id.ScoreWin2);
         ScoreWin[2]=findViewById(R.id.ScoreWin3);
         ScoreWin[3]=findViewById(R.id.ScoreWin4);
+        ScoreWin[4]=findViewById(R.id.ScoreWin5);
+        ScoreWin[5]=findViewById(R.id.ScoreWin6);
+        ScoreWin[6]=findViewById(R.id.ScoreWin7);
+        ScoreWin[7]=findViewById(R.id.ScoreWin8);
 
         ScoreLose[0]=findViewById(R.id.ScoreLose1);
         ScoreLose[1]=findViewById(R.id.ScoreLose2);
         ScoreLose[2]=findViewById(R.id.ScoreLose3);
         ScoreLose[3]=findViewById(R.id.ScoreLose4);
-
-
-
-
-
-        TextView SeriesTeamA[]= new TextView[6];
-        ImageView SeriesLogoA[]= new ImageView[6];
-        SeriesTeamA[0]=SeriesTeam[4];
-        SeriesTeamA[1]=SeriesTeam[5];
-        SeriesTeamA[2]=SeriesTeam[6];
-        SeriesTeamA[3]=SeriesTeam[7];
-        SeriesTeamA[4]=SeriesTeam[8];
-        SeriesTeamA[5]=SeriesTeam[9];
-
-        SeriesLogoA[0]=SeriesLogo[4];
-        SeriesLogoA[1]=SeriesLogo[5];
-        SeriesLogoA[2]=SeriesLogo[6];
-        SeriesLogoA[3]=SeriesLogo[7];
-        SeriesLogoA[4]=SeriesLogo[8];
-        SeriesLogoA[5]=SeriesLogo[9];
-
-
+        ScoreLose[4]=findViewById(R.id.ScoreLose5);
+        ScoreLose[5]=findViewById(R.id.ScoreLose6);
+        ScoreLose[6]=findViewById(R.id.ScoreLose7);
+        ScoreLose[7]=findViewById(R.id.ScoreLose8);
 
         ScoreText[0]=findViewById(R.id.Series1scoreteam1);
         ScoreText[1]=findViewById(R.id.Series1scoreteam2);
@@ -237,21 +239,18 @@ public class Minor extends AppCompatActivity {
         ScoreText[17]=findViewById(R.id.Series9scoreteam2);
         ScoreText[18]=findViewById(R.id.Series10scoreteam1);
         ScoreText[19]=findViewById(R.id.Series10scoreteam2);
-
-        DreamLeagueTeams.clear();
-        MinorTeams=DreamLeagueInit();
-
-        for (int i=0;i<7;i++)
-        {
-            Teams[i+1].setText(MinorTeams.get(i).teamname);
-            TeamsLogo[i+1].setImageResource(MinorTeams.get(i).logo);
-        }
-
+    }
+    protected void ReadFlash()
+    {
         if (mSettings.contains(APP_PREFERENCES_NAME)) {
 
             YourTeam = mSettings.getString(APP_PREFERENCES_NAME, "Your Team");
 
         }
+        if(mSettings.contains(Day)) {
+            Dayint=Integer.parseInt(mSettings.getString(Day, "Day"));
+        }
+
         if(mSettings.contains(StaticPosition1)) {
             Pos1=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
         }
@@ -276,12 +275,6 @@ public class Minor extends AppCompatActivity {
         if(mSettings.contains(ClosedPlayofStage)) {
             ClosedPlayofStageint=Integer.parseInt(mSettings.getString(ClosedPlayofStage, "0"));
         }
-
-
-
-
-
-
 
         if(mSettings.contains(CloseScore1)) {
             Score[0]=Integer.parseInt(mSettings.getString(CloseScore1, "0"));
@@ -335,17 +328,115 @@ public class Minor extends AppCompatActivity {
         if(mSettings.contains(CloseLose4)) {
             CloseLose4int=Integer.parseInt(mSettings.getString(CloseLose4, "CloseLose1"));
         }
+        if(mSettings.contains(CloseWin5)) {
+            CloseWin5int=Integer.parseInt(mSettings.getString(CloseWin5, "CloseWin1"));
+        }
+
+        if(mSettings.contains(CloseLose5)) {
+            CloseLose5int=Integer.parseInt(mSettings.getString(CloseLose5, "CloseLose1"));
+        }
+        if(mSettings.contains(CloseWin6)) {
+            CloseWin6int=Integer.parseInt(mSettings.getString(CloseWin6, "CloseWin1"));
+        }
+
+        if(mSettings.contains(CloseLose6)) {
+            CloseLose6int=Integer.parseInt(mSettings.getString(CloseLose6, "CloseLose1"));
+        }
+        if(mSettings.contains(CloseWin7)) {
+            CloseWin7int=Integer.parseInt(mSettings.getString(CloseWin7, "CloseWin1"));
+        }
+
+        if(mSettings.contains(CloseLose7)) {
+            CloseLose7int=Integer.parseInt(mSettings.getString(CloseLose7, "CloseLose1"));
+        }
+        if(mSettings.contains(CloseWin8)) {
+            CloseWin8int=Integer.parseInt(mSettings.getString(CloseWin8, "CloseWin1"));
+        }
+
+        if(mSettings.contains(CloseLose8)) {
+            CloseLose8int=Integer.parseInt(mSettings.getString(CloseLose8, "CloseLose1"));
+        }
+
+
+        if(mSettings.contains(ClosePlayoff1)) {
+            Teamsplayoffs[0]=Integer.parseInt(mSettings.getString(ClosePlayoff1, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff2)) {
+            Teamsplayoffs[1]=Integer.parseInt(mSettings.getString(ClosePlayoff2, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff3)) {
+            Teamsplayoffs[2]=Integer.parseInt(mSettings.getString(ClosePlayoff3, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff4)) {
+            Teamsplayoffs[3]=Integer.parseInt(mSettings.getString(ClosePlayoff4, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff5)) {
+            Teamsplayoffs[4]=Integer.parseInt(mSettings.getString(ClosePlayoff5, "0"));
+        }
+        if(mSettings.contains(ClosePlayoff6)) {
+            Teamsplayoffs[5]=Integer.parseInt(mSettings.getString(ClosePlayoff6, "0"));
+        }
 
 
 
 
 
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_minor);
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = mSettings.edit();
+        final Intent ToMAinState = new Intent(this, mainstate.class);
+        final Intent ToPickStage = new Intent(this, Pick_Stage.class);
+        final Intent ToClosedPlayoff = new Intent(this, ClosedPlayoff.class);
+
+        InitView();
+
+
+        TextView SeriesTeamA[]= new TextView[6];
+        ImageView SeriesLogoA[]= new ImageView[6];
+        SeriesTeamA[0]=SeriesTeam[4];
+        SeriesTeamA[1]=SeriesTeam[5];
+        SeriesTeamA[2]=SeriesTeam[6];
+        SeriesTeamA[3]=SeriesTeam[7];
+        SeriesTeamA[4]=SeriesTeam[8];
+        SeriesTeamA[5]=SeriesTeam[9];
+
+        SeriesLogoA[0]=SeriesLogo[4];
+        SeriesLogoA[1]=SeriesLogo[5];
+        SeriesLogoA[2]=SeriesLogo[6];
+        SeriesLogoA[3]=SeriesLogo[7];
+        SeriesLogoA[4]=SeriesLogo[8];
+        SeriesLogoA[5]=SeriesLogo[9];
+
+        ReadFlash();
+
+        if(Dayint==1)
+        {
+            EventImage.setImageResource(R.drawable.dreams10);
+            DreamLeagueTeams.clear();
+            MinorTeams=DreamLeagueInit();
+        }
+        else if(Dayint==3)
+        {
+            EventImage.setImageResource(R.drawable.bucharest_minor);
+            BucharestTeams.clear();
+            MinorTeams=BucharestInit();
+        }
 
 
 
 
 
-
+        for (int i=0;i<7;i++)
+        {
+            Teams[i+1].setText(MinorTeams.get(i).teamname);
+            TeamsLogo[i+1].setImageResource(MinorTeams.get(i).logo);
+        }
 
 
 
@@ -382,7 +473,7 @@ public class Minor extends AppCompatActivity {
 
 
 
-        final SharedPreferences.Editor editor = mSettings.edit();
+
         if(ClosedPlayofStageint==1)
         {
             if(Score[0]==2)
@@ -406,7 +497,14 @@ public class Minor extends AppCompatActivity {
                 editor.putString(CloseWin3,"2");
                 editor.putString(CloseLose3,"1");
 
-
+                editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
+                editor.putString(CloseLose5,String.valueOf(CloseLose5int+0));
+                editor.putString(CloseWin6,String.valueOf(CloseWin6int+0));
+                editor.putString(CloseLose6,String.valueOf(CloseLose6int+2));
+                editor.putString(CloseWin7,String.valueOf(CloseWin7int+1));
+                editor.putString(CloseLose7,String.valueOf(CloseLose7int+2));
+                editor.putString(CloseWin8,String.valueOf(CloseWin8int+2));
+                editor.putString(CloseLose8,String.valueOf(CloseLose8int+1));
 
 
             }
@@ -430,7 +528,25 @@ public class Minor extends AppCompatActivity {
                 editor.putString(CloseWin3,"2");
                 editor.putString(CloseLose3,"1");
 
+                editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
+                editor.putString(CloseLose5,String.valueOf(CloseLose5int+0));
+                editor.putString(CloseWin6,String.valueOf(CloseWin6int+0));
+                editor.putString(CloseLose6,String.valueOf(CloseLose6int+2));
+                editor.putString(CloseWin7,String.valueOf(CloseWin7int+1));
+                editor.putString(CloseLose7,String.valueOf(CloseLose7int+2));
+                editor.putString(CloseWin8,String.valueOf(CloseWin8int+2));
+                editor.putString(CloseLose8,String.valueOf(CloseLose8int+1));
+
             }
+
+
+
+
+
+
+
+
+
             editor.apply();
 
         }
@@ -438,52 +554,17 @@ public class Minor extends AppCompatActivity {
        else if(ClosedPlayofStageint==2)
         {
             if(Score[2]==2)
-            {/*
-                editor.putString(ClosedPlayofStage,"2");
-                editor.putString(ClosePlayoff2,"10");
-                editor.putString(ClosePlayoff4, "1");
-                editor.putString(ClosePlayoff1,"2");
-                editor.putString(ClosePlayoff3, "3");
+            {
+                GroupWinnerLoser();
+                editor.putString(ClosedPlayofStage,"7");
 
-
-                editor.putString(CloseWin4, String.valueOf(Score[1]));
-                editor.putString(CloseLose4, String.valueOf(Score[0]));
-
-                editor.putString(CloseWin1,String.valueOf(Score[0]));
-                editor.putString(CloseLose1, String.valueOf(Score[1]));
-
-                editor.putString(CloseWin2,"1");
-                editor.putString(CloseLose2,"2");
-
-                editor.putString(CloseWin3,"2");
-                editor.putString(CloseLose3,"1");
-
-
-*/
 
             }
             else if(Score[3]==2)
             {
-                /*
-                editor.putString(ClosedPlayofStage,"3");
-                editor.putString(ClosePlayoff4,"10");
-                editor.putString(ClosePlayoff2,"1");
-                editor.putString(ClosePlayoff1,"2");
-                editor.putString(ClosePlayoff3, "3");
-
-                editor.putString(CloseWin4, String.valueOf(Score[1]));
-                editor.putString(CloseLose4, String.valueOf(Score[0]));
-
-                editor.putString(CloseWin1,String.valueOf(Score[0]));
-                editor.putString(CloseLose1, String.valueOf(Score[1]));
-
-                editor.putString(CloseWin2,"1");
-                editor.putString(CloseLose2,"2");
-
-                editor.putString(CloseWin3,"2");
-                editor.putString(CloseLose3,"1");
-                */
-
+                GroupWinnerLoser();
+                editor.putString(ClosedPlayofStage,"4");
+                editor.putString(ClosePlayoff6,"10");
             }
             editor.apply();
         }
@@ -492,50 +573,35 @@ public class Minor extends AppCompatActivity {
         {
             if(Score[4]==2)
             {
-                editor.putString(CloseScore3,"0");
-                editor.putString(CloseScore4,"2");
+
+                GroupWinnerLoser();
                 editor.putString(ClosedPlayofStage,"4");
-                editor.putString(ClosePlayoff5,"1");
                 editor.putString(ClosePlayoff6,"10");
-
-
-                editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[4]));
-                editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[5]));
-
-                editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[5]));
-                editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[4]));
-
-                editor.putString(CloseWin1,String.valueOf(CloseWin1int+2));
-                editor.putString(CloseLose1,String.valueOf(CloseLose1int+0));
-
-                editor.putString(CloseWin2,String.valueOf(CloseWin2int+0));
-                editor.putString(CloseLose2,String.valueOf(CloseLose2int+2));
 
             }
             else if(Score[5]==2)
             {
-
-
-                editor.putString(CloseScore3,"0");
-                editor.putString(CloseScore4,"2");
-
+                GroupWinnerLoser();
                 editor.putString(ClosedPlayofStage,"5");
-                editor.putString(ClosePlayoff5,"1");
                 editor.putString(ClosePlayoff6,"3");
 
-                editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[4]));
-                editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[5]));
+            }
+            editor.apply();
+        }
+        else if(ClosedPlayofStageint==4)
+        {
+            if(Score[6]==2)
+            {
 
-                editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[5]));
-                editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[4]));
+                GroupWinnerLoser();
+                editor.putString(ClosedPlayofStage,"7");
 
 
-                editor.putString(CloseWin1,String.valueOf(CloseWin1int+2));
-                editor.putString(CloseLose1,String.valueOf(CloseLose1int+0));
-
-                editor.putString(CloseWin2,String.valueOf(CloseWin2int+0));
-                editor.putString(CloseLose2,String.valueOf(CloseLose2int+2));
-
+            }
+            else if(Score[7]==2)
+            {
+                GroupWinnerLoser();
+                editor.putString(ClosedPlayofStage,"6");
 
 
             }
@@ -566,83 +632,30 @@ public class Minor extends AppCompatActivity {
             SeriesLogo[15].setImageResource(MinorTeams.get(5).logo);
             SeriesTeam[17].setText(MinorTeams.get(6).teamname);
             SeriesLogo[17].setImageResource(MinorTeams.get(6).logo);
-
-
-
         }
 
+        if(ClosedPlayofStageint>3)
+        {
+            ScoreText[14].setText("0");
+            ScoreText[15].setText("2");
 
-        if(mSettings.contains(ClosePlayoff1)) {
-            Teamsplayoffs[0]=Integer.parseInt(mSettings.getString(ClosePlayoff1, "0"));
-        }
-        if(mSettings.contains(ClosePlayoff2)) {
-            Teamsplayoffs[1]=Integer.parseInt(mSettings.getString(ClosePlayoff2, "0"));
-        }
-        if(mSettings.contains(ClosePlayoff3)) {
-            Teamsplayoffs[2]=Integer.parseInt(mSettings.getString(ClosePlayoff3, "0"));
-        }
-        if(mSettings.contains(ClosePlayoff4)) {
-            Teamsplayoffs[3]=Integer.parseInt(mSettings.getString(ClosePlayoff4, "0"));
-        }
-        if(mSettings.contains(ClosePlayoff5)) {
-            Teamsplayoffs[4]=Integer.parseInt(mSettings.getString(ClosePlayoff5, "0"));
-        }
-        if(mSettings.contains(ClosePlayoff6)) {
-            Teamsplayoffs[5]=Integer.parseInt(mSettings.getString(ClosePlayoff6, "0"));
-        }
+            ScoreText[16].setText("2");
+            ScoreText[17].setText("1");
 
-        if(mSettings.contains(CloseWin1)) {
-            CloseWin1int=Integer.parseInt(mSettings.getString(CloseWin1, "CloseWin1"));
+            SeriesTeam[18].setText(MinorTeams.get(5).teamname);
+            SeriesLogo[18].setImageResource(MinorTeams.get(5).logo);
+            SeriesTeam[19].setText(MinorTeams.get(6).teamname);
+            SeriesLogo[19].setImageResource(MinorTeams.get(6).logo);
+        }
+        if(ClosedPlayofStageint>5)
+        {
+            ScoreText[18].setText("2");
+            ScoreText[19].setText("0");
+
         }
 
-        if(mSettings.contains(CloseLose1)) {
-            CloseLose1int=Integer.parseInt(mSettings.getString(CloseLose1, "CloseLose1"));
-        }
-        if(mSettings.contains(CloseWin2)) {
-            CloseWin2int=Integer.parseInt(mSettings.getString(CloseWin2, "CloseWin2"));
-        }
 
-        if(mSettings.contains(CloseLose2)) {
-            CloseLose2int=Integer.parseInt(mSettings.getString(CloseLose2, "CloseLose2"));
-        }
-        if(mSettings.contains(CloseWin3)) {
-            CloseWin3int=Integer.parseInt(mSettings.getString(CloseWin3, "CloseWin3"));
-        }
-
-        if(mSettings.contains(CloseLose3)) {
-            CloseLose3int=Integer.parseInt(mSettings.getString(CloseLose3, "CloseLose3"));
-        }
-        if(mSettings.contains(CloseWin4)) {
-            CloseWin4int=Integer.parseInt(mSettings.getString(CloseWin4, "CloseWin1"));
-        }
-
-        if(mSettings.contains(CloseLose4)) {
-            CloseLose4int=Integer.parseInt(mSettings.getString(CloseLose4, "CloseLose1"));
-        }
-        if(mSettings.contains(CloseScore1)) {
-            Score[0]=Integer.parseInt(mSettings.getString(CloseScore1, "0"));
-        }
-        if(mSettings.contains(CloseScore2)) {
-            Score[1]=Integer.parseInt(mSettings.getString(CloseScore2, "0"));
-        }
-        if(mSettings.contains(CloseScore3)) {
-            Score[2]=Integer.parseInt(mSettings.getString(CloseScore3, "0"));
-        }
-        if(mSettings.contains(CloseScore4)) {
-            Score[3]=Integer.parseInt(mSettings.getString(CloseScore4, "0"));
-        }
-        if(mSettings.contains(CloseScore5)) {
-            Score[4]=Integer.parseInt(mSettings.getString(CloseScore5, "0"));
-        }
-        if(mSettings.contains(CloseScore6)) {
-            Score[5]=Integer.parseInt(mSettings.getString(CloseScore6, "0"));
-        }
-        if(mSettings.contains(CloseScore7)) {
-            Score[6]=Integer.parseInt(mSettings.getString(CloseScore7, "0"));
-        }
-        if(mSettings.contains(CloseScore8)) {
-            Score[7]=Integer.parseInt(mSettings.getString(CloseScore8, "0"));
-        }
+        ReadFlash();
 
 
         ScoreText[4].setText(String.valueOf(Score[2]));
@@ -673,22 +686,9 @@ public class Minor extends AppCompatActivity {
 
 
 
+        ShuffleGroup();
 
 
-        teamstable.clear();
-        teamstable.add( new ModelTeam( MinorTeams.get(0).teamname,MinorTeams.get(0).logo,CloseWin1int,CloseLose1int,MinorTeams.get(0).seq));
-        teamstable.add( new ModelTeam( MinorTeams.get(1).teamname,MinorTeams.get(1).logo,CloseWin2int,CloseLose2int,MinorTeams.get(1).seq));
-        teamstable.add( new ModelTeam( MinorTeams.get(2).teamname,MinorTeams.get(2).logo,CloseWin3int,CloseLose3int,MinorTeams.get(2).seq));
-        teamstable.add( new ModelTeam( YourTeam,R.drawable.teamlogo,CloseWin4int,CloseLose4int,77));
-        Collections.sort(teamstable, ModelTeam.COMPARE_BY_Winning);
-
-        for (int i=0;i<4;i++)
-        {
-            Teams[i].setText(teamstable.get(i).TeamName);
-            TeamsLogo[i].setImageResource(teamstable.get(i).logo);
-            ScoreWin[i].setText(String.valueOf(teamstable.get(i).w));
-            ScoreLose[i].setText(String.valueOf(teamstable.get(i).l));
-        }
 
 
 
@@ -723,54 +723,44 @@ public class Minor extends AppCompatActivity {
                 }
                 else if (ClosedPlayofStageint==4)
                 {
-                    //ToPickStage.putExtra("TeamEnemy",MinorTeams.get(2).teamname);
-                    //ToPickStage.putExtra("EnemyTeam",MinorTeams.get(2).seq);
-                    //startActivity(ToPickStage);
+                    ToPickStage.putExtra("TeamEnemy",MinorTeams.get(2).teamname);
+                    ToPickStage.putExtra("EnemyTeam",MinorTeams.get(2).seq);
+                    startActivity(ToPickStage);
                 }
                 else if (ClosedPlayofStageint==5)
                 {
-                    ScoreText[8].setText("2");
-                    ScoreText[9].setText("0");
+                    if(five==false) {
+                        ScoreText[8].setText("2");
+                        ScoreText[9].setText("0");
+
+                        ScoreText[18].setText("2");
+                        ScoreText[19].setText("0");
+                        editor.putString(CloseWin1, String.valueOf(CloseWin1int + 2));
+                        editor.putString(CloseLose1, String.valueOf(CloseLose1int + 0));
+
+                        editor.putString(CloseWin3, String.valueOf(CloseWin3int + 0));
+                        editor.putString(CloseLose3, String.valueOf(CloseLose3int + 2));
+
+                        editor.putString(CloseWin7, String.valueOf(CloseWin7int + 2));
+                        editor.putString(CloseLose7, String.valueOf(CloseLose7int + 0));
+
+                        editor.putString(CloseWin8, String.valueOf(CloseWin8int + 0));
+                        editor.putString(CloseLose8, String.valueOf(CloseLose8int + 2));
+                        editor.apply();
+                        ReadFlash();
+                        ShuffleGroup();
+                        editor.putString(ClosedPlayofStage, "6");
+                        editor.apply();
+                    }
                     if(five==true)
                     {
                         editor.putString(TeamPlayoff2, String.valueOf(MinorTeams.get(5).seq));
-                        editor.putString(TeamPlayoff3, String.valueOf(MinorTeams.get(0).seq));
-                        editor.putString(TeamPlayoff4, String.valueOf(MinorTeams.get(3).seq));
-
-
-                        editor.putString(ClosedPlayofStage,"1");
-                        editor.putString(CloseScore1,"0");
-                        editor.putString(CloseScore2,"0");
-                        editor.putString(CloseScore3,"0");
-                        editor.putString(CloseScore4,"0");
-                        editor.putString(CloseScore5,"0");
-                        editor.putString(CloseScore6,"0");
-                        editor.putString(CloseScore7,"0");
-                        editor.putString(CloseScore8,"0");
-
-
-                        editor.putString(ClosePlayoff4,"0");
-                        editor.putString(ClosePlayoff2,"0");
-                        editor.putString(ClosePlayoff1,"0");
-                        editor.putString(ClosePlayoff3, "0");
-                        editor.putString(ClosePlayoff5,"0");
-                        editor.putString(ClosePlayoff6, "0");
-
-
-                        editor.putString(CloseWin4, "0");
-                        editor.putString(CloseLose4, "0");
-
-                        editor.putString(CloseWin1, "0");
-                        editor.putString(CloseLose1, "0");
-
-                        editor.putString(CloseWin2, "0");
-                        editor.putString(CloseLose2, "0");
-
-                        editor.putString(CloseWin3, "0");
-                        editor.putString(CloseLose3, "0");
-
-
+                        editor.putString(TeamPlayoff3, String.valueOf(MinorTeams.get(3).seq));
+                        editor.putString(TeamPlayoff4, String.valueOf(MinorTeams.get(0).seq));
                         editor.apply();
+                        ClearFlash();
+
+
                         startActivity(ToClosedPlayoff);
                         five=false;
                     }
@@ -781,6 +771,18 @@ public class Minor extends AppCompatActivity {
                     //ToPickStage.putExtra("TeamEnemy",MinorTeams.get(2).teamname);
                     //ToPickStage.putExtra("EnemyTeam",MinorTeams.get(2).seq);
                    // startActivity(ToPickStage);
+                }
+                else if(ClosedPlayofStageint==6)
+                {
+                    editor.putString(TeamPlayoff2, String.valueOf(MinorTeams.get(5).seq));
+                    editor.putString(TeamPlayoff3, String.valueOf(MinorTeams.get(3).seq));
+                    editor.putString(TeamPlayoff4, String.valueOf(MinorTeams.get(0).seq));
+                    editor.apply();
+                    ClearFlash();
+
+
+                    startActivity(ToClosedPlayoff);
+                    five=false;
                 }
 
 
@@ -795,4 +797,182 @@ public class Minor extends AppCompatActivity {
 
 
     }
+
+    protected void GroupWinnerLoser()
+    {
+        SharedPreferences.Editor editor = mSettings.edit();
+        if(ClosedPlayofStageint==2)
+        {
+            editor.putString(CloseScore5,"0");
+            editor.putString(CloseScore6,"2");
+
+            editor.putString(ClosePlayoff5,"3");
+
+
+            editor.putString(CloseWin2,String.valueOf(CloseWin2int+Score[2]));
+            editor.putString(CloseLose2,String.valueOf(CloseLose2int+Score[3]));
+
+            editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[3]));
+            editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[2]));
+
+            editor.putString(CloseWin1,String.valueOf(CloseWin1int+2));
+            editor.putString(CloseLose1,String.valueOf(CloseLose1int+0));
+
+            editor.putString(CloseWin3,String.valueOf(CloseWin3int+0));
+            editor.putString(CloseLose3,String.valueOf(CloseLose3int+2));
+
+
+            editor.putString(CloseWin6,String.valueOf(CloseWin6int+0));
+            editor.putString(CloseLose6,String.valueOf(CloseLose6int+2));
+            editor.putString(CloseWin7,String.valueOf(CloseWin7int+2));
+            editor.putString(CloseLose7,String.valueOf(CloseLose7int+0));
+
+            editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
+            editor.putString(CloseLose5,String.valueOf(CloseLose5int+1));
+            editor.putString(CloseWin8,String.valueOf(CloseWin8int+1));
+            editor.putString(CloseLose8,String.valueOf(CloseLose8int+2));
+
+
+            editor.apply();
+
+
+
+
+
+        }
+        else if(ClosedPlayofStageint==3)
+        {
+            editor.putString(CloseScore3,"0");
+            editor.putString(CloseScore4,"2");
+            editor.putString(ClosePlayoff5,"1");
+
+            editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[4]));
+            editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[5]));
+
+            editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[5]));
+            editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[4]));
+
+            editor.putString(CloseWin1,String.valueOf(CloseWin1int+2));
+            editor.putString(CloseLose1,String.valueOf(CloseLose1int+0));
+
+            editor.putString(CloseWin2,String.valueOf(CloseWin2int+0));
+            editor.putString(CloseLose2,String.valueOf(CloseLose2int+2));
+
+
+            editor.putString(CloseWin6,String.valueOf(CloseWin6int+0));
+            editor.putString(CloseLose6,String.valueOf(CloseLose6int+2));
+            editor.putString(CloseWin7,String.valueOf(CloseWin7int+2));
+            editor.putString(CloseLose7,String.valueOf(CloseLose7int+0));
+
+            editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
+            editor.putString(CloseLose5,String.valueOf(CloseLose5int+1));
+            editor.putString(CloseWin8,String.valueOf(CloseWin8int+1));
+            editor.putString(CloseLose8,String.valueOf(CloseLose8int+2));
+
+
+            editor.apply();
+        }
+        else if(ClosedPlayofStageint==4)
+        {
+            editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[6]));
+            editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[7]));
+
+            editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[7]));
+            editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[6]));
+
+            editor.putString(CloseWin7, String.valueOf(CloseWin7int + 2));
+            editor.putString(CloseLose7, String.valueOf(CloseLose7int + 0));
+
+            editor.putString(CloseWin8, String.valueOf(CloseWin8int + 0));
+            editor.putString(CloseLose8, String.valueOf(CloseLose8int + 2));
+
+            editor.apply();
+        }
+    }
+
+    protected void ClearFlash()
+    {
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(ClosedPlayofStage,"1");
+        editor.putString(CloseScore1,"0");
+        editor.putString(CloseScore2,"0");
+        editor.putString(CloseScore3,"0");
+        editor.putString(CloseScore4,"0");
+        editor.putString(CloseScore5,"0");
+        editor.putString(CloseScore6,"0");
+        editor.putString(CloseScore7,"0");
+        editor.putString(CloseScore8,"0");
+
+
+        editor.putString(ClosePlayoff4,"0");
+        editor.putString(ClosePlayoff2,"0");
+        editor.putString(ClosePlayoff1,"0");
+        editor.putString(ClosePlayoff3, "0");
+        editor.putString(ClosePlayoff5,"0");
+        editor.putString(ClosePlayoff6, "0");
+
+
+
+        editor.putString(CloseWin4, "0");
+        editor.putString(CloseLose4, "0");
+
+        editor.putString(CloseWin1, "0");
+        editor.putString(CloseLose1, "0");
+
+        editor.putString(CloseWin2, "0");
+        editor.putString(CloseLose2, "0");
+
+        editor.putString(CloseWin3, "0");
+        editor.putString(CloseLose3, "0");
+
+
+        editor.putString(CloseWin5, "0");
+        editor.putString(CloseLose5, "0");
+
+        editor.putString(CloseWin6, "0");
+        editor.putString(CloseLose6, "0");
+
+        editor.putString(CloseWin7, "0");
+        editor.putString(CloseLose7, "0");
+
+        editor.putString(CloseWin8, "0");
+        editor.putString(CloseLose8, "0");
+
+
+        editor.apply();
+    }
+
+    protected void ShuffleGroup()
+    {
+        groupa.clear();
+        groupa.add( new ModelTeam( MinorTeams.get(0).teamname,MinorTeams.get(0).logo,CloseWin1int,CloseLose1int,MinorTeams.get(0).seq));
+        groupa.add( new ModelTeam( MinorTeams.get(1).teamname,MinorTeams.get(1).logo,CloseWin2int,CloseLose2int,MinorTeams.get(1).seq));
+        groupa.add( new ModelTeam( MinorTeams.get(2).teamname,MinorTeams.get(2).logo,CloseWin3int,CloseLose3int,MinorTeams.get(2).seq));
+        groupa.add( new ModelTeam( YourTeam,R.drawable.teamlogo,CloseWin4int,CloseLose4int,77));
+        Collections.sort(groupa, ModelTeam.COMPARE_BY_Winning);
+
+        for (int i=0;i<4;i++)
+        {
+            Teams[i].setText(groupa.get(i).TeamName);
+            TeamsLogo[i].setImageResource(groupa.get(i).logo);
+            ScoreWin[i].setText(String.valueOf(groupa.get(i).w));
+            ScoreLose[i].setText(String.valueOf(groupa.get(i).l));
+        }
+        groupb.clear();
+        groupb.add( new ModelTeam( MinorTeams.get(3).teamname,MinorTeams.get(3).logo,CloseWin5int,CloseLose5int,MinorTeams.get(3).seq));
+        groupb.add( new ModelTeam( MinorTeams.get(4).teamname,MinorTeams.get(4).logo,CloseWin6int,CloseLose6int,MinorTeams.get(4).seq));
+        groupb.add( new ModelTeam( MinorTeams.get(5).teamname,MinorTeams.get(5).logo,CloseWin7int,CloseLose7int,MinorTeams.get(5).seq));
+        groupb.add( new ModelTeam( MinorTeams.get(6).teamname,MinorTeams.get(6).logo,CloseWin8int,CloseLose8int,MinorTeams.get(6).seq));
+        Collections.sort(groupb, ModelTeam.COMPARE_BY_Winning);
+        for (int i=0;i<4;i++)
+        {
+            Teams[4+i].setText(groupb.get(i).TeamName);
+            TeamsLogo[4+i].setImageResource(groupb.get(i).logo);
+            ScoreWin[4+i].setText(String.valueOf(groupb.get(i).w));
+            ScoreLose[4+i].setText(String.valueOf(groupb.get(i).l));
+        }
+    }
+
+
+
 }

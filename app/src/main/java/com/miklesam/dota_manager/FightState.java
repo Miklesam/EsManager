@@ -1026,7 +1026,16 @@ public class FightState extends AppCompatActivity {
                     }
                     else if(ClosedPlayofStageint==2)
                     {
+                        if (winloose==1)
+                        {
+                            editor.putString(CloseScore4, String.valueOf(Score[3]+1));
 
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore3, String.valueOf(Score[2]+1));
+                        }
                     }
                     else if(ClosedPlayofStageint==3)
                     {
@@ -1039,6 +1048,19 @@ public class FightState extends AppCompatActivity {
                         else if(winloose==2)
                         {
                             editor.putString(CloseScore5, String.valueOf(Score[4]+1));
+                        }
+                    }
+                    else if(ClosedPlayofStageint==4)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(CloseScore8, String.valueOf(Score[7]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore7, String.valueOf(Score[6]+1));
                         }
                     }
 
@@ -1468,7 +1490,7 @@ public class FightState extends AppCompatActivity {
         fightima[0]=R.drawable.fightone;
         fightima[1]=R.drawable.fighttwo;
         fightima[2]=R.drawable.fighthree;
-        Mytimer=  new CountDownTimer(2000, 150) {
+        Mytimer=  new CountDownTimer(200, 150) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
 
@@ -1497,7 +1519,7 @@ public class FightState extends AppCompatActivity {
 
         final int finalRadiantfight = radiantfight;
         final int finalDirefight = direfight;
-        Middlegametimer=  new CountDownTimer(2000, 150) {
+        Middlegametimer=  new CountDownTimer(200, 150) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
 
@@ -1550,7 +1572,7 @@ public class FightState extends AppCompatActivity {
         };
 
 
-        Lategametimer =new CountDownTimer(2000, 150) {
+        Lategametimer =new CountDownTimer(200, 150) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
                 if(mycnt[0] <2)
