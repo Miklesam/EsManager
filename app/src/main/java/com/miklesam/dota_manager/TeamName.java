@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
@@ -70,10 +71,28 @@ public class TeamName extends AppCompatActivity {
         Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Editable EditName= TeamName.getText();
                 String TeamTag = EditName.toString();
-                YourTeamIntent.putExtra("Name",TeamTag);
-                startActivity(YourTeamIntent);
+                if(TeamTag.isEmpty()==false)
+                {
+                    YourTeamIntent.putExtra("Name",TeamTag);
+                    startActivity(YourTeamIntent);
+                }
+                else
+                {
+                    if(languageshare==2)
+                    {
+                       Toast.makeText(TeamName.this, "Enter your team name", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(TeamName.this, "Введите название команды", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
+
 
             }
         });

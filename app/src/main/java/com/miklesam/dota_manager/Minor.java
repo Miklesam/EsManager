@@ -14,11 +14,19 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.MissingFormatArgumentException;
+import java.util.Random;
 
+import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.BucharestInit;
 import static com.miklesam.dota_manager.TeamsInit.BucharestTeams;
+import static com.miklesam.dota_manager.TeamsInit.DotaPitInit;
+import static com.miklesam.dota_manager.TeamsInit.DotaPitTeams;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueInit;
 import static com.miklesam.dota_manager.TeamsInit.DreamLeagueTeams;
+import static com.miklesam.dota_manager.TeamsInit.KievS1Init;
+import static com.miklesam.dota_manager.TeamsInit.KievS1Teams;
+import static com.miklesam.dota_manager.TeamsInit.KievS2Init;
+import static com.miklesam.dota_manager.TeamsInit.KievS2Teams;
 import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
 import static com.miklesam.dota_manager.YourTeam.CloseLose1;
 import static com.miklesam.dota_manager.YourTeam.CloseLose2;
@@ -56,6 +64,15 @@ import static com.miklesam.dota_manager.YourTeam.CloseWin8;
 import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.MinorQual;
+import static com.miklesam.dota_manager.YourTeam.Month;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam4;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam5;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam6;
+import static com.miklesam.dota_manager.YourTeam.OpenTeam7;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -125,7 +142,9 @@ public class Minor extends AppCompatActivity {
     String YourTeam;
     boolean five;
     int Dayint;
-
+    int Minorornot;
+    int OpenTeamQual[]=new int[7];
+    int somecup[]=new int[7];
     protected void InitView()
     {
         EventImage=findViewById(R.id.EventImage);
@@ -242,13 +261,48 @@ public class Minor extends AppCompatActivity {
     }
     protected void ReadFlash()
     {
+        if (mSettings.contains(OpenTeam1)) {
+            OpenTeamQual[0] = Integer.parseInt(mSettings.getString(OpenTeam1, "77"));
+        }
+        if (mSettings.contains(OpenTeam2)) {
+            OpenTeamQual[1] = Integer.parseInt(mSettings.getString(OpenTeam2, "77"));
+        }
+
+        if (mSettings.contains(OpenTeam3)) {
+            OpenTeamQual[2] = Integer.parseInt(mSettings.getString(OpenTeam3, "77"));
+        }
+
+        if (mSettings.contains(OpenTeam4)) {
+            OpenTeamQual[3] = Integer.parseInt(mSettings.getString(OpenTeam4, "77"));
+        }
+
+        if (mSettings.contains(OpenTeam5)) {
+            OpenTeamQual[4] = Integer.parseInt(mSettings.getString(OpenTeam5, "77"));
+        }
+
+        if (mSettings.contains(OpenTeam6)) {
+            OpenTeamQual[5] = Integer.parseInt(mSettings.getString(OpenTeam6, "77"));
+        }
+
+        if (mSettings.contains(OpenTeam7)) {
+            OpenTeamQual[6] = Integer.parseInt(mSettings.getString(OpenTeam7, "77"));
+        }
+
+
+
+
+
+        if(mSettings.contains(MinorQual)) {
+            Minorornot=Integer.parseInt(mSettings.getString(MinorQual, "0"));
+        }
+
         if (mSettings.contains(APP_PREFERENCES_NAME)) {
 
             YourTeam = mSettings.getString(APP_PREFERENCES_NAME, "Your Team");
 
         }
-        if(mSettings.contains(Day)) {
-            Dayint=Integer.parseInt(mSettings.getString(Day, "Day"));
+        if(mSettings.contains(Month)) {
+            Dayint=Integer.parseInt(mSettings.getString(Month, "Month"));
         }
 
         if(mSettings.contains(StaticPosition1)) {
@@ -415,6 +469,50 @@ public class Minor extends AppCompatActivity {
 
         ReadFlash();
 
+
+        if(Minorornot==0)
+        {
+            MinorTeams.clear();
+            if(OpenTeamQual[0]==0)
+            {
+                Random randomteam = new Random();
+                int whatteam=0;
+
+                for (int i=0;i<7;i++)
+                {
+                    whatteam=randomteam.nextInt(AllTeams.size());
+                    somecup[i]=AllTeams.get(whatteam).seq;
+                    MinorTeams.add(AllTeams.get(whatteam));
+                    AllTeams.remove(whatteam);
+                 }
+                editor.putString(OpenTeam1, String.valueOf(somecup[0]));
+                editor.putString(OpenTeam2, String.valueOf(somecup[1]));
+                editor.putString(OpenTeam3, String.valueOf(somecup[2]));
+                editor.putString(OpenTeam4, String.valueOf(somecup[3]));
+                editor.putString(OpenTeam5, String.valueOf(somecup[4]));
+                editor.putString(OpenTeam6, String.valueOf(somecup[5]));
+                editor.putString(OpenTeam7, String.valueOf(somecup[6]));
+                editor.apply();
+
+            }
+            else
+            {
+                MinorTeams.clear();
+                for (int i=0;i<7;i++)
+                {
+
+                    MinorTeams.add(AllTeams.get(OpenTeamQual[i]));
+
+
+                }
+            }
+
+
+          }
+        else
+        {
+
+
         if(Dayint==1)
         {
             EventImage.setImageResource(R.drawable.dreams10);
@@ -427,8 +525,26 @@ public class Minor extends AppCompatActivity {
             BucharestTeams.clear();
             MinorTeams=BucharestInit();
         }
+        else if(Dayint==5)
+        {
+            EventImage.setImageResource(R.drawable.kievs1);
+            KievS1Teams.clear();
+            MinorTeams=KievS1Init();
+        }
+        else if(Dayint==7)
+        {
+            EventImage.setImageResource(R.drawable.dotapit);
+            DotaPitTeams.clear();
+            MinorTeams=DotaPitInit();
+        }
+        else if(Dayint==9)
+        {
+            EventImage.setImageResource(R.drawable.kievs1);
+            KievS2Teams.clear();
+            MinorTeams=KievS2Init();
+        }
 
-
+        }
 
 
 
@@ -491,11 +607,11 @@ public class Minor extends AppCompatActivity {
                 editor.putString(CloseWin1,String.valueOf(Score[0]));
                 editor.putString(CloseLose1, String.valueOf(Score[1]));
 
-                editor.putString(CloseWin2,"1");
+                editor.putString(CloseWin2,"0");
                 editor.putString(CloseLose2,"2");
 
                 editor.putString(CloseWin3,"2");
-                editor.putString(CloseLose3,"1");
+                editor.putString(CloseLose3,"0");
 
                 editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
                 editor.putString(CloseLose5,String.valueOf(CloseLose5int+0));
@@ -522,11 +638,11 @@ public class Minor extends AppCompatActivity {
                 editor.putString(CloseWin1,String.valueOf(Score[0]));
                 editor.putString(CloseLose1, String.valueOf(Score[1]));
 
-                editor.putString(CloseWin2,"1");
+                editor.putString(CloseWin2,"0");
                 editor.putString(CloseLose2,"2");
 
                 editor.putString(CloseWin3,"2");
-                editor.putString(CloseLose3,"1");
+                editor.putString(CloseLose3,"0");
 
                 editor.putString(CloseWin5,String.valueOf(CloseWin5int+2));
                 editor.putString(CloseLose5,String.valueOf(CloseLose5int+0));
@@ -557,6 +673,7 @@ public class Minor extends AppCompatActivity {
             {
                 GroupWinnerLoser();
                 editor.putString(ClosedPlayofStage,"7");
+                nextminorbttn.setImageResource(R.drawable.leave_bttn);
 
 
             }
@@ -595,6 +712,7 @@ public class Minor extends AppCompatActivity {
 
                 GroupWinnerLoser();
                 editor.putString(ClosedPlayofStage,"7");
+                nextminorbttn.setImageResource(R.drawable.leave_bttn);
 
 
             }
@@ -614,7 +732,7 @@ public class Minor extends AppCompatActivity {
         }
         if(ClosedPlayofStageint>1)
         {
-            ScoreText[2].setText("1");
+            ScoreText[2].setText("0");
             ScoreText[3].setText("2");
 
             ScoreText[10].setText("2");
@@ -723,8 +841,17 @@ public class Minor extends AppCompatActivity {
                 }
                 else if (ClosedPlayofStageint==4)
                 {
-                    ToPickStage.putExtra("TeamEnemy",MinorTeams.get(2).teamname);
-                    ToPickStage.putExtra("EnemyTeam",MinorTeams.get(2).seq);
+
+                    if(Teamsplayoffs[1]==10)
+                    {
+                        ToPickStage.putExtra("TeamEnemy",MinorTeams.get(2).teamname);
+                        ToPickStage.putExtra("EnemyTeam",MinorTeams.get(2).seq);
+                    }
+                    else
+                    {
+                        ToPickStage.putExtra("TeamEnemy",MinorTeams.get(0).teamname);
+                        ToPickStage.putExtra("EnemyTeam",MinorTeams.get(0).seq);
+                    }
                     startActivity(ToPickStage);
                 }
                 else if (ClosedPlayofStageint==5)
@@ -784,6 +911,13 @@ public class Minor extends AppCompatActivity {
                     startActivity(ToClosedPlayoff);
                     five=false;
                 }
+
+                else if(ClosedPlayofStageint==7) {
+
+                    ClearFlash();
+                    startActivity(ToMAinState);
+                }
+
 
 
 
@@ -874,8 +1008,18 @@ public class Minor extends AppCompatActivity {
         }
         else if(ClosedPlayofStageint==4)
         {
-            editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[6]));
-            editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[7]));
+            if(Teamsplayoffs[1]==10)
+            {
+                editor.putString(CloseWin3,String.valueOf(CloseWin3int+Score[6]));
+                editor.putString(CloseLose3,String.valueOf(CloseLose3int+Score[7]));
+            }
+            else
+            {
+                editor.putString(CloseWin1,String.valueOf(CloseWin3int+Score[6]));
+                editor.putString(CloseLose1,String.valueOf(CloseLose3int+Score[7]));
+            }
+
+
 
             editor.putString(CloseWin4,String.valueOf(CloseWin4int+Score[7]));
             editor.putString(CloseLose4,String.valueOf(CloseLose4int+Score[6]));
@@ -937,7 +1081,13 @@ public class Minor extends AppCompatActivity {
 
         editor.putString(CloseWin8, "0");
         editor.putString(CloseLose8, "0");
-
+        editor.putString(OpenTeam1, "77");
+        editor.putString(OpenTeam2, "77");
+        editor.putString(OpenTeam3, "77");
+        editor.putString(OpenTeam4, "77");
+        editor.putString(OpenTeam5, "77");
+        editor.putString(OpenTeam6, "77");
+        editor.putString(OpenTeam7, "77");
 
         editor.apply();
     }

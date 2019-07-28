@@ -447,13 +447,13 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(OpenScore7, "0");
                    editor.putString(OpenScore8, "0");
 
-                   editor.putString(OpenTeam1, "0");
-                   editor.putString(OpenTeam2, "0");
-                   editor.putString(OpenTeam3, "0");
-                   editor.putString(OpenTeam4, "0");
-                   editor.putString(OpenTeam5, "0");
-                   editor.putString(OpenTeam6, "0");
-                   editor.putString(OpenTeam7, "0");
+                   editor.putString(OpenTeam1, "77");
+                   editor.putString(OpenTeam2, "77");
+                   editor.putString(OpenTeam3, "77");
+                   editor.putString(OpenTeam4, "77");
+                   editor.putString(OpenTeam5, "77");
+                   editor.putString(OpenTeam6, "77");
+                   editor.putString(OpenTeam7, "77");
                    editor.putString(OpenShaffle,"0");
 
                    editor.putString(OpenQuaterFinals, "0");
@@ -468,7 +468,7 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(OpenQualiWinner, "0");
 
 
-                   editor.putString(Day, String.valueOf(day+5));
+                   editor.putString(Day, String.valueOf(day+2));
 
                    editor.apply();
                    startActivity(Tomainstate);
@@ -488,13 +488,13 @@ public class OpenQuali extends AppCompatActivity {
                        editor.putString(OpenScore7, "0");
                        editor.putString(OpenScore8, "0");
 
-                       editor.putString(OpenTeam1, "0");
-                       editor.putString(OpenTeam2, "0");
-                       editor.putString(OpenTeam3, "0");
-                       editor.putString(OpenTeam4, "0");
-                       editor.putString(OpenTeam5, "0");
-                       editor.putString(OpenTeam6, "0");
-                       editor.putString(OpenTeam7, "0");
+                       editor.putString(OpenTeam1, "77");
+                       editor.putString(OpenTeam2, "77");
+                       editor.putString(OpenTeam3, "77");
+                       editor.putString(OpenTeam4, "77");
+                       editor.putString(OpenTeam5, "77");
+                       editor.putString(OpenTeam6, "77");
+                       editor.putString(OpenTeam7, "77");
                        editor.putString(OpenShaffle,"0");
 
                        editor.putString(OpenQuaterFinals, "0");

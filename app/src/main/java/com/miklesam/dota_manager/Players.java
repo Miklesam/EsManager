@@ -1,5 +1,8 @@
 package com.miklesam.dota_manager;
 
+import java.io.Serializable;
+import java.util.Comparator;
+
 public class Players {
 
     public String Name;
@@ -24,6 +27,7 @@ public class Players {
 
 
 
+
     Players(int fans,String Name, String Description, int Cost,int Flag,int laining,int fighting, int farming, int late,int signature1, int signature2, int signature3, int sequence,int face,String EngDescription) {
         this.fans=fans;
         this.Name=Name;
@@ -44,7 +48,5 @@ public class Players {
         this.EngDescription=EngDescription;
 
     }
-
-
 
 }

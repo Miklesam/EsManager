@@ -74,6 +74,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.Month;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
@@ -158,6 +159,7 @@ public class mainstate extends AppCompatActivity {
     SharedPreferences mSettings;
     boolean lock;
     int languageshare;
+    int Minorornot;
 
 
     @Override
@@ -297,7 +299,9 @@ public class mainstate extends AppCompatActivity {
             languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
         }
 
-
+        if(mSettings.contains(MinorQual)) {
+            Minorornot=Integer.parseInt(mSettings.getString(MinorQual, "0"));
+        }
 
         LainingPoints.setText(String.valueOf(ExLainingint));
         FarmingPoints.setText(String.valueOf(ExFarmingint));
@@ -316,72 +320,57 @@ public class mainstate extends AppCompatActivity {
         YearText.setText(String.valueOf(Yearint));
 
 
+        if(Monthint%2==0) {
 
-
-        if (Dayint<10)
-        {
-            //Play_game.setText("Practice");
-            gamemode=2;
+            if (Dayint < 10) {
+                gamemode = 2;
+            } else if (Dayint == 10) {
+                //Play_game.setText("Open");
+                Play_game.setImageResource(R.drawable.openquali);
+                gamemode = 1;
+            } else if ((Dayint > 10) && (Dayint < 15)) {
+                //Play_game.setText("Practice");
+                gamemode = 2;
+            } else if (Dayint == 15) {
+                Play_game.setImageResource(R.drawable.openquali);
+                gamemode = 1;
+            } else if ((Dayint > 15) && (Dayint < 20)) {
+                //Play_game.setText("Practice");
+                gamemode = 2;
+            } else if (Dayint == 20) {
+                if (QualiWinner == 1) {
+                    //Play_game.setText("Close");
+                    Play_game.setImageResource(R.drawable.closequali);
+                    gamemode = 3;
+                } else {
+                    //Play_game.setText("Practice");
+                    gamemode = 2;
+                }
+            } else if (Dayint > 20) {
+                //Play_game.setText("Practice");
+                gamemode = 2;
+            }
         }
-        else if (Dayint==10)
+        else
         {
-            //Play_game.setText("Open");
-            Play_game.setImageResource(R.drawable.openquali);
-            gamemode=1;
-        }
-        else if((Dayint>10)&&(Dayint<15))
-        {
-            //Play_game.setText("Practice");
-            gamemode=2;
-        }
-        else if(Dayint==15)
-        {
-            if (QualiWinner==1)
+            if (Dayint < 10)
             {
-                //Play_game.setText("Close");
-                Play_game.setImageResource(R.drawable.closequali);
-                gamemode=3;
+            gamemode = 2;
+            }
+            else if (Dayint == 10)
+            {
+
+                    gamemode=4;
+
+
+
+                //bttnMinor
             }
             else
             {
-                //Play_game.setText("Practice");
-                gamemode=2;
+                gamemode = 2;
             }
-        }
-        else if((Dayint>15)&&(Dayint<20))
-        {
-            //Play_game.setText("Practice");
-            gamemode=2;
-        }
-        else if (Dayint==20)
-        {
-           // Play_game.setText("Open");
-            Play_game.setImageResource(R.drawable.openquali);
-            gamemode=1;
-        }
-        else if((Dayint>20)&&(Dayint<25))
-        {
-            //Play_game.setText("Practice");
-            gamemode=2;
-        }
-        else if(Dayint==25)
-        {
-            if (QualiWinner==1)
-            {
-                //Play_game.setText("Close");
-                Play_game.setImageResource(R.drawable.closequali);
-                gamemode=3;
-            }
-            else
-            {
-                //Play_game.setText("Practice");
-                gamemode=2;
-            }
-        }
-        else if((Dayint>25))
-        {
-           // Play_game.setText("Practice");
-            gamemode=2;
+
         }
 
 
@@ -496,98 +485,102 @@ public class mainstate extends AppCompatActivity {
 
         Goldbalance.setText(Gold);
 
-
-        if(QualiWinner==1)
+        if(Monthint%2==0)
         {
-            if(Dayint==4)
-            {
-                InfoBlock.setText("CloseQuali today");
-            }
-            else
-            {
-                InfoBlock.setText("CloseQuali after "+ String.valueOf(4-Dayint) );
-            }
-        }
-        else
-        {
-            if(Dayint==2)
-            {
-                InfoBlock.setText("OpenQuali today");
-            }
-            else
-            {
-                InfoBlock.setText("OpenQuali after "+ String.valueOf(2-Dayint) );
-            }
 
-        }
+
 
         if (Dayint<10)
         {
-            InfoBlock.setText("Open Major Qual after "+ String.valueOf(10-Dayint) );
+            InfoBlock.setText("First Open Minor Qual after "+ String.valueOf(10-Dayint) );
         }
         else if (Dayint==10)
         {
-            InfoBlock.setText("Open Major Qual today");
+            InfoBlock.setText("First Open Minor Qual today");
         }
         else if((Dayint>10)&&(Dayint<15))
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Major Qual after "+ String.valueOf(15-Dayint) );
+                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint) );
             }
             else
             {
-                InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
+                InfoBlock.setText("Second Open Minor Qual today "+ String.valueOf(15-Dayint) );
             }
         }
         else if(Dayint==15)
         {
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Major Qual today");
+                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint));
             }
             else
             {
-                InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
+                InfoBlock.setText("Second Open Minor Qual today ");
             }
         }
         else if((Dayint>15)&&(Dayint<20))
         {
-            //if not win major quals
-            InfoBlock.setText("Open Minor Qual after "+ String.valueOf(20-Dayint) );
+            if (QualiWinner==1)
+            {
+                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint));
+            }
+            else
+            {
+                InfoBlock.setText("Some cup in next month ");
+            }
+
         }
         else if (Dayint==20)
         {
-         InfoBlock.setText("Open Minor Qual today");
-        }
-        else if((Dayint>20)&&(Dayint<25))
-        {
+
             if (QualiWinner==1)
             {
-                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(25-Dayint) );
+                InfoBlock.setText("Closed Minor Qual today ");
             }
             else
             {
-                InfoBlock.setText("Open Major Qual after "+ String.valueOf(35-Dayint) );
+                InfoBlock.setText("Some cup in next month ");
             }
+
         }
-        else if(Dayint==25)
+        else if(Dayint>20)
         {
-            if (QualiWinner==1)
+            if(Minorornot==0)
             {
-                InfoBlock.setText("Closed Minor Qual today");
+                InfoBlock.setText("Some cup in next month ");
             }
-            else
-            {
-                InfoBlock.setText("Open Major Qual after "+ String.valueOf(40-Dayint) );
+            else{
+                InfoBlock.setText("Minor in next month ");
             }
-        }
-        else if((Dayint>25))
-        {
-            InfoBlock.setText("Open Major Qual after "+ String.valueOf(40-Dayint) );
         }
 
+        }
+        else
+        {
+            if(Dayint<10)
+            {
+                if(Minorornot==0)
+            {
+                InfoBlock.setText("Some Cup after "+ String.valueOf(10-Dayint));
+            }
+            else{
+                InfoBlock.setText("Minor after "+ String.valueOf(10-Dayint));
+            }
 
+            }
+            else if (Dayint==10)
+            {
+                if(Minorornot==0)
+                {
+                    InfoBlock.setText("Some Cup today");
+                }
+                else{
+                    InfoBlock.setText("Minor today ");
+                }
+            }
+        }
 
 
 
@@ -673,6 +666,12 @@ public class mainstate extends AppCompatActivity {
 
                     startActivity(ToClosedQuali);
                 }
+                else if(gamemode==4)
+                {
+                    editor.putString(Mode,"4");
+                    editor.apply();
+                    startActivity(ToMinor);
+                }
 
 
                 }
@@ -720,58 +719,7 @@ public class mainstate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
-                editor.putString(Mode,"4");
-/*
-                editor.putString(ClosedPlayofStage,"1");
-                editor.putString(CloseScore1,"0");
-                editor.putString(CloseScore2,"0");
-                editor.putString(CloseScore3,"0");
-                editor.putString(CloseScore4,"0");
-                editor.putString(CloseScore5,"0");
-                editor.putString(CloseScore6,"0");
-                editor.putString(CloseScore7,"0");
-                editor.putString(CloseScore8,"0");
-
-
-                editor.putString(ClosePlayoff4,"0");
-                editor.putString(ClosePlayoff2,"0");
-                editor.putString(ClosePlayoff1,"0");
-                editor.putString(ClosePlayoff3, "0");
-                editor.putString(ClosePlayoff5,"0");
-                editor.putString(ClosePlayoff6, "0");
-
-
-                editor.putString(CloseWin4, "0");
-                editor.putString(CloseLose4, "0");
-
-                editor.putString(CloseWin1, "0");
-                editor.putString(CloseLose1, "0");
-
-                editor.putString(CloseWin2, "0");
-                editor.putString(CloseLose2, "0");
-
-                editor.putString(CloseWin3, "0");
-                editor.putString(CloseLose3, "0");
-
-
-                editor.putString(CloseWin5, "0");
-                editor.putString(CloseLose5, "0");
-
-                editor.putString(CloseWin6, "0");
-                editor.putString(CloseLose6, "0");
-
-                editor.putString(CloseWin7, "0");
-                editor.putString(CloseLose7, "0");
-
-                editor.putString(CloseWin8, "0");
-                editor.putString(CloseLose8, "0");
-*/
-
-                editor.apply();
-                startActivity(ToMinor);
-                //startActivity(ToMainActivity);
+                startActivity(ToMainActivity);
 
 
 

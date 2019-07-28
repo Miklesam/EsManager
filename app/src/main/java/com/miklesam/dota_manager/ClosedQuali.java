@@ -43,6 +43,7 @@ import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.Series1Win;
@@ -502,6 +503,9 @@ public class ClosedQuali extends AppCompatActivity {
             else{
                 AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и прошли на прямую");
             }
+            editor.putString(MinorQual,"1");
+            editor.apply();
+
 
             AfterGroupStage.setVisibility(View.VISIBLE);
         }

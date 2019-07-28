@@ -67,6 +67,7 @@ import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.Series1Win;
@@ -107,6 +108,7 @@ public class ClosedPlayoff extends AppCompatActivity {
     int Dayint;
     boolean   to_final=false;
     int ClosedPlayofStageint;
+    int Minorornot;
 
     boolean lock;
 
@@ -299,6 +301,10 @@ public class ClosedPlayoff extends AppCompatActivity {
 
         if(mSettings.contains(Day)) {
             Dayint=Integer.parseInt(mSettings.getString(Day, "0"));
+        }
+
+        if(mSettings.contains(MinorQual)) {
+            Minorornot=Integer.parseInt(mSettings.getString(MinorQual, "0"));
         }
 
 
@@ -994,6 +1000,16 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
 
+                        if(Minorornot==0)
+                        {
+                            editor.putString(MinorQual,"1");
+                        }
+                        else{
+                            editor.putString(MinorQual,"0");
+                        }
+
+
+
 
                         editor.apply();
                         startActivity(Tomainstate);
@@ -1074,6 +1090,14 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series5Win, "0");
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
+
+                        if(Minorornot==0)
+                        {
+                            editor.putString(MinorQual,"1");
+                        }
+                        else{
+                            editor.putString(MinorQual,"0");
+                        }
 
                         editor.apply();
                         startActivity(Tomainstate);

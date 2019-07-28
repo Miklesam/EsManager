@@ -10,7 +10,10 @@ public class TeamsInit {
     static ArrayList<Teams> ClosedTeams = new ArrayList<Teams>();
     static ArrayList<Teams> DreamLeagueTeams = new ArrayList<Teams>();
     static ArrayList<Teams> BucharestTeams = new ArrayList<Teams>();
-
+    static ArrayList<Teams> KievS1Teams = new ArrayList<Teams>();
+    static ArrayList<Teams> DotaPitTeams = new ArrayList<Teams>();
+    static ArrayList<Teams> KievS2Teams = new ArrayList<Teams>();
+    static ArrayList<Teams> SomeCupTeams = new ArrayList<Teams>();
 
     static ArrayList<Players> VPTeam=new ArrayList<Players>();
     static ArrayList<Players> GambitTeam=new ArrayList<Players>();
@@ -45,6 +48,14 @@ public class TeamsInit {
     static ArrayList<Players> BombTeam=new ArrayList<Players>();
     static ArrayList<Players> PowerGamingTeam=new ArrayList<Players>();
     static ArrayList<Players> CyberHomeTeam=new ArrayList<Players>();
+    static ArrayList<Players> PinguinsTeam=new ArrayList<Players>();
+    static ArrayList<Players> DestroyersTeam=new ArrayList<Players>();
+    static ArrayList<Players> CrabsGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> UnionTeamTeam=new ArrayList<Players>();
+    static ArrayList<Players> FutureGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> MagicGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> DragonsTeam=new ArrayList<Players>();
+    static ArrayList<Players> WolfsTeam=new ArrayList<Players>();
 
 
     public static ArrayList VpInit(){
@@ -303,7 +314,6 @@ public class TeamsInit {
         PowerGamingTeam.add(dartes);
         return PowerGamingTeam;
     }
-
     public static ArrayList CyberHomeInit(){
         CyberHomeTeam.add(elim);
         CyberHomeTeam.add(Arasilv);
@@ -311,6 +321,70 @@ public class TeamsInit {
         CyberHomeTeam.add(Beryanneas);
         CyberHomeTeam.add(Ytendayse);
         return CyberHomeTeam;
+    }
+    public static ArrayList PinguinsInit(){
+        PinguinsTeam.add(Entenal);
+        PinguinsTeam.add(Ruorya);
+        PinguinsTeam.add(Saimon);
+        PinguinsTeam.add(Francisco);
+        PinguinsTeam.add(Lissayala);
+        return PinguinsTeam;
+    }
+    public static ArrayList DestroyersInit(){
+        DestroyersTeam.add(KotarHaya);
+        DestroyersTeam.add(Jerry);
+        DestroyersTeam.add(Scent);
+        DestroyersTeam.add(Sardena);
+        DestroyersTeam.add(Aniem);
+        return DestroyersTeam;
+    }
+    public static ArrayList CrabsGamingInit(){
+        CrabsGamingTeam.add(Photographer);
+        CrabsGamingTeam.add(Orstling);
+        CrabsGamingTeam.add(OldYoung);
+        CrabsGamingTeam.add(Freed);
+        CrabsGamingTeam.add(Dilyre);
+        return CrabsGamingTeam;
+    }
+    public static ArrayList UnionTeamInit(){
+        UnionTeamTeam.add(Miket);
+        UnionTeamTeam.add(Qwinaolla);
+        UnionTeamTeam.add(Birce);
+        UnionTeamTeam.add(Tanyla);
+        UnionTeamTeam.add(Ianasnan);
+        return UnionTeamTeam;
+    }
+    public static ArrayList FutureGamingInit(){
+        FutureGamingTeam.add(Ysheri);
+        FutureGamingTeam.add(CSnSC);
+        FutureGamingTeam.add(Sthollel);
+        FutureGamingTeam.add(Malind);
+        FutureGamingTeam.add(Keishant);
+        return FutureGamingTeam;
+    }
+    public static ArrayList MagicGamingInit(){
+        MagicGamingTeam.add(Kevinc);
+        MagicGamingTeam.add(ChrisBorka);
+        MagicGamingTeam.add(Wyland);
+        MagicGamingTeam.add(Daricelle);
+        MagicGamingTeam.add(Ynhaaa);
+        return MagicGamingTeam;
+    }
+    public static ArrayList DragonsInit(){
+        DragonsTeam.add(Ahid);
+        DragonsTeam.add(Morin);
+        DragonsTeam.add(Kupercu);
+        DragonsTeam.add(Bhirai);
+        DragonsTeam.add(Niell);
+        return DragonsTeam;
+    }
+    public static ArrayList WolfsInit(){
+        WolfsTeam.add(Shyli);
+        WolfsTeam.add(AS);
+        WolfsTeam.add(Inderio);
+        WolfsTeam.add(Xiean);
+        WolfsTeam.add(Yderrie);
+        return WolfsTeam;
     }
 
 
@@ -344,13 +418,24 @@ public class TeamsInit {
     static final Teams Kings = new Teams("Kings",KingsTeam,24,R.drawable.kings);
     static final Teams Tigers = new Teams("Tigers",TigersTeam,25,R.drawable.tigers);
     //BucharestTeams
-    static final Teams OGENIE = new Teams("O!GENIE",OGENIETeam,26,R.drawable.complex);
-    static final Teams Ninjas = new Teams("Ninjas",NinjasTeam,27,R.drawable.complex);
-    static final Teams TheTeams = new Teams("TheTeams",TheTeamsTeam,28,R.drawable.complex);
-    static final Teams Gamers = new Teams("Gamers",GameTeam,29,R.drawable.complex);
-    static final Teams BombTeams = new Teams("BombTeam",BombTeam,30,R.drawable.complex);
-    static final Teams PowerGaming = new Teams("PowerGaming",PowerGamingTeam,31,R.drawable.complex);
-    static final Teams CyberHome = new Teams("CyberHome",CyberHomeTeam,32,R.drawable.complex);
+    static final Teams OGENIE = new Teams("O!GENIE",OGENIETeam,26,R.drawable.og);
+    static final Teams Ninjas = new Teams("Ninjas",NinjasTeam,27,R.drawable.ninjas);
+    static final Teams TheTeams = new Teams("TheTeams",TheTeamsTeam,28,R.drawable.teamteam);
+    static final Teams Gamers = new Teams("Gamers",GameTeam,29,R.drawable.gamers);
+    static final Teams BombTeams = new Teams("BombTeam",BombTeam,30,R.drawable.bombteam);
+    static final Teams PowerGaming = new Teams("PowerGaming",PowerGamingTeam,31,R.drawable.powergaming);
+    static final Teams CyberHome = new Teams("CyberHome",CyberHomeTeam,32,R.drawable.cyberhome);
+    //KievMinorS1
+    static final Teams Pinguins = new Teams("dinosaurs",PinguinsTeam,33,R.drawable.dinasours);
+    static final Teams Destroyers = new Teams("Destroyers",PinguinsTeam,34,R.drawable.destroers);
+    static final Teams CrabsGaming = new Teams("CrabsGaming",CrabsGamingTeam,35,R.drawable.crabs);
+    //DotaPit
+    static final Teams UnionTeam = new Teams("UnionTeam",UnionTeamTeam,36,R.drawable.unuounteam);
+    static final Teams FutureGaming = new Teams("FutureGaming",FutureGamingTeam,37,R.drawable.futuregaming);
+    static final Teams MagicGaming = new Teams("MagicGaming",MagicGamingTeam,38,R.drawable.magicgaming);
+    // KievS2
+    static final Teams Dragons = new Teams("Dragons",DragonsTeam,39,R.drawable.dragons);
+    static final Teams Wolfs = new Teams("Wolfs",WolfsTeam,40,R.drawable.woolfs);
 
 
     public static ArrayList AllTeamsInit(){
@@ -387,6 +472,14 @@ public class TeamsInit {
         BombTeamInit();
         PowerGamingInit();
         CyberHomeInit();
+        PinguinsInit();
+        DestroyersInit();
+        CrabsGamingInit();
+        UnionTeamInit();
+        FutureGamingInit();
+        MagicGamingInit();
+        DragonsInit();
+        WolfsInit();
 
 
         AllTeams.add(VirtusPro);
@@ -426,12 +519,17 @@ public class TeamsInit {
         AllTeams.add(BombTeams);
         AllTeams.add(PowerGaming);
         AllTeams.add(CyberHome);
-
+        AllTeams.add(Pinguins);
+        AllTeams.add(Destroyers);
+        AllTeams.add(CrabsGaming);
+        AllTeams.add(UnionTeam);
+        AllTeams.add(FutureGaming);
+        AllTeams.add(MagicGaming);
+        AllTeams.add(Dragons);
+        AllTeams.add(Wolfs);
 
         return AllTeams;
     }
-
-
     public static ArrayList OpenTeamsInit(){
 
 
@@ -509,7 +607,6 @@ public class TeamsInit {
 
         return DreamLeagueTeams;
     }
-
     public static ArrayList BucharestInit(){
         OGENIEInit();
         NinjasInit();
@@ -528,10 +625,85 @@ public class TeamsInit {
         BucharestTeams.add(CyberHome);
         return BucharestTeams;
     }
+    public static ArrayList KievS1Init(){
+        OGENIEInit();
+        GambitInit();
+        PinguinsInit();
+        DestroyersInit();
+        KingsInit();
+        CrabsGamingInit();
+        BombTeamInit();
 
 
+        KievS1Teams.add(OGENIE);
+        KievS1Teams.add(Gambit);
+        KievS1Teams.add(Pinguins);
+        KievS1Teams.add(Destroyers);
+        KievS1Teams.add(Kings);
+        KievS1Teams.add(CrabsGaming);
+        KievS1Teams.add(BombTeams);
+        return KievS1Teams;
+    }
+    public static ArrayList DotaPitInit(){
+        NinjasInit();
+        UnionTeamInit();
+        FutureGamingInit();
+        MagicGamingInit();
+        BombTeamInit();
+        KingsInit();
+        CyberHomeInit();
 
 
+        DotaPitTeams.add(Ninjas);
+        DotaPitTeams.add(UnionTeam);
+        DotaPitTeams.add(FutureGaming);
+        DotaPitTeams.add(MagicGaming);
+        DotaPitTeams.add(BombTeams);
+        DotaPitTeams.add(Kings);
+        DotaPitTeams.add(CyberHome);
+        return DotaPitTeams;
+    }
+    public static ArrayList KievS2Init(){
+        NinjasInit();
+        UnionTeamInit();
+        ComplexInit();
+        DragonsInit();
+        GreatestInit();
+        CyberHomeInit();
+        WolfsInit();
+
+        KievS2Teams.add(Ninjas);
+        KievS2Teams.add(UnionTeam);
+        KievS2Teams.add(Complex);
+        KievS2Teams.add(Dragons);
+        KievS2Teams.add(Greatest);
+        KievS2Teams.add(CyberHome);
+        KievS2Teams.add(Wolfs);
+
+        return KievS2Teams;
+    }
+
+
+    public static ArrayList SomeCupInit(){
+        AllTeams.clear();
+
+        SomeCupTeams=AllTeamsInit();
+        for(int i=0;i<34;i++)
+        {
+
+        }
+
+
+        SomeCupTeams.add(Ninjas);
+        SomeCupTeams.add(UnionTeam);
+        SomeCupTeams.add(Complex);
+        SomeCupTeams.add(Dragons);
+        SomeCupTeams.add(Greatest);
+        SomeCupTeams.add(CyberHome);
+        SomeCupTeams.add(Wolfs);
+
+        return SomeCupTeams;
+    }
 
 
 

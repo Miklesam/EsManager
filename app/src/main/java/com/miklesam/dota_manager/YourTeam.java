@@ -145,6 +145,7 @@ public class YourTeam extends AppCompatActivity {
     public static final String Series6Win= "Series6Win";
     public static final String Series7Win= "Series7Win";
     public static final String Language= "russian";
+    public static final String MinorQual= "russian";
 
 
 

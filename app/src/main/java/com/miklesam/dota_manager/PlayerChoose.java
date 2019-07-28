@@ -17,8 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
+
 import static com.miklesam.dota_manager.PlayersInit.CorePlayers;
 import static com.miklesam.dota_manager.PlayersInit.PlayersCoreInit;
 import static com.miklesam.dota_manager.PlayersInit.PlayersSupportInit;
@@ -156,7 +158,41 @@ public class PlayerChoose extends AppCompatActivity {
 
         DirectHero.addAll(HeroInit.HeroInit());
         Cores=PlayersCoreInit();
+        ArrayList<Player_cost_shuffle> Coressh = new ArrayList<>();
+        for(int i=0;i<Cores.size();i++)
+        {
+            Coressh.add( new Player_cost_shuffle(Cores.get(i),Cores.get(i).Cost));
+        }
+
+        Collections.sort(Coressh, Player_cost_shuffle.COMPARE_BY_Price);
+        Cores.clear();
+        for(int i=0; i<Coressh.size();i++)
+        {
+            Cores.add(Coressh.get(i).Player);
+        }
+
+
+
         Supports=PlayersSupportInit();
+        Coressh.clear();
+        for(int i=0;i<Supports.size();i++)
+        {
+            Coressh.add( new Player_cost_shuffle(Supports.get(i),Supports.get(i).Cost));
+        }
+        Collections.sort(Coressh, Player_cost_shuffle.COMPARE_BY_Price);
+        Supports.clear();
+        for(int i=0; i<Coressh.size();i++)
+        {
+            Supports.add(Coressh.get(i).Player);
+        }
+        Coressh.clear();
+
+
+
+        for(int i=0;i<Cores.size();i++)
+        {
+            Coressh.add( new Player_cost_shuffle(Cores.get(i),Cores.get(i).Cost));
+        }
 
         final Intent Tomainstate = new Intent(this, mainstate.class);
 
@@ -428,6 +464,8 @@ public class PlayerChoose extends AppCompatActivity {
                     editor.putString(StaticPosition3,String.valueOf(playerseq[2]));
                     editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
                     editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
+                    editor.putString(MinorQual,"0");
+
 
                     editor.apply();
 
