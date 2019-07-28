@@ -69,6 +69,7 @@ import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
+import static com.miklesam.dota_manager.YourTeam.NotMinor;
 import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
 import static com.miklesam.dota_manager.YourTeam.Series1Win;
 import static com.miklesam.dota_manager.YourTeam.Series2Win;
@@ -109,6 +110,7 @@ public class ClosedPlayoff extends AppCompatActivity {
     boolean   to_final=false;
     int ClosedPlayofStageint;
     int Minorornot;
+    int notminor;
 
     boolean lock;
 
@@ -305,6 +307,10 @@ public class ClosedPlayoff extends AppCompatActivity {
 
         if(mSettings.contains(MinorQual)) {
             Minorornot=Integer.parseInt(mSettings.getString(MinorQual, "0"));
+        }
+
+        if(mSettings.contains(NotMinor)) {
+           notminor=Integer.parseInt(mSettings.getString(NotMinor, "0"));
         }
 
 
@@ -748,7 +754,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                     editor.putString(ClosedSeries, "0");
                     editor.putString(ClosedPlayofStage, "1");
-                    editor.putString(Day, String.valueOf(Dayint+2));
+
 
 
                     editor.putString(Closedwin, "0");
@@ -793,7 +799,19 @@ public class ClosedPlayoff extends AppCompatActivity {
                     editor.putString(Series5Win, "0");
                     editor.putString(Series6Win, "0");
                     editor.putString(Series7Win, "0");
+                    editor.putString(MinorQual,"0");
 
+                    if (notminor==0)
+                    {
+                        editor.putString(Day, String.valueOf(Dayint+5));
+                     }
+                    else
+                    {
+                        editor.putString(Day, String.valueOf(Dayint+20));
+                    }
+
+
+                    editor.putString(NotMinor,"0");
 
 
                     editor.apply();
@@ -953,7 +971,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
                         editor.putString(ClosedSeries, "0");
                         editor.putString(ClosedPlayofStage, "1");
-                        editor.putString(Day, String.valueOf(Dayint+2));
+
 
 
                         editor.putString(Closedwin, "0");
@@ -1000,15 +1018,24 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
 
-                        if(Minorornot==0)
+                        if (notminor==0)
                         {
-                            editor.putString(MinorQual,"1");
+                            editor.putString(Day, String.valueOf(Dayint+5));
+                            if(Minorornot==0)
+                            {
+                                editor.putString(MinorQual,"1");
+                            }
+                            else{
+                                editor.putString(MinorQual,"0");
+                            }
                         }
-                        else{
-                            editor.putString(MinorQual,"0");
+                        else
+                        {
+                            editor.putString(Day, String.valueOf(Dayint+20));
                         }
 
 
+                        editor.putString(NotMinor,"0");
 
 
                         editor.apply();
@@ -1046,7 +1073,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(ClosedSeries, "0");
 
                         editor.putString(ClosedPlayofStage, "1");
-                        editor.putString(Day, String.valueOf(Dayint+2));
+
 
                         editor.putString(Closedwin, "0");
                         editor.putString(Closedlose, "0");
@@ -1090,14 +1117,20 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series5Win, "0");
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
+                        editor.putString(MinorQual,"0");
 
-                        if(Minorornot==0)
+
+                        if (notminor==0)
                         {
-                            editor.putString(MinorQual,"1");
+                            editor.putString(Day, String.valueOf(Dayint+5));
                         }
-                        else{
-                            editor.putString(MinorQual,"0");
+                        else
+                        {
+                            editor.putString(Day, String.valueOf(Dayint+20));
                         }
+
+
+                        editor.putString(NotMinor,"0");
 
                         editor.apply();
                         startActivity(Tomainstate);

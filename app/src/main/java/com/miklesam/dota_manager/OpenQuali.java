@@ -436,7 +436,7 @@ public class OpenQuali extends AppCompatActivity {
 
                if(losequal==true)
                {
-                   editor.putString(Day, String.valueOf(day+2));
+                   editor.putString(Day, String.valueOf(day+4));
                    editor.putString(OpenScore1, "0");
                    editor.putString(OpenScore2, "0");
                    editor.putString(OpenScore3, "0");
@@ -468,7 +468,6 @@ public class OpenQuali extends AppCompatActivity {
                    editor.putString(OpenQualiWinner, "0");
 
 
-                   editor.putString(Day, String.valueOf(day+2));
 
                    editor.apply();
                    startActivity(Tomainstate);
@@ -477,7 +476,7 @@ public class OpenQuali extends AppCompatActivity {
                {
                    if (oqf==1)
                    {
-                       editor.putString(Day, String.valueOf(day+2));
+                       editor.putString(Day, String.valueOf(day+4));
                        editor.putString(OpenScore1, "0");
                        editor.putString(OpenScore2, "0");
                        editor.putString(OpenScore3, "0");

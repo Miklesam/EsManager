@@ -110,18 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if(languageshare==2)
-        {
-            russian=false;
-            language.setImageResource(R.drawable.england);
-            NewGame.setImageResource(R.drawable.new_game);
-            Continue.setImageResource(R.drawable.continue_bttn);
-            Privacy.setImageResource(R.drawable.about_project);
-            Store.setImageResource(R.drawable.shop);
-            Teams.setImageResource(R.drawable.teams);
 
-        }
-        else
+        if(languageshare==1)
         {
             russian=true;
             language.setImageResource(R.drawable.russia);
@@ -130,6 +120,17 @@ public class MainActivity extends AppCompatActivity {
             Privacy.setImageResource(R.drawable.about_russian);
             Store.setImageResource(R.drawable.shop_russian);
             Teams.setImageResource(R.drawable.teams_russian);
+
+        }
+        else
+        {
+            russian=false;
+            language.setImageResource(R.drawable.england);
+            NewGame.setImageResource(R.drawable.new_game);
+            Continue.setImageResource(R.drawable.continue_bttn);
+            Privacy.setImageResource(R.drawable.about_project);
+            Store.setImageResource(R.drawable.shop);
+            Teams.setImageResource(R.drawable.teams);
 
         }
 

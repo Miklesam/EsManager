@@ -465,6 +465,7 @@ public class PlayerChoose extends AppCompatActivity {
                     editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
                     editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
                     editor.putString(MinorQual,"0");
+                    editor.putString(NotMinor,"0");
 
 
                     editor.apply();

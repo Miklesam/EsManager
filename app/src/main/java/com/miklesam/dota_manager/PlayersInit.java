@@ -225,7 +225,7 @@ public class PlayersInit {
     static final Players Resolut1on = new Players(10000,"Resolut1on",Resolut1onDescription,15000,R.drawable.ukraine4020,80,60,85,85,47,50,46,47,R.drawable.resolution_p,EngResolut1onDescription);
 
     //MoscowFive
-    static final Players NS = new Players(9500,"NS",NSDescription,5000,R.drawable.russia4020,35,45,5,50,84,104,76,48,R.drawable.ns_p,EngNSDescription);
+    static final Players NS = new Players(9500,"NS",NSDescription,4465,R.drawable.russia4020,35,45,5,50,84,104,76,48,R.drawable.ns_p,EngNSDescription);
     static final Players Dread = new Players(15000,"Dread",DreadDescription,15000,R.drawable.russia4020,65,65,60,60,74,77,85,49,R.drawable.dread_p,EngDreadDescription);
     static final Players ArsArt = new Players(5500,"ArsArt",ArsArtDescription,10000,R.drawable.russia4020,65,65,50,65,91,76,105,50,R.drawable.arsart_p,EngArsArtDescription);
     static final Players Santa = new Players(3500,"Santa",SantaDescription,10000,R.drawable.russia4020,70,70,70,65,80,86,113,51,R.drawable.santa_p,EngSantaDescription);
@@ -316,7 +316,7 @@ public class PlayersInit {
     static final Players Ttarma = new Players(1000,"Ttarma","позиция 2",12500,R.drawable.finland,80,90,20,75,84,82,115,104,R.drawable.sematheslayer_p,"position2");
     static final Players Froronde = new Players(1000,"Froronde","позиция 3",12500,R.drawable.france,80,90,20,75,84,82,115,105,R.drawable.sematheslayer_p,"position3");
     static final Players Jaimi = new Players(1000,"Jaimi","позиция 4",12500,R.drawable.finland,80,90,20,75,84,82,115,106,R.drawable.sematheslayer_p,"position4");
-    static final Players Noelle = new Players(1000,"Noelle","позиция 5",12500,R.drawable.denmark,80,90,20,75,84,82,115,107,R.drawable.sematheslayer_p,"position5");
+    static final Players Noelle = new Players(1000,"Noelle","позиция 5",12500,R.drawable.denmark,80,90,99,75,84,82,115,107,R.drawable.sematheslayer_p,"position5");
 
 
     //Ninjas
@@ -376,8 +376,8 @@ public class PlayersInit {
 
     //
     //CrabsGaming
-    static final Players Photographer = new Players(1000,"Photographer","позиция 1",12500,R.drawable.china,80,90,20,75,84,82,115,145,R.drawable.sematheslayer_p,"position1");
-    static final Players Orstling = new Players(1000,"Orstling","позиция 2",12500,R.drawable.china,80,90,20,75,84,82,115,146,R.drawable.sematheslayer_p,"position2");
+    static final Players Photographer = new Players(1000,"Photographer","позиция 1",10000,R.drawable.china,80,90,95,75,84,82,115,145,R.drawable.sematheslayer_p,"position1");
+    static final Players Orstling = new Players(1000,"Orstling","позиция 2",10000,R.drawable.china,80,90,95,75,84,82,115,146,R.drawable.sematheslayer_p,"position2");
     static final Players OldYoung = new Players(1000,"OldYoung","позиция 3",12500,R.drawable.china,80,90,20,75,84,82,115,147,R.drawable.sematheslayer_p,"position3");
     static final Players Freed = new Players(1000,"Freed","позиция 4",12500,R.drawable.china,80,90,20,75,84,82,115,148,R.drawable.sematheslayer_p,"position4");
     static final Players Dilyre = new Players(1000,"Dilyre","позиция 5",12500,R.drawable.china,80,90,20,75,84,82,115,149,R.drawable.sematheslayer_p,"position5");

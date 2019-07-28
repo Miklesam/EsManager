@@ -332,8 +332,18 @@ public class mainstate extends AppCompatActivity {
                 //Play_game.setText("Practice");
                 gamemode = 2;
             } else if (Dayint == 15) {
-                Play_game.setImageResource(R.drawable.openquali);
-                gamemode = 1;
+                if(QualiWinner==1)
+                {
+                    gamemode = 2;
+                }
+                else
+                {
+                    Play_game.setImageResource(R.drawable.openquali);
+                    gamemode = 1;
+                }
+
+
+
             } else if ((Dayint > 15) && (Dayint < 20)) {
                 //Play_game.setText("Practice");
                 gamemode = 2;
@@ -401,23 +411,23 @@ public class mainstate extends AppCompatActivity {
         }
 
 
-        if (Pos1!=77)
+        if (Pos1!=177)
         {
             team[0]=true;
         }
-        if (Pos2!=77)
+        if (Pos2!=177)
         {
             team[1]=true;
         }
-        if (Pos3!=77)
+        if (Pos3!=177)
         {
             team[2]=true;
         }
-        if (Pos4!=77)
+        if (Pos4!=177)
         {
             team[3]=true;
         }
-        if (Pos5!=77)
+        if (Pos5!=177)
         {
             team[4]=true;
         }
@@ -547,12 +557,13 @@ public class mainstate extends AppCompatActivity {
         }
         else if(Dayint>20)
         {
-            if(Minorornot==0)
+            if(Minorornot==1)
             {
-                InfoBlock.setText("Some cup in next month ");
+                InfoBlock.setText("Minor in next month ");
             }
             else{
-                InfoBlock.setText("Minor in next month ");
+
+                InfoBlock.setText("Some cup in next month ");
             }
         }
 
@@ -561,24 +572,29 @@ public class mainstate extends AppCompatActivity {
         {
             if(Dayint<10)
             {
-                if(Minorornot==0)
+                if(Minorornot==1)
             {
-                InfoBlock.setText("Some Cup after "+ String.valueOf(10-Dayint));
+                InfoBlock.setText("Minor after "+ String.valueOf(10-Dayint));
             }
             else{
-                InfoBlock.setText("Minor after "+ String.valueOf(10-Dayint));
+
+                    InfoBlock.setText("Some Cup after "+ String.valueOf(10-Dayint));
             }
 
             }
             else if (Dayint==10)
             {
-                if(Minorornot==0)
+                if(Minorornot==1)
                 {
-                    InfoBlock.setText("Some Cup today");
-                }
-                else{
                     InfoBlock.setText("Minor today ");
                 }
+                else{
+                    InfoBlock.setText("Some Cup today");
+                }
+            }
+            else if(Dayint>10)
+            {
+                InfoBlock.setText("Open Qaul in next month ");
             }
         }
 

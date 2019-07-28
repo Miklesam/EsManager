@@ -66,6 +66,7 @@ import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Month;
+import static com.miklesam.dota_manager.YourTeam.NotMinor;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam1;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam2;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam3;
@@ -145,8 +146,37 @@ public class Minor extends AppCompatActivity {
     int Minorornot;
     int OpenTeamQual[]=new int[7];
     int somecup[]=new int[7];
+    TextView minorname;
+
+    boolean lock;
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (lock==true)
+        {
+            Intent k = new Intent(this, MainActivity.class);
+            startActivity(k);
+        }
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        lock=true;
+
+    }
+
+    @Override
+    public void onBackPressed() {
+    }
+
     protected void InitView()
     {
+        minorname=findViewById(R.id.minorname);
         EventImage=findViewById(R.id.EventImage);
         Teams[0]=findViewById(R.id.Team1);
         Teams[1]=findViewById(R.id.Team2);
@@ -470,49 +500,13 @@ public class Minor extends AppCompatActivity {
         ReadFlash();
 
 
-        if(Minorornot==0)
+
+
+
+
+
+        if(Minorornot==1)
         {
-            MinorTeams.clear();
-            if(OpenTeamQual[0]==0)
-            {
-                Random randomteam = new Random();
-                int whatteam=0;
-
-                for (int i=0;i<7;i++)
-                {
-                    whatteam=randomteam.nextInt(AllTeams.size());
-                    somecup[i]=AllTeams.get(whatteam).seq;
-                    MinorTeams.add(AllTeams.get(whatteam));
-                    AllTeams.remove(whatteam);
-                 }
-                editor.putString(OpenTeam1, String.valueOf(somecup[0]));
-                editor.putString(OpenTeam2, String.valueOf(somecup[1]));
-                editor.putString(OpenTeam3, String.valueOf(somecup[2]));
-                editor.putString(OpenTeam4, String.valueOf(somecup[3]));
-                editor.putString(OpenTeam5, String.valueOf(somecup[4]));
-                editor.putString(OpenTeam6, String.valueOf(somecup[5]));
-                editor.putString(OpenTeam7, String.valueOf(somecup[6]));
-                editor.apply();
-
-            }
-            else
-            {
-                MinorTeams.clear();
-                for (int i=0;i<7;i++)
-                {
-
-                    MinorTeams.add(AllTeams.get(OpenTeamQual[i]));
-
-
-                }
-            }
-
-
-          }
-        else
-        {
-
-
         if(Dayint==1)
         {
             EventImage.setImageResource(R.drawable.dreams10);
@@ -543,8 +537,61 @@ public class Minor extends AppCompatActivity {
             KievS2Teams.clear();
             MinorTeams=KievS2Init();
         }
+        else
+        {
+            MinorTeams.clear();
+            EventImage.setImageResource(R.drawable.dreams10);
+            DreamLeagueTeams.clear();
+            MinorTeams=DreamLeagueInit();
+        }
 
         }
+        else
+        {
+            minorname.setText("Some Cup");
+            MinorTeams.clear();
+            if(OpenTeamQual[0]==77)
+            {
+                Random randomteam = new Random();
+                int whatteam=0;
+
+                for (int i=0;i<7;i++)
+                {
+                    whatteam=randomteam.nextInt(AllTeams.size());
+                    somecup[i]=AllTeams.get(whatteam).seq;
+                    MinorTeams.add(AllTeams.get(whatteam));
+                    AllTeams.remove(whatteam);
+                }
+
+                editor.putString(MinorQual, "0");
+                editor.putString(OpenTeam1, String.valueOf(somecup[0]));
+                editor.putString(OpenTeam2, String.valueOf(somecup[1]));
+                editor.putString(OpenTeam3, String.valueOf(somecup[2]));
+                editor.putString(OpenTeam4, String.valueOf(somecup[3]));
+                editor.putString(OpenTeam5, String.valueOf(somecup[4]));
+                editor.putString(OpenTeam6, String.valueOf(somecup[5]));
+                editor.putString(OpenTeam7, String.valueOf(somecup[6]));
+                editor.apply();
+
+            }
+            else
+            {
+                editor.putString(MinorQual, "0");
+                editor.apply();
+                MinorTeams.clear();
+
+                for (int i=0;i<7;i++)
+                {
+
+                    MinorTeams.add(AllTeams.get(OpenTeamQual[i]));
+
+
+                }
+            }
+
+
+        }
+
 
 
 
@@ -884,6 +931,7 @@ public class Minor extends AppCompatActivity {
                         editor.putString(TeamPlayoff2, String.valueOf(MinorTeams.get(5).seq));
                         editor.putString(TeamPlayoff3, String.valueOf(MinorTeams.get(3).seq));
                         editor.putString(TeamPlayoff4, String.valueOf(MinorTeams.get(0).seq));
+                        editor.putString(NotMinor,"1");
                         editor.apply();
                         ClearFlash();
 
@@ -904,6 +952,7 @@ public class Minor extends AppCompatActivity {
                     editor.putString(TeamPlayoff2, String.valueOf(MinorTeams.get(5).seq));
                     editor.putString(TeamPlayoff3, String.valueOf(MinorTeams.get(3).seq));
                     editor.putString(TeamPlayoff4, String.valueOf(MinorTeams.get(0).seq));
+                    editor.putString(NotMinor,"1");
                     editor.apply();
                     ClearFlash();
 

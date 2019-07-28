@@ -533,6 +533,8 @@ public class ClosedQuali extends AppCompatActivity {
             {
                 AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и вылетели");
             }
+            editor.putString(MinorQual,"0");
+            editor.apply();
 
             AfterGroupStage.setVisibility(View.VISIBLE);
         }
@@ -637,7 +639,7 @@ public class ClosedQuali extends AppCompatActivity {
                         editor.putString(CloseTeam5, "0");
                         editor.putString(CloseTeam6, "0");
                         editor.putString(CloseTeam7, "0");
-                        editor.putString(Day, String.valueOf(Dayint+2));
+                        editor.putString(Day, String.valueOf(Dayint+5));
                         editor.putString(Mode, "0");
 
 

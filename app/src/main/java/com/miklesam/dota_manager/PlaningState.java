@@ -66,8 +66,9 @@ public class PlaningState extends AppCompatActivity {
     boolean lock2;
     boolean lock3;
     TextView helpinfo;
-    boolean lock;
     int languageshare;
+    boolean lock;
+
 
 
     @Override

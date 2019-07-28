@@ -33,7 +33,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="#45283c"
-    android:text="ClosedPlayoff"/>
+    android:text="Playoff"/>
         <ImageView
             android:layout_marginTop="10sp"
             android:layout_width="190sp"

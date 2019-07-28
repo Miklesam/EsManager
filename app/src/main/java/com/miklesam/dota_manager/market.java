@@ -923,32 +923,32 @@ public class market extends AppCompatActivity {
                 if (sellposition==0)
                 {
                     Team[0].setText("1.");
-                    editor.putString(StaticPosition1,String.valueOf(77));
+                    editor.putString(StaticPosition1,String.valueOf(177));
                     Cores.add(AllPlayers.get(Pos1));
                 }
                 else if(sellposition==1)
                 {
                     Team[1].setText("2.");
-                    editor.putString(StaticPosition2,String.valueOf(77));
+                    editor.putString(StaticPosition2,String.valueOf(177));
                     Cores.add(AllPlayers.get(Pos2));
                 }
                 else if(sellposition==2)
                 {
                     Team[2].setText("3.");
-                    editor.putString(StaticPosition3,String.valueOf(77));
+                    editor.putString(StaticPosition3,String.valueOf(177));
                     Cores.add(AllPlayers.get(Pos3));
                 }
 
                 else if(sellposition==3)
                 {
                     Team[3].setText("4.");
-                    editor.putString(StaticPosition4,String.valueOf(77));
+                    editor.putString(StaticPosition4,String.valueOf(177));
                     Supports.add(AllPlayers.get(Pos4));
                 }
                 else if(sellposition==4)
                 {
                     Team[4].setText("5.");
-                    editor.putString(StaticPosition5,String.valueOf(77));
+                    editor.putString(StaticPosition5,String.valueOf(177));
                     Supports.add(AllPlayers.get(Pos5));
                 }
 
