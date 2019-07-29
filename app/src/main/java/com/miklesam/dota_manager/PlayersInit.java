@@ -260,26 +260,26 @@ public class PlayersInit {
     static final Players CemaTheSlayer = new Players(2000,"CemaTheSlayer",CemaTheSlayerDescription,12500,R.drawable.ukraine4020,80,90,20,75,84,82,115,68,R.drawable.sematheslayer_p,EngCemaTheSlayerDescription);
 
     //Complexity
-     static final Players Sweya = new Players(1000,"Sweya","позиция 1",12500,R.drawable.chech,80,90,90,75,84,82,115,69,R.drawable.sematheslayer_p,"position1");
-    static final Players Laka = new Players(1000,"Laka","позиция 2",12500,R.drawable.sweden,80,90,90,75,84,82,115,70,R.drawable.sematheslayer_p,"position2");
-    static final Players Sthollel = new Players(1000,"Sthollel","позиция 3",12500,R.drawable.usa,80,90,90,75,84,82,115,71,R.drawable.sematheslayer_p,"position3");
+     static final Players Sweya = new Players(1000,"Sweya","позиция 1",12500,R.drawable.chech,80,90,90,75,44,68,46,69,R.drawable.sematheslayer_p,"position1");
+    static final Players Laka = new Players(1000,"Laka","позиция 2",12500,R.drawable.sweden,80,90,90,75,32,93,102,70,R.drawable.sematheslayer_p,"position2");
+    static final Players Sthollel = new Players(1000,"Sthollel","позиция 3",12500,R.drawable.usa,80,90,90,75,80,3,95,71,R.drawable.sematheslayer_p,"position3");
     static final Players Elylllosarw = new Players(1000,"Elylllosarw","позиция 4",12500,R.drawable.kanada,80,90,20,75,84,82,115,72,R.drawable.sematheslayer_p,"position4");
-    static final Players Zorlar = new Players(1000,"Zorlar","позиция 5",12500,R.drawable.usa,80,90,90,75,84,82,115,73,R.drawable.sematheslayer_p,"position5");
+    static final Players Zorlar = new Players(1000,"Zorlar","позиция 5",12500,R.drawable.usa,80,90,90,75,78,86,15,73,R.drawable.sematheslayer_p,"position5");
 
     //ROONS
-    static final Players Bro = new Players(1000,"Bro","позиция 1",12500,R.drawable.usa,80,90,20,75,84,82,115,74,R.drawable.sematheslayer_p,"position1");
-    static final Players Inorilontee = new Players(1000,"Inorilontee","позиция 2",12500,R.drawable.kanada,80,90,20,75,84,82,115,75,R.drawable.sematheslayer_p,"position2");
-    static final Players mralyla_focenka = new Players(1000,"mralyla-focenka","позиция 3",12500,R.drawable.usa,80,90,20,75,84,82,115,76,R.drawable.sematheslayer_p,"position3");
-    static final Players Brecr = new Players(1000,"Brecr","позиция 4",12500,R.drawable.kanada,80,90,20,75,84,82,115,77,R.drawable.sematheslayer_p,"position4");
-    static final Players Jakit = new Players(1000,"Jakit","позиция 5",12500,R.drawable.kanada,80,90,20,75,84,82,115,78,R.drawable.sematheslayer_p,"position5");
+    static final Players Bro = new Players(1000,"Bro","позиция 1",12500,R.drawable.usa,80,90,20,75,64,60,14,74,R.drawable.sematheslayer_p,"position1");
+    static final Players Inorilontee = new Players(1000,"Inorilontee","позиция 2",12500,R.drawable.kanada,80,90,20,75,63,108,99,75,R.drawable.sematheslayer_p,"position2");
+    static final Players mralyla_focenka = new Players(1000,"mralyla-focenka","позиция 3",12500,R.drawable.usa,80,90,20,75,77,0,42,76,R.drawable.sematheslayer_p,"position3");
+    static final Players Brecr = new Players(1000,"Brecr","позиция 4",12500,R.drawable.kanada,80,90,20,75,34,113,11,77,R.drawable.sematheslayer_p,"position4");
+    static final Players Jakit = new Players(1000,"Jakit","позиция 5",12500,R.drawable.kanada,80,90,20,75,15,0,82,78,R.drawable.sematheslayer_p,"position5");
 
 
     //Infamous
-    static final Players Tyilin = new Players(1000,"Tyilin","позиция 1",12500,R.drawable.peru,80,90,20,75,84,82,115,79,R.drawable.sematheslayer_p,"position1");
-    static final Players Phlare = new Players(1000,"Phlare","позиция 2",12500,R.drawable.argentina,80,90,20,75,84,82,115,80,R.drawable.sematheslayer_p,"position2");
-    static final Players Weruvi = new Players(1000,"Weruvi","позиция 3",12500,R.drawable.bolivia,80,90,20,75,84,82,115,81,R.drawable.sematheslayer_p,"position3");
-    static final Players Saindiad = new Players(1000,"Saindiad","позиция 4",12500,R.drawable.peru,80,90,20,75,84,82,115,82,R.drawable.sematheslayer_p,"position4");
-    static final Players Mora = new Players(1000,"Mora","позиция 5",12500,R.drawable.peru,80,90,20,75,84,82,115,83,R.drawable.sematheslayer_p,"position5");
+    static final Players Tyilin = new Players(1000,"Tyilin","позиция 1",12500,R.drawable.peru,80,90,20,75,63,100,102,79,R.drawable.sematheslayer_p,"position1");
+    static final Players Phlare = new Players(1000,"Phlare","позиция 2",12500,R.drawable.argentina,80,90,20,75,88,45,102,80,R.drawable.sematheslayer_p,"position2");
+    static final Players Weruvi = new Players(1000,"Weruvi","позиция 3",12500,R.drawable.bolivia,80,90,20,75,80,77,4,81,R.drawable.sematheslayer_p,"position3");
+    static final Players Saindiad = new Players(1000,"Saindiad","позиция 4",12500,R.drawable.peru,80,90,20,75,84,15,94,82,R.drawable.sematheslayer_p,"position4");
+    static final Players Mora = new Players(1000,"Mora","позиция 5",12500,R.drawable.peru,80,90,20,75,78,97,26,83,R.drawable.sematheslayer_p,"position5");
 
     //TFT
     static final Players Fenes = new Players(1000,"Fenes","позиция 1",12500,R.drawable.sweden,80,90,20,75,84,82,115,84,R.drawable.sematheslayer_p,"position1");
