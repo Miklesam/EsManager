@@ -108,6 +108,283 @@ public class PlayerChoose extends AppCompatActivity {
 
     }
 
+    public void ClearNonStaticFlash()
+    {
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(Mode, "0");
+
+        editor.putString(OpenQuaterFinals, "0");
+        editor.putString(OpenSemiFinals, "0");
+        editor.putString(OpenFinals, "0");
+
+        editor.putString(OpenScore1, "0");
+        editor.putString(OpenScore2, "0");
+        editor.putString(OpenScore3, "0");
+        editor.putString(OpenScore4, "0");
+
+        editor.putString(OpenScore5, "0");
+        editor.putString(OpenScore6, "0");
+        editor.putString(OpenScore7, "0");
+        editor.putString(OpenScore8, "0");
+
+        editor.putString(OpenScore9, "0");
+        editor.putString(OpenScore10, "0");
+        editor.putString(OpenScore11, "0");
+        editor.putString(OpenScore12, "0");
+
+
+        editor.putString(QuaterWin, "0");
+        editor.putString(SemiWin, "0");
+        editor.putString(FinalsWin, "0");
+        editor.putString(OpenQualiWinner, "0");
+        editor.putString(ClosedSeries, "0");
+
+        editor.putString(Closedwin, "0");
+        editor.putString(Closedlose, "0");
+
+
+        editor.putString(CloseWin8, "0");
+        editor.putString(CloseWin7, "0");
+        editor.putString(CloseWin6, "0");
+        editor.putString(CloseWin5, "0");
+        editor.putString(CloseWin4, "0");
+        editor.putString(CloseWin3, "0");
+        editor.putString(CloseWin2, "0");
+        editor.putString(CloseWin1, "0");
+
+
+
+        editor.putString(CloseLose8, "0");
+        editor.putString(CloseLose7, "0");
+        editor.putString(CloseLose6, "0");
+        editor.putString(CloseLose5, "0");
+        editor.putString(CloseLose4, "0");
+        editor.putString(CloseLose3, "0");
+        editor.putString(CloseLose2, "0");
+        editor.putString(CloseLose1, "0");
+
+
+
+        editor.putString(OpenShaffle, "0");
+        editor.putString(CloseShaffle, "0");
+
+
+        editor.putString(CloseTeam1, "0");
+        editor.putString(CloseTeam2, "0");
+        editor.putString(CloseTeam3, "0");
+        editor.putString(CloseTeam4, "0");
+        editor.putString(CloseTeam5, "0");
+        editor.putString(CloseTeam6, "0");
+        editor.putString(CloseTeam7, "0");
+
+        editor.putString(TeamPlayoff1, "0");
+        editor.putString(TeamPlayoff2, "0");
+        editor.putString(TeamPlayoff3, "0");
+        editor.putString(TeamPlayoff4, "0");
+
+        editor.putString(ClosedPlayofStage, "1");
+
+
+
+
+
+
+
+        editor.putString(ClosePlayoff1, "0");
+        editor.putString(ClosePlayoff2, "0");
+        editor.putString(ClosePlayoff3, "0");
+        editor.putString(ClosePlayoff4, "0");
+        editor.putString(ClosePlayoff5, "0");
+        editor.putString(ClosePlayoff6, "0");
+        editor.putString(ClosePlayoff7, "0");
+        editor.putString(ClosePlayoff8, "0");
+        editor.putString(ClosePlayoff9, "0");
+        editor.putString(ClosePlayoff10, "0");
+        editor.putString(ClosePlayoff11, "0");
+        editor.putString(ClosePlayoff12, "0");
+
+
+
+        editor.putString(CloseScore1, "0");
+        editor.putString(CloseScore2, "0");
+        editor.putString(CloseScore3, "0");
+        editor.putString(CloseScore4, "0");
+        editor.putString(CloseScore5, "0");
+        editor.putString(CloseScore6, "0");
+        editor.putString(CloseScore7, "0");
+        editor.putString(CloseScore8, "0");
+        editor.putString(CloseScore9, "0");
+        editor.putString(CloseScore10, "0");
+        editor.putString(CloseScore11, "0");
+        editor.putString(CloseScore12, "0");
+
+        editor.putString(Series1Win, "0");
+        editor.putString(Series2Win, "0");
+        editor.putString(Series3Win, "0");
+        editor.putString(Series4Win, "0");
+        editor.putString(Series5Win, "0");
+        editor.putString(Series6Win, "0");
+        editor.putString(Series7Win, "0");
+
+        editor.putString(MinorScore1, "0");
+        editor.putString(MinorScore2, "0");
+        editor.putString(MinorScore3, "0");
+        editor.putString(MinorScore4, "0");
+        editor.putString(MinorScore5, "0");
+        editor.putString(MinorScore6, "0");
+        editor.putString(MinorScore7, "0");
+        editor.putString(MinorScore8, "0");
+
+        editor.putString(MinorWin1, "0");
+        editor.putString(MinorWin2, "0");
+        editor.putString(MinorWin3, "0");
+        editor.putString(MinorWin4, "0");
+        editor.putString(MinorWin5, "0");
+        editor.putString(MinorWin6, "0");
+        editor.putString(MinorWin7, "0");
+        editor.putString(MinorWin8, "0");
+
+        editor.putString(MinorLose1, "0");
+        editor.putString(MinorLose2, "0");
+        editor.putString(MinorLose3, "0");
+        editor.putString(MinorLose4, "0");
+        editor.putString(MinorLose5, "0");
+        editor.putString(MinorLose6, "0");
+        editor.putString(MinorLose7, "0");
+        editor.putString(MinorLose8, "0");
+
+
+        editor.putString(MinorPlayoff1, "0");
+        editor.putString(MinorPlayoff2, "0");
+        editor.putString(MinorPlayoff3, "0");
+        editor.putString(MinorPlayoff4, "0");
+        editor.putString(MinorPlayoff5, "0");
+        editor.putString(MinorPlayoff6, "0");
+        editor.putString(MinorStage, "1");
+
+
+        editor.putString(MajorStage, "1");
+
+        editor.putString(MajorScore1, "0");
+        editor.putString(MajorScore2, "0");
+        editor.putString(MajorScore3, "0");
+        editor.putString(MajorScore4, "0");
+        editor.putString(MajorScore5, "0");
+        editor.putString(MajorScore6, "0");
+        editor.putString(MajorScore7, "0");
+        editor.putString(MajorScore8, "0");
+
+        editor.putString(MajorWin1, "0");
+        editor.putString(MajorWin2, "0");
+        editor.putString(MajorWin3, "0");
+        editor.putString(MajorWin4, "0");
+        editor.putString(MajorWin5, "0");
+        editor.putString(MajorWin6, "0");
+        editor.putString(MajorWin7, "0");
+        editor.putString(MajorWin8, "0");
+
+        editor.putString(MajorLose1, "0");
+        editor.putString(MajorLose2, "0");
+        editor.putString(MajorLose3, "0");
+        editor.putString(MajorLose4, "0");
+        editor.putString(MajorLose5, "0");
+        editor.putString(MajorLose6, "0");
+        editor.putString(MajorLose7, "0");
+        editor.putString(MajorLose8, "0");
+
+
+        editor.putString(MajorSeries1, "0");
+        editor.putString(MajorSeries2, "0");
+        editor.putString(MajorSeries3, "0");
+        editor.putString(MajorSeries4, "0");
+        editor.putString(MajorSeries5, "0");
+        editor.putString(MajorSeries6, "0");
+
+        editor.putString(MajorPlayoff1, "0");
+        editor.putString(MajorPlayoff2, "0");
+        editor.putString(MajorPlayoff3, "0");
+        editor.putString(MajorPlayoff4, "0");
+        editor.putString(MajorPlayoff5, "0");
+        editor.putString(MajorPlayoff6, "0");
+        editor.putString(MajorPlayoff7, "0");
+        editor.putString(MajorPlayoff8, "0");
+        editor.putString(MajorPlayoff9, "0");
+        editor.putString(MajorPlayoff10, "0");
+        editor.putString(MajorPlayoff11, "0");
+        editor.putString(MajorPlayoff12, "0");
+        editor.putString(MajorPlayoff13, "0");
+        editor.putString(MajorPlayoff14, "0");
+        editor.putString(MajorPlayoff15, "0");
+        editor.putString(MajorPlayoff16, "0");
+        editor.putString(MajorPlayoff17, "0");
+        editor.putString(MajorPlayoff18, "0");
+        editor.putString(MajorPlayoff19, "0");
+        editor.putString(MajorPlayoff20, "0");
+        editor.putString(MajorPlayoff21, "0");
+        editor.putString(MajorPlayoff22, "0");
+        editor.putString(MajorPlayoff23, "0");
+
+
+        editor.putString(WinnerorLossers, "0");
+
+
+        editor.putString(MajorGroup1, "0");
+        editor.putString(MajorGroup2, "0");
+        editor.putString(MajorGroup3, "0");
+        editor.putString(MajorGroup4, "0");
+        editor.putString(MajorGroup5, "0");
+        editor.putString(MajorGroup6, "0");
+        editor.putString(MajorGroup7, "0");
+        editor.putString(MajorGroup8, "0");
+        editor.putString(MajorGroup9, "0");
+        editor.putString(MajorGroup10, "0");
+        editor.putString(MajorGroup11, "0");
+        editor.putString(MajorGroup12, "0");
+        editor.putString(MajorGroup13, "0");
+        editor.putString(MajorGroup14, "0");
+        editor.putString(MajorGroup15, "0");
+        editor.putString(ShuffleMajor, "0");
+
+
+        editor.putString(MajorPScore1, "0");
+        editor.putString(MajorPScore2, "0");
+        editor.putString(MajorPScore3, "0");
+        editor.putString(MajorPScore4, "0");
+        editor.putString(MajorPScore5, "0");
+        editor.putString(MajorPScore6, "0");
+        editor.putString(MajorPScore7, "0");
+        editor.putString(MajorPScore8, "0");
+        editor.putString(MajorPScore9, "0");
+        editor.putString(MajorPScore10, "0");
+        editor.putString(MajorPScore11, "0");
+        editor.putString(MajorPScore12, "0");
+        editor.putString(MajorPScore13, "0");
+        editor.putString(MajorPScore14, "0");
+        editor.putString(MajorPScore15, "0");
+        editor.putString(MajorPScore16, "0");
+        editor.putString(MajorPScore17, "0");
+        editor.putString(MajorPScore18, "0");
+        editor.putString(MajorPScore19, "0");
+        editor.putString(MajorPScore20, "0");
+        editor.putString(InMajor, "0");
+
+
+
+
+
+        editor.putString(MajorPlayoffStage, "1");
+
+
+
+
+
+
+
+        editor.putString(MinorQual,"0");
+        editor.putString(NotMinor,"0");
+        editor.apply();
+    }
+
 
 
     @Override
@@ -327,145 +604,26 @@ public class PlayerChoose extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences.Editor editor = mSettings.edit();
 
-
+                    ClearNonStaticFlash();
                     editor.putString(GoldBalance, balancegold);
                     editor.putString(Fans, fansbalansed);
                     editor.putString(XPstatic, "0");
                     editor.putString(Day, "1");
-                    editor.putString(Month, "0");
+                    editor.putString(Month, "10");
                     editor.putString(Year, "0");
-
-                    editor.putString(Mode, "0");
                     editor.putString(APP_PREFERENCES_NAME, TeamName);
-                    editor.putString(OpenQuaterFinals, "0");
-                    editor.putString(OpenSemiFinals, "0");
-                    editor.putString(OpenFinals, "0");
-
-                    editor.putString(OpenScore1, "0");
-                    editor.putString(OpenScore2, "0");
-                    editor.putString(OpenScore3, "0");
-                    editor.putString(OpenScore4, "0");
-
-                    editor.putString(OpenScore5, "0");
-                    editor.putString(OpenScore6, "0");
-                    editor.putString(OpenScore7, "0");
-                    editor.putString(OpenScore8, "0");
-
-                    editor.putString(OpenScore9, "0");
-                    editor.putString(OpenScore10, "0");
-                    editor.putString(OpenScore11, "0");
-                    editor.putString(OpenScore12, "0");
-
-
-                    editor.putString(QuaterWin, "0");
-                    editor.putString(SemiWin, "0");
-                    editor.putString(FinalsWin, "0");
-                    editor.putString(OpenQualiWinner, "0");
-                    editor.putString(ClosedSeries, "0");
-
-                    editor.putString(Closedwin, "0");
-                    editor.putString(Closedlose, "0");
-
-
-                    editor.putString(CloseWin8, "0");
-                    editor.putString(CloseWin7, "0");
-                    editor.putString(CloseWin6, "0");
-                    editor.putString(CloseWin5, "0");
-                    editor.putString(CloseWin4, "0");
-                    editor.putString(CloseWin3, "0");
-                    editor.putString(CloseWin2, "0");
-                    editor.putString(CloseWin1, "0");
-
-
-
-                    editor.putString(CloseLose8, "0");
-                    editor.putString(CloseLose7, "0");
-                    editor.putString(CloseLose6, "0");
-                    editor.putString(CloseLose5, "0");
-                    editor.putString(CloseLose4, "0");
-                    editor.putString(CloseLose3, "0");
-                    editor.putString(CloseLose2, "0");
-                    editor.putString(CloseLose1, "0");
-
                     editor.putString(ExtraLaining, "0");
                     editor.putString(ExtraFarming, "0");
                     editor.putString(ExtraFighting, "0");
-                    editor.putString(OpenShaffle, "0");
-                    editor.putString(CloseShaffle, "0");
-
-
-                    editor.putString(CloseTeam1, "0");
-                    editor.putString(CloseTeam2, "0");
-                    editor.putString(CloseTeam3, "0");
-                    editor.putString(CloseTeam4, "0");
-                    editor.putString(CloseTeam5, "0");
-                    editor.putString(CloseTeam6, "0");
-                    editor.putString(CloseTeam7, "0");
-
-                    editor.putString(TeamPlayoff1, "0");
-                    editor.putString(TeamPlayoff2, "0");
-                    editor.putString(TeamPlayoff3, "0");
-                    editor.putString(TeamPlayoff4, "0");
-
-                    editor.putString(ClosedPlayofStage, "1");
-
-
-
                     editor.putString(ExtraLate, "0");
-
-
-
-                    editor.putString(ClosePlayoff1, "0");
-                    editor.putString(ClosePlayoff2, "0");
-                    editor.putString(ClosePlayoff3, "0");
-                    editor.putString(ClosePlayoff4, "0");
-                    editor.putString(ClosePlayoff5, "0");
-                    editor.putString(ClosePlayoff6, "0");
-                    editor.putString(ClosePlayoff7, "0");
-                    editor.putString(ClosePlayoff8, "0");
-                    editor.putString(ClosePlayoff9, "0");
-                    editor.putString(ClosePlayoff10, "0");
-                    editor.putString(ClosePlayoff11, "0");
-                    editor.putString(ClosePlayoff12, "0");
-
-
-
-                    editor.putString(CloseScore1, "0");
-                    editor.putString(CloseScore2, "0");
-                    editor.putString(CloseScore3, "0");
-                    editor.putString(CloseScore4, "0");
-                    editor.putString(CloseScore5, "0");
-                    editor.putString(CloseScore6, "0");
-                    editor.putString(CloseScore7, "0");
-                    editor.putString(CloseScore8, "0");
-                    editor.putString(CloseScore9, "0");
-                    editor.putString(CloseScore10, "0");
-                    editor.putString(CloseScore11, "0");
-                    editor.putString(CloseScore12, "0");
-
-                    editor.putString(Series1Win, "0");
-                    editor.putString(Series2Win, "0");
-                    editor.putString(Series3Win, "0");
-                    editor.putString(Series4Win, "0");
-                    editor.putString(Series5Win, "0");
-                    editor.putString(Series6Win, "0");
-                    editor.putString(Series7Win, "0");
-
-
-
-
-
-
-
-
-
                     editor.putString(StaticPosition1,String.valueOf(playerseq[0]));
                     editor.putString(StaticPosition2,String.valueOf(playerseq[1]));
                     editor.putString(StaticPosition3,String.valueOf(playerseq[2]));
                     editor.putString(StaticPosition4,String.valueOf(playerseq[3]));
                     editor.putString(StaticPosition5,String.valueOf(playerseq[4]));
-                    editor.putString(MinorQual,"0");
-                    editor.putString(NotMinor,"0");
+
+
+
 
 
                     editor.apply();

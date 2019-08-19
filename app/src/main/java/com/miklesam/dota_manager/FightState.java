@@ -17,66 +17,12 @@ import java.util.Collections;
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
-import static com.miklesam.dota_manager.YourTeam.CloseLose1;
-import static com.miklesam.dota_manager.YourTeam.CloseLose2;
-import static com.miklesam.dota_manager.YourTeam.CloseLose3;
-import static com.miklesam.dota_manager.YourTeam.CloseLose4;
-import static com.miklesam.dota_manager.YourTeam.CloseLose5;
-import static com.miklesam.dota_manager.YourTeam.CloseLose6;
-import static com.miklesam.dota_manager.YourTeam.CloseLose7;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
-import static com.miklesam.dota_manager.YourTeam.CloseScore1;
-import static com.miklesam.dota_manager.YourTeam.CloseScore10;
-import static com.miklesam.dota_manager.YourTeam.CloseScore11;
-import static com.miklesam.dota_manager.YourTeam.CloseScore12;
-import static com.miklesam.dota_manager.YourTeam.CloseScore2;
-import static com.miklesam.dota_manager.YourTeam.CloseScore3;
-import static com.miklesam.dota_manager.YourTeam.CloseScore4;
-import static com.miklesam.dota_manager.YourTeam.CloseScore5;
-import static com.miklesam.dota_manager.YourTeam.CloseScore6;
-import static com.miklesam.dota_manager.YourTeam.CloseScore7;
-import static com.miklesam.dota_manager.YourTeam.CloseScore8;
-import static com.miklesam.dota_manager.YourTeam.CloseScore9;
-import static com.miklesam.dota_manager.YourTeam.CloseWin1;
-import static com.miklesam.dota_manager.YourTeam.CloseWin2;
-import static com.miklesam.dota_manager.YourTeam.CloseWin3;
-import static com.miklesam.dota_manager.YourTeam.CloseWin4;
-import static com.miklesam.dota_manager.YourTeam.CloseWin5;
-import static com.miklesam.dota_manager.YourTeam.CloseWin6;
-import static com.miklesam.dota_manager.YourTeam.CloseWin7;
-import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
-import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
-import static com.miklesam.dota_manager.YourTeam.Closedlose;
-import static com.miklesam.dota_manager.YourTeam.Closedwin;
-import static com.miklesam.dota_manager.YourTeam.Day;
-import static com.miklesam.dota_manager.YourTeam.ExtraFarming;
-import static com.miklesam.dota_manager.YourTeam.ExtraFighting;
-import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
-import static com.miklesam.dota_manager.YourTeam.ExtraLate;
-import static com.miklesam.dota_manager.YourTeam.Fans;
-import static com.miklesam.dota_manager.YourTeam.FinalsWin;
-import static com.miklesam.dota_manager.YourTeam.GoldBalance;
-import static com.miklesam.dota_manager.YourTeam.Mode;
-import static com.miklesam.dota_manager.YourTeam.Month;
-import static com.miklesam.dota_manager.YourTeam.OpenFinals;
-import static com.miklesam.dota_manager.YourTeam.OpenQuaterFinals;
-import static com.miklesam.dota_manager.YourTeam.OpenSemiFinals;
-import static com.miklesam.dota_manager.YourTeam.QuaterWin;
-import static com.miklesam.dota_manager.YourTeam.SemiWin;
-import static com.miklesam.dota_manager.YourTeam.Series1Win;
-import static com.miklesam.dota_manager.YourTeam.Series2Win;
-import static com.miklesam.dota_manager.YourTeam.Series3Win;
-import static com.miklesam.dota_manager.YourTeam.Series4Win;
-import static com.miklesam.dota_manager.YourTeam.Series5Win;
-import static com.miklesam.dota_manager.YourTeam.Series6Win;
-import static com.miklesam.dota_manager.YourTeam.Series7Win;
-import static com.miklesam.dota_manager.YourTeam.XPstatic;
-import static com.miklesam.dota_manager.YourTeam.Year;
+import static com.miklesam.dota_manager.YourTeam.*;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class FightState extends AppCompatActivity {
 
-
+    TextView daytimetext;
     TextView Toplane;
     TextView Midlane;
     TextView Bottomlane;
@@ -86,9 +32,17 @@ public class FightState extends AppCompatActivity {
     int CompLane[]=new int[5];
     int CompHero[]=new int[5];
     int CompGamer[]=new int[5];
+    int MinorStageint;
     CountDownTimer Mytimer;
-    CountDownTimer Middlegametimer;
-    CountDownTimer Lategametimer;
+    CountDownTimer State2;
+    CountDownTimer State3;
+    CountDownTimer State4;
+    int stage=0;
+    int Major_stage;
+
+    TextView stagenumber;
+
+    ImageView  choose[]=new ImageView[3];
 
     ArrayList<NetworthUnit> nettable = new ArrayList<>();
 
@@ -115,8 +69,7 @@ public class FightState extends AppCompatActivity {
     int RadiantNetworh[]=new int[5];
     int DireNetworh[]=new int[5];
     TextView radiantnetw;
-    TextView GoldKeff;
-    TextView latekeff;
+
     TextView LoseOrWin;
     ImageView tomainstance;
     int winloose;
@@ -158,18 +111,20 @@ public class FightState extends AppCompatActivity {
 
     int ClosedPlayofStageint;
     int Score[] = new int[12];
+    int MinorScore[] = new int [8];
+    int MajorScore[]=new int[8];
 
     int stage4top;
     int stage6top;
-
+    int ScorePlay[]= new int[20];
     int goldbalance;
     int fancebalance;
 
     int  Monthint;
     int Yearint;
     ImageView monst;
-    ImageView fight;
-    ImageView monstlate;
+    int MajorPLayofStage;
+
     boolean lock;
 
 
@@ -204,7 +159,6 @@ public class FightState extends AppCompatActivity {
 
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
         LoseOrWin=findViewById(R.id.LoseOrWin);
-        latekeff=findViewById(R.id.latekeff);
         Toplane=findViewById(R.id.topline);
         Midlane=findViewById(R.id.midline);
         Bottomlane=findViewById(R.id.bottomline);
@@ -213,6 +167,10 @@ public class FightState extends AppCompatActivity {
         TopIcon[2]=findViewById(R.id.top3st);
         TopIcon[3]=findViewById(R.id.top2st);
         TopIcon[4]=findViewById(R.id.top1st);
+        stagenumber=findViewById(R.id.stagenumber);
+        choose[0]=findViewById(R.id.choose1);
+        choose[1]=findViewById(R.id.choose2);
+        choose[2]=findViewById(R.id.choose3);
 
         EnemyTopIcon[0]=findViewById(R.id.top6st);
         EnemyTopIcon[1]=findViewById(R.id.top7st);
@@ -272,15 +230,82 @@ public class FightState extends AppCompatActivity {
         NetworthText[8]=findViewById(R.id.networthtext9);
         NetworthText[9]=findViewById(R.id.networthtext10);
 
+        daytimetext=findViewById(R.id.daytimetext);
+
         radiantnetw=findViewById(R.id.radiantnet);
         radiantnetw.setVisibility(View.INVISIBLE);
-        GoldKeff=findViewById(R.id.goldkeff);
 
-        fight=findViewById(R.id.fight);
-        fight.setVisibility(View.INVISIBLE);
+
         monst=findViewById(R.id.monst);
-        monstlate=findViewById(R.id.monstlate);
-        monstlate.setVisibility(View.INVISIBLE);
+
+
+
+        if(mSettings.contains(MajorPScore1)) {
+            ScorePlay[0]=Integer.parseInt(mSettings.getString(MajorPScore1, "MajorPScore1"));
+        }
+        if(mSettings.contains(MajorPScore2)) {
+            ScorePlay[1]=Integer.parseInt(mSettings.getString(MajorPScore2, "MajorPScore2"));
+        }
+        if(mSettings.contains(MajorPScore3)) {
+            ScorePlay[2]=Integer.parseInt(mSettings.getString(MajorPScore3, "MajorPScore3"));
+        }
+        if(mSettings.contains(MajorPScore4)) {
+            ScorePlay[3]=Integer.parseInt(mSettings.getString(MajorPScore4, "MajorPScore4"));
+        }
+        if(mSettings.contains(MajorPScore5)) {
+            ScorePlay[4]=Integer.parseInt(mSettings.getString(MajorPScore5, "MajorPScore5"));
+        }
+        if(mSettings.contains(MajorPScore6)) {
+            ScorePlay[5]=Integer.parseInt(mSettings.getString(MajorPScore6, "MajorPScore6"));
+        }
+        if(mSettings.contains(MajorPScore7)) {
+            ScorePlay[6]=Integer.parseInt(mSettings.getString(MajorPScore7, "MajorPScore7"));
+        }
+        if(mSettings.contains(MajorPScore8)) {
+            ScorePlay[7]=Integer.parseInt(mSettings.getString(MajorPScore8, "MajorPScore8"));
+        }
+        if(mSettings.contains(MajorPScore9)) {
+            ScorePlay[8]=Integer.parseInt(mSettings.getString(MajorPScore9, "MajorPScore9"));
+        }
+        if(mSettings.contains(MajorPScore10)) {
+            ScorePlay[9]=Integer.parseInt(mSettings.getString(MajorPScore10, "MajorPScore10"));
+        }
+        if(mSettings.contains(MajorPScore11)) {
+            ScorePlay[10]=Integer.parseInt(mSettings.getString(MajorPScore11, "MajorPScore11"));
+        }
+        if(mSettings.contains(MajorPScore12)) {
+            ScorePlay[11]=Integer.parseInt(mSettings.getString(MajorPScore12, "MajorPScore12"));
+        }
+        if(mSettings.contains(MajorPScore13)) {
+            ScorePlay[12]=Integer.parseInt(mSettings.getString(MajorPScore13, "MajorPScore13"));
+        }
+        if(mSettings.contains(MajorPScore14)) {
+            ScorePlay[13]=Integer.parseInt(mSettings.getString(MajorPScore14, "MajorPScore14"));
+        }
+        if(mSettings.contains(MajorPScore15)) {
+            ScorePlay[14]=Integer.parseInt(mSettings.getString(MajorPScore15, "MajorPScore15"));
+        }
+        if(mSettings.contains(MajorPScore16)) {
+            ScorePlay[15]=Integer.parseInt(mSettings.getString(MajorPScore16, "MajorPScore16"));
+        }
+        if(mSettings.contains(MajorPScore17)) {
+            ScorePlay[16]=Integer.parseInt(mSettings.getString(MajorPScore17, "MajorPScore17"));
+        }
+        if(mSettings.contains(MajorPScore18)) {
+            ScorePlay[17]=Integer.parseInt(mSettings.getString(MajorPScore18, "MajorPScore18"));
+        }
+        if(mSettings.contains(MajorPScore19)) {
+            ScorePlay[18]=Integer.parseInt(mSettings.getString(MajorPScore19, "MajorPScore19"));
+        }
+        if(mSettings.contains(MajorPScore20)) {
+            ScorePlay[19]=Integer.parseInt(mSettings.getString(MajorPScore20, "MajorPScore20"));
+        }
+
+
+        if(mSettings.contains(MajorPlayoffStage)) {
+            MajorPLayofStage=Integer.parseInt(mSettings.getString(MajorPlayoffStage, "MajorPlayoffStage"));
+        }
+
 
         if(mSettings.contains(XPstatic)) {
             XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
@@ -407,6 +432,10 @@ public class FightState extends AppCompatActivity {
             ClosedPlayofStageint=Integer.parseInt(mSettings.getString(ClosedPlayofStage, "0"));
         }
 
+        if(mSettings.contains(MinorStage)) {
+            MinorStageint=Integer.parseInt(mSettings.getString(MinorStage, "0"));
+        }
+
 
         if(mSettings.contains(CloseScore1)) {
             Score[0]=Integer.parseInt(mSettings.getString(CloseScore1, "0"));
@@ -453,9 +482,79 @@ public class FightState extends AppCompatActivity {
             stage6top=Integer.parseInt(mSettings.getString(ClosePlayoff11, "0"));
         }
 
+        if(mSettings.contains(MinorScore1)) {
+            MinorScore[0]=Integer.parseInt(mSettings.getString(MinorScore1, "0"));
+        }
+        if(mSettings.contains(MinorScore2)) {
+            MinorScore[1]=Integer.parseInt(mSettings.getString(MinorScore2, "0"));
+        }
+        if(mSettings.contains(MinorScore3)) {
+            MinorScore[2]=Integer.parseInt(mSettings.getString(MinorScore3, "0"));
+        }
+        if(mSettings.contains(MinorScore4)) {
+            MinorScore[3]=Integer.parseInt(mSettings.getString(MinorScore4, "0"));
+        }
+        if(mSettings.contains(MinorScore5)) {
+            MinorScore[4]=Integer.parseInt(mSettings.getString(MinorScore5, "0"));
+        }
+        if(mSettings.contains(MinorScore6)) {
+            MinorScore[5]=Integer.parseInt(mSettings.getString(MinorScore6, "0"));
+        }
+        if(mSettings.contains(MinorScore7)) {
+            MinorScore[6]=Integer.parseInt(mSettings.getString(MinorScore7, "0"));
+        }
+        if(mSettings.contains(MinorScore8)) {
+            MinorScore[7]=Integer.parseInt(mSettings.getString(MinorScore8, "0"));
+        }
 
+        if(mSettings.contains(MajorScore1)) {
+            MajorScore[0]=Integer.parseInt(mSettings.getString(MajorScore1, "0"));
+        }
+        if(mSettings.contains(MajorScore2)) {
+            MajorScore[1]=Integer.parseInt(mSettings.getString(MajorScore2, "0"));
+        }
+        if(mSettings.contains(MajorScore3)) {
+            MajorScore[2]=Integer.parseInt(mSettings.getString(MajorScore3, "0"));
+        }
+        if(mSettings.contains(MajorScore4)) {
+            MajorScore[3]=Integer.parseInt(mSettings.getString(MajorScore4, "0"));
+        }
+        if(mSettings.contains(MajorScore5)) {
+            MajorScore[4]=Integer.parseInt(mSettings.getString(MajorScore5, "0"));
+        }
+        if(mSettings.contains(MajorScore6)) {
+            MajorScore[5]=Integer.parseInt(mSettings.getString(MajorScore6, "0"));
+        }
+        if(mSettings.contains(MajorScore7)) {
+            MajorScore[6]=Integer.parseInt(mSettings.getString(MajorScore7, "0"));
+        }
+        if(mSettings.contains(MajorScore8)) {
+            MajorScore[7]=Integer.parseInt(mSettings.getString(MajorScore8, "0"));
+        }
 
+        if(mSettings.contains(MajorStage)) {
+            Major_stage=Integer.parseInt(mSettings.getString(MajorStage, "1"));
+        }
 
+        if(mSettings.contains(StaticPosition1)) {
+            Gamer[0]=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
+        }
+
+        if(mSettings.contains(StaticPosition2)) {
+            Gamer[1]=Integer.parseInt(mSettings.getString(StaticPosition2, "Position2"));
+        }
+
+        if(mSettings.contains(StaticPosition3)) {
+            Gamer[2]=Integer.parseInt(mSettings.getString(StaticPosition3, "Position3"));
+        }
+
+        if(mSettings.contains(StaticPosition4)) {
+            Gamer[3]=Integer.parseInt(mSettings.getString(StaticPosition4, "Position4"));
+        }
+
+        if(mSettings.contains(StaticPosition5)) {
+            Gamer[4]=Integer.parseInt(mSettings.getString(StaticPosition5, "Position5"));
+        }
 
 
 
@@ -479,11 +578,6 @@ public class FightState extends AppCompatActivity {
                 Lane[3] = 0;
                 Lane[4] = 0;
 
-                Gamer[0] = 0;
-                Gamer[1] = 0;
-                Gamer[2] = 0;
-                Gamer[3] = 0;
-                Gamer[4] = 0;
 
 
                 CompLane[0] = 0;
@@ -525,11 +619,6 @@ public class FightState extends AppCompatActivity {
                 Lane[3] = extras.getInt("Lane4");
                 Lane[4] = extras.getInt("Lane5");
 
-                Gamer[0] = extras.getInt("Gamer1");
-                Gamer[1] = extras.getInt("Gamer2");
-                Gamer[2] = extras.getInt("Gamer3");
-                Gamer[3] = extras.getInt("Gamer4");
-                Gamer[4] = extras.getInt("Gamer5");
 
 
 
@@ -572,11 +661,6 @@ public class FightState extends AppCompatActivity {
             Lane[3] = (int) savedInstanceState.getSerializable("Lane4");
             Lane[4] = (int) savedInstanceState.getSerializable("Lane5");
 
-            Gamer[0] = (int) savedInstanceState.getSerializable("Gamer1");
-            Gamer[1] = (int) savedInstanceState.getSerializable("Gamer2");
-            Gamer[2] = (int) savedInstanceState.getSerializable("Gamer3");
-            Gamer[3] = (int) savedInstanceState.getSerializable("Gamer4");
-            Gamer[4] = (int) savedInstanceState.getSerializable("Gamer5");
 
             CompHero[0] = (int) savedInstanceState.getSerializable("CompHero1");
             CompHero[1] = (int) savedInstanceState.getSerializable("CompHero2");
@@ -1011,11 +1095,288 @@ public class FightState extends AppCompatActivity {
                 }
                 else if(TournMode==4)
                 {
-                    if(ClosedPlayofStageint==1)
+                    if(MinorStageint==1)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(CloseScore2, String.valueOf(Score[1]+1));
+                            editor.putString(MinorScore2, String.valueOf(MinorScore[1]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MinorScore1, String.valueOf(MinorScore[0]+1));
+                        }
+                    }
+                    else if(MinorStageint==2)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore4, String.valueOf(MinorScore[3]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MinorScore3, String.valueOf(MinorScore[2]+1));
+                        }
+                    }
+                    else if(MinorStageint==3)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore6, String.valueOf(MinorScore[5]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MinorScore5, String.valueOf(MinorScore[4]+1));
+                        }
+                    }
+                    else if(MinorStageint==4)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore8, String.valueOf(MinorScore[7]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MinorScore7, String.valueOf(MinorScore[6]+1));
+                        }
+                    }
+
+                    editor.apply();
+                    startActivity(Tomainstance);
+                }
+                else if(TournMode==5)
+                {
+                   if(Major_stage==1)
+                   {
+                       if (winloose==1)
+                       {
+                           editor.putString(MajorScore2, String.valueOf(MajorScore[1]+1));
+
+
+                       }
+                       else if(winloose==2)
+                       {
+                           editor.putString(MajorScore1, String.valueOf(MajorScore[0]+1));
+                       }
+                   }
+                   else if(Major_stage==2)
+                   {
+                       if (winloose==1)
+                       {
+                           editor.putString(MajorScore4, String.valueOf(MajorScore[3]+1));
+
+
+                       }
+                       else if(winloose==2)
+                       {
+                           editor.putString(MajorScore3, String.valueOf(MajorScore[2]+1));
+                       }
+                   }
+                   else if(Major_stage==3)
+                   {
+                       if (winloose==1)
+                       {
+                           editor.putString(MajorScore6, String.valueOf(MajorScore[5]+1));
+
+
+                       }
+                       else if(winloose==2)
+                       {
+                           editor.putString(MajorScore5, String.valueOf(MajorScore[4]+1));
+                       }
+                   }
+                   else if(Major_stage==4)
+                   {
+                       if (winloose==1)
+                       {
+                           editor.putString(MajorScore8, String.valueOf(MajorScore[7]+1));
+
+
+                       }
+                       else if(winloose==2)
+                       {
+                           editor.putString(MajorScore7, String.valueOf(MajorScore[6]+1));
+                       }
+                   }
+
+
+
+                    editor.apply();
+                    startActivity(Tomainstance);
+                }
+                else if(TournMode==6)
+                {
+                    if(MajorPLayofStage==1)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore4, "1");
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore3, "1");
+                        }
+                    }
+                    if(MajorPLayofStage==3)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore6, String.valueOf(ScorePlay[5]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore5, String.valueOf(ScorePlay[4]+1));
+                        }
+                    }
+                    if(MajorPLayofStage==5)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore8, String.valueOf(ScorePlay[7]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore7, String.valueOf(ScorePlay[6]+1));
+                        }
+                    }
+                    if(MajorPLayofStage==7)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore10, String.valueOf(ScorePlay[9]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore9, String.valueOf(ScorePlay[8]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==8)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore12, String.valueOf(ScorePlay[11]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore11, String.valueOf(ScorePlay[10]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==9)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore14, String.valueOf(ScorePlay[13]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore13, String.valueOf(ScorePlay[12]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==10)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore16, String.valueOf(ScorePlay[15]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore15, String.valueOf(ScorePlay[14]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==2)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore1, String.valueOf(ScorePlay[0]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore2, String.valueOf(ScorePlay[1]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==4)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore17, String.valueOf(ScorePlay[16]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore18, String.valueOf(ScorePlay[17]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==6)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore19, String.valueOf(ScorePlay[18]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore20, String.valueOf(ScorePlay[19]+1));
+                        }
+                    }
+
+                    if(MajorPLayofStage==11)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MajorPScore16, String.valueOf(ScorePlay[15]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(MajorPScore15, String.valueOf(ScorePlay[14]+1));
+                        }
+                    }
+
+
+
+                    editor.apply();
+                    startActivity(Tomainstance);
+
+                }
+                else if(TournMode==7)
+                {
+                    if(Seriescnt==0)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore1, String.valueOf(MinorScore[0]+1));
 
 
                         }
@@ -1024,11 +1385,24 @@ public class FightState extends AppCompatActivity {
                             editor.putString(CloseScore1, String.valueOf(Score[0]+1));
                         }
                     }
-                    else if(ClosedPlayofStageint==2)
+                    else  if(Seriescnt==1)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(CloseScore4, String.valueOf(Score[3]+1));
+                            editor.putString(MinorScore2, String.valueOf(MinorScore[1]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore2, String.valueOf(Score[1]+1));
+                        }
+                    }
+                    else  if(Seriescnt==2)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore3, String.valueOf(MinorScore[2]+1));
 
 
                         }
@@ -1037,11 +1411,24 @@ public class FightState extends AppCompatActivity {
                             editor.putString(CloseScore3, String.valueOf(Score[2]+1));
                         }
                     }
-                    else if(ClosedPlayofStageint==3)
+                    else  if(Seriescnt==3)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(CloseScore6, String.valueOf(Score[5]+1));
+                            editor.putString(MinorScore4, String.valueOf(MinorScore[3]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore4, String.valueOf(Score[3]+1));
+                        }
+                    }
+                    else  if(Seriescnt==4)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore5, String.valueOf(MinorScore[4]+1));
 
 
                         }
@@ -1050,11 +1437,24 @@ public class FightState extends AppCompatActivity {
                             editor.putString(CloseScore5, String.valueOf(Score[4]+1));
                         }
                     }
-                    else if(ClosedPlayofStageint==4)
+                    else  if(Seriescnt==5)
                     {
                         if (winloose==1)
                         {
-                            editor.putString(CloseScore8, String.valueOf(Score[7]+1));
+                            editor.putString(MinorScore6, String.valueOf(MinorScore[5]+1));
+
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore6, String.valueOf(Score[5]+1));
+                        }
+                    }
+                    else  if(Seriescnt==6)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore7, String.valueOf(MinorScore[6]+1));
 
 
                         }
@@ -1063,7 +1463,19 @@ public class FightState extends AppCompatActivity {
                             editor.putString(CloseScore7, String.valueOf(Score[6]+1));
                         }
                     }
+                    else  if(Seriescnt==7)
+                    {
+                        if (winloose==1)
+                        {
+                            editor.putString(MinorScore8, String.valueOf(MinorScore[7]+1));
 
+
+                        }
+                        else if(winloose==2)
+                        {
+                            editor.putString(CloseScore8, String.valueOf(Score[7]+1));
+                        }
+                    }
                     editor.apply();
                     startActivity(Tomainstance);
                 }
@@ -1072,7 +1484,7 @@ public class FightState extends AppCompatActivity {
                     if(day==30)
                     {
                         editor.putString(Day, "1");
-                        if(Monthint==12)
+                        if(Monthint==11)
                         {
                             editor.putString(Month, "0");
                             editor.putString(Year, String.valueOf(Yearint+1));
@@ -1089,8 +1501,8 @@ public class FightState extends AppCompatActivity {
 
 
 
-                    editor.putString(XPstatic, String.valueOf(XPint+5));
-                    editor.putString(GoldBalance, String.valueOf(goldbalance+(fancebalance/100)));
+                    editor.putString(XPstatic, String.valueOf(XPint+3));
+                    editor.putString(GoldBalance, String.valueOf(goldbalance+(fancebalance/50)));
 
                     editor.apply();
                     HeroesSpot.clear();
@@ -1101,6 +1513,8 @@ public class FightState extends AppCompatActivity {
 
             }
         });
+
+        stagenumber.setText("stage1");
 
         int totaltopRadiant=0;
         int totaltopDire=0;
@@ -1206,6 +1620,9 @@ public class FightState extends AppCompatActivity {
 
 
 
+
+
+
         int ett=0;
         int emm=0;
         int ebb=0;
@@ -1282,9 +1699,9 @@ public class FightState extends AppCompatActivity {
         //NetworthText[i].setText("1300");
        }
 
-        float kefmid = (float) (totalmidRadiant+totalmidDire)/2;
-        float keftop = (float) (totaltopRadiant+totaltopDire)/2;
-        float kefbottom = (float) (totalbottomRadiant+totalbottomDire)/2;
+        final float kefmid = (float) (totalmidRadiant+totalmidDire)/2;
+        final float keftop = (float) (totaltopRadiant+totaltopDire)/2;
+        final float kefbottom = (float) (totalbottomRadiant+totalbottomDire)/2;
 
 
 
@@ -1318,73 +1735,6 @@ public class FightState extends AppCompatActivity {
 
 
 
-        for(int i=0; i<topradiantheroes;i++)
-        {
-
-            if(mylanefarmigtop<100)
-            {
-                RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/100)*(float)(totaltopRadiant/keftop*5000));
-            }
-            else
-            {
-                RadiantNetworh[i] = (int) (((float) Radiant_Unit[i].GamerPlayer.farming/mylanefarmigtop)*(float)(totaltopRadiant/keftop*5000));
-            }
-
-            NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
-        }
-
-        for(int i=0; i<midradiantheroes;i++)
-        {
-            if(mylanefarmigmid<100)
-            {
-                RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/100)*(float)(totalmidRadiant/kefmid*5000));
-            }
-            else
-            {
-                RadiantNetworh[i+topradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes].GamerPlayer.farming/mylanefarmigmid)*(float)(totalmidRadiant/kefmid*5000));
-            }
-
-
-            NetworthText[i+topradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes]));
-        }
-
-        for(int i=0; i<bottomradiantheroes;i++)
-        {
-
-            if(mylanefarmigbottom<100)
-            {
-                RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomRadiant/kefbottom*5000));
-            }
-            else
-            {
-                RadiantNetworh[i+topradiantheroes+midradiantheroes] = (int) (((float) Radiant_Unit[i+topradiantheroes+midradiantheroes].GamerPlayer.farming/mylanefarmigbottom)*(float)(totalbottomRadiant/kefbottom*5000));
-            }
-
-            NetworthText[i+topradiantheroes+midradiantheroes].setText(String.valueOf(RadiantNetworh[i+topradiantheroes+midradiantheroes]));
-        }
-
-
-
-
-        int lanefarmigtop=0;
-        int lanefarmigmid=0;
-        int lanefarmigbottom=0;
-
-
-        for (int i=0;i<comptopradiantheroes;i++)
-        {
-            lanefarmigtop=lanefarmigtop+Dire_Unit[i].GamerPlayer.farming;
-        }
-
-        for (int i=0;i<compmidradiantheroes;i++)
-        {
-            lanefarmigmid=lanefarmigmid+Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming;
-        }
-
-        for (int i=0;i<compbottomradiantheroes;i++)
-        {
-            lanefarmigbottom=lanefarmigbottom+Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming;
-        }
 
 
 
@@ -1392,104 +1742,37 @@ public class FightState extends AppCompatActivity {
 
 
 
-        for(int i=0; i<comptopradiantheroes;i++)
-        {
-
-            if (lanefarmigtop<100)
-            {
-                DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/100)*(float)(totaltopDire/keftop*5000));
-            }
-            else
-            {
-                DireNetworh[i] = (int) (((float) Dire_Unit[i].GamerPlayer.farming/lanefarmigtop)*(float)(totaltopDire/keftop*5000));
-            }
-
-
-            NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
-        }
-
-        for(int i=0; i<compmidradiantheroes;i++)
-        {
-            if (lanefarmigmid<100)
-            {
-                DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/100)*(float)(totalmidDire/kefmid*5000));
-            }
-            else
-            {
-                DireNetworh[i+comptopradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes].GamerPlayer.farming/lanefarmigmid)*(float)(totalmidDire/kefmid*5000));
-            }
-
-            NetworthText[5+i+comptopradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes]));
-        }
-
-        for(int i=0; i<compbottomradiantheroes;i++)
-        {
-
-            if (lanefarmigbottom<100)
-            {
-                DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/100)*(float)(totalbottomDire/kefbottom*5000));
-            }
-            else
-            {
-                DireNetworh[i+comptopradiantheroes+compmidradiantheroes] = (int) (((float) Dire_Unit[i+comptopradiantheroes+compmidradiantheroes].GamerPlayer.farming/lanefarmigbottom)*(float)(totalbottomDire/kefbottom*5000));
-            }
-
-            NetworthText[5+i+comptopradiantheroes+compmidradiantheroes].setText(String.valueOf(DireNetworh[i+comptopradiantheroes+compmidradiantheroes]));
-        }
 
 
 
-
-
-                radiantnetw.setText(String.valueOf(RadiantNetworh[0]+RadiantNetworh[1]+RadiantNetworh[2]+RadiantNetworh[3]+RadiantNetworh[4])+"vs"+
-                String.valueOf(DireNetworh[0]+DireNetworh[1]+DireNetworh[2]+DireNetworh[3]+DireNetworh[4]));
-        int radiatlaining=0;
-        int direlaining=0;
-        funcsort();
-        for (int i=0;i<5;i++)
-        {
-            radiatlaining=radiatlaining+RadiantNetworh[i];
-            direlaining=direlaining+DireNetworh[i];
-        }
-
-
-
-        if (radiatlaining>direlaining)
-        {
-            radiantnetw.setText("WIN");
-            radiantnetw.setTextColor(Color.parseColor("#196310"));
-        }
-        else
-        {
-            radiantnetw.setText("LOSE");
-            radiantnetw.setTextColor(Color.parseColor("#7d1212"));
-        }
-
-        int radiantfight=0;
-        int direfight=0;
-        for (int i=0;i<5;i++)
-        {
-            radiantfight=radiantfight+Radiant_Unit[i].GamerPlayer.fighting;
-            radiantfight=radiantfight+Radiant_Unit[i].GamerHeroes.fighting;
-            direfight=direfight+Dire_Unit[i].GamerPlayer.fighting;
-            direfight=direfight+Dire_Unit[i].GamerHeroes.fighting;
-        }
-        radiantfight=radiantfight+ExFightingint/4;
 
 
 
 
 
         final int[] mycnt = {0};
-        final int[] middlecnt = {0};
-        final int phoen[]= new int[3];
-        final int fightima[]= new int[3];
-        phoen[0]=R.drawable.phoenixone;
-        phoen[1]=R.drawable.phoenixtwo;
-        phoen[2]=R.drawable.phoenixthree;
-        fightima[0]=R.drawable.fightone;
-        fightima[1]=R.drawable.fighttwo;
-        fightima[2]=R.drawable.fighthree;
+
+        final int supafightima[]= new int[3];
+
+
+        supafightima[0]=R.drawable.sufight1;
+        supafightima[1]=R.drawable.sufigh2;
+        supafightima[2]=R.drawable.sufigh3;
+        final int finalTopradiantheroes = topradiantheroes;
+        final int finalMylanefarmigtop = mylanefarmigtop;
+        final int finalTotaltopRadiant = totaltopRadiant;
+        final int finalMidradiantheroes = midradiantheroes;
+        final int finalMylanefarmigmid = mylanefarmigmid;
+        final int finalTotalmidRadiant = totalmidRadiant;
+        final int finalBottomradiantheroes = bottomradiantheroes;
+        final int finalMylanefarmigbottom = mylanefarmigbottom;
+        final int finalTotalbottomRadiant = totalbottomRadiant;
+        final int finalComptopradiantheroes = comptopradiantheroes;
+        final int finalCompmidradiantheroes = compmidradiantheroes;
+        final int finalCompbottomradiantheroes = compbottomradiantheroes;
+        final int finalTotaltopDire = totaltopDire;
+        final int finalTotalmidDire = totalmidDire;
+        final int finalTotalbottomDire = totalbottomDire;
         Mytimer=  new CountDownTimer(200, 150) {
             //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
             public void onTick(long millisUntilFinished) {
@@ -1503,145 +1786,516 @@ public class FightState extends AppCompatActivity {
                     mycnt[0] =0;
                 }
 
-                monst.setImageResource(phoen[mycnt[0]]);
+                monst.setImageResource(supafightima[mycnt[0]]);
 
 
             }
             //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
             public void onFinish() {
                 radiantnetw.setVisibility(View.VISIBLE);
-                fight.setVisibility(View.VISIBLE);
-                Middlegametimer.start();
+
+                //Middlegametimer.start();
+
+
+                for(int i = 0; i< finalTopradiantheroes; i++)
+                {
+
+
+                    if(finalMylanefarmigtop <100)
+                    {
+                        RadiantNetworh[i] =625+ (int) (((((float) Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))/100))*(float)(finalTotaltopRadiant /keftop*2000));
+                    }
+                    else
+                    {
+                        RadiantNetworh[i] =625+ (int) ((((float) Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))/ finalMylanefarmigtop)*(float)(finalTotaltopRadiant /keftop*2000));
+                    }
+
+                    NetworthText[i].setText(String.valueOf(RadiantNetworh[i]));
+                }
+
+                for(int i = 0; i< finalMidradiantheroes; i++)
+                {
+                    if(finalMylanefarmigmid <100)
+                    {
+                        RadiantNetworh[i+ finalTopradiantheroes] =625+ (int) ((((float) Radiant_Unit[i+ finalTopradiantheroes].GamerPlayer.farming+(ExFarmingint/5))/100)*(float)(finalTotalmidRadiant /kefmid*2000));
+                    }
+                    else
+                    {
+                        RadiantNetworh[i+ finalTopradiantheroes] =625+ (int) ((((float) Radiant_Unit[i+ finalTopradiantheroes].GamerPlayer.farming+(ExFarmingint/5))/ finalMylanefarmigmid)*(float)(finalTotalmidRadiant /kefmid*2000));
+                    }
+
+
+                    NetworthText[i+ finalTopradiantheroes].setText(String.valueOf(RadiantNetworh[i+ finalTopradiantheroes]));
+                }
+
+                for(int i = 0; i< finalBottomradiantheroes; i++)
+                {
+
+                    if(finalMylanefarmigbottom <100)
+                    {
+                        RadiantNetworh[i+ finalTopradiantheroes + finalMidradiantheroes] =625+ (int) ((((float) Radiant_Unit[i+ finalTopradiantheroes + finalMidradiantheroes].GamerPlayer.farming+(ExFarmingint/5))/100)*(float)(finalTotalbottomRadiant /kefbottom*2000));
+                    }
+                    else
+                    {
+                        RadiantNetworh[i+ finalTopradiantheroes + finalMidradiantheroes] =625+ (int) ((((float) Radiant_Unit[i+ finalTopradiantheroes + finalMidradiantheroes].GamerPlayer.farming+(ExFarmingint/5))/ finalMylanefarmigbottom)*(float)(finalTotalbottomRadiant /kefbottom*2000));
+                    }
+
+                    NetworthText[i+ finalTopradiantheroes + finalMidradiantheroes].setText(String.valueOf(RadiantNetworh[i+ finalTopradiantheroes + finalMidradiantheroes]));
+                }
+
+
+
+
+                int lanefarmigtop=0;
+                int lanefarmigmid=0;
+                int lanefarmigbottom=0;
+
+
+                for (int i = 0; i< finalComptopradiantheroes; i++)
+                {
+                    lanefarmigtop=lanefarmigtop+Dire_Unit[i].GamerPlayer.farming;
+                }
+
+                for (int i = 0; i< finalCompmidradiantheroes; i++)
+                {
+                    lanefarmigmid=lanefarmigmid+Dire_Unit[i+ finalComptopradiantheroes].GamerPlayer.farming;
+                }
+
+                for (int i = 0; i< finalCompbottomradiantheroes; i++)
+                {
+                    lanefarmigbottom=lanefarmigbottom+Dire_Unit[i+ finalComptopradiantheroes + finalCompmidradiantheroes].GamerPlayer.farming;
+                }
+
+
+
+
+
+
+
+                for(int i = 0; i< finalComptopradiantheroes; i++)
+                {
+
+                    if (lanefarmigtop<100)
+                    {
+                        DireNetworh[i] =625+ (int) (((float) Dire_Unit[i].GamerPlayer.farming/100)*(float)(finalTotaltopDire /keftop*2000));
+                    }
+                    else
+                    {
+                        DireNetworh[i] =625+ (int) (((float) Dire_Unit[i].GamerPlayer.farming/lanefarmigtop)*(float)(finalTotaltopDire /keftop*2000));
+                    }
+
+
+                    NetworthText[5+i].setText(String.valueOf(DireNetworh[i]));
+                }
+
+                for(int i = 0; i< finalCompmidradiantheroes; i++)
+                {
+                    if (lanefarmigmid<100)
+                    {
+                        DireNetworh[i+ finalComptopradiantheroes] =625+ (int) (((float) Dire_Unit[i+ finalComptopradiantheroes].GamerPlayer.farming/100)*(float)(finalTotalmidDire /kefmid*2000));
+                    }
+                    else
+                    {
+                        DireNetworh[i+ finalComptopradiantheroes] =625+ (int) (((float) Dire_Unit[i+ finalComptopradiantheroes].GamerPlayer.farming/lanefarmigmid)*(float)(finalTotalmidDire /kefmid*2000));
+                    }
+
+                    NetworthText[5+i+ finalComptopradiantheroes].setText(String.valueOf(DireNetworh[i+ finalComptopradiantheroes]));
+                }
+
+                for(int i = 0; i< finalCompbottomradiantheroes; i++)
+                {
+
+                    if (lanefarmigbottom<100)
+                    {
+                        DireNetworh[i+ finalComptopradiantheroes + finalCompmidradiantheroes] =625+ (int) (((float) Dire_Unit[i+ finalComptopradiantheroes + finalCompmidradiantheroes].GamerPlayer.farming/100)*(float)(finalTotalbottomDire /kefbottom*2000));
+                    }
+                    else
+                    {
+                        DireNetworh[i+ finalComptopradiantheroes + finalCompmidradiantheroes] =625+ (int) (((float) Dire_Unit[i+ finalComptopradiantheroes + finalCompmidradiantheroes].GamerPlayer.farming/lanefarmigbottom)*(float)(finalTotalbottomDire /kefbottom*2000));
+                    }
+
+                    NetworthText[5+i+ finalComptopradiantheroes + finalCompmidradiantheroes].setText(String.valueOf(DireNetworh[i+ finalComptopradiantheroes + finalCompmidradiantheroes]));
+                }
+
+
+                funcsort();
+                checknet();
+                daytimetext.setText("5:00");
+
+                LoseOrWin.setVisibility(View.VISIBLE);
+                LoseOrWin.setText("Choose option");
+                choose[0].setVisibility(View.VISIBLE);
+                choose[1].setVisibility(View.VISIBLE);
+                choose[2].setVisibility(View.VISIBLE);
+/*
+
+*/
+
+                //tomainstance.setVisibility(View.VISIBLE);
             }
 
         }
                 .start();
 
-        final int finalRadiantfight = radiantfight;
-        final int finalDirefight = direfight;
-        Middlegametimer=  new CountDownTimer(200, 150) {
-            //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
-            public void onTick(long millisUntilFinished) {
 
-                if(middlecnt[0] <2)
-                {
-                    middlecnt[0]++;
-                }
-                else
-                {
-                    middlecnt[0] =0;
-                }
-                fight.setImageResource(fightima[middlecnt[0]]);
+
+
+for (int i=0;i<3;i++)
+{
+    final int finalI = i;
+    final int finalComptopradiantheroes1 = comptopradiantheroes;
+    choose[i].setOnClickListener(new View.OnClickListener() {
+
+
+        @Override
+        public void onClick(View v) {
+
+            if (stage==0)
+            {
+                stagenumber.setText("stage2");
+                choose[0].setVisibility(View.INVISIBLE);
+                choose[1].setVisibility(View.INVISIBLE);
+                choose[2].setVisibility(View.INVISIBLE);
+                State2=new CountDownTimer(200, 150) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if(mycnt[0] <2)
+                        {
+                            mycnt[0]++;
+                        }
+                        else
+                        {
+                            mycnt[0] =0;
+                        }
+
+                        monst.setImageResource(supafightima[mycnt[0]]);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        for(int i =0;i<5;i++)
+                        {
+                            if(Radiant_Unit[i].GamerPlayer.farming>60)
+                            {
+                                RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*15)+Radiant_Unit[i].GamerHeroes.fighting*5);
+                            }
+                            else
+                            {
+                                RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*5)+Radiant_Unit[i].GamerHeroes.fighting*5);
+                            }
+                            if(Dire_Unit[i].GamerPlayer.farming>60)
+                            {
+                                DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*15)+Dire_Unit[i].GamerHeroes.fighting*5);
+                            }
+                            else
+                            {
+                                DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*5)+Dire_Unit[i].GamerHeroes.fighting*5);
+                            }
+
+
+                        }
+                        if(finalI==0)
+                        {
+                            DireNetworh[0]=DireNetworh[0]-300;
+                            DireNetworh[1]=DireNetworh[1]-300;
+                            DireNetworh[2]=DireNetworh[2]-300;
+
+                        }
+                        else if(finalI==1)
+                        {
+                            DireNetworh[finalComptopradiantheroes1]=DireNetworh[finalComptopradiantheroes1]-1000;
+                        }
+                        else if(finalI==2)
+                        {
+                            DireNetworh[4]=DireNetworh[4]-1000;
+                        }
+
+                        funcsort();
+                        checknet();
+                        stage=1;
+                        choose[1].setImageResource(R.drawable.fightt);
+                        choose[2].setImageResource(R.drawable.farmt);
+                        choose[1].setVisibility(View.VISIBLE);
+                        choose[2].setVisibility(View.VISIBLE);
+                        daytimetext.setText("10:00");
+                    }
+                }.start();
+            }
+            else if(stage==1)
+            {
+                choose[1].setVisibility(View.INVISIBLE);
+                choose[2].setVisibility(View.INVISIBLE);
+                stagenumber.setText("stage3");
+                State3=new CountDownTimer(200,150) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if(mycnt[0] <2)
+                        {
+                            mycnt[0]++;
+                        }
+                        else
+                        {
+                            mycnt[0] =0;
+                        }
+
+                        monst.setImageResource(supafightima[mycnt[0]]);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        daytimetext.setText("20:00");
+                        if (finalI==1)
+                        {
+                            for(int i =0;i<5;i++)
+                            {
+                                if(Radiant_Unit[i].GamerPlayer.farming>60) {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*40)+Radiant_Unit[i].GamerHeroes.fighting*40);
+                                }
+                                else if(Radiant_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*20)+Radiant_Unit[i].GamerHeroes.fighting*20);
+                                }
+                                else
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*10)+Radiant_Unit[i].GamerHeroes.fighting*10);
+                                }
+
+                                if(Dire_Unit[i].GamerPlayer.farming>60) {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*40)+Dire_Unit[i].GamerHeroes.fighting*40);
+                                }
+                                else if(Dire_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*20)+Dire_Unit[i].GamerHeroes.fighting*20);
+                                }
+                                else
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*10)+Dire_Unit[i].GamerHeroes.fighting*10);
+                                }
+                            }
+                        }
+                        else if (finalI==2)
+                        {
+                            for(int i =0;i<5;i++)
+                            {
+
+                                if(Radiant_Unit[i].GamerPlayer.farming>60) {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*40)+Radiant_Unit[i].GamerHeroes.farm*40);
+                                }
+                                else if(Radiant_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*20)+Radiant_Unit[i].GamerHeroes.farm*20);
+                                }
+                                else
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*10)+Radiant_Unit[i].GamerHeroes.farm*10);
+                                }
+
+                                if(Dire_Unit[i].GamerPlayer.farming>60) {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*40)+Dire_Unit[i].GamerHeroes.farm*40);
+                                }
+                                else if(Dire_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*20)+Dire_Unit[i].GamerHeroes.farm*20);
+                                }
+                                else
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*10)+Dire_Unit[i].GamerHeroes.farm*10);
+                                }
+
+
+
+                            }
+                        }
+                        funcsort();
+                        checknet();
+                        stage=2;
+                        choose[0].setImageResource(R.drawable.push);
+                        choose[1].setImageResource(R.drawable.rosh);
+                        choose[2].setImageResource(R.drawable.latebttn);
+                        choose[0].setVisibility(View.VISIBLE);
+                        choose[1].setVisibility(View.VISIBLE);
+                        choose[2].setVisibility(View.VISIBLE);
+
+                    }
+                }.start();
+
+
 
             }
-            //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
-            public void onFinish() {
-                for(int i =0;i<5;i++)
-                {
-                    RadiantNetworh[i]=(RadiantNetworh[i]+ finalRadiantfight*5 + (Radiant_Unit[i].GamerPlayer.farming+Radiant_Unit[i].GamerHeroes.farm)*20);
-                    DireNetworh[i]=(DireNetworh[i]+ finalDirefight*5 + (Dire_Unit[i].GamerPlayer.farming+Dire_Unit[i].GamerHeroes.farm)*20);
-                }
-                GoldKeff.setVisibility(View.VISIBLE);
-                funcsort();
 
-                int totalradmid=0;
-                int totaldiremid=0;
+            else if (stage==2)
+            {
+                stagenumber.setText("stage4");
+                choose[0].setVisibility(View.INVISIBLE);
+                choose[1].setVisibility(View.INVISIBLE);
+                choose[2].setVisibility(View.INVISIBLE);
 
-                for (int i=0;i<5;i++)
-                {
-                    totalradmid=totalradmid+RadiantNetworh[i];
-                    totaldiremid=totaldiremid+DireNetworh[i];
-                }
+                State4=new CountDownTimer(200,150) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        if(mycnt[0] <2)
+                        {
+                            mycnt[0]++;
+                        }
+                        else
+                        {
+                            mycnt[0] =0;
+                        }
+
+                        monst.setImageResource(supafightima[mycnt[0]]);
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                        if(finalI==0)
+                        {
+                            daytimetext.setText("35:00");
+                            for(int i =0;i<5;i++)
+                            {
+                                if(Radiant_Unit[i].GamerPlayer.farming>60) {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*40)+Radiant_Unit[i].GamerHeroes.fighting*40);
+                                }
+                                else if(Radiant_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*20)+Radiant_Unit[i].GamerHeroes.fighting*20);
+                                }
+                                else
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.fighting+(ExFightingint/5))*10)+Radiant_Unit[i].GamerHeroes.fighting*10);
+                                }
+
+                                if(Dire_Unit[i].GamerPlayer.farming>60) {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*40)+Dire_Unit[i].GamerHeroes.fighting*40);
+                                }
+                                else if(Dire_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*20)+Dire_Unit[i].GamerHeroes.fighting*20);
+                                }
+                                else
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.fighting*10)+Dire_Unit[i].GamerHeroes.fighting*10);
+                                }
+                            }
 
 
-                if(totalradmid>totaldiremid)
-                {
-                    GoldKeff.setText("WIN");
-                    GoldKeff.setTextColor(Color.parseColor("#196310"));
-                }
-                else
-                {
-                    GoldKeff.setText("LOSE");
-                    GoldKeff.setTextColor(Color.parseColor("#7d1212"));
-                }
+                        }
+                        else if (finalI==1)
+                        {
+                            daytimetext.setText("40:00");
+                            for(int i =0;i<5;i++)
+                            {
+                                if(Radiant_Unit[i].GamerPlayer.farming>60) {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*50)+Radiant_Unit[i].GamerHeroes.fighting*50);
+                                }
+                                else if(Radiant_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*25)+Radiant_Unit[i].GamerHeroes.fighting*25);
+                                }
+                                else
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+((Radiant_Unit[i].GamerPlayer.farming+(ExFarmingint/5))*15)+Radiant_Unit[i].GamerHeroes.fighting*15);
+                                }
 
-                monstlate.setVisibility(View.VISIBLE);
-                Lategametimer.start();
+                                if(Dire_Unit[i].GamerPlayer.farming>60) {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*50)+Dire_Unit[i].GamerHeroes.fighting*50);
+                                }
+                                else if(Dire_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*25)+Dire_Unit[i].GamerHeroes.fighting*25);
+                                }
+                                else
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*15)+Dire_Unit[i].GamerHeroes.fighting*15);
+                                }
+                            }
+                        }
+
+                        else if(finalI==2)
+                        {
+                            daytimetext.setText("50:00");
+                            for(int i =0;i<5;i++)
+                            {
+                                if(Radiant_Unit[i].GamerPlayer.farming>60) {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+(Radiant_Unit[i].GamerPlayer.farming*100)+(Radiant_Unit[i].GamerPlayer.late+(ExLateint/5))*60);
+                                }
+                                else if(Radiant_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+(Radiant_Unit[i].GamerPlayer.farming*45)+(Radiant_Unit[i].GamerPlayer.late+(ExLateint/5))*45);
+                                }
+                                else
+                                {
+                                    RadiantNetworh[i]=(RadiantNetworh[i]+(Radiant_Unit[i].GamerPlayer.farming*35)+(Radiant_Unit[i].GamerPlayer.late+(ExLateint/5))*35);
+                                }
+
+                                if(Dire_Unit[i].GamerPlayer.farming>60) {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*100)+Dire_Unit[i].GamerPlayer.late*60);
+                                }
+                                else if(Dire_Unit[i].GamerPlayer.farming>25)
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*45)+Dire_Unit[i].GamerPlayer.late*45);
+                                }
+                                else
+                                {
+                                    DireNetworh[i]=(DireNetworh[i]+  (Dire_Unit[i].GamerPlayer.farming*35)+Dire_Unit[i].GamerPlayer.late*35);
+                                }
+                            }
+                        }
+                        funcsort();
+                        checknet();
+
+
+
+                        int totalradlate=0;
+                        int totaldirelate=0;
+
+                        for (int i=0;i<5;i++)
+                        {
+                            totalradlate=totalradlate+RadiantNetworh[i];
+                            totaldirelate=totaldirelate+DireNetworh[i];
+                        }
+
+                        if(totalradlate>totaldirelate)
+                        {
+                            LoseOrWin.setText("Radiant Victory");
+                            LoseOrWin.setTextColor(Color.parseColor("#196310"));
+                            LoseOrWin.setVisibility(View.VISIBLE);
+
+                            winloose=1;
+                        }
+                        else
+                        {
+                            LoseOrWin.setText("Dire Victory");
+                            LoseOrWin.setTextColor(Color.parseColor("#7d1212"));
+                            LoseOrWin.setVisibility(View.VISIBLE);
+
+                            winloose=2;
+                        }
+
+
+
+
+
+
+                        tomainstance.setVisibility(View.VISIBLE);
+
+                    }
+                }.start();
+
+
             }
 
-        };
 
 
-        Lategametimer =new CountDownTimer(200, 150) {
-            //Здесь обновляем текст счетчика обратного отсчета с каждой секундой
-            public void onTick(long millisUntilFinished) {
-                if(mycnt[0] <2)
-                {
-                    mycnt[0]++;
-                }
-                else
-                {
-                    mycnt[0] =0;
-                }
-
-                monstlate.setImageResource(phoen[mycnt[0]]);
-            }
-            //Задаем действия после завершения отсчета (высвечиваем надпись "Бабах!"):
-            public void onFinish() {
-                int radiantlate=0;
-                int direlate=0;
-                for (int i=0;i<5;i++)
-                {
-                    radiantlate=radiantlate+Radiant_Unit[i].GamerPlayer.late;
-                    radiantlate=radiantlate+Radiant_Unit[i].GamerHeroes.late;
-                    direlate=direlate+Dire_Unit[i].GamerPlayer.late;
-                    direlate=direlate+Dire_Unit[i].GamerHeroes.late;
-                }
-                radiantlate=radiantlate+ExLateint/5;
-
-                for(int i =0;i<5;i++)
-                {
-                    RadiantNetworh[i]=(RadiantNetworh[i]+ radiantlate*5 + (Radiant_Unit[i].GamerPlayer.farming+Radiant_Unit[i].GamerHeroes.farm)*20);
-                    DireNetworh[i]=(DireNetworh[i]+ direlate*5 + (Dire_Unit[i].GamerPlayer.farming+Dire_Unit[i].GamerHeroes.farm)*20);
-                }
-                latekeff.setVisibility(View.VISIBLE);
-                funcsort();
-
-                int totalradlate=0;
-                int totaldirelate=0;
-
-                for (int i=0;i<5;i++)
-                {
-                    totalradlate=totalradlate+RadiantNetworh[i];
-                    totaldirelate=totaldirelate+DireNetworh[i];
-                }
 
 
-                if(totalradlate>totaldirelate)
-                {
-                    latekeff.setText("WIN");
-                    latekeff.setTextColor(Color.parseColor("#196310"));
-                    LoseOrWin.setText("Radiant Victory");
-                    LoseOrWin.setTextColor(Color.parseColor("#196310"));
-                    LoseOrWin.setVisibility(View.VISIBLE);
-                    winloose=1;
-                }
-                else
-                {
-                    latekeff.setText("LOSE");
-                    latekeff.setTextColor(Color.parseColor("#7d1212"));
-                    LoseOrWin.setText("Dire Victory");
-                    LoseOrWin.setTextColor(Color.parseColor("#7d1212"));
-                    LoseOrWin.setVisibility(View.VISIBLE);
-                    winloose=2;
-                }
 
 
-                tomainstance.setVisibility(View.VISIBLE);
-            }
 
-        };
 
+        }
+    });
+}
 
 
 
@@ -1684,6 +2338,32 @@ public class FightState extends AppCompatActivity {
         }
     }
 
+    void checknet()
+    {
+        int radiatlaining=0;
+        int direlaining=0;
+
+        for (int i=0;i<5;i++)
+        {
+            radiatlaining=radiatlaining+RadiantNetworh[i];
+            direlaining=direlaining+DireNetworh[i];
+        }
+
+
+
+        if (radiatlaining>direlaining)
+        {
+            radiantnetw.setText("WIN");
+
+
+            radiantnetw.setTextColor(Color.parseColor("#196310"));
+        }
+        else
+        {
+            radiantnetw.setText("LOSE");
+            radiantnetw.setTextColor(Color.parseColor("#7d1212"));
+        }
+    }
 
 
 

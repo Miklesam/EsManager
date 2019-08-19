@@ -13,8 +13,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         EasySplashScreen config = new EasySplashScreen(SplashScreen.this)
-                .withTargetActivity(MainActivity.class)
-                .withSplashTimeOut(5000)
+                .withTargetActivity(tiser.class)
+                .withSplashTimeOut(2000)
                 .withBackgroundResource(R.drawable.new_splashscreen);
 
             View easySplashScreen=config.create();

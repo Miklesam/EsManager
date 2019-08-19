@@ -43,7 +43,7 @@ public class practiceactivity extends AppCompatActivity {
 
     ImageView backmainstate;
     ListView CWList;
-    ArrayList<Teams> TeamsCW;
+    ArrayList<Teams> TeamsCW= new ArrayList<>();
     SharedPreferences mSettings;
     String YourTeam;
     LinearLayout solotrainigLinear;
@@ -288,6 +288,7 @@ boolean lock;
 
 
         AllTeams.clear();
+        TeamsCW.clear();
         TeamsCW=AllTeamsInit();
 
         final CWAdapter CWteamsAdapter=new CWAdapter();
@@ -354,13 +355,25 @@ boolean lock;
                         Mytimer.cancel();
                         SharedPreferences.Editor editor = mSettings.edit();
                         editor.putString(Fans,fansbalansed);
-                        editor.putString(XPstatic,String.valueOf(XPint+xpsplus));
+                        if(xpsplus==0)
+                        {
+                            editor.putString(XPstatic,String.valueOf(XPint+0));
+                        }
+                        else if((xpsplus==1)||(xpsplus==2)||(xpsplus==3))
+                        {
+                            editor.putString(XPstatic,String.valueOf(XPint+1));
+                        }
+                        else if((xpsplus==4)||(xpsplus==5))
+                        {
+                            editor.putString(XPstatic,String.valueOf(XPint+2));
+                        }
+
 
 
                         if(Dayint==30)
                         {
                             editor.putString(Day, "1");
-                            if(Monthint==12)
+                            if(Monthint==11)
                             {
                                 editor.putString(Month, "0");
                                 editor.putString(Year, String.valueOf(Yearint+1));
@@ -374,7 +387,7 @@ boolean lock;
                         {
                             editor.putString(Day,String.valueOf(Dayint+1));
                         }
-                        editor.putString(GoldBalance, String.valueOf(Integer.parseInt(Gold)+(Integer.parseInt(fansbalansed)/100)));
+                        editor.putString(GoldBalance, String.valueOf(Integer.parseInt(Gold)+(Integer.parseInt(fansbalansed)/50)));
                         editor.apply();
                         startActivity(Tomainstate);
                     }
@@ -400,24 +413,26 @@ boolean lock;
 
             }
         });
+        final boolean[] lock = new boolean[1];
+        lock[0]=false;
         CWList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-                ToPickStage.putExtra("Position1",Pos1);
-                ToPickStage.putExtra("Position2",Pos2);
-                ToPickStage.putExtra("Position3",Pos3);
-                ToPickStage.putExtra("Position4",Pos4);
-                ToPickStage.putExtra("Position5",Pos5);
-
-                ToPickStage.putExtra("EnemyTeam",AllTeams.get(position).seq);
-                ToPickStage.putExtra("TeamName",YourTeam);
-                ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
+                if (lock[0] ==false)
+                {
+                    lock[0] =true;
 
 
-                TeamsCW.clear();
-                startActivity(ToPickStage);
+                    ToPickStage.putExtra("EnemyTeam",AllTeams.get(position).seq);
+                    ToPickStage.putExtra("TeamName",YourTeam);
+                    ToPickStage.putExtra("TeamEnemy",TeamsCW.get(position).teamname);
+                   startActivity(ToPickStage);
+                }
+
+
+
+
 
 
             }

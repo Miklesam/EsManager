@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:textColor="#45283c"
             android:id="@+id/minorname"
+            android:textSize="25sp"
             android:text="Minor"/>
 
     </LinearLayout>

@@ -54,36 +54,42 @@ public class PlanersInit {
 
 
 
+        AllPlaners.add(VPPlanerMan);
+        AllPlaners.add(NaviPlanerMan);
+        AllPlaners.add(GambitPlanerMan);
+        AllPlaners.add(OldButGoldPlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(WinstrikePlanerMan);
+        AllPlaners.add(BHGPlanerMan);
+        AllPlaners.add(F5PlanerMan);
+        AllPlaners.add(CisPlanerMan);
+        AllPlaners.add(friendsPlanerMan);
+        AllPlaners.add(ferzeePlanerMan);
+        AllPlaners.add(iccupPlanerMan);
+        AllPlaners.add(M5PlanerMan);
+        AllPlaners.add(rebelsPlanerMan);
+        AllPlaners.add(roxkisPlanerMan);
+        AllPlaners.add(theretryPlanerMan);
+        AllPlaners.add(DTSPlanerMan);
+        AllPlaners.add(DuzaPlanerMan);
         AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
-        AllPlaners.add(NoPangoPlanerMan);
+        AllPlaners.add(VPPlanerMan);
+        AllPlaners.add(NaviPlanerMan);
+        AllPlaners.add(GambitPlanerMan);
+
+
+        AllPlaners.add(VPPlanerMan);
+        AllPlaners.add(NaviPlanerMan);
+        AllPlaners.add(GambitPlanerMan);
+        AllPlaners.add(OldButGoldPlanerMan);
+        AllPlaners.add(EmpirePlanerMan);
+        AllPlaners.add(WinstrikePlanerMan);
+        AllPlaners.add(BHGPlanerMan);
+        AllPlaners.add(F5PlanerMan);
+        AllPlaners.add(CisPlanerMan);
+        AllPlaners.add(friendsPlanerMan);
+        AllPlaners.add(ferzeePlanerMan);
+
 
         return AllPlaners;
     }

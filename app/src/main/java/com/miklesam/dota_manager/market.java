@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.miklesam.dota_manager.HeroInit.AllHeroes;
 import static com.miklesam.dota_manager.PlayersInit.AllPlayers;
@@ -194,7 +195,39 @@ public class market extends AppCompatActivity {
 
         DirectHero.addAll(HeroInit.HeroInit());
         Cores=PlayersCoreInit();
+        ArrayList<Player_cost_shuffle> Coressh = new ArrayList<>();
+        for(int i=0;i<Cores.size();i++)
+        {
+            Coressh.add( new Player_cost_shuffle(Cores.get(i),Cores.get(i).Cost));
+        }
+
+        Collections.sort(Coressh, Player_cost_shuffle.COMPARE_BY_Price);
+        Cores.clear();
+        for(int i=0; i<Coressh.size();i++)
+        {
+            Cores.add(Coressh.get(i).Player);
+        }
+
+
+
         Supports=PlayersSupportInit();
+        Coressh.clear();
+        for(int i=0;i<Supports.size();i++)
+        {
+            Coressh.add( new Player_cost_shuffle(Supports.get(i),Supports.get(i).Cost));
+        }
+        Collections.sort(Coressh, Player_cost_shuffle.COMPARE_BY_Price);
+        Supports.clear();
+        for(int i=0; i<Coressh.size();i++)
+        {
+            Supports.add(Coressh.get(i).Player);
+        }
+        Coressh.clear();
+
+
+
+
+
         SupportlistView.setVisibility(View.INVISIBLE);
 
 
@@ -248,23 +281,23 @@ public class market extends AppCompatActivity {
         Fansbalance.setText(fansbalansed);
 
 
-            if (Pos1!=77)
+            if (Pos1!=277)
             {
                 team[0]=true;
             }
-            if (Pos2!=77)
+            if (Pos2!=277)
             {
             team[1]=true;
             }
-            if (Pos3!=77)
+            if (Pos3!=277)
             {
             team[2]=true;
             }
-            if (Pos4!=77)
+            if (Pos4!=277)
             {
             team[3]=true;
             }
-            if (Pos5!=77)
+            if (Pos5!=277)
             {
             team[4]=true;
             }
@@ -911,7 +944,7 @@ public class market extends AppCompatActivity {
 
 
 
-                 Gold= String.valueOf(Integer.parseInt(Gold)+ (Integer.parseInt((String) PlayerCost.getText())/2));
+                 Gold= String.valueOf(Integer.parseInt(Gold)+ (Integer.parseInt((String) PlayerCost.getText())));
 
 
                 Goldbalance.setText(Gold);
@@ -923,32 +956,32 @@ public class market extends AppCompatActivity {
                 if (sellposition==0)
                 {
                     Team[0].setText("1.");
-                    editor.putString(StaticPosition1,String.valueOf(177));
+                    editor.putString(StaticPosition1,String.valueOf(277));
                     Cores.add(AllPlayers.get(Pos1));
                 }
                 else if(sellposition==1)
                 {
                     Team[1].setText("2.");
-                    editor.putString(StaticPosition2,String.valueOf(177));
+                    editor.putString(StaticPosition2,String.valueOf(277));
                     Cores.add(AllPlayers.get(Pos2));
                 }
                 else if(sellposition==2)
                 {
                     Team[2].setText("3.");
-                    editor.putString(StaticPosition3,String.valueOf(177));
+                    editor.putString(StaticPosition3,String.valueOf(277));
                     Cores.add(AllPlayers.get(Pos3));
                 }
 
                 else if(sellposition==3)
                 {
                     Team[3].setText("4.");
-                    editor.putString(StaticPosition4,String.valueOf(177));
+                    editor.putString(StaticPosition4,String.valueOf(277));
                     Supports.add(AllPlayers.get(Pos4));
                 }
                 else if(sellposition==4)
                 {
                     Team[4].setText("5.");
-                    editor.putString(StaticPosition5,String.valueOf(177));
+                    editor.putString(StaticPosition5,String.valueOf(277));
                     Supports.add(AllPlayers.get(Pos5));
                 }
 
@@ -1045,7 +1078,8 @@ public class market extends AppCompatActivity {
                                     "Недостаточно денег", Toast.LENGTH_SHORT);
                             toast.show();
                         }
-
+                        notmoneyhelp.setVisibility(View.VISIBLE);
+                        HideAll();
 
                     }
 
@@ -1131,7 +1165,8 @@ public class market extends AppCompatActivity {
                                         "Недостаточно денег", Toast.LENGTH_SHORT);
                                 toast.show();
                             }
-
+                            notmoneyhelp.setVisibility(View.VISIBLE);
+                            HideAll();
 
                         }
 
@@ -1207,7 +1242,8 @@ public class market extends AppCompatActivity {
                                         "Недостаточно денег", Toast.LENGTH_SHORT);
                                 toast.show();
                             }
-
+                            notmoneyhelp.setVisibility(View.VISIBLE);
+                            HideAll();
 
                         }
 
@@ -1301,7 +1337,8 @@ public class market extends AppCompatActivity {
                                 toast.show();
                             }
 
-
+                            notmoneyhelp.setVisibility(View.VISIBLE);
+                            HideAll();
                         }
 
                     }
@@ -1379,7 +1416,8 @@ public class market extends AppCompatActivity {
                                 toast.show();
                             }
 
-
+                            notmoneyhelp.setVisibility(View.VISIBLE);
+                            HideAll();
                         }
 
                     }

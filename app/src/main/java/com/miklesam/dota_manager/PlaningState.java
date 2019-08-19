@@ -25,6 +25,11 @@ import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class PlaningState extends AppCompatActivity {
 
@@ -32,7 +37,7 @@ public class PlaningState extends AppCompatActivity {
     int[] CompHero = new int[5];
     int[] Gamer = new int[5];
     ImageView[] GameHero = new ImageView[5];
-
+    boolean locknext = false;
     ImageView[] Top = new ImageView[5];
     ImageView[] Mid = new ImageView[5];
     ImageView[] Bottom = new ImageView[5];
@@ -98,6 +103,30 @@ public class PlaningState extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_planing_state);
+        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+        if(mSettings.contains(StaticPosition1)) {
+            Gamer[0]=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
+        }
+
+        if(mSettings.contains(StaticPosition2)) {
+            Gamer[1]=Integer.parseInt(mSettings.getString(StaticPosition2, "Position2"));
+        }
+
+        if(mSettings.contains(StaticPosition3)) {
+            Gamer[2]=Integer.parseInt(mSettings.getString(StaticPosition3, "Position3"));
+        }
+
+        if(mSettings.contains(StaticPosition4)) {
+            Gamer[3]=Integer.parseInt(mSettings.getString(StaticPosition4, "Position4"));
+        }
+
+        if(mSettings.contains(StaticPosition5)) {
+            Gamer[4]=Integer.parseInt(mSettings.getString(StaticPosition5, "Position5"));
+        }
+
+
+
+
         AllTeams.clear();
         GameHero[0] = findViewById(R.id.GameHero1);
         GameHero[1] = findViewById(R.id.GameHero2);
@@ -126,7 +155,7 @@ public class PlaningState extends AppCompatActivity {
         Top[4]=findViewById(R.id.top5);
         AllTeamsTeams=AllTeamsInit();
         final Intent ToFightStageActivity = new Intent(this, FightState.class);
-        mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
+
         helpinfo=findViewById(R.id.helpinfo);
         if(mSettings.contains(Language)) {
             languageshare=Integer.parseInt(mSettings.getString(Language, "0"));
@@ -155,11 +184,7 @@ public class PlaningState extends AppCompatActivity {
                 Hero[2] = 0;
                 Hero[3] = 0;
                 Hero[4] = 0;
-                Gamer[0] = 0;
-                Gamer[1] = 0;
-                Gamer[2] = 0;
-                Gamer[3] = 0;
-                Gamer[4] = 0;
+
                 CompHero[0]=0;
                 CompHero[1]=0;
                 CompHero[2]=0;
@@ -184,11 +209,6 @@ public class PlaningState extends AppCompatActivity {
                 TeamEnemy = extras.getInt("EnemyTeam");
 
 
-                Gamer[0] = extras.getInt("Position1");
-                Gamer[1] = extras.getInt("Position2");
-                Gamer[2] = extras.getInt("Position3");
-                Gamer[3] = extras.getInt("Position4");
-                Gamer[4] = extras.getInt("Position5");
 
             }
         } else {
@@ -204,11 +224,6 @@ public class PlaningState extends AppCompatActivity {
             CompHero[3] = (int) savedInstanceState.getSerializable("CompHero4");
             CompHero[4] = (int) savedInstanceState.getSerializable("CompHero5");
 
-            Gamer[0] = (Integer) savedInstanceState.getSerializable("Position1");
-            Gamer[1] = (Integer) savedInstanceState.getSerializable("Position2");
-            Gamer[2] = (Integer) savedInstanceState.getSerializable("Position3");
-            Gamer[3] = (Integer) savedInstanceState.getSerializable("Position4");
-            Gamer[4] = (Integer) savedInstanceState.getSerializable("Position5");
 
         }
 
@@ -440,110 +455,114 @@ for(int k=0;k<5;k++)
 
 
 
-
-
         ToFightStage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                for (int i=1;i<5;i++)
+                if (locknext ==false)
                 {
-                    lock0=false;
-                    if(seq_gamer[0]==seq_gamer[i])
+                    for (int i=1;i<5;i++)
                     {
-                        lock0=true;
-                        break;
+                        lock0=false;
+                        if(seq_gamer[0]==seq_gamer[i])
+                        {
+                            lock0=true;
+                            break;
+                        }
                     }
-                }
-                for (int i=2;i<5;i++)
-                {
-                    lock1=false;
-                    if(seq_gamer[1]==seq_gamer[i])
+                    for (int i=2;i<5;i++)
                     {
-                        lock1=true;
-                        break;
+                        lock1=false;
+                        if(seq_gamer[1]==seq_gamer[i])
+                        {
+                            lock1=true;
+                            break;
+                        }
+
+                    }
+                    for (int i=3;i<5;i++)
+                    {
+                        lock2=false;
+                        if(seq_gamer[2]==seq_gamer[i])
+                        {
+                            lock2=true;
+                            break;
+                        }
+
+                    }
+                    for (int i=4;i<5;i++)
+                    {
+                        lock3=false;
+                        if(seq_gamer[3]==seq_gamer[i])
+                        {
+                            lock3=true;
+                            break;
+                        }
+
                     }
 
-                }
-                for (int i=3;i<5;i++)
-                {
-                    lock2=false;
-                    if(seq_gamer[2]==seq_gamer[i])
+                    if((lock0==false)&&(lock1==false)&&(lock2==false)&&(lock3==false))
                     {
-                        lock2=true;
-                        break;
-                    }
+                        locknext=true;
+                        ToFightStageActivity.putExtra("Hero1",Hero[0]);
+                        ToFightStageActivity.putExtra("Hero2",Hero[1]);
+                        ToFightStageActivity.putExtra("Hero3",Hero[2]);
+                        ToFightStageActivity.putExtra("Hero4",Hero[3]);
+                        ToFightStageActivity.putExtra("Hero5",Hero[4]);
 
-                }
-                for (int i=4;i<5;i++)
-                {
-                    lock3=false;
-                    if(seq_gamer[3]==seq_gamer[i])
-                    {
-                        lock3=true;
-                        break;
-                    }
+                        ToFightStageActivity.putExtra("Lane1",lane_id[0]);
+                        ToFightStageActivity.putExtra("Lane2",lane_id[1]);
+                        ToFightStageActivity.putExtra("Lane3",lane_id[2]);
+                        ToFightStageActivity.putExtra("Lane4",lane_id[3]);
+                        ToFightStageActivity.putExtra("Lane5",lane_id[4]);
 
-                }
-
-                if((lock0==false)&&(lock1==false)&&(lock2==false)&&(lock3==false))
-                {
-                    ToFightStageActivity.putExtra("Hero1",Hero[0]);
-                    ToFightStageActivity.putExtra("Hero2",Hero[1]);
-                    ToFightStageActivity.putExtra("Hero3",Hero[2]);
-                    ToFightStageActivity.putExtra("Hero4",Hero[3]);
-                    ToFightStageActivity.putExtra("Hero5",Hero[4]);
-
-                    ToFightStageActivity.putExtra("Lane1",lane_id[0]);
-                    ToFightStageActivity.putExtra("Lane2",lane_id[1]);
-                    ToFightStageActivity.putExtra("Lane3",lane_id[2]);
-                    ToFightStageActivity.putExtra("Lane4",lane_id[3]);
-                    ToFightStageActivity.putExtra("Lane5",lane_id[4]);
-
-                    ToFightStageActivity.putExtra("Gamer1",seq_gamer[0]);
-                    ToFightStageActivity.putExtra("Gamer2",seq_gamer[1]);
-                    ToFightStageActivity.putExtra("Gamer3",seq_gamer[2]);
-                    ToFightStageActivity.putExtra("Gamer4",seq_gamer[3]);
-                    ToFightStageActivity.putExtra("Gamer5",seq_gamer[4]);
+                        ToFightStageActivity.putExtra("Gamer1",seq_gamer[0]);
+                        ToFightStageActivity.putExtra("Gamer2",seq_gamer[1]);
+                        ToFightStageActivity.putExtra("Gamer3",seq_gamer[2]);
+                        ToFightStageActivity.putExtra("Gamer4",seq_gamer[3]);
+                        ToFightStageActivity.putExtra("Gamer5",seq_gamer[4]);
 
 
-                    ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
-                    ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
-                    ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
-                    ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
-                    ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
+                        ToFightStageActivity.putExtra("CompHero1",CompHero[0]);
+                        ToFightStageActivity.putExtra("CompHero2",CompHero[1]);
+                        ToFightStageActivity.putExtra("CompHero3",CompHero[2]);
+                        ToFightStageActivity.putExtra("CompHero4",CompHero[3]);
+                        ToFightStageActivity.putExtra("CompHero5",CompHero[4]);
 
 
-                    ToFightStageActivity.putExtra("CompLane1",CompHeroesAndLanes.get(0));
-                    ToFightStageActivity.putExtra("CompLane2",CompHeroesAndLanes.get(1));
-                    ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
-                    ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
-                    ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
+                        ToFightStageActivity.putExtra("CompLane1",CompHeroesAndLanes.get(0));
+                        ToFightStageActivity.putExtra("CompLane2",CompHeroesAndLanes.get(1));
+                        ToFightStageActivity.putExtra("CompLane3",CompHeroesAndLanes.get(2));
+                        ToFightStageActivity.putExtra("CompLane4",CompHeroesAndLanes.get(3));
+                        ToFightStageActivity.putExtra("CompLane5",CompHeroesAndLanes.get(4));
 
 
-                    ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(5)).sequence);
-                    ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(6)).sequence);
-                    ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(7)).sequence);
-                    ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(8)).sequence);
-                    ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(9)).sequence);
+                        ToFightStageActivity.putExtra("CompGamer1",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(5)).sequence);
+                        ToFightStageActivity.putExtra("CompGamer2",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(6)).sequence);
+                        ToFightStageActivity.putExtra("CompGamer3",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(7)).sequence);
+                        ToFightStageActivity.putExtra("CompGamer4",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(8)).sequence);
+                        ToFightStageActivity.putExtra("CompGamer5",AllTeamsTeams.get(TeamEnemy).Players.get(CompHeroesAndLanes.get(9)).sequence);
 
-                    AllHeroes.clear();
-                    startActivity(ToFightStageActivity);
-                }
-                else
-                {
-                    if(languageshare==2)
-                    {
-                        Toast.makeText(PlaningState.this, "Assign players", Toast.LENGTH_SHORT).show();
+                        AllHeroes.clear();
+                        startActivity(ToFightStageActivity);
                     }
                     else
                     {
-                        Toast.makeText(PlaningState.this, "Назначьте игроков", Toast.LENGTH_SHORT).show();
+                        if(languageshare==2)
+                        {
+                            Toast.makeText(PlaningState.this, "Assign players", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(PlaningState.this, "Назначьте игроков", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
                     }
 
-
-
                 }
+
+
             }
         });
 

@@ -84,35 +84,41 @@ public class PickersInit {
 
 
 
+        AllPickers.add(VPPickerMan);
+        AllPickers.add(NaviPickerMan);
+        AllPickers.add(GambitPickerMan);
+        AllPickers.add(OldButGoldPickerMan);
+        AllPickers.add(EmpirePickerMan);
+        AllPickers.add(WinstrikePickerMan);
+        AllPickers.add(BHGPicker);
+        AllPickers.add(F5Picker);
+        AllPickers.add(CISrREJPicker);
+        AllPickers.add(frndsPicker);
+        AllPickers.add(frzPicker);
+        AllPickers.add(iccPicker);
+        AllPickers.add(M5Picker);
+        AllPickers.add(RblsPicker);
+        AllPickers.add(RoxPicker);
+        AllPickers.add(ThertrPicker);
+        AllPickers.add(DigitalTSPicker);
+        AllPickers.add(DzgmngPicker);
         AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
-        AllPickers.add(NPangoPicker);
+        AllPickers.add(VPPickerMan);
+        AllPickers.add(NaviPickerMan);
+        AllPickers.add(GambitPickerMan);
+
+
+        AllPickers.add(VPPickerMan);
+        AllPickers.add(NaviPickerMan);
+        AllPickers.add(GambitPickerMan);
+        AllPickers.add(OldButGoldPickerMan);
+        AllPickers.add(EmpirePickerMan);
+        AllPickers.add(WinstrikePickerMan);
+        AllPickers.add(BHGPicker);
+        AllPickers.add(F5Picker);
+        AllPickers.add(CISrREJPicker);
+        AllPickers.add(frndsPicker);
+        AllPickers.add(frzPicker);
 
         return AllPickers;
     }

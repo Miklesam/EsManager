@@ -12,9 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".Minor"
-            android:screenOrientation="landscape"
-            ></activity>
+        <activity android:name=".theinternational"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".majorplayoff"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".major_group"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".tiser"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Minor"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".infos"
             android:screenOrientation="landscape" />

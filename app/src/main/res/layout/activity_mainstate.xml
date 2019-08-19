@@ -299,7 +299,13 @@
 
      </LinearLayout>
 
-
+<ImageView
+    android:layout_width="60sp"
+    android:layout_height="60sp"
+    android:layout_marginRight="5sp"
+    android:layout_gravity="right"
+    android:id="@+id/careta"
+    app:srcCompat="@drawable/careta50"/>
 
     </LinearLayout>
 

@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         final ImageView Privacy=findViewById(R.id.Privacy);
         final ImageView Store = findViewById(R.id.shop);
         final ImageView Teams = findViewById(R.id.Teams);
+
+
         language=findViewById(R.id.language);
 
                 //Continue.setTypeface(type);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         final Intent ToAbout = new Intent(this, about.class);
         final Intent ToTeamsShow = new Intent(this, TeamsShow.class);
         final Intent ToShop = new Intent(this, Shop.class);
+        final Intent Totiset = new Intent(this, tiser.class);
 
 
         final String Player[]= new String[5];
@@ -111,18 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if(languageshare==1)
-        {
-            russian=true;
-            language.setImageResource(R.drawable.russia);
-            NewGame.setImageResource(R.drawable.new_game_russian);
-            Continue.setImageResource(R.drawable.continue_russian);
-            Privacy.setImageResource(R.drawable.about_russian);
-            Store.setImageResource(R.drawable.shop_russian);
-            Teams.setImageResource(R.drawable.teams_russian);
-
-        }
-        else
+        if(languageshare==2)
         {
             russian=false;
             language.setImageResource(R.drawable.england);
@@ -131,6 +123,18 @@ public class MainActivity extends AppCompatActivity {
             Privacy.setImageResource(R.drawable.about_project);
             Store.setImageResource(R.drawable.shop);
             Teams.setImageResource(R.drawable.teams);
+
+
+        }
+        else
+        {
+            russian=true;
+            language.setImageResource(R.drawable.russia);
+            NewGame.setImageResource(R.drawable.new_game_russian);
+            Continue.setImageResource(R.drawable.continue_russian);
+            Privacy.setImageResource(R.drawable.about_russian);
+            Store.setImageResource(R.drawable.shop_russian);
+            Teams.setImageResource(R.drawable.teams_russian);
 
         }
 
@@ -185,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //startActivity(Totiset);
                 startActivity(ToTeamsShow);
 
             }

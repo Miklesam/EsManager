@@ -149,6 +149,151 @@ public class YourTeam extends AppCompatActivity {
     public static final String NotMinor= "NotMinor";
 
 
+    public static final String MinorScore1= "MinorScore1";
+    public static final String MinorScore2= "MinorScore2";
+    public static final String MinorScore3= "MinorScore3";
+    public static final String MinorScore4= "MinorScore4";
+    public static final String MinorScore5= "MinorScore5";
+    public static final String MinorScore6= "MinorScore6";
+    public static final String MinorScore7= "MinorScore7";
+    public static final String MinorScore8= "MinorScore8";
+
+    public static final String MinorPlayoff1= "MinorPlayoff1";
+    public static final String MinorPlayoff2= "MinorPlayoff2";
+    public static final String MinorPlayoff3= "MinorPlayoff3";
+    public static final String MinorPlayoff4= "MinorPlayoff4";
+    public static final String MinorPlayoff5= "MinorPlayoff5";
+    public static final String MinorPlayoff6= "MinorPlayoff6";
+
+
+    public static final String MinorWin1= "MinorWin1";
+    public static final String MinorWin2= "MinorWin2";
+    public static final String MinorWin3= "MinorWin3";
+    public static final String MinorWin4= "MinorWin4";
+    public static final String MinorWin5= "MinorWin5";
+    public static final String MinorWin6= "MinorWin6";
+    public static final String MinorWin7= "MinorWin7";
+    public static final String MinorWin8= "MinorWin8";
+
+
+    public static final String MinorLose1= "MinorLose1";
+    public static final String MinorLose2= "MinorLose2";
+    public static final String MinorLose3= "MinorLose3";
+    public static final String MinorLose4= "MinorLose4";
+    public static final String MinorLose5= "MinorLose5";
+    public static final String MinorLose6= "MinorLose6";
+    public static final String MinorLose7= "MinorLose7";
+    public static final String MinorLose8= "MinorLose8";
+
+    public static final String MinorStage= "MinorStage";
+
+
+    public static final String MajorStage= "MajorStage";
+
+    public static final String MajorScore1= "MajorScore1";
+    public static final String MajorScore2= "MajorScore2";
+    public static final String MajorScore3= "MajorScore3";
+    public static final String MajorScore4= "MajorScore4";
+    public static final String MajorScore5= "MajorScore5";
+    public static final String MajorScore6= "MajorScore6";
+    public static final String MajorScore7= "MajorScore7";
+    public static final String MajorScore8= "MajorScore8";
+
+    public static final String MajorWin1= "MajorWin1";
+    public static final String MajorWin2= "MajorWin2";
+    public static final String MajorWin3= "MajorWin3";
+    public static final String MajorWin4= "MajorWin4";
+    public static final String MajorWin5= "MajorWin5";
+    public static final String MajorWin6= "MajorWin6";
+    public static final String MajorWin7= "MajorWin7";
+    public static final String MajorWin8= "MajorWin8";
+
+
+    public static final String MajorLose1= "MajorLose1";
+    public static final String MajorLose2= "MajorLose2";
+    public static final String MajorLose3= "MajorLose3";
+    public static final String MajorLose4= "MajorLose4";
+    public static final String MajorLose5= "MajorLose5";
+    public static final String MajorLose6= "MajorLose6";
+    public static final String MajorLose7= "MajorLose7";
+    public static final String MajorLose8= "MajorLose8";
+
+    public static final String MajorSeries1= "MajorSeries1";
+    public static final String MajorSeries2= "MajorSeries2";
+    public static final String MajorSeries3= "MajorSeries3";
+    public static final String MajorSeries4= "MajorSeries4";
+    public static final String MajorSeries5= "MajorSeries5";
+    public static final String MajorSeries6= "MajorSeries6";
+
+    public static final String MajorPlayoff1= "MajorPlayoff1";
+    public static final String MajorPlayoff2= "MajorPlayoff2";
+    public static final String MajorPlayoff3= "MajorPlayoff3";
+    public static final String MajorPlayoff4= "MajorPlayoff4";
+    public static final String MajorPlayoff5= "MajorPlayoff5";
+    public static final String MajorPlayoff6= "MajorPlayoff6";
+    public static final String MajorPlayoff7= "MajorPlayoff7";
+    public static final String MajorPlayoff8= "MajorPlayoff8";
+    public static final String MajorPlayoff9= "MajorPlayoff9";
+    public static final String MajorPlayoff10= "MajorPlayoff10";
+    public static final String MajorPlayoff11= "MajorPlayoff11";
+    public static final String MajorPlayoff12= "MajorPlayoff12";
+    public static final String MajorPlayoff13= "MajorPlayoff13";
+    public static final String MajorPlayoff14= "MajorPlayoff14";
+    public static final String MajorPlayoff15= "MajorPlayoff15";
+    public static final String MajorPlayoff16= "MajorPlayoff16";
+    public static final String MajorPlayoff17= "MajorPlayoff17";
+    public static final String MajorPlayoff18= "MajorPlayoff18";
+    public static final String MajorPlayoff19= "MajorPlayoff19";
+    public static final String MajorPlayoff20= "MajorPlayoff20";
+    public static final String MajorPlayoff21= "MajorPlayoff21";
+    public static final String MajorPlayoff22= "MajorPlayoff22";
+    public static final String MajorPlayoff23= "MajorPlayoff23";
+
+    public static final String WinnerorLossers= "WinnerorLossers";
+    public static final String MajorPlayoffStage= "MajorPlayoffStage";
+
+
+    public static final String MajorGroup1= "MajorGroup1";
+    public static final String MajorGroup2= "MajorGroup2";
+    public static final String MajorGroup3= "MajorGroup3";
+    public static final String MajorGroup4= "MajorGroup4";
+    public static final String MajorGroup5= "MajorGroup5";
+    public static final String MajorGroup6= "MajorGroup6";
+    public static final String MajorGroup7= "MajorGroup7";
+    public static final String MajorGroup8= "MajorGroup8";
+    public static final String MajorGroup9= "MajorGroup9";
+    public static final String MajorGroup10= "MajorGroup10";
+    public static final String MajorGroup11= "MajorGroup11";
+    public static final String MajorGroup12= "MajorGroup12";
+    public static final String MajorGroup13= "MajorGroup13";
+    public static final String MajorGroup14= "MajorGroup14";
+    public static final String MajorGroup15= "MajorGroup15";
+
+    public static final String ShuffleMajor= "ShuffleMajor";
+
+    public static final String MajorPScore1= "MajorPScore1";
+    public static final String MajorPScore2= "MajorPScore2";
+    public static final String MajorPScore3= "MajorPScore3";
+    public static final String MajorPScore4= "MajorPScore4";
+    public static final String MajorPScore5= "MajorPScore5";
+    public static final String MajorPScore6= "MajorPScore6";
+    public static final String MajorPScore7= "MajorPScore7";
+    public static final String MajorPScore8= "MajorPScore8";
+    public static final String MajorPScore9= "MajorPScore9";
+    public static final String MajorPScore10= "MajorPScore10";
+    public static final String MajorPScore11= "MajorPScore11";
+    public static final String MajorPScore12= "MajorPScore12";
+    public static final String MajorPScore13= "MajorPScore13";
+    public static final String MajorPScore14= "MajorPScore14";
+    public static final String MajorPScore15= "MajorPScore15";
+    public static final String MajorPScore16= "MajorPScore16";
+    public static final String MajorPScore17= "MajorPScore17";
+    public static final String MajorPScore18= "MajorPScore18";
+    public static final String MajorPScore19= "MajorPScore19";
+    public static final String MajorPScore20= "MajorPScore20";
+
+    public static final String InMajor= "InMajor";
+
 
 
 
@@ -179,6 +324,9 @@ public class YourTeam extends AppCompatActivity {
         lock=true;
 
     }
+
+
+
 
 
     @Override
@@ -224,7 +372,8 @@ public class YourTeam extends AppCompatActivity {
             infoText.setText("The game has 2 main characteristics");
             money.setText("2.Money");
             fans.setText("1.Fans");
-            cont.setText("Every gaming day you are charged an additional amount equal to (number of fans)/100."+"\n"+
+            cont.setText("Every gaming day you are charged an additional amount equal to (number of fans)/50."+"\n"+
+                    "Also you can get money at shop"+"\n"+
                     "Money can be spent on the purchase of players."+"\n"+
                     "You can sell players for half the price."+"\n"+
                     "Every day, apart from competitive ones, you can train, \n" +
@@ -242,7 +391,8 @@ public class YourTeam extends AppCompatActivity {
                     "2.Middlegame"+"\n"+
                     "3.Lategame"+"\n"+
                     "Then the winner is displayed."+"\n"+
-                    "The tournament variety is not great, and includes only open and closed qualifications in minor and major."+"\n"+
+                    "The tournament variety is not great, and includes only two open and one closed qualifications to minor."+"\n"+
+                    "And Minors. If you didn't qualify to Minors, you will play in Some Cup."+"\n"+
                     "Wishes, suggestions and complaints, please write to my mail:"+"\n"+
                     "mikle.samarkin@gmail.com"
             );
@@ -259,7 +409,8 @@ public class YourTeam extends AppCompatActivity {
             infoText.setText("В игре есть имеются 2 основные характеристики:");
             money.setText("2.Деньги");
             fans.setText("1.Фанаты");
-            cont.setText("Каждый игровой день Вам начисляется дополнительная сумма, равная (количество фанатов)/100."+"\n"+
+            cont.setText("Каждый игровой день Вам начисляется дополнительная сумма, равная (количество фанатов)/50."+"\n"+
+                    "Также деньги можно получить в магазине."+"\n"+
                     "Деньги можно тратить на покупку игроков."+"\n"+
                     "Продавать игроков можно за пол цены."+"\n"+
                     "Каждый день кроме соревновательных можно проводить тренировки, они могут быть как командные, так и индивидуальные." +
@@ -276,9 +427,11 @@ public class YourTeam extends AppCompatActivity {
                     "2.Миддлегейм"+"\n"+
                     "3.Лейтгейм"+"\n"+
                     "После чего выводится победитель."+"\n"+
-                    "Турнирное разнообразие не велико, и включает в себя только открытые и закрытые квалификации на минор и на мажор."+"\n"+
-                    "Пожелания, предложения а также жалобы, пожалуйста, пишите на мою почту"+"\n"+
-                    "mikle.samarkin@gmail.com");
+                    "Турнирное разнообразие не велико, и включает в себя только две открытые и одну закрытую квалификацию на минор."+"\n"+
+                    "И Миноры, если вы не отобрались на минор Вы приглашены на Some Cup."+"\n"+
+                    "Пожелания, предложения а также жалобы, пожалуйста, пишите на мою почту:"+"\n"+
+                    "mikle.samarkin@gmail.com"
+            );
 
 
         }

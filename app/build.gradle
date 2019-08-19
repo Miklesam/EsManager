@@ -6,8 +6,8 @@ android {
         applicationId "com.miklesam.dota_manager"
         minSdkVersion 20
         targetSdkVersion 28
-        versionCode 16
-        versionName "1.16"
+        versionCode 27
+        versionName "1.27"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

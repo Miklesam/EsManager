@@ -13,14 +13,20 @@
         android:layout_height="40sp"
         android:id="@+id/Backs"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         app:srcCompat="@drawable/back_bttn"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#45283c"
+        android:text="Teams Info"/>
 
 
     <ListView
         android:id="@+id/TeamList"
-        android:layout_width="400sp"
+        android:layout_marginTop="40sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:dividerHeight="0dp"
         android:divider="@android:color/transparent"
@@ -30,6 +36,7 @@
 
     <LinearLayout
         android:layout_width="300sp"
+        android:layout_marginTop="40sp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true">
 
@@ -45,6 +52,7 @@
 
 
     <LinearLayout
+        android:layout_marginTop="40sp"
         android:layout_width="400sp"
         android:layout_height="wrap_content"
         android:orientation="vertical"

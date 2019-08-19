@@ -19,6 +19,11 @@ import static com.miklesam.dota_manager.PickersInit.AllPickers;
 import static com.miklesam.dota_manager.PickersInit.AllPickersInit;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
 import static com.miklesam.dota_manager.YourTeam.Language;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
+import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
 
 public class Pick_Stage extends AppCompatActivity {
 
@@ -44,6 +49,12 @@ public class Pick_Stage extends AppCompatActivity {
     int frompicker;
     int TeamEnemy;
     boolean youlocked;
+
+    int Pos1;
+    int Pos2;
+    int Pos3;
+    int Pos4;
+    int Pos5;
 
     ArrayList <Heroes> HeroList= new ArrayList <Heroes>();
     ArrayList <Pickers> PickerList= new ArrayList <Pickers>();
@@ -92,35 +103,41 @@ public class Pick_Stage extends AppCompatActivity {
         HelpText=findViewById(R.id.Help);
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
 
+        if(mSettings.contains(StaticPosition1)) {
+            Pos1=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
+        }
+
+        if(mSettings.contains(StaticPosition2)) {
+            Pos2=Integer.parseInt(mSettings.getString(StaticPosition2, "Position2"));
+        }
+
+        if(mSettings.contains(StaticPosition3)) {
+            Pos3=Integer.parseInt(mSettings.getString(StaticPosition3, "Position3"));
+        }
+
+        if(mSettings.contains(StaticPosition4)) {
+            Pos4=Integer.parseInt(mSettings.getString(StaticPosition4, "Position4"));
+        }
+
+        if(mSettings.contains(StaticPosition5)) {
+            Pos5=Integer.parseInt(mSettings.getString(StaticPosition5, "Position5"));
+        }
 
 
 
 
 
-        final int Pos1;
-        final int Pos2;
-        final int Pos3;
-        final int Pos4;
-        final int Pos5;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                Pos1= 0;
-                Pos2= 0;
-                Pos3= 0;
-                Pos4= 0;
-                Pos5= 0;
+
 
                 TeamEnemy=0;
                 TeamName=null;
                 EnemyName=null;
 
             } else {
-                Pos1= extras.getInt("Position1");
-                Pos2= extras.getInt("Position2");
-                Pos3= extras.getInt("Position3");
-                Pos4= extras.getInt("Position4");
-                Pos5= extras.getInt("Position5");
+
                 TeamEnemy= extras.getInt("EnemyTeam");
                 TeamName=extras.getString("TeamName");
                 EnemyName=extras.getString("TeamEnemy");
@@ -128,11 +145,7 @@ public class Pick_Stage extends AppCompatActivity {
 
             }
         } else {
-            Pos1= (Integer) savedInstanceState.getSerializable("Position1");
-            Pos2= (Integer) savedInstanceState.getSerializable("Position2");
-            Pos3= (Integer) savedInstanceState.getSerializable("Position3");
-            Pos4= (Integer) savedInstanceState.getSerializable("Position4");
-            Pos5= (Integer) savedInstanceState.getSerializable("Position5");
+
             TeamName= (String) savedInstanceState.getSerializable("TeamName");
             EnemyName= (String) savedInstanceState.getSerializable("TeamEnemy");
             TeamEnemy= (Integer) savedInstanceState.getSerializable("EnemyTeam");
@@ -466,41 +479,46 @@ public class Pick_Stage extends AppCompatActivity {
         }
 
 
-
+        final boolean[] lock = {false};
         Plan_state.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                PlaningState.putExtra("Hero1",what_hero[0]);
-                PlaningState.putExtra("Hero2",what_hero[1]);
-                PlaningState.putExtra("Hero3",what_hero[2]);
-                PlaningState.putExtra("Hero4",what_hero[3]);
-                PlaningState.putExtra("Hero5",what_hero[4]);
+                if(lock[0] ==false)
+                {
+                    lock[0] =true;
+                    PlaningState.putExtra("Hero1",what_hero[0]);
+                    PlaningState.putExtra("Hero2",what_hero[1]);
+                    PlaningState.putExtra("Hero3",what_hero[2]);
+                    PlaningState.putExtra("Hero4",what_hero[3]);
+                    PlaningState.putExtra("Hero5",what_hero[4]);
 
-                PlaningState.putExtra("CompHero1",comp_hero[0]);
-                PlaningState.putExtra("CompHero2",comp_hero[1]);
-                PlaningState.putExtra("CompHero3",comp_hero[2]);
-                PlaningState.putExtra("CompHero4",comp_hero[3]);
-                PlaningState.putExtra("CompHero5",comp_hero[4]);
+                    PlaningState.putExtra("CompHero1",comp_hero[0]);
+                    PlaningState.putExtra("CompHero2",comp_hero[1]);
+                    PlaningState.putExtra("CompHero3",comp_hero[2]);
+                    PlaningState.putExtra("CompHero4",comp_hero[3]);
+                    PlaningState.putExtra("CompHero5",comp_hero[4]);
 
-                PlaningState.putExtra("EnemyTeam",TeamEnemy);
-
-
-                PlaningState.putExtra("Position1",Pos1);
-                PlaningState.putExtra("Position2",Pos2);
-                PlaningState.putExtra("Position3",Pos3);
-                PlaningState.putExtra("Position4",Pos4);
-                PlaningState.putExtra("Position5",Pos5);
+                    PlaningState.putExtra("EnemyTeam",TeamEnemy);
 
 
-               // AllHeroes.clear();
-                HeroList.clear();
-                AllHeroes.clear();
-                PickerList.clear();
+                    PlaningState.putExtra("Position1",Pos1);
+                    PlaningState.putExtra("Position2",Pos2);
+                    PlaningState.putExtra("Position3",Pos3);
+                    PlaningState.putExtra("Position4",Pos4);
+                    PlaningState.putExtra("Position5",Pos5);
 
 
-                startActivity(PlaningState);
-                finish();
+                    // AllHeroes.clear();
+                    HeroList.clear();
+                    AllHeroes.clear();
+                    PickerList.clear();
+
+
+                    startActivity(PlaningState);
+                    //finish();
+                }
+
 
             }
         });
@@ -783,7 +801,16 @@ public class Pick_Stage extends AppCompatActivity {
         }
         else
         {
-            HelpText.setText("Перейдите к стадии планирования");
+            if(languageshare==2)
+            {
+                HelpText.setText("Go to the planning stage");
+            }
+            else
+            {
+                HelpText.setText("Перейдите к стадии планирования");
+            }
+
+
             youlocked=true;
             Plan_state.setVisibility(View.VISIBLE);
         }

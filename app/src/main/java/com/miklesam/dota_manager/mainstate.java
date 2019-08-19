@@ -73,6 +73,7 @@ import static com.miklesam.dota_manager.YourTeam.ExtraLaining;
 import static com.miklesam.dota_manager.YourTeam.ExtraLate;
 import static com.miklesam.dota_manager.YourTeam.Fans;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.InMajor;
 import static com.miklesam.dota_manager.YourTeam.Language;
 import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -86,6 +87,7 @@ import static com.miklesam.dota_manager.YourTeam.OpenTeam4;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam5;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam6;
 import static com.miklesam.dota_manager.YourTeam.OpenTeam7;
+import static com.miklesam.dota_manager.YourTeam.ShuffleMajor;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
 import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
@@ -139,6 +141,7 @@ public class mainstate extends AppCompatActivity {
 
     TextView FansNumber;
     ImageView backtomenu;
+    ImageView careta;
 
 
     int ExLainingint;
@@ -160,7 +163,7 @@ public class mainstate extends AppCompatActivity {
     boolean lock;
     int languageshare;
     int Minorornot;
-
+    int inmajorint;
 
     @Override
     public void onResume() {
@@ -199,7 +202,7 @@ public class mainstate extends AppCompatActivity {
         mSettings = getSharedPreferences(GoldBalance, Context.MODE_PRIVATE);
 
 
-
+        careta=findViewById(R.id.careta);
         LainingPoints=findViewById(R.id.LainingPoints);
         FarmingPoints=findViewById(R.id.FarmingPoints);
         FightingPoints=findViewById(R.id.FightingPoints);
@@ -228,6 +231,9 @@ public class mainstate extends AppCompatActivity {
         ToMainActivity = new Intent(this, MainActivity.class);
         final Intent ToPractice = new Intent(this, practiceactivity.class);
         final Intent ToMinor = new Intent(this, Minor.class);
+        final Intent ToMajor = new Intent(this, major_group.class);
+        final Intent ToShop = new Intent(this, Shop.class);
+        final Intent ToTI = new Intent(this, theinternational.class);
 
 
 
@@ -241,18 +247,9 @@ public class mainstate extends AppCompatActivity {
 
 
 
-        final int won;
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                won= 0;
-            } else {
-                won= extras.getInt("win");
-            }
-        } else {
-            won= (int) savedInstanceState.getSerializable("win");
+        if(mSettings.contains(InMajor)) {
+            inmajorint=Integer.parseInt(mSettings.getString(InMajor, "InMajor"));
         }
-
 
         if(mSettings.contains(XPstatic)) {
             XPint=Integer.parseInt(mSettings.getString(XPstatic, "0"));
@@ -319,77 +316,6 @@ public class mainstate extends AppCompatActivity {
         MonthText.setText(String.valueOf(Monthint));
         YearText.setText(String.valueOf(Yearint));
 
-
-        if(Monthint%2==0) {
-
-            if (Dayint < 10) {
-                gamemode = 2;
-            } else if (Dayint == 10) {
-                //Play_game.setText("Open");
-                Play_game.setImageResource(R.drawable.openquali);
-                gamemode = 1;
-            } else if ((Dayint > 10) && (Dayint < 15)) {
-                //Play_game.setText("Practice");
-                gamemode = 2;
-            } else if (Dayint == 15) {
-                if(QualiWinner==1)
-                {
-                    gamemode = 2;
-                }
-                else
-                {
-                    Play_game.setImageResource(R.drawable.openquali);
-                    gamemode = 1;
-                }
-
-
-
-            } else if ((Dayint > 15) && (Dayint < 20)) {
-                //Play_game.setText("Practice");
-                gamemode = 2;
-            } else if (Dayint == 20) {
-                if (QualiWinner == 1) {
-                    //Play_game.setText("Close");
-                    Play_game.setImageResource(R.drawable.closequali);
-                    gamemode = 3;
-                } else {
-                    //Play_game.setText("Practice");
-                    gamemode = 2;
-                }
-            } else if (Dayint > 20) {
-                //Play_game.setText("Practice");
-                gamemode = 2;
-            }
-        }
-        else
-        {
-            if (Dayint < 10)
-            {
-            gamemode = 2;
-            }
-            else if (Dayint == 10)
-            {
-
-                    gamemode=4;
-
-
-
-                //bttnMinor
-            }
-            else
-            {
-                gamemode = 2;
-            }
-
-        }
-
-
-
-
-
-
-
-
         if(mSettings.contains(StaticPosition1)) {
             Pos1=Integer.parseInt(mSettings.getString(StaticPosition1, "Position1"));
         }
@@ -411,33 +337,33 @@ public class mainstate extends AppCompatActivity {
         }
 
 
-        if (Pos1!=177)
+        if (Pos1!=277)
         {
             team[0]=true;
         }
-        if (Pos2!=177)
+        if (Pos2!=277)
         {
             team[1]=true;
         }
-        if (Pos3!=177)
+        if (Pos3!=277)
         {
             team[2]=true;
         }
-        if (Pos4!=177)
+        if (Pos4!=277)
         {
             team[3]=true;
         }
-        if (Pos5!=177)
+        if (Pos5!=277)
         {
             team[4]=true;
         }
 
         for(int i=0; i<5;i++)
         {
-         if(team[i]==true)
-         {
-             Playercnt=Playercnt+1;
-         }
+            if(team[i]==true)
+            {
+                Playercnt=Playercnt+1;
+            }
         }
         if(Playercnt==0)
         {
@@ -463,6 +389,366 @@ public class mainstate extends AppCompatActivity {
         {
             view.setBackgroundResource(R.drawable.five_players);
         }
+
+
+
+
+
+
+        if(Monthint%2==0) {
+            if(Monthint==10)
+            {
+                if (Dayint < 12)
+                {
+                    gamemode = 2;
+                    {
+                        InfoBlock.setText("International qual after " + String.valueOf(12 - Dayint));
+                    }
+                }
+                else if (Dayint == 12)
+                {
+                    Play_game.setImageResource(R.drawable.tournament_bttn);
+                    gamemode=3;
+                    InfoBlock.setText("International qual today");
+
+                }
+                else if(Dayint>12)
+                {
+                    if(inmajorint==1) {
+                        InfoBlock.setText("International in next month ");
+                    }
+                    else
+                    {
+                        InfoBlock.setText("Open Qaul in next month ");
+                    }
+
+                    gamemode = 2;
+                }
+
+
+
+
+            }
+            else
+            {
+                if (Dayint < 3) {
+                    InfoBlock.setText("First Open Major Qual after "+ String.valueOf(3-Dayint) );
+                    gamemode = 2;
+                } else if (Dayint == 3) {
+                    InfoBlock.setText("First Open Major Qual today");
+                    Play_game.setImageResource(R.drawable.openquali);
+                    gamemode = 1;
+                } else if ((Dayint > 3) && (Dayint < 7)) {
+                    //Play_game.setText("Practice");
+                    gamemode = 2;
+                    if (QualiWinner==1)
+                    {
+                        InfoBlock.setText("Closed Major Qual after "+ String.valueOf(10-Dayint) );
+                    }
+                    else
+                    {
+                        InfoBlock.setText("Second Open Major Qual today "+ String.valueOf(7-Dayint) );
+                    }
+
+
+                } else if (Dayint == 7) {
+                    if(QualiWinner==1)
+                    {
+                        gamemode = 2;
+                        InfoBlock.setText("Closed Major Qual after "+ String.valueOf(10-Dayint) );
+                    }
+                    else
+                    {
+                        Play_game.setImageResource(R.drawable.openquali);
+                        gamemode = 1;
+                        InfoBlock.setText("Second Open Major Qual today");
+                    }
+
+                }
+                else if ((Dayint > 7) && (Dayint < 10)) {
+                    //Play_game.setText("Practice");
+                    if(QualiWinner==1) {
+                        InfoBlock.setText("Closed Major Qual after "+ String.valueOf(10-Dayint) );
+                    }
+                    else
+                    {
+                        InfoBlock.setText("First Open Minor Qual after "+ String.valueOf(18-Dayint) );
+                    }
+
+
+                    gamemode = 2;
+                }
+
+                else if (Dayint == 10) {
+                    if (QualiWinner == 1) {
+                        //Play_game.setText("Close");
+                        Play_game.setImageResource(R.drawable.closequali);
+                        gamemode = 3;
+                        InfoBlock.setText("Closed Major Qual today ");
+                    } else {
+                        InfoBlock.setText("First Open Minor Qual after "+ String.valueOf(18-Dayint) );
+                        gamemode = 2;
+                    }
+                } else if ((Dayint > 10) && (Dayint < 18)) {
+                    //Play_game.setText("Practice");
+                    if(inmajorint==1) {
+                        InfoBlock.setText("Major in next month ");
+                    }
+                    else
+                    {
+                        InfoBlock.setText("First Open Minor Qual after "+ String.valueOf(18-Dayint) );
+                    }
+
+
+                    gamemode = 2;
+                }
+                else if(Dayint==18)
+                {
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major in next month ");
+                        gamemode = 2;
+                    }
+                    else
+                    {
+                        InfoBlock.setText("First Open Minor Qual today");
+                        Play_game.setImageResource(R.drawable.openquali);
+                        gamemode = 1;
+                    }
+                }
+                else if ((Dayint > 18) && (Dayint < 22)) {
+                    if(inmajorint==1) {
+                        InfoBlock.setText("Major in next month ");
+                    }
+                    else
+                    {
+                        if(QualiWinner==1)
+                        {
+                            InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(25-Dayint));
+                        }
+                        else
+                        {
+                            InfoBlock.setText("Second Open Minor Qual after "+ String.valueOf(22-Dayint) );
+                        }
+
+
+                    }
+
+                    gamemode = 2;
+                }
+                else if(Dayint==22)
+                {
+                    if(inmajorint==1)
+                    {
+                        gamemode = 2;
+                        InfoBlock.setText("Major in next month ");
+                    }
+                    else
+                    {
+                        if(QualiWinner==1)
+                        {
+                            gamemode = 2;
+                            InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(25-Dayint));
+                        }
+                        else
+                        {
+                            Play_game.setImageResource(R.drawable.openquali);
+                            gamemode = 1;
+                            InfoBlock.setText("Second Open Minor Qual today ");
+                        }
+                    }
+                }
+                else if ((Dayint > 22) && (Dayint < 25)) {
+                    //Play_game.setText("Practice");
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major in next month ");
+                    }
+                    else
+                    {
+                        if(QualiWinner==1) {
+                            InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(25-Dayint) );
+                        }
+                        else
+                        {
+                            InfoBlock.setText("Some cup in next month");
+                        }
+                    }
+
+
+
+
+                    gamemode = 2;
+                }
+
+
+                else if (Dayint == 25) {
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major in next month ");
+                        gamemode = 2;
+                    }
+                    else
+                    {
+                        if (QualiWinner == 1) {
+                            InfoBlock.setText("Closed Minor Qual today ");
+                            Play_game.setImageResource(R.drawable.closequali);
+                            gamemode = 3;
+                        } else {
+                            InfoBlock.setText("Some cup in next month");
+                            gamemode = 2;
+                        }
+                    }
+
+                }
+                else if ((Dayint > 25)) {
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major in next month ");
+                    }
+                    else
+                    {
+                        if(Minorornot==1)
+                        {
+                            InfoBlock.setText("Minor in next month ");
+                        }
+                        else{
+
+                            InfoBlock.setText("Some cup in next month ");
+                        }
+                    }
+                    gamemode = 2;
+                }
+            }
+
+
+
+
+
+
+
+
+        }
+        else
+        {
+            if(Monthint==11)
+            {
+                if (Dayint < 12)
+                {
+                    gamemode = 2;
+                    {
+                        if(inmajorint==1) {
+                            InfoBlock.setText("International  after " + String.valueOf(12 - Dayint));
+                        }
+                        else
+                        {
+                            InfoBlock.setText("Open Qaul in next month ");
+                        }
+
+
+                    }
+                }
+                else if (Dayint == 12)
+                {
+                    if(inmajorint==1) {
+                        Play_game.setImageResource(R.drawable.tournament_bttn);
+                        gamemode=7;
+                        InfoBlock.setText("International today");
+                    }
+                    else
+                    {
+                        InfoBlock.setText("Open Qaul in next month ");
+                        gamemode = 2;
+                    }
+
+
+
+                }
+                else if(Dayint>12)
+                {
+                    InfoBlock.setText("Open Qaul in next month ");
+                    gamemode = 2;
+                }
+            }
+            else
+            {
+                if (Dayint < 5)
+                {
+                    gamemode = 2;
+                    if(Minorornot==1)
+                    {
+                        InfoBlock.setText("Minor after "+ String.valueOf(5-Dayint));
+                    }
+                    else{
+
+                        InfoBlock.setText("Some Cup after "+ String.valueOf(5-Dayint));
+                    }
+
+                }
+                else if (Dayint == 5)
+                {
+                    Play_game.setImageResource(R.drawable.tournament_bttn);
+                    gamemode=4;
+                    view.setBackgroundResource(R.drawable.lanfinals);
+                    if(Minorornot==1)
+                    {
+                        InfoBlock.setText("Minor today ");
+                    }
+                    else{
+                        InfoBlock.setText("Some Cup today");
+                    }
+
+
+
+                }
+                else if(Dayint<28)
+                {
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major after "+ String.valueOf(28-Dayint));
+                    }
+                    else
+                    {
+                        InfoBlock.setText("Open Qaul in next month ");
+                    }
+                    gamemode = 2;
+
+                }
+                else if(Dayint==28)
+                {
+                    if(inmajorint==1)
+                    {
+                        InfoBlock.setText("Major today ");
+                        gamemode = 5;
+                        Play_game.setImageResource(R.drawable.tournament_bttn);
+                        view.setBackgroundResource(R.drawable.lanfinals);
+                    }
+                    else
+                    {
+                        InfoBlock.setText("Open Qaul in next month ");
+                        gamemode = 2;
+                    }
+
+
+                }
+                else
+                {
+                    InfoBlock.setText("Open Qaul in next month ");
+                    gamemode = 2;
+                }
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -495,108 +781,6 @@ public class mainstate extends AppCompatActivity {
 
         Goldbalance.setText(Gold);
 
-        if(Monthint%2==0)
-        {
-
-
-
-        if (Dayint<10)
-        {
-            InfoBlock.setText("First Open Minor Qual after "+ String.valueOf(10-Dayint) );
-        }
-        else if (Dayint==10)
-        {
-            InfoBlock.setText("First Open Minor Qual today");
-        }
-        else if((Dayint>10)&&(Dayint<15))
-        {
-            if (QualiWinner==1)
-            {
-                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint) );
-            }
-            else
-            {
-                InfoBlock.setText("Second Open Minor Qual today "+ String.valueOf(15-Dayint) );
-            }
-        }
-        else if(Dayint==15)
-        {
-            if (QualiWinner==1)
-            {
-                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint));
-            }
-            else
-            {
-                InfoBlock.setText("Second Open Minor Qual today ");
-            }
-        }
-        else if((Dayint>15)&&(Dayint<20))
-        {
-            if (QualiWinner==1)
-            {
-                InfoBlock.setText("Closed Minor Qual after "+ String.valueOf(20-Dayint));
-            }
-            else
-            {
-                InfoBlock.setText("Some cup in next month ");
-            }
-
-        }
-        else if (Dayint==20)
-        {
-
-            if (QualiWinner==1)
-            {
-                InfoBlock.setText("Closed Minor Qual today ");
-            }
-            else
-            {
-                InfoBlock.setText("Some cup in next month ");
-            }
-
-        }
-        else if(Dayint>20)
-        {
-            if(Minorornot==1)
-            {
-                InfoBlock.setText("Minor in next month ");
-            }
-            else{
-
-                InfoBlock.setText("Some cup in next month ");
-            }
-        }
-
-        }
-        else
-        {
-            if(Dayint<10)
-            {
-                if(Minorornot==1)
-            {
-                InfoBlock.setText("Minor after "+ String.valueOf(10-Dayint));
-            }
-            else{
-
-                    InfoBlock.setText("Some Cup after "+ String.valueOf(10-Dayint));
-            }
-
-            }
-            else if (Dayint==10)
-            {
-                if(Minorornot==1)
-                {
-                    InfoBlock.setText("Minor today ");
-                }
-                else{
-                    InfoBlock.setText("Some Cup today");
-                }
-            }
-            else if(Dayint>10)
-            {
-                InfoBlock.setText("Open Qaul in next month ");
-            }
-        }
 
 
 
@@ -617,6 +801,8 @@ public class mainstate extends AppCompatActivity {
 
                 if(gamemode==2)
                 {
+                    editor.putString(Mode, "0");
+                    editor.apply();
                     startActivity(ToPractice);
 
                 } else if (gamemode==1)
@@ -688,7 +874,18 @@ public class mainstate extends AppCompatActivity {
                     editor.apply();
                     startActivity(ToMinor);
                 }
-
+                else if(gamemode==5)
+                {
+                    editor.putString(Mode,"5");
+                    editor.apply();
+                    startActivity(ToMajor);
+                }
+                else if(gamemode==7)
+                {
+                    editor.putString(Mode,"7");
+                    editor.apply();
+                    startActivity(ToTI);
+                }
 
                 }
                 else
@@ -731,11 +928,31 @@ public class mainstate extends AppCompatActivity {
             }
         });
 
+        careta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(ToShop);
+                //editor.putString(Month,"9");
+                //editor.putString(MinorQual,"1");
+
+                //editor.apply();
+                //startActivity(ToMinor);
+
+
+            }
+        });
+
+
+
         backtomenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 startActivity(ToMainActivity);
+                //editor.putString(ShuffleMajor,"0");
+
+
 
 
 

@@ -8,15 +8,48 @@
     android:background="#cbe1e9"
     tools:context=".FightState">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/tomainstance"
-        app:srcCompat="@drawable/next_bttn_canv_2"
-        android:visibility="invisible"
-        />
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/choose1"
+            app:srcCompat="@drawable/attacktop"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/choose2"
+            app:srcCompat="@drawable/attackmid"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/choose3"
+            app:srcCompat="@drawable/attackbot"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tomainstance"
+            app:srcCompat="@drawable/next_bttn_canv_2"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+
+
 
 
     <LinearLayout
@@ -225,7 +258,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentRight="true">
+        android:layout_centerHorizontal="true"
+        >
+        <ImageView
+            android:layout_width="45sp"
+            android:layout_height="30sp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/timeday"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#45283c"
+            android:id="@+id/daytimetext"
+            android:text="0:00"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -476,11 +524,11 @@
         android:layout_height="wrap_content"
         android:textColor="#45283c"
         android:layout_marginRight="10sp"
-        android:text="Laining"/>
+        android:id="@+id/stagenumber"/>
 
     <ImageView
-        android:layout_width="49sp"
-        android:layout_height="53sp"
+        android:layout_width="100sp"
+        android:layout_height="48sp"
         android:layout_marginLeft="60sp"
         android:layout_marginRight="10sp"
         android:id="@+id/monst"/>
@@ -494,67 +542,10 @@
 </LinearLayout>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#45283c"
-        android:layout_marginRight="10sp"
-        android:text="Middlegame"/>
-
-    <ImageView
-        android:layout_width="100sp"
-        android:layout_height="48sp"
-        android:layout_marginRight="10sp"
-        android:id="@+id/fight"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GoldKeff"
-        android:visibility="invisible"
-        android:id="@+id/goldkeff"/>
-
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#45283c"
-        android:layout_marginRight="10sp"
-        android:text="Lategame"/>
-
-    <ImageView
-
-        android:layout_marginLeft="45sp"
-        android:layout_width="49sp"
-        android:layout_height="53sp"
-        android:layout_marginRight="10sp"
-        android:id="@+id/monstlate"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LatetKeff"
-        android:layout_marginLeft="20sp"
-        android:layout_gravity="right"
-        android:visibility="invisible"
-        android:id="@+id/latekeff"/>
 
 
 
-</LinearLayout>
+
 
 
 
@@ -563,6 +554,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LoseOrWin"
+            android:textColor="#45283c"
             android:layout_gravity="center"
             android:textSize="20sp"
             android:visibility="invisible"

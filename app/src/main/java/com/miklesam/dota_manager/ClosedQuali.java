@@ -42,6 +42,7 @@ import static com.miklesam.dota_manager.YourTeam.Closedlose;
 import static com.miklesam.dota_manager.YourTeam.Closedwin;
 import static com.miklesam.dota_manager.YourTeam.Day;
 import static com.miklesam.dota_manager.YourTeam.GoldBalance;
+import static com.miklesam.dota_manager.YourTeam.InMajor;
 import static com.miklesam.dota_manager.YourTeam.Language;
 import static com.miklesam.dota_manager.YourTeam.MinorQual;
 import static com.miklesam.dota_manager.YourTeam.Mode;
@@ -67,6 +68,7 @@ public class ClosedQuali extends AppCompatActivity {
     static ArrayList<Teams> ClosedTeamstour = new ArrayList<Teams>();
 
     TextView Teams[]= new TextView[8];
+    ImageView TeamsLogo[] = new ImageView[8];
     TextView Seriesnteam[]= new TextView[7];
     TextView Seriesnyouteam[]= new TextView[7];
     ImageView Seriesnteamlogo[]=new ImageView[7];
@@ -76,7 +78,7 @@ public class ClosedQuali extends AppCompatActivity {
 
     TextView SeriesScore[]=new TextView[7];
     TextView SeriesScoreyou[]=new TextView[7];
-    ImageView TeamsLogo[] = new ImageView[8];
+
 
 
     TextView TeamWin[]= new TextView[8];
@@ -123,7 +125,7 @@ public class ClosedQuali extends AppCompatActivity {
 
     int CloseTeam[]= new int[7];
     int languageshare;
-
+    int Serieswin[]=new int[7];
 
     ArrayList<ModelTeam> teamstable = new ArrayList<>();
 
@@ -221,7 +223,7 @@ public class ClosedQuali extends AppCompatActivity {
 
         Play_btn=findViewById(R.id.Play_btn);
 
-        int Serieswin[]=new int[7];
+
         TeamWin[0]=findViewById(R.id.ScoreWin1);
         TeamWin[1]=findViewById(R.id.ScoreWin2);
         TeamWin[2]=findViewById(R.id.ScoreWin3);
@@ -503,7 +505,16 @@ public class ClosedQuali extends AppCompatActivity {
             else{
                 AfterGroupStage.setText("Вы заняли " + groupstateposition + " Место"+" и прошли на прямую");
             }
-            editor.putString(MinorQual,"1");
+            if((Dayint==10)||(Dayint==12))
+            {
+                editor.putString(InMajor, "1");
+            }
+            else
+            {
+                editor.putString(MinorQual,"1");
+            }
+
+
             editor.apply();
 
 
@@ -592,11 +603,7 @@ public class ClosedQuali extends AppCompatActivity {
                 {
                     if(Seriescnt<7)
                     {
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
+
                         ToPickStage.putExtra("TeamName",YourTeam);
 
                         ToPickStage.putExtra("TeamEnemy",ClosedTeamstour.get(CloseTeam[6-Seriescnt]).teamname);

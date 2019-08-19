@@ -14,78 +14,16 @@ import java.util.ArrayList;
 
 import static com.miklesam.dota_manager.TeamsInit.AllTeams;
 import static com.miklesam.dota_manager.TeamsInit.AllTeamsInit;
-import static com.miklesam.dota_manager.YourTeam.APP_PREFERENCES_NAME;
-import static com.miklesam.dota_manager.YourTeam.CloseLose1;
-import static com.miklesam.dota_manager.YourTeam.CloseLose2;
-import static com.miklesam.dota_manager.YourTeam.CloseLose3;
-import static com.miklesam.dota_manager.YourTeam.CloseLose4;
-import static com.miklesam.dota_manager.YourTeam.CloseLose5;
-import static com.miklesam.dota_manager.YourTeam.CloseLose6;
-import static com.miklesam.dota_manager.YourTeam.CloseLose7;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff1;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff10;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff11;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff12;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff2;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff3;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff4;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff5;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff6;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff7;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff8;
-import static com.miklesam.dota_manager.YourTeam.ClosePlayoff9;
-import static com.miklesam.dota_manager.YourTeam.CloseScore1;
-import static com.miklesam.dota_manager.YourTeam.CloseScore10;
-import static com.miklesam.dota_manager.YourTeam.CloseScore11;
-import static com.miklesam.dota_manager.YourTeam.CloseScore12;
-import static com.miklesam.dota_manager.YourTeam.CloseScore2;
-import static com.miklesam.dota_manager.YourTeam.CloseScore3;
-import static com.miklesam.dota_manager.YourTeam.CloseScore4;
-import static com.miklesam.dota_manager.YourTeam.CloseScore5;
-import static com.miklesam.dota_manager.YourTeam.CloseScore6;
-import static com.miklesam.dota_manager.YourTeam.CloseScore7;
-import static com.miklesam.dota_manager.YourTeam.CloseScore8;
-import static com.miklesam.dota_manager.YourTeam.CloseScore9;
-import static com.miklesam.dota_manager.YourTeam.CloseShaffle;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam1;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam2;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam3;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam4;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam5;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam6;
-import static com.miklesam.dota_manager.YourTeam.CloseTeam7;
-import static com.miklesam.dota_manager.YourTeam.CloseWin1;
-import static com.miklesam.dota_manager.YourTeam.CloseWin2;
-import static com.miklesam.dota_manager.YourTeam.CloseWin3;
-import static com.miklesam.dota_manager.YourTeam.CloseWin4;
-import static com.miklesam.dota_manager.YourTeam.CloseWin5;
-import static com.miklesam.dota_manager.YourTeam.CloseWin6;
-import static com.miklesam.dota_manager.YourTeam.CloseWin7;
-import static com.miklesam.dota_manager.YourTeam.ClosedPlayofStage;
-import static com.miklesam.dota_manager.YourTeam.ClosedSeries;
-import static com.miklesam.dota_manager.YourTeam.Closedlose;
-import static com.miklesam.dota_manager.YourTeam.Closedwin;
-import static com.miklesam.dota_manager.YourTeam.Day;
-import static com.miklesam.dota_manager.YourTeam.GoldBalance;
-import static com.miklesam.dota_manager.YourTeam.MinorQual;
-import static com.miklesam.dota_manager.YourTeam.Mode;
-import static com.miklesam.dota_manager.YourTeam.NotMinor;
-import static com.miklesam.dota_manager.YourTeam.OpenQualiWinner;
-import static com.miklesam.dota_manager.YourTeam.Series1Win;
-import static com.miklesam.dota_manager.YourTeam.Series2Win;
-import static com.miklesam.dota_manager.YourTeam.Series3Win;
-import static com.miklesam.dota_manager.YourTeam.Series4Win;
-import static com.miklesam.dota_manager.YourTeam.Series5Win;
-import static com.miklesam.dota_manager.YourTeam.Series6Win;
-import static com.miklesam.dota_manager.YourTeam.Series7Win;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition1;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition2;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition3;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition4;
-import static com.miklesam.dota_manager.YourTeam.StaticPosition5;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff2;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff3;
-import static com.miklesam.dota_manager.YourTeam.TeamPlayoff4;
+import static com.miklesam.dota_manager.YourTeam.*;
+import static com.miklesam.dota_manager.YourTeam.MinorLose6;
+import static com.miklesam.dota_manager.YourTeam.MinorLose7;
+import static com.miklesam.dota_manager.YourTeam.MinorLose8;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff1;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff2;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff3;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff4;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff5;
+import static com.miklesam.dota_manager.YourTeam.MinorPlayoff6;
 
 
 public class ClosedPlayoff extends AppCompatActivity {
@@ -400,10 +338,9 @@ public class ClosedPlayoff extends AppCompatActivity {
                 Teamsplayoff[9].setText(YourTeam);
                 Teamsplayofflogo[9].setImageResource(R.drawable.teamlogo);
                 editor.putString(ClosedPlayofStage, "4");
-                editor.putString(ClosePlayoff9, "0");
-
-                editor.putString(ClosePlayoff11, "1");
+                editor.putString(ClosePlayoff10, "0");
                 editor.putString(ClosePlayoff9, "2");
+                editor.putString(ClosePlayoff11, "1");
                 editor.putString(CloseScore7, "2");
                 editor.putString(CloseScore8, "1");
                 Score[6]=2;
@@ -413,17 +350,21 @@ public class ClosedPlayoff extends AppCompatActivity {
             }
             else if (Score[5]==2)
             {
-                Teamsplayoff[9].setText(AllPlayoffTeams.get(enemyteam[3]).teamname);
-                Teamsplayofflogo[9].setImageResource(AllPlayoffTeams.get(enemyteam[3]).logo);
+                Teamsplayoff[9].setText(AllPlayoffTeams.get(enemyteam[2]).teamname);
+                Teamsplayofflogo[9].setImageResource(AllPlayoffTeams.get(enemyteam[2]).logo);
+                Teamsplayoff[8].setText(AllPlayoffTeams.get(enemyteam[1]).teamname);
+                Teamsplayofflogo[8].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
                 editor.putString(ClosedPlayofStage, "9");
-                editor.putString(ClosePlayoff9, "3");
-
-                editor.putString(ClosePlayoff11, "1");
                 editor.putString(ClosePlayoff9, "2");
+                editor.putString(ClosePlayoff10, "3");
+                playoffplay.setImageResource(R.drawable.leave_bttn);
+                editor.putString(ClosePlayoff11, "1");
+
                 editor.putString(CloseScore7, "2");
                 editor.putString(CloseScore8, "1");
                 Score[6]=2;
                 Score[7]=1;
+
             }
             editor.apply();
         }
@@ -497,6 +438,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                     Teamsplayofflogo[11].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
                     editor.putString(ClosedPlayofStage, "9");
                     editor.putString(ClosePlayoff12, "2");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
                 }
             }
             else
@@ -508,6 +450,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                     Teamsplayofflogo[11].setImageResource(AllPlayoffTeams.get(enemyteam[1]).logo);
                     editor.putString(ClosedPlayofStage, "9");
                     editor.putString(ClosePlayoff12, "2");
+                    playoffplay.setImageResource(R.drawable.leave_bttn);
 
                 }
                 else if (Score[9]==2)
@@ -686,7 +629,7 @@ public class ClosedPlayoff extends AppCompatActivity {
 
 
 
-        if(ClosedPlayofStageint>5)
+        if((ClosedPlayofStageint>5)&&(ClosedPlayofStageint!=9))
         {
 
             Scoreplayoff[10].setText(String.valueOf(Score[10]));
@@ -812,7 +755,48 @@ public class ClosedPlayoff extends AppCompatActivity {
 
 
                     editor.putString(NotMinor,"0");
+                    editor.putString(OpenTeam1, "77");
+                    editor.putString(OpenTeam2, "77");
+                    editor.putString(OpenTeam3, "77");
+                    editor.putString(OpenTeam4, "77");
+                    editor.putString(OpenTeam5, "77");
+                    editor.putString(OpenTeam6, "77");
+                    editor.putString(OpenTeam7, "77");
+                    editor.putString(MinorScore1, "0");
+                    editor.putString(MinorScore2, "0");
+                    editor.putString(MinorScore3, "0");
+                    editor.putString(MinorScore4, "0");
+                    editor.putString(MinorScore5, "0");
+                    editor.putString(MinorScore6, "0");
+                    editor.putString(MinorScore7, "0");
+                    editor.putString(MinorScore8, "0");
 
+                    editor.putString(MinorWin1, "0");
+                    editor.putString(MinorWin2, "0");
+                    editor.putString(MinorWin3, "0");
+                    editor.putString(MinorWin4, "0");
+                    editor.putString(MinorWin5, "0");
+                    editor.putString(MinorWin6, "0");
+                    editor.putString(MinorWin7, "0");
+                    editor.putString(MinorWin8, "0");
+
+                    editor.putString(MinorLose1, "0");
+                    editor.putString(MinorLose2, "0");
+                    editor.putString(MinorLose3, "0");
+                    editor.putString(MinorLose4, "0");
+                    editor.putString(MinorLose5, "0");
+                    editor.putString(MinorLose6, "0");
+                    editor.putString(MinorLose7, "0");
+                    editor.putString(MinorLose8, "0");
+
+
+                    editor.putString(MinorPlayoff1, "0");
+                    editor.putString(MinorPlayoff2, "0");
+                    editor.putString(MinorPlayoff3, "0");
+                    editor.putString(MinorPlayoff4, "0");
+                    editor.putString(MinorPlayoff5, "0");
+                    editor.putString(MinorPlayoff6, "0");
+                    editor.putString(MinorStage, "1");
 
                     editor.apply();
                     startActivity(Tomainstate);
@@ -823,11 +807,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                     {
                         ToPickStage.putExtra("EnemyTeam",AllPlayoffTeams.get(enemyteam[0]).seq);
                         ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[0]).teamname);
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
+
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
@@ -835,11 +815,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                     {
                         ToPickStage.putExtra("EnemyTeam",AllPlayoffTeams.get(enemyteam[Teamsplayoffs[5]-1]).seq);
                         ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[Teamsplayoffs[5]-1]).teamname);
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
+
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
@@ -847,11 +823,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                     {
                         ToPickStage.putExtra("EnemyTeam",AllPlayoffTeams.get(enemyteam[Teamsplayoffs[7]-1]).seq);
                         ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[Teamsplayoffs[7]-1]).teamname);
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
+
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
@@ -879,11 +851,6 @@ public class ClosedPlayoff extends AppCompatActivity {
                            ToPickStage.putExtra("EnemyTeam",AllPlayoffTeams.get(enemyteam[2-1]).seq);
                            ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[2-1]).teamname);
 
-                           ToPickStage.putExtra("Position1",Pos1);
-                           ToPickStage.putExtra("Position2",Pos2);
-                           ToPickStage.putExtra("Position3",Pos3);
-                           ToPickStage.putExtra("Position4",Pos4);
-                           ToPickStage.putExtra("Position5",Pos5);
                            editor.putString(ClosedPlayofStage, "6");
                            ToPickStage.putExtra("TeamName",YourTeam);
                            startActivity(ToPickStage);
@@ -908,11 +875,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         }
 
 
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
+
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
@@ -932,11 +895,6 @@ public class ClosedPlayoff extends AppCompatActivity {
                             ToPickStage.putExtra("TeamEnemy",AllPlayoffTeams.get(enemyteam[Teamsplayoffs[10]-1]).teamname);
                         }
 
-                        ToPickStage.putExtra("Position1",Pos1);
-                        ToPickStage.putExtra("Position2",Pos2);
-                        ToPickStage.putExtra("Position3",Pos3);
-                        ToPickStage.putExtra("Position4",Pos4);
-                        ToPickStage.putExtra("Position5",Pos5);
                         ToPickStage.putExtra("TeamName",YourTeam);
                         startActivity(ToPickStage);
                     }
@@ -1017,20 +975,72 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series5Win, "0");
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
+                        editor.putString(OpenTeam1, "77");
+                        editor.putString(OpenTeam2, "77");
+                        editor.putString(OpenTeam3, "77");
+                        editor.putString(OpenTeam4, "77");
+                        editor.putString(OpenTeam5, "77");
+                        editor.putString(OpenTeam6, "77");
+                        editor.putString(OpenTeam7, "77");
+                        editor.putString(MinorScore1, "0");
+                        editor.putString(MinorScore2, "0");
+                        editor.putString(MinorScore3, "0");
+                        editor.putString(MinorScore4, "0");
+                        editor.putString(MinorScore5, "0");
+                        editor.putString(MinorScore6, "0");
+                        editor.putString(MinorScore7, "0");
+                        editor.putString(MinorScore8, "0");
 
+                        editor.putString(MinorWin1, "0");
+                        editor.putString(MinorWin2, "0");
+                        editor.putString(MinorWin3, "0");
+                        editor.putString(MinorWin4, "0");
+                        editor.putString(MinorWin5, "0");
+                        editor.putString(MinorWin6, "0");
+                        editor.putString(MinorWin7, "0");
+                        editor.putString(MinorWin8, "0");
+
+                        editor.putString(MinorLose1, "0");
+                        editor.putString(MinorLose2, "0");
+                        editor.putString(MinorLose3, "0");
+                        editor.putString(MinorLose4, "0");
+                        editor.putString(MinorLose5, "0");
+                        editor.putString(MinorLose6, "0");
+                        editor.putString(MinorLose7, "0");
+                        editor.putString(MinorLose8, "0");
+
+
+                        editor.putString(MinorPlayoff1, "0");
+                        editor.putString(MinorPlayoff2, "0");
+                        editor.putString(MinorPlayoff3, "0");
+                        editor.putString(MinorPlayoff4, "0");
+                        editor.putString(MinorPlayoff5, "0");
+                        editor.putString(MinorPlayoff6, "0");
+                        editor.putString(MinorStage, "1");
                         if (notminor==0)
                         {
                             editor.putString(Day, String.valueOf(Dayint+5));
-                            if(Minorornot==0)
+                            if(Dayint==10)
+                            {
+                                editor.putString(InMajor, "1");
+                            }
+                            else
                             {
                                 editor.putString(MinorQual,"1");
                             }
-                            else{
-                                editor.putString(MinorQual,"0");
-                            }
+
                         }
                         else
                         {
+                            if(Minorornot==0)
+                            {
+
+                            }
+                            else{
+                                editor.putString(InMajor, "1");
+                                editor.putString(MinorQual,"0");
+                            }
+
                             editor.putString(Day, String.valueOf(Dayint+20));
                         }
 
@@ -1118,7 +1128,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         editor.putString(Series6Win, "0");
                         editor.putString(Series7Win, "0");
                         editor.putString(MinorQual,"0");
-
+                        editor.putString(MinorStage, "1");
 
                         if (notminor==0)
                         {
@@ -1131,6 +1141,47 @@ public class ClosedPlayoff extends AppCompatActivity {
 
 
                         editor.putString(NotMinor,"0");
+                        editor.putString(OpenTeam1, "77");
+                        editor.putString(OpenTeam2, "77");
+                        editor.putString(OpenTeam3, "77");
+                        editor.putString(OpenTeam4, "77");
+                        editor.putString(OpenTeam5, "77");
+                        editor.putString(OpenTeam6, "77");
+                        editor.putString(OpenTeam7, "77");
+                        editor.putString(MinorScore1, "0");
+                        editor.putString(MinorScore2, "0");
+                        editor.putString(MinorScore3, "0");
+                        editor.putString(MinorScore4, "0");
+                        editor.putString(MinorScore5, "0");
+                        editor.putString(MinorScore6, "0");
+                        editor.putString(MinorScore7, "0");
+                        editor.putString(MinorScore8, "0");
+
+                        editor.putString(MinorWin1, "0");
+                        editor.putString(MinorWin2, "0");
+                        editor.putString(MinorWin3, "0");
+                        editor.putString(MinorWin4, "0");
+                        editor.putString(MinorWin5, "0");
+                        editor.putString(MinorWin6, "0");
+                        editor.putString(MinorWin7, "0");
+                        editor.putString(MinorWin8, "0");
+
+                        editor.putString(MinorLose1, "0");
+                        editor.putString(MinorLose2, "0");
+                        editor.putString(MinorLose3, "0");
+                        editor.putString(MinorLose4, "0");
+                        editor.putString(MinorLose5, "0");
+                        editor.putString(MinorLose6, "0");
+                        editor.putString(MinorLose7, "0");
+                        editor.putString(MinorLose8, "0");
+
+
+                        editor.putString(MinorPlayoff1, "0");
+                        editor.putString(MinorPlayoff2, "0");
+                        editor.putString(MinorPlayoff3, "0");
+                        editor.putString(MinorPlayoff4, "0");
+                        editor.putString(MinorPlayoff5, "0");
+                        editor.putString(MinorPlayoff6, "0");
 
                         editor.apply();
                         startActivity(Tomainstate);

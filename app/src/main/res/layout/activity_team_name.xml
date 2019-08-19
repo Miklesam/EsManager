@@ -21,11 +21,19 @@
             android:id="@+id/yourName"
             android:textColor="#45283c"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#45283c"
-            android:id="@+id/TeamName"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#45283c"
+        android:id="@+id/TeamName"
+        />
+</LinearLayout>
+
 
     </LinearLayout>
     <ImageView

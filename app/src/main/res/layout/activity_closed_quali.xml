@@ -52,6 +52,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#DDF4DD">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo1"
                     android:layout_width="40sp"
@@ -100,6 +106,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#E5F4C6">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo2"
                     android:layout_width="40sp"
@@ -148,6 +160,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#E5F4C6">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo3"
                     android:layout_width="40sp"
@@ -196,6 +214,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#E5F4C6">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo4"
                     android:layout_width="40sp"
@@ -243,6 +267,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#E5F4C6">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo5"
                     android:layout_width="40sp"
@@ -291,6 +321,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FBDFDF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo6"
                     android:layout_width="40sp"
@@ -339,6 +375,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FBDFDF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo7"
                     android:layout_width="40sp"
@@ -387,6 +429,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#FBDFDF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8."
+                    android:textColor="#45283c"
+                    />
                 <ImageView
                     android:id="@+id/Teamlogo8"
                     android:layout_width="40sp"

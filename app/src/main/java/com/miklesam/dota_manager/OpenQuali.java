@@ -436,7 +436,7 @@ public class OpenQuali extends AppCompatActivity {
 
                if(losequal==true)
                {
-                   editor.putString(Day, String.valueOf(day+4));
+                   editor.putString(Day, String.valueOf(day+3));
                    editor.putString(OpenScore1, "0");
                    editor.putString(OpenScore2, "0");
                    editor.putString(OpenScore3, "0");
@@ -476,7 +476,7 @@ public class OpenQuali extends AppCompatActivity {
                {
                    if (oqf==1)
                    {
-                       editor.putString(Day, String.valueOf(day+4));
+                       editor.putString(Day, String.valueOf(day+3));
                        editor.putString(OpenScore1, "0");
                        editor.putString(OpenScore2, "0");
                        editor.putString(OpenScore3, "0");
@@ -519,11 +519,7 @@ public class OpenQuali extends AppCompatActivity {
                    {
                        ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenFinalsteam[1]).seq);
                        ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenFinalsteam[1]).teamname);
-                       ToPickStage.putExtra("Position1",Pos1);
-                       ToPickStage.putExtra("Position2",Pos2);
-                       ToPickStage.putExtra("Position3",Pos3);
-                       ToPickStage.putExtra("Position4",Pos4);
-                       ToPickStage.putExtra("Position5",Pos5);
+
                        ToPickStage.putExtra("TeamName",YourTeam);
                        startActivity(ToPickStage);
                    }
@@ -531,11 +527,7 @@ public class OpenQuali extends AppCompatActivity {
                    {
                        ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenSemi[1]).seq);
                        ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenSemi[1]).teamname);
-                       ToPickStage.putExtra("Position1",Pos1);
-                       ToPickStage.putExtra("Position2",Pos2);
-                       ToPickStage.putExtra("Position3",Pos3);
-                       ToPickStage.putExtra("Position4",Pos4);
-                       ToPickStage.putExtra("Position5",Pos5);
+
                        ToPickStage.putExtra("TeamName",YourTeam);
                        startActivity(ToPickStage);
                    }
@@ -544,11 +536,7 @@ public class OpenQuali extends AppCompatActivity {
                    {
                        ToPickStage.putExtra("EnemyTeam",AllOpenTeams.get(OpenTeamQual[0]).seq);
                        ToPickStage.putExtra("TeamEnemy",AllOpenTeams.get(OpenTeamQual[0]).teamname);
-                       ToPickStage.putExtra("Position1",Pos1);
-                       ToPickStage.putExtra("Position2",Pos2);
-                       ToPickStage.putExtra("Position3",Pos3);
-                       ToPickStage.putExtra("Position4",Pos4);
-                       ToPickStage.putExtra("Position5",Pos5);
+
                        ToPickStage.putExtra("TeamName",YourTeam);
                        startActivity(ToPickStage);
                    }

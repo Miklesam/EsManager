@@ -14,6 +14,12 @@ public class TeamsInit {
     static ArrayList<Teams> DotaPitTeams = new ArrayList<Teams>();
     static ArrayList<Teams> KievS2Teams = new ArrayList<Teams>();
     static ArrayList<Teams> SomeCupTeams = new ArrayList<Teams>();
+    static ArrayList<Teams> KualaLumpur = new ArrayList<Teams>();
+    static ArrayList<Teams> Chongqing = new ArrayList<Teams>();
+    static ArrayList<Teams> dreammaj = new ArrayList<Teams>();
+    static ArrayList<Teams> mdl = new ArrayList<Teams>();
+    static ArrayList<Teams> epicenter = new ArrayList<Teams>();
+    static ArrayList<Teams> TheInternational = new ArrayList<Teams>();
 
     static ArrayList<Players> VPTeam=new ArrayList<Players>();
     static ArrayList<Players> GambitTeam=new ArrayList<Players>();
@@ -56,6 +62,17 @@ public class TeamsInit {
     static ArrayList<Players> MagicGamingTeam=new ArrayList<Players>();
     static ArrayList<Players> DragonsTeam=new ArrayList<Players>();
     static ArrayList<Players> WolfsTeam=new ArrayList<Players>();
+    static ArrayList<Players> TopSecretTeam=new ArrayList<Players>();
+    static ArrayList<Players> ParisGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> FlowersGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> FantasticTeam=new ArrayList<Players>();
+    static ArrayList<Players> TNTTeam=new ArrayList<Players>();
+    static ArrayList<Players> EvilGamersTeam=new ArrayList<Players>();
+    static ArrayList<Players> ThunderGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> RainGamingTeam=new ArrayList<Players>();
+    static ArrayList<Players> RainXTeam=new ArrayList<Players>();
+    static ArrayList<Players> SnakeOfChaosTeam=new ArrayList<Players>();
+    static ArrayList<Players> WaterUnicornsTeam=new ArrayList<Players>();
 
 
     public static ArrayList VpInit(){
@@ -386,7 +403,95 @@ public class TeamsInit {
         WolfsTeam.add(Yderrie);
         return WolfsTeam;
     }
+    public static ArrayList TopSecretInit(){
+        TopSecretTeam.add(Nietscha);
+        TopSecretTeam.add(MidOnly);
+        TopSecretTeam.add(Zan);
+        TopSecretTeam.add(Yaphne);
+        TopSecretTeam.add(Pupgie);
+        return TopSecretTeam;
+    }
+    public static ArrayList ParisGamingInit(){
+        ParisGamingTeam.add(Ale);
+        ParisGamingTeam.add(Ssamus);
+        ParisGamingTeam.add(Cherore);
+        ParisGamingTeam.add(Fie);
+        ParisGamingTeam.add(xToni);
+        return ParisGamingTeam;
+    }
+    public static ArrayList FlowersGamingInit(){
+        FlowersGamingTeam.add(Shyli);
+        FlowersGamingTeam.add(Lomail);
+        FlowersGamingTeam.add(Xisse);
+        FlowersGamingTeam.add(boiboi);
+        FlowersGamingTeam.add(Ferir);
+        return FlowersGamingTeam;
+    }
+    public static ArrayList FantasticInit(){
+        FantasticTeam.add(Just);
+        FantasticTeam.add(Ahad);
+        FantasticTeam.add(Isadorjanae);
+        FantasticTeam.add(singer);
+        FantasticTeam.add(Doni);
+        return FantasticTeam;
+    }
+    public static ArrayList TNTInit(){
+        TNTTeam.add(Ghani);
+        TNTTeam.add(Alden);
+        TNTTeam.add(Kale);
+        TNTTeam.add(Tris);
+        TNTTeam.add(Eyadi);
+        return TNTTeam;
+    }
+    public static ArrayList EvilGamersInit(){
+        EvilGamersTeam.add(Alleezy);
+        EvilGamersTeam.add(Sallem);
+        EvilGamersTeam.add(Carl);
+        EvilGamersTeam.add(Cree);
+        EvilGamersTeam.add(Ffi);
+        return EvilGamersTeam;
+    }
+    public static ArrayList ThunderGamingInit(){
+        ThunderGamingTeam.add(Mor);
+        ThunderGamingTeam.add(Barol);
+        ThunderGamingTeam.add(Forde);
+        ThunderGamingTeam.add(Mirah);
+        ThunderGamingTeam.add(Maris);
+        return ThunderGamingTeam;
+    }
+    public static ArrayList RainGamingInit(){
+        RainGamingTeam.add(hFeen);
+        RainGamingTeam.add(wiiHHHa);
+        RainGamingTeam.add(Taron);
+        RainGamingTeam.add(Kindrg);
+        RainGamingTeam.add(mooseryTheSlayer);
+        return RainGamingTeam;
+    }
+    public static ArrayList RainXInit(){
+        RainXTeam.add(Ritcgo);
+        RainXTeam.add(CSnSC);
+        RainXTeam.add(ADR);
+        RainXTeam.add(Francisco);
+        RainXTeam.add(Lissayala);
+        return RainXTeam;
+    }
+    public static ArrayList SnakeOfChaosInit(){
+        SnakeOfChaosTeam.add(wpFade);
+        SnakeOfChaosTeam.add(MATURPALAINEN);
+        SnakeOfChaosTeam.add(Kyanf);
+        SnakeOfChaosTeam.add(Mirah);
+        SnakeOfChaosTeam.add(mooseryTheSlayer);
+        return SnakeOfChaosTeam;
+    }
 
+    public static ArrayList WaterUnicornsInit(){
+        WaterUnicornsTeam.add(wonder);
+        WaterUnicornsTeam.add(wiiHHHa);
+        WaterUnicornsTeam.add(MindCheck);
+        WaterUnicornsTeam.add(GeeAsH);
+        WaterUnicornsTeam.add(Krocky);
+        return WaterUnicornsTeam;
+    }
 
 
     static final Teams VirtusPro = new Teams("Virtus Pro",VPTeam,0,R.drawable.vp_min_logo);
@@ -427,7 +532,7 @@ public class TeamsInit {
     static final Teams CyberHome = new Teams("CyberHome",CyberHomeTeam,32,R.drawable.cyberhome);
     //KievMinorS1
     static final Teams Pinguins = new Teams("dinosaurs",PinguinsTeam,33,R.drawable.dinasours);
-    static final Teams Destroyers = new Teams("Destroyers",PinguinsTeam,34,R.drawable.destroers);
+    static final Teams Destroyers = new Teams("Destroyers",DestroyersTeam,34,R.drawable.destroers);
     static final Teams CrabsGaming = new Teams("CrabsGaming",CrabsGamingTeam,35,R.drawable.crabs);
     //DotaPit
     static final Teams UnionTeam = new Teams("UnionTeam",UnionTeamTeam,36,R.drawable.unuounteam);
@@ -436,6 +541,18 @@ public class TeamsInit {
     // KievS2
     static final Teams Dragons = new Teams("Dragons",DragonsTeam,39,R.drawable.dragons);
     static final Teams Wolfs = new Teams("Wolfs",WolfsTeam,40,R.drawable.woolfs);
+    //Majors
+    static final Teams TopSecret = new Teams("TopSecret",TopSecretTeam,41,R.drawable.secret);
+    static final Teams ParisGaming = new Teams("ParisGaming",ParisGamingTeam,42,R.drawable.psg);
+    static final Teams FlowersGaming = new Teams("FlowersGaming",FlowersGamingTeam,43,R.drawable.aster);
+    static final Teams Fantastic = new Teams("Fantastic",FantasticTeam,44,R.drawable.fnatic);
+    static final Teams TNT = new Teams("TNT",TNTTeam,45,R.drawable.tnc);
+    static final Teams EvilGamers = new Teams("EvilGamers",EvilGamersTeam,46,R.drawable.eg);
+    static final Teams ThunderGaming = new Teams("ThunderGaming",ThunderGamingTeam,47,R.drawable.jstorm);
+    static final Teams RainGaming = new Teams("RainGaming",RainGamingTeam,48,R.drawable.rain);
+    static final Teams RainX = new Teams("RainX",RainXTeam,49,R.drawable.rainx);
+    static final Teams SnakeOfChaos = new Teams("SnakeOfChaos",SnakeOfChaosTeam,50,R.drawable.chaos);
+    static final Teams WaterUnicorns = new Teams("WaterUnicorns",WaterUnicornsTeam,51,R.drawable.liquid);
 
 
     public static ArrayList AllTeamsInit(){
@@ -480,7 +597,17 @@ public class TeamsInit {
         MagicGamingInit();
         DragonsInit();
         WolfsInit();
-
+        TopSecretInit();
+        ParisGamingInit();
+        FlowersGamingInit();
+        FantasticInit();
+        TNTInit();
+        EvilGamersInit();
+        ThunderGamingInit();
+        RainGamingInit();
+        RainXInit();
+        SnakeOfChaosInit();
+        WaterUnicornsInit();
 
         AllTeams.add(VirtusPro);
         AllTeams.add(Navi);
@@ -527,6 +654,20 @@ public class TeamsInit {
         AllTeams.add(MagicGaming);
         AllTeams.add(Dragons);
         AllTeams.add(Wolfs);
+
+
+
+        AllTeams.add(TopSecret);
+        AllTeams.add(ParisGaming);
+        AllTeams.add(FlowersGaming);
+        AllTeams.add(Fantastic);
+        AllTeams.add(TNT);
+        AllTeams.add(EvilGamers);
+        AllTeams.add(ThunderGaming);
+        AllTeams.add(RainGaming);
+        AllTeams.add(RainX);
+        AllTeams.add(SnakeOfChaos);
+        AllTeams.add(WaterUnicorns);
 
         return AllTeams;
     }
@@ -684,26 +825,132 @@ public class TeamsInit {
     }
 
 
-    public static ArrayList SomeCupInit(){
-        AllTeams.clear();
-
-        SomeCupTeams=AllTeamsInit();
-        for(int i=0;i<34;i++)
-        {
-
-        }
 
 
-        SomeCupTeams.add(Ninjas);
-        SomeCupTeams.add(UnionTeam);
-        SomeCupTeams.add(Complex);
-        SomeCupTeams.add(Dragons);
-        SomeCupTeams.add(Greatest);
-        SomeCupTeams.add(CyberHome);
-        SomeCupTeams.add(Wolfs);
+    public static ArrayList KualaLunpurInit(){
 
-        return SomeCupTeams;
+        KualaLumpur.add(TopSecret);
+        KualaLumpur.add(Ninjas);
+        KualaLumpur.add(UnionTeam);
+        KualaLumpur.add(VirtusPro);
+        KualaLumpur.add(ParisGaming);
+        KualaLumpur.add(CrabsGaming);
+        KualaLumpur.add(FlowersGaming);
+        KualaLumpur.add(Fantastic);
+        KualaLumpur.add(TNT);
+        KualaLumpur.add(EvilGamers);
+        KualaLumpur.add(FutureGaming);
+        KualaLumpur.add(ThunderGaming);
+        KualaLumpur.add(RainGaming);
+        KualaLumpur.add(RainX);
+        KualaLumpur.add(Tigers);
+        return KualaLumpur;
     }
+
+    public static ArrayList ChongqingInit(){
+
+        Chongqing.add(TopSecret);
+        Chongqing.add(WaterUnicorns);
+        Chongqing.add(UnionTeam);
+        Chongqing.add(VirtusPro);
+        Chongqing.add(FlowersGaming);
+        Chongqing.add(CrabsGaming);
+        Chongqing.add(ParisGaming);
+        Chongqing.add(Fantastic);
+        Chongqing.add(TNT);
+        Chongqing.add(ThunderGaming);
+        Chongqing.add(FutureGaming);
+        Chongqing.add(EvilGamers);
+        Chongqing.add(SnakeOfChaos);
+        Chongqing.add(Greatest);
+        Chongqing.add(CyberHome);
+        return Chongqing;
+    }
+
+    public static ArrayList DreamMajInit(){
+
+        dreammaj.add(TopSecret);
+        dreammaj.add(Ninjas);
+        dreammaj.add(WaterUnicorns);
+        dreammaj.add(VirtusPro);
+        dreammaj.add(ParisGaming);
+        dreammaj.add(CyberHome);
+        dreammaj.add(PowerGaming);
+        dreammaj.add(Fantastic);
+        dreammaj.add(Dragons);
+        dreammaj.add(EvilGamers);
+        dreammaj.add(ThunderGaming);
+        dreammaj.add(FutureGaming);
+        dreammaj.add(SnakeOfChaos);
+        dreammaj.add(Greatest);
+        dreammaj.add(CrabsGaming);
+        return dreammaj;
+    }
+
+    public static ArrayList mdlInit(){
+
+        mdl.add(TopSecret);
+        mdl.add(OGENIE);
+        mdl.add(WaterUnicorns);
+        mdl.add(VirtusPro);
+        mdl.add(ParisGaming);
+        mdl.add(RainGaming);
+        mdl.add(PowerGaming);
+        mdl.add(Fantastic);
+        mdl.add(Dragons);
+        mdl.add(EvilGamers);
+        mdl.add(ThunderGaming);
+        mdl.add(Complex);
+        mdl.add(SnakeOfChaos);
+        mdl.add(Greatest);
+        mdl.add(CrabsGaming);
+        return mdl;
+    }
+
+    public static ArrayList epicenterInit(){
+
+        epicenter.add(TopSecret);
+        epicenter.add(OGENIE);
+        epicenter.add(WaterUnicorns);
+        epicenter.add(VirtusPro);
+        epicenter.add(ParisGaming);
+        epicenter.add(RainGaming);
+        epicenter.add(PowerGaming);
+        epicenter.add(Fantastic);
+        epicenter.add(Dragons);
+        epicenter.add(EvilGamers);
+        epicenter.add(ThunderGaming);
+        epicenter.add(Complex);
+        epicenter.add(SnakeOfChaos);
+        epicenter.add(Greatest);
+        epicenter.add(CrabsGaming);
+        return epicenter;
+    }
+
+
+    public static ArrayList TheInternationalInit(){
+
+        TheInternational.add(TopSecret);
+        TheInternational.add(VirtusPro);
+        TheInternational.add(CrabsGaming);
+        TheInternational.add(EvilGamers);
+        TheInternational.add(WaterUnicorns);
+        TheInternational.add(ParisGaming);
+        TheInternational.add(Fantastic);
+        TheInternational.add(Ninjas);
+        TheInternational.add(TNT);
+        TheInternational.add(OGENIE);
+        TheInternational.add(UnionTeam);
+        TheInternational.add(PowerGaming);
+        TheInternational.add(FutureGaming);
+        TheInternational.add(Greatest);
+        TheInternational.add(SnakeOfChaos);
+        TheInternational.add(Navi);
+        TheInternational.add(Dragons);
+
+        return TheInternational;
+    }
+
 
 
 
