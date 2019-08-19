@@ -1020,7 +1020,7 @@ public class ClosedPlayoff extends AppCompatActivity {
                         if (notminor==0)
                         {
                             editor.putString(Day, String.valueOf(Dayint+5));
-                            if(Dayint==10)
+                            if((Dayint==10)||(Dayint==12))
                             {
                                 editor.putString(InMajor, "1");
                             }
